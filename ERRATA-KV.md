@@ -51,13 +51,13 @@ overbarred \(\in\), which means \(\notin\).
 - Chapter 2 ([SYNOPSIS-KV02](SYNOPSIS-KV02.md), 33 entries): 13 errata (Confirmed 13).
 - Chapter 3 ([SYNOPSIS-KV03](SYNOPSIS-KV03.md), 73 entries): 22 errata (Confirmed 19, Normalization
   check 1, Open check 2).
-- Chapter 4 ([SYNOPSIS-KV04](SYNOPSIS-KV04.md), 73 entries): 36 errata (Confirmed 30, Normalization
+- Chapter 4 ([SYNOPSIS-KV04](SYNOPSIS-KV04.md), 73 entries): 37 errata (Confirmed 31, Normalization
   check 2, Open check 4).
 - Chapter 5 ([SYNOPSIS-KV05](SYNOPSIS-KV05.md), 25 entries): 8 errata (Confirmed 7, Normalization
   check 1).
 - Chapter 6 ([SYNOPSIS-KV06](SYNOPSIS-KV06.md), 50 entries): 18 errata (Confirmed 18).
 
-Totals: Confirmed 104, Normalization check 5, Open check 6; 115 errata and 290 synopsis entries.
+Totals: Confirmed 105, Normalization check 5, Open check 6; 116 errata and 290 synopsis entries.
 
 ## Chapter 1. Representations of Lie groups relating to special functions
 
@@ -1223,7 +1223,7 @@ Correct: \(g(0;r_1,r_1)g(0;r_2,0)=g(\theta;0,0)g(0;r,0)g(-\theta;0,0)\).
 Evidence: the left side is \(g(0;r_1+r_2,r_1)\), whose invariants are exactly (56); the printed left
 side \(g(0;r_1+r_2,r_2)\) would give \(\tanh\theta=r_2/(r_1+r_2)\), \(r^2=r_1^2+2r_1r_2\). The
 derivation uses the null kernel (4) of \(g(0;r_1,r_1)\), which produces \(\Gamma(v-\lambda)
-r_1^{\lambda-v}\) in (57). (57) and its residue series were checked numerically.
+r_1^{\lambda-v}\) in (57). (57) was checked numerically, and its residue series for \(r_2>2r_1\).
 Target: [KV04.2.08].
 
 ### E04.2.04. Three regimes of (58)–(59): geometry and exponent
@@ -1295,6 +1295,29 @@ correct. At \(\varphi=0.6\), \(z=0.8\) the matrix identity holds to \(10^{-11}\)
 (\(0.7616875327\) both sides, \(\lambda=0.2\), \(\mu=0.8\), \(\tau=-0.4\)).
 Target: [KV04.2.14].
 
+### E04.2.08. Range of the residue series for K_λ
+
+Status: Confirmed.
+Location: Part II, Chapter 4, §2.3, p. 215, display after (57).
+Printed: \(\sum_{n=0}^\infty\frac{(-1)^n}{n!}r_1^nK_{\lambda-n}(r_2)=e^{\lambda\theta}K_\lambda(r)\)
+for \(r_1>0\), \(r_2>0\), with \(\theta,r\) from (56).
+Correct: the series converges to \(e^{\lambda\theta}K_\lambda(r)\) for \(r_2>2r_1\), and for
+\(r_2=2r_1\) when \(\mathrm{Re}\,\lambda>-1\); it diverges for \(0<r_2<2r_1\). The Barnes integral
+(57)
+holds for all \(r_1,r_2>0\).
+Evidence: \(K_{n-\lambda}(r_2)\sim\frac12\Gamma(n-\lambda)(2/r_2)^{n-\lambda}\) makes the
+\(n\)-th term of order \((2r_1/r_2)^nn^{-\mathrm{Re}\,\lambda-1}\). With \(\rho^2=1+2r_1/r_2\), (56)
+gives
+\(e^{\lambda\theta}=\rho^\lambda\) and \(r=\rho r_2\), so the series is the multiplication theorem
+DLMF 10.44.2, valid for \(|\rho^2-1|<1\). Numerically, at \(\lambda=0.3\), \(r_1=0.4\),
+\(r_2=1.5\) the series, (57) and \(e^{\lambda\theta}K_\lambda(r)\) all equal
+\(0.14774037470429596\). At \(\lambda=0.3+0.5i\), \(r_1=1\), \(r_2=1.2\), (57) equals
+\(e^{\lambda\theta}K_\lambda(r)=0.1277486564721413+0.0407361894956611i\), while the 80-term
+partial sum has size \(3\cdot10^{14}\). At \(\lambda=0.3\), \(r_1=2\), \(r_2=1\), (57) gives
+\(0.1106613781468125\) and the partial sums diverge. At \(r_2=2r_1=1\), \(\lambda=-0.5\), the
+averaged partial sums tend to \(0.2154566\); at \(\lambda=-1.5\) the terms grow like \(n^{1/2}\).
+Target: [KV04.2.08].
+
 ### E04.3.01. Whittaker addition theorem: \(e^{\tau_1}\)
 
 Status: Confirmed.
@@ -1344,16 +1367,29 @@ Target: [KV04.3.08].
 Status: Confirmed.
 Location: Part II, Chapter 4, §3.4, p. 221, display after (68).
 Printed: \(\sum_{n=1}^\infty\frac{\tan^ntD_{\mu-n}(x_1)D_n(x_2)}{n!\Gamma(\mu-n+1)}=
-\frac{\cos^{-\mu}tD_\mu(x_1\cos t+x_2\sin t)}{\Gamma(1+\mu)\exp[-\frac14(x_1\sin t-x_2\cos t)^2]}\).
+\frac{\cos^{-\mu}tD_\mu(x_1\cos t+x_2\sin t)}{\Gamma(1+\mu)\exp[-\frac14(x_1\sin t-x_2\cos t)^2]}\),
+with no range beyond the setting \(r_1=\cos^2t\), \(r_2=\sin^2t\) of (68), that is
+\(0<t<\pi/2\).
 Correct: \(\sum_{n=0}^\infty\frac{\tan^ntD_{\mu-n}(x_1)D_n(x_2)}{n!\Gamma(\mu-n+1)}=
 \frac{\cos^{-\mu}t}{\Gamma(1+\mu)}\exp[-\tfrac14(x_1\sin t-x_2\cos t)^2]
-D_\mu(x_1\cos t+x_2\sin t)\).
+D_\mu(x_1\cos t+x_2\sin t)\) for \(0\le t<\pi/4\), \(\mu\in\mathbb C\), \(x_1,x_2\in\mathbb R\);
+also at \(t=\pi/4\) when \(x_1>0\), or \(x_1=0\) and \(\mathrm{Re}\,\mu>0\); and for \(0\le
+t<\pi/2\) when
+\(\mu\in\mathbb N\).
 Evidence: the residue at \(n=0\) is present in the contour closure; at \(t=0\) the corrected
+identity reduces to \(D_\mu(x_1)e^{-x_2^2/4}=D_\mu(x_1)D_0(x_2)\), while the printed one gives \(0\)
+on the left. At \(\mu=0.4\), \(t=0.5\), \(x_1=0.3\), \(x_2=0.8\) both sides of the corrected
 identity
-reduces to \(D_\mu(x_1)e^{-x_2^2/4}=D_\mu(x_1)D_0(x_2)\), while the printed one gives \(0\) on the
-left.
-At \(\mu=0.4\), \(t=0.5\), \(x_1=0.3\), \(x_2=0.8\) both sides of the corrected identity are
-\(0.944267775\dots\) (15 digits).
+are \(0.944267775\dots\) (15 digits). For \(\mu\notin\mathbb Z\) the large-order forms of
+\(D_{\mu-n}(x_1)\), \(D_n(x_2)\) and \(1/\Gamma(\mu-n+1)\) make the \(n\)-th term of order
+\(\tan^nt\,n^{-1-\mathrm{Re}\,\mu/2}e^{-x_1\sqrt n}\) times a bounded oscillating factor. At
+\(\mu=0.4\),
+\(t=1\), \(x_1=0.3\), \(x_2=0.8\) the terms have size \(1.0\cdot10^4\) at \(n=40\) and
+\(1.7\cdot10^{11}\) at \(n=80\). At \(t=\pi/4\), \(\mu=0.4\), \(x_1=1\), \(x_2=0.5\) the series
+gives \(1.036676298571\dots\) on both sides; with \(x_1=-1\) the terms grow like
+\(e^{\sqrt n}\). For \(t<\pi/4\) no condition on \(\mu\) is needed: at \(\mu=-1.3+0.4i\),
+\(t=0.5\), \(x_1=0.3\), \(x_2=0.8\) both sides are \(-0.2299954941183605+0.0608183057415121i\).
+DLMF 12.13.5 (\(a=-\mu-\frac12\)) states \(0\le t\le\pi/4\) and \(\mathrm{Re}\,\mu\ge0\).
 Target: [KV04.3.09].
 
 ### E04.3.05. First mixed identity (Whittaker product integral)

@@ -56,7 +56,7 @@ overbarred \(\in\), which means \(\notin\).
 - Chapter 3 ([SYNOPSIS-VK03](SYNOPSIS-VK03.md), 61 entries): 29 errata (Confirmed 26, Normalization
   check 2, Open check 1).
 - Chapter 4 ([SYNOPSIS-VK04](SYNOPSIS-VK04.md), 79 entries): 30 errata (Confirmed 29, Open check 1).
-- Chapter 5 ([SYNOPSIS-VK05](SYNOPSIS-VK05.md), 106 entries): 44 errata (Confirmed 42, Normalization
+- Chapter 5 ([SYNOPSIS-VK05](SYNOPSIS-VK05.md), 106 entries): 45 errata (Confirmed 43, Normalization
   check 1, Open check 1).
 - Chapter 6 ([SYNOPSIS-VK06](SYNOPSIS-VK06.md), 164 entries): 63 errata (Confirmed 58, Normalization
   check 4, Open check 1).
@@ -64,7 +64,7 @@ overbarred \(\in\), which means \(\notin\).
   check 1, Open check 11).
 - Chapter 8 ([SYNOPSIS-VK08](SYNOPSIS-VK08.md), 126 entries): 71 errata (Confirmed 63, Normalization
   check 3, Open check 5).
-- Chapter 9 ([SYNOPSIS-VK09](SYNOPSIS-VK09.md), 224 entries): 92 errata (Confirmed 86, Normalization
+- Chapter 9 ([SYNOPSIS-VK09](SYNOPSIS-VK09.md), 224 entries): 93 errata (Confirmed 87, Normalization
   check 2, Open check 4).
 - Chapter 10 ([SYNOPSIS-VK10](SYNOPSIS-VK10.md), 135 entries): 65 errata (Confirmed 55,
   Normalization check 3, Open check 7).
@@ -87,7 +87,7 @@ overbarred \(\in\), which means \(\notin\).
 - Chapter 19 ([SYNOPSIS-VK19](SYNOPSIS-VK19.md), 236 entries): 96 errata (Confirmed 86,
   Normalization check 8, Open check 2).
 
-Totals: Confirmed 916, Normalization check 49, Open check 68; 1033 errata and 2548 synopsis entries.
+Totals: Confirmed 918, Normalization check 49, Open check 68; 1035 errata and 2548 synopsis entries.
 
 ## Chapter 1. Elements of the Theory of Lie Groups and Lie Algebras
 
@@ -1794,6 +1794,28 @@ Correct: it is reducible: for each \(N\) the closed span of \(\{z^j:j\ge N\}\) i
 Evidence: the operators multiply by \(e^{\sigma(\cdot)z}\)-type power series in \(z\) and
 rescale, so they never lower the degree.
 Target: [VK05.3.25].
+
+### E05.3.12. Range of t in (5.3.5.27)
+
+Status: Confirmed.
+Location: Vol 1, §5.3.5, p. 231, (5.3.5.27).
+Printed: the series holds for \(0\le t\le\pi/4\), with no condition on \(\mu\) or \(x_1,x_2\).
+Correct: it holds for \(0\le t<\pi/4\) and all \(\mu\in\mathbb C\), \(x_1,x_2\in\mathbb R\). At
+\(t=\pi/4\) it holds when \(x_1>0\), or when \(x_1=0\) and \(\mathrm{Re}\,\mu>0\), and it diverges
+when
+\(x_1<0\) and \(\mu\notin\mathbb N\).
+Evidence: for \(\mu\notin\mathbb Z\) the \(n\)-th term is of order
+\(\tan^nt\,n^{-1-\mathrm{Re}\,\mu/2}e^{-x_1\sqrt n}\) times a bounded oscillating factor. This
+follows from
+the large-order forms of \(D_{\mu-n}(x_1)\), \(D_n(x_2)\) and \(1/\Gamma(\mu-n+1)\). At
+\(t=\pi/4\), \(\mu=0.4\), \(x_1=-1\), \(x_2=0.5\), the products \(n^{1.2}|a_n|\) of the terms
+\(a_n\) are \(1.9\cdot10^3\), \(1.2\cdot10^8\) and \(2.9\cdot10^{16}\) at \(n=100,400,1600\).
+With \(x_1=1\) the series and \(D_\mu\) agree to 13 digits. At \(t=\pi/4\), \(x_1=0\),
+\(x_2=0.7\), \(\mu=2.4+0.3i\) they agree to 8 digits after 1600 terms. At \(t=0.7\),
+\(\mu=-2.6-0.7i\), \(x_1=-0.9\), \(x_2=1.1\) they agree to 7 digits after 160 terms.
+DLMF 12.13.5 (\(a=-\mu-\frac12\)) states \(0\le t\le\pi/4\) under \(\mathrm{Re}\,\mu\ge0\), and its
+endpoint case also needs a condition on \(x_1\).
+Target: [VK05.3.20].
 
 ### E05.4.01. Indices in (5.4.1.4')
 
@@ -5341,6 +5363,26 @@ Evidence: the derivation from [VK09.3.34] item 3 produces \(\Gamma(p)^{-1}\) thr
 [VK09.3.33] item 2; at \(p=1\) both agree, otherwise only the corrected form matches numerically
 (mpmath).
 Target: [VK09.3.35].
+
+### E09.3.17. Hypotheses of the integral (10) for 𝔔^μ_ν
+
+Status: Confirmed.
+Location: Vol 2, §9.3.5, p. 53, (10).
+Printed: \(\Gamma(\nu-\mu+1)\Gamma(\mu+\frac12)\,\mathfrak
+Q^\mu_\nu(\cosh\theta)=e^{i\mu\pi}\sqrt\pi\,
+2^{-\mu}\Gamma(\nu+\mu+1)\sinh^\mu\theta\int_0^\infty(\cosh\theta+\sinh\theta\cosh t)^{-\nu-\mu-1}
+\sinh^{2\mu}t\,dt\) for \(\mathrm{Re}(\nu\pm\mu+1)>0\), \(\mathrm{Re}\,\theta>0\).
+Correct: the identity holds for \(-\frac12<\mathrm{Re}\,\mu<\mathrm{Re}\,\nu+1\) (DLMF 14.12.6).
+The condition \(\mathrm{Re}\,\mu>-\frac12\) is needed and is missing from the printed hypotheses.
+The condition \(\mathrm{Re}(\nu+\mu+1)>0\) is not needed.
+Evidence: near \(t=0\) the integrand behaves like \(t^{2\mu}\), so the integral diverges for
+\(\mathrm{Re}\,\mu\le-\frac12\); near \(t=\infty\) it behaves like \(e^{-(\nu-\mu+1)t}\). At
+\(\nu=1\), \(\mu=-\frac34\), \(\theta=0.7\) the printed hypotheses hold and the left side is finite,
+but \(\int_\varepsilon^\infty\) grows like \(\varepsilon^{-1/2}\) (mpmath). With the corrected
+hypotheses the identity agrees with mpmath legenq (type 3) at real and complex \((\nu,\mu)\),
+including \((\nu,\mu)=(-0.6,-0.45)\), where \(\mathrm{Re}(\nu+\mu+1)<0\).
+Target: [VK09.3.17].
+
 
 ### E09.4.01. Second three-angle relation
 
@@ -15207,3 +15249,4 @@ Target: [VK19.9.13].
 [VK19.9.10]: SYNOPSIS-VK19.md#vk19910-branching-functions-as-hecke-forms
 [VK19.9.12]: SYNOPSIS-VK19.md#vk19912-branching-c1_2ellsupset-c1_ell
 [VK19.9.13]: SYNOPSIS-VK19.md#vk19913-the-jimbomiwa-determinants-det-t_1-det-t_2
+[VK09.3.17]: SYNOPSIS-VK09.md#vk09317-integral-representations-of-𝔔μ_ν
