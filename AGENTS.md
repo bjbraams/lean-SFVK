@@ -62,8 +62,10 @@ and the meaning of totalized series and integrals when adopting upstream stateme
 - Changing the statement of a tagged theorem or the body of a definition needs the user's
   approval. Report a suspected-false statement with the evidence, and do not silently weaken
   or repair it.
-- Lines are at most 100 characters and files at most 1,500 lines; split a long file along
-  its SFVK subsections.
+- Lines are at most 100 characters. A Lean file (`*.lean`) must not exceed 1,500 lines, and
+  should stay under a soft limit of 1,000 lines. Split a long Lean file along its SFVK
+  subsections. Other files, such as the Markdown synopses, errata and reviews, have no line
+  limit; this overrides the shared file-length default.
 - Module and declaration docstrings follow Mathlib style: state the mathematics, the SFVK
   references and the hypotheses. They contain no history (no dates, development rounds,
   former names or "previously admitted" remarks); history belongs in `REVIEW.md`.
