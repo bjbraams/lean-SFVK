@@ -33,10 +33,29 @@ Each erratum gives:
 - the printed statement;
 - the correct statement, or the open question;
 - the evidence;
-- the target synopsis entries.
+- the target synopsis entries;
+- where the same error is listed in one of the published errata lists below, a Published line
+  citing the item by its page and line, and saying how its correction differs from ours.
 
 Synopsis entries cite errata by id. An erratum id \(\mathrm E cc.s.nn\) is the \(nn\)-th
 erratum located in section \(s\) of chapter \(cc\).
+
+## Published errata lists
+
+Two errata lists for the three volumes are available on T. H. Koornwinder's web pages:
+
+- [Koornwinder 2000], by T. H. Koornwinder: *Errata and comments to the book "Representations of
+  Lie groups and special functions, Vols. 1, 2, 3" by N. Ja. Vilenkin and A. U. Klimyk*, last
+  modified January 7, 2000.
+- [Klimyk 2006], by A. U. Klimyk: *Errata and corrections to the book "Representation of Lie
+  groups and special functions", Vols. 1, 2, 3, by N. Ja. Vilenkin and A. U. Klimyk*. It
+  includes most of the items of the first list.
+
+Both lists locate an item by printed page and line, with negative line numbers counted from the
+bottom of the page. A Published line cites the item in this form. Some published corrections
+are themselves wrong or incomplete; the Published line then says so, with the evidence in the
+entry. Items of the lists that concern only wording, cross-references, the index or the
+bibliography are not recorded here.
 
 ## Scope
 
@@ -51,43 +70,44 @@ overbarred \(\in\), which means \(\notin\).
 
 ## Summary by chapter
 
-- Chapter 1 ([SYNOPSIS-VK01](SYNOPSIS-VK01.md), 93 entries): 32 errata (Confirmed 31, Open check 1).
-- Chapter 2 ([SYNOPSIS-VK02](SYNOPSIS-VK02.md), 88 entries): 20 errata (Confirmed 19, Open check 1).
-- Chapter 3 ([SYNOPSIS-VK03](SYNOPSIS-VK03.md), 61 entries): 29 errata (Confirmed 26, Normalization
+- Chapter 1 ([SYNOPSIS-VK01](SYNOPSIS-VK01.md), 93 entries): 41 errata (Confirmed 40, Open check 1).
+- Chapter 2 ([SYNOPSIS-VK02](SYNOPSIS-VK02.md), 88 entries): 23 errata (Confirmed 22, Open check 1).
+- Chapter 3 ([SYNOPSIS-VK03](SYNOPSIS-VK03.md), 61 entries): 38 errata (Confirmed 35, Normalization
   check 2, Open check 1).
-- Chapter 4 ([SYNOPSIS-VK04](SYNOPSIS-VK04.md), 79 entries): 30 errata (Confirmed 29, Open check 1).
-- Chapter 5 ([SYNOPSIS-VK05](SYNOPSIS-VK05.md), 106 entries): 45 errata (Confirmed 43, Normalization
-  check 1, Open check 1).
-- Chapter 6 ([SYNOPSIS-VK06](SYNOPSIS-VK06.md), 164 entries): 63 errata (Confirmed 58, Normalization
+- Chapter 4 ([SYNOPSIS-VK04](SYNOPSIS-VK04.md), 79 entries): 33 errata (Confirmed 32, Open check 1).
+- Chapter 5 ([SYNOPSIS-VK05](SYNOPSIS-VK05.md), 106 entries): 52 errata (Confirmed 51, Normalization
+  check 1).
+- Chapter 6 ([SYNOPSIS-VK06](SYNOPSIS-VK06.md), 164 entries): 75 errata (Confirmed 70, Normalization
   check 4, Open check 1).
-- Chapter 7 ([SYNOPSIS-VK07](SYNOPSIS-VK07.md), 149 entries): 73 errata (Confirmed 61, Normalization
+- Chapter 7 ([SYNOPSIS-VK07](SYNOPSIS-VK07.md), 149 entries): 90 errata (Confirmed 78, Normalization
   check 1, Open check 11).
-- Chapter 8 ([SYNOPSIS-VK08](SYNOPSIS-VK08.md), 126 entries): 71 errata (Confirmed 63, Normalization
-  check 3, Open check 5).
-- Chapter 9 ([SYNOPSIS-VK09](SYNOPSIS-VK09.md), 224 entries): 93 errata (Confirmed 87, Normalization
-  check 2, Open check 4).
-- Chapter 10 ([SYNOPSIS-VK10](SYNOPSIS-VK10.md), 135 entries): 65 errata (Confirmed 55,
+- Chapter 8 ([SYNOPSIS-VK08](SYNOPSIS-VK08.md), 126 entries): 82 errata (Confirmed 75, Normalization
+  check 3, Open check 4).
+- Chapter 9 ([SYNOPSIS-VK09](SYNOPSIS-VK09.md), 224 entries): 111 errata (Confirmed 105,
+  Normalization check 2, Open check 4).
+- Chapter 10 ([SYNOPSIS-VK10](SYNOPSIS-VK10.md), 135 entries): 76 errata (Confirmed 66,
   Normalization check 3, Open check 7).
-- Chapter 11 ([SYNOPSIS-VK11](SYNOPSIS-VK11.md), 160 entries): 69 errata (Confirmed 62,
+- Chapter 11 ([SYNOPSIS-VK11](SYNOPSIS-VK11.md), 160 entries): 81 errata (Confirmed 74,
   Normalization check 3, Open check 4).
-- Chapter 12 ([SYNOPSIS-VK12](SYNOPSIS-VK12.md), 119 entries): 44 errata (Confirmed 40,
+- Chapter 12 ([SYNOPSIS-VK12](SYNOPSIS-VK12.md), 119 entries): 51 errata (Confirmed 47,
   Normalization check 2, Open check 2).
-- Chapter 13 ([SYNOPSIS-VK13](SYNOPSIS-VK13.md), 130 entries): 48 errata (Confirmed 43,
+- Chapter 13 ([SYNOPSIS-VK13](SYNOPSIS-VK13.md), 130 entries): 56 errata (Confirmed 51,
   Normalization check 2, Open check 3).
-- Chapter 14 ([SYNOPSIS-VK14](SYNOPSIS-VK14.md), 208 entries): 89 errata (Confirmed 72,
+- Chapter 14 ([SYNOPSIS-VK14](SYNOPSIS-VK14.md), 208 entries): 99 errata (Confirmed 82,
   Normalization check 3, Open check 14).
-- Chapter 15 ([SYNOPSIS-VK15](SYNOPSIS-VK15.md), 94 entries): 42 errata (Confirmed 37, Normalization
+- Chapter 15 ([SYNOPSIS-VK15](SYNOPSIS-VK15.md), 94 entries): 43 errata (Confirmed 38, Normalization
   check 4, Open check 1).
-- Chapter 16 ([SYNOPSIS-VK16](SYNOPSIS-VK16.md), 72 entries): 21 errata (Confirmed 18, Normalization
+- Chapter 16 ([SYNOPSIS-VK16](SYNOPSIS-VK16.md), 72 entries): 23 errata (Confirmed 20, Normalization
   check 2, Open check 1).
-- Chapter 17 ([SYNOPSIS-VK17](SYNOPSIS-VK17.md), 172 entries): 69 errata (Confirmed 61,
+- Chapter 17 ([SYNOPSIS-VK17](SYNOPSIS-VK17.md), 172 entries): 73 errata (Confirmed 65,
   Normalization check 6, Open check 2).
-- Chapter 18 ([SYNOPSIS-VK18](SYNOPSIS-VK18.md), 132 entries): 36 errata (Confirmed 27,
+- Chapter 18 ([SYNOPSIS-VK18](SYNOPSIS-VK18.md), 132 entries): 37 errata (Confirmed 28,
   Normalization check 3, Open check 6).
-- Chapter 19 ([SYNOPSIS-VK19](SYNOPSIS-VK19.md), 236 entries): 96 errata (Confirmed 86,
+- Chapter 19 ([SYNOPSIS-VK19](SYNOPSIS-VK19.md), 236 entries): 100 errata (Confirmed 90,
   Normalization check 8, Open check 2).
 
-Totals: Confirmed 918, Normalization check 49, Open check 68; 1035 errata and 2548 synopsis entries.
+Totals: Confirmed 1069, Normalization check 49, Open check 66; 1184 errata and 2548 synopsis
+entries.
 
 ## Chapter 1. Elements of the Theory of Lie Groups and Lie Algebras
 
@@ -118,6 +138,9 @@ Evidence: Associativity of the printed law requires \(\theta(h_3)\theta(h_2)=\th
 i.e. that \(\theta\) be an anti-homomorphism. For \(H=S_3\) permuting the coordinates of
 \(N=(\mathbb Z_2)^3\) an exhaustive check shows the printed law is not associative and the
 corrected one is (script `scripts/VK01/checks.py`).
+Published: [Klimyk 2006], p. 17, l. −11. [Koornwinder 2000], p. 17, l. −11. The lists make
+\(\theta\) an anti-homomorphism and keep the multiplication law; this is equivalent to the
+correction above.
 Target: [VK01.0.16].
 
 ### E01.0.03. Locally compact metric spaces and completeness
@@ -206,6 +229,7 @@ Correct: \(\sum_ku_{ik}\overline{u_{jk}}=\sum_ku_{ki}\overline{u_{kj}}=\delta_{i
 (\(uu^*=u^*u=I\)).
 Evidence: The printed first sum has a summand independent of \(k\) and equals
 \(n|u_{ij}|^2\), which is not \(\delta_{ij}\) in general (e.g. \(u=I_2\), \(i=j=1\): \(2\ne1\)).
+Published: [Klimyk 2006], p. 27, l. −1.
 Target: [VK01.0.33].
 
 ### E01.0.11. Definition of rapidly decreasing sequences
@@ -230,6 +254,70 @@ Correct: \((A\otimes B)(x\otimes y)=Ax\otimes By\).
 Evidence: \(x\in\mathfrak H_1\) and \(B\) acts on \(\mathfrak H_2\), so \(Bx\) is undefined;
 the finite-dimensional definition (1) on p. 33 has \(Ae_i\otimes Bf_j\).
 Target: [VK01.0.42].
+
+### E01.0.13. Antisymmetry of the structure constants
+
+Status: Confirmed.
+Location: Vol 1, §1.0.1, p. 9, (2).
+Printed: \(c^k_{ij}=-c^k_{jk}\).
+Correct: \(c^k_{ij}=-c^k_{ji}\).
+Evidence: With \([e_i,e_j]=\sum_kc^k_{ij}e_k\), the identity \([e_i,e_j]=-[e_j,e_i]\) gives
+\(c^k_{ij}=-c^k_{ji}\); the printed right side has the upper index \(k\) also as a lower index,
+which is not the antisymmetry relation.
+Published: [Klimyk 2006], p. 9, l. 16.
+Target: [VK01.0.04].
+
+### E01.0.14. Identity axiom of a group action
+
+Status: Confirmed.
+Location: Vol 1, §1.0.3, p. 12, display after l. 18.
+Printed: \((g_1g_2)\circ x=g_1\circ(g_2\circ x)\) for all \(g_1,g_2\in G\), \(x\in X\).
+Correct: \((g_1g_2)\circ x=g_1\circ(g_2\circ x)\) and \(e\circ x=x\) for all \(g_1,g_2\in G\),
+\(x\in X\).
+Evidence: The displayed law alone admits non-actions: for \(G=\{e\}\), \(X=\{0,1\}\) and \(e\circ
+x=0\) it holds, but \(e\) does not act as the identity. The axiom \(e\circ x=x\) follows from the
+displayed law only when every \(g\) acts bijectively, as the phrase "group of transformations"
+suggests.
+Published: [Klimyk 2006], p. 12, l. 18. [Koornwinder 2000], p. 12, l. 18.
+Target: [VK01.0.09].
+
+### E01.0.15. Subalgebra in the definition of a semidirect sum
+
+Status: Confirmed.
+Location: Vol 1, §1.0.4, p. 17, ll. −4, −3.
+Printed: \(\mathfrak R\) is the semidirect sum of its subalgebra \(\mathfrak R\) and its ideal
+\(\mathfrak J\) if every element is uniquely \(r=s+j\), \(s\in\mathfrak R\), \(j\in\mathfrak J\).
+Correct: \(\mathfrak R\) is the semidirect sum of its subalgebra \(\mathfrak S\) and its ideal
+\(\mathfrak J\) if every element is uniquely \(r=s+j\), \(s\in\mathfrak S\), \(j\in\mathfrak J\).
+Evidence: With \(s\in\mathfrak R\) the decomposition \(r=s+j\) is unique only if \(\mathfrak J=0\)
+(take \(r=(r-j)+j\) for any \(j\in\mathfrak J\)). The next sentence uses the subalgebra \(\mathfrak
+s\) and the ideal \(\mathfrak j\).
+Published: [Klimyk 2006], p. 17, l. −3 and l. −4.
+Target: [VK01.0.17].
+
+### E01.0.16. Coordinates and volume element in the integral over a manifold
+
+Status: Confirmed.
+Location: Vol 1, §1.0.6, p. 21, l. −4.
+Printed: \(\tilde x=\psi_\alpha(\mathbf x)\), \(dx=(x_1,\dots,x_n)\), \(\mathbf x=dx_1\dots dx_n\).
+Correct: \(\tilde x=\psi_\alpha(\mathbf x)\), \(\mathbf x=(x_1,\dots,x_n)\), \(dx=dx_1\dots dx_n\).
+Evidence: \(\psi_\alpha:K^n\to U_\alpha\) is evaluated at the point \(\mathbf x\in K^n\), and \(dx\)
+is the Lebesgue volume element of \(K^n\); the printed text interchanges the two definitions.
+Published: [Klimyk 2006], p. 21, l. −4.
+Target: [VK01.0.21].
+
+### E01.0.17. Conclusion of the definition of a closed operator
+
+Status: Confirmed.
+Location: Vol 1, §1.0.8, p. 27, l. 13.
+Printed: \(\mathbf x_m\in D(A)\), \(\lim\mathbf x_m=\mathbf x\), \(\lim A\mathbf x_m=\mathbf y\)
+implies \(\mathbf y\in D(A)\) and \(\mathbf y=A\mathbf x\).
+Correct: \(\mathbf x_m\in D(A)\), \(\lim\mathbf x_m=\mathbf x\), \(\lim A\mathbf x_m=\mathbf y\)
+implies \(\mathbf x\in D(A)\) and \(\mathbf y=A\mathbf x\).
+Evidence: The equality \(\mathbf y=A\mathbf x\) requires \(\mathbf x\in D(A)\); closedness of \(A\)
+means that its graph is closed, i.e. \((\mathbf x,\mathbf y)\) lies in the graph.
+Published: [Klimyk 2006], p. 27, l. 13.
+Target: [VK01.0.33].
 
 ### E01.1.01. Maximal compact subgroups of closed linear groups
 
@@ -354,6 +442,28 @@ Evidence: In \(U(2)\) the radical is the central \(U(1)\), a Levi subgroup is \(
 \(U(1)\cap SU(2)=\{\pm I\}\ne\{e\}\), so the product is not semidirect.
 Target: [VK01.1.27].
 
+### E01.1.10. Variables of the bilinear form (1.1.1.1)
+
+Status: Confirmed.
+Location: Vol 1, §1.1.1, p. 35, (1).
+Printed: \((\mathbf x,\mathbf w)=z_1w_1+\dots+z_nw_n\).
+Correct: \((\mathbf z,\mathbf w)=z_1w_1+\dots+z_nw_n\).
+Evidence: The right side is a function of \(\mathbf z=(z_1,\dots,z_n)\) and \(\mathbf w\); the
+variable \(\mathbf x\) does not occur in it.
+Published: [Klimyk 2006], p. 35, formula (1). [Koornwinder 2000], p. 35, formula (1).
+Target: [VK01.1.01].
+
+### E01.1.11. Bilinear term in the product law of \(GL(n,\mathbb C)\)
+
+Status: Confirmed.
+Location: Vol 1, §1.1.2, p. 39, Example 1.
+Printed: \(\mathbf a(\mathbf x,\mathbf y)-\mathbf A(\mathbf y,\mathbf x)=[g,h]\equiv gh-hg\).
+Correct: \(\mathbf A(\mathbf x,\mathbf y)-\mathbf A(\mathbf y,\mathbf x)=[g,h]\equiv gh-hg\).
+Evidence: The bilinear part of \(z_{ij}=x_{ij}+y_{ij}+\sum_kx_{ik}y_{kj}\) is \(A(x,y)=xy\), so
+\(A(x,y)-A(y,x)=xy-yx\), which is the expression introduced on p. 38; no form \(a\) is defined.
+Published: [Klimyk 2006], p. 39, l. 5. [Koornwinder 2000], p. 39, l. 5.
+Target: [VK01.1.04].
+
 ### E01.2.01. Motion group of \(\mathbb C^n\)
 
 Status: Confirmed.
@@ -362,6 +472,7 @@ Printed: \(\mathbb C^n=ISO(p,q)/SU(p,q)\).
 Correct: \(\mathbb C^n=ISU(p,q)/SU(p,q)\).
 Evidence: \(SU(p,q)\) is not a subgroup of \(ISO(p,q)\) (real matrices); the parallel
 statements for \(\mathbb R^n\) and \(\mathsf H^n\) use \(ISO\) and \(ISp\).
+Published: [Klimyk 2006], p. 53, l. 13.
 Target: [VK01.2.03].
 
 ### E01.2.02. Stabilizer of a null frame
@@ -495,13 +606,38 @@ Evidence: In a finite group with counting measure and a non-normal subgroup \(K\
 \(1_K*\delta_g=1_{Kg}\), which is bi-\(K\)-invariant only if \(gKg^{-1}\subset K\).
 Target: [VK01.2.23].
 
+### E01.2.12. Square root hypothesis for \(G=P(s)K(s)\)
+
+Status: Confirmed.
+Location: Vol 1, §1.2.2, p. 56, l. 4.
+Printed: for any \(p\in P(s)\) there is \(p_1\in P(s)\) such that \(p_q^2=p\).
+Correct: for any \(p\in P(s)\) there is \(p_1\in P(s)\) such that \(p_1^2=p\).
+Evidence: The element introduced is \(p_1\), and the next sentence uses \(gs(g^{-1})=p=p_1^2\);
+there is no \(p_q\).
+Published: [Klimyk 2006], p. 56, l. 4.
+Target: [VK01.2.07].
+
+### E01.2.13. Header and first column of Table 1.2
+
+Status: Confirmed.
+Location: Vol 1, §1.2.4, p. 60, Table 1.2, first block.
+Printed: Header "Lie algebra \(\mathfrak{so}\) of a motion group"; pair \((\mathfrak{sl}(n,\mathbb
+C),\mathfrak{sp}(n,\mathbb C))\).
+Correct: Header "Lie algebra \(\mathfrak g\) of a motion group"; pair \((\mathfrak{sl}(2n,\mathbb
+C),\mathfrak{sp}(n,\mathbb C))\).
+Evidence: The second row of the table is headed \(\mathfrak h\) and later blocks are headed
+\(\mathfrak g\). In the source \(Sp(n,\cdot)\subset GL(2n,\cdot)\) (§1.1.1), as in the pairs
+\((\mathfrak{sl}(2n,\mathbb R),\mathfrak{sp}(n,\mathbb R))\) and
+\((\mathfrak{su}(n,n),\mathfrak{sp}(n,\mathbb R))\) of the same table, so \(\mathfrak{sp}(n,\mathbb
+C)\) has dimension \(n(2n+1)\) and lies in \(\mathfrak{sl}(2n,\mathbb C)\), not in
+\(\mathfrak{sl}(n,\mathbb C)\).
+Published: [Klimyk 2006], p. 60, l. 7.
+Target: [VK01.2.13].
+
 ### Conventions and notation (not errata)
 
-- p. 39, Example 1: "\(a(x,y)-A(y,x)\)" is a typographical variant of \(A(x,y)-A(y,x)\).
 - p. 34, Example 2: \(W\) is described as real sequences; as a complex Banach algebra it is
   \(\ell^1(\mathbb Z)\) of complex sequences ([VK01.0.43]).
-- p. 60, Table 1.2: the pair \((\mathfrak{sl}(n,\mathbb C),\mathfrak{sp}(n,\mathbb C))\) uses
-  \(\mathfrak{sp}(n/2,\mathbb C)\) in the source's own indexing (\(Sp(m,\cdot)\subset GL(2m)\)).
 - p. 66: "(see Section 1.0.11)" refers to the Banach algebras of §1.0.12.
 - §1.2.6 writes \(dg_{ij}d\bar g_{ij}\) for Lebesgue measure \(d(\mathrm{Re}\,g_{ij})\,
   d(\mathrm{Im}\,g_{ij})\) on \(\mathfrak M(n,\mathbb C)\).
@@ -528,6 +664,7 @@ used as a continuous representation in §2.1.1 Example 6 and §2.1.5 Example 1, 
 equivalent (Fourier–Plancherel) to multiplication by \(e^{-i\lambda t}\), so
 \(\|T(t)-E\|=\sup_\lambda|e^{-i\lambda t}-1|=2\) for every \(t\ne0\). The same holds for the
 regular representations of any non-discrete locally compact group.
+Published: [Koornwinder 2000], p. 68, l. 18.
 Target: [VK02.1.02].
 
 ### E02.1.02. Faithfulness of the adjoint representation needs connectedness
@@ -554,6 +691,7 @@ Correct: \([(T_1\otimes T_2)(g)]A=T_1(g)\,A\,T_2'(g)\), with \(T_2'(g)\) the tra
 Evidence: \(T_1(A)\) is meaningless (\(T_1\) is defined on \(G\)). Under
 \(x\otimes y\mapsto[f\mapsto f(y)x]\), the tensor \(T_1(g)x\otimes T_2(g)y\) is the
 operator \(f\mapsto f(T_2(g)y)\,T_1(g)x=T_1(g)A\,(T_2(g)'f)\).
+Published: [Klimyk 2006], p. 71, l. 12.
 Target: [VK02.1.10].
 
 ### E02.1.04. Extension to the group ring needs uniform boundedness
@@ -580,6 +718,17 @@ Correct: \(\{z\mid z\in\mathbb C^{p+q},\ [z,z]_{pq}=a\}\).
 Evidence: \([z,z]_{pq}\) involves \(p+q\) coordinates and \(U(p,q)\) acts on
 \(\mathbb C^{p+q}\).
 Target: [VK02.1.23].
+
+### E02.1.06. Translation representation in Example 1 of §2.1.5
+
+Status: Confirmed.
+Location: Vol 1, §2.1.5, p. 76, Example 1.
+Printed: \((T(g)f)(x)=f(x-t)\) of the group \(\mathbb R\).
+Correct: \((T(t)f)(x)=f(x-t)\), \(t\in\mathbb R\).
+Evidence: The group element of \(\mathbb R\) is \(t\), which appears on the right side; \(g\) does
+not occur.
+Published: [Klimyk 2006], p. 76, l. −8.
+Target: [VK02.1.19].
 
 ### E02.2.01. Passage to the Lie algebra needs connectedness
 
@@ -737,6 +886,19 @@ every inner product is invariant, including those with \((e_1,e_2)\ne0\). With
 \(\lambda_k=0\) allowed, \((x,x)=0\) for \(x\in\mathfrak H_k\setminus\{0\}\).
 Target: [VK02.2.37].
 
+### E02.2.11. Invariance of the Laplace operator under motions of \(\mathbb R^n\)
+
+Status: Confirmed.
+Location: Vol 1, §2.2.4, p. 86, Example 4.
+Printed: \(\Delta=\sum_{k=1}^n\partial^2/\partial x_k^2\) is invariant with respect to Euclidean
+motions in \(\mathbb R\).
+Correct: \(\Delta=\sum_{k=1}^n\partial^2/\partial x_k^2\) is invariant with respect to Euclidean
+motions in \(\mathbb R^n\).
+Evidence: \(\Delta\) acts on functions of \(x_1,\dots,x_n\), and the companion statement for
+\(\Box_{p,q}\) refers to \(ISO_0(p,q)\) acting on \(\mathbb R^{p+q}\).
+Published: [Klimyk 2006], p. 86, l. 9.
+Target: [VK02.2.19].
+
 ### E02.3.01. Orthogonality of vector coefficients: order of the second pair
 
 Status: Confirmed.
@@ -761,6 +923,7 @@ Correct: the outer index is \(i=1,\dots,d_\alpha\); the reference is formula (5)
 §2.3.5.
 Evidence: the summand depends on \(i\); there is no Section 2.9.5 and the coefficient
 formula is §2.3.5 (5).
+Published: [Klimyk 2006], p. 104, l. −12.
 Target: [VK02.3.16].
 
 ### E02.3.03. Inclusion between \(L^1\) and \(L^2\) on a compact group
@@ -778,6 +941,8 @@ statement remains true for \(L^1(G)\) (if all \(C_\alpha(f)=0\), \(f\) annihilat
 uniformly dense span of matrix elements in \(C(G)\), so \(f=0\) a.e.).
 Evidence: on \(\mathbb T\), \(f(e^{i\varphi})=|\varphi|^{-1/2}\) (\(|\varphi|\le\pi\)) is in
 \(L^1\setminus L^2\).
+Published: [Klimyk 2006], p. 105, l. −6. Klimyk corrects only the notation and keeps the inclusion,
+which remains false.
 Target: [VK02.3.19], [VK02.3.20].
 
 ### E02.3.04. Missing factor \(d_\alpha^{-1}\) in the convolution theorem
@@ -810,6 +975,19 @@ Correct: \(f_1(g)=\sum_{\alpha\in A_H}c_\alpha t^\alpha_{11}(g)\).
 Evidence: \(g_2\) does not occur elsewhere; the companion expansion of \(f_2\) has
 argument \(g\).
 Target: [VK02.3.21].
+
+### E02.3.06. Conjugate character in the coefficient (2.3.11.6)
+
+Status: Confirmed.
+Location: Vol 1, §2.3.11, p. 108, (6).
+Printed: \(c_\alpha=\int f(g)\chi_\alpha(g)\,dg\).
+Correct: \(c_\alpha=\int f(g)\overline{\chi_\alpha(g)}\,dg\).
+Evidence: The characters form an orthonormal basis, so the coefficient of \(\chi_\alpha\) is
+\((f,\chi_\alpha)\). For \(G=U(1)\) and \(f=\chi_1\), \(\chi_1(e^{i\theta})=e^{i\theta}\), the
+printed integral is \(0\) and the corrected one is \(1\) (checked numerically,
+`checks/N1_checks.py`); (9) on the same page has the conjugate.
+Published: [Klimyk 2006], p. 108, l. 3.
+Target: [VK02.3.23].
 
 ### Conventions and notation (not errata)
 
@@ -869,6 +1047,32 @@ The source's own \([(x\pm i0)^\lambda]'=\lambda(x\pm i0)^{\lambda-1}\) with
 \((x\pm i0)^\lambda=x_+^\lambda+e^{\pm i\pi\lambda}x_-^\lambda\) also requires the minus sign.
 Target: [VK03.1.07].
 
+### E03.1.04. Conjugation of \(h(i\varphi)\) by \(A\)
+
+Status: Confirmed.
+Location: Vol 1, §3.1.5, p. 112, l. −5.
+Printed: the transformation \(h(i\varphi)\to A^{-1}(i\varphi)A\).
+Correct: the transformation \(h(i\varphi)\to A^{-1}h(i\varphi)A\).
+Evidence: The transformation was introduced as \(h(z)\to A^{-1}h(z)A\) on the same page; with
+\(A=\mathrm{diag}(1,i)\), \(A^{-1}h(i\varphi)A=g(\varphi)\) by direct multiplication.
+Published: [Klimyk 2006], p. 112, l. −5.
+Target: [VK03.1.06].
+
+### E03.1.05. Power of \(L_P\) in (3.1.6.9')
+
+Status: Confirmed.
+Location: Vol 1, §3.1.6, p. 114, (9').
+Printed: \(\dfrac{\pi^{n/2}e^{-\pi iq/2}}{4^kk!\,\Gamma(\frac n2+k)\sqrt{|\det
+g|}}L_P^\lambda\delta(\mathbf x)\).
+Correct: \(\dfrac{\pi^{n/2}e^{-\pi iq/2}}{4^kk!\,\Gamma(\frac n2+k)\sqrt{|\det
+g|}}L_P^k\delta(\mathbf x)\).
+Evidence: The residue is taken at \(\lambda=-\frac n2-k\), and a power \(L_P^\lambda\) of a
+differential operator is not defined. For \(q=0\), \(g=I\) the corrected formula is \(\frac12\)
+times (9) with \(\Delta^k\), using \(\Omega_n=2\pi^{n/2}/\Gamma(\frac n2)\) and
+\(n(n+2)\cdots(n+2k-2)=2^k\Gamma(\frac n2+k)/\Gamma(\frac n2)\).
+Published: [Klimyk 2006], p. 114, l. −11.
+Target: [VK03.1.08].
+
 ### E03.2.01. Sign in the integrated Fourier coefficient
 
 Status: Confirmed.
@@ -889,6 +1093,7 @@ Printed: \(\int_\Gamma\Phi(z)(-1)^{w-1}dz=-2i\sin w\pi\,\mathfrak F(w)\).
 Correct: \(\int_\Gamma\Phi(z)(-z)^{w-1}dz=-2i\sin w\pi\,\mathfrak F(w)\), as in (9) and (11).
 Evidence: Contracting \(\Gamma\) onto the axis with \(\ln(-z)=\ln t\mp i\pi\) above/below gives
 \((e^{-i\pi w}-e^{i\pi w})\mathfrak F(w)\); \((-1)^{w-1}\) is a constant and cannot produce this.
+Published: [Klimyk 2006], p. 126, l. −9.
 Target: [VK03.3.04].
 
 ### E03.3.02. Sign in the Gauss–Weierstrass inversion
@@ -905,6 +1110,18 @@ Evidence: The first line of (2) is correct; substituting \(x\mapsto x/\mu\) give
 \(0.33027=\varphi(-0.4)\) and the corrected one is \(0.93550=\varphi(0.4)\). Formula (5) is correct
 as printed (checked numerically for \(\Phi(w)=w^2e^w\) at complex \(z\)).
 Target: [VK03.3.05].
+
+### E03.3.03. Limits of the Mellin integral (3.3.4.1)
+
+Status: Confirmed.
+Location: Vol 1, §3.3.4, p. 124, (1).
+Printed: \(f(z)=\int_{-\infty}^\infty\Phi(t)t^{iz-1}dt\).
+Correct: \(f(z)=\int_0^\infty\Phi(t)t^{iz-1}dt\).
+Evidence: \(\Phi\) is defined on \(0<t<\infty\), and the substitution \(\lambda=\ln t\) maps
+\(-\infty<\lambda<\infty\) onto \(0<t<\infty\), with \(d\lambda=dt/t\) and \(e^{i\lambda
+z}=t^{iz}\).
+Published: [Klimyk 2006], p. 124, formula (1).
+Target: [VK03.3.04].
 
 ### E03.4.01. One-dimensional unitary representations of the affine group
 
@@ -983,6 +1200,58 @@ so the right side depends on \(\sigma\) and the factor is off by \(2\pi\); \(\va
 right if \(\hat\varphi\) carried the factor \(1/2\pi\), which the section does not use.
 Target: [VK03.4.08].
 
+### E03.4.07. Integration variable in (3.4.3.3)
+
+Status: Confirmed.
+Location: Vol 1, §3.4.3, p. 132, (3).
+Printed: \(R_\lambda(g)\mathfrak F(w)=\frac{a^{-w}}{2\pi
+i}\int_{c-i\infty}^{c+i\infty}\Gamma(w-z)\big(-\frac{\lambda b}a\big)^{z-w}\mathfrak F(z)dx\).
+Correct: \(R_\lambda(g)\mathfrak F(w)=\frac{a^{-w}}{2\pi
+i}\int_{c-i\infty}^{c+i\infty}\Gamma(w-z)\big(-\frac{\lambda b}a\big)^{z-w}\mathfrak F(z)dz\).
+Evidence: The integrand is a function of \(z\) on the line \(\mathrm{Re}\,z=c\), as the limits
+\(c\pm i\infty\) show; \(x\) does not occur.
+Published: [Klimyk 2006], p. 132, l. 6.
+Target: [VK03.4.04].
+
+### E03.4.08. Lower limit in (3.4.5.4)
+
+Status: Confirmed.
+Location: Vol 1, §3.4.5, p. 135, (4).
+Printed: \(2^{-w}\Gamma(w)=\frac1{2\pi i}\int_{c_1=i\infty}^{c_1+i\infty}\Gamma(w-u)\Gamma(u)du\).
+Correct: \(2^{-w}\Gamma(w)=\frac1{2\pi i}\int_{c_1-i\infty}^{c_1+i\infty}\Gamma(w-u)\Gamma(u)du\),
+\(\mathrm{Re}\,w>c_1>0\).
+Evidence: (4) is (3) at \(t=1\), whose path is \(\mathrm{Re}\,u=c_1\) from \(c_1-i\infty\) to
+\(c_1+i\infty\). Numerically, \(w=2.5\), \(c_1=1.1\): both sides equal \(0.234996\)
+(`checks/N1_checks.py`).
+Published: [Klimyk 2006], p. 135, formula (4). [Koornwinder 2000], p. 135, (4).
+Target: [VK03.4.06].
+
+### E03.4.09. Gauss multiplication formula (3.4.6.4')
+
+Status: Confirmed.
+Location: Vol 1, §3.4.6, p. 138, (4').
+Printed: \(\Gamma(nx)=(2n)^{(1-n)/2}n^{nx-1/2}\prod_{k=0}^{n-1}\Gamma\big(z+\frac kn\big)\).
+Correct: \(\Gamma(nx)=(2\pi)^{(1-n)/2}n^{nx-1/2}\prod_{k=0}^{n-1}\Gamma\big(x+\frac kn\big)\).
+Evidence: For \(n=2\) the corrected formula is the duplication formula (4); the printed base \(2n\)
+gives \(4^{-1/2}\) in place of \((2\pi)^{-1/2}\). Numerically, \(x=0.37\), \(n=2,3,5\):
+\(\Gamma(nx)\) agrees with the corrected right side, while the factor \((2n)^{(1-n)/2}\) gives
+\(1.5528\ne1.2390\) at \(n=2\) (`checks/N1_checks.py`).
+Published: [Klimyk 2006], p. 138, l. 2. The lists correct only \(z\) to \(x\); the base
+\((2n)^{(1-n)/2}\) must also be \((2\pi)^{(1-n)/2}\).
+Target: [VK03.4.07].
+
+### E03.4.10. Exponent in (3.4.7.1)
+
+Status: Confirmed.
+Location: Vol 1, §3.4.7, p. 139, (1).
+Printed: \(\int_0^\infty e^{-xu}x^{u-1}dx=\Gamma(u)t^{-u}\).
+Correct: \(\int_0^\infty e^{-xt}x^{u-1}dx=\Gamma(u)t^{-u}\).
+Evidence: The right side depends on \(t\) and the next line substitutes \(tx=z\). Numerically,
+\(t=1.7\), \(u=2.3\): \(\int_0^\infty e^{-tx}x^{u-1}dx=\Gamma(u)t^{-u}=0.344295\), while the printed
+integrand gives \(0.171787\) (`checks/N1_checks.py`).
+Published: [Klimyk 2006], p. 139, formula (1). [Koornwinder 2000], p. 139, (1).
+Target: [VK03.4.08].
+
 ### E03.5.01. Hypothesis of the Laplace-transform formula for \({}_pF_q\)
 
 Status: Confirmed.
@@ -1028,6 +1297,7 @@ Correct: argument \(\frac z{z-1}\) in both.
 Evidence: The derivation on p. 145 produces \((1-\frac{sz}{z-1})^{-\beta}\). Numerically
 \(\alpha=0.3,\beta=0.45,\gamma=1.7,z=0.35\): \(F=1.031962\); printed right side \(1.601703\);
 corrected \(1.031962\). (3.5.8.2), derived from (3), is correct.
+Published: [Klimyk 2006], p. 146, formulas (3) and (4). [Koornwinder 2000], p. 146, (3) and (4).
 Target: [VK03.5.06].
 
 ### E03.5.05. Power of \(z\) in the derivative formula (2')
@@ -1040,6 +1310,7 @@ Correct: \(\frac{d^n}{dz^n}[z^{\gamma-1}(1-z)^{\alpha+\beta-\gamma}F(\alpha,\bet
 (DLMF 15.5.9).
 Evidence: \(n=2\), \(\alpha=0.3,\beta=0.45,\gamma=1.7,z=0.35\): printed left side \(26.711\),
 right side \(6.9523\); with \(z^{\gamma-1}\) the left side is \(6.9523\).
+Published: [Klimyk 2006], p. 146, l. 9.
 Target: [VK03.5.06].
 
 ### E03.5.06. Condition for the pole of \(F\) at \(\gamma=-n\)
@@ -1105,6 +1376,7 @@ Correct: \(D_p(z)=2^{\frac p2+\frac14}z^{-1/2}W_{\frac p2+\frac14,-\frac14}(\fra
 Evidence: \(W_{\kappa,\mu}(x)\sim x^\kappa e^{-x/2}\) gives \(z^{p+1/2}e^{-z^2/4}\) for the printed
 expression, against \(D_p(z)\sim z^pe^{-z^2/4}\). Numerically \(p=0.6\), \(z=1.7\): printed
 \(0.900186\), \(D_p(z)=0.690411\), corrected \(0.690411\).
+Published: [Klimyk 2006], p. 155, l. −6. [Koornwinder 2000], p. 155, l. −6.
 Target: [VK03.5.18].
 
 ### E03.5.11. Chebyshev polynomials as \(C_n^0\)
@@ -1117,6 +1389,9 @@ Evidence: By (4), \(C_n^\alpha\) contains \(1/\Gamma(2\alpha)\), so \(C_n^0\equi
 the printed formula is meaningful only if \(C_n^0\) denotes the limit
 \(\lim_{\alpha\to0}C_n^\alpha/\alpha\), a common convention. Numerically
 \(\frac32\cdot10^{10}C_3^{10^{-10}}(0.35)=-0.8785=T_3(0.35)\).
+Published: [Klimyk 2006], p. 156, l. −2. [Koornwinder 2000], p. 156, (4′ ). Both lists define
+\(C^0_n(z)\) as \(\lim\alpha^{-1}C^\alpha_n(z)\) for \(\alpha\to\infty\); the limit is
+\(\alpha\to0\), since for \(\alpha\to\infty\) the expression diverges when \(n\ge2\).
 Target: [VK03.5.20].
 
 ### E03.5.12. Power of 2 in the associated Legendre function (3.5.8.8)
@@ -1146,6 +1421,8 @@ is \(\int_0^x(I_+^\lambda f)(t)g(x-t)dt=\int_0^xf(t)(I_+^\lambda g)(x-t)dt\). Th
 uncertain which reading of \(Q\) the source intends.
 Evidence: Both readings are proved by Fubini. The printed form does not typecheck, since
 \(f(x)\) does not depend on the integration variable.
+Published: [Klimyk 2006], p. 160, l. −2. Klimyk replaces \(f(x)\) by \(f(t)\) only; \(Q\) remains
+undefined.
 Target: [VK03.5.28].
 
 ### E03.5.14. Series for the fractional derivative of an analytic function
@@ -1197,6 +1474,29 @@ Evidence: \(n=0\): the right side is \(x^{\alpha+\mu}\). Numerically \(n=2\), \(
 \(1.3\cdot L_2^{1}(1.3)=-0.0715\).
 Target: [VK03.5.36].
 
+### E03.5.18. Exponential as \({}_0F_0\)
+
+Status: Confirmed.
+Location: Vol 1, §3.5.1, p. 142, l. 7.
+Printed: \(e^z={}_pF_0(z)\).
+Correct: \(e^z={}_0F_0(z)\).
+Evidence: By (2) with \(p=q=0\), \({}_0F_0(z)=\sum_nz^n/n!=e^z\); the parameter \(p\) is unspecified
+in the printed form, and \({}_pF_0\) with \(p\ge1\) is not entire in general.
+Published: [Klimyk 2006], p. 142, l. 7.
+Target: [VK03.5.01].
+
+### E03.5.19. Integration variable in (3.5.11.14)
+
+Status: Confirmed.
+Location: Vol 1, §3.5.11, p. 164, (14).
+Printed: \(\int_x^1(1-y)^{\alpha+\beta-\mu+n}P_n^{(\alpha,\beta)}(y)(y-x)^{\mu-1}dx\).
+Correct: \(\int_x^1(1-y)^{\alpha+\beta-\mu+n}P_n^{(\alpha,\beta)}(y)(y-x)^{\mu-1}dy\).
+Evidence: The integrand is a function of \(y\), and \(x\) is a limit of integration; (13) and (15)
+have \(dy\). With \(dy\), (14) holds numerically for \(\alpha=0.4\), \(\beta=0.9\), \(\mu=0.6\),
+\(n=2\), \(x=0.2\) (both sides \(-0.230230\), `checks/N1_jacobi14.py`).
+Published: [Klimyk 2006], p. 164, l. 8.
+Target: [VK03.5.35].
+
 ### Conventions and notation (not errata)
 
 - §3.2.3 and §3.3: the "Fourier transform" of \(F\) is \(\int F(\lambda)e^{i\lambda x}d\lambda\),
@@ -1229,6 +1529,20 @@ Evidence: the left side is real. At \(n=1\), \(m=0\), \(r_1=0.9\), \(r_2=0.6\) t
 \(0.3702280\); the printed integral gives \(0.3702280+0.1647425i\), the cosine form
 \(0.3702280\). For \(m=n=0\), formula (9) is unaffected.
 Target: [VK04.1.12]
+
+### E04.1.02. Matrix-element symbol in (4.1.3.4) and (4.1.4.1)
+
+Status: Confirmed.
+Location: Vol 1, §4.1.3, p. 168, (4); §4.1.4, p. 168, (1).
+Printed: \(r^R_{mn}(g)=I_{n-m}(Rr)\) in (4.1.3.4); \(r^R_{mn}(g_1g_2)=\sum_{k=-\infty}^\infty
+t^R_{mk}(g_1)t^R_{kn}(g_2)\) in (4.1.4.1).
+Correct: \(t^R_{mn}(g)=I_{n-m}(Rr)\); \(t^R_{mn}(g_1g_2)=\sum_{k=-\infty}^\infty
+t^R_{mk}(g_1)t^R_{kn}(g_2)\).
+Evidence: The matrix elements of \(T_R\) are denoted \(t^R_{mn}\) in (1)–(3) and (5); (4) is (2) at
+\(g=g(r,0;0)\), and (4.1.4.1) is the matrix form of \(T_R(g_1g_2)=T_R(g_1)T_R(g_2)\).
+Published: [Klimyk 2006], p. 168, formula (4). Klimyk corrects only (4.1.3.4); the same symbol
+\(r^R_{mn}\) appears on the left of (4.1.4.1).
+Target: [VK04.1.08], [VK04.1.09].
 
 ### E04.2.01. Double-coset decomposition: degenerate cases
 
@@ -1273,7 +1587,20 @@ Evidence: here \([(\cosh\theta,\sinh\theta),\mathbf a]=-re^{-\theta}\), so the k
 \(\frac1{2\pi i}\int_0^\infty e^{Rrt}t^{\mu-\lambda-1}dt\) (\(t=e^{-\theta}\)), convergent iff
 \(\mathrm{Re}(\mu-\lambda)>0\); this also matches \(\Gamma(\mu-\lambda)\) and the condition
 \(b>\mathrm{Re}\,\lambda\) of (4.4.5.8).
+Published: [Klimyk 2006], p. 177, l. −6.
 Target: [VK04.2.14]
+
+### E04.2.04. Coordinates of the points in the distance formula (4.2.1.2)
+
+Status: Confirmed.
+Location: Vol 1, §4.2.1, p. 171, l. 7.
+Printed: the points \(M(x_1,y_1)\) and \(N(x_2,y_2)\).
+Correct: the points \(M(x_1,x_2)\) and \(N(y_1,y_2)\).
+Evidence: (2) reads \(r^2=(x_1-y_1)^2-(x_2-y_2)^2=[\mathbf x-\mathbf y,\mathbf x-\mathbf y]\) with
+\(\mathbf x=(x_1,x_2)\), \(\mathbf y=(y_1,y_2)\) as in (1); with the printed labels it would be
+\((x_1-x_2)^2-(y_1-y_2)^2\).
+Published: [Klimyk 2006], p. 171, l. 7.
+Target: [VK04.2.01].
 
 ### E04.3.01. Recurrences for \(Z_\nu=c_1J_\nu+c_2J_{-\nu}\)
 
@@ -1343,6 +1670,7 @@ Evidence: \(H^{(1)}_\lambda(z)=\frac2{\pi i}e^{-\lambda\pi i/2}K_\lambda(-iz)\) 
 exponentially and the integral diverges. Numerically (\(\lambda=0.3\), \(a=0.6\),
 \(z=0.7+0.5i\)) the corrected integral is \(0.3032280-0.3917904i=H^{(1)}_{0.3}(z)\). Formula (5)
 for \(J_\lambda\) follows only from the corrected (4); (4') is correct.
+Published: [Klimyk 2006], p. 183, formula (4).
 Target: [VK04.3.10]
 
 ### E04.3.07. Contour of the Barnes integral for \(J_\lambda\)
@@ -1359,6 +1687,9 @@ Evidence: \(|\Gamma(a+it)/\Gamma(\lambda+1-a-it)|\sim|t|^{2a-\mathrm{Re}\lambda-
 tend to \(0\) when \(a>\mathrm{Re}\,\lambda\ge1\); at \(\lambda=1.5\), \(a=1.6\) it equals
 \(5.0,\ 25.1,\ 125.9\) at \(t=10,100,1000\). With \(\lambda=2.5\), \(a=0.4\), \(x=1.7\) the
 integral is \(0.16223863=J_{2.5}(1.7)\).
+Published: [Klimyk 2006], p. 183, l. −6. Klimyk replaces \(\mathrm{Im}\,z>0\) by
+\(\mathrm{Im}\,z=0\); with the printed contour condition the integral does not converge on the real
+axis.
 Target: [VK04.3.11]
 
 ### E04.3.08. Hankel version of the Gamma–Macdonald convolution
@@ -1419,6 +1750,8 @@ Evidence: (12) and (17) hold for \(x_1<x_2/2\), (10) and (15) for \(x_1>x_2/2\),
 integral runs over \(x_1\in(0,\infty)\). Numerically (\(\lambda=0.2\), \(v=0.3\), \(x_2=1.1\)):
 corrected (23) gives \(1.2910816-0.2834860i=\Gamma(\lambda+v)H^{(1)}_v(x_2)\); corrected (26) gives
 \(0.392676-0.540471i=\Gamma(\lambda+v)e^{-v\pi i}K_v(x_2)\).
+Published: [Klimyk 2006], p. 187, formula (23). Klimyk changes only the upper limit \(0\) to
+\(\infty\) and keeps \(x^2/2\).
 Target: [VK04.3.19]
 
 ### E04.3.12. Cross-reference in (4.3.5.22)
@@ -1431,6 +1764,7 @@ Correct: the relations are those of (5) with real variables:
 Evidence: (6) is a formula, not a set of relations; (22) is the Mellin form of (4), whose
 variables are tied by (5). Numerically (\(\lambda=0.3\), \(v=0.9\), \(x_2=1.1\)) both sides of (22)
 equal \(0.7133787\).
+Published: [Klimyk 2006], p. 187, l. 9.
 Target: [VK04.3.19]
 
 ### E04.3.13. Strip condition in the Hankel addition theorem
@@ -1472,6 +1806,7 @@ is
 the corrected form. At \(\mu=1.3\), \(\nu=0.8\), \(t=1\), \(x=0.9\), \(y=1.2\) the integral is
 \(0.247691-0.075543i\), as is the corrected right side; the printed one gives
 \(0.180308-0.140415i\).
+Published: [Klimyk 2006], p. 192, l. −2.
 Target: [VK04.3.30]
 
 ### E04.4.01. \(T_R\) for \(T_{iR}\) in the decomposition of \(L\)
@@ -1560,6 +1895,7 @@ gives the minus sign (DLMF 10.9.10). Numerically at \(\rho=1.2\), \(\lambda=0.7\
 source's (18), (20)–(23) use
 \(H^{(1)}_{-i\lambda}-H^{(2)}_{i\lambda}=(A_{11}+A_{13})/(\pi ie^{\lambda
 \pi/2})\), which requires the minus sign.
+Published: [Klimyk 2006], p. 201, formula (700 ).
 Target: [VK04.4.11]
 
 ### E04.4.07. Kernel of the inverse sector transform
@@ -1628,6 +1964,21 @@ i.e. \(\mathrm{Re}\,\mu=b<\mathrm{Re}\,\lambda\); \(\Gamma(\lambda-\mu)\) has po
 companion (9) has \(a<\mathrm{Re}\,\lambda\).
 Target: [VK04.4.18]
 
+### E04.4.12. Index of the kernel \(a_{jk}\) in (4.4.4.2)
+
+Status: Confirmed.
+Location: Vol 1, §4.4.4, p. 200, (2).
+Printed: \(F_j(R,\psi)=\sum_{k=1}^4\int_0^\infty rdr\int_{-\infty}^\infty
+f_k(r,\varphi)e^{iRra_{ji}(\psi-\varphi)}d\varphi\).
+Correct: \(F_j(R,\psi)=\sum_{k=1}^4\int_0^\infty rdr\int_{-\infty}^\infty
+f_k(r,\varphi)e^{iRra_{jk}(\psi-\varphi)}d\varphi\).
+Evidence: The index \(i\) is not defined; the summation index is \(k\). With the table of \(a_{jk}\)
+printed after (2), \([\mathbf x,\mathbf y]=Rr\,a_{jk}(\psi-\varphi)\) for \(\mathbf x\) in quadrant
+\(k\) and \(\mathbf y\) in quadrant \(j\), for all sixteen pairs, while \(a_{kj}\) fails (checked
+numerically, `checks/N1_sector.py`).
+Published: [Klimyk 2006], p. 200, formula (2).
+Target: [VK04.4.10].
+
 ### Conventions and notation (not errata)
 
 - The source writes \(N_\nu\) for \(Y_\nu\); the synopsis uses both.
@@ -1649,6 +2000,7 @@ Printed: \([a_-,e]=a_-\).
 Correct: \([a_-,e]=-a_-\).
 Evidence: direct matrix computation with \(a_-=E_{23}\), \(e=E_{22}\):
 \(a_-e-ea_-=0-E_{23}=-a_-\); consistent with \([a_+,e]=a_+\) and \([a_+,a_-]=z\).
+Published: [Klimyk 2006], p. 207, l. −6.
 Target: [VK05.1.02].
 
 ### E05.1.02. Factorization of \(g(a,b,d,\tau)\)
@@ -1680,7 +2032,20 @@ Correct: both kernels carry the factor \(1/(2\pi i)\) (as in (5.1.3.5) and (5.1.
 in (4) the power is \(t^{\lambda-\mu}\).
 Evidence: numerical Mellin inversion of the action of \(T_\chi(g_\pm(t))\) on \(x^{\mu-1}\)
 reproduces the kernel only with \(1/(2\pi i)\) and \(t^{\lambda-\mu}\).
+Published: [Klimyk 2006], p. 212, formula (4).
 Target: [VK05.1.10].
+
+### E05.1.05. Operator in (5.1.3.7)
+
+Status: Confirmed.
+Location: Vol 1, §5.1.3, p. 211, (7).
+Printed: \(\hat A_-(F_+(\lambda),F_-(\lambda))=(\lambda-1)(-F_+(\lambda-1),F_-(\lambda-1))\).
+Correct: \(\hat A_+(F_+(\lambda),F_-(\lambda))=(\lambda-1)(-F_+(\lambda-1),F_-(\lambda-1))\).
+Evidence: The two preceding displays compute \((\hat A_+F_+)(\lambda)=-(\lambda-1)F_+(\lambda-1)\)
+and \((\hat A_+F_-)(\lambda)=(\lambda-1)F_-(\lambda-1)\), and (8) gives \(\hat A_-\) separately as a
+shift \(\lambda\mapsto\lambda+1\).
+Published: [Klimyk 2006], p. 211, formula (7).
+Target: [VK05.1.09].
 
 ### E05.2.01. Lower summation index in the series of \(M_{\lambda\mu}\)
 
@@ -1690,6 +2055,7 @@ Printed: \(\sum_{k=1}^\infty\).
 Correct: \(\sum_{k=0}^\infty\).
 Evidence: the \(k=0\) term gives the leading \(z^{\mu+1/2}\) of \(M_{\lambda\mu}(z)\) (DLMF
 13.14.6).
+Published: [Klimyk 2006], p. 221, l. 6.
 Target: [VK05.2.10].
 
 ### E05.3.01. Second solution of the confluent equation
@@ -1699,6 +2065,7 @@ Location: Vol. 1, §5.3.1, p. 222, (5.3.1.4).
 Printed: \(q^{1-\gamma}\Phi(\alpha-\gamma+1;2-\gamma;z)\).
 Correct: \(z^{1-\gamma}\Phi(\alpha-\gamma+1;2-\gamma;z)\).
 Evidence: the variable is \(z\) throughout; numerical check of the connection formula.
+Published: [Klimyk 2006], p. 222, l. 2.
 Target: [VK05.3.03].
 
 ### E05.3.02. Higher derivative formula for \(\Phi\)
@@ -1718,6 +2085,7 @@ Location: Vol. 1, §5.3.2, p. 224, (5.3.2.13).
 Printed: \(\Psi(\alpha;\gamma-1;z)\).
 Correct: \(\Psi(\alpha;\gamma+1;z)\).
 Evidence: residual \(0.534\) as printed, \(4\cdot10^{-22}\) corrected (mpmath hyperu).
+Published: [Klimyk 2006], p. 224, formula (13).
 Target: [VK05.3.07].
 
 ### E05.3.04. Parameter range of \(G_2\)
@@ -1756,6 +2124,7 @@ Location: Vol. 1, §5.3.5, p. 231, text after (5.3.5.26).
 Printed: \(x_1=x_1\sqrt{2x_1}\).
 Correct: \(s_1=x_1\sqrt{2r_1}\).
 Evidence: the printed identity is meaningless; the corrected substitution yields (5.3.5.26).
+Published: [Klimyk 2006], p. 231, l. 5.
 Target: [VK05.3.19].
 
 ### E05.3.08. Sign of the exponent in (5.3.5.27)
@@ -1817,6 +2186,54 @@ DLMF 12.13.5 (\(a=-\mu-\frac12\)) states \(0\le t\le\pi/4\) under \(\mathrm{Re}\
 endpoint case also needs a condition on \(x_1\).
 Target: [VK05.3.20].
 
+### E05.3.13. Symbol \(\Psi\) in (5.3.2.17)
+
+Status: Confirmed.
+Location: Vol 1, §5.3.2, p. 224, (17), first line.
+Printed: \(\frac d{dz}\Psi(\alpha;\gamma;z)=\frac\alpha
+z[(\alpha-\gamma+1)\Psi(\alpha+1;\gamma;z)-\psi(\alpha;\gamma;z)]\).
+Correct: \(\frac d{dz}\Psi(\alpha;\gamma;z)=\frac\alpha
+z[(\alpha-\gamma+1)\Psi(\alpha+1;\gamma;z)-\Psi(\alpha;\gamma;z)]\).
+Evidence: Lowercase \(\psi\) is not defined in §5.3.2; with \(\Psi\) the identity holds (mpmath
+hyperu at \(\alpha=0.7\), \(\gamma=1.3\), \(z=2.1\): residual \(3\cdot10^{-27}\)), and the next
+display combines it with (13) as an identity in \(\Psi\).
+Published: [Klimyk 2006], p. 224, l. 10.
+Target: [VK05.3.08].
+
+### E05.3.14. Exponential factor in the display before (5.3.5.22)
+
+Status: Confirmed.
+Location: Vol 1, §5.3.5, p. 230, display before (5.3.5.22) (l. 6).
+Printed: \(\frac d{dz}\big[e^{z^2/4}D_\lambda(z)\big]=\lambda e^{x^2/4}D_{\lambda-1}(z)\).
+Correct: \(\frac d{dz}\big[e^{z^2/4}D_\lambda(z)\big]=\lambda e^{z^2/4}D_{\lambda-1}(z)\).
+Evidence: The only variable is \(z\); the display is (17) multiplied by \(e^{z^2/4}\), and with
+\(e^{z^2/4}\) on the right it is the case \(n=1\) of the corrected (5.3.5.22).
+Published: [Klimyk 2006], p. 230, l. 6.
+Target: [VK05.3.17].
+
+### E05.3.15. Argument of \(f\) in (5.3.6.1)
+
+Status: Confirmed.
+Location: Vol 1, §5.3.6, p. 232, (5.3.6.1).
+Printed: \((T_\alpha(g)f)(z)=e^{-\alpha(rz^2+sz)}f(e^{i\psi z})\), \(|z|=1\).
+Correct: \((T_\alpha(g)f)(z)=e^{-\alpha(rz^2+sz)}f(e^{i\psi}z)\), \(|z|=1\).
+Evidence: \(f\) is defined on the circle \(|z|=1\), and \(e^{i\psi z}\) does not lie on it; the
+diagonal entries \(e^{2i\psi},e^{i\psi}\) of \(g(i\psi,r,s)\) act by the rotation \(z\mapsto
+e^{i\psi}z\), the case \(\tau=i\psi\) of the representation of \(G_2\).
+Published: [Klimyk 2006], p. 232, l. −1.
+Target: [VK05.3.25].
+
+### E05.3.16. Index in the Christoffel–Darboux sum (5.3.6.20)
+
+Status: Confirmed.
+Location: Vol 1, §5.3.6, p. 235, (5.3.6.20).
+Printed: \(\sum_{k=0}^n\frac{H_n(z)H_k(w)}{2^kk!}\).
+Correct: \(\sum_{k=0}^n\frac{H_k(z)H_k(w)}{2^kk!}\).
+Evidence: At \(n=4\), \(z=0.3\), \(w=-0.8\) the corrected sum equals the right side to \(10^{-26}\);
+the printed sum differs by \(2.987\).
+Published: [Klimyk 2006], p. 235, l. −1.
+Target: [VK05.3.31].
+
 ### E05.4.01. Indices in (5.4.1.4')
 
 Status: Confirmed.
@@ -1848,14 +2265,15 @@ Target: [VK05.4.04].
 
 ### E05.4.04. Exponent in the general addition theorem
 
-Status: Open check.
-Location: Vol. 1, §5.4.2, p. 239, (5.4.2.1).
+Status: Confirmed.
+Location: Vol 1, §5.4.2, p. 240, (5.4.2.3).
 Printed: \(e^{\sigma b+\tau_1(\mu-\nu)}\) on the right side (\(\nu\) is the integration
 variable).
 Correct: \(e^{\sigma b+\tau_1(\mu-\lambda)}\).
 Evidence: \(\varepsilon(\tau_1)\) and \(\varepsilon(\tau-\tau_1)\) contribute
 \(e^{(\omega-\lambda)\tau_1}e^{(\omega-\mu)(\tau-\tau_1)}\); after division by
 \(e^{(\omega-\mu)\tau}\) the exponent is \(\tau_1(\mu-\lambda)\). Not checked numerically.
+Published: [Klimyk 2006], p. 240, l. 11.
 Target: [VK05.4.08].
 
 ### E05.4.05. Second Whittaker factor in \(\mathcal I_5\)
@@ -1877,6 +2295,7 @@ Printed: \(\frac1{2\Gamma(2\mu+1)}\).
 Correct: \(\frac1{\Gamma(2\mu+1)}\).
 Evidence: numerical evaluation of the contour integral, \(0.2379882\) on both sides without
 the factor \(\frac12\).
+Published: [Klimyk 2006], p. 241, l. −1.
 Target: [VK05.4.11].
 
 ### E05.4.07. Second Whittaker factor in (5.4.3.2)
@@ -1895,6 +2314,7 @@ Location: Vol. 1, §5.4.3, p. 243, (5.4.3.3).
 Printed: \(2\mu-\tau_1\) in the exponent and \(W_{-\lambda,\mu}(r^2)\).
 Correct: \(2\mu\tau_1\) and \(M_{-\lambda,\mu}(r^2)\).
 Evidence: Fourier inversion of \(\mathcal I_7\) ([VK05.4.11]); numerical check.
+Published: [Klimyk 2006], p. 243, l. 3.
 Target: [VK05.4.12].
 
 ### E05.4.09. Missing factor \(r^{-1}\) in (5.4.3.4)
@@ -1956,6 +2376,19 @@ Evidence: \(e^{-x/2}x^{-\lambda-1/2}W_{\lambda+1/2,\mu}(x)\) at \(x=st\) equals
 \(2^{-n/2}x^{-n/2}D_n(\sqrt{2x})e^{-x/2}\) (DLMF 12.7.14), checked for \(n=0,\dots,3\).
 Target: [VK05.4.18].
 
+### E05.4.15. Group element in the kernel identity of §5.4.1
+
+Status: Confirmed.
+Location: Vol 1, §5.4.1, p. 237, display at the top of the page.
+Printed:
+\(\int_{\rho-i\infty}^{\rho+i\infty}K_{++}(\lambda,\nu;\chi;g_+(t))K_{++}(\nu,\mu;\chi;g_1(t))d\nu=e^{\tau(\mu-\lambda)-tx/2}K_{++}(\lambda,\mu;\chi;g_1(r))\).
+Correct: \(K_{++}(\lambda,\nu;\chi;g_+(x))\) in the first factor.
+Evidence: The display is the \(K_{++}\) entry of the kernel of the product \(g_+(x)g_1(t)\)
+factorized on p. 236; the first factor is \(g_+(x)\), consistent with \(r^2=t^2+tx\) and the factor
+\(e^{-tx/2}\) on the right.
+Published: [Klimyk 2006], p. 237, l. 3.
+Target: [VK05.4.01].
+
 ### E05.5.01. Missing \(s!\) in the matrix elements
 
 Status: Confirmed.
@@ -1964,6 +2397,7 @@ Printed: denominator \((k-s)!\,(n-k+s)!\).
 Correct: denominator \(s!\,(k-s)!\,(n-k+s)!\).
 Evidence: binomial and exponential expansion of \(c^\omega e^{\sigma(dz+b)}(cz+a)^n\);
 agreement with \(L_k^{n-k}(-\sigma ad/c)\).
+Published: [Klimyk 2006], p. 248, formula (4).
 Target: [VK05.5.02].
 
 ### E05.5.02. Missing \(\sigma\) in the action of \(S\)
@@ -2003,6 +2437,7 @@ Location: Vol. 1, §5.5.5, p. 259, (5.5.5.10).
 Printed: a typographically garbled sum.
 Correct: \(\sum_{m=0}^k\frac{(-y)^{-m}}{(k-m)!}L_m^{n-m}(y)=(-y)^{-k}L_k^{n-k}(2y)\).
 Evidence: specialization \(x=t=\sqrt y\), \(\sigma=-1\) of (5.5.5.9); numerical check.
+Published: [Klimyk 2006], p. 259, l. −8.
 Target: [VK05.5.17].
 
 ### E05.5.06. Normalization of the Fourier integral (5.5.5.12)
@@ -2059,6 +2494,7 @@ Printed: a garbled formula (incorrect type-setting).
 Correct: \(c_n(x,a)=(-a)^{-n}n!\,L_n^{x-n}(a)\), as stated in the footnote of Vol. 2, p. 498.
 Evidence: the corrected definition agrees with (5.5.8.2) and with
 \(C_n(x;a)={}_2F_0(-n,-x;\,;-1/a)\); numerical checks of (5.5.8.2)–(21).
+Published: [Klimyk 2006], p. 264, l. −4. [Koornwinder 2000], p. 264, §5.5.8, formula(1).
 Target: [VK05.5.24].
 
 ### E05.5.12. Summation index and weights in the Charlier expansion
@@ -2093,6 +2529,18 @@ Correct: \(\sum_{m=0}^k\frac{y^{-m}t^m}{m!\,(k-m)!}c_m(x,-\sigma t^2)=\frac1{k!}
 Evidence: transcription of (5.5.5.9) through the duality; numerical check.
 Target: [VK05.5.30].
 
+### E05.5.15. Exponent in the generating function (5.5.3.4)
+
+Status: Confirmed.
+Location: Vol 1, §5.5.3, p. 255, (5.5.3.4) and the next line.
+Printed: \(e^{-xx}(z+1)^\alpha=\sum_{k=0}^\infty L_k^{\alpha-k}(x)z^k\), \(|z|<1\).
+Correct: \(e^{-xz}(z+1)^\alpha=\sum_{k=0}^\infty L_k^{\alpha-k}(x)z^k\), \(|z|<1\).
+Evidence: The formula is (2) with \(a=1\) after the substitution of the text (\(\sigma=-1\),
+\(c=1\)); at \(\alpha=0.6\), \(x=1.7\), \(z=0.4\) the series equals \(e^{-xz}(z+1)^\alpha\) to
+\(10^{-26}\) and differs from \(e^{-x^2}(z+1)^\alpha\) by \(0.55\).
+Published: [Klimyk 2006], p. 255, l. 10 and l. 11.
+Target: [VK05.5.13].
+
 ### Conventions and notation (not errata)
 
 - The source writes \(\Phi,\Psi\) for \({}_1F_1\) and Tricomi's \(U\); the synopsis keeps them.
@@ -2123,6 +2571,7 @@ Correct: denominator \(\sinh t\).
 Evidence: \(|e^{i\varphi}|=1\) requires the modulus of the numerator, which equals
 \(\sinh t\) by (13); numerical check of the corrected formula for
 \((t_1,t_2,\varphi_2)=(0.8,1.9,2.2)\).
+Published: [Klimyk 2006], p. 271, formula (130 ).
 Target: [VK06.1.04]
 
 ### E06.1.03. Casimir element of su(1,1)
@@ -2150,6 +2599,18 @@ For \(\alpha=1.3+0.6i\): \(|\alpha|=1.4318=(1-|\gamma|^2)^{-1/2}\), while
 \((1-|\gamma|)^{-1/2}=1.875\).
 Target: [VK06.1.13]
 
+### E06.1.05. Entry \(\bar\alpha\) of the Euler-angle matrix (6.1.1.4)
+
+Status: Confirmed.
+Location: Vol 1, §6.1.1, p. 269, (4), entry (2,2).
+Printed: \(\cos\frac\theta2e^{i(\varphi+\psi)/2}\).
+Correct: \(\cos\frac\theta2e^{-i(\varphi+\psi)/2}\).
+Evidence: By (1) the (2,2) entry is \(\bar\alpha\), and (2) gives
+\(\alpha=\cos\frac\theta2e^{i(\varphi+\psi)/2}\); with the printed entry the determinant is not
+\(1\) unless \(\varphi+\psi\in2\pi\mathbb Z\).
+Published: [Klimyk 2006], p. 269, formula (4), second line of the matrix.
+Target: [VK06.1.01].
+
 ### E06.3.01. Transposition symmetry of \(P^l_{mn}\)
 
 Status: Confirmed.
@@ -2161,6 +2622,7 @@ half-integral \(l\), \(m+n\) is odd when \(m=n\), so the printed form would give
 \(P_{mm}=-P_{mm}\), contradicting \(P^l_{mm}(1)=1\). Numerically (\(l=\frac32\), all 16
 pairs) the printed form fails and the corrected one holds. For integral \(l\) the two
 coincide.
+Published: [Koornwinder 2000], p. 288, (1′ ).
 Target: [VK06.3.14]
 
 ### E06.3.02. Sign factor for \(P^{-n}_l\)
@@ -2191,6 +2653,7 @@ Printed: \(\Gamma(N+2\alpha)\) in the numerator.
 Correct: \(\Gamma(n+2\alpha)\).
 Evidence: \(N\) is undefined; with \(n\) the formula agrees numerically with the definition
 (VK §3.5.8 (4)) for \(n=4,5,6\) and several \(\alpha\).
+Published: [Klimyk 2006], p. 292, formula (8).
 Target: [VK06.3.22]
 
 ### E06.3.05. Missing \((2m)!\) in the contour integral for \(C^{m+1/2}_{l-m}\)
@@ -2216,6 +2679,70 @@ Evidence: for \(l=1\) the printed right side is \(z/2\). The corrected form is t
 \(m=n=0\) of the fifth expression of §6.3.4 (1), and holds numerically for \(l\le5\).
 Target: [VK06.3.26]
 
+### E06.3.07. Basis vector in the inner product before (6.3.2.5)
+
+Status: Confirmed.
+Location: Vol 1, §6.3.2, p. 284, l. 2.
+Printed: \((e^{ik\varphi},e^{-im\varphi})=(l-m)!(l+m)!\delta_{km}\).
+Correct: \((e^{-ik\varphi},e^{-im\varphi})=(l-m)!(l+m)!\delta_{km}\).
+Evidence: In the trigonometric realization the basis vectors are \(e^{-in\varphi}\) (see (4)), and
+the integral on the next line,
+\(\frac{(l-m)!(l+m)!}{2\pi}\delta_{km}\int_0^{2\pi}e^{-im\varphi}e^{im\varphi}d\varphi\), pairs
+\(e^{-ik\varphi}\) with \(e^{-im\varphi}\); the printed pairing of \(e^{ik\varphi}\) with
+\(e^{-im\varphi}\) vanishes for \(k=m\ne0\).
+Published: [Klimyk 2006], p. 284, l. 2.
+Target: [VK06.3.08].
+
+### E06.3.08. Factorial in the third form of (6.3.3.3)
+
+Status: Confirmed.
+Location: Vol 1, §6.3.3, p. 285, (3), third expression.
+Printed: \(\Big[\frac{(l-n)!(l+m)!}{(-l-m)!(l+n)!}\Big]^{1/2}\).
+Correct: \(\Big[\frac{(l-n)!(l+m)!}{(l-m)!(l+n)!}\Big]^{1/2}\).
+Evidence: The third form arises from the second by a transformation of \(F\) that leaves the
+factorial bracket unchanged; at \(l=3\), \(m=1\), \(n=-1\), \(\theta=0.9\) the corrected form agrees
+with the integral (6.3.2.5) to \(10^{-25}\), while the printed bracket contains \((-4)!\).
+Published: [Klimyk 2006], p. 285, l. 8.
+Target: [VK06.3.10].
+
+### E06.3.09. Angle \(\psi\) in (6.3.3.5)
+
+Status: Confirmed.
+Location: Vol 1, §6.3.3, p. 285, (5).
+Printed: \(t^l_{mn}(g)=i^{m-n}e^{-i(m\varphi+n\varphi)}P^l_{mn}(\cos\theta)\).
+Correct: \(t^l_{mn}(g)=i^{m-n}e^{-i(m\varphi+n\psi)}P^l_{mn}(\cos\theta)\).
+Evidence: (5) restates (2) on p. 284, \(t^l_{mn}(g)=e^{-i(m\varphi+n\psi)}t^l_{mn}(\theta)\), with
+(4) substituted.
+Published: [Klimyk 2006], p. 285, formula (5).
+Target: [VK06.3.09].
+
+### E06.3.10. Hypergeometric parameter in the formula for \(P^l_{n0}\)
+
+Status: Confirmed.
+Location: Vol 1, §6.3.7, p. 289, display after (2).
+Printed: \(F\big(-l,l+n;1-n;\frac{1-z}2\big)\).
+Correct: \(F\big(-l,l+1;1-n;\frac{1-z}2\big)\).
+Evidence: At \(n=0\) the formula must reduce to (2), \(P^l_{00}(z)=P_l(z)=F(-l,l+1;1;\frac{1-z}2)\);
+at \(l=3\), \(z=0.35\) this gives \(-0.41781\), whereas \(F(-l,l;1;\frac{1-z}2)=-0.36703\).
+Published: [Klimyk 2006], p. 289, l. 8.
+Target: [VK06.3.17].
+
+### E06.3.11. \(e^{-m\varphi}\) and \((l+n!\) in §6.3.2
+
+Status: Confirmed.
+Location: Vol 1, §6.3.2, p. 284, display before (5), and (5).
+Printed:
+\((\Phi(e^{i\varphi}),e^{-m\varphi})=\frac{(l-m)!(l+m)!}{2\pi}\int_0^{2\pi}\Phi(e^{i\varphi})e^{im\varphi}d\varphi\);
+in (5) the denominator under the square root is \((l-n)!(l+n!\)
+Correct:
+\((\Phi(e^{i\varphi}),e^{-im\varphi})=\frac{(l-m)!(l+m)!}{2\pi}\int_0^{2\pi}\Phi(e^{i\varphi})e^{im\varphi}d\varphi\);
+in (5) the denominator is \((l-n)!(l+n)!\).
+Evidence: The display is the preceding relation
+\((e^{-ik\varphi},e^{-im\varphi})=\frac{(l-m)!(l+m)!}{2\pi}\delta_{km}\int_0^{2\pi}e^{-im\varphi}e^{im\varphi}d\varphi\)
+extended linearly, so the basis vector is \(e^{-im\varphi}\). The parenthesis in \((l+n!\) is
+unbalanced, and (6) on the same page prints \((l-n)!(l+n)!\).
+Target: [VK06.3.08].
+
 ### E06.4.01. Range of the product \(\beta_{km}\)
 
 Status: Confirmed.
@@ -2237,6 +2764,7 @@ Correct: \(n=l-\epsilon+k\), \(k=1,2,3,\dots\).
 Evidence: \(\mathfrak D^0_l\) is spanned by \(e^{-in\theta}\), \(-l-\epsilon\le n\le l-\epsilon\),
 so \(\mathfrak D^-_l\ominus\mathfrak D^0_l\) corresponds to \(n\ge l-\epsilon+1\); for
 \(n=-l-\epsilon+k\) with \(k\le2l\), (7) has a pole in the denominator and vanishes.
+Published: [Klimyk 2006], p. 304, l. −3.
 Target: [VK06.4.06]
 
 ### E06.4.03. Casimir operator of \(T_\chi\)
@@ -2357,6 +2885,7 @@ P^l_{mn}(\cosh t)\), the inverse of §6.5.3 (4), which the text cites.
 Evidence: §6.5.3 (4) holds (numerically, \(l=1,\frac32,2\), all \(m,n\), with the branch
 of the Conventions). For \(l=2\), \(m=2\), \(n=0\), \(t=0.9\): \(\mathfrak P=0.44599\),
 corrected right side \(0.44599\), printed right side \(2.67593\).
+Published: [Klimyk 2006], p. 320, formula (1).
 Target: [VK06.5.16]
 
 ### E06.5.04. Sign in the Jacobi form for \(m\le n<l\le-\frac12\)
@@ -2444,17 +2973,33 @@ first line of (10) and the corrected second line both give \(0.94038\). The firs
 of (10) is correct.
 Target: [VK06.5.22]
 
+### E06.5.11. Contour in (6.5.4.4)
+
+Status: Confirmed.
+Location: Vol 1, §6.5.4, p. 315, (4).
+Printed: \(\oint_\Gamma\).
+Correct: \(\oint_{\Gamma'}\).
+Evidence: After the substitution (3) the integral is taken in the \(w\)-plane; \(\Gamma\) is the
+circle \(|z|=a\) of the \(z\)-plane, and the text after (5) defines \(\Gamma'\) as the contour
+around \([e^{-t},e^t]\) on which the integrand of (4) is single-valued.
+Published: [Klimyk 2006], p. 315, formula (4).
+Target: [VK06.5.09].
+
 ### E06.6.01. Missing factor \(i\) in the addition-theorem exponents
 
 Status: Confirmed.
 Location: Vol 1, §6.6.1, p. 326, (4); §6.6.2, p. 327, (1), (2).
 Printed: \(\sum_k e^{-k\varphi_2}\mathcal P^\ell_{mk}(\cosh t_1)\mathcal P^\ell_{kn}(\cosh t_2)\) in
 (4) and \(\sum_k e^{-k\varphi_2}P^k_\ell(\cos\theta_1)P^{-k}_\ell(\cos\theta_2)\) in §6.6.2 (2);
-§6.6.2 (1) ends with a stray factor "\(m\)" after \(\mathfrak P^{-k}_\tau(\cosh t_2)\).
-Correct: \(e^{-ik\varphi_2}\) in both sums, and no factor \(m\) in §6.6.2 (1).
+§6.6.2 (1) ends with a stray factor "\(m\)" after \(\mathfrak P^{-k}_\tau(\cosh t_2)\); the left
+side of
+§6.6.2 (2) has the argument \(\cosh\theta_1\cosh\theta_2+\dots\).
+Correct: \(e^{-ik\varphi_2}\) in both sums, no factor \(m\) in §6.6.2 (1), and
+\(\cos\theta_1\cos\theta_2\) in place of \(\cosh\theta_1\cosh\theta_2\) in §6.6.2 (2).
 Evidence: (4) and §6.6.2 (2) are the cases of §6.6.1 (1) with
 \(t^\chi_{kn}(g(\varphi_2,t_2,0))=e^{-ik\varphi_2}t^\chi_{kn}(g(0,t_2,0))\), as in (2)–(3);
 the corrected forms were checked numerically.
+Published: [Klimyk 2006], p. 327, l. 11; p. 327, formula (2).
 Target: [VK06.6.04], [VK06.6.05], [VK06.6.06].
 
 ### E06.6.02. Factorials of negative numbers in the Gegenbauer addition theorem
@@ -2510,6 +3055,33 @@ disagrees with the right side of (1). It remains open which hypothesis, branch o
 missing.
 Target: [VK06.6.14].
 
+### E06.6.05. Sign of \(x_3^2\) in the hyperboloid of §6.6.3
+
+Status: Confirmed.
+Location: Vol 1, §6.6.3, p. 328, l. 10.
+Printed: \(-x_1^2-x_2^2-x_3^2=1\), \(x_3>0\).
+Correct: \(-x_1^2-x_2^2+x_3^2=1\), \(x_3>0\).
+Evidence: The printed equation has no real solutions; the parametrization \(x_1=\sinh
+t\sin\varphi\), \(x_2=\sinh t\cos\varphi\), \(x_3=\cosh t\) of the same paragraph and the metric (4)
+belong to \(-x_1^2-x_2^2+x_3^2=1\).
+Published: [Klimyk 2006], p. 328, l. 10.
+Target: [VK06.6.10].
+
+### E06.6.06. \(\sinh t_2\sinh t_2\) in (2), (3) of §6.6.3
+
+Status: Confirmed.
+Location: Vol 1, §6.6.3, p. 328, (2), (3).
+Printed: \(\mathfrak P^k_\tau(\cosh t_1)\mathfrak P^{-k}_\tau(\cosh
+t_2)=\frac1{2\pi}\int_0^{2\pi}e^{ik\varphi_2}\mathfrak P_\tau(\cosh t_1\cosh t_2+\sinh t_2\sinh
+t_2\cos\varphi_2)d\varphi_2\), and the same argument in (3).
+Correct: argument \(\cosh t_1\cosh t_2+\sinh t_1\sinh t_2\cos\varphi_2\) in (2) and (3).
+Evidence: (2) is the case \(m=n=0\) of (1), where \(\cosh t=\cosh t_1\cosh t_2+\sinh t_1\sinh
+t_2\cos\varphi_2\) by §6.1.1 (13); (5), (6) and the text after (4) on the same page use \(\sinh
+t_1\sinh t_2\). Numerically (\(\tau=0.31\), \(t_1=0.7\), \(t_2=1.1\)) the left side of (3) is
+\(1.1760243\), the corrected right side agrees to 20 digits, and the printed one gives
+\(1.1530705\).
+Target: [VK06.6.09].
+
 ### E06.7.01. \(\cos t\) for \(\cosh t\)
 
 Status: Confirmed.
@@ -2557,12 +3129,15 @@ Target: [VK06.7.07].
 
 Status: Confirmed.
 Location: Vol 1, §6.7.2, p. 335, sentence after (7) (same misprint as §6.3.6 (1′), p. 288).
-Printed: \(P^\ell_{mn}(z)=(-1)^{m+n}P^\ell_{nm}(z)\).
+Printed: on p. 335, \(P^\ell_{mn}(z)=(-1)^{m+n}P^\ell_{mn}(z)\), with the same index order on
+both sides; in §6.3.6 (1′), p. 288, the factor \((-1)^{m+n}\).
 Correct: \(P^\ell_{mn}(z)=(-1)^{m-n}P^\ell_{nm}(z)\).
 Evidence: for half-integral \(\ell\), \(m+n\) is odd when \(m-n\) is even, so the printed rule
 would give \(P^\ell_{mm}=-P^\ell_{mm}\). Numerically, \(\ell=\frac52\), \(m=-\frac32\),
 \(n=\frac12\),
 \(\cos\theta=0.35\): \(P_{nm}=P_{mn}=0.51922\).
+Published: [Klimyk 2006], p. 335, l. −2. Klimyk corrects the index order to \(P^\ell_{nm}\) and
+keeps the sign \((-1)^{m+n}\); Koornwinder corrects the sign in §6.3.6 (1′).
 Target: [VK06.7.08].
 
 ### E06.7.05. Jacobi relation (3) is false
@@ -2573,11 +3148,12 @@ Printed: \((n+1)P^{(\alpha,\beta)}_{n+1}(z)=\big(n+\frac{\alpha+\beta}2+1\big)z
 \big[P^{(\alpha+1,\beta)}_n(z)+P^{(\alpha,\beta+1)}_n(z)\big]\).
 Correct: a valid relation of this type is
 \(2(n+1)P^{(\alpha,\beta)}_{n+1}=(n+\alpha+1)(1+z)P^{(\alpha,\beta+1)}_n
--(n+\beta+1)(1-z)P^{(\alpha+1,\beta)}_n\). The relation the authors intended is not
-determined. Formulas (4) and (5) are correct.
+-(n+\beta+1)(1-z)P^{(\alpha+1,\beta)}_n\), and it is the replacement for (3) given in the
+published lists. Formulas (4) and (5) are correct.
 Evidence: at \(n=0\), \(\alpha=\beta=0\) the printed relation reads \(z=2z\). The replacement
 follows from DLMF 18.9.5–18.9.6 and was checked numerically (\(\alpha=0.37\),
 \(\beta=-0.61\), \(n=4\), \(z=0.29\)).
+Published: [Koornwinder 2000], p. 338, §6.7.4, formula (3).
 Target: [VK06.7.13].
 
 ### E06.7.06. Jacobi relation (6) misprinted
@@ -2591,6 +3167,7 @@ Correct: \((n+\alpha)P^{(\alpha-1,\beta)}_n+(n+\beta)P^{(\alpha,\beta-1)}_n
 Evidence: at \(n=0\) the printed form gives \(2\alpha(\alpha+\beta)=2(\alpha+\beta)\). The
 correction is \((n+\alpha)\cdot\)(7) \(+\,(n+\beta)\cdot\)(8), and with (2) it gives (7) and
 (8), which are printed correctly. Checked numerically.
+Published: [Koornwinder 2000], p. 339, (6).
 Target: [VK06.7.14].
 
 ### E06.7.07. Sign of the coefficient \(c\) in the Jacobi derivative formula
@@ -2603,7 +3180,7 @@ Evidence: comparison of leading coefficients in \((1-z^2)P_n'=aP_{n-1}+bP_n+cP_{
 side has leading coefficient \(-nk_n\) and \(P_{n+1}\) has a positive leading coefficient for
 real \(\alpha,\beta>-1\), so \(c<0\). Numerically (\(\alpha=0.37\), \(\beta=-0.61\), \(n=4\),
 \(z=0.29\)) the left side is \(-1.67987\), the printed right side \(-0.49113\), and the corrected
-one \(-1.67987\). (11) and (12), derived with (10), are correct.
+one \(-1.67987\). (12), derived with (10), is correct; (11) has the separate misprint [E06.7.11].
 Target: [VK06.7.15].
 
 ### E06.7.08. Variable \(t\) in the contour integral for \(P^\ell_{mn}\)
@@ -2615,6 +3192,7 @@ Correct: \(t=\frac{w-\cos\theta+\sqrt{w^2-2w\cos\theta+1}}{i\sin\theta}\), \(|t|
 Evidence: this is the substitution of §6.5.4 (5) continued to \(t\to i\theta\), and with it
 (1) reproduces \(P^\ell_{mn}(\cos\theta)\) numerically for five index triples (contour
 \(|w|=3\)).
+Published: [Klimyk 2006], p. 344, l. −1.
 Target: [VK06.7.24].
 
 ### E06.7.09. Wrong root of the quadratic in the degree generating functions
@@ -2635,6 +3213,9 @@ Evidence: for small \(h\), \(t\sim-2i/(h\sin\theta)\), so the printed (7)–(9) 
 \(m=1\) has left side \(-0.167193\), printed right side \(-7.3133i\), corrected \(-0.167193\). The
 corrected (5) holds for \((m,n)=(2,-1),(\frac32,-\frac12),(2,-2),(3,-1)\), and (3) holds as
 printed with \(\ell\ge|m|\).
+Published: [Klimyk 2006], p. 345, l. 8. Klimyk replaces the condition \(m\le n\le0\) by \(m\ge
+n\ge0\); the identity fails numerically for \(m>0\) (for example \((m,n)=(1,0)\)), and the printed
+condition stands.
 Target: [VK06.7.25], [VK06.7.26].
 
 ### E06.7.10. Sign of the Mellin generating functions
@@ -2649,6 +3230,17 @@ Evidence: at \(w=0.7\), \(t=1\), \(a=-\frac12\) the left side of (3) is \(0.5234
 \(+\frac i2\int\) gives \(0.523401\). The sign is inherited from the sign error in §6.5.4 (13),
 (16), from which (1) and (3) are obtained by Mellin inversion.
 Target: [VK06.7.27].
+
+### E06.7.11. Index of the last term in (6.7.4.11)
+
+Status: Confirmed.
+Location: Vol 1, §6.7.4, p. 340, (11).
+Printed: \(-2(n+\alpha)(n+\beta)(2n+\alpha+\beta+2)P^{(\alpha,\beta)}_n(z)\).
+Correct: \(-2(n+\alpha)(n+\beta)(2n+\alpha+\beta+2)P^{(\alpha,\beta)}_{n-1}(z)\).
+Evidence: At \(\alpha=0.37\), \(\beta=-0.61\), \(n=4\), \(z=0.29\) the corrected recurrence holds to
+\(10^{-24}\); with the printed \(P_n\) the residual is \(78.47\).
+Published: [Klimyk 2006], p. 340, l. 11.
+Target: [VK06.7.16].
 
 ### E06.8.01. Factor \((p-1)/2\) in a Krawtchouk symmetry
 
@@ -2692,6 +3284,7 @@ Correct: \(-\frac{(N-x)s}NK_{s-1}(x;p;N-1)\).
 Evidence: the left side is \((N-x)p\Delta K_s\), and \(\Delta K_s(x;p;N)=-\frac s{Np}
 K_{s-1}(x;p;N-1)\). Numerically (\(N=5\), \(p=0.3\), \(s=2\), \(x=3\)) all three members equal
 \(1.2\) with \(N-x\).
+Published: [Klimyk 2006], p. 349, l. −10.
 Target: [VK06.8.06].
 
 ### E06.8.05. Alternating Krawtchouk sum fails at \(x=N\)
@@ -2731,11 +3324,12 @@ Target: [VK06.8.09].
 Status: Confirmed.
 Location: Vol 1, §6.8.2, p. 351, (6).
 Printed:
-\(M_s(x;\gamma;c)=\frac{\Gamma(\gamma+x+c)}{\Gamma(\gamma+x)}F(-x,-s;1-\gamma-s-x;\frac1c)\).
+\(M_s(x;\gamma;c)=\frac{\Gamma(\gamma+x+c)}{\Gamma(\gamma+z)}F(-x,-s;1-\gamma-s-x;\frac1c)\).
 Correct: \(\frac{\Gamma(\gamma+x+s)}{\Gamma(\gamma+x)}F(-x,-s;1-\gamma-s-x;\frac1c)\).
 Evidence: \(\gamma=2.3\), \(c=0.4\), \(s=3\), \(x=2\): both \(M_s\) and the corrected right side
 equal
 \(-37.023\); the printed prefactor gives a different value.
+Published: [Klimyk 2006], p. 351, formula (6). [Koornwinder 2000], p. 351, (6).
 Target: [VK06.8.10].
 
 ### E06.8.08. Meixner special sum at \(z=1\) diverges
@@ -2809,6 +3403,7 @@ Correct: \(\overline{\mathcal K_n(x;p,\tau)}\) in place of \(\mathcal K_n(x;p,\t
 Evidence: (8) is a Hermitian orthogonality with \(\overline{\mathcal K_k}\), and
 \(\mathcal K_n(x;p,i\rho-\frac12)\) is not real in general (e.g. \(\rho=0.8\), \(p=2.5\), \(x=2\),
 \(n=1\): \(0.0303-0.5391i\)).
+Published: [Klimyk 2006], p. 356, formula (12).
 Target: [VK06.8.19].
 
 ### E06.8.13. Complementary-series orthogonality: missing sign and wrong range
@@ -2877,6 +3472,29 @@ system is \(\pi^{-1/2}T_0\), \((2/\pi)^{1/2}T_n\) (\(n\ge1\)).
 Evidence: for \(m=n=0\) the printed left side equals 2.
 Target: [VK06.9.08].
 
+### E06.9.04. Diagonal matrix elements in the character formula (6.9.2.1)
+
+Status: Confirmed.
+Location: Vol 1, §6.9.2, p. 358, (1).
+Printed: \(\chi_\ell(u)=\sum_{m=-\ell}^\ell t^\ell_{mn}(u)\).
+Correct: \(\chi_\ell(u)=\sum_{m=-\ell}^\ell t^\ell_{mm}(u)\).
+Evidence: The character is the trace of \(T_\ell(u)\); the second sum of (1), with \(P^\ell_{mm}\),
+is printed correctly.
+Published: [Klimyk 2006], p. 358, formula (1).
+Target: [VK06.9.04].
+
+### E06.9.05. Sign of \(\psi\) in (6.9.2.5)
+
+Status: Confirmed.
+Location: Vol 1, §6.9.2, p. 359, (5).
+Printed: \(\sum_{m=-\ell}^\ell e^{-im(\varphi-\psi)}P^\ell_{mm}(\cos\theta)\).
+Correct: \(\sum_{m=-\ell}^\ell e^{-im(\varphi+\psi)}P^\ell_{mm}(\cos\theta)\).
+Evidence: (5) compares (1), which contains \(e^{-im(\varphi+\psi)}\), with (3′) and (4); at
+\(\ell=2\), \((\varphi,\theta,\psi)=(0.4,1.1,0.9)\) the corrected sum equals
+\(\sin(\ell+\frac12)t/\sin\frac t2=-1.13274\), the printed one gives \(0.26105\).
+Published: [Klimyk 2006], p. 359, formula (5).
+Target: [VK06.9.04].
+
 ### E06.10.01. Normalization of \(\widehat C^{\ell+1/2}_k\)
 
 Status: Confirmed.
@@ -2889,6 +3507,7 @@ Evidence:
 \(\|C^\lambda_k\|^2=\frac{\pi2^{1-2\lambda}\Gamma(k+2\lambda)}{k!(k+\lambda)\Gamma(\lambda)^2}\)
 for the weight \((1-x^2)^{\lambda-1/2}\). Numerically (\(\ell=2\), \(k=3\)) the printed function has
 squared norm \(899.28\), the corrected one 1.
+Published: [Klimyk 2006], p. 365, l. −1.
 Target: [VK06.10.02].
 
 ### E06.10.02. Missing \(i\) in the exponents \(e^{-(n\psi+m\varphi)}\)
@@ -2923,6 +3542,7 @@ Correct: \(\cos\theta(t)=\cos\theta\cos t-\sin\theta\sin t\cos\psi\).
 Evidence: \(u(\varphi,\theta,\psi)\omega_1(t)=u(\varphi,0,0)\,u(0,\theta,0)\,u(\psi,t,0)\), so
 §6.1.1 (8)
 applies with \(\varphi_2=\psi\); (3′) and the stated \(\theta'(0)=\cos\psi\) use \(\psi\).
+Published: [Klimyk 2006], p. 371, l. 3.
 Target: [VK06.10.07].
 
 ### E06.10.05. Closed form of the Legendre triple-product kernel
@@ -3026,6 +3646,7 @@ Location: Vol 1, §7.1.5, p. 381.
 Printed: \([B_+,B_3]=-B_-\), \([B_+,B_-]=k_2B_3\).
 Correct: \([B_+,B_3]=-B_+\), \([B_+,B_-]=2B_3\).
 Evidence: direct computation with the printed differential operators \(B_\pm,B_3\).
+Published: [Klimyk 2006], p. 381, l. −6.
 Target: [VK07.1.10].
 
 ### E07.2.01. Strip of the lower triangular kernel
@@ -3037,6 +3658,31 @@ Correct: \(-1-2\mathrm{Re}\,\tau<\mathrm{Re}\,\mu\).
 Evidence: the kernel is a beta integral whose convergence at infinity requires
 \(\mathrm{Re}(\mu+2\tau+1)>0\).
 Target: [VK07.2.07].
+
+### E07.2.02. \(f\) for \(F\) in (14) of §7.2.1
+
+Status: Confirmed.
+Location: Vol 1, §7.2.1, (14), p. 384.
+Printed:
+\(\cos^{\mu-\lambda+2\tau}\frac\theta2\,f\big(\lambda,-\mu-2\tau;\lambda-\mu+1;-\tan^2\frac\theta2\big)\)
+Correct:
+\(\cos^{\mu-\lambda+2\tau}\frac\theta2\,F\big(\lambda,-\mu-2\tau;\lambda-\mu+1;-\tan^2\frac\theta2\big)\).
+Evidence: Evident misprint: \(f\) is not defined in §7.2.1, and (12), (13), (15) use the Gauss
+function \(F\) in the same position.
+Published: [Klimyk 2006], p. 384, l. 6.
+Target: [VK07.2.04].
+
+### E07.2.03. Superscript of the kernels in (3), (4) of §7.2.2
+
+Status: Confirmed.
+Location: Vol 1, §7.2.2, (3), (4), p. 385.
+Printed: \(K^{-22}_{+-}(\lambda,\mu;\chi;z)=0\), \(K^{-22}_{-+}(\lambda,\mu;\chi;z)=\dots\).
+Correct: \(K^{22}_{+-}(\lambda,\mu;\chi;z)=0\), \(K^{22}_{-+}(\lambda,\mu;\chi;z)=\dots\).
+Evidence: Evident misprint: the section computes the entries of \(\mathbf
+K^{22}(\lambda,\mu;\chi;z)\) (heading of §7.2.2, (2), (5)); no kernel \(K^{-22}\) is defined.
+Published: [Klimyk 2006], p. 385, formulas (2) and (3). [Klimyk 2006] refers to these displays as
+formulas (2) and (3); in the printed numbering they are (3) and (4).
+Target: [VK07.2.06].
 
 ### E07.3.01. Inverted parameter in the factorization of §7.3.1
 
@@ -3058,6 +3704,7 @@ Correct: factor \((1+x)^{\lambda+\mu-\omega}\), conditions
 \(\max(\mathrm{Re}\,\lambda,\mathrm{Re}\,\mu)<a<\mathrm{Re}\,\omega\), \(x>0\).
 Evidence: numerical quadrature; with \(a=1.6>\omega=1.5\) (allowed by the printed
 conditions) the integral takes a different value.
+Published: [Klimyk 2006], p. 394, l. 2.
 Target: [VK07.3.10].
 
 ### E07.3.03. Barnes integral (10) of §7.3.4
@@ -3071,6 +3718,8 @@ Correct: numerator \(\Gamma(\omega-\lambda-\mu-\nu)\Gamma(-\nu)\); conditions \(
 Evidence: numerical quadrature of the corrected integral against
 \(x^{\omega-1}F(\lambda,\mu;\omega;x)\); \(\mathrm{Re}\,\omega>1\) is needed for absolute
 convergence.
+Published: [Klimyk 2006], p. 394, l. −1. Klimyk gives the contour condition
+\(a<0<\mathrm{Re}(\omega-\mu)\) and does not correct the numerator.
 Target: [VK07.3.11].
 
 ### E07.3.04. Argument of \(F\) in (14) of §7.3.4
@@ -3094,6 +3743,47 @@ differences at \(0,\infty,1\)).
 Evidence: the source's own example (3), \(F(\lambda,\lambda+\frac12;\mu;z^2)\), is not
 covered by the printed criterion; DLMF 15.8(iii).
 Target: [VK07.3.18].
+
+### E07.3.06. \(f\) for \(F\) in (14) of §7.3.2
+
+Status: Confirmed.
+Location: Vol 1, §7.3.2, (14), p. 389.
+Printed: \(\Big[1-\frac{2\gamma-\alpha-\beta-1}{\gamma-1}z\Big]f(\alpha,\beta;\gamma;z)\).
+Correct: \(\Big[1-\frac{2\gamma-\alpha-\beta-1}{\gamma-1}z\Big]F(\alpha,\beta;\gamma;z)\).
+Evidence: Evident misprint: \(f\) is not defined in §7.3.2, and with \(F\) the relation is the Gauss
+contiguous relation DLMF 15.5.18 (rearranged).
+Published: [Klimyk 2006], p. 389, l. 6.
+Target: [VK07.3.04].
+
+### E07.3.07. Argument of \(\tan\) in the display after (9) of §7.3.4
+
+Status: Confirmed.
+Location: Vol 1, §7.3.4, display after (9), p. 394.
+Printed:
+\(\frac{\tan^{2(\lambda+\mu+2\tau)}}{\Gamma(1-\lambda-\mu-2\tau)}F(\dots;-\tan^{-2}\theta)\)
+Correct:
+\(\frac{\tan^{2(\lambda+\mu+2\tau)}\theta}{\Gamma(1-\lambda-\mu-2\tau)}F(\dots;-\tan^{-2}\theta)\).
+Evidence: The power of \(\tan\theta\) comes from the factorization of \(u(\theta)\) before (8)
+(entries \(\tan\theta\), \(\cos\theta\)); at \(\tau=-0.6\), \(\lambda=0.3\), \(\mu=0.2\),
+\(\theta=0.6\), \(a=-0.2\) the left side with \(\tan^{2(\lambda+\mu+2\tau)}\theta\) is \(0.98042\)
+and the Barnes integral on the right \(0.9817\) (slowly convergent quadrature).
+Published: [Klimyk 2006], p. 394, l. −8.
+Target: [VK07.3.11].
+
+### E07.3.08. Gamma factor in (12) of §7.3.4
+
+Status: Confirmed.
+Location: Vol 1, §7.3.4, (12), p. 395.
+Printed:
+\(\frac{\Gamma(\lambda)\Gamma(\lambda)\Gamma(\omega-\lambda)\Gamma(\omega-\mu)}{\Gamma(\omega)}F\big(\lambda,\mu;\omega;\frac{x-1}x\big)\)
+Correct:
+\(\frac{\Gamma(\lambda)\Gamma(\mu)\Gamma(\omega-\lambda)\Gamma(\omega-\mu)}{\Gamma(\omega)}F\big(\lambda,\mu;\omega;\frac{x-1}x\big)\).
+Evidence: The left side is symmetric in \(\lambda,\mu\), so the right side must be; at \(x=1\) the
+formula is the second Barnes lemma, whose value is
+\(\Gamma(\lambda)\Gamma(\mu)\Gamma(\omega-\lambda)\Gamma(\omega-\mu)/\Gamma(\omega)\), and (14) on
+the same page has \(\Gamma(\lambda)\Gamma(\mu)\).
+Published: [Klimyk 2006], p. 395, l. 9.
+Target: [VK07.3.12].
 
 ### E07.4.01. Relation of \(\mathfrak P^\tau_{mn}\) to §6.5.3
 
@@ -3145,6 +3835,7 @@ Printed: \(c_{\alpha\alpha}(2\alpha)\).
 Correct: \(c_{\alpha\alpha}(2\lambda)\).
 Evidence: the variable of the \(c\)-function is the spectral parameter; numerical check of
 the reduction formula.
+Published: [Klimyk 2006], p. 402, l. −6.
 Target: [VK07.4.12].
 
 ### E07.4.06. Differentiation formula (14) of §7.4.3
@@ -3227,6 +3918,56 @@ C^\alpha_{-\tau-2\alpha}(z)\).
 Evidence: numerical evaluation from the hypergeometric definition.
 Target: [VK07.4.30].
 
+### E07.4.14. \(\gamma\) for \(\Gamma\) in (10) of §7.4.1
+
+Status: Confirmed.
+Location: Vol 1, §7.4.1, (10), p. 400.
+Printed: \(\frac{\gamma(\tau+\mu+1)}{\Gamma(\tau-\mu+1)}\mathfrak P^\tau_{\lambda\mu}(z)\).
+Correct: \(\frac{\Gamma(\tau+\mu+1)}{\Gamma(\tau-\mu+1)}\mathfrak P^\tau_{\lambda\mu}(z)\).
+Evidence: Evident misprint: \(\gamma\) is not defined here, and (10) is derived from (9), whose
+gamma ratio is \(\Gamma(\tau-\mu+1)/\Gamma(\tau+\mu+1)\); (11) has the same structure with
+\(\Gamma\).
+Published: [Klimyk 2006], p. 400, l. 8.
+Target: [VK07.4.05].
+
+### E07.4.15. Lower limit in (17) of §7.4.3
+
+Status: Confirmed.
+Location: Vol 1, §7.4.3, (17), p. 403.
+Printed: \(e^{i\lambda
+s}=\frac1{c_{\alpha\beta}(-\lambda)}\int_0^\infty\Phi^{(\alpha,\beta)}_\lambda(t)A_{\alpha\beta}(s,t)dt\).
+Correct: \(e^{i\lambda
+s}=\frac1{c_{\alpha\beta}(-\lambda)}\int_s^\infty\Phi^{(\alpha,\beta)}_\lambda(t)A_{\alpha\beta}(s,t)dt\).
+Evidence: (17) is obtained from (13), whose integral runs over \(t>s\); the kernel
+\(A_{\alpha\beta}(s,t)\) of (18)–(19) contains \((\cosh t-\cosh s)^{\alpha-1/2}\) and is not defined
+(or not zero) for \(t<s\).
+Published: [Klimyk 2006], p. 403, l. −8.
+Target: [VK07.4.15].
+
+### E07.4.16. Lower limit in (18) of §7.4.3
+
+Status: Confirmed.
+Location: Vol 1, §7.4.3, (18), p. 403.
+Printed: \(\int_0^t(\cosh2t-\cosh2u)^{\beta-1/2}(\cosh u-\cosh s)^{\alpha-\beta-1}\sinh u\,du\).
+Correct: \(\int_s^t(\cosh2t-\cosh2u)^{\beta-1/2}(\cosh u-\cosh s)^{\alpha-\beta-1}\sinh u\,du\).
+Evidence: For \(u<s\) the base \(\cosh u-\cosh s\) is negative; the substitution \(x=\frac{\cosh
+t-\cosh u}{\cosh t-\cosh s}\) used to obtain (19) maps \([s,t]\) onto \([0,1]\), and (19) agrees
+numerically with the integral over \([s,t]\).
+Published: [Klimyk 2006], p. 403, l. −5.
+Target: [VK07.4.15].
+
+### E07.4.17. \(\cos u\) for \(\cosh u\) in the substitution after (18) of §7.4.3
+
+Status: Confirmed.
+Location: Vol 1, §7.4.3, p. 403, line after (18).
+Printed: \(x=\frac{\cosh t-\cos u}{\cosh t-\cosh s}\).
+Correct: \(x=\frac{\cosh t-\cosh u}{\cosh t-\cosh s}\).
+Evidence: The substitution must map the range \([s,t]\) of the integral (18) (see [E07.4.16]) onto
+\([0,1]\) and turn \((\cosh2t-\cosh2u)=2(\cosh t-\cosh u)(\cosh t+\cosh u)\) and \((\cosh u-\cosh
+s)\) into powers of \(x\) and \(1-x\); \(\frac{\cosh t-\cosh u}{\cosh t-\cosh s}\) does this, while
+with \(\cos u\) the point \(u=t\) is not mapped to \(0\).
+Target: [VK07.4.15].
+
 ### E07.5.01. Exponential factor in (6)–(9) of §7.5.1
 
 Status: Confirmed.
@@ -3244,11 +3985,12 @@ Target: [VK07.5.02], [VK07.5.03], [VK07.5.04].
 
 Status: Confirmed.
 Location: Vol 1, §7.5.1, (10), p. 411.
-Printed: \(e^{-2t_1}=\frac{z_1\cosh\varphi-\sinh\varphi}{z_2\sinh\varphi-\cosh\varphi}
-\tanh^{-1}\varphi\).
+Printed: \(e^{-2t_1}\frac{z_1\cosh\varphi-\sinh\varphi}{z_2\sinh\varphi-\cosh\varphi}
+\tanh^{-1}\varphi\), without the sign "\(=\)" after \(e^{-2t_1}\).
 Correct: \(e^{-2t_1}=\frac{z_1\cosh\varphi-\sinh\varphi}{z_1\sinh\varphi-\cosh\varphi}
 \coth\varphi\).
 Evidence: direct multiplication of \(d(t_1)h(\theta)d(t_2)\).
+Published: [Klimyk 2006], p. 411, formula (10).
 Target: [VK07.5.05].
 
 ### E07.5.03. Sign of \(t_1\) in (13) of §7.5.1
@@ -3325,13 +4067,18 @@ Status: Open check.
 Location: Vol 1, §7.5.3, (7)–(9), p. 418.
 Printed: (7), (8), (9) as transcribed in [VK07.5.18] and [VK07.5.19](1); contour condition
 "\(0<a<\mathrm{Re}\,\omega<a-1<2\)".
-Correct: unknown. The contour condition is self-contradictory (probably
-\(a+1\) is meant). The residue series (9) does not equal its printed right side (at test
-parameters \(0.897\) against \(0.312\), and \(0.412\) with \(\omega-\mu+1\) in place of
-\(\omega-\mu\)); the right sides of (7) and (9) are also mutually inconsistent
-(\(F(\lambda,\omega-\mu+1;\dots)\) against \(F(\lambda,\omega-\mu;\dots)\), and different
-powers of \(\tanh\theta_1\), \(\tanh\theta_3\)).
-Evidence: numerical summation of (9).
+Correct: unknown. The contour condition is self-contradictory; \(a+1\) is meant. The right
+sides of (7) and (9) are mutually inconsistent (\(F(\lambda,\omega-\mu+1;\dots)\) against
+\(F(\lambda,\omega-\mu;\dots)\), and different powers of \(\tanh\theta_1\), \(\tanh\theta_3\)).
+The residue series (9) diverges, so it is not a convergent identity and does not follow from
+(7) by residues as printed.
+Evidence: at \(\lambda=0.3\), \(\omega=0.6\), \(\mu=0.8\) and \((\theta_1,\theta_3)=(1.1,0.4)\) or
+\((2,0.3)\), the terms of (9) as printed grow without bound (about \(10^{37}\) and \(10^{39}\) at
+\(n=80\)); mpmath, with the page image checked.
+Published: [Klimyk 2006], p. 418, l. 2; p. 418, l. 6; p. 418, l. −6. Klimyk replaces
+\(\tanh\theta_1\) by \(\tanh^{-1}\theta_1\) in the integrand of (7), \(\omega-\mu+1\) by
+\(\omega-\mu\) on the right side of (7), and \(a-1\) by \(a+1\) in the contour condition. This makes
+(7) consistent with (9), but (9) still diverges.
 Target: [VK07.5.18], [VK07.5.19].
 
 ### E07.5.10. Formula (10) of §7.5.3
@@ -3357,6 +4104,60 @@ Evidence: at \(\varphi=0.9\), \(\psi=1.2\) and generic parameters the partial su
 stabilize at \(-1.498\) and \(1.321\) respectively; convergence at that point was not
 established.
 Target: [VK07.5.20], [VK07.5.21].
+
+### E07.5.12. \(\cosh\) for \(\sinh\) in (5) of §7.5.4
+
+Status: Confirmed.
+Location: Vol 1, §7.5.4, (5), p. 420.
+Printed:
+\(\frac{\Gamma(\mu-\lambda)\Gamma(\omega)\Gamma(2-\omega)}{\Gamma(\omega-\lambda)\Gamma(\mu)\Gamma(1-\mu)\Gamma(\mu-\omega+1)}\frac{\cosh^{2\omega-2\lambda}\varphi\cosh^{2\mu-2\omega+2}\psi}{[\sinh(\varphi+\psi)\sinh(\varphi-\psi)]^{\mu-\lambda}}\)
+Correct:
+\(\frac{\Gamma(\mu-\lambda)\Gamma(\omega)\Gamma(2-\omega)}{\Gamma(\omega-\lambda)\Gamma(\mu)\Gamma(1-\mu)\Gamma(\mu-\omega+1)}\frac{\cosh^{2\omega-2\lambda}\varphi\sinh^{2\mu-2\omega+2}\psi}{[\sinh(\varphi+\psi)\sinh(\varphi-\psi)]^{\mu-\lambda}}\).
+Evidence: The \(\nu\)-integrand does not decay, so the integral is read distributionally: writing
+both \(F\) as Euler integrals and using \(\frac1{2\pi i}\int_{a-i\infty}^{a+i\infty}e^{-\nu
+L}d\nu=\delta(L)\) reduces the left side to a one-dimensional integral. For
+\((\lambda,\mu,\omega,\varphi,\psi)=(0.2,0.6,1.3,1.3,0.4)\) and \((0.3,0.7,1.1,0.8,0.6)\) it gives
+\(0.480804\) and \(0.455235\); the \(\sinh\) form gives \(0.480819\) and \(0.455235\), the printed
+\(\cosh\) form \(0.8593\) and \(0.9599\).
+Published: [Klimyk 2006], p. 420, l. −4.
+Target: [VK07.5.21].
+
+### E07.5.13. Elementary factors in (4) of §7.5.5
+
+Status: Confirmed.
+Location: Vol 1, §7.5.5, (4), p. 422.
+Printed: \(f(\lambda)=\frac{\Gamma(\lambda)\Gamma(-\lambda-2\tau)}{2\pi
+i\Gamma(-2\tau)}\sinh^{-\lambda}\theta\cosh^{-\lambda+2\tau}\theta\int_{a-i\infty}^{a+i\infty}\tanh^{-\mu}\theta\,F(\lambda,\mu;-2\tau;-\sinh^{-2}\theta)F(\mu)d\mu\).
+Correct: \(f(\lambda)=\frac{\Gamma(\lambda)\Gamma(-\lambda-2\tau)}{2\pi
+i\Gamma(-2\tau)}\sinh^{2\tau}\theta\int_{a-i\infty}^{a+i\infty}F(\lambda,\mu;-2\tau;-\sinh^{-2}\theta)F(\mu)d\mu\),
+the inverse of (3) as printed.
+Evidence: With \(F_-(\lambda)=\int K^{22}_{--}(\lambda,\mu;\chi;g(\theta))f_-(\mu)d\mu\) and
+\(K^{22}_{--}(g^{-1})=K^{22}_{++}(g)\) (§7.2.1 (4), (7), (11) with \(\theta/2\to\theta\)), the
+printed (3) equals this transform for \(F(\lambda)=\tanh^{-\lambda-\tau}\theta\,F_-(\lambda)\),
+\(f(\mu)=\tanh^{\mu+\tau}\theta\,f_-(\mu)\); the inverse kernel
+\(\tanh^{\lambda+\tau}\theta\,K^{22}_{++}(\lambda,\mu)\tanh^{\mu+\tau}\theta\) reduces to the
+corrected (4). Checked numerically (\(\tau=-0.35\), \(\lambda=0.2\), \(\mu=0.15\), \(\theta=0.7\)):
+the printed kernel is \(0.766\) times the required one.
+Published: [Klimyk 2006], p. 422, l. −5. [Klimyk 2006] replaces \(\cosh^{-\lambda+2\tau}\theta\) by
+\(\cosh^{\lambda+2\tau}\theta\); that makes the kernel of (4) equal to the unnormalized
+\(K^{22}_{++}(\lambda,\mu;\chi;g(\theta))\), which is the inverse of (3) only if (3) is also written
+without the absorbed factors (numerically \(0.838\) times the kernel required by (3) as printed).
+Target: [VK07.5.23].
+
+### E07.5.14. \(-\sin\psi\) for \(-\sinh\psi\) in the factorization before (5) of §7.5.4
+
+Status: Confirmed.
+Location: Vol 1, §7.5.4, p. 420, factorization before (5).
+Printed: third factor \(\begin{pmatrix}\cosh\psi&-\sinh\psi\\-\sin\psi&\cosh\psi\end{pmatrix}\).
+Correct: third factor
+\(h(-\psi)=\begin{pmatrix}\cosh\psi&-\sinh\psi\\-\sinh\psi&\cosh\psi\end{pmatrix}\).
+Evidence: The printed factor has determinant \(\cosh^2\psi-\sinh\psi\sin\psi\ne1\) and is not
+\(h(-\psi)\). For \(\varphi=1.3\), \(\psi=0.4\), \(e^{-t}=\tanh\psi/\tanh\varphi\), the corrected
+product is lower triangular with \(\alpha=2.745581\), \(\gamma=2.227545\), equal to the stated
+values \(\sqrt{\sinh2\varphi/\sinh2\psi}\) and
+\(2\sinh(\varphi+\psi)\sinh(\varphi-\psi)/\sqrt{\sinh2\varphi\sinh2\psi}\); the printed product
+gives \(2.769640\) and \(2.255465\).
+Target: [VK07.5.21].
 
 ### E07.6.01. Argument of \(K_{2\tau+1}\) in (4) of §7.6.2
 
@@ -3389,6 +4190,7 @@ Location: Vol 1, §7.6.4, (2), p. 428.
 Printed: \([(1)^{2\epsilon}e^{-\nu\pi i}+e^{\nu\pi i}]\).
 Correct: \([(-1)^{2\epsilon}e^{-\nu\pi i}+e^{\nu\pi i}]\).
 Evidence: (4) of §7.6.2 and the analogous factor in (1).
+Published: [Klimyk 2006], p. 428, l. 2.
 Target: [VK07.6.07].
 
 ### E07.6.04. Factorization (3) of §7.6.5
@@ -3454,6 +4256,7 @@ inconsistencies: (5) has \(e^{-(\lambda+\mu)(t_1+t_2)^{-1}}\) without \(i\) and 
 the branch of \(H^{(1)}_{2\tau+1}(\pm x/t)\) for \(t<0\) in (10)–(15) is not specified.
 Evidence: symbolic derivation from [VK07.6.04] and [VK07.6.11]; no numerical check of the
 oscillatory integrals.
+Published: [Klimyk 2006], p. 433, l. 3.
 Target: [VK07.6.12], [VK07.6.13], [VK07.6.14].
 
 ### E07.7.01. Hyperbolic rotation \(g_1(t)\) needs half angles
@@ -3570,6 +4373,8 @@ Evidence: quadrature at \(\tau=-0.3\), \(t=0.4\), \(s=0.3\) for
 (ratio 1 to the corrected forms). (3) also follows from
 \(\int_0^\infty K_\nu(at)K_\nu(bt)dt=\frac{\pi^2}{4\sqrt{ab}\cos\pi\nu}
 P_{\nu-1/2}(\frac{a^2+b^2}{2ab})\), \(\nu=\tau+\frac12\). The cause is [E07.7.04].
+Published: [Klimyk 2006], p. 450, l. −5. Klimyk replaces \((-1)^{n-m}\) by \((-i)^{n-m}\) in (1);
+quadrature confirms \((-1)^{n-m}\).
 Target: [VK07.7.11].
 
 ### E07.7.07. Index in a hypergeometric addition theorem
@@ -3737,6 +4542,9 @@ the printed (1) is not a one-parameter group. Computing \(I_+\) from
 \([I_2,I_\pm]=\mp I_\pm\), whereas \(g_2,g_\pm\) require \([I_2,I_\pm]=\pm I_\pm\); the
 corrected ones satisfy \([I_2,I_\pm]=\pm I_\pm\) and \([I_+,I_-]=2I_2\). The Casimir value
 \(-l(l+1)\) and the eigenvalue equations for \(e^1_n,e^2_\lambda\) are unaffected.
+Published: [Klimyk 2006], p. 466, l. 4. [Koornwinder 2000], p. 465, (1). Klimyk changes only the
+sign of \(I_-\). This is an equivalent repair under the opposite sign convention for the action of
+\(g_-(t)\).
 Target: [VK07.7.20].
 
 ### E07.7.17. Normalization of the hyperbolic and parabolic oscillator bases
@@ -3845,13 +4653,52 @@ Target: [VK07.7.26].
 Status: Confirmed.
 Location: Vol 1, §7.7.3, p. 443, (11'); §7.7.6, p. 455, (22); §7.7.9, p. 470, (7).
 Printed: in (11') the words "times" and "tau" inside the display
-(\(\Gamma(tau+\lambda+n+\epsilon+1)\)); in (22) \(\Gamma(1\mu)\); in (7)
+(\(\Gamma(tau+\lambda+n+\epsilon+1)\)) and the lower parameter \(\lambda+\tau-n-\epsilon+\) with the
+final \(1\) missing; in (22) \(\Gamma(1\mu)\) and \(e^{2\pi\tau\pi}\); in (7)
 \(\tanh\frac\alpha2=\frac t{1+st}\).
-Correct: \(\times\), \(\Gamma(\tau+\lambda+n+\epsilon+1)\); \(\Gamma(1-\mu)\);
-\(\tan\frac\alpha2=\frac t{1+st}\) (\(\alpha\) is a rotation angle of \(g_3(\alpha)\)).
+Correct: \(\times\), \(\Gamma(\tau+\lambda+n+\epsilon+1)\), \(\lambda+\tau-n-\epsilon+1\);
+\(\Gamma(1-\mu)\), \(e^{2i\tau\pi}\); \(\tan\frac\alpha2=\frac t{1+st}\) (\(\alpha\) is a rotation
+angle of \(g_3(\alpha)\)).
 Evidence: (11') and (22) by comparison with the parallel formulas (12') and (23); (7) by
 multiplying out \(g_+(t)g_-(s)=g_-(z)\mathrm{diag}(a,a^{-1})g_3(\alpha)\).
+Published: [Klimyk 2006], p. 443, l. 3; p. 443, l. 6; p. 455, l. −2.
 Target: [VK07.7.06], [VK07.7.14], [VK07.7.24].
+
+### E07.7.24. Second index of \(W\) in (5) of §7.7.5
+
+Status: Confirmed.
+Location: Vol 1, §7.7.5, (5), p. 448.
+Printed: \(W_{-\tau-\nu,t+1/2}\big(\frac{i\lambda}t\big)\).
+Correct: \(W_{-\tau-\nu,\tau+1/2}\big(\frac{i\lambda}t\big)\).
+Evidence: Evident misprint: \(t\) is the group parameter; all other Whittaker functions in (5)–(7),
+including \(W_{-\tau-\mu,\tau+1/2}\) on the right of (5), have second index \(\tau+\frac12\), fixed
+by the representation \(\chi=(\tau,\epsilon)\).
+Published: [Klimyk 2006], p. 448, l. 6.
+Target: [VK07.7.10].
+
+### E07.7.25. \(\gamma\) for \(\Gamma\) in (6) of §7.7.5
+
+Status: Confirmed.
+Location: Vol 1, §7.7.5, (6), p. 448.
+Printed: \(\Gamma(1-\nu)\gamma(\nu-\mu)\Gamma(-2\tau-\nu)\).
+Correct: \(\Gamma(1-\nu)\Gamma(\nu-\mu)\Gamma(-2\tau-\nu)\).
+Evidence: Evident misprint: \(\gamma\) is not defined here, and the factor \(\Gamma(\nu-\mu)\)
+occurs in the same position in (5) and (7).
+Published: [Klimyk 2006], p. 448, l. 10.
+Target: [VK07.7.10].
+
+### E07.7.26. Factor \((-1-it)^n\) in (1) of §7.7.11
+
+Status: Confirmed.
+Location: Vol 1, §7.7.11, (1), p. 473.
+Printed: \((-1-ix)^n\).
+Correct: \((-1-it)^n\).
+Evidence: With \(e^{-2i\varphi}=\frac{-1+it}{1+it}\), i.e. \(t=-\cot\varphi\), one has
+\((-1-it)^n(1-it)^{-n}=e^{2in\varphi}\) and \(1-it=e^{i(\pi/2-\varphi)}/\sin\varphi\), so (1) with
+\((-1-it)^n\) is the second expression for \(\Psi_{ns}\) (with (2)) on pp. 473–474; the factor
+\((-1-ix)^n\) would make \(\Psi_{ns}\) of degree \(2n\) in \(x\).
+Published: [Koornwinder 2000], p. 473, (1).
+Target: [VK07.7.26].
 
 ### E07.8.01. Contragredient label in the Fourier transform on \(SL(2,\mathbb R)\)
 
@@ -3891,6 +4738,7 @@ d\varphi d\theta d\psi\).
 Correct: (4) \(\mathcal P^l_{km}(\cosh\theta)\); (5) left side \(c^\chi_{km}\) and
 exponential \(e^{-i(k\varphi+m\psi)}\).
 Evidence: comparison with the expansion (3) and with (6), (9), (10).
+Published: [Klimyk 2006], p. 483, l. −2; p. 483, l. −1.
 Target: [VK07.8.07].
 
 ### E07.8.04. Norm of Jacobi polynomials on \([1,\infty)\)
@@ -3906,6 +4754,8 @@ Evidence: quadrature: \((p,q,r)=(1,-5,1)\): integral \(\frac1{12}\), printed
 \(-\frac1{24}\), corrected \(\frac1{12}\); \((1,-5,0)\): \(\frac1{96}\), printed
 \(-\frac1{128}\); \((2,-8,2)\): \(0.01875\), printed \(-0.009375\); off-diagonal integrals
 vanish. The corrected value is the continuation of the norm on \([-1,1]\).
+Published: [Klimyk 2006], p. 485, l. −10. Klimyk replaces the factor \(2r+p+q\) by \(2r+p+q-1\);
+quadrature gives \(-(2r+p+q+1)\) as above.
 Target: [VK07.8.09].
 
 ### E07.8.05. Bessel-type expansions on \((0,\infty)\)
@@ -3970,6 +4820,32 @@ Evidence: (4') states \(\hat f_{-1/2,-1/2}(\lambda)=\sqrt{2/\pi}\int f\cos\lambd
 which is \(\frac{\sqrt2}{\Gamma(1/2)}\int f\varphi^{(-1/2,-1/2)}_\lambda\Delta\,dt\); the
 inversion (14) and Plancherel (16) use \(\frac{\sqrt2}{\Gamma(\alpha+1)}\) and agree with
 Koornwinder's normalization through \(c_{\alpha\beta}=\frac{2\sqrt\pi}{\Gamma(\alpha+1)}c_K\).
+Published: [Klimyk 2006], p. 493, l. −4.
+Target: [VK07.8.17].
+
+### E07.8.09. \(\cos\) for \(\cosh\) in (9′) of §7.8.8
+
+Status: Confirmed.
+Location: Vol 1, §7.8.8, p. 495, line before (9′) and (9′).
+Printed: \(f(t)=F(\cos\sigma t)\), \((\mathcal W^\sigma_\mu f)(s)=(I^\mu_-F)(\cos\sigma s)\).
+Correct: \(f(t)=F(\cosh\sigma t)\), \((\mathcal W^\sigma_\mu f)(s)=(I^\mu_-F)(\cosh\sigma s)\).
+Evidence: Substituting \(y=\cosh\sigma t\) in (9) gives \(\frac1{\Gamma(\mu)}\int_{\cosh\sigma
+s}^\infty F(y)(y-\cosh\sigma s)^{\mu-1}dy\), the fractional integral \(I^\mu_-F\) at \(\cosh\sigma
+s\); with \(\cos\) the variable change does not match (9).
+Published: [Klimyk 2006], p. 495, l. 6 and l. 7.
+Target: [VK07.8.17].
+
+### E07.8.10. Contour of (12) of §7.8.8
+
+Status: Confirmed.
+Location: Vol 1, §7.8.8, (12), p. 495.
+Printed: \(\int_{a-i\infty}^{a+i\infty}\).
+Correct: \(\int_{ia-\infty}^{ia+\infty}\) (the line \(\mathrm{Im}\,\lambda=a\)).
+Evidence: \(\hat f\in\mathcal H\) grows like \(e^{A|\mathrm{Im}\,\lambda|}\), so the integral along
+\(\mathrm{Re}\,\lambda=a\) diverges; the estimates after (12) concern \(\mathrm{Im}\,\lambda\ge a\),
+where \(\hat f\) decays and \(\Phi^{(\alpha,\beta)}_\lambda(t)\) is bounded by
+\(e^{-t\,\mathrm{Im}\lambda}\) up to a factor.
+Published: [Klimyk 2006], p. 495, l. −3.
 Target: [VK07.8.17].
 
 ### Conventions and notation (not errata)
@@ -4013,12 +4889,14 @@ Printed: \(Q_{l_1l_2l}=\big[\frac{2l+1}{(l_1+l_2-l)!(l_1+l_2+l+1)!}\big]^{1/2}\)
 without a sign factor in front of \(\big[\frac{(l_1+l_2-l)!(l_1+l_2+l+1)!(l-m)!(l+m)!}
 {2l+1}\big]^{1/2}\).
 Correct: \(Q_{l_1l_2l}\), (3) and (4) each carry the factor \((-1)^{l_1+l_2-l}\) (equivalently,
-\(D\) in (3) is replaced by \(x_2y_1-x_1y_2\)).
+\(D\) in (3) is replaced by \(x_2y_1-x_1y_2\)). In addition, the exponent \(x_1^{l_j-l}\) in (3)
+is \(x_1^{l_1-j}\).
 Evidence: exact symbolic expansion of
 \((x_1y_2-x_2y_1)^{L}t^l_{l_2-l_1,m}\) for six cases with \(l_1,l_2\le2\): the printed (3)
 fails whenever \(L=l_1+l_2-l\) is odd (e.g. \(l_1=l_2=l=1\), \(m=0\)), the corrected form holds
 in all cases; (4) checked at \(\theta=0.7\) in six cases. The sign also follows from the
 highest vector \(\mathbf a^l_l\) of 8.1.3 (4), which carries \((-1)^{l_1+l_2-l}\).
+Published: [Klimyk 2006], p. 503, l. −1.
 Target: [VK08.1.08].
 
 ### E08.2.01. Three-variable generating function: orientation and sign
@@ -4047,6 +4925,7 @@ Correct: no factor \((-1)^L\) in (4); the second row is \((l_1+j,l_2+k,l-j-k)\),
 \((l_1-j,l_2-k,l+j+k)\), and the sign is \((-1)^{l_1-l_2+j+k}\).
 Evidence: exact expansion of \(\det(x_{ij})^L\) for \(L=1,2,3\): every coefficient agrees with
 the corrected symbol; with the printed rows the third column sums are not \(L\).
+Published: [Klimyk 2006], p. 505, l. −14.
 Target: [VK08.2.04].
 
 ### E08.2.03. Sixth CGC symmetry: sign and third projection
@@ -4060,6 +4939,9 @@ Correct: sign \((-1)^{l_2+k}\) and third projection \(\frac{l_1+l_2+j+k}2-l\) (t
 first two projections).
 Evidence: all admissible cases with \(l_1,l_2\le\frac52\) (1183 cases) hold with the
 corrected form; the printed third projection is not the sum of the first two.
+Published: [Klimyk 2006], p. 506, l. 8; p. 506, l. 9. Klimyk's sign \((-1)^{l_1-2l_2+k-1}\) is
+wrong: it holds in only 144 of 665 cases with spins at most \(\frac52\), and fails already at
+\(l_1=l_2=l=j=k=0\).
 Target: [VK08.2.06].
 
 ### E08.2.04. Missing complex conjugate in 8.2.3 (9)
@@ -4081,6 +4963,7 @@ Location: Vol 1, §8.2.4, p. 508, (3).
 Printed: denominator \(2^{l_1+l_2+1}[\mathbf l;\mathbf j]^{1/2}[(l+l_1-l_2)!(l-l_1+l_2)!]^{1/2}\).
 Correct: \(2^{l_1+l_2+l+1}\) in place of \(2^{l_1+l_2+1}\) (consistent with (5)).
 Evidence: exact symbolic integration for all admissible \(l_1,l_2\le\frac32\), \(l\le3\).
+Published: [Klimyk 2006], p. 508, l. 9.
 Target: [VK08.2.09].
 
 ### E08.2.06. Constant in the integral representation 8.2.4 (6)
@@ -4126,6 +5009,7 @@ Printed: \(\big[\frac{(2l+1)(l+l_1+k)!(l_2-k)!(2l_1)!}{(l_2+k)!(l-l_1-k)}\big]^{
 Correct: \((l-l_1-k)!\) in the denominator.
 Evidence: (1) is the one-term case \(j=l_1\) of 8.2.5 (2), which has \((l-j-k)!\); the
 corrected form agrees with the CGC's for all admissible \(l_1,l_2\le\frac52\).
+Published: [Klimyk 2006], p. 511, l. 4.
 Target: [VK08.2.15].
 
 ### E08.2.10. Factorial missing in 8.2.6 (2)
@@ -4147,6 +5031,7 @@ Correct: \((l_2-k)!\).
 Evidence: for half-integer \(l_2\) the argument \(2l_2-k\) is a half-integer, so the printed
 factor is undefined; with \((l_2-k)!\) the formula holds for all \(l_1\ge l_2\),
 \(l_1,l_2\le3\).
+Published: [Klimyk 2006], p. 511, l. −8.
 Target: [VK08.2.15].
 
 ### E08.2.12. Two entries of Table 8.1
@@ -4270,6 +5155,8 @@ its averages over consecutive \(N\) tend to the Bessel integral; the sign is
 Evidence: \(l_1=l_2=l=1\), prediction \(2/(\pi\sqrt3)=0.3676\): \(N|C|^2\) at \((j,k)=(0,0)\)
 is \(0.7305\) for \(N=80\) and \(0\) for \(N=81\); at \((1,-1)\) it is \(0.1826\) and
 \(0.548\).
+Published: [Klimyk 2006], p. 524, l. 3. Klimyk replaces \(\lim|C|^2\) by \(\lim N|C|^2\); this limit
+does not exist (see above).
 Target: [VK08.3.11].
 
 ### E08.3.07. Contiguous relation 8.3.5 (3)
@@ -4294,6 +5181,7 @@ parameters \(b,\ b-d+1,\ b-e+1\), lower \(b-a-n+1,\ b-c+1\).
 Evidence: substitution into (5) at \(a=0.3,b=0.45,c=-0.2,d=2.6,e=4.1\): residual below
 \(10^{-9}\) (summation accuracy) for the corrected forms, against \(-99.9\), \(3.75\),
 \(-2.62\) for the printed (6), (7), (8).
+Published: [Klimyk 2006], p. 525, l. −12.
 Target: [VK08.3.13].
 
 ### E08.3.09. Relations 8.3.5 (13), (14)
@@ -4350,6 +5238,37 @@ Evidence: at \(\cos\theta=0.27\), all spins \(l\le3\): the printed form fails in
 convention; the corrected form holds in all cases.
 Target: [VK08.3.19].
 
+### E08.3.13. System of equations and its solution on p. 519
+
+Status: Confirmed.
+Location: Vol 1, §8.3.1, p. 519, system of equations after (7) and its solution.
+Printed: \(l_1-l_2-l=1\), \(l_1+j+1=b\), \(-l+j+k=c\), \(l_1-l_2+j+k+1+d\), \(-l_2-l+j=e\);
+\(l_1=\frac{a+b-e-1}2\), \(b_2=\frac{b+c-d-e}2\), \(l=\frac{d-a-c-1}2\), \(j=\frac{b+e-a-1}2\),
+\(k=\frac{c+d-b-c}2\).
+Correct: \(l_1-l_2-l=a\), \(l_1-l_2+j+k+1=d\), \(l_2=\frac{b+c-d-e}2\), \(k=\frac{c+d-b-e}2\); the
+other entries as printed.
+Evidence: The five equations match the parameters of \({}_3F_2(l_1-l_2-l,\,l_1+j+1,\,-l+j+k;\
+l_1-l_2+j+k+1,\,-l_2-l+j;1)\) in 8.3.1 (2) with \(a,b,c;d,e\). The corrected system has the stated
+solution: \(l_1-l_2-l=a\) holds for the printed values of \(l_1,l_2,l\), and
+\(k=c+l-j=\frac{c+d-b-e}2\).
+Published: [Klimyk 2006], p. 519, l. −12; p. 519, l. −11; p. 519, l. −9. Klimyk corrects \(=1\),
+\(+d\) and \(b_2\) (three separate items) but not the \(-c\) in the formula for \(k\).
+Target: [VK08.3.03].
+
+### E08.3.14. Right side of 8.3.6 (5)
+
+Status: Confirmed.
+Location: Vol 1, §8.3.6, p. 527, (5).
+Printed: \(\sum_jC(\mathbf l;\mathbf j)P^{l_1}_{jj'}(z)P^{l_2}_{m-j,m'-j'}(z)=C(\mathbf l;\mathbf
+j)P^l_{mm'}(z)\).
+Correct: right side \(C(\mathbf l;\mathbf j')P^l_{mm'}(z)\), \(\mathbf j'=(j',m'-j',m')\).
+Evidence: \(j\) is the summation index on the left, so the right side cannot depend on \(\mathbf
+j=(j,m-j,m)\). With \(C(\mathbf l;\mathbf j')\) on the right, multiplying by \(C(\mathbf l;\mathbf
+j')\) and summing over \(j'\) (orthonormality of the CGC's, \(\sum_{j'}C(\mathbf l;\mathbf
+j')^2=1\)) gives (6).
+Published: [Klimyk 2006], p. 527, l. 11.
+Target: [VK08.3.18].
+
 ### E08.4.01. List of \(6j\) symmetries 8.4.3 (3)
 
 Status: Confirmed.
@@ -4387,6 +5306,7 @@ sign is \((-1)^{l+l_3+l_{12}}(-1)^n\).
 Evidence: 400 random admissible cases with spins \(\le2\): with \(\Delta(l_3,l,l_{12})\) the
 modulus agrees in all cases, and the stated sign agrees in all cases; for half-integer \(l_1\)
 the printed \((-1)^k\) is not defined.
+Published: [Klimyk 2006], p. 535, l. −8.
 Target: [VK08.4.06].
 
 ### E08.4.04. Factorial in the \({}_4F_3\) formula 8.4.4 (5)
@@ -4397,6 +5317,7 @@ Printed: factor \((l_1+l_2+l_3+1)\) in the bracket.
 Correct: \((l_1+l_2+l_3+l+1)!\).
 Evidence: comparison with the Racah formula in random admissible cases: agreement with the
 correction; the printed bracket has a non-factorial factor and the wrong value.
+Published: [Klimyk 2006], p. 536, l. 7. [Koornwinder 2000], p. 536, (5).
 Target: [VK08.4.07].
 
 ### E08.4.05. Normalization of the character integrals 8.4.6 (1)–(3)
@@ -4425,6 +5346,9 @@ Correct: \(\sum_{l_{13}}(-1)^{l_{13}+l_1+l_2+l_3+l_{12}+l_{23}+l}R(l_2l_1l_3,l_{
 R(l_1l_3l_2,l_{13}l_{23},l)=R(l_1l_2l_3,l_{12}l_{23},l)\).
 Evidence: a search over sign exponents linear in the six spins (120 random cases) finds only the
 corrected one; the printed relation fails.
+Published: [Klimyk 2006], p. 538, l. −7. Klimyk adds \(l\) to the exponent of the sign on the right
+side; this agrees with the correction above when the exponent is an integer and fails when it is
+half-integral.
 Target: [VK08.4.10].
 
 ### E08.4.07. Normalization in the orthogonality relation 8.4.7 (5)
@@ -4437,6 +5361,8 @@ Correct: \(=\delta_{l_{12}l_{12}'}/(2l_{12}+1)\) (unitarity of \(R\) and 8.4.3 (
 Evidence: e.g. \(l_1=l_2=l_3=l=\frac12\), \(l_{12}=l_{12}'=1\): the sum is \(\frac13\); random
 checks (150 cases) agree with \(1/(2l_{12}+1)\). The printed (6), derived from (5), is
 consistent only with the corrected (5).
+Published: [Klimyk 2006], p. 539, l. 6. Klimyk changes only \(\Delta\) to \(\delta\) and keeps the
+factor \(2l_{12}+1\).
 Target: [VK08.4.10].
 
 ### E08.4.08. Divergent sum 8.4.7 (7)
@@ -4471,6 +5397,7 @@ Printed: \([(a+b+c+1)(b+c-a)(c+d+e+1)(c+d-e)]^{-1}\) on the left.
 Correct: exponent \(\frac12\).
 Evidence: 300 random admissible \(6j\) symbols with entries \(\le4\): the corrected form holds
 in all cases, the printed one fails.
+Published: [Klimyk 2006], p. 540, l. −6.
 Target: [VK08.4.12].
 
 ### E08.4.11. Coefficient in the recurrence 8.4.9 (3)
@@ -4507,6 +5434,7 @@ Correct: \((l_1+l_2+l_3-l)!\).
 Evidence: the printed factor is \((l_1+l_2)!\), undefined for half-integer \(l_1+l_2\); with the
 correction (1) and (3) hold in all tested cases (1384 cases for (3)), with the printed factor
 (3) fails in 1173.
+Published: [Klimyk 2006], p. 542, l. 14.
 Target: [VK08.4.14].
 
 ### E08.4.14. Factorial in \(B\), 8.4.11 (5)
@@ -4527,6 +5455,7 @@ Printed: "formula (2) of Section 8.13.13".
 Correct: formula (2) of Section 8.3.3 (Saalschütz's theorem).
 Evidence: there is no Section 8.13.13; the series satisfies condition (3) of Section 8.3.3,
 to which Saalschütz's theorem applies.
+Published: [Klimyk 2006], p. 545, l. 13.
 Target: [VK08.4.17].
 
 ### E08.4.16. Gamma factor in Dougall's theorem 8.4.13 (7)
@@ -4538,6 +5467,7 @@ Correct: \(\Gamma(1+a-b-c)\).
 Evidence: \(a=1.3\), \(b=0.41\), \(c=0.27\), \(d=-0.6\), \(N=3\), \(e=2a-b-c-d+N+1\): the
 \({}_7F_6\) equals \(0.98218\); the corrected right side gives the same value, the printed one
 \(0.9084\).
+Published: [Klimyk 2006], p. 545, l. −10.
 Target: [VK08.4.17].
 
 ### E08.4.17. Limit formula 8.4.13 (10)
@@ -4552,6 +5482,17 @@ Correct: for \(\mathrm{Re}\,b<0\) (where the series converges) the sum is \(0\):
 Evidence: \(a=1.3\), \(b=-0.35\): the series sums to about \(10^{-16}\), while the printed right
 side is \(1.273\).
 Target: [VK08.4.17].
+
+### E08.4.18. Third index of a CGC in 8.4.2 (3)
+
+Status: Confirmed.
+Location: Vol 1, §8.4.2, p. 532, (3).
+Printed: \(C^{l_{12}l_3l}_{i+j,k,k+j+k}\).
+Correct: \(C^{l_{12}l_3l}_{i+j,k,i+j+k}\).
+Evidence: The third lower index of \(C^{l_1l_2l}_{jkm}\) is the sum of the first two; (1), (2) and
+(4) on the same pages have \(C^{l_{12}l_3l}_{i+j,k,i+j+k}\).
+Published: [Klimyk 2006], p. 532, l. −6.
+Target: [VK08.4.03].
 
 ### E08.5.01. Hahn symmetry 8.5.1 (8): wrong degree
 
@@ -4603,6 +5544,7 @@ Location: Vol 1, §8.5.2, p. 550, (6).
 Printed: the term \(-(N-n)(n+\alpha+1)\).
 Correct: \(+(N-n)(n+\alpha+1)\), in agreement with Koekoek–Swarttouw (1.6.3).
 Evidence: generic parameters, \(N=5\): printed residual \(173\), corrected \(10^{-58}\).
+Published: [Klimyk 2006], p. 550, l. −12.
 Target: [VK08.5.10].
 
 ### E08.5.06. Product formula 8.5.3 (1): summation index
@@ -4612,6 +5554,7 @@ Location: Vol 1, §8.5.3, p. 550, (1).
 Printed: summation index \(N\).
 Correct: summation index \(n\) (typographical; \(N\) is a fixed parameter).
 Evidence: \(N\) appears as a fixed parameter in the summand.
+Published: [Klimyk 2006], p. 550, l. −5.
 Target: [VK08.5.11].
 
 ### E08.5.07. Krawtchouk multiplication 8.5.3 (2): missing factorial
@@ -4622,6 +5565,7 @@ Printed: the prefactor lacks \(x'!\).
 Correct: the prefactor carries an extra factor \(x'!\).
 Evidence: the ratio printed/true equals \(1/x'!\) in every tested case, e.g.
 \(N=2\), \(N'=3\), \((s,s',x,x')=(0,3,2,3)\): ratio \(6\).
+Published: [Klimyk 2006], p. 551, l. 4.
 Target: [VK08.5.12].
 
 ### E08.5.08. Krawtchouk summation 8.5.3 (3): exponent
@@ -4687,6 +5631,9 @@ Correct: the recurrence with the coefficients \(A_n,C_n\) of Koekoek–Swarttouw
 transcribed to the source parameters in [VK08.5.20]; (21) inherits the correction.
 Evidence: \(\alpha,\beta,\gamma,\delta=0.37,1.21,-0.43,0.77\), \(\lambda(x)=2.3\): printed
 residual \(36.5\) at \(n=1\); corrected residual at working precision.
+Published: [Klimyk 2006], p. 555, l. −9; p. 555, l. −7, −6, −5, −4. Klimyk's replacement \(a_n\) has
+the factor \(n+\beta+\gamma+1\) in place of \(n+\beta+\delta+1\), and his recurrence fails
+numerically; his \(c_n\) agrees with \(C_n\) above.
 Target: [VK08.5.20].
 
 ### E08.5.14. Racah difference equation 8.5.4 (22)
@@ -4697,6 +5644,7 @@ Printed: a term \(-n(\ldots)\) and a factor \((\beta+\delta)\).
 Correct: \(+n(\ldots)\) and \((\beta+\delta+1)\).
 Evidence: comparison with the verified duality and recurrence, and direct numerical
 evaluation at generic parameters.
+Published: [Klimyk 2006], p. 556, l. 10. [Koornwinder 2000], p. 556, (22).
 Target: [VK08.5.20].
 
 ### E08.5.15. Racah addition formula 8.5.6 (5)
@@ -4729,6 +5677,36 @@ Correct: \(\Gamma(a+b)\), \((2a+2b-1)_n\), \((a+b+\frac12)_n\).
 Evidence: \(a=0.6\), \(b=0.9\): \(n=0\) printed \(2.544\), true \(2.110\); \(n=1\)
 printed \(-3.90\), true \(0.791\); \(a=1\), \(b=2\): printed \(\pi/5\), true \(2\pi/5\).
 Target: [VK08.5.29].
+
+### E08.5.18. Gamma factor in the Wilson norm 8.5.5 (8)
+
+Status: Confirmed.
+Location: Vol 1, §8.5.5, p. 557, (8).
+Printed: \(\frac1{2\pi}\int_0^\infty
+p_n(-t^2)p_m(-t^2)w(t)\,dt=n!(a+b+c+d+n-1)_n\frac{\Gamma(a+b+n)\Gamma(a+c+n)\Gamma(a+d+n)\Gamma(b+c+d)\Gamma(b+d+n)\Gamma(c+d+n)}{\Gamma(a+b+c+d+2n)}\delta_{nm}\).
+Correct: \(\Gamma(b+c+n)\) in place of \(\Gamma(b+c+d)\).
+Evidence: The weight is symmetric in \(a,b,c,d\), so the norm must be. Numerical integration
+(mpmath, \(a,b,c,d=0.3,0.7,1.1,0.45\)): \(n=0\) gives \(0.6095849\), equal to the corrected value
+(printed \(0.7415435\)); \(n=1\) gives \(0.5784918\), equal to the corrected value (printed
+\(0.3909553\)).
+Published: [Klimyk 2006], p. 557, l. −1.
+Target: [VK08.5.23].
+
+### E08.5.19. Index order and sign in the Hahn form of the CGC's, §8.5.6
+
+Status: Confirmed.
+Location: Vol 1, §8.5.6, p. 558, unnumbered display.
+Printed:
+\(C^{l_1l_2l}_{jmk}=\frac{(-1)^{l_1+j}(2l_1)!}{(-l_1+l_2+m)!}\Big[\frac{(2l+1)(l_2-k)!(l_2+k)!(l+m)!(l_2-l_1+l)!}{(l_1-j)!(l_1+j)!(l-m)!(l_1-l_2+l)!(l_1+l_2-l)!(l_1+l_2+l+1)!}\Big]^{1/2}Q_{l_1-l_2+l}(l_1-j;l_2-l_1+m,l_2-l_1-m;2l_1)\).
+Correct: \(C^{l_1l_2l}_{jkm}\) (first projection \(j\), second \(k\), total \(m=j+k\)) on the left,
+and the sign \((-1)^{l_1-j}\) in place of \((-1)^{l_1+j}\).
+Evidence: The book's notation is \(C^{l_1l_2l}_{j,k,j+k}\) with the total projection last (8.4.2).
+Against the Condon–Shortley coefficients (sympy), the corrected formula holds in all 378 cases with
+\(l_1,l_2\le\frac52\) and \(l_2-l_1\ge|m|\); with \((-1)^{l_1+j}\) the sign is wrong whenever
+\(l_1\) is half-integral, in agreement with the factor \((-1)^x\), \(x=l_1-j\), of 8.5.1 (3).
+Published: [Klimyk 2006], p. 558, l. 6. Klimyk corrects only the index order; the sign
+\((-1)^{l_1+j}\) is also wrong for half-integral \(l_1\).
+Target: [VK08.5.24].
 
 ### E08.6.01. Oscillator CGC 8.6.2 (8): ratio
 
@@ -4816,6 +5794,7 @@ Printed: weight \(|\Gamma(-a-ix)\Gamma(b+ix)|^2\) and factor \([\Gamma(2a)\Gamma
 Correct: weight \(|\Gamma(a-ix)\Gamma(b+ix)|^2\) and factor \(\Gamma(2a)^2|\Gamma(a+b)|^2\).
 Evidence: \(a=0.8\), \(b=0.6+0.7i\), \(n,m\le2\): corrected form verified by quadrature;
 the printed weight gives \(1.716\) in place of \(0.2406\) and nonzero off-diagonal values.
+Published: [Koornwinder 2000], p. 583, (20).
 Target: [VK08.7.10].
 
 ### E08.7.03. Jacobi sums 8.7.6 (4)–(6)
@@ -4829,16 +5808,112 @@ the difference is \((\alpha(x+1)+\beta(x-1)-\gamma+x+1)/(2\gamma)\)); (6) fails 
 with difference \(-2/\gamma\). (1)–(3) of §8.7.6 hold.
 Target: [VK08.7.12].
 
-### E08.7.04. Laguerre product 8.7.6 (8)
+### E08.7.04. Laguerre sum 8.7.6 (8)
 
-Status: Open check.
+Status: Confirmed.
 Location: Vol 1, §8.7.6, p. 585, (8).
-Printed: \(\ldots F(-s,-s+2p;2p;-\tan^{-1}\theta)\).
-Correct: uncertain; the argument \(-\tan^{-1}\theta\) is presumably \(-\cot^2\theta\) or
-\(-\tan^2\theta\), but neither reading gives an identity.
-Evidence: \(p=q=s=1\), \(x=1.3\), \(\theta=0.7\): residual about \(0.57\) under both
-readings.
+Printed:
+\(\sum_{n=0}^s\frac{(-1)^nL^{2p-1}_n(x\cos^2\theta)L^{2q-1}_{s-n}(x\sin^2\theta)}{[(s-n)!\,n!\,(2p+n-1)!\,(2q+s-n-1)!]^{1/2}}=\Big[\frac{(2p+s-1)!\,(2p+2q+s-1)!}{s!\,(2q+s-1)!\,(2p+2q+2s-1)!}\Big]^{1/2}\frac{(-x\sin^2\theta)^s}{(2p-1)!}F(-s,-s+2p+1;2p;-\tan^{-1}\theta)\).
+Correct:
+\(\sum_{n=0}^s\frac{(-1)^nL^{2p-1}_n(x\cos^2\theta)L^{2q-1}_{s-n}(x\sin^2\theta)}{(2p+n-1)!\,(2q+s-n-1)!}=\frac{(-x\sin^2\theta)^s}{s!\,(2q+s-1)!\,(2p-1)!}F(-s,1-2q-s;2p;-\cot^2\theta)\),
+\(p,q\in\mathbb Z_{\ge1}\), \(s\in\mathbb Z_{\ge0}\).
+The normalization intended by the source (through the coefficients \(C^1_-\), \(C^3_-\) of
+(7)) is not determined; the corrected form is the true identity with the printed structure.
+Evidence: The right side is a multiple of \(x^s\). For the left side to be one, the weights of
+the terms are fixed up to a common factor, independently of \(\theta\): they are
+\((-1)^n/((2p+n-1)!(2q+s-n-1)!)\) (solved for \(s\le3\)). The printed weights differ from these by
+\([n!(s-n)!/((2p+n-1)!(2q+s-n-1)!)]^{1/2}\), so the printed left side has nonzero lower-order
+terms in \(x\) for \(s\ge2\), and for \(s=1\), \(p\ne q\). The coefficient of \(x^s\) gives the
+corrected right side; the corrected identity holds to \(10^{-30}\) at
+\((p,q,s)=(1,1,1),(1,2,3),(2,1,2),(3,2,4)\), while the printed one fails at each of these under
+each reading \(-1/\tan\theta\), \(-\cot^2\theta\), \(-\tan^2\theta\) of the argument (residual
+\(0.57\) to \(0.74\) at \(p=q=s=1\), \(x=1.3\), \(\theta=0.7\)).
 Target: [VK08.7.13].
+
+### E08.7.05. Factorial in 8.7.1 (11)
+
+Status: Confirmed.
+Location: Vol 1, §8.7.1, p. 574, (11).
+Printed: \([(2l_2+1)l-j-k)!(l-l_1+l_2)!\cdots]^{1/2}\).
+Correct: \([(2l_2+1)(l-j-k)!(l-l_1+l_2)!\cdots]^{1/2}\).
+Evidence: The parenthesis is unbalanced as printed; (10) contains the factor \((l-j-k)!\) under the
+square root, and the passage to (11) changes only the factors \((l_1\pm j)!\), \((l_2\pm k)!\) and
+\((l\pm(j+k))!\) of the basis change.
+Published: [Klimyk 2006], p. 574, l. −7.
+Target: [VK08.7.02].
+
+### E08.7.06. Second projection in the labels of 8.7.6 (9)
+
+Status: Confirmed.
+Location: Vol 1, §8.7.6, p. 585, line after (9).
+Printed: \(\mathbf j=(l_1-n,\ l-2-m,\ l_1+l_2-h)\).
+Correct: \(\mathbf j=(l_1-n,\ l_2-m,\ l_1+l_2-h)\).
+Evidence: The second entry is a projection for the second factor \(l_2\): in (9) the factor
+\([m!/(-2l_2+m-1)!]^{1/2}\) is the \(l_2\)-counterpart of \([(-2l_1+n-1)!/n!]^{1/2}\) for \(l_1-n\),
+and with \(l_2-m\) the third entry is the sum of the first two when \(m=h-n\). \(l-2\) is a
+typesetting slip for \(l_2\).
+Published: [Klimyk 2006], p. 585, l. −7.
+Target: [VK08.7.13].
+
+### E08.7.07. Left side of 8.7.8 (1)
+
+Status: Confirmed.
+Location: Vol 1, §8.7.8, p. 589, (1).
+Printed: \(A_\omega(\mathbf x,\mathbf y)=\int_\Gamma\int_\Gamma K_{\omega\tau}(\mathbf x,\mathbf
+y,\mathbf z)f(\mathbf x,\mathbf y)\,d\mathbf x(\gamma)\,d\mathbf y(\gamma)=F_\omega(\mathbf
+z;\tau)\).
+Correct: left side \((A_\omega f)(\mathbf z)\).
+Evidence: \(A_\omega\) is an operator applied to \(f\), and after integration over \(\mathbf
+x,\mathbf y\) the integral is a function of \(\mathbf z\) only, as the right side \(F_\omega(\mathbf
+z;\tau)\) shows.
+Published: [Klimyk 2006], p. 589, l. 5. Klimyk's correction reads \(A_\omega f(\mathbf x,\mathbf
+y)\), keeping the integration variables as arguments.
+Target: [VK08.7.15].
+
+### E08.7.08. Missing complex conjugate in the isometry condition of §8.7.9
+
+Status: Confirmed.
+Location: Vol 1, §8.7.9, p. 592, isometry condition after (3).
+Printed: \(\sum_{\omega\in\{0,\frac12\}}\int_\Gamma\int_\Gamma K_{\omega\tau}(\mathbf x,\mathbf
+y,\mathbf z)K_{\omega\tau'}(\mathbf x,\mathbf y,\mathbf z')\,d\mathbf x(\gamma)\,d\mathbf
+y(\gamma)=\frac{\delta(\mathbf z-\mathbf z')\delta(\rho-\rho')}{\rho\tanh\pi(\rho+i\varepsilon)}\).
+Correct: \(\overline{K_{\omega\tau'}(\mathbf x,\mathbf y,\mathbf z')}\) in place of
+\(K_{\omega\tau'}(\mathbf x,\mathbf y,\mathbf z')\).
+Evidence: Isometry of \(A_\omega\) is \(A_\omega A_\omega^*=1\), whose kernel pairs \(K\) with
+\(\overline K\); the inverse operator displayed at the top of p. 592 has kernel
+\(\overline{K_{\omega\tau}}\). For \(\tau=i\rho-\frac12\) the exponents \(2\alpha_{ij}\) are
+complex, so the kernel is not real.
+Published: [Klimyk 2006], p. 592, l. 12.
+Target: [VK08.7.16].
+
+### E08.7.09. Argument of \(\chi_{31}\) in 8.7.9 (7)
+
+Status: Confirmed.
+Location: Vol 1, §8.7.9, p. 593, (7).
+Printed: \(\chi_{31}\big(\frac{\varphi_1}2\big)\).
+Correct: \(\chi_{31}\big(\sin\frac{\varphi_1}2\big)\).
+Evidence: (7) comes from (5) by the substitution \(\varphi_3-\varphi_2=\varphi_2'\),
+\(\varphi_1-\varphi_3=\varphi_1'\), which turns the factor
+\(\chi_{31}(\sin\frac{\varphi_1-\varphi_3}2)\) of (5) into \(\chi_{31}(\sin\frac{\varphi_1'}2)\), as
+for the neighbouring factor \(\chi_{23}(\sin\frac{\varphi_2}2)\).
+Published: [Klimyk 2006], p. 593, l. 7.
+Target: [VK08.7.16].
+
+### E08.7.10. Second term of (12) of §8.7.1
+
+Status: Confirmed.
+Location: Vol 1, §8.7.1, p. 574, (12).
+Printed:
+\(C'(l',l,l'+m;j+1,k,j+k+1)(l'-j)+C'(l',l,l'+m;j,k,j+k+1)\sqrt{(l-k)(l+k+1)}=C'(l',l,l'+m;j,k,j+k)(l'+m-j-k)\)
+Correct:
+\(C'(l',l,l'+m;j+1,k,j+k+1)(l'-j)+C'(l',l,l'+m;j,k+1,j+k+1)\sqrt{(l-k)(l+k+1)}=C'(l',l,l'+m;j,k,j+k)(l'+m-j-k)\).
+Evidence: (12) is (9) on p. 573 after the rescaling of the bases of \(T_{l'}\) and \(T_{l'+m}\); in
+(9), and in (7), the second term carries \((j,k+1,j+k+1)\), the action of \(H_+\) on the second
+factor, and the printed \((j,k,j+k+1)\) violates the rule that the third projection is the sum of
+the first two. The finite relation (9) with \(k+1\) holds exactly for the Clebsch–Gordan
+coefficients with \(l'=3\), \(l=2\), \(m=1\) (23 index pairs), while the printed index fails in 22
+of them.
+Target: [VK08.7.02].
 
 ### Conventions and notation (not errata)
 
@@ -4914,12 +5989,13 @@ Target: [VK09.1.09], [VK09.1.18], [VK09.1.26].
 
 Status: Confirmed.
 Location: Vol 2, §9.1.4, p. 8, (5).
-Printed: \(B(X,X)=\mathrm{Tr}(\mathrm{ad}X\,\mathrm{ad}X)=-(p+q-2)(\sum\alpha_{ij}^2-\sum
-\beta_{ij}^2)\).
+Printed: \(B(X,Y)\equiv\mathrm{Tr}(\mathrm{ad}X\,\mathrm{ad}Y)=-(p+q-2)(\sum\alpha_{ij}^2-\sum
+\beta_{ij}^2)\), with \(B(X,Y)\) for \(B(X,X)\) on the left.
 Correct: \(B(X,X)=-2(p+q-2)(\sum\alpha_{ij}^2-\sum\beta_{ij}^2)\).
 Evidence: for \(\mathfrak{so}(N)\) the Killing form is \((N-2)\mathrm{Tr}(XY)\), and
 \(\mathrm{Tr}(X^2)=-2\sum\alpha_{ij}^2+2\sum\beta_{ij}^2\); the source's own §9.1.2 (6) gives
 \((2n-4)(-\sum\alpha^2+\sum\beta^2)\) for \(\mathfrak{so}(n-1,1)\), i.e. the factor 2.
+Published: [Klimyk 2006], p. 8, l. −4. Klimyk corrects the left side and not the factor \(2\).
 Target: [VK09.1.15].
 
 ### E09.1.04. The subalgebras n, n̄ and the groups N, N^- of SO_0(p,q)
@@ -5023,6 +6099,59 @@ Evidence: the product of the sphere constants \(\frac{\Gamma((k+1)/2)}{2\pi^{(k+
 differs.
 Target: [VK09.1.34].
 
+### E09.1.11. Form in the maximality property of \(\mathfrak{so}(n-1)\)
+
+Status: Confirmed.
+Location: Vol 2, §9.1.2, p. 5, paragraph after (9').
+Printed: \(\mathfrak{so}(n-1)\) is a maximal subalgebra on which the form
+\(\langle\cdot,\cdot\rangle\) is strictly positive.
+Correct: \(\mathfrak{so}(n-1)\) is a maximal subalgebra on which the form \(-B(\cdot,\cdot)\) is
+strictly positive.
+Evidence: By (7), \(\langle X,Y\rangle=-B(X,\theta Y)\) is an inner product on all of
+\(\mathfrak{so}(n-1,1)\), so no proper subalgebra is maximal for its positivity. By (6), \(B\) is
+negative definite on \(\mathfrak{so}(n-1)\) and positive definite on \(\mathfrak p\).
+Published: [Klimyk 2006], p. 5, l. −10.
+Target: [VK09.1.09].
+
+### E09.1.12. Index range, translation axis and Casimir element of \(\mathfrak{iso}(n-1)\)
+
+Status: Confirmed.
+Location: Vol 2, §9.1.3, p. 7, description of \(\mathfrak t_{n-1}\) and of \(C\).
+Printed: \(J_k\), \(k=0,1,\dots,n-1\); \(J_k\) is tangent to the shifts along the axis \(x_i\);
+\(C=\sum_{k=1}^nJ_k^2\).
+Correct: \(k=1,\dots,n-1\); shifts along the axis \(x_k\); \(C=\sum_{k=1}^{n-1}J_k^2\).
+Evidence: \(\mathfrak t_{n-1}\) is \((n-1)\)-dimensional, and \(J_k=e_{kn}\) generates \(x\mapsto
+x+te_k\), the translation along \(x_k\), for \(1\le k\le n-1\); there is no \(J_0\), and \(e_{nn}\)
+does not lie in \(\mathfrak{iso}(n-1)\).
+Published: [Klimyk 2006], p. 7, l. −13. Klimyk corrects \(x_i\) and the upper limit of \(C\) but not
+the range \(k=0,1,\dots,n-1\).
+Target: [VK09.1.13].
+
+### E09.1.13. Points of the cone in the polar decomposition of \(E_{n-1,1}\)
+
+Status: Confirmed.
+Location: Vol 2, §9.1.6, p. 17, last paragraph of §9.1.6.
+Printed: Every \(x\in E_{n-1,1}\) can be represented either as \(x=\pm r\xi\), \(r\ge0\), \(\xi\in
+H^{n-1}_+\), or as \(x=r\eta\), \(r\ge0\), \(\eta\in H^{n-1}_-\).
+Correct: Every \(x\in E_{n-1,1}\) off the cone \(C^{n-1}\) (hence almost every \(x\)) can be so
+represented.
+Evidence: \([\pm r\xi,\pm r\xi]=r^2\) and \([r\eta,r\eta]=-r^2\), so the nonzero points with
+\([x,x]=0\) have neither form.
+Published: [Klimyk 2006], p. 17, l. 17.
+Target: [VK09.1.26].
+
+### E09.1.14. Symbol \(\delta_0\) in 9.1.8 (9)
+
+Status: Confirmed.
+Location: Vol 2, §9.1.8, p. 20, (9).
+Printed:
+\(\delta_0\equiv\Delta_0^{(n-1)}=\sin^{-s+1}\theta\cos^{-n+s+1}\theta\,\frac{\partial}{\partial\theta}\cdots\).
+Correct: \(\Delta_0\equiv\Delta_0^{(n-1)}=\cdots\).
+Evidence: (8) introduces \(\Delta_0\) as the Laplace operator on \(S^{n-1}\), and (9) gives its form
+in bispherical coordinates; \(\delta_0\) is not defined.
+Published: [Klimyk 2006], p. 20, l. −10.
+Target: [VK09.1.30].
+
 ### E09.2.01. Dimension of the space of homogeneous polynomials
 
 Status: Confirmed.
@@ -5057,15 +6186,17 @@ Status: Confirmed.
 Location: Vol 2, §9.2.6, p. 35; §9.2.7, p. 39, equivalence 1).
 Printed: \(T^{n\sigma}\) irreducible "for integral \(\sigma\) from the interval
 \(-n+1\le\sigma<0\)";
-"1) \(T^{n\sigma}\sim T^{n,-\sigma-n+2}\), \(\sigma\in\mathbb Z\) or \(-n+1\le\sigma<0\)".
+"1) \(T^{n\sigma}\sim T^{n,-\sigma-n+2}\), \(\sigma\mathbin{\bar\in}\mathbb Z\) or
+\(-n+1\le\sigma<0\)".
 Correct: irreducible for \(\sigma\notin\mathbb Z\) and for integers \(2-n<\sigma<0\); equivalence 1)
 for \(\sigma\notin\mathbb Z\) or \(2-n<\sigma<0\).
 Evidence: p. 35 itself gives a proper invariant subspace for \(\sigma=-l-n+2\), \(l\ge0\), which
 includes \(\sigma=2-n,1-n\). The generator (1) maps the zonal harmonic \(Y_k\) to \(Y_{k\pm1}\)
 with coefficients \(-(k+1)(\sigma-k)/(2k+n-3)\) and \(-(k+n-4)(\sigma+k+n-3)/(2k+n-3)\) (sympy,
 \(n=4,\dots,7\)), vanishing exactly at \(\sigma=k\) and \(\sigma=3-n-k\). The corrected range is
-symmetric under \(\sigma\mapsto2-n-\sigma\); "\(\sigma\in\mathbb Z\)" in 1) is a misprint for
-\(\sigma\notin\mathbb Z\).
+symmetric under \(\sigma\mapsto2-n-\sigma\). In 1), \(\sigma\mathbin{\bar\in}\mathbb Z\) is the
+book's notation for \(\sigma\notin\mathbb Z\); only the integral range \(-n+1\le\sigma<0\) is in
+error.
 Target: [VK09.2.11], [VK09.2.13], [VK09.2.15].
 
 ### E09.2.04. The differential intertwiner at integral points
@@ -5139,6 +6270,7 @@ Evidence: differentiating (6) at \(t=0\): \(\frac d{dt}[\sin^2\varphi+(\cosh t\c
 \cos\theta)^2]^{\sigma/2}|_{t=0}=-\sigma\cos\varphi\cos\theta\) and
 \(\frac d{dt}\cos\varphi'|_{t=0}=-\sin^2\varphi\cos\theta\),
 \(\frac d{dt}\cos\theta'|_{t=0}=-\cos\varphi\sin^2\theta\) (sympy).
+Published: [Klimyk 2006], p. 42, l. 2.
 Target: [VK09.2.19].
 
 ### E09.2.08. Irreducibility and complementary ranges for SO_0(p,q)
@@ -5169,6 +6301,74 @@ nontrivial infinite-dimensional unitary irreducible representation of a noncompa
 group; the strict inequalities in (1)–(4) also need checking against the source's references.
 Evidence: finiteness of the printed index set.
 Target: [VK09.2.21].
+
+### E09.2.10. Index of the transformed angle in 9.2.2 (4)
+
+Status: Confirmed.
+Location: Vol 2, §9.2.2, p. 28, (4).
+Printed:
+\(\cos\theta'_{n-1}=\frac{\cos\theta_{n-2}\cos\varphi-i\sin\varphi}{\cos\varphi-i\cos\theta_{n-2}\sin\varphi}\)
+Correct:
+\(\cos\theta'_{n-2}=\frac{\cos\theta_{n-2}\cos\varphi-i\sin\varphi}{\cos\varphi-i\cos\theta_{n-2}\sin\varphi}\).
+Evidence: The coordinates on \(S^{n-2}\) are \(\theta_1,\dots,\theta_{n-2}\), and (3) has
+\(P(\theta_1,\dots,\theta_{n-3},\theta'_{n-2})\); by (2') the last coordinate
+\(\cos\theta_{n-2}=\zeta_{n-1}\) goes to
+\((\zeta_{n-1}\cos\varphi-i\sin\varphi)/(\cos\varphi-i\zeta_{n-1}\sin\varphi)\).
+Published: [Klimyk 2006], p. 28, l. −10.
+Target: [VK09.2.03].
+
+### E09.2.11. Restrictions of polynomials to \(S^{n-1}\)
+
+Status: Confirmed.
+Location: Vol 2, §9.2.3, p. 31, l. 2.
+Printed: By formula (2) any such restriction is a harmonic polynomial.
+Correct: By formula (2) any such restriction is the restriction of a harmonic polynomial (a sum of
+elements of the \(\tilde{\mathfrak H}^{nk}\)).
+Evidence: By (2), \(P=\sum_ir^{2i}h_{l-2i}\) with \(h_{l-2i}\) harmonic, so on \(S^{n-1}\) \(P\)
+coincides with \(\sum_ih_{l-2i}\); e.g. \(x_1^2\) restricts to the restriction of
+\((x_1^2-\frac{r^2}n)+\frac1n\), and \(x_1^2\) itself is not harmonic.
+Published: [Klimyk 2006], p. 31, l. 2.
+Target: [VK09.2.07].
+
+### E09.2.12. Representations intertwined by \(Q^{-l-n+2,l}\)
+
+Status: Confirmed.
+Location: Vol 2, §9.2.7, p. 39, l. 5.
+Printed: The operator \(Q^{-l-n+2,l}\) intertwines \(\hat T^{nl}\) and \(\check T^{n,-l-n+2}\).
+Correct: The operator \(Q^{-l-n+2,l}\) intertwines \(\check T^{nl}\) and \(\hat T^{n,-l-n+2}\).
+Evidence: By the first lines of p. 39, \(Q^{-l-n+2,l}\) annuls \(\hat{\mathfrak B}^{nl}\) and maps
+\(\mathfrak B^{nl}\) onto \(\hat{\mathfrak B}^{n,-l-n+2}\), so it induces an isomorphism from
+\(\mathfrak B^{nl}/\hat{\mathfrak B}^{nl}\) (carrying \(\check T^{nl}\)) onto \(\hat{\mathfrak
+B}^{n,-l-n+2}\) (carrying \(\hat T^{n,-l-n+2}\)). The next sentence pairs \(Q^{l,-l-n+2}\) with
+\(\check T^{n,-l-n+2}\) and \(\hat T^{nl}\).
+Published: [Klimyk 2006], p. 39, l. 5.
+Target: [VK09.2.15].
+
+### E09.2.13. The contour \(\Gamma_1\) on \(C^{pq}\)
+
+Status: Confirmed.
+Location: Vol 2, §9.2.9, p. 40, definition of \(\Gamma_1\) before (3).
+Printed: \(y_1^2+\dots+y_p^2+z_1^2+\dots+z_q^2=1\).
+Correct: \(y_1^2+\dots+y_p^2=z_1^2+\dots+z_q^2=1\).
+Evidence: (3) writes \(f(x)=r^\sigma F(\mathbf y/r,\mathbf z/r)\), \(r=(\mathbf y,\mathbf
+y)^{1/2}\), so \(F\) lives on \(|\mathbf y|=|\mathbf z|=1\), which is also the set parametrized by
+the coordinates of §9.1.7 at \(t=0\) used for (4). The printed set meets the cone in \(|\mathbf
+y|=|\mathbf z|=1/\sqrt2\).
+Published: [Klimyk 2006], p. 40, l. −12.
+Target: [VK09.2.18].
+
+### E09.2.14. Group of the operators \(T^{\sigma\varepsilon}_{pq}(g)\)
+
+Status: Confirmed.
+Location: Vol 2, §9.2.9, p. 41, after (7).
+Printed: the operators \(T^{\sigma\varepsilon}_{pq}(g)\), \(g\in SO_0(n-1,1)\), are continued to
+bounded operators.
+Correct: \(g\in SO_0(p,q)\).
+Evidence: \(T^{\sigma\varepsilon}_{pq}\) is defined on \(\mathfrak B^{\sigma\varepsilon}_{pq}\) by
+\(f(x)\mapsto f(g^{-1}x)\), \(g\in SO_0(p,q)\), and the same sentence concludes with a
+representation of \(SO_0(p,q)\).
+Published: [Klimyk 2006], p. 41, l. 9.
+Target: [VK09.2.18].
 
 ### E09.3.01. Index in the reflection symmetry of 𝔓^{−p+1/2}
 
@@ -5316,6 +6516,7 @@ Correct: lower limit \(1\).
 Evidence: (9) is (8) with \(F(z)=e^{-uz}\), where the integral is over \([1,\infty)\);
 \(\mathfrak P^\mu_\nu\) is not defined on \((0,1)\) in the source's convention. Numerical check of
 the corrected form (mpmath).
+Published: [Klimyk 2006], p. 57, l. −2.
 Target: [VK09.3.25].
 
 ### E09.3.13. Exponent, order and degree in the integral B
@@ -5383,6 +6584,29 @@ hypotheses the identity agrees with mpmath legenq (type 3) at real and complex \
 including \((\nu,\mu)=(-0.6,-0.45)\), where \(\mathrm{Re}(\nu+\mu+1)<0\).
 Target: [VK09.3.17].
 
+### E09.3.18. Subscript in the orthogonality relation 9.3.1 (2)
+
+Status: Confirmed.
+Location: Vol 2, §9.3.1, p. 45, (2).
+Printed:
+\((\Xi^{nl}_K,\Xi^{nl'}_S)=\int_{S^{n-1}}\Xi^{nl}_K(\xi)\overline{\Xi^{nl'}_L(\xi)}\,d\xi=\delta_{KL}\delta_{ll'}\).
+Correct: \((\Xi^{nl}_K,\Xi^{nl'}_L)\) on the left.
+Evidence: The integral and the right side \(\delta_{KL}\delta_{ll'}\) refer to \(\Xi^{nl'}_L\).
+Published: [Klimyk 2006], p. 45, formula (2).
+Target: [VK09.3.01].
+
+### E09.3.19. Upper limit of the integral in 9.3.7 (11)
+
+Status: Confirmed.
+Location: Vol 2, §9.3.7, p. 62, (11).
+Printed: \(\int_{-\infty}6\infty\,\mathfrak P^{-p+1/2}_{i\nu-i\mu-1/2}(\cosh\theta)\mathfrak
+P^{-q+1/2}_{i\mu-1/2}(\cosh\theta)\,d\mu\) (the upper limit set as \(6\infty\) in the integrand).
+Correct: \(\int_{-\infty}^{\infty}\mathfrak P^{-p+1/2}_{i\nu-i\mu-1/2}(\cosh\theta)\mathfrak
+P^{-q+1/2}_{i\mu-1/2}(\cosh\theta)\,d\mu\).
+Evidence: (11) is obtained by multiplying two instances of (10), each an integral over
+\(\lambda\in\mathbb R\), and is a convolution over \(\mu\in\mathbb R\).
+Published: [Klimyk 2006], p. 62, l. −5.
+Target: [VK09.3.32].
 
 ### E09.4.01. Second three-angle relation
 
@@ -5461,6 +6685,7 @@ Evidence: at \(\alpha=0.8\), \(\lambda=0.45\), \(x_1=\cosh0.9\), \(x_2=\cosh0.7\
 ratio left/right is exactly \(1\) with index \(l+\lambda+1\), and varies like \(z^{1}\) with the
 printed index (the left side decays like \(z^{-\lambda-2\alpha}\), the printed \(l=0\) term like
 \(z^{-\lambda-2\alpha+1}\)).
+Published: [Klimyk 2006], p. 75, l. 4.
 Target: [VK09.4.17].
 
 ### E09.4.07. Angular Gegenbauer parameter in the \(\mathfrak P\), \(\mathfrak Q\) addition formulas
@@ -5515,6 +6740,8 @@ Evidence: (12) follows from (9) by the substitution \(\cosh\theta=\cosh\theta_1\
 \(\sigma\)-dependent gammas cancel and \([\cosh(\theta_1+\theta_2)-\cosh\theta][\cosh\theta-
 \cosh(\theta_1-\theta_2)]=4\times\)(four half-angle sinh). Numerically (11) holds with the
 corrected kernels (\(p=1.5\), \(m\le2\)).
+Published: [Klimyk 2006], p. 78, l. −8 and l. −3. Klimyk deletes only the extra \(m!\); (13) then
+remains wrong.
 Target: [VK09.4.22].
 
 ### E09.4.11. Integration range in the \(DD\) product formula
@@ -5529,6 +6756,7 @@ Evidence: the printed integral is that of (1), whose left side has \(C^{\alpha+m
 in place of \(D^{\alpha+m}_{\lambda-m}(z_2)\); the corrected form holds numerically
 (\(z_1=\cosh1.7\), \(z_2=\cosh0.6\), two \((\alpha,\lambda)\), \(m\le2\)) and its \(z_2\to\infty\)
 limit is (4), which also has \(\int_1^\infty\).
+Published: [Klimyk 2006], p. 80, l. −7.
 Target: [VK09.4.25].
 
 ### E09.4.12. Missing square root in the limit formula
@@ -5539,6 +6767,7 @@ Printed: \(\int_1^\infty[z+x(z^2-1)]^{-\lambda-2\alpha}\cdots\).
 Correct: \([z+x(z^2-1)^{1/2}]^{-\lambda-2\alpha}\).
 Evidence: the limit \(z_2\to\infty\) of (3) gives \((z_1+x(z_1^2-1)^{1/2})\); numerically the
 corrected form holds and the printed one is off by factors \(1.5\)–\(2.4\).
+Published: [Klimyk 2006], p. 80, l. −1.
 Target: [VK09.4.25].
 
 ### E09.4.13. Boundary values of \(D^\alpha_\lambda\) on \((-1,1)\)
@@ -5598,6 +6827,7 @@ Correct: \(\hat F(m)=\frac{\Gamma(\frac n2)}{\sqrt\pi\Gamma(\frac{n-1}2)}\frac{m
 Evidence: this is (5) with \(t^{nm}_{00}=C^p_m/C^p_m(1)\) and the measure of §9.1.9; any other
 constant \(\kappa\ne1\) times it violates \((F_1*F_2)^\wedge=\hat F_1\hat F_2\) (the left side
 scales by \(\kappa\), the right by \(\kappa^2\)).
+Published: [Klimyk 2006], p. 86, l. 2. Klimyk corrects only \(l(n-3)!\) to \(l!(n-3)!\).
 Target: [VK09.4.30].
 
 ### E09.4.17. Sign in the \(\cosh\theta\) recurrence for \(t^{n\sigma}_{m0}\)
@@ -5700,6 +6930,8 @@ Correct: numerator \(\Gamma(g-l+\frac{n-2}2)\Gamma(g-m+\frac{n-2}2)\Gamma(g-s+\f
 Evidence: (4) follows from (2), (3) and the duplication formula, which keep all three gammas;
 numerically the printed form fails (e.g. ratio \(\sqrt2\) at \(n=4\), \((l,m,s)=(3,2,1)\)) and the
 corrected one equals the group integral.
+Published: [Klimyk 2006], p. 96, l. 8. Klimyk adds the missing exponent \(\frac12\) on the second
+fraction but not the factor \(\Gamma(g-s+\frac{n-2}2)\).
 Target: [VK09.4.42].
 
 ### E09.4.25. Coefficient in Dougall's formula
@@ -5782,6 +7014,47 @@ holds
 numerically. The printed form holds if \(t\) denotes the half rotation angle in §6.9.2 (4).
 Target: [VK09.4.50].
 
+### E09.4.31. Coordinate \(\theta\) on \(H^{n-1}_+\) in 9.4.2 (12)
+
+Status: Confirmed.
+Location: Vol 2, §9.4.2, p. 70, line after (12).
+Printed: \(\cos\theta=\xi_n\).
+Correct: \(\cosh\theta=\xi_n\).
+Evidence: On \(H^{n-1}_+\), \(\xi_n\ge1\); (12) contains \(\mathfrak P(\cosh\theta)\), and
+\(\xi'=\sinh^{-1}\theta\,(\xi_1,\dots,\xi_{n-1})\in S^{n-2}\) requires \(\xi_n^2-1=\sinh^2\theta\).
+Published: [Klimyk 2006], p. 70, l. −5.
+Target: [VK09.4.08].
+
+### E09.4.32. Gamma factor in the product formula 9.4.5 (9)
+
+Status: Confirmed.
+Location: Vol 2, §9.4.5, p. 77, (9).
+Printed: denominator \(\Gamma(-\sigma-2-p-m+1)\).
+Correct: \(\Gamma(-\sigma-2p-m+1)\).
+Evidence: Numerical evaluation (mpmath) with \(p=\frac32\), \(\theta_1=0.7\), \(\theta_2=1.1\): for
+\(\sigma=0.3+0.4i\), \(m=1\) the integral is \(0.0349473+0.1031558i\), equal to the corrected right
+side (printed \(0.2076421-0.0258248i\)); likewise for \(\sigma=-0.7+0.2i\), \(m=2\). The two forms
+coincide only for \(p=2\).
+Published: [Klimyk 2006], p. 77, l. −2.
+Target: [VK09.4.22].
+
+### E09.4.33. Hypothesis of the inversion formula 9.4.7 (2)
+
+Status: Confirmed.
+Location: Vol 2, §9.4.7, p. 84, (2).
+Printed: \(f(g)=\sum_{m=0}^\infty(\dim T^{nm})\mathrm{Tr}(\hat f_mT^{nm}(g))\), stated for functions
+\(f\) on \(SO(n)\).
+Correct: the same formula (convergence in \(L^2\)) for \(f\in L^2(SO(n))\) whose decomposition
+contains only the class-one representations \(T^{nm}\), in particular for right
+\(SO(n-1)\)-invariant \(f\).
+Evidence: For \(n\ge4\), \(SO(n)\) has irreducible representations without \(SO(n-1)\)-fixed vectors
+(for \(SO(4)\), the representation on self-dual 2-forms); a nonzero matrix element \(f\) of such a
+representation has \(\hat f_m=0\) for all \(m\) by the Schur orthogonality relations, so the right
+side of (2) vanishes. For \(n=3\) every irreducible representation is of class one and (2) is the
+Peter–Weyl expansion.
+Published: [Klimyk 2006], p. 84.
+Target: [VK09.4.29].
+
 ### E09.5.01. Wrong Gegenbauer index in the compact integral representation
 
 Status: Confirmed
@@ -5810,10 +7083,11 @@ Target: [VK09.5.07]
 
 Status: Confirmed
 Location: Vol 2, §9.5.2, p. 104, (7′).
-Printed: lower parameter \((m-s+k+1)/2\).
-Correct: \((m-s-k+1)/2\).
+Printed: lower parameter \((m-s+k+1)/2\), and the symbol \({}_eF_2\).
+Correct: \((m-s-k+1)/2\), and \({}_3F_2\).
 Evidence: \(n=6,k=4,m=2,r=0,s=2\): the integral equals \(0.51717\); the printed
 right-hand side gives \(1.08606\), the corrected one \(0.51717\).
+Published: [Klimyk 2006], p. 104, l. −3.
 Target: [VK09.5.09]
 
 ### E09.5.04. Misprinted factorial
@@ -5823,6 +7097,7 @@ Location: Vol 2, §9.5.2, p. 105, (10).
 Printed: \((k-m_r)!\).
 Correct: \((k-m+r)!\).
 Evidence: only \((k-m+r)!\) makes (10) agree with (9) and with quadrature.
+Published: [Klimyk 2006], p. 105, l. 5.
 Target: [VK09.5.10]
 
 ### E09.5.05. Exponent and missing power of 2 in the \(\tanh\) expansion
@@ -5888,6 +7163,7 @@ Correct: (3) uses \(P(\cos\varphi)\) without the extra \(\sin\varphi\); (4) has 
 factor \((\ell+m+n-3)\).
 Evidence: the printed (4) violates \(P^{n\ell}_{\ell\ell\ell}=1\); the corrected forms agree
 with quadrature.
+Published: [Klimyk 2006], p. 110, l. 10 and l. 11. Klimyk corrects only \(\cosh\) to \(\cos\).
 Target: [VK09.5.21]
 
 ### E09.5.11. Normalization, parity rule and constants for \(P^{n\ell}_{kmj}(0)\)
@@ -5929,12 +7205,24 @@ Target: [VK09.5.39]
 
 Status: Confirmed
 Location: Vol 2, §9.5.11, p. 122, (9)–(11).
-Printed: \(e^{-ixt}\) in (9) with lower limit \(j=1\); \(e^{-ix}\) in (10); \(e^{ix}\) in
-(11).
-Correct: \(e^{ixt}\) in (9) with lower limit \(k=j\); \(e^{ix}\) in (10); \(e^{-ix}\) in
-(11).
+Printed: \(e^{-ixt}\) in (9) with lower limit \(j=1\); \(e^{-ix}\) and the symbol
+\(j^n_{kmj}\) in (10); \(e^{ix}\) in (11).
+Correct: \(e^{ixt}\) in (9) with lower limit \(k=j\); \(e^{ix}\) and \(J^n_{kmj}\) in (10);
+\(e^{-ix}\) in (11).
 Evidence: quadrature of the integral representation of \(J^n_{kmj}\).
+Published: [Klimyk 2006], p. 122, l. −3.
 Target: [VK09.5.40]
+
+### E09.5.15. Factorial in the summation formula 9.5.11 (3)
+
+Status: Confirmed.
+Location: Vol 2, §9.5.11, p. 121, (3).
+Printed: \(\Big[\frac{(k+j+n-4)!(2k+n-3)}{(kk-j)!}\Big]^{1/2}\).
+Correct: \(\Big[\frac{(k+j+n-4)!(2k+n-3)}{(k-j)!}\Big]^{1/2}\).
+Evidence: (2) and (3) are the cases \(t=1\) and \(t=-1\) of (1) and carry the same coefficient; (2)
+prints \((k-j)!\).
+Published: [Klimyk 2006], p. 121, l. 4.
+Target: [VK09.5.38].
 
 ### E09.6.01. Radius of the unit-area sphere
 
@@ -6072,6 +7360,49 @@ Correct: \((-i)^\ell J_{\ell+1/2}(Rx)\).
 Evidence: Funk–Hecke formula; double quadrature for \(\ell\le3\).
 Target: [VK09.6.34]
 
+### E09.6.14. Argument of \(J_p\) in the limit before 9.6.11 (5)
+
+Status: Confirmed.
+Location: Vol 2, §9.6.11, p. 152, limit display before (5).
+Printed: \(\lim_{p\to\infty}\frac{\Gamma(p+1)J_p(x)\sqrt{2p}}{(x\sqrt
+p/\sqrt2)^p}=\frac1{\sqrt\pi}\int_{-\infty}^\infty e^{\sqrt2ixu-u^2}du=e^{-x^2/2}\).
+Correct: \(\lim_{p\to\infty}\frac{\Gamma(p+1)J_p(x\sqrt{2p})}{(x\sqrt p/\sqrt2)^p}=e^{-x^2/2}\).
+Evidence: The preceding sentence replaces \(x\) by \(x\sqrt{2p}\). With \(x=0.8\) (mpmath) the
+corrected quotient is \(0.73002\), \(0.72712\), \(0.72639\) for \(p=50,200,800\), tending to
+\(e^{-0.32}=0.72615\); the printed quotient is below \(10^{-49}\).
+Published: [Klimyk 2006], p. 152, l. −9.
+Target: [VK09.6.29].
+
+### E09.6.15. Pairing and indices in the derivation of 9.6.12 (2)
+
+Status: Confirmed.
+Location: Vol 2, §9.6.12, p. 153, display after (1) and (2).
+Printed: \((T_\psi1,\xi^n)=(-i\sqrt2)^{-n}e^{-x^2}H_n(a_1x_1+\dots+a_nx_n)\); in (2) the sum over
+\(i_1+\dots+i_m=m\).
+Correct: \((T_\varphi1,\psi^n)=(-i\sqrt2)^{-n}e^{-x^2}H_n(a_1x_1+\dots+a_mx_m)\); in (2) the sum
+over \(i_1+\dots+i_m=n\).
+Evidence: The next display expands \((T_\varphi1,\psi^n)\) and is compared with this one. By 9.6.11
+(10) with \(\varphi\) as in (1), \(\|\varphi\|^2/8=x^2\) and
+\(-(\varphi,\psi)/(2\sqrt2)=\sum_{k=1}^ma_kx_k\). In (2) the multinomial coefficient
+\(n!/(i_1!\cdots i_m!)\) needs \(i_1+\dots+i_m=n\), the degree of \(H_n\).
+Published: [Klimyk 2006], p. 153, l. −7. Klimyk corrects only the pairing; the term \(a_nx_n\) and
+the summation condition in (2) are also misprinted.
+Target: [VK09.6.31].
+
+### E09.6.16. Argument of the Laguerre polynomial in 9.6.12 (25)
+
+Status: Confirmed.
+Location: Vol 2, §9.6.12, p. 158, (25).
+Printed:
+\(\frac{\sqrt\pi\,n!}2x^n\sum_{k=0}^{[n/2]}\frac{(-1)^k(2n-4k+1)}{\Gamma(n-k+\frac32)}x^{-2k}P_{n-2k}(\cos
+t)L^{n-2k+1/2}_k(x)=H_n(x\cos t)\).
+Correct: \(L^{n-2k+1/2}_k(x^2)\).
+Evidence: Numerical evaluation (mpmath): \(n=4\), \(x=1.3\), \(t=0.7\) gives \(H_4(x\cos
+t)=-19.81588\); the sum with \(L_k(x^2)\) gives \(-19.81588\), with \(L_k(x)\) \(-19.58209\);
+similarly for \(n=5\). (26), derived from (25), has \(L^{n-2k+1/2}_k(x^2)\).
+Published: [Klimyk 2006], p. 158, l. −5.
+Target: [VK09.6.34].
+
 ### Conventions and notation (not errata)
 
 1. The source mixes probability measures on spheres (§9.1.9 (1)–(6), (8')) with the
@@ -6181,6 +7512,19 @@ Correct: the restriction is to \(SO(n-1)\), the maximal compact subgroup of \(SO
 Evidence: \(SO(n)\not\subset SO_0(n-1,1)\); the summands \(T^{n-1,\ell}\) are representations
 of \(SO(n-1)\).
 Target: [VK10.1.12]
+
+### E10.1.06. Measure on a contour of the cone in §10.1.4
+
+Status: Confirmed.
+Location: Vol 2, §10.1.4, p. 168, after (7).
+Printed: \(d\xi'\) is the measure on \(\Gamma\) such that \(d(t\xi')=t^{n-3}d\xi'\).
+Correct: \(d(t\xi')=t^{n-3}dt\,d\xi'\).
+Evidence: \(d(t\xi')\) is the invariant measure on the \((n-1)\)-dimensional cone \(C^{n-1}_+\) and
+\(d\xi'\) a measure on the \((n-2)\)-dimensional contour \(\Gamma\); \(d\xi=d\xi_1\cdots
+d\xi_{n-1}/\xi_n\) is homogeneous of degree \(n-2\), which gives the factor \(t^{n-3}dt\) (as in
+§9.1.9).
+Published: [Klimyk 2006], p. 168, l. 7.
+Target: [VK10.1.10], [VK09.1.36].
 
 ### E10.2.01. Gegenbauer index in the zonal polynomial
 
@@ -6329,6 +7673,17 @@ transform of \(g(\cosh\theta)=f\), and \(\|f\|^2=2\pi\int_0^\infty\rho\tanh\pi\r
 \(\tilde c_3=\frac1{4\pi^2}\).
 Target: [VK10.2.28]
 
+### E10.2.11. Variable in the statement of the Bochner theorem
+
+Status: Confirmed.
+Location: Vol 2, §10.2.4, p. 182, statement of the Bochner theorem.
+Printed: \(f(y)=\varphi(R)\Xi^{n\ell}_M(\eta)\), where \(\eta\in\mathbb R^n\).
+Correct: \(f(y)=\varphi(R)\Xi^{n\ell}_M(\eta)\), where \(y\in\mathbb R^n\).
+Evidence: In the statement \(\eta=y/R\) lies on \(S^{n-1}\); the variable ranging over \(\mathbb
+R^n\) is \(y\), as in the display before (3).
+Published: [Klimyk 2006], p. 182, l. −10.
+Target: [VK10.2.17].
+
 ### E10.3.01. Missing constant in the hyperbolic-basis inversion
 
 Status: Open check.
@@ -6461,6 +7816,30 @@ Evidence: follows from (9) (corrected, [E10.3.07]) and
 printed.
 Target: [VK10.3.17]
 
+### E10.3.10. Subscript of the cone function in §10.3.2 (1)
+
+Status: Confirmed.
+Location: Vol 2, §10.3.2, p. 198, (1).
+Printed: \(\bigl(\mathcal
+P_\sigma\hat\Xi^{n,-\sigma-n+2,0}_{M\delta}\bigr)(x)=\frac{2\pi^{(n-1)/2}}{\Gamma(\frac{n-1}2)}\Xi^{n\sigma}_M(x)\).
+Correct: \(\bigl(\mathcal
+P_\sigma\hat\Xi^{n,-\sigma-n+2,0}_M\bigr)(x)=\frac{2\pi^{(n-1)/2}}{\Gamma(\frac{n-1}2)}\Xi^{n\sigma}_M(x)\).
+Evidence: In (1) \(x\in H^{n-1}_+\) and \(M=(m,M')\) carries no sign label \(\delta\); the list of
+functions before (1) and the right side both have the subscript \(M\).
+Published: [Klimyk 2006], p. 198, l. 7.
+Target: [VK10.3.06].
+
+### E10.3.11. Summation subscript in §10.3.2 (17)
+
+Status: Confirmed.
+Location: Vol 2, §10.3.2, p. 200, (17).
+Printed: \(f(x)=\frac12c'_nc\sum-M'\int_{-\infty}^\infty\int_0^\infty\cdots\).
+Correct: \(f(x)=\frac12c'_nc\sum_{M'}\int_{-\infty}^\infty\int_0^\infty\cdots\).
+Evidence: The coefficients \(a_{M'}(R,\rho)\) are summed over the labels \(M'\), as in the
+Plancherel formula (13) with \(\sum_{M',\delta}\); the printed \(-M'\) is a misplaced subscript.
+Published: [Klimyk 2006], p. 200, l. −5.
+Target: [VK10.3.09].
+
 ### E10.4.01. Missing m! in the bispherical normalizing constant
 
 Status: Confirmed.
@@ -6504,6 +7883,9 @@ Correct: \(\frac{\Gamma(\frac p2)\Gamma(\frac q2)(n-2)}{2\Gamma(\frac n2)(p-2)(q
 \(A^{pq\ell}_{rs}\) as printed in (3).
 Evidence: direct evaluation for \((p,q,\ell)=(3,3,4),(3,4,3),(4,5,4)\) at generic angles gives
 left side / printed right side \(=0.5\) in each case.
+Published: [Klimyk 2006], p. 217, l. −1. Klimyk exchanges \(\varphi_1\) and \(\varphi_2\) in (2);
+this is wrong: with the printed pairing the two sides agree numerically, with the exchange they do
+not.
 Target: [VK10.4.13]
 
 ### E10.4.04. Angle pairing in the Jacobi product formula
@@ -6518,6 +7900,8 @@ Correct: \(\varphi_1\) and \(\varphi_2\) are interchanged in the Gegenbauer fact
 consistent with (2). The constant \(M^{pq\ell}_{rs}\) of (5) is then correct.
 Evidence: quadrature for \((p,q,\ell,r,s)=(3,4,4,2,0),(3,4,5,1,2),(4,3,3,1,0)\): ratio 1 with the
 swapped pairing; 1.73, 0.72, 1.53 with the printed one.
+Published: [Klimyk 2006], p. 217, l. −1. Klimyk exchanges \(\varphi_1\) and \(\varphi_2\) in (2),
+not in (4); with that exchange (2) fails numerically.
 Target: [VK10.4.14]
 
 ### E10.4.05. Power of R in Sonin's formula
@@ -6530,6 +7914,7 @@ J_{\alpha+\beta+1}(R)\).
 Correct: the right side is \(R^{-1}\sin^\alpha\varphi\cos^\beta\varphi\,J_{\alpha+\beta+1}(R)\).
 Evidence: it is the case \(m=0\) of (7), which has \(R\) on the left; quadrature at
 \(\alpha=0.6\), \(\beta=1.3\), \(R=2.3\) confirms \(R^{-1}\).
+Published: [Klimyk 2006], p. 219, l. 4.
 Target: [VK10.4.16]
 
 ### E10.4.06. Exponent of sinh θ in the limiting Sonin formula (12)
@@ -6554,6 +7939,55 @@ Correct: \([x,\xi]=[x'',\zeta]\cosh\theta-(x',\eta)\sinh\theta\) for
 Evidence: the first \(p\) coordinates enter \([\,,\,]\) with a minus sign; the kernel
 \((\cosh\theta\cosh\psi-\sinh\theta\cos\varphi)^\sigma\) of (4′) uses the corrected sign.
 Target: [VK10.4.18]
+
+### E10.4.08. Subscript of the factor on \(S^{n-2}\) in §10.4.3 (6)
+
+Status: Confirmed.
+Location: Vol 2, §10.4.3, p. 213, (6).
+Printed:
+\(\Xi^{1,n-1,\sigma}_{MN}(\xi)=Y^{1,n-1,\sigma}_{rs}(\theta)\Xi^{1r}(\eta)\Xi^{n-1,s}_N(\tau)\)
+Correct:
+\(\Xi^{1,n-1,\sigma}_{MN}(\xi)=Y^{1,n-1,\sigma}_{rs}(\theta)\Xi^{1r}(\eta)\Xi^{n-1,s}_{N'}(\tau)\),
+\(N=(s,N')\).
+Evidence: (6) is the case \(p=1\), \(q=n-1\) of (4), where
+\(\Xi^{pq\sigma}_{MN}=Y^{pq\sigma}_{rs}\Xi^{pr}_{M'}\Xi^{qs}_{N'}\) with \(N=(s,N')\); the basis
+functions on \(S^{n-2}\) carry the labels \(N'\), as in the use of (6) on p. 214.
+Published: [Klimyk 2006], p. 213, formula (6). p. 214 (before (9)) prints
+\(\Xi^{n-1,q}_{N'}(\tau)\); the superscript should be \(s\), which the published list does not
+mention.
+Target: [VK10.4.07], [VK10.4.09].
+
+### E10.4.09. Lower index of the functions §10.4.3 (10)–(10′) on the principal series
+
+Status: Confirmed.
+Location: Vol 2, §10.4.3, p. 214, line after (10′).
+Printed: for \(\sigma=i\rho-\frac{n-2}2\) the lower indices are \(-iu\rho-\frac12\).
+Correct: for \(\sigma=i\rho-\frac{n-2}2\) the lower indices are \(-i\rho-\frac12\).
+Evidence: The lower index in (10)–(10′) is \(-\sigma-\frac{n-1}2\), which equals
+\(-i\rho+\frac{n-2}2-\frac{n-1}2=-i\rho-\frac12\).
+Published: [Klimyk 2006], p. 214, l. −12.
+Target: [VK10.4.09].
+
+### E10.4.10. Sign in the symmetry relation §10.4.7 (15)
+
+Status: Confirmed.
+Location: Vol 2, §10.4.7, p. 223, (15).
+Printed: \(-e^{-\pi i\alpha}\mathfrak
+Q^{\alpha\beta}_\tau(z)=2^{-\tau-1+\beta/2}\Gamma(\tau+\frac{\alpha+\beta}2+1)\Gamma(\tau+\frac{\alpha-\beta}2+1)(1+z)^{-1/2}\mathfrak
+P^{-2\tau-1,-\alpha}_{(\beta-1)/2}\bigl(\frac{z-3}{z+1}\bigr)\).
+Correct: \(e^{-\pi i\alpha}\mathfrak
+Q^{\alpha\beta}_\tau(z)=2^{-\tau-1+\beta/2}\Gamma(\tau+\frac{\alpha+\beta}2+1)\Gamma(\tau+\frac{\alpha-\beta}2+1)(1+z)^{-1/2}\mathfrak
+P^{-2\tau-1,-\alpha}_{(\beta-1)/2}\bigl(\frac{z-3}{z+1}\bigr)\), where for \(z>1\) the argument
+\(w=\frac{z-3}{z+1}\) lies in \((-1,1)\) and the factor \((w-1)^{(2\tau+1)/2}\) of (4) is taken as
+\((1-w)^{(2\tau+1)/2}\).
+Evidence: With \(\mathfrak P\), \(\mathfrak Q\) as defined in (4) and (8) on p. 222, the ratio of
+the two sides of (15) without the minus sign is \(1\) to 30 digits at \(z=2.5,4,7\) for three
+parameter sets, using the real factor \((1-w)^{(2\tau+1)/2}\) on \((-1,1)\); with the principal
+branch of \((w-1)^{(2\tau+1)/2}\) the ratio is \(e^{-i\pi(\tau+1/2)}\), so no branch gives \(-1\).
+The companion relation (17) holds to 30 digits in the same check
+(checks/n4_p403_jacobi_symmetry.py).
+Published: [Klimyk 2006], p. 223, l. 9.
+Target: [VK10.4.22].
 
 ### E10.5.01. Range of the angle at a left-leaf fork
 
@@ -6595,9 +8029,11 @@ Target: [VK10.5.07]
 
 Status: Confirmed
 Location: Vol 2, §10.5.3, p. 230, eq. (19).
-Printed: Factor \(1/2\); cases \(r=s=0\) and \(r=s=1\) for all \(m\).
-Correct: Factor \(1\); the two cases hold only for even \(m\).
+Printed: Factor \(1/2\); cases \(r=s=0\) and \(r=s=1\) for all \(m\); the subscript \(M\) in
+\(Y^\pm_M\) in (18)–(19).
+Correct: Factor \(1\); the two cases hold only for even \(m\); \(Y^\pm_m\).
 Evidence: Numerical evaluation for \(m\le4\) (s1.py).
+Published: [Klimyk 2006], p. 230, l. 9 and l. 11.
 Target: [VK10.5.07]
 
 ### E10.5.05. Garbled function \(F'\) in §10.5.4 (5)
@@ -6727,6 +8163,8 @@ Printed: Constant in (23) as printed.
 Correct: \(\Gamma(\beta+\gamma+2)/(\Gamma(\beta+1)\Gamma(\gamma+1))\), and the right side is
 divided by \(P^{(\alpha,\beta)}_s(-1)\).
 Evidence: Quadrature (s6.py).
+Published: [Klimyk 2006], p. 242, l. −2. Klimyk corrects only \(\Gamma(\gamma+2)\) to
+\(\Gamma(\gamma+1)\); the constant then remains wrong.
 Target: [VK10.5.18]
 
 ### E10.5.18. Four-block formulas §10.5.7 (27)–(28)
@@ -6738,6 +8176,8 @@ the description of the simplex \(D\).
 Correct: Superscript \(\beta-\delta-1\); coefficient of (27) is
 \((-1)^{s-k}c_k(s;\alpha,\beta,\gamma)c_r(s-k;\beta,\gamma,\delta)\); \(u\) in the domain.
 Evidence: Numerical expansion on the simplex (s16–s18).
+Published: [Klimyk 2006], p. 245, l. 5. Klimyk repairs the binomial coefficient \(\binom s{s-k-r}\)
+in \(b_{skr}\); the resulting coefficient has not been compared with the one above.
 Target: [VK10.5.19], [VK10.5.20]
 
 ### E10.5.19. Coefficient \(g_{skr}\) in §10.5.7 (31)
@@ -6771,6 +8211,7 @@ Correct: Each fork uses a matched pair, \((\cos,\sin)\) at a compact fork and
 \([x,x]=1\).
 Evidence: Mixed pairs do not preserve \([x,x]=1\). The left/right assignment could not be
 read unambiguously from the source.
+Published: [Klimyk 2006], p. 247, l. −5; p. 247, l. −2.
 Target: [VK10.5.22]
 
 ### E10.6.01. Index range in the definition of \(G\)
@@ -6781,6 +8222,7 @@ Printed: \(0\le n\le q\).
 Correct: \(0\le n\le p\).
 Evidence: \(n\) counts the factors \(\Gamma(1-a_j+t)\), \(j\le n\), among \(p\) parameters;
 DLMF 16.17.1.
+Published: [Klimyk 2006], p. 248, l. −4.
 Target: [VK10.6.01]
 
 ### E10.6.02. Orientation of the loops \(L_2\), \(L_3\)
@@ -6855,6 +8297,55 @@ Correct: To be rederived from [VK10.6.06] and [VK10.6.11]; the parameters in (14
 inconsistent with those of (6).
 Evidence: The ingredients are wrong ([E10.6.04], [E10.6.07]); corrected identities not computed.
 Target: [VK10.6.09], [VK10.6.12]
+
+### E10.6.09. Gamma factor in the residue expansion §10.6.1 (2)
+
+Status: Confirmed.
+Location: Vol 2, §10.6.1, p. 249, (2).
+Printed: \(\prod_{j=1}^n\Gamma(a_j+b_k-1)\) in the numerator.
+Correct: \(\prod_{j=1}^n\Gamma(1+b_k-a_j)\).
+Evidence: The residue of \(\Gamma(1-a_j+t)\) at the pole \(t=b_k\) of \(\Gamma(b_k-t)\) gives
+\(\Gamma(1-a_j+b_k)\) (DLMF 16.17.2). Numerically (\(G^{21}_{23}\), \(x=0.4\)) the corrected series
+equals \(G\) to 25 digits, the printed one gives ratio \(-1.72\) (checks/n4_p417_meijer.py).
+Published: [Klimyk 2006], p. 249, l. −9.
+Target: [VK10.6.02].
+
+### E10.6.10. Last numerator parameter in the residue expansion §10.6.1 (3)
+
+Status: Confirmed.
+Location: Vol 2, §10.6.1, p. 249, (3).
+Printed: \({}_qF_{p-1}\bigl(1+b_1-a_k,\ldots,1+b_m-a_k;\ldots\bigr)\).
+Correct: \({}_qF_{p-1}\bigl(1+b_1-a_k,\ldots,1+b_q-a_k;\ldots\bigr)\).
+Evidence: A \({}_qF_{p-1}\) has \(q\) numerator parameters, one for each \(b_j\), \(j=1,\ldots,q\).
+Numerically (\(G^{12}_{32}\), \(x=2.5\)) the corrected series equals \(G\) to 25 digits, the printed
+one with \(m\) parameters gives ratio \(0.827\) (checks/n4_p417_meijer.py).
+Published: [Klimyk 2006], p. 249, l. −4.
+Target: [VK10.6.02].
+
+### E10.6.11. Missing minus sign in a Gamma argument in §10.6.4 (9)
+
+Status: Confirmed.
+Location: Vol 2, §10.6.4, p. 257, (9).
+Printed: \(\Gamma\bigl(\frac12(-i\nu-\sigma\frac{n-5}2)\bigr)\).
+Correct: \(\Gamma\bigl(\frac12(-i\nu-\sigma-\frac{n-5}2)\bigr)\).
+Evidence: The companion factor in (9) is \(\Gamma(\frac12(i\nu-\sigma-\frac{n-5}2))\), and the even
+case (8) has the pair \(\Gamma(\frac12(\pm i\nu-\sigma-\frac{n-3}2))\); the formula is symmetric
+under \(\nu\mapsto-\nu\), so the printed product \(\sigma\frac{n-5}2\) is a dropped minus sign.
+Published: [Klimyk 2006], p. 257, l. −5.
+Target: [VK10.6.08].
+
+### E10.6.12. Range of \(\mathrm{Re}\,\sigma\) in §10.6.6 (4)
+
+Status: Confirmed.
+Location: Vol 2, §10.6.6, p. 263, condition after (4).
+Printed: \(0<\mathrm{Re}\,\sigma>-n+2\).
+Correct: \(0>\mathrm{Re}\,\sigma>-n+2\), i.e. \(-n+2<\mathrm{Re}\,\sigma<0\).
+Evidence: The printed chain is not a range: its second inequality follows from the first. The strip
+\(-n+2<\mathrm{Re}\,\sigma<0\) is invariant under \(\sigma\mapsto-\sigma-n+2\), which exchanges the
+two spaces paired in (4)–(5), and contains the principal series line
+\(\mathrm{Re}\,\sigma=-\frac{n-2}2\) used for \(d\mu_{n-1}\).
+Published: [Klimyk 2006], p. 263, l. −8.
+Target: [VK10.6.13].
 
 ### E10.7.01. Parity convention for \(\tan^{-\varepsilon}\pi\sigma\)
 
@@ -6956,6 +8447,7 @@ Evidence: with the printed entries \(n(z,\alpha)^*Jn(z,\alpha)\ne J\) for random
 \(z\in\mathbb C^{n-2}\) (\(n=4\)); with the corrected entries \(n^*Jn=J\), the group law (1), (3),
 (4) of §11.1.3 holds, and \(\mathrm{ad}\,I'\) has eigenvalues \(\pm1,\pm2\) on the corrected root
 vectors (numeric checks).
+Published: [Klimyk 2006], p. 280, formulas (6) and (7).
 Target: [VK11.1.05], [VK11.1.07], [VK11.1.08].
 
 ### E11.1.03. Killing form of u(n−1,1)
@@ -7116,11 +8608,12 @@ Target: [VK11.3.21], [VK11.3.23], [VK11.3.24], [VK11.3.29], [VK11.3.31].
 
 Status: Normalization check.
 Location: Vol 2, §11.3.5, p. 317, (6).
-Printed: the factor \((-1)^{m'}\).
+Printed: the factor \((-1)^{m'}\), and the bracket without its exponent \(\frac12\).
 Correct: with \(P^l_{mn}\) taken from §6.3.4 (1), third expression, the factor is \((-1)^m\); the
-magnitude is as printed.
+bracket carries the exponent \(\frac12\).
 Evidence: numeric comparison with (3)–(4) for two parameter sets; the sign depends on the phase
 convention for \(P^l_{mn}\), which the text does not fix at this point.
+Published: [Klimyk 2006], p. 317, l. 3.
 Target: [VK11.3.19].
 
 ### E11.3.06. Factorial and sign in the compact one-dimensional integral
@@ -7182,6 +8675,7 @@ Location: Vol 2, §11.3.9, p. 324, (3).
 Printed: \(t^{n-m',\ell,\ell'-m'}_{(m0)0}\) in the second form.
 Correct: \(t^{n+m',\ell,\ell'-m'}_{(m0)0}\).
 Evidence: the first form has \(n+m\); numeric check from (3)–(4).
+Published: [Klimyk 2006], p. 324, l. 6.
 Target: [VK11.3.30].
 
 ### E11.3.12. Third form of §11.3.9 (5)
@@ -7220,6 +8714,7 @@ Evidence: with \(\theta=it\), \(\ell=\nu_1\), \(\ell'=\nu_2\) in §11.3.10 (2)�
 \([d/d\theta-k\tan\theta]=-i[d/dt+k\tanh t]\) while the right side becomes
 \(-2A\,i\sinh t\,\varphi^{n+1,\sigma-1,k-1}\); hence the sign \(+\). Numeric check at \(n=4\),
 \(\sigma=2.3\), \(k=1\), \(t=0.6\).
+Published: [Klimyk 2006], p. 326, l. 5; p. 326, l. 6.
 Target: [VK11.3.33].
 
 ### E11.3.15. Argument of the Jacobi polynomial in the K_pq-harmonic
@@ -7243,6 +8738,8 @@ Correct: \(c=\big[\frac{(p-1)!(q-1)!(\ell+\ell'+n-1)N!\,\Gamma(N+\alpha+\beta+1)
 \(\alpha=r+r'+p-1\), \(\beta=s+s'+q-1\).
 Evidence: derived from the Jacobi norm and the measure \(\sin^{2p-1}\theta\cos^{2q-1}\theta\) on
 \(S^{n-1}_{\mathbb C}\); unit norm checked numerically for \(n=4,5\).
+Published: [Klimyk 2006], p. 329, l. 3. Klimyk deletes only \(s!\); the constant still has a pole at
+\(\ell=\ell'=r=r'=s=s'=0\).
 Target: [VK11.3.36], [VK11.3.38].
 
 ### E11.3.17. Factorials in the constant of the K_pq-functions
@@ -7255,7 +8752,60 @@ Correct: the plain factors \((s+s'+q-1)\) and \((r+r'+p-1)\); equivalently
 Evidence: the printed (15) contradicts (16) for \(p\ge3\) or \(q\ge3\); the corrected constant
 reduces to (16) and gives \(\int|t^{pq,\ell\ell'}_{(rr',ss')0}|^2=\dim T^{prr'}\dim T^{qss'}/
 \dim T^{n\ell\ell'}\) for the normalized measure (numeric check).
+Published: [Klimyk 2006], p. 330, l. −5. Klimyk keeps the factorials.
 Target: [VK11.3.38].
+
+### E11.3.18. Class-one representations relative to \(U(n-1)\times U(1)\)
+
+Status: Confirmed.
+Location: Vol 2, §11.3.2, p. 308, line before (3′).
+Printed: for the representations \(T^{n\ell\ell'}\) of class 1 relative to the subgroup
+\(U(n-1)\times U(1)\).
+Correct: for the representations \(T^{n\ell\ell}\) of class 1 relative to the subgroup
+\(U(n-1)\times U(1)\).
+Evidence: By (2), \(U(1)\) acts on the \(U(n-1)\)-fixed vector by \(e^{i(\ell'-\ell)\varphi}\), so a
+\(U(n-1)\times U(1)\)-fixed vector exists only for \(\ell=\ell'\); (3′) itself is written for
+\(t^{n\ell\ell}_{00}\) and \(\varphi^{n\ell\ell}\).
+Published: [Klimyk 2006], p. 308, l. −6.
+Target: [VK11.3.03].
+
+### E11.3.19. Lower index in the factorization §11.3.4 (7)
+
+Status: Confirmed.
+Location: Vol 2, §11.3.4, p. 314, (7).
+Printed: \(t^{n-r-1,m_rm'_r}_{(m_{r-1},m'_{r+1})0}(g_{n-r-2}(\theta_{n-r-2}))\).
+Correct: \(t^{n-r-1,m_rm'_r}_{(m_{r+1},m'_{r+1})0}(g_{n-r-2}(\theta_{n-r-2}))\).
+Evidence: Each factor is the \(U(n-r-1)\downarrow U(n-r-2)\) step from the labels \((m_r,m'_r)\) to
+the next pair \((m_{r+1},m'_{r+1})\), as in (6) and in the exponent \(m_{r+1}-m'_{r+1}-m_r+m'_r\) of
+the same factor.
+Published: [Klimyk 2006], p. 314, l. −8.
+Target: [VK11.3.13].
+
+### E11.3.20. Condition for the special cases in §11.3.6
+
+Status: Confirmed.
+Location: Vol 2, §11.3.6, p. 321, line before (1).
+Printed: For \(\ell=m\) and \(\ell'=m'\) the hypergeometric function in formula (3) of Section
+11.3.5 is equal to 1.
+Correct: For \(\ell=m\) or \(\ell'=m'\) the hypergeometric function in formula (3) of Section 11.3.5
+is equal to 1.
+Evidence: The function \(F(-\ell+m,-\ell'+m';m+m'+n-1;-\tan^2\theta)\) of §11.3.5 (3) equals 1 as
+soon as one numerator parameter vanishes; (1) is stated for \(m'=\ell'\) with \(m\) arbitrary.
+Published: [Klimyk 2006], p. 321, l. 11.
+Target: [VK11.3.26].
+
+### E11.3.21. Missing factorial in §11.3.9 (4)
+
+Status: Confirmed.
+Location: Vol 2, §11.3.9, p. 324, (4).
+Printed: \((\ell+n-2)\) in the denominator under the square root.
+Correct: \((\ell+n-2)!\).
+Evidence: For \(m=m'=0\), (4) must reduce to \(t^{n\ell\ell'}_{(00)0}=\varphi^{n\ell\ell'}\); with
+\((\ell+n-2)!\) the constant is \(1\), with the printed factor it is
+\([(\ell+n-2)!/(\ell+n-2)]^{1/2}\). The corrected constant equals \(d^{n\ell\ell'}_{mm'}\) of
+§11.3.5 (3), checked numerically in [VK11.3.30].
+Published: [Klimyk 2006], p. 324, l. 9.
+Target: [VK11.3.30].
 
 ### E11.4.01. Repeated factor in the \(r=0\) addition formula
 
@@ -7266,6 +8816,7 @@ Correct: \((\sin\theta_1\sin\theta_2)^{2m}\).
 Evidence: (10) is the \(r=0\) case of (8), whose factor is \((\sin\theta_1\sin\theta_2)^{m+m'}\)
 with \(m=m'\); numerical check of the corrected identity for \(\alpha=2.5\), \(\beta=0.7\),
 \(\ell=3\), \(\theta_1=0.4\), \(\theta_2=0.9\) (agreement to 15 digits).
+Published: [Klimyk 2006], p. 335, l. 14.
 Target: [VK11.4.08].
 
 ### E11.4.02. Upper summation limit in the second addition theorem
@@ -7325,6 +8876,7 @@ C^\beta_{m-m'}(\cos\tau)P^{(\alpha-\beta-1,\beta+m-m')}_{m'}(2r^2-1)
 Evidence: the corrected form is the Jacobi-function analogue of §11.4.2 (8) and agrees with the
 left side to 18 digits for \((\alpha,\beta,\mu,r)=(3,1,0.7,0.6)\) and \((2.6,0.8,1.3,0.6)\),
 \(t_1=0.25\), \(t_2=0.3\), \(\tau=1.1\).
+Published: [Klimyk 2006], p. 337, l. −3; p. 337, l. −2.
 Target: [VK11.4.13].
 
 ### E11.4.06. Factorial in the cosine form of the Bessel addition theorem
@@ -7339,6 +8891,7 @@ Evidence: pairing the terms \((m,m')\) and \((m',m)\) of (13) with
 \((m+n-1)!/m!\). Numerically (\(r_1=1.3\), \(r_2=0.8\), \(\theta=0.6\), \(\varphi=1\), \(n=1,2,3\))
 (13) holds as printed and the corrected (14) agrees to 20 digits, while the printed (14) is
 off in the third digit.
+Published: [Klimyk 2006], p. 338, l. −4.
 Target: [VK11.4.15].
 
 ### E11.4.07. Sign and factor in the differentiated Bessel addition theorems
@@ -7402,6 +8955,7 @@ formula (4) has \(\Gamma(\ell+\alpha+1)/\ell!\), i.e. it is a formula for
 \(\ell=3\), \(\theta_1=0.9\), \(\theta_2=1.1\)); the closed forms were derived by
 \(\cos\varphi=1-(1-B)t\) and the Euler integral DLMF 15.6.1 (Legendre form via DLMF 14.3.1),
 and agree with the quadrature of (17) to 15 digits at two points of each region.
+Published: [Klimyk 2006], p. 345, l. 11. Klimyk replaces \(K\) by \(\mathcal K\) in (25).
 Target: [VK11.4.23], [VK11.4.24].
 
 ### E11.4.10. Coefficients of the disk-polynomial form of the addition formula
@@ -7463,6 +9017,8 @@ Evidence: the ratio of the left side of (8) to the integral is \(6.38307\ldots
 =2^{3.5}/\sqrt\pi\) for \(\alpha=2.3\), \(\beta=0.7\), \(\mu=0.4+0.6i\), \(t_1=0.5\),
 \(t_2=0.8\); the corrected closed forms agree with the quadrature of (9) to 12 digits, the
 printed hypergeometric form gives \(0.1144\) against \(0.1022\).
+Published: [Klimyk 2006], p. 350, l. 5. Klimyk corrects the typesetting of the exponent
+\(\alpha-\beta-1\) in (10).
 Target: [VK11.4.33].
 
 ### E11.4.14. Integrand of the Flensted-Jensen–Koornwinder product formula
@@ -7488,6 +9044,8 @@ Evidence: with argument \(2/(1+z)\) the function satisfies the Jacobi equation
 \((1-z^2)u''+(\beta-\alpha-(\alpha+\beta+2)z)u'+\mu(\mu+\alpha+\beta+1)u=0\) (residual
 \(<10^{-12}\) at \(z=3\)) and the product formula (18) (corrected per [E11.4.14]); with
 \((1+z)/2\) the series diverges for \(z>1\).
+Published: [Klimyk 2006], p. 351, l. 4. Klimyk removes only the stray prime; the argument remains
+\(\frac{1+z}2\).
 Target: [VK11.4.35].
 
 ### E11.4.16. Sign of \(i\) in the generating function of \(t^{n\ell\ell'}_{(mm')0}\)
@@ -7564,6 +9122,7 @@ Evidence: grouping (8) by \(q=m-m'\) and using the corrected (13)–(14) gives t
 \((\mu-q+1)_q\tanh^qt\) (resp. \((\mu-k-q+1)_q\)); the printed (16) at \(\theta=0\) contradicts
 (15). Numerical agreement of the corrected forms to 15 digits (\(\mu=0.6+0.4i\), \(k=1\),
 \(t=0.3\), \(\theta=0,0.5\)).
+Published: [Klimyk 2006], p. 355, l. −3.
 Target: [VK11.4.41].
 
 ### E11.4.22. Summation index on the right side of (17)
@@ -7578,7 +9137,47 @@ Correct: not determined. The intended identities are the polynomial analogues of
 §11.4.7 (4) ([E11.4.16]); (18) is likely affected in the same way.
 Evidence: the right side of (17) depends on the summation index; a numerical test of (17) with
 \(\sin^{2q-2\ell}\theta\) in place of \(\sin^{2q-2r}\theta\) fails.
+Published: [Klimyk 2006], p. 356, l. 8. Klimyk corrects \(P^{(\alpha-1,-1)}_{r+q}\) to
+\(P^{(\alpha-1,-q)}_{r+q}\) in (17), which the synopsis adopts; the defect recorded above remains.
 Target: [VK11.4.42].
+
+### E11.4.23. Missing Gamma in the constant of the kernel §11.4.5 (17)
+
+Status: Confirmed.
+Location: Vol 2, §11.4.5, p. 343, (17).
+Printed:
+\(K(\theta_1,\theta_2,\theta)=\frac{\Gamma(\alpha+1)}{\sqrt\pi\,\Gamma(\alpha-\beta)\,(\beta+\frac12)}(\sin\theta_1\sin\theta_2\sin\theta)^{-2\alpha}\int_0^\delta\cdots\)
+Correct:
+\(K(\theta_1,\theta_2,\theta)=\frac{\Gamma(\alpha+1)}{\sqrt\pi\,\Gamma(\alpha-\beta)\Gamma(\beta+\frac12)}(\sin\theta_1\sin\theta_2\sin\theta)^{-2\alpha}\int_0^\delta\cdots\).
+Evidence: The constant is inherited from the product formula (4)–(5″) on p. 342, which has
+\(\Gamma(\alpha-\beta)\Gamma(\beta+\frac12)\); with this constant the corrected (16) holds
+numerically (\(\alpha=2.3\), \(\beta=0.7\), \(\ell=3\)), see [E11.4.09].
+Published: [Klimyk 2006], p. 343, l. −2.
+Target: [VK11.4.23].
+
+### E11.4.24. Power of \(r\) in the product formula §11.4.6 (1)
+
+Status: Confirmed.
+Location: Vol 2, §11.4.6, p. 348, (1).
+Printed: \(P^{(\alpha-1,m'-m)}_m(2r^2-1)^{m'-m+1}(1-r^2)^{\alpha-1}dr\,d\tau\).
+Correct: \(P^{(\alpha-1,m'-m)}_m(2r^2-1)\,r^{m'-m+1}(1-r^2)^{\alpha-1}dr\,d\tau\).
+Evidence: The integrand contains the disk polynomial
+\(r^{m'-m}e^{i(m'-m)\tau}P^{(\alpha-1,m'-m)}_m(2r^2-1)\) against the measure
+\((1-r^2)^{\alpha-1}r\,dr\,d\tau\); for \(m=m'=0\) this gives the factor \(r\) of (3).
+Published: [Klimyk 2006], p. 348, l. 5.
+Target: [VK11.4.31].
+
+### E11.4.25. Missing factorial in §11.4.8 (4″)
+
+Status: Confirmed.
+Location: Vol 2, §11.4.8, p. 357, (4″).
+Printed: \(\psi^{\nu_1\nu_2}_+(t)=\frac{(-\nu_1-n+1)(n-2)!}{(-\nu_2-1)!\sinh^{n-2}t}\cdots\).
+Correct: \(\psi^{\nu_1\nu_2}_+(t)=\frac{(-\nu_1-n+1)!\,(n-2)!}{(-\nu_2-1)!\sinh^{n-2}t}\cdots\).
+Evidence: (4″) is the counterpart of (4′), whose constant is \((\nu_2-n+1)!(n-2)!/(\nu_2-1)!\); the
+constant is a ratio of factorials, and the printed linear factor \((-\nu_1-n+1)\) is a dropped
+factorial sign.
+Published: [Klimyk 2006], p. 357, l. 12.
+Target: [VK11.4.44].
 
 ### E11.5.01. Missing factor \(i\) in the angular equation for \(p^n_{\ell\ell'}\)
 
@@ -7668,6 +9267,7 @@ Evidence: the operator is the continuation \(\theta=it\) of the compact one (the
 changes sign); the corrected (3) has residual \(<10^{-20}\) at \((x,y)=(1.1,0.7)\),
 \(n=4\), \(\sigma=0.7+0.4i\), \(k=2\), the printed one about \(13\); (4) follows from
 \(x\partial_y-y\partial_x=\partial_\varphi\) and \(f\propto e^{-ik\varphi}\).
+Published: [Klimyk 2006], p. 365, l. −12.
 Target: [VK11.5.11].
 
 ### E11.6.01. Measure factor in the integral representation for \(T^{n\sigma k}\)
@@ -7696,6 +9296,7 @@ Evidence: with \(\nu_1=\frac{\sigma+k}2\), \(\nu_2=\frac{\sigma-k}2\), the coeff
 \(\sigma=k=0\) the printed condition holds, but the constants form an invariant subspace.
 The printed condition also treats integer \(\sigma\) with \(\sigma+k\) odd as reducible,
 although then \(\nu_1\notin\mathbb Z\). The same criterion is printed in §11.2.4 (17).
+Published: [Klimyk 2006], p. 369, l. 12.
 Target: [VK11.6.03].
 
 ### E11.6.03. Unipotent matrix elements of \(T^{n\ell\ell'}\)
@@ -7723,6 +9324,8 @@ Correct: numerator \((r+r'+n-2)(p+r'+n-3)!(m+r'+n-3)!(\ell'-r')!\) and second nu
 Evidence: the corrected (3) coincides with (5) (to \(10^{-15}\)) and gives an orthogonal
 matrix (\(n=4\), \(\ell=\ell'=3\), \(j=1\), \(j'=0\), \(\theta=0.6\): defect \(3\cdot10^{-15}\));
 the printed (3) gives defect \(12.9\). Formula (5) is correct as printed.
+Published: [Klimyk 2006], p. 374, l. −4. Klimyk replaces \((r-j')!\) by \((r-j')\); this fails the
+orthogonality test, which the correction above passes.
 Target: [VK11.6.07].
 
 ### E11.6.05. Hypergeometric forms (8) and (9) of §11.6.7
@@ -7750,6 +9353,7 @@ one has \(r-r'\ge m-m'>0\), so the printed diagonal element is \(0\), while
 \(t^{n\sigma k}_{(mm')(mm')(jj')}(e)=1\). The group law
 \(t(g'(t_1+t_2))=\sum t(g'(t_1))t(g'(t_2))\) also fails numerically (\(n=4\),
 \(\sigma=0.3+0.7i\), \(k=1\)), also with \(\tanh^{p'-p+m'-m}t\).
+Published: [Klimyk 2006], p. 377, l. −3.
 Target: [VK11.6.10].
 
 ### E11.6.07. Sign in the relation for \(t^{n\ell\ell'}_{(mm')(pp')(pp')}\)
@@ -7782,7 +9386,7 @@ off by \(\sqrt{(\ell+m'+n-2)!}\) (e.g. \(\sqrt{9!}\approx602.4\)) and by
 \(\sin^{2(j'-j)}\theta\); the printed (3) by factors \(1.058\), \(1.255\); the printed (4)
 by \(\sin^{\pm2}\theta\) unless \(j=j'=0\). The corrected forms agree to 15 digits. Pfaff's
 transformation of the \(F(-\ell+p,p+\ell'+n-1;p+m'+n-1;\sin^2\theta)\) of (1) gives the
-corrected Jacobi parameters. (1) and (5) are correct as printed.
+corrected Jacobi parameters. (1) is correct as printed; (5) has the sign misprint [E11.6.12].
 Target: [VK11.6.15].
 
 ### E11.6.09. Constant in the matrix elements at \(\theta=\pi/2\)
@@ -7794,6 +9398,57 @@ Correct: \((m+n-3)!\).
 Evidence: with \((m+n-3)!\), (5) agrees with §11.6.7 (5) at \(\theta=\pi/2\) to 15 digits
 (\(n=5\), three index sets with \(\ell-\ell'-p+p'-m+m'=0\)); the printed factor is undefined
 for \(m+p<3\).
+Target: [VK11.6.18].
+
+### E11.6.10. Rotation in the basis functions §11.6.1 (1′)
+
+Status: Confirmed.
+Location: Vol 2, §11.6.1, p. 366, (1′).
+Printed: \(t^{n-1,mm'}_{(jj')0}(g_{n-1}(\theta))\).
+Correct: \(t^{n-1,mm'}_{(jj')0}(g_{n-2}(\theta))\).
+Evidence: For \(U(n-1)\) the factorization of §11.3.4 (6) uses the rotation \(g_{n-2}(\theta)\), and
+the integral representation (2) obtained from (1′) contains
+\(t^{n-1,mm'}_{(jj')0}(g_{n-2}(\theta))\).
+Published: [Klimyk 2006], p. 366, l. 4.
+Target: [VK11.6.01].
+
+### E11.6.11. Factorial in the matrix elements of \(\exp tE^{n\sigma k}_{n,n-1}\), §11.6.8 (2)
+
+Status: Confirmed.
+Location: Vol 2, §11.6.8, p. 377, (2).
+Printed: \(\frac{(-1)^{m+m'+p+p'}t^r(p+m'+n-3)!}{(p-m)!(m'-p')!(p+m'+n-2)!}\).
+Correct: \(\frac{(-1)^{m+m'+p+p'}t^r(p'+m+n-3)!}{(p-m)!(m'-p')!(p+m'+n-2)!}\).
+Evidence: The formula for \(E_{n,n-1}\) is the formula for \(E_{n-1,n}\) on p. 376, with factor
+\((p+m'+n-3)!/(m+p'+n-2)!\), under \((m,m')\leftrightarrow(p,p')\), which gives
+\((m+p'+n-3)!/(p+m'+n-2)!\). The coefficient of \(\Xi^{pp'}\) in \((t^r/r!)(E^{n\sigma
+k}_{n,n-1})^r\Xi^{mm'}\) built from the operators of §11.6.2 (\(n=5\), \(\sigma=0.83+0.4i\),
+\(k=1\), \(j=1\), \(j'=0\), six index sets) agrees with the corrected form to all digits; the
+printed form is off by factors between 20 and 504 (checks/n4_p467.py).
+Published: [Klimyk 2006], p. 377, l. 5.
+Target: [VK11.6.09].
+
+### E11.6.12. Sign factor of \(N\) in §11.6.13 (5)
+
+Status: Confirmed.
+Location: Vol 2, §11.6.13, p. 388, (5), constant \(N\).
+Printed: \(N=(-1)^{p;-j'}[\cdots]^{1/2}\).
+Correct: \(N=(-1)^{p'-j'}[\cdots]^{1/2}\).
+Evidence: The exponent \(p;-j'\) is not defined; (5) is the case \(\ell'=m'\) of (2), whose sign is
+\((-1)^{p'-j'}\), and with this sign (5) agrees numerically with §11.6.7 (5) ([VK11.6.15]).
+Published: [Klimyk 2006], p. 388, l. 10.
+Target: [VK11.6.15].
+
+### E11.6.13. Angle in the integrand of §11.6.16 (1)
+
+Status: Confirmed.
+Location: Vol 2, §11.6.16, p. 390, (1).
+Printed:
+\(\Bigl(\frac{e^{i\varphi}\cos\varphi\cos\theta-i\sin\theta}{e^{-i\varphi}\cos\psi\cos\theta-i\sin\theta}\Bigr)^{\frac{p-p'}2}\)
+Correct:
+\(\Bigl(\frac{e^{i\varphi}\cos\psi\cos\theta-i\sin\theta}{e^{-i\varphi}\cos\psi\cos\theta-i\sin\theta}\Bigr)^{\frac{p-p'}2}\).
+Evidence: The numerator and denominator are complex conjugate factors of the image point under
+\(g_{n-1}(\theta)\), as in the definition (2) of \(\cos\psi'\), where both carry \(\cos\psi\).
+Published: [Klimyk 2006], p. 390, l. −8.
 Target: [VK11.6.18].
 
 ### E11.7.01. Multiplicity of the \(Sp(n-1)\)-fixed vectors
@@ -7877,6 +9532,17 @@ Evidence: by §11.7.6 (16), \(t^{n,i\rho-2n+1}_{00}\) is a constant times
 \(|F|^2\sinh^{4n-5}t\cosh^3t\) in (6) becomes \(|f|^2\sinh t\cosh t\), the weight of
 §11.4.8. With \(\sinh^{-2n-3}t\) neither holds.
 Target: [VK11.7.12].
+
+### E11.7.07. Missing definition of the cone \(C^{n-1}_{\mathbb H}\)
+
+Status: Confirmed.
+Location: Vol 2, §11.7.2, p. 396, after the definition of \(H^{n-1}_{\mathbb H}\).
+Printed: no definition of the cone \(C^{n-1}_{\mathbb H}\).
+Correct: Points \(q\ne0\) with \([q,q]=0\) form the cone \(C^{n-1}_{\mathbb H}\).
+Evidence: The cone \(C^{n-1}_{\mathbb H}\) and functions on it are used from p. 402 on without a
+definition; it is the null orbit \(\{[q,q]=0\}\setminus\{0\}\) of the form (1).
+Published: [Klimyk 2006], p. 396, l. 1.
+Target: [VK11.7.03].
 
 ### Conventions and notation (not errata)
 
@@ -8090,6 +9756,7 @@ integration variable \(dx\).
 Correct: \(-ia\frac d{dx}f_g\); \(i\partial_yK_g=-(cx+ia\partial_x)K_g\); \(dy\).
 Evidence: \((-c\mathrm Q+a\mathrm P)f=-cxf-iaf'\); the kernel (8) satisfies
 \(i\partial_yK_g=-(ay-x)K_g/b\) and \((cx+ia\partial_x)K_g=(ay-x)K_g/b\) (using \(ad-bc=1\)).
+Published: [Klimyk 2006], p. 434, l. −8.
 Target: [VK12.2.10], [VK12.2.11].
 
 ### E12.2.04. Coefficients of \(J_0\), \(J_\pm\)
@@ -8105,6 +9772,35 @@ Evidence: \(J_+=-\frac12(a^+)^2\), \(J_-=-\frac12(a^-)^2\) follow from (1) and (
 coefficients do not satisfy \([J_0,J_\pm]=\pm J_\pm\) together with (12).
 Target: [VK12.2.12], [VK12.2.13], [VK12.3.03].
 
+### E12.2.05. Product \(\alpha'\beta'\) in (6) of §12.2.1
+
+Status: Confirmed.
+Location: Vol 2, §12.2.1, p. 427, (6).
+Printed: \(g\cdot
+h(\alpha,\beta,\gamma+\frac12\alpha\beta)=h(\alpha',\beta',\gamma+\frac12\alpha',\beta')\).
+Correct: \(g\cdot
+h(\alpha,\beta,\gamma+\frac12\alpha\beta)=h(\alpha',\beta',\gamma+\frac12\alpha'\beta')\).
+Evidence: By (4) of §12.1.3, \(\exp(\alpha Q+\beta P+\gamma
+H)=h(\alpha,\beta,\gamma+\frac12\alpha\beta)\), and the automorphism (5) sends it to
+\(\exp(\alpha'Q+\beta'P+\gamma H)=h(\alpha',\beta',\gamma+\frac12\alpha'\beta')\). The printed comma
+gives \(h\) four arguments.
+Published: [Klimyk 2006], p. 427, l. −1.
+Target: [VK12.2.02].
+
+### E12.2.06. Stray factor \(m\) in (3) of §12.2.3
+
+Status: Confirmed.
+Location: Vol 2, §12.2.3, p. 430, (3).
+Printed: \(h(k;\mathbf a,\mathbf b,t)h(k';\mathbf a',m\mathbf b',t')=h(kk';\mathbf ak'+\mathbf
+a',\mathbf bk'+\mathbf b',t+t'+\mathbf ak'\cdot\mathbf b')\).
+Correct: \(h(k;\mathbf a,\mathbf b,t)h(k';\mathbf a',\mathbf b',t')=h(kk';\mathbf ak'+\mathbf
+a',\mathbf bk'+\mathbf b',t+t'+\mathbf ak'\cdot\mathbf b')\).
+Evidence: Multiplying the matrices (2) gives the corner entry \(t+t'+\mathbf ak'\mathbf b'^T\) and
+the middle column \(kk'(\mathbf b'+\mathbf bk')^T\) (using \(k'^{-1}=k'^T\)), which is the right
+side of (3) with \(\mathbf b'\). No \(m\) is defined in the section.
+Published: [Klimyk 2006], p. 430, l. 13.
+Target: [VK12.2.05].
+
 ### E12.3.01. Index in the lowering action on \(R_{mN}\)
 
 Status: Confirmed.
@@ -8113,6 +9809,7 @@ Printed: \(J_-R_{mN}=[\cdots]^{1/2}R_{m,N+2}\).
 Correct: \(J_-R_{mN}=[(\frac N2-\frac m2)(\frac N2+\frac n2+\frac m2-1)]^{1/2}R_{m,N-2}\).
 Evidence: \(J_-\) lowers the \(J_0\)-eigenvalue by 1; symbolic check with the normalized
 \(R_{mN}\).
+Published: [Klimyk 2006], p. 442, l. −5.
 Target: [VK12.3.06].
 
 ### E12.3.02. Constant \(A\) of the transition coefficients
@@ -8166,6 +9863,33 @@ Correct: \(e^{-s\lambda_j}/(1-e^{-2s\lambda_j})\).
 Evidence: tensor product of the one-dimensional formula (17) with \(s\) replaced by
 \(s\lambda_j\).
 Target: [VK12.3.20].
+
+### E12.3.07. \(J_0=\frac12\widetilde D_1\) in §12.3.3
+
+Status: Confirmed.
+Location: Vol 2, §12.3.3, p. 442, line before (1).
+Printed: \(J_0=\frac12D_1\).
+Correct: \(J_0=\frac12\widetilde D_1\).
+Evidence: (1) states \(J_0\Psi^m_{NM}=\frac12(N+\frac n2)\Psi^m_{NM}\), which is \(\frac12\) times
+the eigenvalue of \(\widetilde D_1\) ([VK12.3.04]), while \(D_1\) of §12.1.5 has the eigenvalue
+\(-\lambda(N+\frac n2)\) on the same functions. The formulas (2)–(3) on the same page are written
+with \(\widetilde D_1\).
+Published: [Klimyk 2006], p. 442, l. 11.
+Target: [VK12.3.06].
+
+### E12.3.08. Direct sum of tensor products in (5) of §12.3.3
+
+Status: Confirmed.
+Location: Vol 2, §12.3.3, p. 443, (5).
+Printed: \(T\big|^{Sp(n,\mathbb R)}_{SO(n)\times SL(2,\mathbb
+R)}=\sum_{m=0}^\infty\otimes\bigl(T^{nm}\oplus D_{\ell(m)}\bigr)\).
+Correct: \(T\big|^{Sp(n,\mathbb R)}_{SO(n)\times SL(2,\mathbb R)}=\bigoplus_{m=0}^\infty
+T^{nm}\otimes D_{\ell(m)}\).
+Evidence: The sentence before (5) states that the irreducible representation \(T^{nm}\otimes
+D_{\ell(m)}\) of \(SO(n)\times SL(2,\mathbb R)\) is realized on the span of the \(\Psi^m_{NM}\) with
+\(m\) fixed, and \(L^2(\mathbb R^n)\) is the orthogonal direct sum of these spaces over \(m\).
+Published: [Klimyk 2006], p. 443, l. 5.
+Target: [VK12.3.07].
 
 ### E12.4.01. Sign of \(\lambda\) in the Fock spaces
 
@@ -8250,6 +9974,17 @@ Correct: [VK12.4.12] (ii), with that factor and \((-1)^{m+j}\).
 Evidence: orthogonality of \(L^{\alpha}_{2\ell_1-k}\) applied to (2); numerical quadrature.
 Target: [VK12.4.12].
 
+### E12.4.09. \(U(n+1,1)\) for \(U(n_1,1)\) in §12.4.1
+
+Status: Confirmed.
+Location: Vol 2, §12.4.1, p. 451, first sentence.
+Printed: "the subgroup \(N_n\) of the group \(U(n_1,1)\)".
+Correct: "the subgroup \(N_n\) of the group \(U(n+1,1)\)".
+Evidence: The matrices that follow are of size \((n+2)\times(n+2)\) with diagonal blocks of sizes
+\(1,n,1\), and §12.1.1 realizes \(N_n\) in \(U(n+1,1)\). No \(n_1\) is defined.
+Published: [Klimyk 2006], p. 451, l. −3.
+Target: [VK12.4.01].
+
 ### E12.5.01. The lattice \(D\) is not normal
 
 Status: Confirmed.
@@ -8269,6 +10004,7 @@ Location: Vol 2, §12.5.3, p. 462, (4').
 Printed: \(\exp(-\pi(pn+\ell^2)/n)\).
 Correct: \(\exp(-\pi(pn+\ell)^2/n)\).
 Evidence: (4') is (4) with \(m=pn+\ell\); the corrected form is consistent with (5).
+Published: [Klimyk 2006], p. 462, l. 3.
 Target: [VK12.5.07].
 
 ### E12.5.03. Hermite argument and constant in (12)
@@ -8282,6 +10018,7 @@ Evidence: the argument must match the exponent \((5p+1)^2\), as in (4) for \(n=5
 for \(k=0\) the printed first member is \(1.61454\), the corrected one \(1.61800\), equal to
 the second member; the ratio to \(\sum_ne^{-5\pi n^2}H_{4k+2}(\sqrt{10\pi}n)\) is
 \(-0.809016994\ldots=-(1+\sqrt5)/4\) for \(k=0,1,2\) (30 digits).
+Published: [Klimyk 2006], p. 463, l. 8.
 Target: [VK12.5.10].
 
 ### E12.5.04. Missing conjugate in Schempp's formula
@@ -8420,6 +10157,37 @@ Evidence: numerical evaluation with \(\alpha=0.7\), \(\beta=1.3\), random \(\mat
 \(t=0.6\), \(s=-0.2\).
 Target: [VK12.6.23].
 
+### E12.6.09. Exponent of \(\cos\frac\varphi2\) in (12) of §12.6.5
+
+Status: Confirmed.
+Location: Vol 2, §12.6.5, p. 480, (12).
+Printed: \(\bigl(\cos\frac\varphi2\bigr)^{2\theta-1}\) in the integrand.
+Correct: \(\bigl(\cos\frac\varphi2\bigr)^{2\beta-1}\).
+Evidence: (12) is obtained from (8) and (9), whose weight is
+\((\sin\frac\varphi2)^{2\alpha-1}(\cos\frac\varphi2)^{2\beta-1}\), the weight of
+\(P^{(\alpha-1,\beta-1)}_m(\cos\varphi)\). The variable \(\theta\) is the group parameter, which
+already occurs in \((\cos\theta+i\sin\theta\cos\varphi)^\ell\).
+Published: [Klimyk 2006], p. 480, l. −2.
+Target: [VK12.6.17].
+
+### E12.6.10. Argument \(g_{n-1}(\theta_1)\) in the relation for a second addition theorem
+
+Status: Confirmed.
+Location: Vol 2, §12.6.7, p. 483, display after (2).
+Printed: \(\hat t^{n\ell}_{00}(g_{n-1}(\theta))=\sum_{m=0}^\ell\hat
+t^{n\ell}_{0m}(g_{n-2}(\theta_1))\hat t^{n-1,m}_{00}(g_{n-2}(\varphi))\hat
+t^{n\ell}_{m0}(g_{n-1}(\theta_2))\).
+Correct: \(\hat t^{n\ell}_{0m}(g_{n-1}(\theta_1))\) in place of \(\hat
+t^{n\ell}_{0m}(g_{n-2}(\theta_1))\).
+Evidence: The relation comes from
+\(g_{n-1}(\theta)=g_{n-1}(\theta_1)g_{n-2}(\varphi)g_{n-1}(\theta_2)\) with
+\(\cos\theta=\cos\theta_1\cos\theta_2+\sin\theta_1\sin\theta_2\cos\varphi\). Since
+\(g_{n-2}(\theta_1)\) lies in the subgroup that fixes the vector \(\Xi^{n-1,0}\), the printed factor
+\(\hat t^{n\ell}_{0m}(g_{n-2}(\theta_1))\) equals \(\delta_{m0}\), and the printed right side would
+reduce to \(\hat t^{n\ell}_{00}(g_{n-1}(\theta_2))\).
+Published: [Klimyk 2006], p. 483, l. −5.
+Target: [VK12.6.25].
+
 ### Conventions and notation (not errata)
 
 - The Fock spaces of §12.1.7 and §12.4.1 use different conventions (antianalytic versus
@@ -8506,6 +10274,8 @@ Evidence: The corrected form follows from the generating function
 \(\sum_nc_n(x;a)t^n/n!=e^t(1-t/a)^x\), because \((1-t/a)^{u+v}=(1-t/a)^u(1-t/a)^v\). Exact test for
 \(a\in\{\frac12,3\}\), \(n\le4\), \(u\le5\), \(v\le4\): the printed form fails in 199 cases and the
 corrected form in none.
+Published: [Klimyk 2006], p. 499, l. 2. Klimyk corrects only the argument of \(\Gamma\); the power
+of \(-a\) then remains wrong.
 Target: [VK13.1.25]
 
 ### E13.1.07. Special values of the Racah connection coefficients
@@ -8547,6 +10317,48 @@ nondiagonal coefficients is therefore impossible. Exact evaluation for generic \
 \(r\ge1\) confirms that the printed relation fails.
 Target: [VK13.1.32]
 
+### E13.1.10. \(d(y_1,y_2)\) in the definition of a homogeneous graph
+
+Status: Confirmed.
+Location: Vol 2, §13.1.5, p. 491, definition of a homogeneous graph.
+Printed: "for any pairs \((x_1,y_1)\) and \((x_2,y_2)\) of points from \(X\) with
+\(d(x_1,x_2)=d(y_1,h_2)\)".
+Correct: \(d(x_1,x_2)=d(y_1,y_2)\).
+Evidence: \(h_2\) is not defined. Since \(G\) acts by isometries, \(y_1=gx_1\), \(y_2=gx_2\) forces
+\(d(y_1,y_2)=d(x_1,x_2)\), so the condition must compare the distances within the two pairs.
+Published: [Klimyk 2006], p. 491, l. 9.
+Target: [VK13.1.12].
+
+### E13.1.11. Normalizing factor \(N|H|/|G|\) in Dunkl's formula for \(f_\alpha\)
+
+Status: Confirmed.
+Location: Vol 2, §13.1.6, p. 495, display after (1).
+Printed:
+\(f_\alpha(g_1,g_2)=\dfrac{\overline{F(g_1,g_1^{-1}p)}\,F(g_1,g_2p)}{(N/|H|\|/|G|)\sum_{x\in
+X}|F(g_1,x)|^2}\).
+Correct: \(f_\alpha(g_1,g_2)=\dfrac{\overline{F(g_1,g_1^{-1}p)}\,F(g_1,g_2p)}{(N|H|/|G|)\sum_{x\in
+X}|F(g_1,x)|^2}\).
+Evidence: Insert (1) into b), with the sum over \(G\) normalized by \(|G|^{-1}\) as the Schur
+orthogonality relations require. Each \(x\in X\) equals \(g_2p\) for \(|H|\) elements \(g_2\), so
+\(|F_1(g_1)|^2(|H|/|G|)\sum_x|F(g_1,x)|^2=N^{-1}F_1(g_1)F(g_1,g_1^{-1}p)\), which gives \(F_1\) and
+the factor \(N|H|/|G|\).
+Published: [Klimyk 2006], p. 495, l. −6.
+Target: [VK13.1.16].
+
+### E13.1.12. \(u_1\) for \(i_1\) in (19) of §13.1.7
+
+Status: Confirmed.
+Location: Vol 2, §13.1.7, p. 506, (19).
+Printed:
+\(\tilde\varphi_m(u_1(\pi),u_2(\pi),u_3(\pi))=E_{r-m}(u_1;a,b+c-2m,i_1+u_2+u_3-m)E_m(u_2;b,c,u_2+u_3)\).
+Correct: \(\tilde\varphi_m(u_1,u_2,u_3)=E_{r-m}(u_1;a,b+c-2m,u_1+u_2+u_3-m)E_m(u_2;b,c,u_2+u_3)\).
+Evidence: \(i_1\) is a summation index of the function \(\varphi\) being transferred, not a variable
+of \(\tilde\varphi_m\). The companion formulas for \(\tilde\psi_m\) and \(\tilde\theta_m\) have
+\(u_1+u_2+u_3-m=M-m\), and with \(u_1\) the formula agrees with the direct transfer for \(0\le
+a,b,c\le3\) and all \(u\).
+Published: [Klimyk 2006], p. 506, l. 12.
+Target: [VK13.1.31].
+
 ### E13.2.01. Shift rule for \((q;q)_{N-n}\)
 
 Status: Confirmed
@@ -8555,6 +10367,8 @@ Printed: \((q;q)_{N-n}=\frac{(-1)^n(q;q)_N}{q^{n(N-n)}(q^{-N};q)_n}\).
 Correct: \((q;q)_{N-n}=\frac{(-1)^n(q;q)_N}{q^{nN-n(n-1)/2}(q^{-N};q)_n}\).
 Evidence: \((q^{-N};q)_n=(-1)^nq^{-nN+n(n-1)/2}(q;q)_N/(q;q)_{N-n}\). Exact check for \(q=3\),
 \(N\le5\).
+Published: [Klimyk 2006], p. 512, l. −6. [Koornwinder 2000], p. 512, (7’). Koornwinder gives the
+correction above. Klimyk's denominator \(q^{-nN+\frac12n(n-1)}\) has the wrong sign of the exponent.
 Target: [VK13.2.06]
 
 ### E13.2.02. Shift rule for \((aq^{nk};q)_n\)
@@ -8565,6 +10379,8 @@ Printed: \((aq^{nk};q)_n=(a;q)_{n(k+1)}/(q;q)_{nk}\).
 Correct: \((aq^{nk};q)_n=(a;q)_{n(k+1)}/(a;q)_{nk}\).
 Evidence: This is \((aq^m;q)_n=(a;q)_{m+n}/(a;q)_m\) with \(m=nk\). Exact check for \(q=3\),
 \(a=\frac27\).
+Published: [Klimyk 2006], p. 512, l. −4. [Koornwinder 2000], p. 512, (9). Koornwinder gives both
+corrections; Klimyk corrects only the subscript in the numerator.
 Target: [VK13.2.06]
 
 ### E13.2.03. Missing factor in a \({}_3\varphi_2\to{}_2\varphi_1\) transformation
@@ -8576,6 +10392,7 @@ Printed: \({}_3\varphi_2(q^{-k},a,b;0,c\,|\,q;q)=\frac{(c/a;q)_k}{(c;q)_k}\,
 Correct: The right side has the additional factor \(a^k\).
 Evidence: It is the case \(d\to0\) of (17), whose prefactor contains \(a^k\). Exact check for
 \(k\le4\) with rational parameters.
+Published: [Klimyk 2006], p. 514, l. −10. [Koornwinder 2000], p. 514, (18)–20).
 Target: [VK13.2.08]
 
 ### E13.2.04. Relation between \(\tilde Q_k\) and the q-Hahn polynomials
@@ -8622,6 +10439,8 @@ Correct: The factor \(q^{-m}\) is \(q^{-j}\).
 Evidence: There is no \(m\) in (35). With \(q^{-j}\), Delsarte's character sum (p. 524) equals
 \(\tilde K_m(x;a,b;q)\) (brute force over \(GF(2)\), \((a,b)\in\{(2,2),(2,3),(3,3)\}\)), and (36)
 holds.
+Published: [Klimyk 2006], p. 517, l. −1. Klimyk writes the \({}_2\varphi_2\) as an explicit sum;
+neither list corrects the prefactor.
 Target: [VK13.2.14], [VK13.2.21]
 
 ### E13.2.08. Parameters of \(\tilde Q_m\) in the Grassmannian spherical functions
@@ -8735,6 +10554,7 @@ Correct: \(f(x,y)=\sum_jf(j,r-j)\cdots\).
 Evidence: The boundary values lie on \(x+y=r\). For \(a=b=2\), \(c=1\), \(r=2\), the basis function
 \(\varphi_{r,2}\) has \(\varphi_{r,2}(0,0)=18\). The corrected formula gives \(18\), the printed one
 \(0\).
+Published: [Klimyk 2006], p. 532, l. 8.
 Target: [VK13.2.31]
 
 ### E13.2.17. Little q-Jacobi polynomials with \(\beta=q^{N+1}\)
@@ -8761,6 +10581,7 @@ Correct: \(\lim_M\tilde Q_m(x;a,b,M;q)
 Evidence: The first limit on the same page has the parameters \(q^{a+1},q^{b+1}\), and the
 second is its counterpart with \(a\) and \(b\) exchanged. Numerical check (mpmath, \(q=3\),
 \(M=60\)): the corrected form holds and the printed one fails.
+Published: [Klimyk 2006], p. 538, l. 1.
 Target: [VK13.2.35]
 
 ### E13.2.19. Variable of \(Q_k\) in \(\Psi_{rk}\)
@@ -8789,6 +10610,61 @@ Evidence: The coefficients were computed by projecting \(\Psi_{rk}\) on \(\Phi_{
 weight \(w_{\alpha\beta\gamma}\) (mpmath, \(q=3\), case 1), \(r\le2\)). The parameter
 \(\alpha\beta\gamma q^{-r-2}\) is the one in the norms (23), (23′).
 Target: [VK13.2.37]
+
+### E13.2.21. Sign in the Hermitian form of type \({}^2A_{2N-1}\)
+
+Status: Confirmed.
+Location: Vol 2, §13.2.1, p. 509, (5).
+Printed: \(B(\mathbf v,\mathbf w)=\varepsilon\sum_{i=1}^N(-1)^{i+1}(\bar v_iw_{-i}+\bar
+v_{-i}w_i)\), \(\varepsilon\ne0\), \(\varepsilon+\bar\varepsilon=0\).
+Correct: \(B(\mathbf v,\mathbf w)=\varepsilon\sum_{i=1}^N(-1)^{i+1}(\bar v_iw_{-i}-\bar
+v_{-i}w_i)\), \(\varepsilon\ne0\), \(\varepsilon+\bar\varepsilon=0\).
+Evidence: The source calls \(B\) a Hermitian form. With \(\bar\varepsilon=-\varepsilon\) the printed
+form satisfies \(\overline{B(\mathbf w,\mathbf v)}=-B(\mathbf v,\mathbf w)\), so it is
+skew-Hermitian; with the minus sign \(\overline{B(\mathbf w,\mathbf v)}=B(\mathbf v,\mathbf w)\).
+Published: [Klimyk 2006], p. 509, l. −4. [Koornwinder 2000], p. 509, (5).
+Target: [VK13.2.02].
+
+### E13.2.22. Missing power of \(q\) in (4) of §13.2.2
+
+Status: Confirmed.
+Location: Vol 2, §13.2.2, p. 511, (4).
+Printed: \((q^\alpha;q^{-1})_m=(q^{\alpha-m+1};q)_m=(-1)^{\alpha
+m-m(m-1)/2}(q^{-\alpha+m-1};q^{-1})_m\).
+Correct: \((q^\alpha;q^{-1})_m=(q^{\alpha-m+1};q)_m=(-1)^mq^{\alpha
+m-m(m-1)/2}(q^{-\alpha+m-1};q^{-1})_m\).
+Evidence: Each factor \(1-q^{\alpha-j}=-q^{\alpha-j}(1-q^{j-\alpha})\), \(0\le j\le m-1\), and
+\(\prod_jq^{\alpha-j}=q^{\alpha m-m(m-1)/2}\). Exact check for \(q=3\), \(\alpha\in\{-1,2,5\}\),
+\(m\le3\); the printed form fails, for example \(-8\) against \(\frac89\) at \(\alpha=2\), \(m=1\).
+Published: [Klimyk 2006], p. 511, l. 11.
+Target: [VK13.2.05].
+
+### E13.2.23. Undefined \((a;q)_{-n}\) in (8) of §13.2.2
+
+Status: Confirmed.
+Location: Vol 2, §13.2.2, p. 512, (8).
+Printed: \((a;q)_{-n}=\dfrac{q^{n(n+1)/2}(-a)^{-n}}{(q/a;q)_n}\), where \((a;q)_{-n}\) has not been
+defined.
+Correct: With \((a;q)_{-n}:=1/(aq^{-n};q)_n\) (for \(|q|<1\) equal to
+\((a;q)_\infty/(aq^{-n};q)_\infty\)), (8) holds for \(a\notin\{q,q^2,\dots,q^n\}\).
+Evidence: \((aq^{-n};q)_n=\prod_{j=1}^n(1-aq^{-j})=(-a)^nq^{-n(n+1)/2}(q/a;q)_n\). Numerical check
+of both forms of the definition at \(q=0.45\), \(a=0.83\), \(n\le3\).
+Published: [Klimyk 2006], p. 512, l. −5. [Koornwinder 2000], p. 512, (8). The published definition
+\((a;q)_\infty/(q^{-n}a;q)_\infty\) needs \(|q|<1\), while §13.2 mostly works with \(q>1\);
+\(1/(aq^{-n};q)_n\) covers both.
+Target: [VK13.2.06].
+
+### E13.2.24. Misprint in the product formula for zonal spherical functions
+
+Status: Confirmed.
+Location: Vol 2, §13.2.4, p. 529, display before the q-Krawtchouk product formulas.
+Printed: \(\varphi^m_{11}(g_1)\varphi^m_{11}9g_2)=|H|^{-1}\sum_{h\in H}\varphi^m_{11}(g_1hg_2)\).
+Correct: \(\varphi^m_{11}(g_1)\varphi^m_{11}(g_2)=|H|^{-1}\sum_{h\in H}\varphi^m_{11}(g_1hg_2)\).
+Evidence: The "9" is a misprint for the opening parenthesis: this is the functional equation of
+zonal spherical functions for a Gelfand pair \((G,H)\) with \(\varphi^m_{11}(e)=1\), as in
+[VK13.2.29].
+Published: [Klimyk 2006], p. 529, l. 13.
+Target: [VK13.2.29].
 
 ### E13.3.01. Haar measure of \(U_k\): index shift
 
@@ -9051,6 +10927,19 @@ Correct: "coincide on \(C_\tau\)".
 Evidence: \(C_\pi\) is not defined; p. 575 states the same condition on \(C_\tau\).
 Target: [VK13.3.60].
 
+### E13.3.20. Parenthesis in (11′) of §13.3.3
+
+Status: Confirmed.
+Location: Vol 2, §13.3.3, p. 553, (11′).
+Printed: \(B(\pi,\lambda)=(C_{\pi^*}C_{\lambda^*}/C_{\pi^*\lambda^*}q^{-h/2}\).
+Correct: \(B(\pi,\lambda)=(C_{\pi^*}C_{\lambda^*}/C_{\pi^*\lambda^*})\,q^{-h/2}\).
+Evidence: By Theorem 1 of §13.3.3 ([VK13.3.23]), \(\Gamma_{\chi}(\alpha)=C_\chi q^{h(\alpha-1/2)}\)
+for \(\chi\) of degree \(h\), so (10) gives
+\(C_{\pi^*}C_{\lambda^*}q^{h(\alpha-1/2)+h(\beta-1/2)}/(C_{\pi^*\lambda^*}q^{h(\alpha+\beta-1/2)})\),
+with \(q^{-h/2}\) as a factor outside the quotient. The same computation gives (11).
+Published: [Klimyk 2006], p. 553, l. 12.
+Target: [VK13.3.26].
+
 ### Conventions and notation (not errata)
 
 - §13.1.3, p. 487, and §13.2.3, p. 519: the source asserts that the restriction of \(D\) is
@@ -9101,6 +10990,7 @@ Printed: coefficient \((-1)^r(q;q)_r\,q^{r(r-2N-1)/4}/(q^{-N};q)_r\).
 Correct: \((-1)^r(q;q)_N\,q^{r(r-2N-1)/2}/(q^{-N};q)_r\).
 Evidence: at \(r=0\) the printed coefficient is \(1\), the correct one \((q;q)_N\); the corrected
 identity checked numerically for \(N\le6\).
+Published: [Klimyk 2006], p. 1, l. −5. [Koornwinder 2000], p. 1, (3).
 Target: [VK14.1.02]
 
 ### E14.1.02. Sum of q-numbers in the product formula
@@ -9119,6 +11009,8 @@ Location: Vol. 3, §14.1.1, pp. 2–3, (16)–(17).
 Printed: \(\lim_{r\to\infty}[r+\alpha]!/[r+\beta]!\).
 Correct: \(\lim_{r\to\infty}[r+\alpha]/[r+\beta]=q^{\pm(\alpha-\beta)/2}\) (\(|q|\gtrless1\)).
 Evidence: with factorials and \(\alpha=1\), \(\beta=0\) the quotient is \([r+1]\), which diverges.
+Published: [Klimyk 2006], p. 2 and p. 3, formulas (16) and (17). [Koornwinder 2000], pp. 2–3, (16),
+(17).
 Target: [VK14.1.05]
 
 ### E14.1.04. Lower summation limit
@@ -9139,6 +11031,7 @@ Correct: \(D_q(1-bx)^a_q=-bq^{-a}[[a]](1-bx)^{a-1}_q\) with the power of §14.1.
 \(D_q(bx;q)_a=-b[[a]](bqx;q)_{a-1}\) with \((y;q)_\alpha=(y;q)_\infty/(yq^\alpha;q)_\infty\).
 Evidence: at \(a=1\) the derivative is \(-b/q\) (resp. \(-b\)), never \(b\); numerically the
 printed value is \(0.7685\) against \(-2.5294\) (corrected forms agree).
+Published: [Klimyk 2006], p. 9, l. −3. [Koornwinder 2000], p. 9, (3); p. 9, (3), second line.
 Target: [VK14.1.18]
 
 ### E14.1.06. Sign in the Jackson integral to infinity
@@ -9158,6 +11051,9 @@ Printed: \((x-a)^n_q\) "in the sense of (5) of 14.1.4", i.e. \(\prod_{j=1}^n(x-q
 Correct: \((x-a)^n_q=\prod_{j=0}^{n-1}(x-q^ja)\).
 Evidence: with \(f(x)=x\) the printed reading gives \(x+a(1-q^{-1})\); numerically \(1729.16\)
 against \(22.278\) for a cubic; the corrected product reproduces \(f\).
+Published: [Klimyk 2006], p. 12, l. 2. [Koornwinder 2000], p. 12, (16). Both lists replace \(x-a\)
+by \(qx-a\) twice. With the power \((b-x)^n_q\) of §14.1.4 (5) this is wrong already at \(n=1\),
+where it gives \(qx-a/q\).
 Target: [VK14.1.22]
 
 ### E14.1.08. Difference equation for \(\cos_{1/q}\), \(\sin_{1/q}\)
@@ -9183,6 +11079,9 @@ carries the factor \(K_q(\nu)=c^\nu q^{\nu(\nu-1)/2}\theta_q(cq^\nu)/\theta_q(c)
 suffices for convergence.
 Evidence: \(q=0.1\), \(\nu=0.4\): \(1.10230\) against \(1.10151\); at \(q=0.37\) the relative
 discrepancy is about \(10^{-8}\) (\(\nu=0.4,2.7,0.6+0.8i\)), at integers it vanishes.
+Published: [Klimyk 2006], p. 14, formula (1). [Koornwinder 2000], p. 14, (1). Both lists state that
+the \(q\)-integral does not converge, and Klimyk defines \(\Gamma_q\) by (4)–(5); see above for the
+convergent reading.
 Target: [VK14.1.26]
 
 ### E14.1.10. Meaning of \((1-y)^\alpha_q\) in the q-beta integrals
@@ -9224,6 +11123,7 @@ Correct: \(D_q\{x^\alpha\varphi(A,B;C;x)\}=\frac{1-A}{1-q}x^{\alpha-1}\varphi(Aq
 \(A=q^\alpha\), and \(D_q\{x^{\gamma-1}\varphi(A,B;C;x)\}=\frac{1-C/q}{1-q}x^{\gamma-2}
 \varphi(A,B;C/q;x)\) for \(C=q^\gamma\).
 Evidence: numerical check of the corrected forms; the printed coefficient fails at \(n=1\).
+Published: [Klimyk 2006], p. 17, l. −2; p. 17, l. −1. [Koornwinder 2000], p. 17, (3),(4).
 Target: [VK14.1.32]
 
 ### E14.1.14. q-Rodrigues formula for \({}_2\varphi_1\)
@@ -9237,6 +11137,7 @@ Heine
 factor \((xq^{\gamma-\alpha-\beta};q)_\infty/(x;q)_\infty\) (\(a=q^\alpha\), etc.); \((x;q)_n\) is
 \((c;q)_n\).
 Evidence: the corrected Rodrigues formula of [VK14.1.33] checked for \(n=1,2,3\).
+Published: [Klimyk 2006], p. 18, l. 2–4; p. 18, formula (5); p. 18, formula (6).
 Target: [VK14.1.33]
 
 ### E14.1.15. Coefficient in the contiguous relation
@@ -9257,6 +11158,61 @@ Printed: term \(-q(1-x)y(x)\).
 Correct: \(+q(1-x)y(x)\).
 Evidence: printed residual \(-1.41\), corrected residual \(0\).
 Target: [VK14.1.37]
+
+### E14.1.17. Hypothesis of (1) in §14.1.1
+
+Status: Confirmed.
+Location: Vol 3, §14.1.1, p. 1, (1).
+Printed: \((a;q)_n=\dfrac{(a;q)_\infty}{(aq^n;q)_\infty}\), \(|q|<1\), with no restriction on \(a\).
+Correct: \((a;q)_n=\dfrac{(a;q)_\infty}{(aq^n;q)_\infty}\) for \(|q|<1\) and \(a\ne
+q^{-n},q^{-n-1},\dots\).
+Evidence: \((aq^n;q)_\infty=0\) exactly when \(aq^{n+j}=1\) for some \(j\ge0\). For \(a=q^{-n-j}\)
+the right side is \(0/0\), while \((a;q)_n=\prod_{i=0}^{n-1}(1-q^{i-n-j})\ne0\).
+Published: [Klimyk 2006], p. 1, formula (1). [Koornwinder 2000], p. 1, (1).
+Target: [VK14.1.01].
+
+### E14.1.18. Sign of \(j\) in the last factor of (8) of §14.1.3
+
+Status: Confirmed.
+Location: Vol 3, §14.1.3, p. 7, (8).
+Printed: \(\prod_{n=0}^\infty(1-q^{(2k+1)(n+1)})(1-q^{(2k+1)n+j})(1-q^{(2k+1)(n+1)+j})\).
+Correct: \(\prod_{n=0}^\infty(1-q^{(2k+1)(n+1)})(1-q^{(2k+1)n+j})(1-q^{(2k+1)(n+1)-j})\).
+Evidence: The left side is the triple product sum
+\(\sum_n(-1)^nQ^{n(n-1)/2}z^n=(Q;Q)_\infty(z;Q)_\infty(Q/z;Q)_\infty\) with \(Q=q^{2k+1}\),
+\(z=q^{2k+1-j}\), whose last factor is \(1-Q^{n+1}q^{-j}\). Numerical check at \(q=0.3\),
+\((k,j)=(1,1),(2,0.7),(0,1.3)\): the sum agrees with \(-j\) and not with \(+j\).
+Published: [Klimyk 2006], p. 7, l. −6. [Koornwinder 2000], p. 7, (8).
+Target: [VK14.1.14].
+
+### E14.1.19. Index in the product (2) for \(E_q\)
+
+Status: Confirmed.
+Location: Vol 3, §14.1.6, p. 12, (2).
+Printed: \(E_q(x)=((1-q)x;q)_\infty^{-1}=\prod_{n=0}^\infty(1-(1-q)xq^j)^{-1}\).
+Correct: \(E_q(x)=((1-q)x;q)_\infty^{-1}=\prod_{n=0}^\infty(1-(1-q)xq^n)^{-1}\).
+Evidence: By definition \((a;q)_\infty=\prod_{n\ge0}(1-aq^n)\), here with \(a=(1-q)x\). The index
+\(j\) is unbound.
+Published: [Klimyk 2006], p. 12, l. −8.
+Target: [VK14.1.23].
+
+### E14.1.20. \({}_2\Phi_1\) in the q-hypergeometric equation (17)–(18)
+
+Status: Confirmed.
+Location: Vol 3, §14.1.8, p. 19, line before (17), and (18).
+Printed: "The hypergeometric function \({}_2\varphi_1(a,b;c;q,x)\) satisfies" (17), whose
+coefficients involve \(q^c\), \(q^{a+b+1}\), \([[a]]\), \([[b]]\), \([[c]]\); (18):
+\(y=x^{1-c}{}_2\varphi_1(\frac{aq}c,\frac{bq}c;\frac{q^2}c;q,x)\).
+Correct: (17) is satisfied by \({}_2\Phi_1(a,b;c;q,x)={}_2\varphi_1(q^a,q^b;q^c;q,x)\), and a second
+solution is
+\(y=x^{1-c}{}_2\Phi_1(a-c+1,b-c+1;2-c;q,x)=x^{1-c}{}_2\varphi_1(q^{a+1-c},q^{b+1-c};q^{2-c};q,x)\).
+Evidence: The coefficients of (17) are written in the exponents \(a,b,c\), and (18) mixes the two
+readings (\(x^{1-c}\) additive, \(aq/c\) multiplicative). Numerically, at \(q=0.55\),
+\((a,b,c)=(0.3,1.2,0.7)\), \(x\in\{0.2,0.45\}\), both corrected solutions satisfy (17) to
+\(10^{-30}\); the printed (18) with \(a,b,c\) additive leaves a residual about \(0.4\).
+Published: [Klimyk 2006], p. 19, l. −8, −3, −2. [Klimyk 2006] lists l. −8, −3 and −2; if l. −2 is
+the line introducing (19), that change is not needed, since (19) is written in multiplicative
+parameters, for which \({}_2\varphi_1(a,b;c;q,x)\) is correct.
+Target: [VK14.1.37].
 
 ### E14.3.01. Coefficients of the universal R-matrix
 
@@ -9419,6 +11375,49 @@ Evidence: corrected relation holds for \(\ell_1,\ell_2\le2\) (error \(10^{-28}\)
 printed.
 Target: [VK14.3.23]
 
+### E14.3.16. The antipode \(S\) is an antihomomorphism
+
+Status: Confirmed.
+Location: Vol 3, §14.3.1, p. 30, sentence after (7).
+Printed: “Since the operations \(\Delta\), \(S\) and \(\varepsilon\) are homomorphisms for the
+corresponding algebras, then they are defined on all elements from \(U_q(\mathfrak{sl}_2)\).”.
+Correct: \(\Delta\) and \(\varepsilon\) are homomorphisms and \(S\) is an antihomomorphism,
+\(S(xy)=S(y)S(x)\); with this they are defined on all of \(U_q(\mathfrak{sl}_2)\).
+Evidence: By (6), \(S(E_+)S(E_-)=E_+E_-\) and \(S(E_-)S(E_+)=E_-E_+\), while \(S([H])=[-H]=-[H]\)
+for \([E_+,E_-]=[H]\). A homomorphism would give \(S([E_+,E_-])=[E_+,E_-]=[H]\), a contradiction;
+the antihomomorphism gives \(S([E_+,E_-])=[S(E_-),S(E_+)]=-[H]\), as required.
+Published: [Klimyk 2006], p. 30, l. −6.
+Target: [VK14.3.02].
+
+### E14.3.17. Standing assumption on \(q\) in §14.3
+
+Status: Confirmed.
+Location: Vol 3, §14.3.1, p. 32, l. −12.
+Printed: "Everywhere below we assume that \(q\) is not a root of unity.".
+Correct: "Everywhere below we assume that \(q\) is positive" (and \(q\ne1\)). The real forms (14),
+(15), the self-adjointness of \(T(H)\) and the classification of §14.3.2 use \(q>0\).
+Evidence: For \(q=e^{i\theta}\) with \(\theta/\pi\) irrational (not a root of unity), the quotient
+of the Verma module with highest weight \(\lambda=d-1+2\pi/\theta\) is a \(d\)-dimensional
+irreducible representation with real diagonal \(T(H)\) of spectrum \(\lambda,\lambda-2,\dots\), not
+equivalent to any \(T_\ell\) (checked for \(d=2,3\), `checks/N1_P575.py`). For such \(q\) the
+numbers \([n]\) can be negative (\([2]=-0.356\) at \(\theta=3.5\)), so the coefficients of
+\(T_\ell\) are not real and \(T_\ell(E_\pm)^*=T_\ell(E_\mp)\) fails.
+Published: [Klimyk 2006], p. 32, l. −12. Klimyk's "positive" should also exclude \(q=1\), where
+\(q^{1/2}-q^{-1/2}\) in (2) vanishes.
+Target: [VK14.3.08].
+
+### E14.3.18. Replacement rule for \([-k]!/[-m]!\)
+
+Status: Confirmed.
+Location: Vol 3, §14.3.7, p. 41, l. 4.
+Printed: \([-k]!/[-m]!\) "must be replaced by \((-1)^{k-m}[m+1]!/[k-1]!\)".
+Correct: \([-k]!/[-m]!\) is replaced by \((-1)^{k-m}[m-1]!/[k-1]!\).
+Evidence: With \([n]!=\hat\Gamma_q(n+1)\), formula (9) of §14.1.7 ([VK14.1.27]) gives
+\(\hat\Gamma_q(1-k+\epsilon)/\hat\Gamma_q(1-m+\epsilon)\to(-1)^{k-m}\hat\Gamma_q(m)/\hat\Gamma_q(k)=(-1)^{k-m}[m-1]!/[k-1]!\)
+as \(\epsilon\to0\). Numerical check at \(q=0.6\) for \((k,m)=(3,1),(4,2),(2,5)\).
+Published: [Klimyk 2006], p. 41, l. 4.
+Target: [VK14.3.19].
+
 ### E14.4.01. Central entry of the matrix of \(T_1\)
 
 Status: Confirmed
@@ -9559,6 +11558,8 @@ Correct: unknown. (2) as printed is false in general; (3) uses symbols \(n,y,t,b
 are not defined. A corrected form has not been found.
 Evidence: (2) agrees in 123 and fails in 788 tested cases with \(N>0\); for example
 \(N_1=1\), \(N_2=2\) gives a ratio \(1.042\) of the two sides.
+Published: [Klimyk 2006], p. 66, l. −9. Klimyk defines \(b=b_1q^{x-M}\), \(\sigma=m-n\) and
+\(\tau=x-y\); \(t\) and \(r\) remain undefined.
 Target: [VK14.6.06], [VK14.6.07].
 
 ### E14.6.03. q-Burchnall–Chaundy formulas §14.6.3 (1)–(3)
@@ -9572,6 +11573,8 @@ pair of parameters is absent). The identity holds when \(\alpha=0\) or \(\beta=0
 the classical limit \(q\to1\), but not for generic \(\alpha,\beta\).
 Evidence: at \(q=0.43\) with generic parameters, left side \(18.2439\), right side
 \(17.7038\); (3) fails at \(n=1\) (\(0.0580\) against \(0.0223\)).
+Published: [Klimyk 2006], p. 67, l. 5 and l. 12. [Koornwinder 2000], p. 67, (1) and (2). Both lists
+replace the last \({}_3\Phi_2\) by \({}_2\Phi_1\); the identity still fails for generic parameters.
 Target: [VK14.6.08], [VK14.6.09].
 
 ### E14.6.04. Clebsch–Gordan coefficients as q-Hahn polynomials, §14.6.4 (3)
@@ -9595,6 +11598,7 @@ Correct: numerator factor \((abq^n-q^{-N-1})\) and denominator
 \((1-abq^{2n})(1-abq^{2n+1})\) (Koekoek–Lesky–Swarttouw (14.6.3)).
 Evidence: residual of the three-term recurrence about \(0.49\) with the printed
 coefficient, about \(10^{-30}\) with the corrected one.
+Published: [Klimyk 2006], p. 69, l. −5. Klimyk corrects only the denominator.
 Target: [VK14.6.16].
 
 ### E14.6.06. q-Hahn q-difference equation, §14.6.4 (10)
@@ -9604,6 +11608,8 @@ Location: Vol 3, §14.6.4, p. 69, (10).
 Printed: the brace contains \(+(1-q^{-x})(1-q^{x+1})\).
 Correct: \(-(1-q^{-x})(1-abq^{x+1})\) (Koekoek–Lesky–Swarttouw (14.7.3)).
 Evidence: numerical check of the difference equation on q-Hahn polynomials.
+Published: [Klimyk 2006], p. 69, l. −1. Klimyk corrects only the factor \(1-abq^{x+1}\), not the
+sign.
 Target: [VK14.6.17].
 
 ### E14.6.07. 6j-symbols as q-Racah polynomials, §14.6.5 (3)–(4)
@@ -9705,6 +11711,7 @@ Printed: argument \(e/c\).
 Correct: argument \(e/a\) (Gasper–Rahman (3.2.7)).
 Evidence: test values: both sides \(1.00130\) with \(e/a\); the printed right side gives
 \(1.00412\).
+Published: [Klimyk 2006], p. 78, l. 8.
 Target: [VK14.6.33].
 
 ### E14.6.16. Identities with noncommuting variables, §14.6.9 (1)–(3)
@@ -9729,6 +11736,19 @@ numerically, so a further misprint is likely.
 Evidence: 719 of 728 tested cases fail with \(j'=j_2\).
 Target: [VK14.6.41].
 
+### E14.6.18. Parameters \(aq\) in the terminating sum (8) of §14.6.8
+
+Status: Confirmed.
+Location: Vol 3, §14.6.8, p. 79, (8).
+Printed: Right side \(\dfrac{(a;q)_N(a/bc;q)_N}{(a/b;q)_N(a/c;q)_N}\).
+Correct: Right side \(\dfrac{(aq;q)_N(aq/bc;q)_N}{(aq/b;q)_N(aq/c;q)_N}\).
+Evidence: Setting \(d=q^{-N}\) in (7) gives
+\(\frac{(aq;q)_\infty(aq^{N+1}/c;q)_\infty(aq^{N+1}/b;q)_\infty(aq/bc;q)_\infty}{(aq/b;q)_\infty(aq/c;q)_\infty(aq^{N+1};q)_\infty(aq^{N+1}/bc;q)_\infty}\),
+which is the corrected quotient. Numerical check at \(q=0.4\), \(a=0.37\), \(b=1.9\), \(c=-0.6\),
+\(N\le3\).
+Published: [Klimyk 2006], p. 79, l. 7.
+Target: [VK14.6.36].
+
 ### E14.7.01. Askey–Wilson norm, §14.7.1 (7)
 
 Status: Confirmed.
@@ -9739,6 +11759,7 @@ Correct: \((q^{n+1};q)_\infty^{-1}\), i.e.
 cdq^n;q)_\infty\).
 Evidence: numerical evaluation of the orthogonality integrals (5) and (9) agrees with the
 corrected \(h_n\).
+Published: [Klimyk 2006], p. 83, l. 4.
 Target: [VK14.7.05], [VK14.7.06].
 
 ### E14.7.02. Discrete masses \(w_k\), §14.7.1 (8')
@@ -9751,6 +11772,7 @@ Correct: \((a^{-2};q)_\infty\), \((1-a^2q^{2k})\) and \((1-a^2)\):
 \frac{(1-a^2q^{2k})(a^2,ab,ac,ad;q)_k}{(1-a^2)(q,aq/b,aq/c,aq/d;q)_k}(q/abcd)^k\).
 Evidence: with \(a=1.6\) the corrected masses make (8) hold numerically; the printed ones
 do not.
+Published: [Klimyk 2006], p. 83, l. −11; p. 83, l. −10.
 Target: [VK14.7.06].
 
 ### E14.7.03. Exponent in connection coefficients, §14.7.1 (13)
@@ -9792,6 +11814,8 @@ Correct: in these formulas \(p_n\) denotes the \({}_4\varphi_3\) alone, without 
 prefactor; the synopsis writes it \(r_n\).
 Evidence: (1) and (4) hold numerically with the \({}_4\varphi_3\) normalization; with the
 full normalization the two sides of (4) have ratios \(0.554\) and \(0.289\) in tests.
+Published: [Klimyk 2006], p. 85, l. −3; p. 86, l. 4. Klimyk's repair changes the coefficient and
+keeps the normalized \(p_n\); it is equivalent to the one above.
 Target: [VK14.7.13], [VK14.7.14], [VK14.7.15], [VK14.7.27].
 
 ### E14.7.07. Parameters of q-Gegenbauer polynomials, §14.7.3
@@ -9881,6 +11905,19 @@ Printed: right side without \(d^{-n}\).
 Correct: the right side contains the factor \(d^{-n}\).
 Evidence: comparison with the corrected (10) and numerical check.
 Target: [VK14.7.34].
+
+### E14.7.15. Coefficient \(2x^2\) in the weight \(w_\beta\)
+
+Status: Confirmed.
+Location: Vol 3, §14.7.3, p. 88, display after (8).
+Printed: \(w_\beta(x)=\prod_{k=0}^\infty\dfrac{1-2(1x^2-1)q^k+q^{2k}}{1-2(2x^2-1)\beta
+q^k+\beta^2q^{2k}}\).
+Correct: \(w_\beta(x)=\prod_{k=0}^\infty\dfrac{1-2(2x^2-1)q^k+q^{2k}}{1-2(2x^2-1)\beta
+q^k+\beta^2q^{2k}}\).
+Evidence: \((1-q^ke^{2i\theta})(1-q^ke^{-2i\theta})=1-2\cos2\theta\,q^k+q^{2k}\) with
+\(\cos2\theta=2x^2-1\), as in the denominator and in the product form on the same line.
+Published: [Klimyk 2006], p. 88, l. 15.
+Target: [VK14.7.20].
 
 ### E14.8.01. Exponent in the q-Pascal rule
 
@@ -10068,6 +12105,22 @@ Evidence: here \(\alpha=|(m-n)/2|\), \(\beta=|(m+n)/2|\), and the matrix element
 coincide.
 Target: [VK14.8.31], [VK14.8.32]
 
+### E14.8.14. Exponents in the Schur orthogonality relations (1)–(2) of §14.8.9
+
+Status: Confirmed.
+Location: Vol 3, §14.8.9, p. 112, (1)–(2).
+Printed: (1): \(\langle
+t^{(\ell)}_{mn},t^{(\ell')}_{m'n'}\rangle_R=\frac{(1-q^2)q^{2(\ell-j)}}{1-q^{2(2\ell+1)}}\delta_{\ell\ell'}\delta_{mm'}\delta_{nn'}\);
+(2): the same with \(\langle\cdot,\cdot\rangle_L\) and \(q^{2(\ell+i)}\).
+Correct: \(q^{2(\ell-n)}\) in (1) and \(q^{2(\ell+m)}\) in (2).
+Evidence: The proof on p. 113 finds \(\langle t^{(\ell)}_{ij},t^{(\ell)}_{ij}\rangle_R=c_j\propto
+q^{2(\ell-j)}\), with \(j\) the column index, and \(\langle
+t^{(\ell)}_{ij},t^{(\ell)}_{ij}\rangle_L=c'_i\propto q^{2(\ell+i)}\), with \(i\) the row index; for
+\(t^{(\ell)}_{mn}\) this is \(\ell-n\) and \(\ell+m\). It agrees with (3): \(\langle
+t_{mn},t_{mn}\rangle_L=q^{2(m+n)}\langle t_{mn},t_{mn}\rangle_R\).
+Published: [Klimyk 2006], p. 112, l. −6; p. 112, l. −5.
+Target: [VK14.8.19].
+
 ### E14.9.01. Index step for the spherical functions on S_q²
 
 Status: Confirmed.
@@ -10180,6 +12233,8 @@ subalgebra). For \(\mathfrak{so}(p,q)\) the listed subalgebras are pairwise non-
 not exhaust the classes; the complete count is not determined here.
 Evidence: \(\mathfrak{su}(1,1)\cong\mathfrak{so}(1,2)\cong\mathfrak{sl}(2,\mathbb R)\) has two
 classes (elliptic and hyperbolic); the printed counts give 1 and 0.
+Published: [Klimyk 2006], p. 141, l. −16. Klimyk replaces \(t'_s\) by \(t'_{s'}\) with \(s'\)
+undefined.
 Target: [VK15.1.06]
 
 ### E15.1.03. Root vectors of \(\mathfrak{so}(n)\), \(\mathfrak{sp}(\ell)\): labels vs. weights
@@ -10237,6 +12292,7 @@ Printed: "If the angle is equal to \(\pi\), then roots are not connected by line
 Correct: simple roots at angle \(\pi/2\) (orthogonal) are not connected.
 Evidence: simple roots are linearly independent, so angle \(\pi\) cannot occur; the angles between
 distinct simple roots are \(\pi/2,2\pi/3,3\pi/4,5\pi/6\).
+Published: [Klimyk 2006], p. 149, l. 21.
 Target: [VK15.1.18]
 
 ### E15.1.07. Labels \(B_\ell\) and \(D_\ell\) interchanged
@@ -10367,6 +12423,21 @@ Evidence: \(a_t=\mathrm{diag}(e^tI_p,I_{q-p},e^{-t}I_p)\) preserves the form,
 normalizes the unipotent upper triangular group, and is not of the printed shape (its upper left
 block is not unipotent).
 Target: [VK15.1.47]
+
+### E15.1.17. Last block of \(A_s\) for \(\mathfrak{su}(p,q)\)
+
+Status: Confirmed.
+Location: Vol 3, §15.1.2, p. 141, Example 6, display of \(A_s\).
+Printed:
+\(A_s=\mathrm{diag}(it_1,\dots,it_s,ir_{s+1},\dots,ir_p,ir_p,\dots,ir_{s+1},it'_s,\dots,it'_1)\)
+Correct:
+\(A_s=\mathrm{diag}(it_1,\dots,it_s,ir_{s+1},\dots,ir_p,ir_p,\dots,ir_{s+1},it'_{q-p+s},\dots,it'_1)\).
+Evidence: \(A_s\) is a diagonal \((p+q)\times(p+q)\) matrix; the first three blocks have
+\(s+2(p-s)=2p-s\) entries, so the last block has \(q-p+s\) entries, not \(s\). The printed form has
+only \(2p\) entries, which is correct only for \(p=q\); the block labels \(s,p-s,p-s,s\) of \(B_s\)
+have the same defect.
+Published: [Klimyk 2006], p. 141, l. 6.
+Target: [VK15.1.06].
 
 ### E15.2.01. Maximal compact subgroup of \(GL(n,\mathbb R)\)
 
@@ -10888,6 +12959,47 @@ inserting (14) and \(\int_HQ_\delta(h)\overline{\chi_\gamma(h)}dh=\delta_{\gamma
 \dim Q_\gamma\) gives the corrected form. The analogous formula (3) of §16.2.8 uses
 \(\mathrm{Tr}\,Q_\gamma(k)\).
 Target: [VK16.2.21]
+
+### E16.2.07. Arguments in the norm (1) for \(U(p,q)\)
+
+Status: Confirmed.
+Location: Vol 3, §16.2.2, p. 221, (1).
+Printed: \(\|f\|^2=\int|f(U_p(I_p-W^*W)^{1/2},V_q(I_q-\bar
+WW^t)^{1/2},W)|^2\det{}^{-n}(I_q-W^*W)\,d_*U_p\,d_*V_q\,dW\).
+Correct: \(\|f\|^2=\int|f(U_p(I_p-\bar
+WW^t)^{1/2},V_q(I_q-W^*W)^{1/2},W)|^2\det{}^{-n}(I_q-W^*W)\,d_*U_p\,d_*V_q\,dW\); the two printed
+matrices are interchanged.
+Evidence: For \(W\in\mathfrak R_1(p,q)\subset\mathfrak M_{pq}(\mathbb C)\) the matrix \(W^*W\) is
+\(q\times q\) and \(\bar WW^t\) is \(p\times p\), so neither printed difference is defined for
+\(p\ne q\); the corrected matrices are \(p\times p\) and \(q\times q\) respectively and are positive
+definite on \(\mathfrak R_1(p,q)\). With \(W'=(WC+A)^{-1}(WD+B)\) and the holomorphic factors
+\(J=(A^t+C^tW^t)^{-1}\), \(L=(B^*W+D^*)^{-1}\) of (2) ([E16.2.08]), one has \(J^*(I_p-\bar
+WW^t)J=I_p-\bar W'W'^t\) and \(L^*(I_q-W^*W)L=I_q-W'^*W'\) (checked numerically), the covariance
+needed for unitarity. The pair \(I_p-WW^*\), \(I_q-W^t\bar W\) is covariant only for the
+antiholomorphic factors \((A^*+C^*W^*)^{-1}\), \((B^t\bar W+D^t)^{-1}\), which do not preserve
+condition 2).
+Published: [Klimyk 2006], p. 221, l. 15. [Klimyk 2006] changes only the first argument, to
+\(I_p-WW^*\), which is defined but does not match the holomorphic law (2).
+Target: [VK16.2.06].
+
+### E16.2.08. Transformation law (2) of the holomorphic discrete series of \(U(p,q)\)
+
+Status: Confirmed.
+Location: Vol 3, §16.2.2, p. 221, (2).
+Printed: \((T_{\mathbf
+m\boldsymbol\ell}(g)f)(Z^{(1)},Z^{(2)},W)=f(Z^{(1)}(A^*+C^*W)^{-1},Z^{(2)}(B^tW+D^t)^{-1},(WC+A)^{-1}(WD+B))\).
+Correct: \((T_{\mathbf
+m\boldsymbol\ell}(g)f)(Z^{(1)},Z^{(2)},W)=f(Z^{(1)}(A^t+C^tW^t)^{-1},Z^{(2)}(B^*W+D^*)^{-1},(WC+A)^{-1}(WD+B))\),
+with the norm (1) as corrected in [E16.2.07].
+Evidence: With \(W'=(WC+A)^{-1}(WD+B)\) one has \((I_p,W)g=(A+WC)(I_p,W')\) and
+\(g\binom{-W'}{I_q}=\binom{-W}{I_q}(B^*W+D^*)^{-1}\), so \(J(g,W)=(A^t+C^tW^t)^{-1}\) and
+\(L(g,W)=(B^*W+D^*)^{-1}\) are holomorphic in \(W\) and satisfy \(J(gh,W)=J(g,W)J(h,W')\), which
+makes (2) a representation preserving condition 2); \(C^*W\) is undefined for \(W\in\mathfrak
+M_{pq}(\mathbb C)\), and the printed \((B^tW+D^t)^{-1}\) fails the cocycle identity numerically
+(\(p=2\), \(q=3\)). Moreover \(J^*(I_p-\bar WW^t)J=I_p-\bar W'W'^t\), \(L^*(I_q-W^*W)L=I_q-W'^*W'\)
+and \(\det{}^{-n}(I_q-W^*W)\,dW\) is invariant (all checked numerically), which gives unitarity for
+(1).
+Target: [VK16.2.06].
 
 ### E16.3.01. Argument of the first F_D transformation
 
@@ -11471,6 +13583,7 @@ symmetric matrices), printed value \(1\). \(n=3\), \(f=1\) in (13): \(V_3(3,2,0)
 printed
 \(1\); \((n,f)=(3,2)\): \(21\) and \(6\) versus printed \(3.5\) and \(2\). Also required by
 (15)–(16).
+Published: [Klimyk 2006], p. 283, formula (12); p. 283, formula (13).
 Target: [VK17.2.13]
 
 ### E17.2.06. Jacobi–Trudi determinant
@@ -11632,6 +13745,17 @@ units with \(\alpha=2\), \(\boldsymbol\ell=\rho=1\)):
 \delta_{\lambda,1})\), printed right side \(\delta_{\lambda,1}-\delta_{\lambda,-1}\).
 Target: [VK17.2.24]
 
+### E17.2.15. Second factor in the product (1) on \(\Xi\)
+
+Status: Confirmed.
+Location: Vol 3, §17.2.10, p. 292, (1).
+Printed: \((\xi_1\cdot\xi_2)(T)=\sum_{T_1\in\hat G}\xi_1(\hat T_1\otimes T)\xi(T_1)\).
+Correct: \((\xi_1\cdot\xi_2)(T)=\sum_{T_1\in\hat G}\xi_1(\hat T_1\otimes T)\xi_2(T_1)\).
+Evidence: The printed right side does not involve \(\xi_2\), and \(\xi\) is not defined there;
+formula (4) for the same product is bilinear in \(\xi_1,\xi_2\).
+Published: [Klimyk 2006], p. 292, l. −13.
+Target: [VK17.2.23].
+
 ### E17.3.01. Zonal spherical functions are orthogonal, not orthonormal
 
 Status: Confirmed.
@@ -11644,6 +13768,7 @@ T_\Lambda)^{-1}\)
 (normalized Haar measure, \(\varphi_\Lambda(e)=1\)).
 Evidence: Schur orthogonality. For \(G=SO(3)\), \(K=SO(2)\), \(\Lambda=1\):
 \(\varphi_1=\cos\theta\) and \(\int|\varphi_1|^2=\frac13\).
+Published: [Klimyk 2006], p. 297, l. 9.
 Target: [VK17.3.05].
 
 ### E17.3.02. Value \(Z_{\mathbf k}(I_m)\) for \(\mathbb F=\mathbb R\)
@@ -11668,6 +13793,7 @@ gives a
 negative value for \(m=1\), \(\mathbf k=(2)\). The corrected formula reproduces
 \(\sum_{|\mathbf k|=r}Z_{\mathbf k}(I_m)=m^r\) and the zonal polynomials computed from §17.3.7 for
 \(m=2,3\), \(r\le4\) (sympy, scripts/VK17B/zonal.py).
+Published: [Klimyk 2006], p. 303, l. −2. Klimyk gives item (b) only.
 Target: [VK17.3.16].
 
 ### E17.3.03. Laplace inversion for zonal polynomials
@@ -11859,6 +13985,33 @@ identically 1.
 The plane waves of \(\mathfrak M_{n-\ell,\ell}(\mathbb C)\) use the real pairing
 \(\mathrm{Re}\,\mathrm{Tr}\).
 Target: [VK17.3.47].
+
+### E17.3.14. Range of \(\boldsymbol\mu\) in property (c) of the ordering
+
+Status: Confirmed.
+Location: Vol 3, §17.3.1, p. 297, property (c).
+Printed: "For any \(\boldsymbol\mu\in\mathbb Z^\ell_+\) there is \(w\in W\) such that
+\(w\boldsymbol\mu\in\mathbb Z^\ell_+\).".
+Correct: "For any \(\boldsymbol\mu\in\mathbb Z^\ell\) there is \(w\in W\) such that
+\(w\boldsymbol\mu\in\mathbb Z^\ell_+\).".
+Evidence: As printed the statement is trivial (\(w=e\)); the intended property is that every weight
+is \(W\)-conjugate to a dominant one, which is how (c) is used together with (e).
+Published: [Klimyk 2006], p. 297, l. 5.
+Target: [VK17.3.04].
+
+### E17.3.15. \(\gamma_1\) for \(\gamma\) in (12)
+
+Status: Confirmed.
+Location: Vol 3, §17.3.9, p. 315, (12).
+Printed: \(Dp_{\mathbf n}(\mathbf
+x)=4r\sum_{i=1}^\ell\{-n_i(n_i-1)-(1+\alpha)n_i-(1+\beta)n_i-(2\gamma_1+1)n_i(\ell-i)\}\mathbf
+x^{\mathbf n}+\text{lower terms}\).
+Correct: the same with \((2\gamma+1)n_i(\ell-i)\).
+Evidence: \(\gamma_1\) is not defined; the operator \(D\) on the same page has the coefficient
+\(2\gamma+1\), and \(|\boldsymbol\rho|^2-|2\mathbf n+\boldsymbol\rho|^2\) with \(\boldsymbol\rho\)
+of (11) gives \(-4\sum_i[n_i(n_i-1)+(2+\alpha+\beta)n_i+(2\gamma+1)n_i(\ell-i)]\) (with \(r=1\)).
+Published: [Klimyk 2006], p. 315, l. −13.
+Target: [VK17.3.36].
 
 ### E17.4.01. Matrix norm needs absolute values
 
@@ -12295,6 +14448,17 @@ Evidence: \(\alpha\) does not occur in the statement; 17.4.3 (17), of which (7) 
 has
 \(\Gamma_m^{-1}(\delta+\frac12)\), and for \(\mu=0\) the formula must reduce to 17.4.3 (11).
 Target: [VK17.4.60].
+
+### E17.4.28. \(\|\lambda\|\) for \(\|\Lambda\|\) after (6)
+
+Status: Confirmed.
+Location: Vol 3, §17.4.1, p. 329, conditions after (6).
+Printed: \(\mathrm{Re}\,c>\mathrm{Re}\,b+\frac12(m-1)\nu>(m-1)\nu\) and \(\|\lambda\|<1\).
+Correct: \(\mathrm{Re}\,c>\mathrm{Re}\,b+\frac12(m-1)\nu>(m-1)\nu\) and \(\|\Lambda\|<1\).
+Evidence: (6) is a function of the matrix \(\Lambda\) and no \(\lambda\) occurs; (6) is the case
+\(p=2\) of (5), whose condition is \(\|\Lambda\|<1\).
+Published: [Klimyk 2006], p. 329, l. −9.
+Target: [VK17.4.03].
 
 ### Conventions and notation (not errata)
 
@@ -12812,6 +14976,18 @@ Evidence: symbolic indicial analysis and numerical substitution for several para
 \(r\leftrightarrow s\), \(\tau\to\tau-p\).
 Target: [VK18.6.18].
 
+### E18.6.05. Length of the highest weight of \(SO(n-2)\)
+
+Status: Confirmed.
+Location: Vol 3, §18.6.2, p. 417, l. 12.
+Printed: \(\mathbf r=(r_1,\dots,r_{n-2})\) is the highest weight of an irreducible representation of
+\(SO(n-2)\).
+Correct: \(\mathbf r=(r_1,\dots,r_s)\), \(s=[(n-2)/2]\).
+Evidence: By §18.1.1 a highest weight of \(SO(k)\) has \([k/2]\) components (the rank); compare the
+\(SO(n-1)\) weights \(\mathbf m=(m_1,\dots,m_{[(n-1)/2]})\) in (4).
+Published: [Klimyk 2006], p. 417, l. 12.
+Target: [VK18.6.02].
+
 ### E18.7.01. Sign convention of the one-variable continuous equations
 
 Status: Normalization check.
@@ -12928,6 +15104,8 @@ Evidence: \(z'=z\pm1\) changes the real part by 1, so \(\mathrm{Re}\,z=\mathrm{R
 impossible; \(z=z\pm1\) is impossible. The proof on the same page (\(b=\pm1\), one of
 \(\mathrm{Re}\,z,\mathrm{Re}(g\cdot z)\) equal to \(-\frac12\) and the other to \(\frac12\))
 gives the corrected form.
+Published: [Klimyk 2006], p. 450, l. 8. Klimyk's \(\mathrm{Re}\,z=\pm\frac12\),
+\(\mathrm{Re}\,z'=\pm\frac12\), \(z'=z\pm1\) is weaker.
 Target: [VK19.1.08].
 
 ### E19.1.04. Number of elliptic points of SL(2,Z)
@@ -13022,6 +15200,7 @@ Correct: \(1+f(-i\tau)=\theta(\tau)\).
 Evidence: \(f(-i\tau)=2\sum_{n\ge1}e^{i\pi n^2\tau}\) and \(\theta(\tau)=1+2\sum_{n\ge1}
 e^{i\pi n^2\tau}\); the next line of the source, \(f(x)=\theta(ix)-1\), agrees with the
 correction.
+Published: [Klimyk 2006], p. 460, l. −7.
 Target: [VK19.1.32].
 
 ### E19.1.12. Bound near x = 0
@@ -13073,6 +15252,19 @@ Evidence: \(a_m=\frac{2(2\pi i)^k}{(k-1)!}\sigma_{k-1}(m)\) by (8), and
 at \(k=4\), \(s=7\) (mpmath).
 Target: [VK19.1.36].
 
+### E19.1.16. Variable of \(q\) in (8)
+
+Status: Confirmed.
+Location: Vol 3, §19.1.5, p. 457, text after (8).
+Printed: \(q=e^{2\pi iz}\).
+Correct: \(q=e^{2\pi i\tau}\).
+Evidence: (7) and (8) are functions of \(\tau\); \(z\) is the variable of the auxiliary expansions
+(5)–(6) only. With \(q=e^{2\pi i\tau}\), (8) is the standard \(q\)-expansion of the Eisenstein
+series (e.g. Mathlib's `EisensteinSeries.qExpansion_identity`), and (7) follows from the line before
+it with \(z\) replaced by \(m\tau\).
+Published: [Klimyk 2006], p. 457, l. −3.
+Target: [VK19.1.24].
+
 ### E19.2.01. Quasi-periodicity condition (b) in the characterization of θ
 
 Status: Confirmed.
@@ -13081,6 +15273,7 @@ Printed: \(f(z+1,\tau)=\exp(-i\pi\tau-2\pi iz)f(z,\tau)\).
 Correct: \(f(z+\tau,\tau)=\exp(-i\pi\tau-2\pi iz)f(z,\tau)\).
 Evidence: the printed (b) contradicts (a) \(f(z+1,\tau)=f(z,\tau)\) unless \(f=0\); the corrected
 form is the quasi-periodicity of \(\theta\) on p. 464.
+Published: [Klimyk 2006], p. 469, l. −7.
 Target: [VK19.2.11].
 
 ### E19.2.02. Branch in the S-transformation of θ₁
@@ -13108,6 +15301,7 @@ Evidence: \((1+xQ^{2n-1})(1+x^{-1}Q^{2n-1})=1+2Q^{2n-1}\cos2\pi z+Q^{2(2n-1)}\) 
 \(Q=e^{i\pi\tau}\), \(x=e^{2\pi iz}\); at \(n=1\) the printed term is 1 instead of
 \(e^{2\pi i\tau}\). Numerically the corrected product agrees with the series to \(10^{-30}\);
 the printed one differs by about 1.
+Published: [Klimyk 2006], p. 472, l. 6.
 Target: [VK19.2.16].
 
 ### E19.2.04. Sign of the product for θ₁
@@ -13131,6 +15325,7 @@ Correct: the product runs over \(m\ge0\).
 Evidence: \(\theta_4(z,\tau)=\theta_3(z+\frac12,\tau)\) and (2) has its second product over
 \(m\ge0\); numerically the product over \(m\ge0\) agrees with series (4) to \(10^{-30}\), the
 printed one differs by about 0.1 (\(\tau=0.31+0.87i\)).
+Published: [Klimyk 2006], p. 472, l. −8.
 Target: [VK19.2.17].
 
 ### E19.2.06. First index of the logarithmic-derivative series
@@ -13197,6 +15392,18 @@ Evidence: \(n\) is undefined in (3); the right side of (3), its specialization (
 \(v=(x-y)/(n_1+n_2)\) require \(a/n_1\), \(b/n_2\). Numerical check (\(r=1\), \(n_1=2\),
 \(n_2=3\), \(a=1\), \(b=2\)): agreement to \(10^{-27}\).
 Target: [VK19.2.37].
+
+### E19.2.11. Central component in (3) and (4)
+
+Status: Confirmed.
+Location: Vol 3, §19.2.5, p. 474, (3), (4).
+Printed: \(U(0,b,0)f(z)=f(z+b)\), \(U(a,0,0)f(z)=\exp(i\pi a^2\tau+2\pi iaz)f(z+a\tau)\).
+Correct: \(U(0,b,1)f(z)=f(z+b)\), \(U(a,0,1)f(z)=\exp(i\pi a^2\tau+2\pi iaz)f(z+a\tau)\).
+Evidence: Elements \((a,b,\lambda)\) of \(N\) have \(|\lambda|=1\), and \(U(a,b,\lambda)\) carries
+the factor \(\lambda\) (p. 473), so \(\lambda=0\) would give the zero operator; \(\lambda=1\) gives
+the printed right sides.
+Published: [Klimyk 2006], p. 474, l. 2; p. 474, l. 3.
+Target: [VK19.2.21].
 
 ### E19.3.01. Redefinition of θ[a/n; 0](z, Ω) in §19.3
 
@@ -13487,6 +15694,18 @@ Evidence: \(\nu\) is an isometry by definition of the form on \(\hat{\mathfrak h
 differ only for \(A_{2\ell}^{(2)}\) (\(a_0=2\)).
 Target: [VK19.4.33].
 
+### E19.4.14. Algebra on which the \(d_s\) act as derivations
+
+Status: Confirmed.
+Location: Vol 3, §19.4.3, p. 506, sentence after (3).
+Printed: "Thus, the operators \(d_s\) are derivations of the algebra \(L(\mathfrak g)\).".
+Correct: "Thus, the operators \(d_s\) are derivations of the algebra \(\tilde L(\mathfrak g)\).".
+Evidence: That \(d_s\) is a derivation of the loop algebra \(L(\mathfrak g)\) is immediate from the
+Leibniz rule for \(t^{s+1}d/dt\); the verified condition \(\tilde B(d_sa,b)+\tilde B(a,d_sb)=0\) is
+exactly what is needed for the central extension \(\tilde L(\mathfrak g)\), to which (2) refers.
+Published: [Klimyk 2006], p. 506, l. 7.
+Target: [VK19.4.11].
+
 ### E19.5.01. Sign of the weight of \(T(\mathfrak U_\lambda(\mathfrak n_-))x_\Lambda\)
 
 Status: Confirmed.
@@ -13501,6 +15720,7 @@ the weight is \(\Lambda+\lambda\), \(\lambda\in-Q_+\).
 Evidence: \(\mathfrak U_\lambda(\mathfrak n_-)\) is defined by \((\mathrm{ad}\,h)n=\lambda(h)n\), so
 \(f_i\in\mathfrak U_{-\alpha_i}(\mathfrak n_-)\), and \(f_ix_\Lambda\) has weight
 \(\Lambda-\alpha_i=\Lambda+\lambda\). Statement 5), \(\dim\le K(-\lambda)\), already uses this sign.
+Published: [Klimyk 2006], p. 528, l. 2 and l. 3; p. 528, l. 9 and l. −10.
 Target: [VK19.5.03], [VK19.5.04].
 
 ### E19.5.02. Nonvanishing of \(e_if_i^{\Lambda(h_i)}x_\Lambda\)
@@ -13560,6 +15780,21 @@ Evidence: \(w\rho-\rho\in-Q_+\) and \(e(w\rho-\rho)=\prod_iu_i^{\kappa_i(\rho-w\
 powers. \(\rho-w(\Lambda+\rho)\notin Q\) unless \(\Lambda\in Q\) (e.g. \(\Lambda=\Lambda_0\)), so
 \(\kappa_i\) is undefined there. (20) already uses \(e(-\Lambda)\mathrm{ch}\,L_\Lambda\).
 Target: [VK19.5.13], [VK19.5.14].
+
+### E19.5.06. \(\mathfrak H_\Lambda\) for \(\mathfrak H\) in (3) and (5)
+
+Status: Confirmed.
+Location: Vol 3, §19.5.2, p. 527, (3), (5).
+Printed: \(T(\mathfrak U(\hat{\mathfrak g}))x_\Lambda=\mathfrak H_\Lambda\) and \(\mathfrak
+H_\Lambda=\sum_\lambda T(\mathfrak U_\lambda(\mathfrak n_-))x_\Lambda\).
+Correct: \(T(\mathfrak U(\hat{\mathfrak g}))x_\Lambda=\mathfrak H\) and \(\mathfrak H=\sum_\lambda
+T(\mathfrak U_\lambda(\mathfrak n_-))x_\Lambda\).
+Evidence: \(\mathfrak H_\Lambda\) is by definition the one-dimensional weight space spanned by
+\(x_\Lambda\). The derivation (4) starts from \(\mathfrak H=T(\mathfrak U(\hat{\mathfrak
+g}))x_\Lambda\), i.e. (3) with \(\mathfrak H\), and (5) refines the conclusion \(\mathfrak
+H=T(\mathfrak U(\mathfrak n_-))x_\Lambda\) of (4) by weights.
+Published: [Klimyk 2006], p. 527, l. −10; p. 527, l. −1.
+Target: [VK19.5.03].
 
 ### E19.6.01. Cross-references and an equation reference in §19.6
 
@@ -15250,3 +17485,111 @@ Target: [VK19.9.13].
 [VK19.9.12]: SYNOPSIS-VK19.md#vk19912-branching-c1_2ellsupset-c1_ell
 [VK19.9.13]: SYNOPSIS-VK19.md#vk19913-the-jimbomiwa-determinants-det-t_1-det-t_2
 [VK09.3.17]: SYNOPSIS-VK09.md#vk09317-integral-representations-of-𝔔μ_ν
+[Koornwinder 2000]: https://staff.fnwi.uva.nl/t.h.koornwinder/art/comment/vilklimerrata.pdf
+[Klimyk 2006]: https://staff.fnwi.uva.nl/t.h.koornwinder/art/comment/klimykcorrect.pdf
+[E11.4.09]: #e11409-normalization-of-the-product-kernel-and-its-closed-forms
+[VK01.0.04]: SYNOPSIS-VK01.md#vk01004-lie-algebras-and-structure-constants
+[VK01.0.09]: SYNOPSIS-VK01.md#vk01009-group-actions-and-function-spaces
+[VK01.0.17]: SYNOPSIS-VK01.md#vk01017-semidirect-sums-of-lie-algebras
+[VK01.0.21]: SYNOPSIS-VK01.md#vk01021-partitions-of-unity-densities-integration-on-manifolds
+[VK01.1.01]: SYNOPSIS-VK01.md#vk01101-orthogonal-symplectic-and-unitary-groups
+[VK01.1.04]: SYNOPSIS-VK01.md#vk01104-lie-groups-and-parametric-equations
+[VK01.2.07]: SYNOPSIS-VK01.md#vk01207-symmetric-homogeneous-spaces
+[VK01.2.13]: SYNOPSIS-VK01.md#vk01213-pseudo-riemannian-symmetric-spaces
+[VK02.1.19]: SYNOPSIS-VK02.md#vk02119-infinitesimal-operators-in-infinite-dimension-smooth-vectors
+[VK02.2.19]: SYNOPSIS-VK02.md#vk02219-invariant-differential-operators
+[VK02.3.23]: SYNOPSIS-VK02.md#vk02323-character-expansion-of-central-functions
+[VK03.1.06]: SYNOPSIS-VK03.md#vk03106-the-complex-groups-so2mathbb-c-and-the-complexified-so11
+[VK03.1.08]: SYNOPSIS-VK03.md#vk03108-the-distribution-rlambda-on-mathbb-rn-and-quadratic-forms
+[VK03.4.06]: SYNOPSIS-VK03.md#vk03406-the-addition-formula-for-gamma-and-its-corollaries
+[VK03.5.01]: SYNOPSIS-VK03.md#vk03501-the-generalized-hypergeometric-series
+[VK03.5.35]: SYNOPSIS-VK03.md#vk03535-fractional-integrals-of-jacobi-polynomials
+[VK04.1.08]: SYNOPSIS-VK04.md#vk04108-matrix-elements-of-t_r
+[VK04.1.09]: SYNOPSIS-VK04.md#vk04109-addition-theorem-for-j_n
+[VK04.2.01]: SYNOPSIS-VK04.md#vk04201-the-pseudo-euclidean-plane
+[VK04.4.10]: SYNOPSIS-VK04.md#vk04410-sector-decomposition-of-the-lorentz-fourier-transform
+[VK05.1.09]: SYNOPSIS-VK05.md#vk05109-infinitesimal-operators-of-r_chi
+[VK05.3.08]: SYNOPSIS-VK05.md#vk05308-differentiation-formulas-for-psi
+[VK05.3.31]: SYNOPSIS-VK05.md#vk05331-christoffeldarboux-formula-for-hermite-polynomials
+[VK05.4.01]: SYNOPSIS-VK05.md#vk05401-factorization-of-g_xg_1t-and-the-kernel-identity
+[VK05.5.13]: SYNOPSIS-VK05.md#vk05513-generating-functions
+[VK06.3.08]: SYNOPSIS-VK06.md#vk06308-integral-representation-of-tl_mn
+[VK06.3.09]: SYNOPSIS-VK06.md#vk06309-euler-angle-factorization-and-the-functions-pl_mn
+[VK06.3.10]: SYNOPSIS-VK06.md#vk06310-hypergeometric-forms-of-tl_mntheta
+[VK06.5.09]: SYNOPSIS-VK06.md#vk06509-contour-integrals-in-the-w-plane
+[VK06.6.10]: SYNOPSIS-VK06.md#vk06610-mean-value-interpretation-on-the-hyperboloid
+[VK06.7.16]: SYNOPSIS-VK06.md#vk06716-three-term-recurrence-for-jacobi-polynomials
+[VK06.9.04]: SYNOPSIS-VK06.md#vk06904-characters-of-su2
+[VK07.2.04]: SYNOPSIS-VK07.md#vk07204-kernel-of-the-rotation
+[VK07.2.06]: SYNOPSIS-VK07.md#vk07206-kernels-of-lower-triangular-matrices
+[VK07.3.04]: SYNOPSIS-VK07.md#vk07304-gauss-contiguous-relations
+[VK07.4.05]: SYNOPSIS-VK07.md#vk07405-reflection-zmapsto-z
+[VK07.5.23]: SYNOPSIS-VK07.md#vk07523-reciprocal-integral-transforms-from-r_chig
+[VK07.7.10]: SYNOPSIS-VK07.md#vk07710-mellinbarnes-formulas-for-whittaker-functions
+[VK08.3.03]: SYNOPSIS-VK08.md#vk08303-terminating-_3f_2dots1-as-a-cgc
+[VK08.3.18]: SYNOPSIS-VK08.md#vk08318-summation-formulas-from-vk08207
+[VK08.4.03]: SYNOPSIS-VK08.md#vk08403-relations-between-rcs-and-cgcs
+[VK08.5.23]: SYNOPSIS-VK08.md#vk08523-contour-and-real-line-orthogonality-of-wilson-polynomials
+[VK08.5.24]: SYNOPSIS-VK08.md#vk08524-clebschgordan-coefficients-in-hahn-form
+[VK08.7.02]: SYNOPSIS-VK08.md#vk08702-recursion-and-analytic-continuation-of-the-coefficients
+[VK08.7.15]: SYNOPSIS-VK08.md#vk08715-invariant-kernels-for-hat-t_chi_1otimeshat-t_chi_2
+[VK08.7.16]: SYNOPSIS-VK08.md#vk08716-coefficients-for-principal-unitary-series
+[VK09.1.13]: SYNOPSIS-VK09.md#vk09113-the-lie-algebra-ison1
+[VK09.1.30]: SYNOPSIS-VK09.md#vk09130-laplacians-of-e_n-and-of-spheres
+[VK09.1.36]: SYNOPSIS-VK09.md#vk09136-invariant-measures-on-the-cone-and-its-sections
+[VK09.2.03]: SYNOPSIS-VK09.md#vk09203-finite-dimensional-representations-and-the-complex-cone
+[VK09.2.07]: SYNOPSIS-VK09.md#vk09207-density-of-spherical-harmonics-and-two-identities
+[VK09.2.18]: SYNOPSIS-VK09.md#vk09218-the-representations-tσε_pq-of-so_0pq
+[VK09.3.01]: SYNOPSIS-VK09.md#vk09301-gelfandtsetlin-basis-of-l2sn1
+[VK09.3.32]: SYNOPSIS-VK09.md#vk09332-continual-generating-function-and-convolution-for-legendre-functions
+[VK09.4.08]: SYNOPSIS-VK09.md#vk09408-basis-functions-on-hn-1_-and-mathbb-rn-1
+[VK09.4.29]: SYNOPSIS-VK09.md#vk09429-fourier-transform-on-son
+[VK09.5.38]: SYNOPSIS-VK09.md#vk09538-generating-function-for-mathfrak-pnsigma_kmj
+[VK09.6.31]: SYNOPSIS-VK09.md#vk09631-multinomial-addition-formula-and-a-squaring-formula
+[VK10.3.06]: SYNOPSIS-VK10.md#vk10306-poisson-images-of-the-cone-bases
+[VK10.4.07]: SYNOPSIS-VK10.md#vk10407-the-case-p--1-on-h
+[VK10.4.09]: SYNOPSIS-VK10.md#vk10409-associated-k_1n1-spherical-functions-on-h
+[VK10.4.22]: SYNOPSIS-VK10.md#vk10422-symmetry-relations-for-jacobi-functions
+[VK10.6.02]: SYNOPSIS-VK10.md#vk10602-residue-expansions
+[VK10.6.08]: SYNOPSIS-VK10.md#vk10608-sphericalhyperbolic-transition-coefficients
+[VK11.3.03]: SYNOPSIS-VK11.md#vk11303-zonal-spherical-functions-of-un
+[VK11.4.31]: SYNOPSIS-VK11.md#vk11431-product-formula-for-associated-spherical-functions-of-un-11
+[VK11.4.44]: SYNOPSIS-VK11.md#vk11444-zonal-functions-of-un-11-as-su11-functions
+[VK11.6.09]: SYNOPSIS-VK11.md#vk11609-matrix-elements-of-tnsigma-k-near-the-identity-of-glnmathbb-c
+[VK11.7.03]: SYNOPSIS-VK11.md#vk11703-the-group-spn-11-the-hyperboloid-and-the-cone
+[VK12.2.02]: SYNOPSIS-VK12.md#vk12202-automorphisms-of-n_1
+[VK12.2.05]: SYNOPSIS-VK12.md#vk12205-semidirect-products
+[VK12.3.04]: SYNOPSIS-VK12.md#vk12304-oscillator-operator-and-its-eigenspaces
+[VK12.3.07]: SYNOPSIS-VK12.md#vk12307-decomposition-under-sontimes-sl2mathbb-r
+[VK12.4.01]: SYNOPSIS-VK12.md#vk12401-the-group-unn_n
+[VK12.6.17]: SYNOPSIS-VK12.md#vk12617-jacobi-coefficients-of-costhetaisinthetacosvarphiell
+[VK12.6.25]: SYNOPSIS-VK12.md#vk12625-a-second-addition-theorem-outline
+[VK13.1.12]: SYNOPSIS-VK13.md#vk13112-distance-transitive-graphs
+[VK13.1.16]: SYNOPSIS-VK13.md#vk13116-dunkls-method-for-addition-theorems
+[VK13.1.31]: SYNOPSIS-VK13.md#vk13131-transfer-to-functions-on-s_n-and-the-relation-of-hahn-bases
+[VK13.2.02]: SYNOPSIS-VK13.md#vk13202-classical-forms-and-chevalley-groups-over-gfq
+[VK13.2.05]: SYNOPSIS-VK13.md#vk13205-elementary-q-identities
+[VK13.3.26]: SYNOPSIS-VK13.md#vk13326-beta-function-of-a-local-field
+[VK14.1.01]: SYNOPSIS-VK14.md#vk14101-q-shifted-factorials
+[VK14.1.14]: SYNOPSIS-VK14.md#vk14114-product-identities-from-the-triple-product-pentagonal-theorem
+[VK14.1.23]: SYNOPSIS-VK14.md#vk14123-the-q-exponential-e_q
+[VK14.1.27]: SYNOPSIS-VK14.md#vk14127-the-symmetric-q-gamma-function
+[VK14.3.02]: SYNOPSIS-VK14.md#vk14302-hopf-algebra-structure
+[VK14.3.08]: SYNOPSIS-VK14.md#vk14308-the-irreducible-representations-t_ell
+[VK14.3.19]: SYNOPSIS-VK14.md#vk14319-symmetries-under-ellmapsto-ell-1
+[VK14.6.36]: SYNOPSIS-VK14.md#vk14636-very-well-poised-_6varphi_5-and-_4varphi_3-sums
+[VK14.7.20]: SYNOPSIS-VK14.md#vk14720-orthogonality-of-q-gegenbauer-polynomials
+[VK14.8.19]: SYNOPSIS-VK14.md#vk14819-schur-orthogonality-q-analogue-of-the-peterweyl-theorem
+[VK16.2.06]: SYNOPSIS-VK16.md#vk16206-holomorphic-discrete-series-of-upq
+[VK17.3.04]: SYNOPSIS-VK17.md#vk17304-partial-ordering-of-spherical-weights
+[VK17.3.36]: SYNOPSIS-VK17.md#vk17336-eigenvalues-of-the-generalized-jacobi-polynomials
+[VK17.4.03]: SYNOPSIS-VK17.md#vk17403-euler-type-integrals
+[VK18.6.02]: SYNOPSIS-VK18.md#vk18602-principal-series-of-so_0n-11
+[VK19.1.24]: SYNOPSIS-VK19.md#vk19124-fourier-expansion-of-gₖ
+[VK19.2.21]: SYNOPSIS-VK19.md#vk19221-heisenberg-group-and-its-representation-on-entire-functions
+[VK19.4.11]: SYNOPSIS-VK19.md#vk19411-derivations-d_s-of-tilde-lmathfrak-g
+[E06.7.11]: #e06711-index-of-the-last-term-in-67411
+[E11.6.12]: #e11612-sign-factor-of-n-in-11613-5
+[E07.4.16]: #e07416-lower-limit-in-18-of-743
+[E16.2.07]: #e16207-arguments-in-the-norm-1-for-upq
+[E16.2.08]: #e16208-transformation-law-2-of-the-holomorphic-discrete-series-of-upq
