@@ -52,9 +52,12 @@ Two errata lists for the three volumes are available on T. H. Koornwinder's web 
   includes most of the items of the first list.
 
 Both lists locate an item by printed page and line, with negative line numbers counted from the
-bottom of the page. A Published line cites the item in this form. Some published corrections
-are themselves wrong or incomplete; the Published line then says so, with the evidence in the
-entry. Items of the lists that concern only wording, cross-references, the index or the
+bottom of the page. A Published line cites the item in this form. Some published corrections are
+themselves wrong or incomplete; the Published line then says so, with the evidence in the entry.
+Published corrections to formulas that are correct as printed are recorded in the chapter's notes
+(not errata), with the evidence. Published corrections to statements that the synopses do not cover
+are listed in the section "Published corrections to material outside the synopses" at the end of
+this file. Items of the lists that concern only wording, cross-references, the index or the
 bibliography are not recorded here.
 
 ## Scope
@@ -72,7 +75,7 @@ overbarred \(\in\), which means \(\notin\).
 
 - Chapter 1 ([SYNOPSIS-VK01](SYNOPSIS-VK01.md), 93 entries): 41 errata (Confirmed 40, Open check 1).
 - Chapter 2 ([SYNOPSIS-VK02](SYNOPSIS-VK02.md), 88 entries): 23 errata (Confirmed 22, Open check 1).
-- Chapter 3 ([SYNOPSIS-VK03](SYNOPSIS-VK03.md), 61 entries): 38 errata (Confirmed 35, Normalization
+- Chapter 3 ([SYNOPSIS-VK03](SYNOPSIS-VK03.md), 61 entries): 39 errata (Confirmed 36, Normalization
   check 2, Open check 1).
 - Chapter 4 ([SYNOPSIS-VK04](SYNOPSIS-VK04.md), 79 entries): 33 errata (Confirmed 32, Open check 1).
 - Chapter 5 ([SYNOPSIS-VK05](SYNOPSIS-VK05.md), 106 entries): 52 errata (Confirmed 51, Normalization
@@ -87,26 +90,26 @@ overbarred \(\in\), which means \(\notin\).
   Normalization check 2, Open check 4).
 - Chapter 10 ([SYNOPSIS-VK10](SYNOPSIS-VK10.md), 135 entries): 76 errata (Confirmed 66,
   Normalization check 3, Open check 7).
-- Chapter 11 ([SYNOPSIS-VK11](SYNOPSIS-VK11.md), 160 entries): 81 errata (Confirmed 74,
-  Normalization check 3, Open check 4).
+- Chapter 11 ([SYNOPSIS-VK11](SYNOPSIS-VK11.md), 160 entries): 82 errata (Confirmed 74,
+  Normalization check 3, Open check 5).
 - Chapter 12 ([SYNOPSIS-VK12](SYNOPSIS-VK12.md), 119 entries): 51 errata (Confirmed 47,
   Normalization check 2, Open check 2).
 - Chapter 13 ([SYNOPSIS-VK13](SYNOPSIS-VK13.md), 130 entries): 56 errata (Confirmed 51,
   Normalization check 2, Open check 3).
-- Chapter 14 ([SYNOPSIS-VK14](SYNOPSIS-VK14.md), 208 entries): 99 errata (Confirmed 82,
+- Chapter 14 ([SYNOPSIS-VK14](SYNOPSIS-VK14.md), 208 entries): 101 errata (Confirmed 84,
   Normalization check 3, Open check 14).
 - Chapter 15 ([SYNOPSIS-VK15](SYNOPSIS-VK15.md), 94 entries): 43 errata (Confirmed 38, Normalization
   check 4, Open check 1).
 - Chapter 16 ([SYNOPSIS-VK16](SYNOPSIS-VK16.md), 72 entries): 23 errata (Confirmed 20, Normalization
   check 2, Open check 1).
-- Chapter 17 ([SYNOPSIS-VK17](SYNOPSIS-VK17.md), 172 entries): 73 errata (Confirmed 65,
+- Chapter 17 ([SYNOPSIS-VK17](SYNOPSIS-VK17.md), 172 entries): 74 errata (Confirmed 66,
   Normalization check 6, Open check 2).
 - Chapter 18 ([SYNOPSIS-VK18](SYNOPSIS-VK18.md), 132 entries): 37 errata (Confirmed 28,
   Normalization check 3, Open check 6).
 - Chapter 19 ([SYNOPSIS-VK19](SYNOPSIS-VK19.md), 236 entries): 100 errata (Confirmed 90,
   Normalization check 8, Open check 2).
 
-Totals: Confirmed 1069, Normalization check 49, Open check 66; 1184 errata and 2548 synopsis
+Totals: Confirmed 1073, Normalization check 49, Open check 67; 1189 errata and 2548 synopsis
 entries.
 
 ## Chapter 1. Elements of the Theory of Lie Groups and Lie Algebras
@@ -1496,6 +1499,19 @@ have \(dy\). With \(dy\), (14) holds numerically for \(\alpha=0.4\), \(\beta=0.9
 \(n=2\), \(x=0.2\) (both sides \(-0.230230\), `checks/N1_jacobi14.py`).
 Published: [Klimyk 2006], p. 164, l. 8.
 Target: [VK03.5.35].
+
+### E03.5.20. Phase factor in the definition (3.5.6.20) of \(I_\nu\)
+
+Status: Confirmed.
+Location: Vol 1, §3.5.6, p. 152, (20).
+Printed: \(I_\nu(z)=e^{-i\nu/\pi/2}J_\nu(e^{i\pi/2}z)\) for \(-\pi<\arg z\le\frac\pi2\).
+Correct: \(I_\nu(z)=e^{-i\nu\pi/2}J_\nu(e^{i\pi/2}z)\).
+Evidence: The power series give \(J_\nu(iz)=e^{i\nu\pi/2}I_\nu(z)\) on this range (DLMF 10.27.6).
+Numerically at \(\nu=0.37+0.2i\), \(z=0.9+0.4i\):
+\(I_\nu(z)=0.919722+0.125937i=e^{-i\nu\pi/2}J_\nu(iz)\).
+Published: [Klimyk 2006], p. 152, formula (20). Klimyk replaces the factor by \(e^{-i\nu\pi}\),
+which is wrong: \(e^{-i\nu\pi}J_\nu(iz)=1.147111-0.547218i\) at the same point.
+Target: [VK03.5.13].
 
 ### Conventions and notation (not errata)
 
@@ -5948,6 +5964,13 @@ Target: [VK08.7.02].
   \((-1)^{s-s_0}\) are determined by the source.
 - §8.7.1 (15'), p. 575: the printed factor \([(l-m)]^{-1}\) is \([(l-m)!]^{-1}\); (16)
   printed with \(j',j',j'+k'\) means \(j',k',j'+k'\).
+- p. 548, §8.5.1 (9),
+  \(Q_n(x;\alpha,\beta;N)=(-1)^n\frac{\alpha^{(-n)}}{\beta^{(-n)}}Q_n(N-x;\beta,\alpha;N)\), is
+  correct as printed with \(a^{(r)}=\Gamma(a+1)/\Gamma(a-r+1)\) (so
+  \(\alpha^{(-n)}=1/(\alpha+1)_n\)): the residual is below \(10^{-29}\) at \(\alpha=\frac13\),
+  \(\beta=\frac57\), \(N=5\), all \(n,x\le5\). [Koornwinder 2000], p. 548, (9), proposes
+  interchanging \(\alpha\) and \(\beta\) in the prefactor; with the book's \(a^{(r)}\) that fails
+  (residual \(7.09\)); it is right only if \(\alpha^{(-n)}\) is read as \((\alpha+1)_n\).
 
 ## Chapter 9. Special Functions Connected with SO(n) and with Related Groups
 
@@ -7431,6 +7454,10 @@ Target: [VK09.6.34].
   for the form given in [VK09.6.18].
 - Hermite polynomials are the physicists' \(H_n\) throughout; Mathlib's
   `Polynomial.hermite` is the probabilists' \(He_n\).
+- p. 120, §9.5.10 (12): the factor \((t-5+n)!\) in \(A\) is correct as printed; together with
+  \((2t+n-4)/t!\) it gives \(\dim T^{n-2,t}\), matching the factor \((2p+n-4)(p+n-5)!/p!\) for the
+  label \(p\), which enters (11) symmetrically. [Klimyk 2006], p. 120, l. −7, replaces it by
+  \((t-5+n)\), which breaks this symmetry.
 
 ## Chapter 10. Representations of Groups, Related to SO(n − 1), in Non-Canonical Bases, Special Functions, and Integral Transforms
 
@@ -9451,6 +9478,22 @@ Evidence: The numerator and denominator are complex conjugate factors of the ima
 Published: [Klimyk 2006], p. 390, l. −8.
 Target: [VK11.6.18].
 
+### E11.6.14. Bessel–Jacobi integral §11.6.15 (3)
+
+Status: Open check.
+Location: Vol 2, §11.6.15, p. 390, (3).
+Printed:
+\(\int_0^{\pi/2}J_{j-p'+m'-m}(r\cos\theta)P^{(j+j'+n-2,m'-m+j-j')}_{m-j}(\cos2\theta)\sin^{2(j+j'+m)-5}\theta\cos^{p'+m'-m-2j'+j+1}\theta\,d\theta=\frac{(p'-j')!(m+j'+n-3)!(-r/2)^{m-m'-j+p'}}{2(p'-j')!(p'-m')!(m+p'+n-2)!}\,{}_1F_2\big(p'-j'+1;m+p'+n-1,p'-m'+1;-\frac{r^2}4\big)\).
+Correct: not determined; (3) is wrong as printed.
+Evidence: Quadrature at \(r=1.3\) for five index sets \((n,j,j',m,m',p')\) matches neither the
+printed right side nor the published one, with the printed sine exponent (for which the integral
+diverges for some sets, e.g. \((4,0,0,1,1,2)\)) or with the readings \(2(j+j'+n)-5\) and
+\(2(j+j'+n)-3\); the ratios vary with the indices (for the last reading from \(1.02\) to \(3.04\)
+against the printed side).
+Published: [Klimyk 2006], p. 390, l. 6. Klimyk replaces \((p'-j')!\) by \((m'-j')!\) in the
+denominator; this does not repair (3).
+Target: [VK11.6.17].
+
 ### E11.7.01. Multiplicity of the \(Sp(n-1)\)-fixed vectors
 
 Status: Confirmed.
@@ -10973,6 +11016,10 @@ Target: [VK13.3.26].
 - §13.3.4 uses \(|z|=|z\bar z|^{1/2}\) on \(K(\sqrt\tau)\) without stating it; this is the
   reading under which \(\mathcal O_\tau=\{|z|\le1\}\), \(\tilde{\mathfrak P}=\sqrt\tau\mathcal
   O_\tau\) and \(dz=|r|\,dr\,dn\) are consistent.
+- p. 515, l. 7: the positivity of the q-Hahn weight \(w(x)\) under the stated conditions on \(a,b\)
+  holds for all \(q>0\), as printed: an exact search over 9047 parameter sets with \(q>1\) and 4121
+  with \(0<q<1\) (\(N\le4\)) found no nonpositive \(w(x)\). [Koornwinder 2000], p. 515, l. 7, and
+  [Klimyk 2006], p. 515, l. 7, restrict to \(0<q<1\), which is unnecessary.
 
 ## Chapter 14. Quantum Groups, q-Orthogonal Polynomials and Basic Hypergeometric Functions
 
@@ -11213,6 +11260,21 @@ Published: [Klimyk 2006], p. 19, l. −8, −3, −2. [Klimyk 2006] lists l. −
 the line introducing (19), that change is not needed, since (19) is written in multiplicative
 parameters, for which \({}_2\varphi_1(a,b;c;q,x)\) is correct.
 Target: [VK14.1.37].
+
+### E14.1.21. Product in the expansion of \(E_q(x)E_{1/q}(y)\)
+
+Status: Confirmed.
+Location: Vol 3, §14.1.6, p. 13, display before (4).
+Printed: \(E_q(x)E_{1/q}(y)=\sum_{n\ge0}(x+y)^n_q/[[n]]!\).
+Correct: \(E_q(x)E_{1/q}(y)=\sum_{n\ge0}\frac1{[[n]]!}\prod_{j=0}^{n-1}(x+q^jy)\).
+Evidence: With the power \((x-a)^n_q\) of §14.1.4 (5), \((x+y)^n_q\) is not this product; the
+coefficient of \(y^n\) on the left is \(q^{n(n-1)/2}/[[n]]!\), which the product \(\prod_j(x+q^jy)\)
+gives (q-binomial theorem). Numerically at \(q=0.5\), \(x=0.3\), \(y=0.4\) both sides equal
+\(1.99861\).
+Published: [Koornwinder 2000], p. 13, l. 5. Koornwinder replaces \(x+y\) by \(x+qy\) twice; under
+§14.1.4 (5) this gives \(\prod_j(x+q^{-j}y)\), and the series then diverges (partial sums of order
+\(10^{474}\) at the same point).
+Target: [VK14.1.24].
 
 ### E14.3.01. Coefficients of the universal R-matrix
 
@@ -11748,6 +11810,20 @@ which is the corrected quotient. Numerical check at \(q=0.4\), \(a=0.37\), \(b=1
 \(N\le3\).
 Published: [Klimyk 2006], p. 79, l. 7.
 Target: [VK14.6.36].
+
+### E14.6.19. Factor \((\gamma q/\beta;q)_x\) in the q-Racah weight
+
+Status: Confirmed.
+Location: Vol 3, §14.6.5, p. 71, (6).
+Printed: \((\gamma\delta/\beta;q)_x\) in the denominator of \(w(x)\).
+Correct: \((\gamma q/\beta;q)_x\).
+Evidence: With \((\gamma q/\beta;q)_x\) the orthogonality \(\sum_xR_nR_mw=0\) holds to \(10^{-28}\)
+for \((n,m)=(0,1),(1,2),(0,3)\) at \(q=0.37\), \(N=4\), \(\alpha q=q^{-N}\); with the printed factor
+the sums are \(0.225\), \(0.629\), \(0.437\). This is the standard q-Racah weight
+(Koekoek–Lesky–Swarttouw (14.2.2)).
+Published: [Klimyk 2006], p. 71, l. 12. Klimyk replaces the factor by \((\gamma/\beta;q)_x\), which
+is also wrong (sums \(3.37\), \(1.58\), \(3.53\)).
+Target: [VK14.6.20].
 
 ### E14.7.01. Askey–Wilson norm, §14.7.1 (7)
 
@@ -13205,6 +13281,11 @@ Target: [VK16.3.17]
   form, and "\(Sp(p,\mathbb C)\)" means \(Sp(\ell,\mathbb C)\) with \(p\le\ell\).
 - In (12) of §16.3.4 the quantity \(\mu'\) is not defined; presumably \(\mu'=\mu_1+\dots+\mu_m\).
 - (6) of §16.2.3 and the Haar normalization: \(d_\ast\omega_i\) are probability measures.
+- p. 219, §16.2.1 (9): the complementary-series form \(\iint A(\dot n_+)f_1(n_+)\overline{f_2(\dot
+  n_+n_+)}\,dn_+\,d\dot n_+\) is the usual intertwining-kernel form, as printed (the bar is
+  understood). [Klimyk 2006], p. 219, l. 3, replaces \(f_1(n_+)\) by \(f_1(\dot n_+n_+)\); the
+  substitution \(n_+\to\dot n_+^{-1}n_+\) then factors the form as \(\int A(\dot n_+)\,d\dot n_+\int
+  f_1\bar f_2\,dn_+\), and \(\int_{\mathbb C}|z|^{2\tau-2}d^2z\) diverges.
 
 ## Chapter 17. Group Representations and Special Functions of a Matrix Argument
 
@@ -14459,6 +14540,23 @@ Evidence: (6) is a function of the matrix \(\Lambda\) and no \(\lambda\) occurs;
 \(p=2\) of (5), whose condition is \(\|\Lambda\|<1\).
 Published: [Klimyk 2006], p. 329, l. −9.
 Target: [VK17.4.03].
+
+### E17.4.29. Quadratic term in (8) of §17.4.5
+
+Status: Confirmed.
+Location: Vol 3, §17.4.5, p. 345, (8) and the next display.
+Printed: \(\Delta^{\mathbf s}((A+X^tX)^{-1})\) in (8), and \(\Delta^{\mathbf s}(SAS+SX^tXS)\) in the
+display after it.
+Correct: \(\Delta^{\mathbf s}((A+XX^t)^{-1})\) and \(\Delta^{\mathbf s}(SAS+SXX^tS)\).
+Evidence: In (5), \(Z=\begin{pmatrix}I_\ell&0\\X^t&I_{m-\ell}\end{pmatrix}\), so \(X\in\mathfrak
+M_{\ell,m-\ell}\) (\(\ell\times(m-\ell)\) matrices, §17.1.3); with \(A\in\mathfrak P_\ell\) only
+\(A+XX^t\) is defined, and the identity \(\Delta^{\mathbf
+s_{\mathrm{ext}}}(Z^t\mathrm{diag}(A,B)Z)=\Delta^{\mathbf s}(A+XBX^t)\) on the same page has this
+shape.
+Published: [Klimyk 2006], p. 344, l. −1; p. 345, ll. 1, 3, 13, 15, 17. Klimyk instead changes
+\(\mathfrak M_{\ell,m-\ell}\) to \(\mathfrak M_{m-\ell,\ell}\) throughout pp. 344–345; that makes
+\(A+X^tX\) defined but breaks \(Z\) in (5), \(NB^{-1}N^t\) in (7) and \(RR^t\) in (8).
+Target: [VK17.4.32].
 
 ### Conventions and notation (not errata)
 
@@ -16417,6 +16515,46 @@ Target: [VK19.9.13].
   it is read as the extended Jacobi symbol \(\big(\frac{m(m+g)}d\big)\).
 - The source writes \(\mathbb Z_+\) for the positive integers in §§19.7–19.9.
 
+
+## Published corrections to material outside the synopses
+
+The published lists also correct the following statements and formulas. The synopses do not
+state them, so they have no erratum entry and no synopsis target. They are listed here so that
+this file accounts for every mathematical item of the two lists.
+
+- Vol 1, §1.0.3, p. 14, l. 9: for an operator \(A:\mathfrak L_1\to\mathfrak L_2\) and
+  conjugations \(C_1\), \(C_2\), the printed "the operators \(AC_1\) and \(AC_2\) are
+  anti-linear" should read "\(AC_1\) and \(C_2A\)"; \(AC_2\) is not defined. [Klimyk 2006],
+  p. 14, l. 9, gives this correction. Near [VK01.0.10], which does not state the fact.
+- Vol 1, §1.0.4, p. 17, l. 2: the anti-linear map attached to a sesquilinear form \(H\) (linear in
+  \(x\), anti-linear in \(y\)) is \((Ay)(x)=H(x,y)\), not \((Ax)(y)=H(x,y)\), which is linear in
+  \(x\). [Koornwinder 2000], p. 17, l. 2, and [Klimyk 2006], p. 17, l. 2, give this correction.
+  Near [VK01.0.15], which defines sesquilinear forms but not this map.
+- Vol 1, §6.3.1, p. 281, l. −11: [Klimyk 2006] adds that formulas (1)–(6) of §6.3.1 hold for the
+  representations \(T_l\) of \(GL(2,\mathbb C)\). This is an extension, not a correction: the
+  derivation from \(T_l(g)x^{l-n}=(\alpha x+\gamma)^{l-n}(\beta x+\delta)^{l+n}\) does not use
+  \(\alpha\delta-\beta\gamma=1\). [VK06.3.01]–[VK06.3.03] state the formulas for
+  \(SL(2,\mathbb C)\) only.
+- Vol 2, §9.4.6, p. 82, (11): the factors \(D^{i\lambda+\alpha}_{\nu-i\lambda+\alpha-1/2}(x)\) and
+  \(D^{i\lambda+\alpha}_{\nu-i\lambda+\alpha-1/2}(y)\) should have upper index \(i\lambda+\frac12\),
+  as in (10) on the same page. [Klimyk 2006], p. 82, ll. 9–10, gives this correction. The
+  Gamma factors \(\Gamma(\pm i\nu+\frac12)\) in (11), where (10) has \(\Gamma(\pm
+  i\lambda+\frac12)\),
+  have not been checked. [VK09.4.27] mentions the real-line forms (10), (11) without stating
+  them.
+- Vol 2, §13.2.2, p. 514, l. 1: the claim that the basic hypergeometric series (14) converges for
+  all \(z\) when \(m\le n\) is false in the book's convention (no factor
+  \(((-1)^jq^{j(j-1)/2})^{1+n-m}\)): for \(|q|<1\) the term ratio tends to \(z\), so the radius
+  of convergence is 1, while for \(|q|>1\) the series is entire. For \({}_1\varphi_1\) at
+  \(z=2\) the 40th term is about \(7\cdot10^{12}\) for \(q=\frac12\) and \(2\cdot10^{-237}\) for
+  \(q=2\). [Koornwinder 2000], p. 514, l. 1, says the claim is false; [Klimyk 2006], p. 514,
+  l. 1, restricts it to \(|q|<1\), which is right only with the Gasper–Rahman factor included in
+  (14). The synopses state no convergence claim for (14).
+- Vol 3, §15.1.2, p. 141, l. 7, Example 6: the block labels \(s,p-s,p-s,s\) of the matrix \(B_s\)
+  should end
+  with \(q-p+s\), not \(s\), as for \(A_s\) in [E15.1.17]. [Klimyk 2006], p. 141, l. 7, removes the
+  last label. [VK15.1.06] does not state the block sizes of \(B_s\).
+
 [E04.1.01]: #e04101-radial-multiplication-formula-exponential-for-cosine
 [E04.2.02]: #e04202-the-representations-t_r-and-t_-r-are-not-equivalent
 [E05.1.04]: #e05104-normalization-of-the-kernels-for-g_pmt
@@ -17593,3 +17731,12 @@ Target: [VK19.9.13].
 [E07.4.16]: #e07416-lower-limit-in-18-of-743
 [E16.2.07]: #e16207-arguments-in-the-norm-1-for-upq
 [E16.2.08]: #e16208-transformation-law-2-of-the-holomorphic-discrete-series-of-upq
+[VK03.5.13]: SYNOPSIS-VK03.md#vk03513-modified-bessel-functions
+[VK11.6.17]: SYNOPSIS-VK11.md#vk11617-special-cases-of-tnkrg_r
+[VK14.1.24]: SYNOPSIS-VK14.md#vk14124-the-second-q-exponential-e_1q
+[E15.1.17]: #e15117-last-block-of-a_s-for-mathfraksupq
+[VK01.0.10]: SYNOPSIS-VK01.md#vk01010-linear-maps-and-duals
+[VK01.0.15]: SYNOPSIS-VK01.md#vk01015-multilinear-bilinear-and-sesquilinear-forms
+[VK06.3.01]: SYNOPSIS-VK06.md#vk06301-matrix-elements-tl_mn
+[VK06.3.03]: SYNOPSIS-VK06.md#vk06303-hypergeometric-forms-in-alphadeltabetagamma
+[VK09.4.27]: SYNOPSIS-VK09.md#vk09427-integral-representations-of-dalpha_nu-and-of-k_nu
