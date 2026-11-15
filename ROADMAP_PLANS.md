@@ -42,28 +42,46 @@ roadmap is written.
 
 ### 2.1 Present
 
-| Area | Item | Location |
-|---|---|---|
-| Groups | GL(n), SL(n), U(n), SU(n), O(n), SO(n) as matrix groups | Mathlib `LinearAlgebra/UnitaryGroup`, `Matrix.SpecialLinearGroup`, `Matrix.GeneralLinearGroup` |
-| | Compactness and topological-group structure of unitary groups | Tau Ceti `Topology/Algebra/UnitaryGroup` |
-| | SU(2) → SO(3) double cover; conjugacy classes of SU(2); simplicity of SO(3) | Tau Ceti `RepresentationTheory/SU2/{Adjoint,ConjugacyClasses,NormalSubgroup}` |
-| | Heisenberg group over a ring (algebraic) | Tau Ceti `GroupTheory/SpecificGroups/Heisenberg` |
-| | Affine isometries as translations ⋊ linear isometries (algebraic) | Tau Ceti `Analysis/Normed/Affine/Isometry/SemidirectProduct` |
-| | SL(2,ℝ) acting on the upper half-plane | Mathlib `Analysis/Complex/UpperHalfPlane/MoebiusAction` |
-| | Matrix exponential lines in SO, SU, SL, Sp; smooth Iwasawa decomposition of GL(n) | Tau Ceti `Geometry/Lie/Exponential/Matrix/*`, `Geometry/Lie/Iwasawa` |
-| Representations | Algebraic representations; `ContRepresentation` | Mathlib `RepresentationTheory/Basic`, `RepresentationTheory/Continuous/Basic` |
-| | Strongly continuous and unitary representations, Hilbert sums, Schur's lemma, intertwiners, tensor products, restriction, coinduction on C(G,V) | Tau Ceti `RepresentationTheory/Continuous/**` |
-| | One-parameter unitary groups and their Stone generator | Tau Ceti `RepresentationTheory/Continuous/Unitary/OneParameter` |
-| | Left regular representation on Lᵖ(G,E) for a left-invariant measure; regular representations of compact groups on L² | Tau Ceti `Continuous/LeftRegular/Basic`, `Compact/RegularRepresentation` |
-| | Representations on functions on a G-set (algebraic) | Tau Ceti `RepresentationTheory/FunLeft` |
-| Matrix coefficients | g ↦ ⟪π g v, w⟫, sesquilinearity, the product identity; L² classes for compact G | Tau Ceti `Continuous/MatrixCoefficient`, `Compact/MatrixCoefficient` |
-| Compact groups | Haar averaging, unitarizability, Schur orthogonality, Peter–Weyl, characters, Frobenius–Schur, the circle group | Tau Ceti `RepresentationTheory/Compact/**` |
-| SU(2) | Sym^d ℂ² with weight basis; irreducibility, inequivalence, exhaustion; characters; Weyl group; Weyl integration and character orthonormality; 𝔰𝔲(2) in the basis −iσₐ/2; differential of Sym^d; holomorphic extension to SL₂(ℂ), GL₂(ℂ) | Tau Ceti `RepresentationTheory/SU2/**` |
-| Lie algebras | sl, so, sp, skew-adjoint algebras; Lie algebra of a Lie group (left-invariant derivations); sl₂-triples | Mathlib `Algebra/Lie/{Classical,SkewAdjoint,Sl2}`, `Geometry/Manifold/GroupLieAlgebra` |
-| | Lie functor; fundamental vector fields; differentials of rational GL(n) representations; Casimir operators (algebraic) | Tau Ceti `Geometry/Lie/{Functor,FundamentalVectorField}`, `ClassicalGroups/Differential`, `Algebra/Lie/HighestWeight/*` |
-| | Highest weights, branching, Weyl dimension formulas, Gel'fand–Tsetlin bases of GL(n) modules | Tau Ceti `RepresentationTheory/ClassicalGroups/**` |
-| Measures | Sphere surface measure `toSphere`; quotient measures for discrete subgroups | Mathlib `MeasureTheory/Constructions/HaarToSphere`, `MeasureTheory/Measure/Haar/Quotient` |
-| | Uniform law on the sphere; O(n+1) fibred over Sⁿ with its measure | Tau Ceti `Probability/Distributions/Uniform/Sphere`, `Geometry/Euclidean/Volume/OrthogonalGroup` |
+**Groups.**
+
+- GL(n), SL(n), U(n), SU(n), O(n), SO(n) as matrix groups. Mathlib `LinearAlgebra/UnitaryGroup`, `Matrix.SpecialLinearGroup`, `Matrix.GeneralLinearGroup`.
+- Compactness and topological-group structure of unitary groups. Tau Ceti `Topology/Algebra/UnitaryGroup`.
+- SU(2) → SO(3) double cover; conjugacy classes of SU(2); simplicity of SO(3). Tau Ceti `RepresentationTheory/SU2/{Adjoint,ConjugacyClasses,NormalSubgroup}`.
+- Heisenberg group over a ring (algebraic). Tau Ceti `GroupTheory/SpecificGroups/Heisenberg`.
+- Affine isometries as translations ⋊ linear isometries (algebraic). Tau Ceti `Analysis/Normed/Affine/Isometry/SemidirectProduct`.
+- SL(2,ℝ) acting on the upper half-plane. Mathlib `Analysis/Complex/UpperHalfPlane/MoebiusAction`.
+- Matrix exponential lines in SO, SU, SL, Sp; smooth Iwasawa decomposition of GL(n). Tau Ceti `Geometry/Lie/Exponential/Matrix/*`, `Geometry/Lie/Iwasawa`.
+
+**Representations.**
+
+- Algebraic representations; `ContRepresentation`. Mathlib `RepresentationTheory/Basic`, `RepresentationTheory/Continuous/Basic`.
+- Strongly continuous and unitary representations, Hilbert sums, Schur's lemma, intertwiners, tensor products, restriction, coinduction on C(G,V). Tau Ceti `RepresentationTheory/Continuous/**`.
+- One-parameter unitary groups and their Stone generator. Tau Ceti `RepresentationTheory/Continuous/Unitary/OneParameter`.
+- Left regular representation on Lᵖ(G,E) for a left-invariant measure; regular representations of compact groups on L². Tau Ceti `Continuous/LeftRegular/Basic`, `Compact/RegularRepresentation`.
+- Representations on functions on a G-set (algebraic). Tau Ceti `RepresentationTheory/FunLeft`.
+
+**Matrix coefficients.**
+
+- g ↦ ⟪π g v, w⟫, sesquilinearity, the product identity; L² classes for compact G. Tau Ceti `Continuous/MatrixCoefficient`, `Compact/MatrixCoefficient`.
+
+**Compact groups.**
+
+- Haar averaging, unitarizability, Schur orthogonality, Peter–Weyl, characters, Frobenius–Schur, the circle group. Tau Ceti `RepresentationTheory/Compact/**`.
+
+**SU(2).**
+
+- Sym^d ℂ² with weight basis; irreducibility, inequivalence, exhaustion; characters; Weyl group; Weyl integration and character orthonormality; 𝔰𝔲(2) in the basis −iσₐ/2; differential of Sym^d; holomorphic extension to SL₂(ℂ), GL₂(ℂ). Tau Ceti `RepresentationTheory/SU2/**`.
+
+**Lie algebras.**
+
+- sl, so, sp, skew-adjoint algebras; Lie algebra of a Lie group (left-invariant derivations); sl₂-triples. Mathlib `Algebra/Lie/{Classical,SkewAdjoint,Sl2}`, `Geometry/Manifold/GroupLieAlgebra`.
+- Lie functor; fundamental vector fields; differentials of rational GL(n) representations; Casimir operators (algebraic). Tau Ceti `Geometry/Lie/{Functor,FundamentalVectorField}`, `ClassicalGroups/Differential`, `Algebra/Lie/HighestWeight/*`.
+- Highest weights, branching, Weyl dimension formulas, Gel'fand–Tsetlin bases of GL(n) modules. Tau Ceti `RepresentationTheory/ClassicalGroups/**`.
+
+**Measures.**
+
+- Sphere surface measure `toSphere`; quotient measures for discrete subgroups. Mathlib `MeasureTheory/Constructions/HaarToSphere`, `MeasureTheory/Measure/Haar/Quotient`.
+- Uniform law on the sphere; O(n+1) fibred over Sⁿ with its measure. Tau Ceti `Probability/Distributions/Uniform/Sphere`, `Geometry/Euclidean/Volume/OrthogonalGroup`.
 
 ### 2.2 Absent
 
