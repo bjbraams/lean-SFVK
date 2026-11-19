@@ -11,7 +11,7 @@ relaxedAutoImplicit = false
 [[lean_lib]]
 name = "Main"
 roots = ["SFVK", "SFVKMathlib"]
-globs = ["SFVK", "SFVK.+", "SFVKMathlib", "SFVKMathlib.+"]
+globs = ["SFVK", "SFVK.+", "SFVKMathlib"]
 
 [[lean_exe]]
 name = "main"
