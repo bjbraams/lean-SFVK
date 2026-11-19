@@ -14,13 +14,16 @@ special-function results need it.
 ## 1. Position in the Tau Ceti landscape
 
 **Suppliers of the special functions (Track A).** The functions themselves are specified by
-DLMF-chapter roadmaps: the Gauss hypergeometric function (DLMF 15), parabolic cylinder functions
-(DLMF 12), Airy functions (DLMF 9), the exponential, error and incomplete Gamma functions
-(DLMF 6–8), and, in review, Bessel functions (DLMF 10), confluent hypergeometric and Whittaker
-functions (DLMF 13), Legendre functions (DLMF 14) and orthogonal polynomials (DLMF 18). A roadmap
-for 3j, 6j and 9j symbols (DLMF 34) is planned. The roadmaps below consume these functions with
-DLMF normalizations and do not define them. lean-DLMF is a cited source for the suppliers, not the
-ground of these roadmaps.
+special-function roadmaps. On Tau Ceti main (checked 2026-11-19): the Gauss hypergeometric
+function (SpecialFunctionsHypergeometric), the generalized hypergeometric and Appell functions,
+parabolic cylinder functions, Airy functions, the exponential, error and incomplete Gamma
+functions, Bessel functions (SpecialFunctionsBessel), the general theory of orthogonal polynomials
+(SpecialFunctionsOrthogonalPolynomialsGeneral) and the Laguerre and Jacobi polynomials
+(LaguerreJacobi). In review: Gamma (DLMF 5), confluent hypergeometric and Whittaker functions
+(DLMF 13) and Legendre functions (DLMF 14). A roadmap for 3j, 6j and 9j symbols (DLMF 34) is
+planned. No roadmap supplies the Krawtchouk polynomials; Roadmap 1 owns them. The roadmaps below
+consume these functions with DLMF normalizations and do not define them. lean-DLMF is a cited
+source for the suppliers, not the ground of these roadmaps.
 
 **Representation theory.** Tau Ceti's representation-theory family covers finite and compact
 groups (Peter–Weyl, characters, the SU(2) engine), Lie groups and the Lie correspondence (with the
@@ -29,6 +32,18 @@ excludes infinite-dimensional unitary representations of noncompact groups and P
 and welcomes roadmaps for that material separately. The family planned here consumes the compact
 and Lie-group material and supplies the concrete noncompact models that the special functions
 need, without attempting a general unitary theory of noncompact groups.
+
+**Noncompact material already on main.** Two roadmaps on Tau Ceti main own part of the
+noncompact theory, and the family consumes whatever they own rather than restating it (one owner
+per result; a concrete model of ours enters through an agreement theorem with the parameter map):
+- NoncompactQuantumSymmetry: derived representations and Stone generators (M0), the Mackey
+  machine for regular semidirect products (M2, which covers the classification for the ax+b group
+  and the motion groups), and for SL(2,ℝ) ≅ SU(1,1) the principal, complementary and discrete
+  series with their irreducibility, equivalences and exhaustion and the Plancherel theorem (M4,
+  M4.P).
+- RepresentationTheory/SmoothBanachRepresentations: smooth vectors and the derived Lie-algebra
+  action (with AutomorphicFormsOnReductiveGroups §2.7). The RepresentationTheory family index on
+  main does not list this roadmap, although it sits in the family directory.
 
 **Proposed family.** An index roadmap "Special functions and group representations", with
 arXiv topic `math.CA` (the main results are special-function identities), whose sub-roadmaps are
@@ -47,7 +62,7 @@ roadmap is written.
 - GL(n), SL(n), U(n), SU(n), O(n), SO(n) as matrix groups. Mathlib `LinearAlgebra/UnitaryGroup`, `Matrix.SpecialLinearGroup`, `Matrix.GeneralLinearGroup`.
 - Compactness and topological-group structure of unitary groups. Tau Ceti `Topology/Algebra/UnitaryGroup`.
 - SU(2) → SO(3) double cover; conjugacy classes of SU(2); simplicity of SO(3). Tau Ceti `RepresentationTheory/SU2/{Adjoint,ConjugacyClasses,NormalSubgroup}`.
-- Heisenberg group over a ring (algebraic). Tau Ceti `GroupTheory/SpecificGroups/Heisenberg`.
+- Heisenberg group over a ring (algebraic), `HeisenbergGroup`. Tau Ceti `GroupTheory/SpecificGroups/Heisenberg`.
 - Affine isometries as translations ⋊ linear isometries (algebraic). Tau Ceti `Analysis/Normed/Affine/Isometry/SemidirectProduct`.
 - SL(2,ℝ) acting on the upper half-plane. Mathlib `Analysis/Complex/UpperHalfPlane/MoebiusAction`.
 - Matrix exponential lines in SO, SU, SL, Sp; smooth Iwasawa decomposition of GL(n). Tau Ceti `Geometry/Lie/Exponential/Matrix/*`, `Geometry/Lie/Iwasawa`.
@@ -57,6 +72,7 @@ roadmap is written.
 - Algebraic representations; `ContRepresentation`. Mathlib `RepresentationTheory/Basic`, `RepresentationTheory/Continuous/Basic`.
 - Strongly continuous and unitary representations, Hilbert sums, Schur's lemma, intertwiners, tensor products, restriction, coinduction on C(G,V). Tau Ceti `RepresentationTheory/Continuous/**`.
 - One-parameter unitary groups and their Stone generator. Tau Ceti `RepresentationTheory/Continuous/Unitary/OneParameter`.
+- `toStronglyContinuousGroup`; `Measure.leftRegular` with its unitarity and strong continuity; `posSemidef_inv_mul_iff_exists_isUnitary` and `IsUnitary.posSemidef_inner_map_inv_mul` (positive definiteness of matrix coefficients). Tau Ceti `RepresentationTheory/Continuous/**`.
 - Left regular representation on Lᵖ(G,E) for a left-invariant measure; regular representations of compact groups on L². Tau Ceti `Continuous/LeftRegular/Basic`, `Compact/RegularRepresentation`.
 - Representations on functions on a G-set (algebraic). Tau Ceti `RepresentationTheory/FunLeft`.
 
@@ -89,7 +105,9 @@ roadmap is written.
    The Weyl integration formula covers class functions only.
 2. Groups: SU(1,1) and SO(2,1); the ax+b group; Vilenkin–Klimyk's group of third-order triangular
    matrices; the oscillator group; topological, Haar and Lie structure on ISO(2), ISO(1,1), M(n)
-   and the Heisenberg group.
+   and the Heisenberg group. No group type for M(n), ISO(2) or ISO(1,1) exists in Mathlib or Tau
+   Ceti (Tau Ceti's affine-isometry semidirect product is algebraic only); Roadmap 2 owns them as
+   topological groups.
 3. Representations on L²(X, μ) of a G-space X: the quasi-regular representation for invariant and
    quasi-invariant μ; multiplier representations from a cocycle; concrete induced models of
    noncompact groups (ISO(2) on L²(S¹), principal series of SU(1,1), Schrödinger model of the
@@ -112,19 +130,38 @@ roadmap is written.
 - Groups act on the left; a representation is a homomorphism into the operators (Mathlib's
   `Representation`, `ContRepresentation`). A right action x ↦ xg of a source is converted by
   g ↦ g⁻¹.
-- Inner products are conjugate-linear in the first argument (Mathlib). The Vilenkin–Klimyk matrix
-  element is t_mn(g) = ⟪e_m, T(g) e_n⟫; in terms of Tau Ceti's matrix coefficient
-  g ↦ ⟪π g v, w⟫ this is the complex conjugate of the coefficient at (v, w) = (e_n, e_m). The
-  family uses Tau Ceti's definition and states the source formulas through this identity; it does
-  not introduce a second matrix-coefficient definition.
+- Inner products are conjugate-linear in the first argument (Mathlib). The matrix element is
+  D_{m'm}(g) = ⟪e_{m'}, T(g) e_m⟫. Tau Ceti's matrix coefficient g ↦ ⟪π g v, w⟫
+  (`ContRepresentation.matrixCoeff`) requires continuity of π in the operator-norm topology, which
+  fails for every infinite-dimensional model of a nondiscrete group (already for the left regular
+  representation). Roadmap 2 therefore defines the matrix element directly for a strongly
+  continuous unitary representation and a Hilbert basis, with a bridge theorem: where π is norm
+  continuous, the matrix element is the complex conjugate of Tau Ceti's coefficient at
+  (v, w) = (e_m, e_{m'}). Roadmap 1's SU(2) matrix element is its instance.
 - Haar measure on a compact group has total mass 1. On a noncompact group the normalization is
   fixed in each roadmap and stated in coordinates.
-- Euler angles: g = g_φ a_θ g_ψ with g_φ, g_ψ in the diagonal torus and a_θ in the rotation
-  subgroup, angle ranges and the measure fixed in Roadmap 1, matching Vilenkin–Klimyk §6.1. The
-  general KAK decomposition belongs to the Lie-groups roadmap; Euler angles are stated as its
-  instance where that roadmap provides it.
+- Euler angles follow Edmonds, *Angular Momentum in Quantum Mechanics* (author's decision,
+  2026-11-19). On SU(2), g = k_α b_β k_γ with k_α = diag(e^{iα/2}, e^{−iα/2}) and the real middle
+  factor b_β = [[cos β/2, sin β/2], [−sin β/2, cos β/2]] (Edmonds's exp(iαJ_z) exp(iβJ_y)
+  exp(iγJ_z) at spin 1/2); weights satisfy T(k_α) e_m = e^{imα} e_m, and
+  D^j_{m'm}(k_α b_β k_γ) = e^{im'α} d^j_{m'm}(β) e^{imγ} exactly as Edmonds prints it, with d^j
+  real. On SU(1,1) the middle factor is the boost b_t = [[cosh t/2, sinh t/2],
+  [sinh t/2, cosh t/2]] (letter t, since τ is the principal-series parameter), with the same
+  letters, order and weight sign. Haar measure: (16π²)⁻¹ sin β dα dβ dγ on SU(2) (total mass 1)
+  and Vilenkin–Klimyk's (8π²)⁻¹ sinh t dα dt dγ on SU(1,1), which differs by a factor 2 from the
+  formal continuation of the SU(2) density. Vilenkin–Klimyk's Euler-angle convention (middle
+  factor a rotation about the x-axis, which brings a factor i^{m−n}) enters each roadmap through
+  one stated conversion theorem; for SU(2), u^{VK}(φ, θ, ψ) = k_{φ+π/2} b_θ k_{ψ−π/2} and
+  t^{VK}_{mn} = D_{−m,−n}. The general KAK decomposition belongs to the Lie-groups roadmap; Euler
+  angles are stated as its instance where that roadmap provides it.
 - Special functions carry DLMF normalizations, as supplied by Track A. Where a source uses another
-  normalization the conversion is a stated theorem.
+  normalization the conversion is a stated theorem. Edmonds's spherical harmonics Y_lm equal DLMF's
+  Y_l^m (14.30.1); his associated Legendre functions lack the Condon–Shortley factor (−1)^m of
+  DLMF's Ferrers functions.
+- Spherical functions of a Gel'fand pair are defined without a boundedness requirement
+  (continuous, φ(e) = 1, the functional equation), as in Wawrzyńczyk, Helgason and Faraut; the
+  bounded ones are characterized as the characters of the bi-K-invariant L¹ algebra, and the
+  positive-definite ones as those of unitary representations with a K-fixed vector.
 - Statements follow the corrected forms in this project's ERRATA files, not the printed ones.
 
 ## 4. Roadmap 1: matrix elements of SU(2) and SO(3), Jacobi and Legendre functions
@@ -143,35 +180,42 @@ infrastructure for noncompact groups (Roadmap 2).
 **Inputs.** Tau Ceti's SU(2) development (Sym^d models, weight basis, irreducibility and
 exhaustion, characters, Weyl integration, 𝔰𝔲(2) and the differential of Sym^d) and compact-group
 development (Haar measure, Schur orthogonality, Peter–Weyl); Mathlib's Chebyshev polynomials and
-Lie algebras; the DLMF 18 roadmap (Jacobi, Legendre, Chebyshev and Krawtchouk polynomials, with
-their orthogonality, recurrences, Rodrigues formulas and generating functions as supplier facts),
+Lie algebras; LaguerreJacobi and SpecialFunctionsOrthogonalPolynomialsGeneral (Jacobi polynomials
+with their orthogonality, recurrences, Rodrigues formulas and generating functions as supplier
+facts; Legendre polynomials through Mathlib; no supplier for the Krawtchouk polynomials, which this
+roadmap owns),
 the DLMF 14 roadmap (associated Legendre functions on (−1, 1)) and the DLMF 15 roadmap (the Gauss
 function, for the hypergeometric forms).
 
-**Sources.** VK06 §§6.1–6.3, 6.6–6.10; KV02 §§1–2; KV03; Wawrzyńczyk Chapter 8 (§§8.1–8.6);
-Dieudonné §2 and §7; Miller 1968 §§2-3–2-4; Miller 2010 Chapter 2.
+**Sources.** Edmonds Chs. 1–4 (the convention: §1.3, §§4.1–4.2); VK06 §§6.1–6.3, 6.6–6.10 (in
+VK's convention, through the conversion theorem); KV02 §§1–2; KV03; Wawrzyńczyk Chapter 8
+(§§8.1–8.6); Dieudonné §2 and §7; Miller 1968 §§2-3–2-4; Miller 2010 Chapter 2.
 
 ### Layer 1.0: coordinates and the unitary models
 
-- Euler angles on SU(2) and SO(3): existence and uniqueness of (φ, θ, ψ) on the open dense set
-  0 < θ < π with the stated ranges; the exceptional sets θ ∈ {0, π}; compatibility with the double
-  cover.
+- Euler angles on SU(2) and SO(3) in Edmonds's convention (§3): existence and uniqueness of
+  (α, β, γ) on the open dense set 0 < β < π with the ranges 0 ≤ α < 2π, −2π ≤ γ < 2π (for SO(3),
+  0 ≤ γ < 2π); the exceptional sets β ∈ {0, π}; compatibility with the double cover.
 - Haar measure in Euler angles: for integrable f,
-  ∫_{SU(2)} f = (16π²)⁻¹ ∫ f(φ, θ, ψ) sin θ dφ dθ dψ over the fixed ranges (and the SO(3)
+  ∫_{SU(2)} f = (16π²)⁻¹ ∫ f(α, β, γ) sin β dα dβ dγ over the fixed ranges (and the SO(3)
   analogue with its normalization), proved from uniqueness of Haar measure. The class-function
   case agrees with Tau Ceti's Weyl integration formula.
-- The invariant inner product on Sym^{2l} ℂ² for which Tau Ceti's model is unitary, and the
-  orthonormal basis of normalized monomials e_m^l, m = −l, …, l, in the index convention of VK06.
-  Its weight vectors are Tau Ceti's weight basis up to positive scalars.
+- The invariant inner product on Sym^{2l} ℂ², and the orthonormal basis of normalized monomials
+  z₁^{l+m} z₂^{l−m}/√((l+m)!(l−m)!), m = −l, …, l. Tau Ceti's model `symPowerModel` is not
+  unitary for 2l ≥ 2; the unitary model is its transport by e_i ↦ √(i!(2l−i)!) e_i, and its basis
+  is Tau Ceti's weight basis up to positive scalars, in the same order (m = i − l).
 - The representation of SO(3) for integral l, through the double cover.
 
 ### Layer 1.1: matrix elements and their closed forms
 
-- t^l_mn(g) in the convention of §3, and its factorization in Euler angles,
-  t^l_mn(φ, θ, ψ) = e^{−i(mφ + nψ)} P^l_mn(cos θ).
-- The finite-sum formula for P^l_mn, and its expression through Jacobi polynomials
-  P_k^{(α,β)} with k = l − max(|m|, |n|), α = |m − n|, β = |m + n|, with the sign and the factor
-  as in VK06 §6.3 (corrected forms).
+- D^l_{m'm}(g) in the convention of §3, and its factorization in Euler angles,
+  D^l_{m'm}(α, β, γ) = e^{im'α} d^l_{m'm}(β) e^{imγ}, valid for all real angles. (In
+  Vilenkin–Klimyk's convention the corresponding formula is
+  t^l_mn(φ, θ, ψ) = i^{m−n} e^{−i(mφ + nψ)} P^l_mn(cos θ); the factor i^{m−n} is needed already at
+  l = 1/2, and it comes from their x-axis middle factor.)
+- Edmonds's finite-sum formula for d^l_{m'm} (4.1.15), and its expression through Jacobi
+  polynomials P_k^{(a,b)} with k = l − max(|m'|, |m|), a = |m' − m|, b = |m' + m|, with a real
+  sign and no power of i.
 - Special cases: P^l_00 = P_l (Legendre polynomials); P^l_m0 and associated Legendre functions
   P_l^m; the Gegenbauer form where it applies.
 - Symmetries: t^l_mn(g⁻¹) = conj t^l_nm(g); the index symmetries P^l_mn = P^l_nm = P^l_{−m,−n}
@@ -196,7 +240,10 @@ Dieudonné §2 and §7; Miller 1968 §§2-3–2-4; Miller 2010 Chapter 2.
 - The action of 𝔰𝔲(2) and of its complexification on the polynomial model as first-order
   differential operators; raising and lowering operators J₊, J₋, J₃ and their action on e_m^l.
 - The infinitesimal operators of the right and left regular representations on C^∞(SU(2)) in
-  Euler angles, and the Casimir operator as a second-order differential operator.
+  Euler angles, and the Casimir operator (the Laplacian of SU(2)) as an explicit second-order
+  differential operator in (α, β, γ) on the chart 0 < β < π, stated in Lean: it is the Casimir of
+  both regular representations, each D^l_{m'm} is an eigenfunction with eigenvalue −l(l + 1), and
+  on functions independent of γ it is the Laplace–Beltrami operator of S².
 - Consequences: the differential equation of P^l_mn (the Jacobi equation in the stated
   variables), the recurrence relations of VK06 §6.7 and Wawrzyńczyk §8.4, obtained from raising
   and lowering operators.
@@ -220,13 +267,14 @@ Dieudonné §2 and §7; Miller 1968 §§2-3–2-4; Miller 2010 Chapter 2.
 - Characters as Chebyshev polynomials of the second kind, χ_l(θ) = U_{2l}(cos(θ/2)), linking Tau
   Ceti's torus character formula to Mathlib's Chebyshev polynomials (VK06 §6.9), and the
   character expansions of class functions.
-- Matrix elements as functions of the column index: the Krawtchouk polynomials and their
-  orthogonality from the unitarity relations (VK06 §6.8).
+- Matrix elements as functions of the column index: the Krawtchouk polynomials (owned here, for
+  lack of a supplier) and their orthogonality from the unitarity relations (VK06 §6.8).
 
 ### Acceptance examples
 
 - l = 1/2 and l = 1: the explicit 2 × 2 and 3 × 3 matrices t^l(φ, θ, ψ).
-- t^1_00 = cos θ; t^l_00 = P_l(cos θ) for l ≤ 3 by direct expansion.
+- D^1_00 = d^1_00(β) = cos β; d^l_00(β) = P_l(cos β) for l ≤ 3 by direct expansion; the j = 1/2
+  and j = 1 matrices agree with Edmonds's printed ones.
 - The Legendre addition theorem at l = 1 is the spherical law of cosines.
 - The Euler-angle Haar formula integrates the constant 1 to 1, and |t^1_00|² to 1/3.
 
@@ -240,8 +288,14 @@ compact K. It contains the general forms of the items that Roadmap 1 builds for 
 
 **Excluded, with owner.** The identification of specific matrix elements with special functions
 (Roadmaps 4, 6, 7, 8); the decomposition of specific quasi-regular representations and the
-corresponding integral transforms (the same roadmaps); general Mackey theory, the imprimitivity
-theorem, abstract Plancherel theory and Harish-Chandra theory (not in this family).
+corresponding integral transforms (the same roadmaps); the Mackey machine for regular semidirect
+products, the classification of the irreducible representations of SL(2,ℝ) ≅ SU(1,1) and its
+Plancherel theorem (NoncompactQuantumSymmetry M2, M4, M4.P, consumed); derived representations,
+smooth vectors and the agreement of derived operators with Stone generators
+(NoncompactQuantumSymmetry M0, SmoothBanachRepresentations, AutomorphicFormsOnReductiveGroups
+§2.7, consumed); general Mackey
+theory, the imprimitivity theorem, abstract Plancherel theory and Harish-Chandra theory (not in
+this family).
 
 **Inputs.** Tau Ceti's continuous and unitary representations (strong continuity, Hilbert sums,
 Stone generator, coinduction), compact-group development (for K), Lie-group development
@@ -254,14 +308,15 @@ measures, Radon–Nikodym derivatives, Lᵖ spaces and Fourier analysis on the c
 ### Layer 2.0: the groups
 
 - SU(1,1), with its isomorphism to SL(2,ℝ) by the Cayley transform; ISO(2) = ℝ² ⋊ SO(2);
-  ISO(1,1); M(n) = ℝⁿ ⋊ SO(n); the ax+b group; the Heisenberg group over ℝ; the oscillator
-  group; the group of third-order real triangular matrices of VK05.
+  ISO(1,1); M(n) = ℝⁿ ⋊ SO(n) (owned here as topological groups: no group type exists in Mathlib
+  or Tau Ceti); the ax+b group; the Heisenberg group over ℝ; the oscillator group; the group of
+  third-order real triangular matrices of VK05.
 - For each: topological-group structure, local compactness, a coordinate system, Haar measure in
   coordinates, the modular function (unimodularity where it holds), and the Lie algebra in a
   stated basis.
 - Coordinate decompositions used later: the polar decomposition of ISO(2) and M(n); the Euler-type
-  decomposition of SU(1,1), cited as an instance of the KAK decomposition of the Lie-groups
-  roadmap.
+  decomposition of SU(1,1) in the convention of §3 (middle factor a boost b_t), cited as an
+  instance of the KAK decomposition of the Lie-groups roadmap.
 
 ### Layer 2.1: G-spaces and quasi-invariant measures
 
@@ -290,8 +345,25 @@ measures, Radon–Nikodym derivatives, Lᵖ spaces and Fourier analysis on the c
   series on holomorphic function spaces on the disc, with their reproducing kernels.
 - The irreducible unitary representations of the ax+b group on L²(ℝ₊).
 - The Schrödinger representation of the Heisenberg group on L²(ℝ), unitary and irreducible.
-- Irreducibility of the SU(1,1) series belongs to Roadmap 7, where it follows from the explicit
-  matrix elements.
+- What NoncompactQuantumSymmetry owns is consumed, and this roadmap adds only its concrete models
+  with agreement theorems (the item-by-item table is in Roadmap 2's notes):
+  - principal series: irreducibility, the equivalence τ ↔ −τ − 1 and the splitting at the
+    reducible point are M4's; the circle model is M4's compact picture under the identification of
+    SL(2,ℝ) with SU(1,1), with parameter ν = −(2τ + 1);
+  - complementary series: the invariant form and the completion are M4's; this roadmap keeps the
+    positivity of its weights and their match with M5's eigenvalues;
+  - holomorphic and antiholomorphic discrete series: the disc models are this roadmap's, matched
+    with M4's D_k^± (NQS weight n is 2m here); irreducibility and the half-plane models (M6.C) are
+    consumed;
+  - Casimir values and K-types: a stated dictionary (NQS's Casimir is minus ours);
+  - Plancherel (M4.P): consumed, not restated;
+  - Schrödinger representation: irreducibility from M2, with the Fourier transform intertwining
+    the line model and M2's model;
+  - sphere models of M(2), M(3): pulled back from NQS's Euclidean adapters (M6, M4.TypeI), with
+    irreducibility consumed; for n ≥ 4 irreducibility is this roadmap's.
+  The ax+b models and Gel'fand pairs have no counterpart in NoncompactQuantumSymmetry and are
+  owned here. The classification for the ax+b group is NoncompactQuantumSymmetry M2's; the
+  irreducibility of the half-line models is proved directly.
 
 ### Layer 2.4: matrix elements in infinite dimension
 
@@ -305,10 +377,10 @@ measures, Radon–Nikodym derivatives, Lᵖ spaces and Fourier analysis on the c
 
 ### Layer 2.5: infinitesimal operators
 
-- For a strongly continuous representation and a dense invariant subspace D (smooth vectors, or an
-  explicit core such as trigonometric polynomials or C_c^∞ functions) stable under the
-  one-parameter groups: the derived operator dπ(A) on D for A in the Lie algebra; agreement with
-  the Stone generator on D for unitary π; the Lie-algebra homomorphism property on D.
+- The derived operator dπ(A) on smooth vectors, its agreement with the Stone generator and the
+  Lie-algebra homomorphism property are consumed (NoncompactQuantumSymmetry M0,
+  SmoothBanachRepresentations, AutomorphicFormsOnReductiveGroups §2.7); this roadmap restricts them
+  to explicit cores (trigonometric polynomials, C_c^∞ functions) of its models.
 - For the representations of Layers 2.2–2.3: dπ(A) as a differential operator, computed from the
   fundamental vector fields of the action and the derivative of the cocycle.
 - The Casimir element acting on D; its value on irreducible models where it is scalar.
@@ -322,8 +394,10 @@ measures, Radon–Nikodym derivatives, Lᵖ spaces and Fourier analysis on the c
 - For a locally compact unimodular G and compact K: the convolution algebra of bi-K-invariant
   integrable functions; Gel'fand's criterion (an involutive anti-automorphism fixing every double
   coset implies commutativity).
-- Spherical functions: definition through the functional equation ∫_K φ(x k y) dk = φ(x) φ(y);
-  the equivalent characterization as characters of the bi-K-invariant algebra; for a unitary
+- Spherical functions: definition through the functional equation ∫_K φ(x k y) dk = φ(x) φ(y),
+  without a boundedness requirement (§3); the bounded ones are exactly the characters of the
+  bi-K-invariant L¹ algebra (an unbounded spherical function of (SU(1,1), K) shows the
+  distinction); for a unitary
   representation with a K-fixed unit vector v, the spherical function g ↦ ⟪v, π(g) v⟫ and its
   positive definiteness.
 - Spherical functions as joint eigenfunctions of the G-invariant differential operators on G/K
@@ -371,11 +445,13 @@ generating-function method for the oscillator algebra. Inputs: Roadmap 2, Tau Ce
 basis, DLMF 5, 13, 18. Sources: VK03, VK05, VK12, Miller 1968 Chapter 4, Wawrzyńczyk Chapter 12.
 
 **Roadmap 7. SU(1,1) and SL(2,ℝ).** Matrix elements of the principal, complementary and discrete
-series as Jacobi functions, Legendre functions P^μ_ν and Gauss functions; irreducibility and
-equivalences of the series; addition theorems and generating functions; mixed bases (VK07); the
-Mehler–Fock transform from the decomposition of the quasi-regular representation on the disc.
-Inputs: Roadmaps 1–2, DLMF 14, 15. Sources: VK06 §§6.4–6.5, VK07, Wawrzyńczyk Chapter 10,
-Dieudonné §14, Miller 1968 Chapter 5.
+series as Jacobi functions, Legendre functions P^μ_ν and Gauss functions; addition theorems and
+generating functions; mixed bases (VK07); the Mehler–Fock transform from the decomposition of the
+quasi-regular representation on the disc. Irreducibility, equivalences, exhaustion and the
+Plancherel theorem of the series are NoncompactQuantumSymmetry M4's and are consumed, not
+re-proved; this roadmap must be scoped around the matrix elements and transforms.
+Inputs: Roadmaps 1–2, NoncompactQuantumSymmetry M4, DLMF 14, 15. Sources: VK06 §§6.4–6.5, VK07,
+Wawrzyńczyk Chapter 10, Dieudonné §14, Miller 1968 Chapter 5.
 
 **Roadmap 8. Rank-one symmetric spaces.** Spherical functions on real hyperbolic spaces as Jacobi
 functions; the rank-one Harish-Chandra c-function; the spherical (Jacobi) transform with its
