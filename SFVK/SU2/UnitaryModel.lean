@@ -1,81 +1,89 @@
 /-
 Copyright (c) 2026 Bastiaan J Braams. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bastiaan J Braams
 -/
 module
 
-public import TauCeti.RepresentationTheory.SU2.Exhaustion
-public import TauCeti.RepresentationTheory.Continuous.Transport
+public import SFVK.SU2.Basic.UnitaryModel
+import Mathlib.Analysis.InnerProductSpace.Adjoint
+import SFVK.SU2.Basic.MatrixElements
+import TauCeti.RepresentationTheory.Continuous.Basic
 
 /-!
-# The symmetric powers of the defining representation of `SU(2)`
+# Unitarity of the normalized symmetric powers
 
-Edmonds's normalized monomials (p. 56) give an orthonormal basis for the spin `d/2`
-representation. The diagonal change of basis transports Tau Ceti's `SU2.symPowerModel`
-from monomial coordinates to the coordinates in the normalized basis.
+The factorial normalization of Edmonds, *Angular Momentum in Quantum Mechanics*, p. 56, makes the
+symmetric powers of the defining representation of `SU(2)` unitary. The entry polynomial
+intertwines conjugate transpose with swapping the weight indices, which identifies the adjoint
+of each action operator with the action of the inverse group element.
 -/
 
-public noncomputable section
+public section
 
-open TauCeti TauCeti.SU2
+open scoped ComplexConjugate InnerProductSpace
 
 namespace SFVK.SU2
 
-/-- The magnetic weight of the `i`-th vector in spin `d/2`, with `i` counting first factors. -/
-def edWeight (d i : ℕ) : ℝ := i - d / 2
+/-- Conjugating and transposing the input swaps the weight indices and conjugates the value. -/
+private theorem entrySum_star (d i j : ℕ) (A : Matrix (Fin 2) (Fin 2) ℂ) :
+    entrySum d i j (star A) = conj (entrySum d j i A) := by
+  simp only [entrySum, map_sum]
+  apply Finset.sum_congr rfl
+  intro k _
+  by_cases h : d ≤ k + i + j ∧ k + i ≤ d ∧ k + j ≤ d
+  · have h' : d ≤ k + j + i ∧ k + j ≤ d ∧ k + i ≤ d := by omega
+    simp only [ite_eq_left h, ite_eq_left h', Matrix.star_apply, map_mul, map_pow,
+      Complex.conj_ofReal]
+    have he : k + j + i - d = k + i + j - d := by omega
+    rw [he]
+    have hc : Real.sqrt (i.factorial * (d - i).factorial * j.factorial * (d - j).factorial) /
+        (k.factorial * (k + i + j - d).factorial * (d - j - k).factorial *
+          (d - i - k).factorial) =
+        Real.sqrt (j.factorial * (d - j).factorial * i.factorial * (d - i).factorial) /
+        (k.factorial * (k + i + j - d).factorial * (d - i - k).factorial *
+          (d - j - k).factorial) := by
+      congr 1
+      · congr 1
+        ring
+      · ring
+    rw [hc]
+    simp only [starRingEnd_apply]
+    ring
+  · have h' : ¬ (d ≤ k + j + i ∧ k + j ≤ d ∧ k + i ≤ d) := by omega
+    rw [ite_eq_right h, ite_eq_right h', map_zero]
 
-/-- The magnetic weight in terms of its natural indices. -/
-theorem edWeight_def (d i : ℕ) : edWeight d i = (i : ℝ) - (d : ℝ) / 2 := (rfl)
+/-- The entry formula relates inversion to conjugate transpose. -/
+private theorem matrixElement_inv_eq_conj (d : ℕ) (i j : Fin (d + 1)) (g : TauCeti.SU2) :
+    matrixElement d i j g⁻¹ = conj (matrixElement d j i g) := by
+  rw [matrixElement_eq_entrySum, matrixElement_eq_entrySum,
+    ← Matrix.star_eq_inv, Matrix.specialUnitaryGroup.coe_star, entrySum_star]
 
-/-- The norm of the monomial `z₁^i z₂^(d-i)` in the factorial normalization. -/
-def monomialNorm (d : ℕ) (i : Fin (d + 1)) : ℝ :=
-  Real.sqrt ((i : ℕ).factorial * (d - i).factorial)
-
-/-- The factorial expression for the monomial norm. -/
-theorem monomialNorm_def (d : ℕ) (i : Fin (d + 1)) :
-    monomialNorm d i = Real.sqrt ((i : ℕ).factorial * (d - i).factorial) := (rfl)
-
-/-- The monomial norm is positive for every weight index. -/
-theorem monomialNorm_pos (d : ℕ) (i : Fin (d + 1)) : 0 < monomialNorm d i :=
-  Real.sqrt_pos.2 (by positivity)
-
-/-- The diagonal change from monomial coefficients to normalized monomial coefficients. -/
-def scale (d : ℕ) : EuclideanSpace ℂ (Fin (d + 1)) ≃L[ℂ] EuclideanSpace ℂ (Fin (d + 1)) :=
-  LinearEquiv.toContinuousLinearEquiv <|
-    (EuclideanSpace.basisFun (Fin (d + 1)) ℂ).toBasis.equiv
-      ((EuclideanSpace.basisFun (Fin (d + 1)) ℂ).toBasis.unitsSMul fun i =>
-        Units.mk0 (monomialNorm d i : ℂ) (Complex.ofReal_ne_zero.2 (monomialNorm_pos d i).ne'))
-      (Equiv.refl _)
-
-/-- The change of basis multiplies the `i`-th unit vector by the corresponding monomial norm. -/
-theorem scale_single (d : ℕ) (i : Fin (d + 1)) :
-    scale d (EuclideanSpace.single i 1) =
-      (monomialNorm d i : ℂ) • EuclideanSpace.single i 1 := by
-  classical
-  simp only [scale, LinearEquiv.coe_toContinuousLinearEquiv',
-    ← EuclideanSpace.basisFun_apply, ← OrthonormalBasis.coe_toBasis, Module.Basis.equiv_apply,
-    Equiv.refl_apply, Module.Basis.unitsSMul_apply, Units.smul_def, Units.val_mk0]
-
-/-- The spin `d/2` representation in the normalized weight basis. -/
-def unitaryModel (d : ℕ) : ContRepresentation ℂ TauCeti.SU2 (EuclideanSpace ℂ (Fin (d + 1))) :=
-  (scale d).congr (symPowerModel d)
-
-/-- The action in the normalized basis is the diagonal conjugate of Tau Ceti's action. -/
-theorem unitaryModel_apply (d : ℕ) (g : TauCeti.SU2) (v : EuclideanSpace ℂ (Fin (d + 1))) :
-    unitaryModel d g v = scale d (symPowerModel d g ((scale d).symm v)) :=
-  (scale d).congr_apply (symPowerModel d) g v
-
-/-- The normalized symmetric powers are continuous in operator norm. -/
-theorem continuous_unitaryModel (d : ℕ) : Continuous (unitaryModel d) :=
-  (scale d).continuous_congr (continuous_symPowerModel d)
-
-/-- The normalized symmetric powers are irreducible. -/
-theorem isIrreducible_unitaryModel (d : ℕ) :
-    (unitaryModel d).toRepresentation.IsIrreducible :=
-  (scale d).isIrreducible_congr (isIrreducible_symPowerModel d)
+/-- The adjoint acts by the inverse group element. -/
+private theorem adjoint_unitaryModel (d : ℕ) (g : TauCeti.SU2) :
+    (unitaryModel d g).adjoint = unitaryModel d g⁻¹ := by
+  apply ContinuousLinearMap.coe_injective
+  apply (EuclideanSpace.basisFun (Fin (d + 1)) ℂ).toBasis.ext
+  intro j
+  simp only [ContinuousLinearMap.coe_coe, OrthonormalBasis.coe_toBasis,
+    EuclideanSpace.basisFun_apply]
+  ext i
+  have hcoord (v : EuclideanSpace ℂ (Fin (d + 1))) :
+      ⟪EuclideanSpace.single i 1, v⟫_ℂ = v i := by
+    rw [EuclideanSpace.inner_single_left, map_one, one_mul]
+  rw [← hcoord, ← hcoord, ContinuousLinearMap.adjoint_inner_right, ← inner_conj_symm,
+    ← matrixElement_def, ← matrixElement_def, matrixElement_inv_eq_conj]
 
 /-- The factorial normalization makes the symmetric powers unitary. -/
 theorem isUnitary_unitaryModel (d : ℕ) : (unitaryModel d).IsUnitary := by
-  sorry
+  rw [ContRepresentation.isUnitary_iff_norm_map]
+  intro g
+  apply (LinearMap.norm_map_iff_inner_map_map (unitaryModel d g)).mpr
+  intro v w
+  rw [← ContinuousLinearMap.adjoint_inner_right, adjoint_unitaryModel]
+  have hw : unitaryModel d g⁻¹ (unitaryModel d g w) = w := by
+    simpa only [inv_inv, ContRepresentation.toRepresentation_apply] using
+      Representation.self_inv_apply (unitaryModel d).toRepresentation g⁻¹ w
+  rw [hw]
 
 end SFVK.SU2
