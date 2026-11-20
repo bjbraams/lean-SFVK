@@ -3,7 +3,6 @@
 Reference: George W. Bluman, Alexei F. Cheviakov and Stephen C. Anco, *Applications of
 Symmetry Methods to Partial Differential Equations*, Applied Mathematical Sciences 168,
 Springer, New York, 2010. The local copy is in [References](References/).
-Synopsis: [SYNOPSIS-BCA](SYNOPSIS-BCA.md).
 
 Locators use printed page numbers. To get the one-based PDF page number, add 19.
 
@@ -551,8 +550,6 @@ Target: [BCA.02.5.05].
 
 ## Chapter 3. Nonlocally Related PDE Systems
 
-Synopsis: [SYNOPSIS-BCA](SYNOPSIS-BCA.md), Chapter 3.
-
 ### BCA-E03.3.01. Factor \(L(u)\) for \(L'(u)\) in the system \(\mathbf{TA}\)
 
 Status: Confirmed.
@@ -798,8 +795,6 @@ Target: [BCA.03.5.12].
 
 ## Chapter 4. Applications of Nonlocally Related PDE Systems
 
-Synopsis: [SYNOPSIS-BCA](SYNOPSIS-BCA.md), Chapter 4.
-
 ### BCA-E04.2.01. \(K\) for \(L\) in the equivalence transformation of \(L\)
 
 Status: Confirmed.
@@ -1019,8 +1014,6 @@ Target: [BCA.04.3.09].
 
 ## Chapter 5. Further Applications of Symmetry Methods: Miscellaneous Extensions
 
-Synopsis: [SYNOPSIS-BCA](SYNOPSIS-BCA.md), Chapter 5.
-
 ### BCA-E05.2.01. Constant \(q_0\) for \(\gamma\) in the potential \(w\) of (5.60)
 
 Status: Confirmed.
@@ -1224,73 +1217,3 @@ Target: [BCA.05.4.01].
 - (5.57), (5.99), (5.105)–(5.106), (5.112), (5.171)–(5.172), Exercise 5.2.3(b) and the
   conformal symmetries \(Y_2\), \(Y_3\) of \(\mathbf{MW}\) beyond \(Y_1\) are recorded as
   printed where not stated otherwise in the synopsis.
-
-[BCA.01.2.04]: SYNOPSIS-BCA.md#bca01204-one-parameter-contact-groups
-[BCA.01.2.10]: SYNOPSIS-BCA.md#bca01210-first-order-generators-are-contact-generators
-[BCA.01.2.20]: SYNOPSIS-BCA.md#bca01220-equivalence-group-of-the-nonlinear-diffusion-potential-system
-[BCA.01.2.26]: SYNOPSIS-BCA.md#bca01226-recursion-operators-of-the-integrated-burgers-equation
-[BCA.01.2.34]: SYNOPSIS-BCA.md#bca01234-recursion-operator-of-the-kdv-equation
-[BCA.01.3.02]: SYNOPSIS-BCA.md#bca01302-constants-of-motion
-[BCA.01.3.03]: SYNOPSIS-BCA.md#bca01303-conservation-laws-of-the-euler-equations-of-gas-dynamics
-[BCA.01.3.04]: SYNOPSIS-BCA.md#bca01304-conservation-laws-of-the-kdv-equation
-[BCA.01.3.08]: SYNOPSIS-BCA.md#bca01308-euler-operators-detect-divergences
-[BCA.01.3.15]: SYNOPSIS-BCA.md#bca01315-zeroth-order-conservation-laws-of-a-nonlinear-telegraph-system
-[BCA.01.3.16]: SYNOPSIS-BCA.md#bca01316-low-order-multipliers-of-the-kdv-equation
-[BCA.01.3.29]: SYNOPSIS-BCA.md#bca01329-a-symmetry-that-is-not-a-multiplier-the-nonlinear-wave-speed-equation
-[BCA.01.4.07]: SYNOPSIS-BCA.md#bca01407-noethers-formulation-is-a-special-case-of-boyers
-[BCA.01.4.09]: SYNOPSIS-BCA.md#bca01409-variational-symmetries-and-conservation-laws-of-kleingordon-equations
-[BCA.01.4.10]: SYNOPSIS-BCA.md#bca01410-the-scaling-symmetry-of-power-kleingordon-equations-is-not-variational
-[BCA.01.4.11]: SYNOPSIS-BCA.md#bca01411-symmetries-versus-multipliers-of-generalized-kdv-equations
-[BCA.01.4.12]: SYNOPSIS-BCA.md#bca01412-the-potential-form-of-generalized-kdv-equations
-[BCA.01.4.13]: SYNOPSIS-BCA.md#bca01413-nonlinear-telegraph-systems-are-not-variational-equivalence-group
-[BCA.01.4.17]: SYNOPSIS-BCA.md#bca01417-conservation-laws-of-a-boussinesq-system
-[BCA.01.5.04]: SYNOPSIS-BCA.md#bca01504-higher-order-conservation-laws-from-a-one-parameter-symmetry-group
-[BCA.01.5.09]: SYNOPSIS-BCA.md#bca01509-example-power-nonlinear-telegraph-system
-[BCA.01.5.11]: SYNOPSIS-BCA.md#bca01511-fluxes-of-noncritical-scaling-homogeneous-conservation-laws
-[BCA.01.5.15]: SYNOPSIS-BCA.md#bca01515-wave-equation-with-variable-speed-and-its-potential-system
-[BCA.02.3.01]: SYNOPSIS-BCA.md#bca02301-point-symmetries-of-the-heat-and-burgers-equations
-[BCA.02.3.02]: SYNOPSIS-BCA.md#bca02302-derivation-of-the-hopfcole-transformation
-[BCA.02.3.05]: SYNOPSIS-BCA.md#bca02305-point-transformations-from-cylindrical-kdv-to-kdv
-[BCA.02.4.03]: SYNOPSIS-BCA.md#bca02403-sufficient-conditions-for-invertible-linearization-of-systems
-[BCA.02.4.08]: SYNOPSIS-BCA.md#bca02408-sufficient-conditions-for-contact-linearization-of-scalar-pdes
-[BCA.02.4.09]: SYNOPSIS-BCA.md#bca02409-legendre-linearization-of-second-order-quasilinear-pdes
-[BCA.02.4.11]: SYNOPSIS-BCA.md#bca02411-exercises-linearizations-through-infinite-symmetry-families
-[BCA.02.5.03]: SYNOPSIS-BCA.md#bca02503-parabolic-equations-reducible-to-constant-coefficients
-[BCA.02.5.05]: SYNOPSIS-BCA.md#bca02505-constant-coefficient-targets-of-the-biharmonic-equation
-[BCA.03.3.03]: SYNOPSIS-BCA.md#bca03303-tree-for-the-nonlinear-diffusion-equation-hodograph-subsystems
-[BCA.03.3.05]: SYNOPSIS-BCA.md#bca03305-further-potential-systems-and-a-subsystem-for-pgd
-[BCA.03.4.03]: SYNOPSIS-BCA.md#bca03403-density-order-for-even-order-scalar-evolution-equations
-[BCA.03.4.04]: SYNOPSIS-BCA.md#bca03404-diffusionconvection-equations-equivalence-group-and-local-conservation-laws
-[BCA.03.4.05]: SYNOPSIS-BCA.md#bca03405-potential-systems-of-diffusionconvection-equations
-[BCA.03.4.06]: SYNOPSIS-BCA.md#bca03406-nonlocal-conservation-laws-of-diffusionconvection-equations
-[BCA.03.4.09]: SYNOPSIS-BCA.md#bca03409-additional-conservation-laws-for-power-nonlinearities-case-a
-[BCA.03.4.10]: SYNOPSIS-BCA.md#bca03410-additional-conservation-laws-for-power-nonlinearities-case-b
-[BCA.03.4.11]: SYNOPSIS-BCA.md#bca03411-additional-conservation-laws-for-power-nonlinearities-case-c
-[BCA.03.5.04]: SYNOPSIS-BCA.md#bca03504-extended-tree-for-the-nonlinear-diffusion-equation
-[BCA.03.5.07]: SYNOPSIS-BCA.md#bca03507-conservation-laws-of-the-linearized-wave-equation-and-redundancies
-[BCA.03.5.08]: SYNOPSIS-BCA.md#bca03508-lagrange-pgd-system-equivalence-group-and-conservation-laws
-[BCA.03.5.12]: SYNOPSIS-BCA.md#bca03512-polytropic-gas
-[BCA.04.2.03]: SYNOPSIS-BCA.md#bca04203-nonlinear-diffusion-equation-equivalence-and-point-symmetries
-[BCA.04.2.05]: SYNOPSIS-BCA.md#bca04205-couplet-potential-system-mathbfuva
-[BCA.04.2.08]: SYNOPSIS-BCA.md#bca04208-the-potential-system-mathbfuv
-[BCA.04.2.10]: SYNOPSIS-BCA.md#bca04210-the-potential-system-mathbftp
-[BCA.04.2.12]: SYNOPSIS-BCA.md#bca04212-the-potential-system-mathbftr
-[BCA.04.2.14]: SYNOPSIS-BCA.md#bca04214-the-subsystem-mathbf-tuvt
-[BCA.04.2.16]: SYNOPSIS-BCA.md#bca04216-nonlocal-symmetries-of-telegraph-equations-from-mathbfuv1
-[BCA.04.2.18]: SYNOPSIS-BCA.md#bca04218-power-nonlinearities-cases-b-and-c
-[BCA.04.3.04]: SYNOPSIS-BCA.md#bca04304-thomas-equations
-[BCA.04.3.07]: SYNOPSIS-BCA.md#bca04307-linear-parabolic-equations-mappable-to-the-backward-heat-equation
-[BCA.04.3.09]: SYNOPSIS-BCA.md#bca04309-nonlocal-maps-to-the-backward-heat-equation
-[BCA.04.3.10]: SYNOPSIS-BCA.md#bca04310-the-class-of-coefficients-obtained-theorem-433
-[BCA.05.2.01]: SYNOPSIS-BCA.md#bca05201-invariant-solutions
-[BCA.05.2.04]: SYNOPSIS-BCA.md#bca05204-the-nonclassical-method
-[BCA.05.2.07]: SYNOPSIS-BCA.md#bca05207-nonclassical-solutions-of-the-boussinesq-equation
-[BCA.05.2.10]: SYNOPSIS-BCA.md#bca05210-a-solution-of-generalized-polytropic-gas-dynamics-from-a-nonlocal-symmetry
-[BCA.05.2.15]: SYNOPSIS-BCA.md#bca05215-nonclassical-determining-equations-for-nonlinear-heat-conduction
-[BCA.05.3.01]: SYNOPSIS-BCA.md#bca05301-vector-potentials-and-gauges-in-three-dimensions
-[BCA.05.3.09]: SYNOPSIS-BCA.md#bca05309-a-nonlocal-symmetry-from-a-nonlocally-related-subsystem
-[BCA.05.3.10]: SYNOPSIS-BCA.md#bca05310-nonlocal-symmetries-from-a-curl-type-conservation-law
-[BCA.05.3.11]: SYNOPSIS-BCA.md#bca05311-nonlocal-symmetries-of-the-21-dimensional-wave-equation
-[BCA.05.3.12]: SYNOPSIS-BCA.md#bca05312-maxwells-equations-in-21-dimensions
-[BCA.05.3.13]: SYNOPSIS-BCA.md#bca05313-incompressible-mhd-equilibria
-[BCA.05.4.01]: SYNOPSIS-BCA.md#bca05401-mathematical-results-of-the-symbolic-software-examples

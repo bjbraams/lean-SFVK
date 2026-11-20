@@ -3,7 +3,6 @@
 Reference: Willard Miller, Jr., *Lie Theory and Special Functions*, Mathematics in Science and
 Engineering 43, Academic Press, New York and London, 1968. The local copy is
 [References/Miller1968LieTheorySpecialFunctions-ElsevierMSE43.pdf](References/Miller1968LieTheorySpecialFunctions-ElsevierMSE43.pdf).
-Synopsis: [SYNOPSIS-Miller1968](SYNOPSIS-Miller1968.md).
 
 Locators use printed page numbers. To get the one-based PDF page number, add 6 (throughout the
 book). Line numbers, where given, count from the top of the page; negative line numbers count
@@ -58,8 +57,6 @@ example a sign or normalization convention that differs from a modern reference.
 - Total: 287 entries, 54 errata (Confirmed 54).
 
 ## Chapter 1. Résumé of Lie Theory
-
-Synopsis: [SYNOPSIS-Miller1968](SYNOPSIS-Miller1968.md), Chapter 1.
 
 ### M68-E01.1.01. The commutator curve is not analytic in \(t=\tau^2\)
 
@@ -166,8 +163,6 @@ Target: [M68.01.4.01].
 
 ## Chapter 2. Representations and Realizations of Lie Algebras
 
-Synopsis: [SYNOPSIS-Miller1968](SYNOPSIS-Miller1968.md), Chapter 2.
-
 ### M68-E02.4.01. Spherical coordinates with \(\sin\theta\) and \(\cos\theta\) interchanged
 
 Status: Confirmed.
@@ -273,8 +268,6 @@ Target: [M68.02.7.06].
 
 ## Chapter 3. Lie Theory and Bessel Functions
 
-Synopsis: [SYNOPSIS-Miller1968](SYNOPSIS-Miller1968.md), Chapter 3.
-
 ### M68-E03.1.01. Abbreviated form of the coordinates \(r,v\)
 
 Status: Confirmed.
@@ -342,8 +335,6 @@ Target: [M68.03.4.01].
   synopsis keeps this convention.
 
 ## Chapter 4. Lie Theory and Confluent Hypergeometric Functions
-
-Synopsis: [SYNOPSIS-Miller1968](SYNOPSIS-Miller1968.md), Chapter 4.
 
 ### M68-E04.2.01. Range of validity of a special case of (4.28)
 
@@ -925,65 +916,3 @@ Target: [M68.09.11.02].
 - §9-8: \(n_l,s_l\) in (9.53) are the nonnegative solutions of \(l=n_lp-s_lq\) with \(n_l+s_l\) minimal.
 - §9-10: (9.68) and the analytic continuation of \(I^{p,q}_m\) to complex \(m\) assume \(p\) odd and \(\mathrm{Re}\,r>0\); the principal branch of \(z^{-m-1}\) on
   the plane cut along the negative axis is used.
-
-[M68.01.1.03]: SYNOPSIS-Miller1968.md#m6801103-tangent-vectors-and-the-commutator
-[M68.01.2.03]: SYNOPSIS-Miller1968.md#m6801203-adjoint-action-on-mathfraksl2
-[M68.01.2.05]: SYNOPSIS-Miller1968.md#m6801205-the-lie-algebra-of-g01-and-the-adjoint-action
-[M68.01.2.06]: SYNOPSIS-Miller1968.md#m6801206-the-group-t_3-and-its-lie-algebra-mathcal-t_3
-[M68.01.3.05]: SYNOPSIS-Miller1968.md#m6801305-local-multiplier-representation
-[M68.01.3.08]: SYNOPSIS-Miller1968.md#m6801308-exponential-series-of-a-multiplier-representation
-[M68.01.4.01]: SYNOPSIS-Miller1968.md#m6801401-a-multiplier-representation-of-sl2
-[M68.02.4.01]: SYNOPSIS-Miller1968.md#m6802401-angular-momentum-operators-in-spherical-coordinates
-[M68.02.4.02]: SYNOPSIS-Miller1968.md#m6802402-construction-of-p_lk-and-failure-for-half-integral-l
-[M68.02.4.03]: SYNOPSIS-Miller1968.md#m6802403-spherical-harmonics-recursions-equation-normalization
-[M68.02.5.03]: SYNOPSIS-Miller1968.md#m6802503-contractions
-[M68.02.7.02]: SYNOPSIS-Miller1968.md#m6802702-solutions-of-230-types-a-b-c-d-c-d
-[M68.02.7.04]: SYNOPSIS-Miller1968.md#m6802704-type-a-hypergeometric-functions
-[M68.02.7.05]: SYNOPSIS-Miller1968.md#m6802705-type-b-confluent-hypergeometric-functions
-[M68.02.7.06]: SYNOPSIS-Miller1968.md#m6802706-types-c-and-d-whittaker-type-and-parabolic-cylinder-functions
-[M68.02.7.07]: SYNOPSIS-Miller1968.md#m6802707-types-c-and-d-bessel-and-exponential-functions
-[M68.03.1.04]: SYNOPSIS-Miller1968.md#m6803104-bessel-form-of-the-matrix-elements-the-bessel-generating-function
-[M68.03.10.02]: SYNOPSIS-Miller1968.md#m68031002-classification-of-irreducible-unitary-representations-of-e_3
-[M68.03.2.02]: SYNOPSIS-Miller1968.md#m6803202-lie-derivatives-in-the-coordinates-rvtau-bessel-recursions
-[M68.03.3.01]: SYNOPSIS-Miller1968.md#m6803301-type-c-realization-and-the-cylinder-function-recursions
-[M68.03.3.02]: SYNOPSIS-Miller1968.md#m6803302-the-local-multiplier-representation-t-of-t_3-in-two-variables
-[M68.03.3.04]: SYNOPSIS-Miller1968.md#m6803304-lommels-formulas
-[M68.03.4.01]: SYNOPSIS-Miller1968.md#m6803401-weisners-principle-for-the-type-c-operators
-[M68.03.8.04]: SYNOPSIS-Miller1968.md#m6803804-irreducibility-of-p
-[M68.04.10.02]: SYNOPSIS-Miller1968.md#m68041002-addition-theorem-494-and-consequences
-[M68.04.11.01]: SYNOPSIS-Miller1968.md#m68041101-the-group-s_4
-[M68.04.11.02]: SYNOPSIS-Miller1968.md#m68041102-the-lie-algebra-mathcal-s_4
-[M68.04.15.05]: SYNOPSIS-Miller1968.md#m68041505-orthogonality-relations
-[M68.04.16.01]: SYNOPSIS-Miller1968.md#m68041601-the-representation-lambda-l-and-its-matrix-elements
-[M68.04.16.02]: SYNOPSIS-Miller1968.md#m68041602-irreducibility-orthogonality-infinitesimal-operators
-[M68.04.18.02]: SYNOPSIS-Miller1968.md#m68041802-case-ll-decomposition
-[M68.04.19.04]: SYNOPSIS-Miller1968.md#m68041904-laguerre-polynomials-as-hermite-integrals
-[M68.04.2.06]: SYNOPSIS-Miller1968.md#m6804206-limits-429-and-special-cases-of-428
-[M68.04.20.04]: SYNOPSIS-Miller1968.md#m68042004-product-of-a-bessel-function-and-a-laguerre-polynomial
-[M68.04.21.01]: SYNOPSIS-Miller1968.md#m68042101-mathcal-e_3oplusg_0-as-a-contraction-of-mathcal-s_4
-[M68.04.5.02]: SYNOPSIS-Miller1968.md#m6804502-the-bilinear-form-q
-[M68.04.7.03]: SYNOPSIS-Miller1968.md#m6804703-hermite-polynomial-identities
-[M68.05.11.02]: SYNOPSIS-Miller1968.md#m68051102-the-local-multiplier-representation-mathbf-t-type-a
-[M68.05.11.03]: SYNOPSIS-Miller1968.md#m68051103-addition-theorems-for-mathfrak-b_urm
-[M68.05.12.01]: SYNOPSIS-Miller1968.md#m68051201-type-a-basis-of-uparrow_u-and-its-addition-theorems
-[M68.05.14.01]: SYNOPSIS-Miller1968.md#m68051401-type-a-basis-of-d2u
-[M68.05.14.02]: SYNOPSIS-Miller1968.md#m68051402-addition-theorems-for-mathfrak-b_urm-and-p_urm-with-2uinmathbb-z_ge0
-[M68.05.15.03]: SYNOPSIS-Miller1968.md#m68051503-confluentjacobi-generating-functions
-[M68.05.18.01]: SYNOPSIS-Miller1968.md#m68051801-coordinates-on-g_3
-[M68.05.18.06]: SYNOPSIS-Miller1968.md#m68051806-the-discrete-series-d_n-
-[M68.05.5.04]: SYNOPSIS-Miller1968.md#m6805504-clebschgordan-decomposition-theorem-51
-[M68.05.5.06]: SYNOPSIS-Miller1968.md#m6805506-3-j-symbols-and-schwingers-generating-function
-[M68.05.6.02]: SYNOPSIS-Miller1968.md#m6805602-decomposition-of-uparrow_uotimesuparrow_v-theorem-52
-[M68.06.1.05]: SYNOPSIS-Miller1968.md#m6806105-classification-with-mathbf-pcdotmathbf-p0-mathbf-pcdotmathbf-jne0-theorem-62
-[M68.06.3.01]: SYNOPSIS-Miller1968.md#m6806301-type-f-operators-and-their-recursion-relations
-[M68.06.4.02]: SYNOPSIS-Miller1968.md#m6806402-the-lie-algebra-mathcal-e_6
-[M68.07.2.02]: SYNOPSIS-Miller1968.md#m6807202-type-a-equations-and-their-relation-to-type-a-operators
-[M68.07.2.03]: SYNOPSIS-Miller1968.md#m6807203-factorization-types-e-and-f
-[M68.08.2.05]: SYNOPSIS-Miller1968.md#m6808205-effective-realizations-the-ideal-mathcal-m-and-theorem-84
-[M68.09.11.02]: SYNOPSIS-Miller1968.md#m68091102-weisner-type-generating-function
-[M68.09.2.01]: SYNOPSIS-Miller1968.md#m6809201-the-group-k_5
-[M68.09.4.02]: SYNOPSIS-Miller1968.md#m6809402-special-matrix-elements
-[M68.09.4.04]: SYNOPSIS-Miller1968.md#m6809404-hermite-function-identities-from-r0m_01
-[M68.09.5.01]: SYNOPSIS-Miller1968.md#m6809501-one-variable-model-and-matrix-elements
-[M68.09.5.02]: SYNOPSIS-Miller1968.md#m6809502-two-variable-model-of-uparrow_01-mehlers-formula
-[M68.09.6.01]: SYNOPSIS-Miller1968.md#m6809601-the-algebras-mathcal-g_pq-lemma-91

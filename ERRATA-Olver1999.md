@@ -3,7 +3,6 @@
 Reference: Peter J. Olver, *Classical Invariant Theory*, London Mathematical Society Student
 Texts 44, Cambridge University Press, 1999. The local copy is
 [References/Olver1999ClassicalInvariantTheory-CambridgeLMSST44.pdf](References/Olver1999ClassicalInvariantTheory-CambridgeLMSST44.pdf).
-Synopsis: [SYNOPSIS-Olver1999](SYNOPSIS-Olver1999.md).
 
 Locators use printed page numbers. To get the one-based PDF page number, add 22.
 
@@ -1130,7 +1129,6 @@ Target: [O99.10.6.05].
 - The Hilbert basis list (10.31) omits the normalizing constants used in (10.30) and the displays
   for \(C\), \(I\), \(J\).
 
-
 ## Published corrections to material outside the synopses
 
 The published list also corrects the following statement. The synopsis does not state it, so it
@@ -1147,69 +1145,3 @@ every mathematical item of the list.
   of the synopsis.
 
 [Olver CIT corrections]: https://www-users.cse.umn.edu/~olver/book_/invcor.pdf
-[O99.01.1.04]: SYNOPSIS-Olver1999.md#o9901104-affine-canonical-forms-for-real-quadratic-polynomials
-[O99.01.2.07]: SYNOPSIS-Olver1999.md#o9901207-canonical-forms-under-unimodular-transformations
-[O99.02.11.03]: SYNOPSIS-Olver1999.md#o99021103-subresultants-and-common-roots
-[O99.02.11.04]: SYNOPSIS-Olver1999.md#o99021104-discriminant-of-a-binary-form
-[O99.02.12.03]: SYNOPSIS-Olver1999.md#o99021203-resultants-and-discriminants-of-cubic-covariants
-[O99.02.4.01]: SYNOPSIS-Olver1999.md#o9902401-homogeneous-functions
-[O99.02.4.02]: SYNOPSIS-Olver1999.md#o9902402-eulers-theorem-on-homogeneous-functions
-[O99.02.4.03]: SYNOPSIS-Olver1999.md#o9902403-smooth-homogeneous-functions-that-are-not-polynomials
-[O99.02.4.04]: SYNOPSIS-Olver1999.md#o9902404-homogeneous-functions-from-functions-on-the-projective-line
-[O99.02.6.02]: SYNOPSIS-Olver1999.md#o9902602-covariants
-[O99.02.7.02]: SYNOPSIS-Olver1999.md#o9902702-the-hessian-and-its-characterization
-[O99.02.7.03]: SYNOPSIS-Olver1999.md#o9902703-discriminant-of-the-cubic-hessian
-[O99.02.7.06]: SYNOPSIS-Olver1999.md#o9902706-invariants-of-the-binary-quartic
-[O99.03.2.05]: SYNOPSIS-Olver1999.md#o9903205-projective-linear-group
-[O99.03.4.02]: SYNOPSIS-Olver1999.md#o9903402-symmetries-of-triangles-and-squares
-[O99.03.5.02]: SYNOPSIS-Olver1999.md#o9903502-orbits-of-real-binary-quadratic-forms
-[O99.04.1.02]: SYNOPSIS-Olver1999.md#o9904102-permutation-representation-of-s_n
-[O99.04.1.05]: SYNOPSIS-Olver1999.md#o9904105-contravariant-versus-covariant-vectors-for-gl2
-[O99.04.3.04]: SYNOPSIS-Olver1999.md#o9904304-irreducibility-of-rho_nk
-[O99.04.4.05]: SYNOPSIS-Olver1999.md#o9904405-power-sums-and-coefficients-in-terms-of-roots
-[O99.04.5.04]: SYNOPSIS-Olver1999.md#o9904504-multi-symmetric-functions
-[O99.04.7.01]: SYNOPSIS-Olver1999.md#o9904701-relative-invariants
-[O99.04.7.03]: SYNOPSIS-Olver1999.md#o9904703-classical-invariants-and-covariants-as-relative-invariants
-[O99.04.7.04]: SYNOPSIS-Olver1999.md#o9904704-gradients-of-invariants
-[O99.05.2.01]: SYNOPSIS-Olver1999.md#o9905201-the-projective-transvectant-formula
-[O99.05.2.02]: SYNOPSIS-Olver1999.md#o9905202-projective-hessian-and-vanishing-hessian
-[O99.05.2.04]: SYNOPSIS-Olver1999.md#o9905204-the-covariants-t-u-v
-[O99.05.5.03]: SYNOPSIS-Olver1999.md#o9905503-moyal-bracket
-[O99.06.4.03]: SYNOPSIS-Olver1999.md#o9906403-the-determinantal-syzygy-example-620
-[O99.06.5.05]: SYNOPSIS-Olver1999.md#o9906505-symbolic-form-of-the-cubic-discriminant-example-626
-[O99.06.6.01]: SYNOPSIS-Olver1999.md#o9906601-covariant-polarization-and-omega-processes
-[O99.06.6.02]: SYNOPSIS-Olver1999.md#o9906602-capelli-identities
-[O99.06.7.01]: SYNOPSIS-Olver1999.md#o9906701-covariant-differentiation-processes
-[O99.06.8.03]: SYNOPSIS-Olver1999.md#o9906803-strohhilbert-rational-basis-theorem-632
-[O99.07.3.03]: SYNOPSIS-Olver1999.md#o9907303-the-transvectant-zht1-exercise-77
-[O99.07.3.04]: SYNOPSIS-Olver1999.md#o9907304-rational-expression-of-the-triangle-covariant-exercise-78
-[O99.07.4.01]: SYNOPSIS-Olver1999.md#o9907401-resonant-systems-definition-79
-[O99.07.4.02]: SYNOPSIS-Olver1999.md#o9907402-partial-transvectants-are-combinations-of-transvectants-theorems-710-712
-[O99.07.4.03]: SYNOPSIS-Olver1999.md#o9907403-moving-one-arc-lemma-711
-[O99.07.5.03]: SYNOPSIS-Olver1999.md#o9907503-hilbert-bases-of-the-binary-quadratic-cubic-and-quartic
-[O99.07.5.04]: SYNOPSIS-Olver1999.md#o9907504-reduction-of-the-cubic-discriminant-digraph-in-higher-degree
-[O99.07.5.06]: SYNOPSIS-Olver1999.md#o9907506-the-quartic-covariant-u-exercise-718
-[O99.08.11.04]: SYNOPSIS-Olver1999.md#o99081104-maximally-symmetric-forms-theorem-862
-[O99.08.11.06]: SYNOPSIS-Olver1999.md#o99081106-index-of-a-binary-form-by-subresultants-theorem-867
-[O99.08.11.07]: SYNOPSIS-Olver1999.md#o99081107-maximal-discrete-symmetry-corollary-868
-[O99.08.11.10]: SYNOPSIS-Olver1999.md#o99081110-binary-quartics-via-signatures-example-870
-[O99.08.3.03]: SYNOPSIS-Olver1999.md#o9908303-irrational-flow-on-the-torus-example-815
-[O99.08.5.01]: SYNOPSIS-Olver1999.md#o9908501-euclidean-joint-invariants-example-829-theorem-830
-[O99.08.8.01]: SYNOPSIS-Olver1999.md#o9908801-prolonged-multiplier-action
-[O99.08.8.02]: SYNOPSIS-Olver1999.md#o9908802-moving-frame-for-binary-forms
-[O99.08.8.04]: SYNOPSIS-Olver1999.md#o9908804-derivative-of-the-curvature-invariant
-[O99.08.8.05]: SYNOPSIS-Olver1999.md#o9908805-invariant-differentiation-of-absolute-covariants
-[O99.08.9.03]: SYNOPSIS-Olver1999.md#o9908903-signature-of-an-ellipse-example-854
-[O99.09.1.03]: SYNOPSIS-Olver1999.md#o9909103-the-exponential-map-and-its-image-definition-94-proposition-95
-[O99.09.4.01]: SYNOPSIS-Olver1999.md#o9909401-infinitesimal-invariance-criterion-theorem-928
-[O99.09.6.01]: SYNOPSIS-Olver1999.md#o9909601-isobaric-functions-and-semi-invariants-definition-940
-[O99.09.6.03]: SYNOPSIS-Olver1999.md#o9909603-leading-terms-of-covariants-lemma-944-proposition-945-theorem-946
-[O99.09.6.04]: SYNOPSIS-Olver1999.md#o9909604-leading-coefficients-for-the-cubic-example-947
-[O99.09.7.01]: SYNOPSIS-Olver1999.md#o9909701-commutation-formulas-for-sl2-generators
-[O99.09.7.03]: SYNOPSIS-Olver1999.md#o9909703-covariant-from-its-leading-term-theorem-949-example-950
-[O99.10.1.03]: SYNOPSIS-Olver1999.md#o9910103-ternary-quadratics-and-conics-example-104
-[O99.10.4.03]: SYNOPSIS-Olver1999.md#o9910403-concomitants-of-the-ternary-quadratic-example-1015
-[O99.10.5.02]: SYNOPSIS-Olver1999.md#o9910502-bracket-factors-and-the-fundamental-theorems
-[O99.10.6.03]: SYNOPSIS-Olver1999.md#o9910603-discriminants-and-the-invariants-i-j-of-a-biquadratic
-[O99.10.6.04]: SYNOPSIS-Olver1999.md#o9910604-invariants-of-the-two-discriminants-proposition-1022
-[O99.10.6.05]: SYNOPSIS-Olver1999.md#o9910605-hilbert-basis-and-canonical-forms-of-the-binary-biquadratic

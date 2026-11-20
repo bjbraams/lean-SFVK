@@ -3,7 +3,6 @@
 Reference: Willard Miller, Jr., *The Lie theory approach to special functions*, lecture notes,
 University of Minnesota, dated November 5, 2010; 57 printed pages. The local copy is
 [References/Miller2010LieTheoryApproachSpecialFunctions-LectureNotesUnivMinnesota.pdf](References/Miller2010LieTheoryApproachSpecialFunctions-LectureNotesUnivMinnesota.pdf).
-Synopsis: [SYNOPSIS-Miller2010](SYNOPSIS-Miller2010.md).
 
 Locators use printed page numbers. To get the one-based PDF page number, add 1 (the PDF has an
 unnumbered title page). Line numbers, where given, count from the top of the printed page;
@@ -557,46 +556,3 @@ Target: [M10.06.3.09].
 ### Conventions and notation (not errata)
 
 None.
-
-[M10.01.3.01]: SYNOPSIS-Miller2010.md#m1001301-representations-matrix-representations-irreducibility
-[M10.01.4.01]: SYNOPSIS-Miller2010.md#m1001401-schur-orthogonality-for-a-finite-group
-[M10.02.1.02]: SYNOPSIS-Miller2010.md#m1002102-euler-angles
-[M10.02.1.04]: SYNOPSIS-Miller2010.md#m1002104-irreducible-representations-of-so3-and-their-matrix-elements
-[M10.02.1.08]: SYNOPSIS-Miller2010.md#m1002108-spherical-harmonics-and-legendre-functions-as-matrix-elements
-[M10.02.2.03]: SYNOPSIS-Miller2010.md#m1002203-restriction-to-su2-wigner-functions
-[M10.02.2.04]: SYNOPSIS-Miller2010.md#m1002204-infinite-dimensional-representations-on-analytic-functions
-[M10.02.2.05]: SYNOPSIS-Miller2010.md#m1002205-unitarity-on-su11
-[M10.02.2.08]: SYNOPSIS-Miller2010.md#m1002208-principal-series-realization-of-sl2mathbb-r
-[M10.02.2.09]: SYNOPSIS-Miller2010.md#m1002209-signed-mellin-transform-and-inversion
-[M10.02.2.10]: SYNOPSIS-Miller2010.md#m1002210-matrix-kernels-and-their-addition-theorem
-[M10.03.0.01]: SYNOPSIS-Miller2010.md#m1003001-symmetry-and-conformal-symmetry-operators
-[M10.03.1.02]: SYNOPSIS-Miller2010.md#m1003102-differential-recurrences-from-partial_u_j
-[M10.03.1.03]: SYNOPSIS-Miller2010.md#m1003103-conformal-symmetries-of-the-wave-equation
-[M10.03.1.04]: SYNOPSIS-Miller2010.md#m1003104-jacobi-polynomials
-[M10.03.1.05]: SYNOPSIS-Miller2010.md#m1003105-lowering-and-raising-recurrences-for-jacobi-polynomials
-[M10.03.1.06]: SYNOPSIS-Miller2010.md#m1003106-jacobi-differential-equation
-[M10.03.1.07]: SYNOPSIS-Miller2010.md#m1003107-adjoint-pair-tautau-and-the-jacobi-weight
-[M10.03.1.08]: SYNOPSIS-Miller2010.md#m1003108-factorized-eigenvalue-problem-and-orthogonality
-[M10.03.1.09]: SYNOPSIS-Miller2010.md#m1003109-reflection-symmetry-of-jacobi-polynomials
-[M10.03.1.10]: SYNOPSIS-Miller2010.md#m1003110-recurrence-for-the-jacobi-norms
-[M10.03.1.11]: SYNOPSIS-Miller2010.md#m1003111-the-beta-integral-from-recurrences
-[M10.04.2.05]: SYNOPSIS-Miller2010.md#m1004205-the-metric-of-h-and-the-sphere
-[M10.04.2.09]: SYNOPSIS-Miller2010.md#m1004209-generic-parameters-no-nonconstant-first-order-symmetries
-[M10.04.2.10]: SYNOPSIS-Miller2010.md#m1004210-second-order-symmetries-s_ij
-[M10.04.2.12]: SYNOPSIS-Miller2010.md#m1004212-orthogonal-polynomial-bases-from-separable-systems
-[M10.04.2.16]: SYNOPSIS-Miller2010.md#m1004216-spherical-jacobi-basis-for-n2
-[M10.04.2.18]: SYNOPSIS-Miller2010.md#m1004218-the-ellipsoidal-symmetry-operator
-[M10.04.2.19]: SYNOPSIS-Miller2010.md#m1004219-action-of-mathcal-m-on-the-jacobi-basis-and-the-overlap-recurrence
-[M10.05.0.01]: SYNOPSIS-Miller2010.md#m1005001-su2-and-its-lie-algebra
-[M10.05.0.02]: SYNOPSIS-Miller2010.md#m1005002-irreducible-representations-of-su2
-[M10.05.0.03]: SYNOPSIS-Miller2010.md#m1005003-clebschgordan-series-and-coefficients
-[M10.05.0.04]: SYNOPSIS-Miller2010.md#m1005004-product-formula-for-matrix-elements
-[M10.05.0.05]: SYNOPSIS-Miller2010.md#m1005005-clebschgordan-coefficients-as-orthogonal-polynomials
-[M10.06.1.01]: SYNOPSIS-Miller2010.md#m1006101-timefrequency-translates-and-their-centres
-[M10.06.3.01]: SYNOPSIS-Miller2010.md#m1006301-haar-scaling-function
-[M10.06.3.02]: SYNOPSIS-Miller2010.md#m1006302-multiresolution-analysis
-[M10.06.3.06]: SYNOPSIS-Miller2010.md#m1006306-orthogonal-wavelet-decomposition
-[M10.06.3.07]: SYNOPSIS-Miller2010.md#m1006307-compact-support-and-the-cascade-algorithm
-[M10.06.3.08]: SYNOPSIS-Miller2010.md#m1006308-frequency-domain-dilation-equation-and-infinite-product
-[M10.06.3.09]: SYNOPSIS-Miller2010.md#m1006309-daubechies-filters
-[M10.06.3.10]: SYNOPSIS-Miller2010.md#m1006310-polynomial-reproduction

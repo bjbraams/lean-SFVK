@@ -73,48 +73,46 @@ overbarred \(\in\), which means \(\notin\).
 
 ## Summary by chapter
 
-- Chapter 1 ([SYNOPSIS-VK01](SYNOPSIS-VK01.md), 93 entries): 41 errata (Confirmed 40, Open check 1).
-- Chapter 2 ([SYNOPSIS-VK02](SYNOPSIS-VK02.md), 88 entries): 23 errata (Confirmed 22, Open check 1).
-- Chapter 3 ([SYNOPSIS-VK03](SYNOPSIS-VK03.md), 61 entries): 39 errata (Confirmed 36, Normalization
+- Chapter 1 (93 entries): 41 errata (Confirmed 40, Open check 1).
+- Chapter 2 (88 entries): 23 errata (Confirmed 22, Open check 1).
+- Chapter 3 (61 entries): 39 errata (Confirmed 36, Normalization
   check 2, Open check 1).
-- Chapter 4 ([SYNOPSIS-VK04](SYNOPSIS-VK04.md), 79 entries): 33 errata (Confirmed 32, Open check 1).
-- Chapter 5 ([SYNOPSIS-VK05](SYNOPSIS-VK05.md), 106 entries): 52 errata (Confirmed 51, Normalization
+- Chapter 4 (79 entries): 33 errata (Confirmed 32, Open check 1).
+- Chapter 5 (106 entries): 52 errata (Confirmed 51, Normalization
   check 1).
-- Chapter 6 ([SYNOPSIS-VK06](SYNOPSIS-VK06.md), 164 entries): 75 errata (Confirmed 70, Normalization
+- Chapter 6 (164 entries): 75 errata (Confirmed 70, Normalization
   check 4, Open check 1).
-- Chapter 7 ([SYNOPSIS-VK07](SYNOPSIS-VK07.md), 149 entries): 90 errata (Confirmed 78, Normalization
+- Chapter 7 (149 entries): 90 errata (Confirmed 78, Normalization
   check 1, Open check 11).
-- Chapter 8 ([SYNOPSIS-VK08](SYNOPSIS-VK08.md), 126 entries): 82 errata (Confirmed 75, Normalization
+- Chapter 8 (126 entries): 82 errata (Confirmed 75, Normalization
   check 3, Open check 4).
-- Chapter 9 ([SYNOPSIS-VK09](SYNOPSIS-VK09.md), 224 entries): 111 errata (Confirmed 105,
+- Chapter 9 (224 entries): 111 errata (Confirmed 105,
   Normalization check 2, Open check 4).
-- Chapter 10 ([SYNOPSIS-VK10](SYNOPSIS-VK10.md), 135 entries): 76 errata (Confirmed 66,
+- Chapter 10 (135 entries): 76 errata (Confirmed 66,
   Normalization check 3, Open check 7).
-- Chapter 11 ([SYNOPSIS-VK11](SYNOPSIS-VK11.md), 160 entries): 82 errata (Confirmed 74,
+- Chapter 11 (160 entries): 82 errata (Confirmed 74,
   Normalization check 3, Open check 5).
-- Chapter 12 ([SYNOPSIS-VK12](SYNOPSIS-VK12.md), 119 entries): 51 errata (Confirmed 47,
+- Chapter 12 (119 entries): 51 errata (Confirmed 47,
   Normalization check 2, Open check 2).
-- Chapter 13 ([SYNOPSIS-VK13](SYNOPSIS-VK13.md), 130 entries): 56 errata (Confirmed 51,
+- Chapter 13 (130 entries): 56 errata (Confirmed 51,
   Normalization check 2, Open check 3).
-- Chapter 14 ([SYNOPSIS-VK14](SYNOPSIS-VK14.md), 208 entries): 101 errata (Confirmed 84,
+- Chapter 14 (208 entries): 101 errata (Confirmed 84,
   Normalization check 3, Open check 14).
-- Chapter 15 ([SYNOPSIS-VK15](SYNOPSIS-VK15.md), 94 entries): 43 errata (Confirmed 38, Normalization
+- Chapter 15 (94 entries): 43 errata (Confirmed 38, Normalization
   check 4, Open check 1).
-- Chapter 16 ([SYNOPSIS-VK16](SYNOPSIS-VK16.md), 72 entries): 23 errata (Confirmed 20, Normalization
+- Chapter 16 (72 entries): 23 errata (Confirmed 20, Normalization
   check 2, Open check 1).
-- Chapter 17 ([SYNOPSIS-VK17](SYNOPSIS-VK17.md), 172 entries): 74 errata (Confirmed 66,
+- Chapter 17 (172 entries): 74 errata (Confirmed 66,
   Normalization check 6, Open check 2).
-- Chapter 18 ([SYNOPSIS-VK18](SYNOPSIS-VK18.md), 132 entries): 37 errata (Confirmed 28,
+- Chapter 18 (132 entries): 37 errata (Confirmed 28,
   Normalization check 3, Open check 6).
-- Chapter 19 ([SYNOPSIS-VK19](SYNOPSIS-VK19.md), 236 entries): 100 errata (Confirmed 90,
+- Chapter 19 (236 entries): 100 errata (Confirmed 90,
   Normalization check 8, Open check 2).
 
 Totals: Confirmed 1073, Normalization check 49, Open check 67; 1189 errata and 2548 synopsis
 entries.
 
 ## Chapter 1. Elements of the Theory of Lie Groups and Lie Algebras
-
-Synopsis: [SYNOPSIS-VK01](SYNOPSIS-VK01.md).
 
 ### E01.0.01. Scalar times unimodular factorization of \(GL(n,\kappa)\)
 
@@ -649,8 +647,6 @@ Target: [VK01.2.13].
 
 ## Chapter 2. Group Representations and Harmonic Analysis on Groups
 
-Synopsis: [SYNOPSIS-VK02](SYNOPSIS-VK02.md).
-
 ### E02.1.01. Continuity defined by operator-norm convergence
 
 Status: Confirmed.
@@ -1007,8 +1003,6 @@ Target: [VK02.3.23].
   groups.
 
 ## Chapter 3. Commutative groups, the gamma function and hypergeometric functions
-
-Synopsis: [SYNOPSIS-VK03](SYNOPSIS-VK03.md).
 
 ### E03.1.01. Residue of \(x_-^\lambda\)
 
@@ -1530,8 +1524,6 @@ Target: [VK03.5.13].
 
 ## Chapter 4. Groups of Motions of Euclidean and Pseudo-Euclidean Planes, Cylindrical Functions
 
-Synopsis: [SYNOPSIS-VK04](SYNOPSIS-VK04.md).
-
 ### E04.1.01. Radial multiplication formula: exponential for cosine
 
 Status: Confirmed.
@@ -2005,8 +1997,6 @@ Target: [VK04.4.10].
   composing the kernels of §4.2.4 ([VK04.3.01]), not by quadrature.
 
 ## Chapter 5. Third order triangular matrices and the confluent hypergeometric function
-
-Synopsis: [SYNOPSIS-VK05](SYNOPSIS-VK05.md).
 
 ### E05.1.01. Commutator \([a_-,e]\)
 
@@ -2564,8 +2554,6 @@ Target: [VK05.5.13].
 - The kernel notation \(\mathbf K\) in §5.4 includes the factor \(1/(2\pi i)\) ([E05.1.04]).
 
 ## Chapter 6. Representations of the Groups SU(2), SU(1,1) and Related Special Functions
-
-Synopsis: [SYNOPSIS-VK06](SYNOPSIS-VK06.md).
 
 ### E06.1.01. Euler angle \(\psi\) from \(\alpha\)
 
@@ -3617,8 +3605,6 @@ Target: [VK06.10.10].
   equivalently Meixner polynomials with \(\gamma=-2\ell\) ([VK06.8.17]).
 
 ## Chapter 7. Representations of the Groups SU(1,1) and SL(2,R) in Mixed Bases. The Hypergeometric Function
-
-Synopsis: [SYNOPSIS-VK07](SYNOPSIS-VK07.md).
 
 ### E07.1.01. Factorization theorem needs the closed angle range
 
@@ -4895,8 +4881,6 @@ Target: [VK07.8.17].
 
 ## Chapter 8. Clebsch–Gordan Coefficients, Racah Coefficients, and Special Functions
 
-Synopsis: [SYNOPSIS-VK08](SYNOPSIS-VK08.md).
-
 ### E08.1.01. Missing sign in the matrix-element expansion through CGC's
 
 Status: Confirmed.
@@ -5973,8 +5957,6 @@ Target: [VK08.7.02].
   (residual \(7.09\)); it is right only if \(\alpha^{(-n)}\) is read as \((\alpha+1)_n\).
 
 ## Chapter 9. Special Functions Connected with SO(n) and with Related Groups
-
-Synopsis: [SYNOPSIS-VK09](SYNOPSIS-VK09.md).
 
 For §§9.1–9.3, notation and conventions are those of SYNOPSIS-VK09. Numerical checks use mpmath and
 numpy/scipy at generic parameter values.
@@ -7461,8 +7443,6 @@ Target: [VK09.6.34].
 
 ## Chapter 10. Representations of Groups, Related to SO(n − 1), in Non-Canonical Bases, Special Functions, and Integral Transforms
 
-Synopsis: [SYNOPSIS-VK10](SYNOPSIS-VK10.md).
-
 ### E10.1.01. Gamma argument in the Fourier inversion constant
 
 Status: Confirmed.
@@ -8443,8 +8423,6 @@ Target: [VK10.7.10]
 - Wilson polynomials follow the convention of SYNOPSIS-VK08 (parameters \(a\pm it\)).
 
 ## Chapter 11. Special Functions Connected with the Groups U(n), U(n−1,1) and IU(n−1)
-
-Synopsis: [SYNOPSIS-VK11](SYNOPSIS-VK11.md).
 
 ### E11.1.01. U(n)/U(1) is PU(n), not SU(n)
 
@@ -9600,8 +9578,6 @@ Target: [VK11.7.03].
 
 ## Chapter 12. Representations of the Heisenberg Group and Special Functions
 
-Synopsis: [SYNOPSIS-VK12](SYNOPSIS-VK12.md).
-
 ### E12.1.01. Commutator of the Heisenberg generators
 
 Status: Confirmed.
@@ -10240,8 +10216,6 @@ Target: [VK12.6.25].
 - The zonal relation §12.6.5 (7) holds as printed with \(C_\ell^{(\alpha,\beta)}(e^{-i\theta})\).
 
 ## Chapter 13. Representations of Discrete Groups and Special Functions of Discrete Argument
-
-Synopsis: [SYNOPSIS-VK13](SYNOPSIS-VK13.md).
 
 ### E13.1.01. Labelling of the irreducible representations of \(S_n\) by partitions
 
@@ -11022,8 +10996,6 @@ Target: [VK13.3.26].
   [Klimyk 2006], p. 515, l. 7, restrict to \(0<q<1\), which is unnecessary.
 
 ## Chapter 14. Quantum Groups, q-Orthogonal Polynomials and Basic Hypergeometric Functions
-
-Synopsis: [SYNOPSIS-VK14](SYNOPSIS-VK14.md).
 
 For §§14.1–14.5, numerical checks use mpmath (30 digits) at the stated values of \(q\);
 Clebsch–Gordan and Racah
@@ -12280,8 +12252,6 @@ Target: [VK14.9.12]
 
 ## Chapter 15. Semisimple Lie Groups and Related Homogeneous Spaces
 
-Synopsis: [SYNOPSIS-VK15](SYNOPSIS-VK15.md).
-
 ### E15.1.01. Cartan subalgebra: missing semisimplicity
 
 Status: Confirmed.
@@ -12859,8 +12829,6 @@ Target: [VK15.3.28]
 
 ## Chapter 16. Representations of Semisimple Lie Groups and Their Matrix Elements
 
-Synopsis: [SYNOPSIS-VK16](SYNOPSIS-VK16.md).
-
 ### E16.1.01. Irreducible representations of GL(n,ℂ) as tensor products
 
 Status: Confirmed.
@@ -13288,8 +13256,6 @@ Target: [VK16.3.17]
   f_1\bar f_2\,dn_+\), and \(\int_{\mathbb C}|z|^{2\tau-2}d^2z\) diverges.
 
 ## Chapter 17. Group Representations and Special Functions of a Matrix Argument
-
-Synopsis: [SYNOPSIS-VK17](SYNOPSIS-VK17.md).
 
 ### E17.1.01. Fundamental solutions of the matrix Laplace equations
 
@@ -14617,8 +14583,6 @@ right).
 
 ## Chapter 18. Representations in the Gel'fand-Tsetlin Basis and Special Functions
 
-Synopsis: [SYNOPSIS-VK18](SYNOPSIS-VK18.md).
-
 ### E18.2.01. Dimension ratio inverted in the CGC symmetries
 
 Status: Confirmed.
@@ -15158,8 +15122,6 @@ Target: [VK18.7.15], [VK18.7.16].
   index is meant.
 
 ## Chapter 19. Modular Forms, Theta Functions and Representations of Affine Lie Algebras
-
-Synopsis: [SYNOPSIS-VK19](SYNOPSIS-VK19.md).
 
 ### E19.1.01. Stabilizers of cusps in statement (4)
 
@@ -16515,7 +16477,6 @@ Target: [VK19.9.13].
   it is read as the extended Jacobi symbol \(\big(\frac{m(m+g)}d\big)\).
 - The source writes \(\mathbb Z_+\) for the positive integers in §§19.7–19.9.
 
-
 ## Published corrections to material outside the synopses
 
 The published lists also correct the following statements and formulas. The synopses do not
@@ -16606,1137 +16567,12 @@ this file accounts for every mathematical item of the two lists.
 [E19.4.06]: #e19406-sign-in-rho-s_0w_mrho-for-a_11
 [E19.7.08]: #e19708-cone-in-the-description-of-plambda-definition-of-q
 [E19.9.03]: #e19903-parameter-mu-in-the-hecke-form-of-eell_jk
-[VK01.0.14]: SYNOPSIS-VK01.md#vk01014-direct-products-and-direct-sums
-[VK01.0.16]: SYNOPSIS-VK01.md#vk01016-direct-sums-of-algebras-and-semidirect-products
-[VK01.0.19]: SYNOPSIS-VK01.md#vk01019-topological-and-metric-spaces
-[VK01.0.22]: SYNOPSIS-VK01.md#vk01022-riemannian-pseudo-riemannian-and-kähler-metrics
-[VK01.0.24]: SYNOPSIS-VK01.md#vk01024-derivatives-of-basic-generalized-functions
-[VK01.0.25]: SYNOPSIS-VK01.md#vk01025-fundamental-solutions-of-the-laplacian
-[VK01.0.26]: SYNOPSIS-VK01.md#vk01026-delta-sequences
-[VK01.0.29]: SYNOPSIS-VK01.md#vk01029-delta-function-of-a-hypersurface
-[VK01.0.33]: SYNOPSIS-VK01.md#vk01033-operators-on-hilbert-space
-[VK01.0.36]: SYNOPSIS-VK01.md#vk01036-countably-hilbert-and-nuclear-spaces
-[VK01.0.42]: SYNOPSIS-VK01.md#vk01042-hilbert-tensor-products
-[VK01.0.43]: SYNOPSIS-VK01.md#vk01043-banach-algebras-with-involution
-[VK01.1.06]: SYNOPSIS-VK01.md#vk01106-compact-linear-groups
-[VK01.1.12]: SYNOPSIS-VK01.md#vk01112-exponentials-of-matrix-units-and-jordan-blocks
-[VK01.1.16]: SYNOPSIS-VK01.md#vk01116-invariant-forms-and-metrics
-[VK01.1.20]: SYNOPSIS-VK01.md#vk01120-complex-simple-lie-algebras
-[VK01.1.21]: SYNOPSIS-VK01.md#vk01121-compact-lie-algebras-and-cartans-compactness-criterion
-[VK01.1.24]: SYNOPSIS-VK01.md#vk01124-nilpotent-and-solvable-lie-algebras
-[VK01.1.25]: SYNOPSIS-VK01.md#vk01125-triangular-algebras-engels-theorem-flags
-[VK01.1.27]: SYNOPSIS-VK01.md#vk01127-radical-and-levimalcev-decomposition
-[VK01.2.03]: SYNOPSIS-VK01.md#vk01203-flat-homogeneous-spaces
-[VK01.2.06]: SYNOPSIS-VK01.md#vk01206-pseudo-orthogonal-frames-and-null-frames
-[VK01.2.12]: SYNOPSIS-VK01.md#vk01212-riemannian-dual-pairs
-[VK01.2.14]: SYNOPSIS-VK01.md#vk01214-bounded-matrix-domain-and-its-compact-dual
-[VK01.2.18]: SYNOPSIS-VK01.md#vk01218-measures-on-homogeneous-spaces
-[VK01.2.19]: SYNOPSIS-VK01.md#vk01219-haar-measures-of-gln-and-slnmathbb-r
-[VK01.2.20]: SYNOPSIS-VK01.md#vk01220-invariant-measures-on-spheres-and-hyperboloids
-[VK01.2.21]: SYNOPSIS-VK01.md#vk01221-haar-measures-of-the-triangular-group
-[VK01.2.22]: SYNOPSIS-VK01.md#vk01222-group-algebra-l1gmu_r
-[VK01.2.23]: SYNOPSIS-VK01.md#vk01223-ideals-of-the-group-algebra
-[VK02.1.02]: SYNOPSIS-VK02.md#vk02102-continuous-representations
-[VK02.1.03]: SYNOPSIS-VK02.md#vk02103-elementary-examples
-[VK02.1.10]: SYNOPSIS-VK02.md#vk02110-tensor-product
-[VK02.1.15]: SYNOPSIS-VK02.md#vk02115-representation-of-the-group-ring
-[VK02.1.23]: SYNOPSIS-VK02.md#vk02123-quasi-regular-representations-on-spheres-and-hyperboloids
-[VK02.2.08]: SYNOPSIS-VK02.md#vk02208-passage-to-the-lie-algebra
-[VK02.2.21]: SYNOPSIS-VK02.md#vk02221-harmonic-polynomials-and-eigenspaces-of-invariant-integral-operators
-[VK02.2.23]: SYNOPSIS-VK02.md#vk02223-examples-of-equivalence
-[VK02.2.26]: SYNOPSIS-VK02.md#vk02226-analytic-continuation-of-representations-to-the-complex-group
-[VK02.2.27]: SYNOPSIS-VK02.md#vk02227-anti-analytic-representations-irreducible-representations-of-complex-groups
-[VK02.2.30]: SYNOPSIS-VK02.md#vk02230-schurs-lemma-in-hilbert-space-operator-irreducibility
-[VK02.2.32]: SYNOPSIS-VK02.md#vk02232-invariant-bilinear-functionals
-[VK02.2.34]: SYNOPSIS-VK02.md#vk02234-invariant-sesquilinear-functionals-on-operator-spaces
-[VK02.2.35]: SYNOPSIS-VK02.md#vk02235-intertwiners-of-completely-reducible-representations
-[VK02.2.37]: SYNOPSIS-VK02.md#vk02237-invariant-inner-products
-[VK02.3.07]: SYNOPSIS-VK02.md#vk02307-schur-orthogonality-relations
-[VK02.3.16]: SYNOPSIS-VK02.md#vk02316-expansion-of-right-h-invariant-functions
-[VK02.3.19]: SYNOPSIS-VK02.md#vk02319-fourier-coefficients-and-convolution
-[VK02.3.20]: SYNOPSIS-VK02.md#vk02320-irreducible-representations-separate-l1g
-[VK02.3.21]: SYNOPSIS-VK02.md#vk02321-commutativity-of-the-bi-invariant-algebra
-[VK03.1.07]: SYNOPSIS-VK03.md#vk03107-homogeneous-distributions-x_pmlambda-xlambda-xpm-i0lambda
-[VK03.2.02]: SYNOPSIS-VK03.md#vk03202-fourier-series-of-smooth-functions
-[VK03.3.04]: SYNOPSIS-VK03.md#vk03304-the-mellin-transform
-[VK03.3.05]: SYNOPSIS-VK03.md#vk03305-the-gaussweierstrass-transform
-[VK03.4.02]: SYNOPSIS-VK03.md#vk03402-the-representations-r_lambda
-[VK03.4.03]: SYNOPSIS-VK03.md#vk03403-mellin-realization-of-r_lambda
-[VK03.4.04]: SYNOPSIS-VK03.md#vk03404-the-kernel-kwzg-in-terms-of-gamma
-[VK03.4.05]: SYNOPSIS-VK03.md#vk03405-functional-equation-continuation-and-residues-of-gamma
-[VK03.4.07]: SYNOPSIS-VK03.md#vk03407-the-beta-function-and-the-multiplication-formula
-[VK03.4.08]: SYNOPSIS-VK03.md#vk03408-fourier-transforms-of-x_u-x_-u-and-related-distributions
-[VK03.5.02]: SYNOPSIS-VK03.md#vk03502-laplace-transform-of-_pf_q-and-its-inverse
-[VK03.5.03]: SYNOPSIS-VK03.md#vk03503-integral-formulas-for-_0f_1
-[VK03.5.05]: SYNOPSIS-VK03.md#vk03505-euler-integral-and-continuation-of-_2f_1
-[VK03.5.06]: SYNOPSIS-VK03.md#vk03506-elementary-properties-of-the-gauss-function
-[VK03.5.07]: SYNOPSIS-VK03.md#vk03507-integrals-reducible-to-the-hypergeometric-function
-[VK03.5.10]: SYNOPSIS-VK03.md#vk03510-integral-representations-of-j_nu
-[VK03.5.15]: SYNOPSIS-VK03.md#vk03515-relations-between-cylindrical-functions
-[VK03.5.18]: SYNOPSIS-VK03.md#vk03518-parabolic-cylinder-function
-[VK03.5.20]: SYNOPSIS-VK03.md#vk03520-jacobi-legendre-gegenbauer-and-chebyshev-polynomials
-[VK03.5.21]: SYNOPSIS-VK03.md#vk03521-jacobi-and-legendre-functions
-[VK03.5.28]: SYNOPSIS-VK03.md#vk03528-fractional-integration-by-parts
-[VK03.5.30]: SYNOPSIS-VK03.md#vk03530-fractional-derivatives
-[VK03.5.31]: SYNOPSIS-VK03.md#vk03531-raising-the-order-of-_pf_q-by-beta-integration
-[VK03.5.32]: SYNOPSIS-VK03.md#vk03532-fractional-integrals-of-hypergeometric-functions
-[VK03.5.34]: SYNOPSIS-VK03.md#vk03534-batemans-integral-and-related-transformations-of-f
-[VK03.5.36]: SYNOPSIS-VK03.md#vk03536-fractional-integrals-of-laguerre-polynomials
-[VK04.1.12]: SYNOPSIS-VK04.md#vk04112-radial-form-of-the-multiplication-formula
-[VK04.2.04]: SYNOPSIS-VK04.md#vk04204-double-coset-decomposition
-[VK04.2.10]: SYNOPSIS-VK04.md#vk04210-reflection-and-the-sign-of-r
-[VK04.2.14]: SYNOPSIS-VK04.md#vk04214-null-translation-gamma-kernels
-[VK04.3.01]: SYNOPSIS-VK04.md#vk04301-composition-of-kernels
-[VK04.3.03]: SYNOPSIS-VK04.md#vk04303-recurrences-for-cylindrical-functions
-[VK04.3.05]: SYNOPSIS-VK04.md#vk04305-derivatives-of-zpmnu-multiples
-[VK04.3.06]: SYNOPSIS-VK04.md#vk04306-cylindrical-functions-of-order-pmfrac12
-[VK04.3.07]: SYNOPSIS-VK04.md#vk04307-rodrigues-type-formulas-for-half-integral-order
-[VK04.3.08]: SYNOPSIS-VK04.md#vk04308-finite-expansions-for-half-integral-order
-[VK04.3.10]: SYNOPSIS-VK04.md#vk04310-barnes-integrals-for-hankel-functions
-[VK04.3.11]: SYNOPSIS-VK04.md#vk04311-barnes-integral-for-j_lambda
-[VK04.3.14]: SYNOPSIS-VK04.md#vk04314-hankel-version-of-vk04313
-[VK04.3.15]: SYNOPSIS-VK04.md#vk04315-residue-series
-[VK04.3.18]: SYNOPSIS-VK04.md#vk04318-residue-series-for-i_1-i_2
-[VK04.3.19]: SYNOPSIS-VK04.md#vk04319-mellin-forms
-[VK04.3.21]: SYNOPSIS-VK04.md#vk04321-addition-theorem-for-hankel-functions
-[VK04.3.26]: SYNOPSIS-VK04.md#vk04326-multiplication-theorem-for-macdonald-functions
-[VK04.3.30]: SYNOPSIS-VK04.md#vk04330-ramanujans-formula
-[VK04.4.02]: SYNOPSIS-VK04.md#vk04402-decomposition-of-the-quasi-regular-representation-of-iso2
-[VK04.4.03]: SYNOPSIS-VK04.md#vk04403-laplacian-plane-waves-and-the-bessel-equation
-[VK04.4.07]: SYNOPSIS-VK04.md#vk04407-integral-of-three-bessel-functions
-[VK04.4.09]: SYNOPSIS-VK04.md#vk04409-decomposition-of-the-quasi-regular-representation-of-iso11
-[VK04.4.11]: SYNOPSIS-VK04.md#vk04411-the-kernels-a_jk
-[VK04.4.12]: SYNOPSIS-VK04.md#vk04412-inversion-and-plancherel-for-the-sector-transform
-[VK04.4.13]: SYNOPSIS-VK04.md#vk04413-one-variable-transform-pairs
-[VK04.4.14]: SYNOPSIS-VK04.md#vk04414-the-scalar-transform-with-kernel-arholambda
-[VK04.4.15]: SYNOPSIS-VK04.md#vk04415-transforms-with-p_1p_3-p_2p_40
-[VK04.4.18]: SYNOPSIS-VK04.md#vk04418-gamma-reciprocal-pairs
-[VK05.1.02]: SYNOPSIS-VK05.md#vk05102-one-parameter-subgroups-and-the-lie-algebra
-[VK05.1.03]: SYNOPSIS-VK05.md#vk05103-factorization-of-group-elements
-[VK05.1.10]: SYNOPSIS-VK05.md#vk05110-kernels-for-g_t
-[VK05.2.10]: SYNOPSIS-VK05.md#vk05210-power-series-of-m_lambdamu-from-the-barnes-integral
-[VK05.3.03]: SYNOPSIS-VK05.md#vk05303-connection-and-kummer-transformations
-[VK05.3.06]: SYNOPSIS-VK05.md#vk05306-differentiation-formulas-for-phi
-[VK05.3.07]: SYNOPSIS-VK05.md#vk05307-contiguous-relations-for-psi
-[VK05.3.13]: SYNOPSIS-VK05.md#vk05313-the-group-g_2-and-its-representations-t_alpha
-[VK05.3.17]: SYNOPSIS-VK05.md#vk05317-higher-derivatives-and-translation-expansions
-[VK05.3.19]: SYNOPSIS-VK05.md#vk05319-addition-theorem-for-parabolic-cylinder-functions
-[VK05.3.20]: SYNOPSIS-VK05.md#vk05320-series-form-of-the-addition-theorem
-[VK05.3.23]: SYNOPSIS-VK05.md#vk05323-degenerate-addition-theorems
-[VK05.3.24]: SYNOPSIS-VK05.md#vk05324-d_-12-and-macdonald-functions
-[VK05.3.25]: SYNOPSIS-VK05.md#vk05325-the-group-g_3-and-its-representation-on-the-circle
-[VK05.4.03]: SYNOPSIS-VK05.md#vk05403-mellin-transform-of-m-in-a-parameter
-[VK05.4.04]: SYNOPSIS-VK05.md#vk05404-the-integral-mathcal-i_2
-[VK05.4.08]: SYNOPSIS-VK05.md#vk05408-the-general-continuous-addition-theorem
-[VK05.4.10]: SYNOPSIS-VK05.md#vk05410-the-integral-mathcal-i_5
-[VK05.4.11]: SYNOPSIS-VK05.md#vk05411-the-integrals-mathcal-i_6mathcal-i_7mathcal-i_8
-[VK05.4.12]: SYNOPSIS-VK05.md#vk05412-multiplication-theorems-for-whittaker-functions
-[VK05.4.15]: SYNOPSIS-VK05.md#vk05415-decomposition-into-irreducible-representations
-[VK05.4.16]: SYNOPSIS-VK05.md#vk05416-transforms-with-parabolic-cylinder-kernels
-[VK05.4.17]: SYNOPSIS-VK05.md#vk05417-gaussweierstrass-transform-and-a-parabolic-cylinder-expansion
-[VK05.4.18]: SYNOPSIS-VK05.md#vk05418-the-meijer-transform
-[VK05.5.01]: SYNOPSIS-VK05.md#vk05501-the-complex-triangular-group-and-its-representations-on-entire-functions
-[VK05.5.02]: SYNOPSIS-VK05.md#vk05502-matrix-elements-laguerre-polynomials
-[VK05.5.06]: SYNOPSIS-VK05.md#vk05506-the-subgroup-s-and-its-unitary-representations
-[VK05.5.08]: SYNOPSIS-VK05.md#vk05508-laguerre-polynomials-and-confluent-hypergeometric-functions
-[VK05.5.16]: SYNOPSIS-VK05.md#vk05516-summation-formulas-from-g_xg_1t
-[VK05.5.17]: SYNOPSIS-VK05.md#vk05517-finite-summation-formulas-from-g_-xg_1t
-[VK05.5.20]: SYNOPSIS-VK05.md#vk05520-addition-theorem-from-g_1tvarepsilontaug_2s
-[VK05.5.22]: SYNOPSIS-VK05.md#vk05522-general-product-formula
-[VK05.5.23]: SYNOPSIS-VK05.md#vk05523-laguerre-polynomials-and-cylinder-and-whittaker-functions
-[VK05.5.24]: SYNOPSIS-VK05.md#vk05524-charlier-polynomials
-[VK05.5.26]: SYNOPSIS-VK05.md#vk05526-orthogonality-dual-orthogonality-and-completeness
-[VK05.5.30]: SYNOPSIS-VK05.md#vk05530-summation-formulas-for-charlier-polynomials
-[VK06.1.01]: SYNOPSIS-VK06.md#vk06101-euler-angles-on-su2
-[VK06.1.04]: SYNOPSIS-VK06.md#vk06104-composition-of-euler-angles-on-su11
-[VK06.1.07]: SYNOPSIS-VK06.md#vk06107-casimir-elements
-[VK06.1.13]: SYNOPSIS-VK06.md#vk06113-universal-covering-group-of-su11
-[VK06.10.02]: SYNOPSIS-VK06.md#vk061002-orthonormal-systems-on--11
-[VK06.10.04]: SYNOPSIS-VK06.md#vk061004-expansions-in-the-subspaces-mathfrak-l2_n
-[VK06.10.06]: SYNOPSIS-VK06.md#vk061006-jacobi-gegenbauer-and-legendre-expansions
-[VK06.10.07]: SYNOPSIS-VK06.md#vk061007-infinitesimal-operators-of-the-right-regular-representation
-[VK06.10.09]: SYNOPSIS-VK06.md#vk061009-expansions-of-smooth-functions
-[VK06.10.10]: SYNOPSIS-VK06.md#vk061010-product-kernel-for-pell_nk
-[VK06.3.14]: SYNOPSIS-VK06.md#vk06314-symmetries-of-pl_mn
-[VK06.3.17]: SYNOPSIS-VK06.md#vk06317-legendre-and-associated-legendre-functions-as-matrix-elements
-[VK06.3.21]: SYNOPSIS-VK06.md#vk06321-gegenbauer-polynomials-derivatives-parity-values
-[VK06.3.22]: SYNOPSIS-VK06.md#vk06322-rodrigues-formulas-for-ferrers-functions-and-gegenbauer-polynomials
-[VK06.3.23]: SYNOPSIS-VK06.md#vk06323-integral-representations-of-ferrers-functions-and-gegenbauer-polynomials
-[VK06.3.26]: SYNOPSIS-VK06.md#vk06326-legendre-polynomials
-[VK06.4.03]: SYNOPSIS-VK06.md#vk06403-irreducibility-at-non-integral-points
-[VK06.4.06]: SYNOPSIS-VK06.md#vk06406-intertwiners-at-integral-points
-[VK06.4.07]: SYNOPSIS-VK06.md#vk06407-casimir-operator-and-classification-of-the-irreducible-representations
-[VK06.4.11]: SYNOPSIS-VK06.md#vk06411-integral-forms-of-the-invariant-scalar-products
-[VK06.4.12]: SYNOPSIS-VK06.md#vk06412-principal-series-of-the-universal-covering-group
-[VK06.5.08]: SYNOPSIS-VK06.md#vk06508-integral-representations-on-the-unit-circle
-[VK06.5.10]: SYNOPSIS-VK06.md#vk06510-real-integrals-over--tt
-[VK06.5.11]: SYNOPSIS-VK06.md#vk06511-integrals-over-0infty
-[VK06.5.16]: SYNOPSIS-VK06.md#vk06516-jacobi-polynomial-forms-in-the-integral-case
-[VK06.5.17]: SYNOPSIS-VK06.md#vk06517-matrix-elements-of-the-discrete-series
-[VK06.5.18]: SYNOPSIS-VK06.md#vk06518-jacobi-and-associated-legendre-functions
-[VK06.5.20]: SYNOPSIS-VK06.md#vk06520-associated-legendre-functions-on-1infty
-[VK06.5.21]: SYNOPSIS-VK06.md#vk06521-integral-representations-of-mathfrak-pm_tau
-[VK06.5.22]: SYNOPSIS-VK06.md#vk06522-integral-representations-of-the-legendre-function
-[VK06.6.04]: SYNOPSIS-VK06.md#vk06604-addition-theorem-for-the-discrete-series
-[VK06.6.05]: SYNOPSIS-VK06.md#vk06605-addition-theorem-for-legendre-functions
-[VK06.6.06]: SYNOPSIS-VK06.md#vk06606-addition-theorem-for-legendre-polynomials
-[VK06.6.07]: SYNOPSIS-VK06.md#vk06607-special-cases-varphi_20
-[VK06.6.09]: SYNOPSIS-VK06.md#vk06609-multiplication-formulas-for-associated-legendre-functions
-[VK06.6.11]: SYNOPSIS-VK06.md#vk06611-product-formulas-as-integrals-over-the-distance
-[VK06.6.14]: SYNOPSIS-VK06.md#vk06614-analog-of-the-ramanujan-formula
-[VK06.7.04]: SYNOPSIS-VK06.md#vk06704-sums-of-mathfrak-ptau_mn-over-the-row-index
-[VK06.7.06]: SYNOPSIS-VK06.md#vk06706-convolution-in-the-degree-for-mathfrak-ptau_mn
-[VK06.7.07]: SYNOPSIS-VK06.md#vk06707-convolution-for-the-discrete-series-and-for-su2
-[VK06.7.08]: SYNOPSIS-VK06.md#vk06708-first-order-relations-for-pell_mn-in-the-column-index
-[VK06.7.13]: SYNOPSIS-VK06.md#vk06713-contiguous-relations-for-jacobi-polynomials-i
-[VK06.7.14]: SYNOPSIS-VK06.md#vk06714-contiguous-relations-for-jacobi-polynomials-ii
-[VK06.7.15]: SYNOPSIS-VK06.md#vk06715-derivative-relations-for-jacobi-polynomials
-[VK06.7.24]: SYNOPSIS-VK06.md#vk06724-contour-integral-for-pell_mn
-[VK06.7.25]: SYNOPSIS-VK06.md#vk06725-generating-functions-in-the-degree-ell
-[VK06.7.26]: SYNOPSIS-VK06.md#vk06726-generating-functions-for-associated-legendre-and-gegenbauer-polynomials
-[VK06.7.27]: SYNOPSIS-VK06.md#vk06727-continuous-generating-function-for-mathfrak-ptau_mn
-[VK06.8.01]: SYNOPSIS-VK06.md#vk06801-krawtchouk-polynomials-and-the-matrix-elements-of-t_ell
-[VK06.8.02]: SYNOPSIS-VK06.md#vk06802-symmetries-and-special-values-of-krawtchouk-polynomials
-[VK06.8.03]: SYNOPSIS-VK06.md#vk06803-krawtchouk-polynomials-as-jacobi-polynomials
-[VK06.8.04]: SYNOPSIS-VK06.md#vk06804-orthogonality-and-expansions-for-krawtchouk-polynomials
-[VK06.8.06]: SYNOPSIS-VK06.md#vk06806-difference-differentiation-of-krawtchouk-polynomials
-[VK06.8.07]: SYNOPSIS-VK06.md#vk06807-generating-functions-for-krawtchouk-polynomials
-[VK06.8.09]: SYNOPSIS-VK06.md#vk06809-meixner-polynomials-and-the-discrete-series
-[VK06.8.10]: SYNOPSIS-VK06.md#vk06810-symmetry-and-other-forms-of-meixner-polynomials
-[VK06.8.13]: SYNOPSIS-VK06.md#vk06813-generating-function-for-meixner-polynomials
-[VK06.8.16]: SYNOPSIS-VK06.md#vk06816-symmetrized-functions-widehatmathfrak-ptau_mn
-[VK06.8.17]: SYNOPSIS-VK06.md#vk06817-krawtchoukmeixner-functions
-[VK06.8.19]: SYNOPSIS-VK06.md#vk06819-orthogonality-of-krawtchoukmeixner-functions-principal-series
-[VK06.8.20]: SYNOPSIS-VK06.md#vk06820-orthogonality-of-krawtchoukmeixner-functions-complementary-series
-[VK06.8.21]: SYNOPSIS-VK06.md#vk06821-recurrence-and-difference-equations-for-krawtchoukmeixner-functions
-[VK06.9.02]: SYNOPSIS-VK06.md#vk06902-chebyshev-polynomials-as-gegenbauer-polynomials
-[VK06.9.03]: SYNOPSIS-VK06.md#vk06903-differential-equations-and-rodrigues-formulas
-[VK06.9.08]: SYNOPSIS-VK06.md#vk06908-orthogonality-and-completeness-of-chebyshev-polynomials
-[VK07.1.01]: SYNOPSIS-VK07.md#vk07101-lemma-on-symmetric-matrices
-[VK07.1.02]: SYNOPSIS-VK07.md#vk07102-theorem-1-factorization-of-sl2r
-[VK07.1.03]: SYNOPSIS-VK07.md#vk07103-matrices-with-a-zero-entry
-[VK07.1.04]: SYNOPSIS-VK07.md#vk07104-line-model-of-t_chi
-[VK07.1.10]: SYNOPSIS-VK07.md#vk07110-infinitesimal-operators
-[VK07.2.07]: SYNOPSIS-VK07.md#vk07207-kernels-of-upper-triangular-matrices
-[VK07.3.01]: SYNOPSIS-VK07.md#vk07301-a-factorization-and-its-derivatives
-[VK07.3.10]: SYNOPSIS-VK07.md#vk07310-a-second-barnes-integral
-[VK07.3.11]: SYNOPSIS-VK07.md#vk07311-barnes-integrals-from-the-rotation-compact-support
-[VK07.3.12]: SYNOPSIS-VK07.md#vk07312-four-gamma-barnes-integral-and-a-vanishing-integral
-[VK07.3.18]: SYNOPSIS-VK07.md#vk07318-existence-of-quadratic-transformations
-[VK07.4.01]: SYNOPSIS-VK07.md#vk07401-the-functions-mathfrak-ptau_lambdamu
-[VK07.4.07]: SYNOPSIS-VK07.md#vk07407-the-kernels-mathbf-k22h-through-mathfrak-p-and-mathfrak-q
-[VK07.4.12]: SYNOPSIS-VK07.md#vk07412-reduction-for-alphabeta-and-the-case-alphabeta-frac12
-[VK07.4.14]: SYNOPSIS-VK07.md#vk07414-differentiation-formulas
-[VK07.4.15]: SYNOPSIS-VK07.md#vk07415-abel-type-integral-representations
-[VK07.4.18]: SYNOPSIS-VK07.md#vk07418-hypergeometric-expansions-of-mathfrak-plambda_tau
-[VK07.4.23]: SYNOPSIS-VK07.md#vk07423-mathfrak-q-through-mathfrak-p-and-conversely
-[VK07.4.25]: SYNOPSIS-VK07.md#vk07425-elementary-cases
-[VK07.4.29]: SYNOPSIS-VK07.md#vk07429-recurrence-and-differentiation-formulas-for-gegenbauer-functions
-[VK07.4.30]: SYNOPSIS-VK07.md#vk07430-reflection-of-the-degree
-[VK07.5.02]: SYNOPSIS-VK07.md#vk07502-mellinbarnes-integral-from-hvarphig_-z-z0
-[VK07.5.03]: SYNOPSIS-VK07.md#vk07503-a-mellin-transform-in-the-parameters-of-_2f_1
-[VK07.5.04]: SYNOPSIS-VK07.md#vk07504-summation-formulas-from-vk07502
-[VK07.5.05]: SYNOPSIS-VK07.md#vk07505-factorization-of-hvarphig_--z_1-for-0z_1tanhvarphi
-[VK07.5.07]: SYNOPSIS-VK07.md#vk07507-summation-formulas-for-0z_1tanhvarphi
-[VK07.5.08]: SYNOPSIS-VK07.md#vk07508-a-third-summation-formula-for-0z_1tanhvarphi
-[VK07.5.09]: SYNOPSIS-VK07.md#vk07509-factorizations-for-z_1tanhvarphi
-[VK07.5.12]: SYNOPSIS-VK07.md#vk07512-mellinbarnes-integrals-with-fnuomega-lambdanu-lambda1x
-[VK07.5.13]: SYNOPSIS-VK07.md#vk07513-mellinbarnes-integrals-from-hvarphig_--cothvarphi
-[VK07.5.14]: SYNOPSIS-VK07.md#vk07514-mellinbarnes-integrals-from-uvarphig_--cotvarphi
-[VK07.5.15]: SYNOPSIS-VK07.md#vk07515-summation-formulas-from-vk07512-and-vk07514
-[VK07.5.18]: SYNOPSIS-VK07.md#vk07518-addition-formulas-with-fcdottanh2theta_1
-[VK07.5.19]: SYNOPSIS-VK07.md#vk07519-summation-formulas-from-vk07518
-[VK07.5.20]: SYNOPSIS-VK07.md#vk07520-factorization-hvarphidth-psi-with-a-zero-entry-formulas-14
-[VK07.5.21]: SYNOPSIS-VK07.md#vk07521-factorization-hvarphidth-psi-lower-triangular-formulas-58
-[VK07.6.04]: SYNOPSIS-VK07.md#vk07604-k33lambdamuchis-in-terms-of-bessel-functions
-[VK07.6.05]: SYNOPSIS-VK07.md#vk07605-kernels-of-q_chig-for-betane0-and-for-g_t
-[VK07.6.06]: SYNOPSIS-VK07.md#vk07606-kernels-of-q_chihtheta-q_chiutheta-q_chis-1
-[VK07.6.07]: SYNOPSIS-VK07.md#vk07607-reciprocal-hankel-type-transforms
-[VK07.6.08]: SYNOPSIS-VK07.md#vk07608-factorization-of-hvarphig_-z-z0-and-the-kernel-identity
-[VK07.6.10]: SYNOPSIS-VK07.md#vk07610-functional-relations-case-tanhvarphi-zcothvarphi
-[VK07.6.11]: SYNOPSIS-VK07.md#vk07611-composition-of-the-kernels-of-g_t
-[VK07.6.12]: SYNOPSIS-VK07.md#vk07612-addition-theorems-for-h1_2tau1-and-k_2tau1
-[VK07.6.13]: SYNOPSIS-VK07.md#vk07613-relations-from-sg_--ts-1g_t
-[VK07.6.14]: SYNOPSIS-VK07.md#vk07614-fourier-transforms-of-products-of-cylinder-functions
-[VK07.7.01]: SYNOPSIS-VK07.md#vk07701-the-kernel-k11-and-its-values-on-one-parameter-subgroups
-[VK07.7.02]: SYNOPSIS-VK07.md#vk07702-integral-representations-of-the-mixed-kernels
-[VK07.7.04]: SYNOPSIS-VK07.md#vk07704-symmetry-relations-and-diagonal-cases
-[VK07.7.06]: SYNOPSIS-VK07.md#vk07706-the-kernel-k21-for-g_-t
-[VK07.7.07]: SYNOPSIS-VK07.md#vk07707-fourier-transforms-of-powers-of-linear-functions
-[VK07.7.08]: SYNOPSIS-VK07.md#vk07708-the-kernel-k31-and-the-recoupling-coefficients
-[VK07.7.09]: SYNOPSIS-VK07.md#vk07709-reciprocal-transforms-with-whittaker-kernels
-[VK07.7.11]: SYNOPSIS-VK07.md#vk07711-addition-theorems-whittaker-functions-and-mathfrak-ptau_mn
-[VK07.7.12]: SYNOPSIS-VK07.md#vk07712-addition-theorems-whittaker-and-hypergeometric-functions
-[VK07.7.13]: SYNOPSIS-VK07.md#vk07713-addition-theorems-series-of-whittaker-functions
-[VK07.7.14]: SYNOPSIS-VK07.md#vk07714-addition-theorems-hypergeometric-series-and-integrals
-[VK07.7.15]: SYNOPSIS-VK07.md#vk07715-addition-theorems-whittaker-and-bessel-functions
-[VK07.7.16]: SYNOPSIS-VK07.md#vk07716-discrete-series-in-the-unit-disk-and-the-upper-half-plane
-[VK07.7.18]: SYNOPSIS-VK07.md#vk07718-the-mellin-model-of-the-discrete-series
-[VK07.7.20]: SYNOPSIS-VK07.md#vk07720-the-oscillator-model-and-its-generators
-[VK07.7.23]: SYNOPSIS-VK07.md#vk07723-bessel-function-identities-from-the-discrete-series
-[VK07.7.24]: SYNOPSIS-VK07.md#vk07724-laguerre-polynomial-identities-from-the-discrete-series
-[VK07.7.25]: SYNOPSIS-VK07.md#vk07725-reciprocal-transforms-from-the-discrete-series
-[VK07.7.26]: SYNOPSIS-VK07.md#vk07726-meixnerpollaczek-polynomials
-[VK07.8.01]: SYNOPSIS-VK07.md#vk07801-the-fourier-transform-on-sl2mathbb-r
-[VK07.8.03]: SYNOPSIS-VK07.md#vk07803-characters-of-the-discrete-series
-[VK07.8.07]: SYNOPSIS-VK07.md#vk07807-expansion-in-matrix-elements
-[VK07.8.09]: SYNOPSIS-VK07.md#vk07809-jacobi-polynomials-orthogonal-on-1infty
-[VK07.8.12]: SYNOPSIS-VK07.md#vk07812-bessel-function-transforms-on-0infty
-[VK07.8.13]: SYNOPSIS-VK07.md#vk07813-a-whittaker-transform
-[VK07.8.15]: SYNOPSIS-VK07.md#vk07815-the-laplace-operator-on-sl2mathbb-r
-[VK07.8.17]: SYNOPSIS-VK07.md#vk07817-the-jacobi-transform
-[VK08.1.08]: SYNOPSIS-VK08.md#vk08108-matrix-elements-of-t_l-through-cgcs
-[VK08.2.02]: SYNOPSIS-VK08.md#vk08202-generating-function-in-three-variables
-[VK08.2.04]: SYNOPSIS-VK08.md#vk08204-determinant-expansion-and-the-regge-symbol
-[VK08.2.06]: SYNOPSIS-VK08.md#vk08206-symmetry-relations-for-cgcs
-[VK08.2.07]: SYNOPSIS-VK08.md#vk08207-cgcs-and-products-of-matrix-elements
-[VK08.2.09]: SYNOPSIS-VK08.md#vk08209-integral-representations-of-cgcs
-[VK08.2.10]: SYNOPSIS-VK08.md#vk08210-the-kernel-smathbf-lmathbf-jx-relating-cgcs-and-pl_mn
-[VK08.2.14]: SYNOPSIS-VK08.md#vk08214-cgcs-as-a-derivative-of-a-hypergeometric-polynomial
-[VK08.2.15]: SYNOPSIS-VK08.md#vk08215-one-term-cgcs
-[VK08.2.17]: SYNOPSIS-VK08.md#vk08217-cgcs-for-l_2frac12-and-l_21
-[VK08.2.21]: SYNOPSIS-VK08.md#vk08221-recurrence-changing-l-by-1-and-2
-[VK08.2.24]: SYNOPSIS-VK08.md#vk08224-addition-theorem-for-cgcs-differential-operator-form
-[VK08.3.01]: SYNOPSIS-VK08.md#vk08301-cgcs-as-terminating-_3f_2dots1
-[VK08.3.05]: SYNOPSIS-VK08.md#vk08305-a-transformation-of-terminating-_3f_2dots1
-[VK08.3.10]: SYNOPSIS-VK08.md#vk08310-a-whipple-type-terminating-sum
-[VK08.3.11]: SYNOPSIS-VK08.md#vk08311-limits-of-cgcs-pl_mn-and-bessel-integrals
-[VK08.3.12]: SYNOPSIS-VK08.md#vk08312-contiguous-relations-for-_3f_2dots1
-[VK08.3.13]: SYNOPSIS-VK08.md#vk08313-second-order-difference-equation-for-_3f_2dots1
-[VK08.3.14]: SYNOPSIS-VK08.md#vk08314-three-term-relations-between-whipple-functions
-[VK08.3.16]: SYNOPSIS-VK08.md#vk08316-products-of-jacobi-polynomials
-[VK08.3.19]: SYNOPSIS-VK08.md#vk08319-recurrences-for-pl_mn-from-l_2frac12
-[VK08.4.04]: SYNOPSIS-VK08.md#vk08404-symmetries-of-6j-symbols
-[VK08.4.06]: SYNOPSIS-VK08.md#vk08406-6j-symbols-through-cgcs-and-one-parameter-sums
-[VK08.4.07]: SYNOPSIS-VK08.md#vk08407-6j-symbols-as-terminating-_4f_3dots1
-[VK08.4.09]: SYNOPSIS-VK08.md#vk08409-rcs-and-characters
-[VK08.4.10]: SYNOPSIS-VK08.md#vk08410-addition-theorem-and-orthogonality-sums-for-6j-symbols
-[VK08.4.11]: SYNOPSIS-VK08.md#vk08411-the-biedenharnelliott-identity
-[VK08.4.12]: SYNOPSIS-VK08.md#vk08412-recurrence-relations-for-6j-symbols
-[VK08.4.13]: SYNOPSIS-VK08.md#vk08413-cgcs-and-pf_mn-as-limits-of-6j-symbols
-[VK08.4.14]: SYNOPSIS-VK08.md#vk08414-addition-theorems-for-cgcs-from-stretched-rcs
-[VK08.4.17]: SYNOPSIS-VK08.md#vk08417-consequences-of-the-whipple-formula
-[VK08.5.04]: SYNOPSIS-VK08.md#vk08504-symmetries-of-hahn-polynomials
-[VK08.5.08]: SYNOPSIS-VK08.md#vk08508-limits-to-jacobi-krawtchouk-and-meixner-polynomials
-[VK08.5.10]: SYNOPSIS-VK08.md#vk08510-symmetry-and-recurrence-of-dual-hahn-polynomials
-[VK08.5.11]: SYNOPSIS-VK08.md#vk08511-product-formula-behind-the-krawtchouk-theorems
-[VK08.5.12]: SYNOPSIS-VK08.md#vk08512-multiplication-formula-for-krawtchouk-polynomials
-[VK08.5.13]: SYNOPSIS-VK08.md#vk08513-a-krawtchouk-summation-formula
-[VK08.5.14]: SYNOPSIS-VK08.md#vk08514-hahn-weighted-krawtchouk-sums-and-the-addition-theorem
-[VK08.5.15]: SYNOPSIS-VK08.md#vk08515-the-6j-symbol-as-a-terminating-_4f_31
-[VK08.5.17]: SYNOPSIS-VK08.md#vk08517-racah-polynomials-and-6j-symbols
-[VK08.5.19]: SYNOPSIS-VK08.md#vk08519-racah-polynomials-in-terms-of-hahn-polynomials
-[VK08.5.20]: SYNOPSIS-VK08.md#vk08520-recurrence-duality-difference-equation-and-forward-shift
-[VK08.5.25]: SYNOPSIS-VK08.md#vk08525-addition-theorems-for-hahn-polynomials
-[VK08.5.26]: SYNOPSIS-VK08.md#vk08526-addition-theorem-for-racah-polynomials
-[VK08.5.29]: SYNOPSIS-VK08.md#vk08529-continuous-symmetric-hahn-polynomials
-[VK08.6.03]: SYNOPSIS-VK08.md#vk08603-explicit-clebschgordan-coefficients-of-s
-[VK08.6.05]: SYNOPSIS-VK08.md#vk08605-generating-function-and-symmetries
-[VK08.6.07]: SYNOPSIS-VK08.md#vk08607-laguerre-product-and-integral-formulas
-[VK08.6.08]: SYNOPSIS-VK08.md#vk08608-laguerre-summation-formulas
-[VK08.6.09]: SYNOPSIS-VK08.md#vk08609-multiplication-and-addition-formulas-for-charlier-polynomials
-[VK08.6.10]: SYNOPSIS-VK08.md#vk08610-racah-coefficients-of-s
-[VK08.7.05]: SYNOPSIS-VK08.md#vk08705-recurrence-relations-for-mathfrak-ptau_mncosh-t
-[VK08.7.10]: SYNOPSIS-VK08.md#vk08710-hahn-polynomials-of-imaginary-argument
-[VK08.7.12]: SYNOPSIS-VK08.md#vk08712-further-jacobi-sums-as-printed
-[VK08.7.13]: SYNOPSIS-VK08.md#vk08713-laguerre-and-bessel-identities-batemans-formula
-[VK09.1.05]: SYNOPSIS-VK09.md#vk09105-the-cone-as-a-homogeneous-space-the-subgroups-m-n-n
-[VK09.1.09]: SYNOPSIS-VK09.md#vk09109-restricted-root-decomposition-of-son11
-[VK09.1.15]: SYNOPSIS-VK09.md#vk09115-the-lie-algebra-sopq
-[VK09.1.16]: SYNOPSIS-VK09.md#vk09116-restricted-root-data-of-so_0pq-and-the-cone
-[VK09.1.18]: SYNOPSIS-VK09.md#vk09118-euler-angles-and-the-cartan-decomposition-of-son
-[VK09.1.23]: SYNOPSIS-VK09.md#vk09123-hyperbolic-coordinates-on-the-cone-and-the-generalized-iwasawa-decomposition
-[VK09.1.26]: SYNOPSIS-VK09.md#vk09126-orispherical-coordinates-on-hn1_-and-the-cone-gauss-and-bruhat-forms
-[VK09.1.27]: SYNOPSIS-VK09.md#vk09127-spherical-coordinates-on-ωpq-hpq_-and-the-cone-cpq
-[VK09.1.29]: SYNOPSIS-VK09.md#vk09129-laplace-operator-in-orthogonal-coordinates
-[VK09.1.31]: SYNOPSIS-VK09.md#vk09131-the-wave-operator-inside-the-cone-laplacians-of-hn1_
-[VK09.1.32]: SYNOPSIS-VK09.md#vk09132-the-wave-operator-outside-the-cone-laplacians-of-hn1_
-[VK09.1.33]: SYNOPSIS-VK09.md#vk09133-invariant-measure-on-sn1
-[VK09.1.34]: SYNOPSIS-VK09.md#vk09134-haar-measure-of-son-in-euler-angles
-[VK09.2.06]: SYNOPSIS-VK09.md#vk09206-fischer-decomposition-harmonic-projection-and-dimensions
-[VK09.2.09]: SYNOPSIS-VK09.md#vk09209-infinitesimal-operators
-[VK09.2.11]: SYNOPSIS-VK09.md#vk09211-irreducibility-of-tnσ-and-tnr
-[VK09.2.13]: SYNOPSIS-VK09.md#vk09213-intertwining-operators-for-tnσ
-[VK09.2.14]: SYNOPSIS-VK09.md#vk09214-composition-of-intertwiners-and-their-k-type-eigenvalues
-[VK09.2.15]: SYNOPSIS-VK09.md#vk09215-integral-σ-subquotients-and-the-complete-list-of-equivalences
-[VK09.2.16]: SYNOPSIS-VK09.md#vk09216-hermitian-forms-principal-and-complementary-series-of-so_0n11
-[VK09.2.17]: SYNOPSIS-VK09.md#vk09217-the-unitary-constituents-at-integral-points-discrete-series
-[VK09.2.19]: SYNOPSIS-VK09.md#vk09219-generator-irreducibility-and-unitary-series-of-so_0pq
-[VK09.2.21]: SYNOPSIS-VK09.md#vk09221-discrete-series-of-so_0pq-on-hpq_
-[VK09.3.06]: SYNOPSIS-VK09.md#vk09306-integral-representations-of-cp_l-𝔓-and-j
-[VK09.3.07]: SYNOPSIS-VK09.md#vk09307-reflection-symmetry-of-𝔓p12
-[VK09.3.08]: SYNOPSIS-VK09.md#vk09308-further-integral-representations-of-cp_l
-[VK09.3.09]: SYNOPSIS-VK09.md#vk09309-further-integral-representations-of-𝔓p12
-[VK09.3.10]: SYNOPSIS-VK09.md#vk09310-fractional-integral-form-of-𝔓μ_ν
-[VK09.3.11]: SYNOPSIS-VK09.md#vk09311-special-values-the-cases-n--3-and-n--4
-[VK09.3.13]: SYNOPSIS-VK09.md#vk09313-contraction-limits-to-bessel-functions
-[VK09.3.14]: SYNOPSIS-VK09.md#vk09314-differential-equations
-[VK09.3.18]: SYNOPSIS-VK09.md#vk09318-laplace-and-mehler-integrals-for-the-ferrers-function-pμ_ν
-[VK09.3.19]: SYNOPSIS-VK09.md#vk09319-mehlerdirichlet-type-integrals-over-arccos-x-π-and-0-arccos-x
-[VK09.3.24]: SYNOPSIS-VK09.md#vk09324-gegenbauer-coefficients-of-cosh-θ--sinh-θ-cos-φσ-sign-split-powers-eix-cos-φ
-[VK09.3.25]: SYNOPSIS-VK09.md#vk09325-transforms-with-legendre-function-kernels
-[VK09.3.26]: SYNOPSIS-VK09.md#vk09326-the-integrals-a-and-b
-[VK09.3.31]: SYNOPSIS-VK09.md#vk09331-fourierbessel-representation-of-1--t2_p1-and-a-bessel-convolution
-[VK09.3.33]: SYNOPSIS-VK09.md#vk09333-orthogonality-of-zonal-spherical-functions-and-of-gegenbauer-polynomials
-[VK09.3.34]: SYNOPSIS-VK09.md#vk09334-gegenbauer-expansions-of-the-multipliers
-[VK09.3.35]: SYNOPSIS-VK09.md#vk09335-product-formulas-from-the-expansions
-[VK09.4.09]: SYNOPSIS-VK09.md#vk09409-three-angle-relation-and-the-matrix-addition-theorem
-[VK09.4.11]: SYNOPSIS-VK09.md#vk09411-special-cases-psi0-psipi2-varphithetapi2
-[VK09.4.12]: SYNOPSIS-VK09.md#vk09412-addition-theorem-for-legendre-functions
-[VK09.4.14]: SYNOPSIS-VK09.md#vk09414-addition-theorem-for-gegenbauer-functions
-[VK09.4.15]: SYNOPSIS-VK09.md#vk09415-gegenbauer-functions-of-the-second-kind
-[VK09.4.16]: SYNOPSIS-VK09.md#vk09416-addition-theorem-for-dalpha_lambda
-[VK09.4.17]: SYNOPSIS-VK09.md#vk09417-expansions-with-negated-argument-and-in-dalphapm12
-[VK09.4.18]: SYNOPSIS-VK09.md#vk09418-addition-formulas-for-mathfrak-pmu_nu-and-mathfrak-qmu_nu
-[VK09.4.20]: SYNOPSIS-VK09.md#vk09420-kernel-form-of-the-product-formula
-[VK09.4.21]: SYNOPSIS-VK09.md#vk09421-kernel-expansions
-[VK09.4.22]: SYNOPSIS-VK09.md#vk09422-product-formulas-for-legendre-functions
-[VK09.4.25]: SYNOPSIS-VK09.md#vk09425-product-formulas-for-dalpha_lambda
-[VK09.4.28]: SYNOPSIS-VK09.md#vk09428-boundary-values-and-the-nicholson-type-formula
-[VK09.4.30]: SYNOPSIS-VK09.md#vk09430-the-commutative-banach-algebra-of-bi-invariant-functions
-[VK09.4.32]: SYNOPSIS-VK09.md#vk09432-recurrences-for-tnsigma_m0g_n-1theta
-[VK09.4.34]: SYNOPSIS-VK09.md#vk09434-dimension-shifts-for-associated-functions
-[VK09.4.35]: SYNOPSIS-VK09.md#vk09435-differentiation-formulas-for-zonal-functions
-[VK09.4.38]: SYNOPSIS-VK09.md#vk09438-harish-chandra-c-function-and-the-second-solution
-[VK09.4.39]: SYNOPSIS-VK09.md#vk09439-integral-formulas-for-mathbf-c-and-asymptotics-of-tnsigma_m0
-[VK09.4.40]: SYNOPSIS-VK09.md#vk09440-clebschgordan-coefficients-clms_000
-[VK09.4.42]: SYNOPSIS-VK09.md#vk09442-explicit-clebschgordan-coefficient
-[VK09.4.43]: SYNOPSIS-VK09.md#vk09443-dougalls-linearization-formula
-[VK09.4.44]: SYNOPSIS-VK09.md#vk09444-expansion-of-cosvarphi-isinvarphicosthetal
-[VK09.4.45]: SYNOPSIS-VK09.md#vk09445-generalized-linearization-for-gegenbauer-polynomials
-[VK09.4.46]: SYNOPSIS-VK09.md#vk09446-linearization-for-legendre-functions
-[VK09.4.47]: SYNOPSIS-VK09.md#vk09447-plane-wave-expansion-and-linearization-for-bessel-functions
-[VK09.4.50]: SYNOPSIS-VK09.md#vk09450-character-relation-further-integrals-and-generating-functions
-[VK09.5.02]: SYNOPSIS-VK09.md#vk09502-compact-matrix-elements-integral-representation
-[VK09.5.07]: SYNOPSIS-VK09.md#vk09507-rodrigues-type-integral
-[VK09.5.09]: SYNOPSIS-VK09.md#vk09509-expansion-in-powers-of-tantheta-first-form
-[VK09.5.10]: SYNOPSIS-VK09.md#vk09510-expansion-in-powers-of-tantheta-second-form
-[VK09.5.11]: SYNOPSIS-VK09.md#vk09511-expansion-of-mathfrak-pnsigma_kmj-in-powers-of-tanhtheta
-[VK09.5.12]: SYNOPSIS-VK09.md#vk09512-finite-bessel-expansion-of-jn_kmj
-[VK09.5.19]: SYNOPSIS-VK09.md#vk09519-transposition-symmetries
-[VK09.5.20]: SYNOPSIS-VK09.md#vk09520-mathfrak-pnsigma_kmm-as-legendre-functions
-[VK09.5.21]: SYNOPSIS-VK09.md#vk09521-pnell_kmm-as-gegenbauer-polynomials
-[VK09.5.22]: SYNOPSIS-VK09.md#vk09522-jn_kmm-as-bessel-functions
-[VK09.5.23]: SYNOPSIS-VK09.md#vk09523-value-at-x0-integral-and-vanishing
-[VK09.5.24]: SYNOPSIS-VK09.md#vk09524-pnell_kmj0-as-a-saalschützian-_4f_3
-[VK09.5.25]: SYNOPSIS-VK09.md#vk09525-pnell_kmj0-as-a-_4f_3-with-free-argument-k
-[VK09.5.26]: SYNOPSIS-VK09.md#vk09526-wilson-polynomial-form-and-wilson-orthogonality
-[VK09.5.39]: SYNOPSIS-VK09.md#vk09539-generating-function-for-pnell_kmj
-[VK09.5.40]: SYNOPSIS-VK09.md#vk09540-generating-function-for-jn_kmj
-[VK09.6.04]: SYNOPSIS-VK09.md#vk09604-unit-area-radius
-[VK09.6.12]: SYNOPSIS-VK09.md#vk09612-image-of-the-hermite-basis
-[VK09.6.16]: SYNOPSIS-VK09.md#vk09616-properties-of-tell_mk
-[VK09.6.18]: SYNOPSIS-VK09.md#vk09618-gaussian-integral-representation-zonal-functions-on-phi
-[VK09.6.20]: SYNOPSIS-VK09.md#vk09620-multiplication-type-integrals
-[VK09.6.23]: SYNOPSIS-VK09.md#vk09623-fourier-transforms
-[VK09.6.24]: SYNOPSIS-VK09.md#vk09624-binomial-type-identities
-[VK09.6.25]: SYNOPSIS-VK09.md#vk09625-wiener-transform
-[VK09.6.29]: SYNOPSIS-VK09.md#vk09629-matrix-elements-of-translations
-[VK09.6.32]: SYNOPSIS-VK09.md#vk09632-the-representation-qr-and-reduction-to-isom
-[VK09.6.33]: SYNOPSIS-VK09.md#vk09633-case-m2-fourierlaguerre-expansions
-[VK09.6.34]: SYNOPSIS-VK09.md#vk09634-case-m3-legendrelaguerre-expansions
-[VK10.1.03]: SYNOPSIS-VK10.md#vk10103-inversion-and-plancherel-formulas-in-polar-fourier-coordinates
-[VK10.1.07]: SYNOPSIS-VK10.md#vk10107-homogeneity-condition-on-the-range-of-the-gelfandgraev-transform
-[VK10.1.08]: SYNOPSIS-VK10.md#vk10108-inversion-of-the-gelfandgraev-transform
-[VK10.1.10]: SYNOPSIS-VK10.md#vk10110-inversion-of-the-transform-φξσ
-[VK10.1.11]: SYNOPSIS-VK10.md#vk10111-plancherel-formula-for-q
-[VK10.1.12]: SYNOPSIS-VK10.md#vk10112-restrictions-of-the-principal-series-to-subgroups
-[VK10.2.01]: SYNOPSIS-VK10.md#vk10201-zonal-harmonic-polynomials
-[VK10.2.06]: SYNOPSIS-VK10.md#vk10206-funkhecke-evaluation-of-a-gegenbauer-integral
-[VK10.2.08]: SYNOPSIS-VK10.md#vk10208-associated-spherical-functions-on-h-as-cone-integrals
-[VK10.2.17]: SYNOPSIS-VK10.md#vk10217-bochner-theorem
-[VK10.2.22]: SYNOPSIS-VK10.md#vk10222-radial-fourierbessel-expansion-in-ℝⁿ¹
-[VK10.2.26]: SYNOPSIS-VK10.md#vk10226-laguerre-functions-and-the-hankel-transform
-[VK10.2.27]: SYNOPSIS-VK10.md#vk10227-gegenbauerbessel-triangle-integrals
-[VK10.2.28]: SYNOPSIS-VK10.md#vk10228-continuous-basis-of-l²h-from-the-cone
-[VK10.3.07]: SYNOPSIS-VK10.md#vk10307-hyperbolic-continuous-basis-of-l²h
-[VK10.3.09]: SYNOPSIS-VK10.md#vk10309-parabolic-continuous-basis-of-l²h
-[VK10.3.10]: SYNOPSIS-VK10.md#vk10310-kontorovichlebedev-transform
-[VK10.3.11]: SYNOPSIS-VK10.md#vk10311-expansions-of-poisson-kernels
-[VK10.3.13]: SYNOPSIS-VK10.md#vk10313-addition-theorems-from-the-poisson-kernel
-[VK10.3.14]: SYNOPSIS-VK10.md#vk10314-addition-theorem-for-legendre-functions-with-a-gegenbauer-series
-[VK10.3.16]: SYNOPSIS-VK10.md#vk10316-addition-theorems-with-macdonald-and-bessel-functions
-[VK10.3.17]: SYNOPSIS-VK10.md#vk10317-product-formula-for-legendre-functions
-[VK10.4.02]: SYNOPSIS-VK10.md#vk10402-bispherical-orthonormal-basis-of-𝔥nℓ
-[VK10.4.08]: SYNOPSIS-VK10.md#vk10408-ferrers-functions-on-the-cut
-[VK10.4.13]: SYNOPSIS-VK10.md#vk10413-addition-theorem-in-bispherical-coordinates
-[VK10.4.14]: SYNOPSIS-VK10.md#vk10414-product-formula-for-jacobi-polynomials
-[VK10.4.16]: SYNOPSIS-VK10.md#vk10416-sonins-formulas
-[VK10.4.17]: SYNOPSIS-VK10.md#vk10417-hyperbolic-analogues-of-sonins-formula
-[VK10.4.18]: SYNOPSIS-VK10.md#vk10418-poisson-transform-of-the-cylindrical-basis-of-𝔅nσ
-[VK10.5.01]: SYNOPSIS-VK10.md#vk10501-polyspherical-coordinates-of-a-tree
-[VK10.5.06]: SYNOPSIS-VK10.md#vk10506-tree-basis-of-mathcal-l2sn-1
-[VK10.5.07]: SYNOPSIS-VK10.md#vk10507-reduction-of-the-one-leaf-and-two-leaf-factors-to-type-4
-[VK10.5.09]: SYNOPSIS-VK10.md#vk10509-t-coefficients-and-elementary-tree-moves
-[VK10.5.10]: SYNOPSIS-VK10.md#vk10510-permutation-matrices
-[VK10.5.12]: SYNOPSIS-VK10.md#vk10512-jacobi-integrals-behind-the-t-coefficients
-[VK10.5.13]: SYNOPSIS-VK10.md#vk10513-t-coefficients-of-a-transplantation-racah-coefficients
-[VK10.5.14]: SYNOPSIS-VK10.md#vk10514-degenerate-transplantations-hahn-and-krawtchouk-cases
-[VK10.5.16]: SYNOPSIS-VK10.md#vk10516-invariants-of-son_1times-son_2times-son_3
-[VK10.5.17]: SYNOPSIS-VK10.md#vk10517-connection-coefficients-between-the-two-triangle-bases
-[VK10.5.18]: SYNOPSIS-VK10.md#vk10518-integral-formulas-for-jacobi-polynomials
-[VK10.5.19]: SYNOPSIS-VK10.md#vk10519-invariants-of-four-blocks-bases-on-a-simplex
-[VK10.5.20]: SYNOPSIS-VK10.md#vk10520-four-block-connection-formulas
-[VK10.5.21]: SYNOPSIS-VK10.md#vk10521-averaged-four-block-identities
-[VK10.5.22]: SYNOPSIS-VK10.md#vk10522-polyspherical-coordinates-on-the-hyperboloid-hpq_
-[VK10.6.01]: SYNOPSIS-VK10.md#vk10601-meijer-g-function-and-its-contours
-[VK10.6.06]: SYNOPSIS-VK10.md#vk10606-sphericalparabolic-transition-coefficients
-[VK10.6.07]: SYNOPSIS-VK10.md#vk10607-hyperbolicparabolic-transition-coefficients
-[VK10.6.09]: SYNOPSIS-VK10.md#vk10609-parabolic-basis-in-spherical-terms-and-g-function-sums
-[VK10.6.10]: SYNOPSIS-VK10.md#vk10610-mellinbarnes-integral-and-mellin-transform-of-j_nu
-[VK10.6.11]: SYNOPSIS-VK10.md#vk10611-kernel-of-the-reflection-tnsigmas-in-the-parabolic-basis
-[VK10.6.12]: SYNOPSIS-VK10.md#vk10612-integral-equations-for-the-coefficients-cnsigma
-[VK10.6.13]: SYNOPSIS-VK10.md#vk10613-hyperbolic-coefficients-and-legendre-functions
-[VK10.7.02]: SYNOPSIS-VK10.md#vk10702-realization-of-tnr-by-integral-operators
-[VK10.7.03]: SYNOPSIS-VK10.md#vk10703-the-kernels-k_msigmasigmarr
-[VK10.7.04]: SYNOPSIS-VK10.md#vk10704-the-kernel-k_0-and-macdonald-functions
-[VK10.7.05]: SYNOPSIS-VK10.md#vk10705-laplace-inversion-formulas-for-legendre-functions
-[VK10.7.06]: SYNOPSIS-VK10.md#vk10706-addition-theorem-for-macdonald-functions
-[VK10.7.10]: SYNOPSIS-VK10.md#vk10710-the-group-hson-and-its-haar-measure
-[VK10.7.12]: SYNOPSIS-VK10.md#vk10712-the-kernel-kell0alpha_oo-and-_1f_1
-[VK10.7.13]: SYNOPSIS-VK10.md#vk10713-addition-theorem-for-_1f_1
-[VK11.1.01]: SYNOPSIS-VK11.md#vk11101-unitary-groups-and-complex-spheres
-[VK11.1.03]: SYNOPSIS-VK11.md#vk11103-the-pseudo-unitary-group-and-its-orbits
-[VK11.1.05]: SYNOPSIS-VK11.md#vk11105-the-cone-as-a-homogeneous-space
-[VK11.1.07]: SYNOPSIS-VK11.md#vk11107-lie-algebra-un11-cartan-decomposition-root-spaces
-[VK11.1.08]: SYNOPSIS-VK11.md#vk11108-subgroups-k-a-m-n-of-un11-and-the-heisenberg-group
-[VK11.1.09]: SYNOPSIS-VK11.md#vk11109-the-groups-jun1-and-iun1
-[VK11.2.02]: SYNOPSIS-VK11.md#vk11202-harmonic-polynomials-of-bidegree-ℓℓ
-[VK11.2.04]: SYNOPSIS-VK11.md#vk11204-dimension-of-the-harmonic-spaces
-[VK11.2.10]: SYNOPSIS-VK11.md#vk11210-branching-to-un1u1-contragredient
-[VK11.2.11]: SYNOPSIS-VK11.md#vk11211-the-spaces-𝔅nσk-and-the-representations-tnσk-of-un11
-[VK11.2.14]: SYNOPSIS-VK11.md#vk11214-irreducibility-criterion-for-tnσk
-[VK11.2.15]: SYNOPSIS-VK11.md#vk11215-intertwining-operator-between-tnσk-and-tnσ2n2k
-[VK11.3.01]: SYNOPSIS-VK11.md#vk11301-gelfandtsetlin-basis-of-l²sn1_c
-[VK11.3.11]: SYNOPSIS-VK11.md#vk11311-realization-of-tnℓℓ-on-𝔇n1ℓℓ
-[VK11.3.12]: SYNOPSIS-VK11.md#vk11312-integral-representation-of-the-associated-functions-of-un
-[VK11.3.13]: SYNOPSIS-VK11.md#vk11313-factorization-of-the-associated-spherical-functions-of-un
-[VK11.3.16]: SYNOPSIS-VK11.md#vk11316-associated-functions-of-jun1-definition-integral-and-equation
-[VK11.3.19]: SYNOPSIS-VK11.md#vk11319-associated-functions-of-un-via-the-functions-pl_mn-of-su2
-[VK11.3.21]: SYNOPSIS-VK11.md#vk11321-explicit-form-of-the-associated-functions-of-un11
-[VK11.3.23]: SYNOPSIS-VK11.md#vk11323-a-trigonometric-integral
-[VK11.3.24]: SYNOPSIS-VK11.md#vk11324-one-dimensional-integral-representations-of-the-associated-functions
-[VK11.3.25]: SYNOPSIS-VK11.md#vk11325-jacobi-integrals
-[VK11.3.26]: SYNOPSIS-VK11.md#vk11326-special-cases-of-the-associated-functions-of-un
-[VK11.3.28]: SYNOPSIS-VK11.md#vk11328-raising-and-lowering-operators-for-un
-[VK11.3.29]: SYNOPSIS-VK11.md#vk11329-raising-and-lowering-operators-for-un11
-[VK11.3.30]: SYNOPSIS-VK11.md#vk11330-relations-between-associated-functions-of-different-dimensions-un
-[VK11.3.31]: SYNOPSIS-VK11.md#vk11331-relations-between-associated-functions-of-different-dimensions-un11-jun1
-[VK11.3.33]: SYNOPSIS-VK11.md#vk11333-relations-for-the-zonal-functions-of-un11
-[VK11.3.36]: SYNOPSIS-VK11.md#vk11336-k_pq-harmonics-on-the-complex-sphere
-[VK11.3.38]: SYNOPSIS-VK11.md#vk11338-associated-and-zonal-k_pq-spherical-functions
-[VK11.3.39]: SYNOPSIS-VK11.md#vk11339-the-case-p--1
-[VK11.4.04]: SYNOPSIS-VK11.md#vk11404-addition-theorem-for-un-spherical-functions
-[VK11.4.08]: SYNOPSIS-VK11.md#vk11408-product-type-case-r0
-[VK11.4.09]: SYNOPSIS-VK11.md#vk11409-second-addition-theorem-for-jacobi-polynomials
-[VK11.4.11]: SYNOPSIS-VK11.md#vk11411-addition-theorem-for-jacobi-functions
-[VK11.4.12]: SYNOPSIS-VK11.md#vk11412-addition-theorems-for-mathfrak-palpha0_mu
-[VK11.4.13]: SYNOPSIS-VK11.md#vk11413-koornwinders-addition-formula-for-jacobi-functions
-[VK11.4.15]: SYNOPSIS-VK11.md#vk11415-addition-theorem-for-bessel-functions-from-jun-1
-[VK11.4.17]: SYNOPSIS-VK11.md#vk11417-differentiated-bessel-addition-theorems
-[VK11.4.23]: SYNOPSIS-VK11.md#vk11423-kernel-form-of-the-product-formula
-[VK11.4.24]: SYNOPSIS-VK11.md#vk11424-the-kernel-mathcal-kxyt
-[VK11.4.26]: SYNOPSIS-VK11.md#vk11426-disk-polynomials-and-the-addition-formula-of-jacobi-type
-[VK11.4.27]: SYNOPSIS-VK11.md#vk11427-addition-formula-for-laguerre-polynomials
-[VK11.4.30]: SYNOPSIS-VK11.md#vk11430-laguerre-functions-durands-formulas
-[VK11.4.33]: SYNOPSIS-VK11.md#vk11433-kernel-form-of-the-product-formula-for-jacobi-functions
-[VK11.4.35]: SYNOPSIS-VK11.md#vk11435-jacobi-functions-of-the-second-kind-product-formulas
-[VK11.4.36]: SYNOPSIS-VK11.md#vk11436-generating-function-for-associated-spherical-functions-of-un
-[VK11.4.37]: SYNOPSIS-VK11.md#vk11437-generating-function-in-jacobi-form
-[VK11.4.38]: SYNOPSIS-VK11.md#vk11438-generating-functions-for-jacobi-functions
-[VK11.4.39]: SYNOPSIS-VK11.md#vk11439-plane-wave-expansion-and-bessel-generating-functions
-[VK11.4.40]: SYNOPSIS-VK11.md#vk11440-fourier-components-of-the-jacobi-function-generating-function
-[VK11.4.41]: SYNOPSIS-VK11.md#vk11441-summed-hypergeometric-identities
-[VK11.4.42]: SYNOPSIS-VK11.md#vk11442-polynomial-analogues-of-the-fourier-components
-[VK11.5.04]: SYNOPSIS-VK11.md#vk11504-differential-equations-for-pn_ellell
-[VK11.5.06]: SYNOPSIS-VK11.md#vk11506-addition-theorem-for-disk-polynomials
-[VK11.5.07]: SYNOPSIS-VK11.md#vk11507-product-formula-for-disk-polynomials
-[VK11.5.08]: SYNOPSIS-VK11.md#vk11508-zonal-functions-of-un-11-on-the-exterior-of-the-disk
-[VK11.5.09]: SYNOPSIS-VK11.md#vk11509-exterior-polynomial-cases
-[VK11.5.10]: SYNOPSIS-VK11.md#vk11510-expansion-on-the-exterior-of-the-disk
-[VK11.5.11]: SYNOPSIS-VK11.md#vk11511-integral-representation-and-differential-equations-for-fn_sigma-k
-[VK11.6.01]: SYNOPSIS-VK11.md#vk11601-integral-representation-for-tnsigma-k_mmppjjg_n-1t
-[VK11.6.03]: SYNOPSIS-VK11.md#vk11603-irreducibility-of-tnsigma-k-and-the-intertwining-operator
-[VK11.6.06]: SYNOPSIS-VK11.md#vk11606-unipotent-matrix-elements-of-tnellell-over-glnmathbb-c
-[VK11.6.07]: SYNOPSIS-VK11.md#vk11607-explicit-matrix-elements-of-tnellellg_n-1theta
-[VK11.6.08]: SYNOPSIS-VK11.md#vk11608-hypergeometric-forms-of-the-matrix-elements-of-tnellell
-[VK11.6.10]: SYNOPSIS-VK11.md#vk11610-explicit-matrix-elements-of-tnsigma-kg_n-1t
-[VK11.6.13]: SYNOPSIS-VK11.md#vk11613-relations-between-groups-of-different-dimension
-[VK11.6.15]: SYNOPSIS-VK11.md#vk11615-special-cases-of-tnellellg_n-1theta
-[VK11.6.18]: SYNOPSIS-VK11.md#vk11618-matrix-elements-of-tnellellg_n-1pi2
-[VK11.7.05]: SYNOPSIS-VK11.md#vk11705-class-1-representations-of-spn-and-branching
-[VK11.7.07]: SYNOPSIS-VK11.md#vk11707-zonal-spherical-functions-of-spn
-[VK11.7.08]: SYNOPSIS-VK11.md#vk11708-bispherical-functions-of-spn
-[VK11.7.10]: SYNOPSIS-VK11.md#vk11710-associated-spherical-functions-of-tnsigma
-[VK11.7.12]: SYNOPSIS-VK11.md#vk11712-expansion-in-zonal-spherical-functions-of-spn-11
-[VK12.1.05]: SYNOPSIS-VK12.md#vk12105-heisenberg-lie-algebra
-[VK12.1.07]: SYNOPSIS-VK12.md#vk12107-schrödinger-representations-rlambda
-[VK12.1.08]: SYNOPSIS-VK12.md#vk12108-irreducibility-and-classification
-[VK12.1.09]: SYNOPSIS-VK12.md#vk12109-rescaled-schrödinger-model
-[VK12.1.12]: SYNOPSIS-VK12.md#vk12112-generating-function-of-the-matrix-elements
-[VK12.1.14]: SYNOPSIS-VK12.md#vk12114-explicit-matrix-elements
-[VK12.1.18]: SYNOPSIS-VK12.md#vk12118-fock-realization-the-operators
-[VK12.1.19]: SYNOPSIS-VK12.md#vk12119-holomorphic-fock-model
-[VK12.1.20]: SYNOPSIS-VK12.md#vk12120-addition-formula-for-laguerre-polynomials
-[VK12.1.21]: SYNOPSIS-VK12.md#vk12121-special-cases-of-the-addition-formula
-[VK12.1.23]: SYNOPSIS-VK12.md#vk12123-even-and-odd-parts
-[VK12.1.24]: SYNOPSIS-VK12.md#vk12124-further-specializations
-[VK12.1.25]: SYNOPSIS-VK12.md#vk12125-gaussian-integrals-of-hermite-products
-[VK12.1.28]: SYNOPSIS-VK12.md#vk12128-generating-function-of-p_mp
-[VK12.1.29]: SYNOPSIS-VK12.md#vk12129-derivatives-and-recurrences-of-p_mp
-[VK12.1.32]: SYNOPSIS-VK12.md#vk12132-radial-functions-and-an-integral-of-laguerre-products
-[VK12.2.01]: SYNOPSIS-VK12.md#vk12201-linear-automorphisms-of-mathfrak-n_1-fixing-h
-[VK12.2.03]: SYNOPSIS-VK12.md#vk12203-symplectic-structure-of-mathfrak-n_n
-[VK12.2.09]: SYNOPSIS-VK12.md#vk12209-hermite-functions-as-eigenfunctions-of-the-fourier-transform
-[VK12.2.10]: SYNOPSIS-VK12.md#vk12210-integral-kernel-of-the-weyl-operators
-[VK12.2.11]: SYNOPSIS-VK12.md#vk12211-lower-triangular-elements-imaginary-gaussweierstrass-transform
-[VK12.2.12]: SYNOPSIS-VK12.md#vk12212-infinitesimal-operators-of-the-weyl-representation
-[VK12.2.13]: SYNOPSIS-VK12.md#vk12213-ladder-operators-and-the-action-on-the-hermite-basis
-[VK12.3.01]: SYNOPSIS-VK12.md#vk12301-weyl-representation-of-spnmathbb-r-metaplectic-group
-[VK12.3.03]: SYNOPSIS-VK12.md#vk12303-the-subgroup-sl2mathbb-r-generators
-[VK12.3.06]: SYNOPSIS-VK12.md#vk12306-action-of-j_0j_pm-on-the-radial-functions
-[VK12.3.08]: SYNOPSIS-VK12.md#vk12308-transition-coefficients-between-cartesian-and-spherical-bases
-[VK12.3.09]: SYNOPSIS-VK12.md#vk12309-transition-coefficients-as-a-jacobi-integral
-[VK12.3.10]: SYNOPSIS-VK12.md#vk12310-a-jacobi-integral
-[VK12.3.11]: SYNOPSIS-VK12.md#vk12311-closed-form-of-the-transition-coefficients
-[VK12.3.12]: SYNOPSIS-VK12.md#vk12312-a-laguerrejacobi-expansion
-[VK12.3.20]: SYNOPSIS-VK12.md#vk12320-the-n-dimensional-case
-[VK12.4.02]: SYNOPSIS-VK12.md#vk12402-fock-representations-of-unn_n
-[VK12.4.04]: SYNOPSIS-VK12.md#vk12404-matrix-elements-of-the-heisenberg-part
-[VK12.4.05]: SYNOPSIS-VK12.md#vk12405-the-case-u2-wigner-functions
-[VK12.4.06]: SYNOPSIS-VK12.md#vk12406-addition-theorem-for-laguerre-polynomials
-[VK12.4.08]: SYNOPSIS-VK12.md#vk12408-fourier-inversion-of-the-addition-theorem-product-formula
-[VK12.4.09]: SYNOPSIS-VK12.md#vk12409-kernel-form-of-the-product-formula
-[VK12.4.10]: SYNOPSIS-VK12.md#vk12410-laguerrejacobi-relation-from-u2n_2
-[VK12.4.12]: SYNOPSIS-VK12.md#vk12412-squares-of-wigner-functions-and-laguerre-integrals
-[VK12.4.14]: SYNOPSIS-VK12.md#vk12414-a-second-laguerrejacobi-relation
-[VK12.5.02]: SYNOPSIS-VK12.md#vk12502-the-lattice-subgroup-and-the-space-mathfrak-l
-[VK12.5.04]: SYNOPSIS-VK12.md#vk12504-the-weilbrezin-zak-transform
-[VK12.5.07]: SYNOPSIS-VK12.md#vk12507-shifted-hermite-sums-and-the-finite-fourier-matrix
-[VK12.5.10]: SYNOPSIS-VK12.md#vk12510-special-hermite-lattice-identities
-[VK12.5.13]: SYNOPSIS-VK12.md#vk12513-schempps-summation-formula
-[VK12.5.14]: SYNOPSIS-VK12.md#vk12514-lattice-sums-of-laguerre-functions
-[VK12.6.01]: SYNOPSIS-VK12.md#vk12601-left-invariant-vector-fields-on-hnmathbb-r
-[VK12.6.04]: SYNOPSIS-VK12.md#vk12604-the-group-gcong-un11-and-its-subgroups
-[VK12.6.09]: SYNOPSIS-VK12.md#vk12609-l_gamma-harmonic-polynomials
-[VK12.6.15]: SYNOPSIS-VK12.md#vk12615-deformed-matrix-elements
-[VK12.6.16]: SYNOPSIS-VK12.md#vk12616-integral-representations-of-c_ellalphabetaeivarphi
-[VK12.6.18]: SYNOPSIS-VK12.md#vk12618-product-formula
-[VK12.6.22]: SYNOPSIS-VK12.md#vk12622-a-jacobi-polynomial-integral
-[VK12.6.23]: SYNOPSIS-VK12.md#vk12623-dunkls-addition-theorem
-[VK12.6.24]: SYNOPSIS-VK12.md#vk12624-a-chuvandermonde-evaluation-the-case-n1
-[VK13.1.03]: SYNOPSIS-VK13.md#vk13103-construction-of-the-irreducible-representation-t_lambda
-[VK13.1.05]: SYNOPSIS-VK13.md#vk13105-decomposition-of-mathfrak-l2x_mn
-[VK13.1.11]: SYNOPSIS-VK13.md#vk13111-krawtchouk-zonal-spherical-functions-on-xk_n
-[VK13.1.13]: SYNOPSIS-VK13.md#vk13113-adjacency-algebra-of-a-distance-transitive-graph
-[VK13.1.17]: SYNOPSIS-VK13.md#vk13117-dunkls-addition-theorem-for-krawtchouk-polynomials
-[VK13.1.18]: SYNOPSIS-VK13.md#vk13118-the-functions-e_mxabc
-[VK13.1.20]: SYNOPSIS-VK13.md#vk13120-dunkls-addition-theorem-for-hahn-polynomials
-[VK13.1.25]: SYNOPSIS-VK13.md#vk13125-charlier-limit-and-addition-formula
-[VK13.1.26]: SYNOPSIS-VK13.md#vk13126-s_atimes-s_btimes-s_c-invariant-polynomials-and-their-difference-equation
-[VK13.1.28]: SYNOPSIS-VK13.md#vk13128-inner-product-on-w_r
-[VK13.1.30]: SYNOPSIS-VK13.md#vk13130-expansion-coefficients-and-racah-connection-coefficients
-[VK13.1.32]: SYNOPSIS-VK13.md#vk13132-hahn-polynomials-in-two-variables
-[VK13.2.06]: SYNOPSIS-VK13.md#vk13206-infinite-products-euler-identities-and-shift-rules
-[VK13.2.08]: SYNOPSIS-VK13.md#vk13208-transformations-of-basic-hypergeometric-series
-[VK13.2.10]: SYNOPSIS-VK13.md#vk13210-the-polynomials-tilde-q_kxabcq-1
-[VK13.2.11]: SYNOPSIS-VK13.md#vk13211-dual-q-hahn-q-eberlein-polynomials
-[VK13.2.14]: SYNOPSIS-VK13.md#vk13214-the-polynomials-tilde-k_jxabq
-[VK13.2.17]: SYNOPSIS-VK13.md#vk13217-q-hahn-zonal-spherical-functions-on-grassmannians
-[VK13.2.18]: SYNOPSIS-VK13.md#vk13218-table-131-spherical-functions-of-chevalley-groups
-[VK13.2.19]: SYNOPSIS-VK13.md#vk13219-polar-spaces-maximal-isotropic-subspaces
-[VK13.2.21]: SYNOPSIS-VK13.md#vk13221-bilinear-forms-and-delsartes-theorem
-[VK13.2.22]: SYNOPSIS-VK13.md#vk13222-three-term-recurrence-and-contiguous-relations-for-q-hahn-polynomials
-[VK13.2.23]: SYNOPSIS-VK13.md#vk13223-further-difference-equations
-[VK13.2.27]: SYNOPSIS-VK13.md#vk13227-product-formulas-for-q-hahn-polynomials
-[VK13.2.29]: SYNOPSIS-VK13.md#vk13229-product-formulas-for-q-krawtchouk-polynomials
-[VK13.2.31]: SYNOPSIS-VK13.md#vk13231-the-q-difference-equation-and-the-space-w_r
-[VK13.2.35]: SYNOPSIS-VK13.md#vk13235-little-q-jacobi-polynomials
-[VK13.2.36]: SYNOPSIS-VK13.md#vk13236-little-q-jacobi-polynomials-in-two-variables
-[VK13.2.37]: SYNOPSIS-VK13.md#vk13237-connection-formulas-for-two-variable-little-q-jacobi-polynomials
-[VK13.3.07]: SYNOPSIS-VK13.md#vk13307-totally-disconnected-groups-and-their-haar-measure
-[VK13.3.09]: SYNOPSIS-VK13.md#vk13309-the-field-mathbb-q_p-by-digit-sequences
-[VK13.3.15]: SYNOPSIS-VK13.md#vk13315-multiplicative-characters-of-k
-[VK13.3.17]: SYNOPSIS-VK13.md#vk13317-plancherel-measure-on-widehatk
-[VK13.3.18]: SYNOPSIS-VK13.md#vk13318-test-functions-and-distributions-on-k-and-k
-[VK13.3.20]: SYNOPSIS-VK13.md#vk13320-the-classical-gamma-function-as-an-oscillatory-integral
-[VK13.3.23]: SYNOPSIS-VK13.md#vk13323-theorem-1-values-of-the-gamma-function
-[VK13.3.29]: SYNOPSIS-VK13.md#vk13329-theorem-4-the-convolution-pix-1lambdax-1
-[VK13.3.31]: SYNOPSIS-VK13.md#vk13331-square-classes-and-quadratic-extensions
-[VK13.3.32]: SYNOPSIS-VK13.md#vk13332-norms-and-the-sign-characters
-[VK13.3.33]: SYNOPSIS-VK13.md#vk13333-circles-the-unit-circle-c_tau-and-the-cayley-map
-[VK13.3.34]: SYNOPSIS-VK13.md#vk13334-coordinates-and-invariant-measures-on-ksqrttau
-[VK13.3.40]: SYNOPSIS-VK13.md#vk13340-the-fresnel-type-integral-over-ksqrttau
-[VK13.3.41]: SYNOPSIS-VK13.md#vk13341-the-motion-group-g_0-and-its-representations-t_rho
-[VK13.3.42]: SYNOPSIS-VK13.md#vk13342-mathfrak-p-adic-bessel-functions
-[VK13.3.48]: SYNOPSIS-VK13.md#vk13348-theorem-1-the-bessel-function-j_1
-[VK13.3.49]: SYNOPSIS-VK13.md#vk13349-theorem-2-the-bessel-functions-j_theta
-[VK13.3.50]: SYNOPSIS-VK13.md#vk13350-matrix-elements-of-t_1
-[VK13.3.57]: SYNOPSIS-VK13.md#vk13357-lemma-1-the-shell-integrals-f_pikv
-[VK13.3.58]: SYNOPSIS-VK13.md#vk13358-evaluation-of-j_piuv
-[VK13.3.59]: SYNOPSIS-VK13.md#vk13359-discrete-series-of-sl2k
-[VK13.3.60]: SYNOPSIS-VK13.md#vk13360-splitting-and-equivalences-of-the-discrete-series
-[VK14.1.02]: SYNOPSIS-VK14.md#vk14102-shift-and-inversion-formulas
-[VK14.1.03]: SYNOPSIS-VK14.md#vk14103-q-numbers-and-their-identities
-[VK14.1.05]: SYNOPSIS-VK14.md#vk14105-asymptotics-of-q-factorials
-[VK14.1.12]: SYNOPSIS-VK14.md#vk14112-finite-q-binomial-expansions
-[VK14.1.18]: SYNOPSIS-VK14.md#vk14118-the-q-derivative
-[VK14.1.21]: SYNOPSIS-VK14.md#vk14121-jackson-integrals
-[VK14.1.22]: SYNOPSIS-VK14.md#vk14122-q-taylor-formula
-[VK14.1.25]: SYNOPSIS-VK14.md#vk14125-q-trigonometric-functions
-[VK14.1.26]: SYNOPSIS-VK14.md#vk14126-the-q-gamma-function
-[VK14.1.29]: SYNOPSIS-VK14.md#vk14129-the-q-beta-function
-[VK14.1.30]: SYNOPSIS-VK14.md#vk14130-three-further-q-beta-integrals
-[VK14.1.32]: SYNOPSIS-VK14.md#vk14132-q-derivatives-of-_2varphi_1-times-powers
-[VK14.1.33]: SYNOPSIS-VK14.md#vk14133-iterated-derivative-and-q-rodrigues-formula-for-_2varphi_1
-[VK14.1.34]: SYNOPSIS-VK14.md#vk14134-contiguous-relations-for-_2varphi_1
-[VK14.1.36]: SYNOPSIS-VK14.md#vk14136-euler-type-integral-representations
-[VK14.1.37]: SYNOPSIS-VK14.md#vk14137-the-q-hypergeometric-difference-equation
-[VK14.3.03]: SYNOPSIS-VK14.md#vk14303-the-universal-r-matrix
-[VK14.3.04]: SYNOPSIS-VK14.md#vk14304-the-casimir-element
-[VK14.3.11]: SYNOPSIS-VK14.md#vk14311-matrix-elements-of-the-r-matrix
-[VK14.3.12]: SYNOPSIS-VK14.md#vk14312-highest-weight-clebschgordan-coefficients
-[VK14.3.13]: SYNOPSIS-VK14.md#vk14313-lowering-formula
-[VK14.3.14]: SYNOPSIS-VK14.md#vk14314-the-q-racah-sum-formula
-[VK14.3.15]: SYNOPSIS-VK14.md#vk14315-clebschgordan-coefficients-as-_3phi_2
-[VK14.3.16]: SYNOPSIS-VK14.md#vk14316-a-second-_3phi_2-formula
-[VK14.3.17]: SYNOPSIS-VK14.md#vk14317-special-values
-[VK14.3.20]: SYNOPSIS-VK14.md#vk14320-generating-function
-[VK14.3.21]: SYNOPSIS-VK14.md#vk14321-a-further-_3phi_2-expression-and-its-integral-form
-[VK14.3.23]: SYNOPSIS-VK14.md#vk14323-three-term-difference-equation
-[VK14.4.05]: SYNOPSIS-VK14.md#vk14405-the-matrix-of-t_1
-[VK14.5.03]: SYNOPSIS-VK14.md#vk14503-racah-coefficients-from-clebschgordan-coefficients
-[VK14.5.04]: SYNOPSIS-VK14.md#vk14504-single-sum-formula-for-the-q-6j-symbol
-[VK14.5.07]: SYNOPSIS-VK14.md#vk14507-special-values
-[VK14.5.09]: SYNOPSIS-VK14.md#vk14509-consequences-a-product-formula-and-a-four-term-recurrence
-[VK14.5.11]: SYNOPSIS-VK14.md#vk14511-the-q-9j-symbol
-[VK14.5.12]: SYNOPSIS-VK14.md#vk14512-clebschgordan-coefficients-as-limits-of-racah-coefficients
-[VK14.5.13]: SYNOPSIS-VK14.md#vk14513-asymptotic-formulas-for-q-6j-symbols
-[VK14.6.05]: SYNOPSIS-VK14.md#vk14605-cgcs-as-a-terminating-_3phi_2-q-krawtchouk-form
-[VK14.6.06]: SYNOPSIS-VK14.md#vk14606-product-theorem-for-q-krawtchouk-polynomials
-[VK14.6.07]: SYNOPSIS-VK14.md#vk14607-addition-theorem-for-q-krawtchouk-polynomials
-[VK14.6.08]: SYNOPSIS-VK14.md#vk14608-q-analogue-of-the-burchnallchaundy-formula
-[VK14.6.09]: SYNOPSIS-VK14.md#vk14609-a-product-formula-for-little-q-jacobi-polynomials
-[VK14.6.11]: SYNOPSIS-VK14.md#vk14611-rewritten-cgcq-hahn-relation
-[VK14.6.16]: SYNOPSIS-VK14.md#vk14616-three-term-recurrence-of-q-hahn-polynomials
-[VK14.6.17]: SYNOPSIS-VK14.md#vk14617-three-term-recurrence-of-dual-q-hahn-polynomials
-[VK14.6.19]: SYNOPSIS-VK14.md#vk14619-6j-symbols-as-q-racah-polynomials
-[VK14.6.20]: SYNOPSIS-VK14.md#vk14620-orthogonality-of-q-racah-polynomials
-[VK14.6.22]: SYNOPSIS-VK14.md#vk14622-a-cgc6j-sum-rule
-[VK14.6.23]: SYNOPSIS-VK14.md#vk14623-cgcs-via-_3phi_2-and-q-hahn-polynomials-second-form
-[VK14.6.24]: SYNOPSIS-VK14.md#vk14624-addition-formula-for-q-hahn-polynomials
-[VK14.6.25]: SYNOPSIS-VK14.md#vk14625-special-case-ell_1ell_2ell_12
-[VK14.6.26]: SYNOPSIS-VK14.md#vk14626-product-formulas-for-q-hahn-polynomials
-[VK14.6.28]: SYNOPSIS-VK14.md#vk14628-gasperrahman-bilinear-sum-for-q-hahn-polynomials-ii
-[VK14.6.29]: SYNOPSIS-VK14.md#vk14629-gasperrahman-product-formula-for-q-hahn-polynomials
-[VK14.6.30]: SYNOPSIS-VK14.md#vk14630-addition-formula-for-q-racah-polynomials
-[VK14.6.33]: SYNOPSIS-VK14.md#vk14633-a-nonterminating-_3varphi_2-transformation
-[VK14.6.37]: SYNOPSIS-VK14.md#vk14637-product-of-little-q-jacobi-polynomials-and-cgcs
-[VK14.6.39]: SYNOPSIS-VK14.md#vk14639-jackson-integral-of-three-little-q-jacobi-polynomials
-[VK14.6.41]: SYNOPSIS-VK14.md#vk14641-a-recurrence-for-cgcs
-[VK14.7.05]: SYNOPSIS-VK14.md#vk14705-orthogonality-of-askeywilson-polynomials
-[VK14.7.06]: SYNOPSIS-VK14.md#vk14706-orthogonality-with-discrete-masses-contour-form
-[VK14.7.08]: SYNOPSIS-VK14.md#vk14708-connection-coefficients-for-one-changed-parameter
-[VK14.7.10]: SYNOPSIS-VK14.md#vk14710-limits-of-watsons-transformation
-[VK14.7.13]: SYNOPSIS-VK14.md#vk14713-generating-function
-[VK14.7.14]: SYNOPSIS-VK14.md#vk14714-contour-integral-representation
-[VK14.7.15]: SYNOPSIS-VK14.md#vk14715-an-integral-connecting-two-askeywilson-families
-[VK14.7.18]: SYNOPSIS-VK14.md#vk14718-continuous-q-gegenbauer-polynomials
-[VK14.7.22]: SYNOPSIS-VK14.md#vk14722-rahmanverma-product-formula
-[VK14.7.23]: SYNOPSIS-VK14.md#vk14723-rahmanverma-addition-theorem
-[VK14.7.26]: SYNOPSIS-VK14.md#vk14726-rahmans-continuous-q-jacobi-polynomials
-[VK14.7.27]: SYNOPSIS-VK14.md#vk14727-a-quadratic-transformation-and-summation
-[VK14.7.29]: SYNOPSIS-VK14.md#vk14729-askeywilson-polynomials-with-rotated-parameters
-[VK14.7.33]: SYNOPSIS-VK14.md#vk14733-symmetry-and-limits-of-big-q-jacobi-polynomials
-[VK14.7.34]: SYNOPSIS-VK14.md#vk14734-a-lowering-relation-and-rodrigues-formulas
-[VK14.8.02]: SYNOPSIS-VK14.md#vk14802-products-xm-ym-and-ym-xm
-[VK14.8.06]: SYNOPSIS-VK14.md#vk14806--representations-of-asu_q2
-[VK14.8.10]: SYNOPSIS-VK14.md#vk14810-matrix-elements-as-little-q-jacobi-polynomials
-[VK14.8.14]: SYNOPSIS-VK14.md#vk14814-symmetries-of-the-invariant-integral
-[VK14.8.17]: SYNOPSIS-VK14.md#vk14817-hermitian-forms-and-the-weight-functions-φ_mn
-[VK14.8.20]: SYNOPSIS-VK14.md#vk14820-fourier-transform-on-su_q2
-[VK14.8.21]: SYNOPSIS-VK14.md#vk14821-orthogonality-of-little-q-jacobi-polynomials
-[VK14.8.24]: SYNOPSIS-VK14.md#vk14824-matrix-elements-of-the-q-legendre-type
-[VK14.8.25]: SYNOPSIS-VK14.md#vk14825-addition-formula-for-q-legendre-polynomials
-[VK14.8.30]: SYNOPSIS-VK14.md#vk14830-action-of-u-on-the-subspaces-amn
-[VK14.8.31]: SYNOPSIS-VK14.md#vk14831-q-difference-equation-for-little-q-jacobi-polynomials
-[VK14.8.32]: SYNOPSIS-VK14.md#vk14832-lowering-operator-and-rodrigues-formula
-[VK14.9.07]: SYNOPSIS-VK14.md#vk14907-spherical-functions-on-the-quantum-2-sphere
-[VK14.9.12]: SYNOPSIS-VK14.md#vk14912-orthogonality-on-the-quantum-3-sphere-and-big-q-jacobi-polynomials
-[VK15.1.04]: SYNOPSIS-VK15.md#vk15104-regular-elements-cartan-subalgebras-and-cartan-subgroups
-[VK15.1.06]: SYNOPSIS-VK15.md#vk15106-non-conjugate-cartan-subalgebras-of-real-forms
-[VK15.1.09]: SYNOPSIS-VK15.md#vk15109-roots-and-killing-form-of-mathfrakso2ell1mathbb-c
-[VK15.1.10]: SYNOPSIS-VK15.md#vk15110-roots-and-killing-form-of-mathfrakso2ellmathbb-c
-[VK15.1.11]: SYNOPSIS-VK15.md#vk15111-roots-and-killing-form-of-mathfrakspellmathbb-c
-[VK15.1.13]: SYNOPSIS-VK15.md#vk15113-cartanweyl-basis-and-the-compact-real-form
-[VK15.1.16]: SYNOPSIS-VK15.md#vk15116-simple-roots-and-weyl-groups-of-the-classical-algebras
-[VK15.1.18]: SYNOPSIS-VK15.md#vk15118-dynkin-diagrams-of-the-complex-simple-lie-algebras
-[VK15.1.19]: SYNOPSIS-VK15.md#vk15119-triangular-decomposition-and-borel-subalgebras
-[VK15.1.20]: SYNOPSIS-VK15.md#vk15120-cartan-matrix
-[VK15.1.21]: SYNOPSIS-VK15.md#vk15121-serre-presentation-theorem-1
-[VK15.1.26]: SYNOPSIS-VK15.md#vk15126-table-151-restricted-roots-of-the-classical-real-simple-algebras
-[VK15.1.35]: SYNOPSIS-VK15.md#vk15135-decompositions-of-the-classical-complex-groups
-[VK15.1.36]: SYNOPSIS-VK15.md#vk15136-supq-cartan-involution-and-iwasawa-data
-[VK15.1.37]: SYNOPSIS-VK15.md#vk15137-su2pslpmathbb-h
-[VK15.1.43]: SYNOPSIS-VK15.md#vk15143-limits-of-lie-subalgebras-definition-and-examples
-[VK15.1.47]: SYNOPSIS-VK15.md#vk15147-maximal-nilpotent-subgroup-of-supq
-[VK15.2.01]: SYNOPSIS-VK15.md#vk15201-maximal-compact-subgroups-unmathbb-f
-[VK15.2.03]: SYNOPSIS-VK15.md#vk15203-irreducible-self-adjoint-cones
-[VK15.2.04]: SYNOPSIS-VK15.md#vk15204-homogeneity-of-mathfrak-p_nmathbb-f
-[VK15.2.06]: SYNOPSIS-VK15.md#vk15206-hermitian-symmetric-spaces-and-their-classification
-[VK15.2.10]: SYNOPSIS-VK15.md#vk15210-compact-duals-and-flat-spaces-of-the-classical-domains
-[VK15.2.11]: SYNOPSIS-VK15.md#vk15211-characteristic-manifolds-shilov-boundaries
-[VK15.3.02]: SYNOPSIS-VK15.md#vk15302-haar-measure-of-glmmathbb-r-and-the-gauss-decomposition
-[VK15.3.03]: SYNOPSIS-VK15.md#vk15303-haar-measure-of-glmmathbb-r-in-iwasawa-coordinates
-[VK15.3.04]: SYNOPSIS-VK15.md#vk15304-haar-measure-of-glmmathbb-r-in-cartan-coordinates
-[VK15.3.05]: SYNOPSIS-VK15.md#vk15305-haar-measure-of-slmmathbb-r-in-cartan-coordinates
-[VK15.3.08]: SYNOPSIS-VK15.md#vk15308-haar-measure-in-iwasawa-coordinates
-[VK15.3.09]: SYNOPSIS-VK15.md#vk15309-haar-measure-of-glnmathbb-c-in-iwasawa-coordinates
-[VK15.3.11]: SYNOPSIS-VK15.md#vk15311-supq-rho-and-the-radial-densities
-[VK15.3.12]: SYNOPSIS-VK15.md#vk15312-invariant-metric-on-mathfrak-p_mmathbb-f
-[VK15.3.15]: SYNOPSIS-VK15.md#vk15315-measure-in-triangular-coordinates
-[VK15.3.17]: SYNOPSIS-VK15.md#vk15317-measure-in-spectral-coordinates
-[VK15.3.20]: SYNOPSIS-VK15.md#vk15320-complex-and-complex-symmetric-matrices
-[VK15.3.21]: SYNOPSIS-VK15.md#vk15321-real-symmetric-and-symmetric-unitary-matrices
-[VK15.3.22]: SYNOPSIS-VK15.md#vk15322-antisymmetric-complex-and-antisymmetric-unitary-matrices
-[VK15.3.23]: SYNOPSIS-VK15.md#vk15323-invariant-metric-and-measure-on-the-siegel-half-space
-[VK15.3.28]: SYNOPSIS-VK15.md#vk15328-radial-parts-on-gk-horospherical-radial-parts
-[VK16.1.05]: SYNOPSIS-VK16.md#vk16105-irreducible-holomorphic-representations-of-glnℂ
-[VK16.1.10]: SYNOPSIS-VK16.md#vk16110-freeness-criteria-statements-13
-[VK16.1.11]: SYNOPSIS-VK16.md#vk16111-the-null-cone-statements-45
-[VK16.1.12]: SYNOPSIS-VK16.md#vk16112-separation-of-variables-theorem
-[VK16.1.18]: SYNOPSIS-VK16.md#vk16118-symmetric-powers-on-rectangular-matrices
-[VK16.1.19]: SYNOPSIS-VK16.md#vk16119-symmetric-powers-of-t₁t₁-and-on-symmetricskew-matrices
-[VK16.2.11]: SYNOPSIS-VK16.md#vk16211-principal-series-of-so₀pp-on-the-real-matrix-cone
-[VK16.2.15]: SYNOPSIS-VK16.md#vk16215-orbit-method-for-nilpotent-groups-kirillov
-[VK16.2.17]: SYNOPSIS-VK16.md#vk16217-unitriangular-and-block-triangular-examples
-[VK16.2.20]: SYNOPSIS-VK16.md#vk16220-spherical-type-functional-equations
-[VK16.2.21]: SYNOPSIS-VK16.md#vk16221-addition-and-product-formulas-for-block-matrices
-[VK16.3.04]: SYNOPSIS-VK16.md#vk16304-transformation-formulas
-[VK16.3.06]: SYNOPSIS-VK16.md#vk16306-differential-systems
-[VK16.3.07]: SYNOPSIS-VK16.md#vk16307-fundamental-solutions
-[VK16.3.11]: SYNOPSIS-VK16.md#vk16311-generators-and-the-diagonal-kernel
-[VK16.3.12]: SYNOPSIS-VK16.md#vk16312-generalized-beta-function-and-the-kernel-of-u_n
-[VK16.3.13]: SYNOPSIS-VK16.md#vk16313-kernels-of-v_n
-[VK16.3.15]: SYNOPSIS-VK16.md#vk16315-the-kernel-of-g_nt
-[VK16.3.16]: SYNOPSIS-VK16.md#vk16316-lauricella-kernels-f_a-and-f_b
-[VK16.3.17]: SYNOPSIS-VK16.md#vk16317-reflection-formula-for-the-g_nt-kernels
-[VK17.1.08]: SYNOPSIS-VK17.md#vk17108-h-harmonic-polynomials-and-the-matrix-bochner-formula
-[VK17.1.09]: SYNOPSIS-VK17.md#vk17109-multivariate-gamma-function
-[VK17.1.12]: SYNOPSIS-VK17.md#vk17112-inverse-laplace-transform-of-powers-cayley-type-operators
-[VK17.1.13]: SYNOPSIS-VK17.md#vk17113-riemannliouville-operators-of-a-matrix-argument
-[VK17.1.16]: SYNOPSIS-VK17.md#vk17116-beta-convolution-and-the-beta-prime-integral
-[VK17.1.18]: SYNOPSIS-VK17.md#vk17118-matrix-analogue-of-int1x2-alphadx-recurrence
-[VK17.1.20]: SYNOPSIS-VK17.md#vk17120-the-skew-symmetric-integral-k_m
-[VK17.1.21]: SYNOPSIS-VK17.md#vk17121-matrix-ball-integrals-j_km
-[VK17.1.22]: SYNOPSIS-VK17.md#vk17122-marginal-integrals-over-the-matrix-ball
-[VK17.1.23]: SYNOPSIS-VK17.md#vk17123-a-quadratic-form-integral-over-mathbb-f
-[VK17.1.24]: SYNOPSIS-VK17.md#vk17124-symmetric-matrix-ball-integrals-l_m
-[VK17.1.25]: SYNOPSIS-VK17.md#vk17125-skew-symmetric-matrix-ball-integrals-m_m
-[VK17.2.01]: SYNOPSIS-VK17.md#vk17201-gelfand-pairs-gelfands-criterion
-[VK17.2.05]: SYNOPSIS-VK17.md#vk17205-expansion-and-functional-equation-of-spherical-functions
-[VK17.2.07]: SYNOPSIS-VK17.md#vk17207-class-1-principal-series-and-the-integral-representation
-[VK17.2.10]: SYNOPSIS-VK17.md#vk17210-characters-of-spm-so2m-so2m1-and-the-weyl-formula
-[VK17.2.13]: SYNOPSIS-VK17.md#vk17213-dimension-sums
-[VK17.2.15]: SYNOPSIS-VK17.md#vk17215-generating-function-and-jacobitrudi-formula
-[VK17.2.17]: SYNOPSIS-VK17.md#vk17217-spherical-functions-of-cartan-motion-groups
-[VK17.2.18]: SYNOPSIS-VK17.md#vk17218-green-functions-of-compact-groups
-[VK17.2.19]: SYNOPSIS-VK17.md#vk17219-green-functions-of-noncompact-groups
-[VK17.2.20]: SYNOPSIS-VK17.md#vk17220-spherical-transform-inversion-and-plancherel-formula
-[VK17.2.21]: SYNOPSIS-VK17.md#vk17221-explicit-plancherel-densities
-[VK17.2.23]: SYNOPSIS-VK17.md#vk17223-the-algebra-of-representations
-[VK17.2.24]: SYNOPSIS-VK17.md#vk17224-weight-multiplicities-and-the-difference-operator
-[VK17.3.05]: SYNOPSIS-VK17.md#vk17305-product-expansion-and-orthogonality-of-zonal-spherical-functions
-[VK17.3.16]: SYNOPSIS-VK17.md#vk17316-value-of-z_mathbf-ki_m-for-mathbb-fmathbb-r
-[VK17.3.21]: SYNOPSIS-VK17.md#vk17321-inverse-laplace-form
-[VK17.3.25]: SYNOPSIS-VK17.md#vk17325-coefficient-recurrence-for-zonal-polynomials-mathbb-fmathbb-r
-[VK17.3.26]: SYNOPSIS-VK17.md#vk17326-expansion-of-zonal-polynomials-in-characters-mathbb-fmathbb-r
-[VK17.3.39]: SYNOPSIS-VK17.md#vk17339-expansion-of-valphabeta_ell-in-vandermonde-type-determinants
-[VK17.3.43]: SYNOPSIS-VK17.md#vk17343-radial-parts-of-invariant-operators-on-k_ellbackslash-sunk_ell
-[VK17.3.44]: SYNOPSIS-VK17.md#vk17344-zonal-spherical-functions-of-sunsun-elltimes-uell
-[VK17.3.45]: SYNOPSIS-VK17.md#vk17345-berezinkarpelevich-formula-for-sun-ellellsun-elltimes-uell
-[VK17.3.46]: SYNOPSIS-VK17.md#vk17346-generalized-bessel-functions-on-mathfrak-m_n-ellellmathbb-c
-[VK17.3.47]: SYNOPSIS-VK17.md#vk17347-integral-representation-of-the-generalized-bessel-functions
-[VK17.4.01]: SYNOPSIS-VK17.md#vk17401-hypergeometric-functions-of-a-matrix-argument
-[VK17.4.02]: SYNOPSIS-VK17.md#vk17402-binomial-series-and-the-zonal-bound
-[VK17.4.05]: SYNOPSIS-VK17.md#vk17405-inverse-laplace-representation
-[VK17.4.07]: SYNOPSIS-VK17.md#vk17407-hypergeometric-functions-with-vector-indices
-[VK17.4.08]: SYNOPSIS-VK17.md#vk17408-bessel-functions-of-a-matrix-argument
-[VK17.4.09]: SYNOPSIS-VK17.md#vk17409-growth-and-differential-relations-of-a_delta
-[VK17.4.10]: SYNOPSIS-VK17.md#vk17410-laplace-transform-of-a_delta
-[VK17.4.14]: SYNOPSIS-VK17.md#vk17414-square-integrability-of-deltabeta-a_alpha
-[VK17.4.19]: SYNOPSIS-VK17.md#vk17419-addition-type-formula-and-stiefel-integral-for-a_delta
-[VK17.4.20]: SYNOPSIS-VK17.md#vk17420-generalized-gegenbauer-polynomials-via-stiefel-averages
-[VK17.4.22]: SYNOPSIS-VK17.md#vk17422-restriction-of-ak_delta-to-rank-m-matrices
-[VK17.4.24]: SYNOPSIS-VK17.md#vk17424-bessel-functions-of-the-second-kind
-[VK17.4.27]: SYNOPSIS-VK17.md#vk17427-fourier-integrals-giving-b_delta
-[VK17.4.31]: SYNOPSIS-VK17.md#vk17431-k-bessel-functions
-[VK17.4.32]: SYNOPSIS-VK17.md#vk17432-k-bessel-functions-and-macdonald-functions
-[VK17.4.35]: SYNOPSIS-VK17.md#vk17435-contour-integral-for-_1f_1
-[VK17.4.36]: SYNOPSIS-VK17.md#vk17436-laplace-transforms-of-_1f_1
-[VK17.4.38]: SYNOPSIS-VK17.md#vk17438-euler-integral-for-_1f_1
-[VK17.4.39]: SYNOPSIS-VK17.md#vk17439-laguerre-functions-of-a-matrix-argument
-[VK17.4.40]: SYNOPSIS-VK17.md#vk17440-_1f_1-and-laguerre-functions-as-laplace-transforms-of-a_beta
-[VK17.4.42]: SYNOPSIS-VK17.md#vk17442-reflection-formula
-[VK17.4.43]: SYNOPSIS-VK17.md#vk17443-further-integral-representations-of-mkappamuz
-[VK17.4.44]: SYNOPSIS-VK17.md#vk17444-differential-recurrences-for-mkappamuz
-[VK17.4.45]: SYNOPSIS-VK17.md#vk17445-fractional-differentiation-of-whittaker-functions
-[VK17.4.46]: SYNOPSIS-VK17.md#vk17446-laplace-transform-and-convolutions-of-whittaker-functions
-[VK17.4.57]: SYNOPSIS-VK17.md#vk17457-jacobi-polynomials-of-a-matrix-argument
-[VK17.4.60]: SYNOPSIS-VK17.md#vk17460-poisson-type-integral-for-gegenbauer-polynomials
-[VK18.1.06]: SYNOPSIS-VK18.md#vk18106-gelfandtsetlin-formulas-for-glnc
-[VK18.1.09]: SYNOPSIS-VK18.md#vk18109-gelfandtsetlin-formulas-for-son
-[VK18.2.02]: SYNOPSIS-VK18.md#vk18202-orthogonality-of-cgcs
-[VK18.2.03]: SYNOPSIS-VK18.md#vk18203-cgcs-and-matrix-elements
-[VK18.2.05]: SYNOPSIS-VK18.md#vk18205-integral-formula-and-symmetries-of-gt-cgcs
-[VK18.2.06]: SYNOPSIS-VK18.md#vk18206-scalar-factors
-[VK18.2.10]: SYNOPSIS-VK18.md#vk18210-symmetries-of-scalar-factors
-[VK18.2.16]: SYNOPSIS-VK18.md#vk18216-matrix-elements-of-powers-of-e_n1n
-[VK18.2.21]: SYNOPSIS-VK18.md#vk18221-raising-one-lower-entry-in-the-p0-scalar-factor
-[VK18.2.23]: SYNOPSIS-VK18.md#vk18223-the-p0-scalar-factor-with-trivial-lower-row
-[VK18.2.25]: SYNOPSIS-VK18.md#vk18225-the-p0-scalar-factor-with-lower-row-q0
-[VK18.2.27]: SYNOPSIS-VK18.md#vk18227-the-tensor-product-with-0p-and-conjugation
-[VK18.2.28]: SYNOPSIS-VK18.md#vk18228-the-0p-scalar-factor-with-trivial-lower-row
-[VK18.2.30]: SYNOPSIS-VK18.md#vk18230-scalar-factors-for-the-fundamental-representations
-[VK18.2.34]: SYNOPSIS-VK18.md#vk18234-scalar-factors-for-the-vector-representation
-[VK18.2.35]: SYNOPSIS-VK18.md#vk18235-scalar-factors-for-the-dual-vector-representation
-[VK18.2.36]: SYNOPSIS-VK18.md#vk18236-class-one-scalar-factors-of-the-vector-representation
-[VK18.2.37]: SYNOPSIS-VK18.md#vk18237-a-product-formula-for-jacobi-polynomials
-[VK18.2.38]: SYNOPSIS-VK18.md#vk18238-a-3f2-identity-false-as-printed-correction-open
-[VK18.3.02]: SYNOPSIS-VK18.md#vk18302-matrix-elements-of-exp-te_n1n-and-exp-te_nn1
-[VK18.3.07]: SYNOPSIS-VK18.md#vk18307-conjugate-pairs-and-the-correspondence-with-representations
-[VK18.3.13]: SYNOPSIS-VK18.md#vk18313-rank-recurrence-for-matrix-beta-functions
-[VK18.4.04]: SYNOPSIS-VK18.md#vk18404-hypergeometric-form-_3n-4f_3n-5
-[VK18.4.05]: SYNOPSIS-VK18.md#vk18405-symmetry-relations
-[VK18.4.09]: SYNOPSIS-VK18.md#vk18409-explicit-linearization-coefficients
-[VK18.4.10]: SYNOPSIS-VK18.md#vk18410-integral-of-a-triple-product
-[VK18.4.13]: SYNOPSIS-VK18.md#vk18413-generalized-jacobi-polynomial-f_2
-[VK18.4.16]: SYNOPSIS-VK18.md#vk18416-extremal-cases
-[VK18.4.17]: SYNOPSIS-VK18.md#vk18417-reduction-to-_2f_1-for-weights-m0dots0
-[VK18.4.18]: SYNOPSIS-VK18.md#vk18418-fourier-expansion
-[VK18.4.21]: SYNOPSIS-VK18.md#vk18421-differentialdifference-recurrences
-[VK18.4.22]: SYNOPSIS-VK18.md#vk18422-orthogonality-of-the-matrix-elements
-[VK18.4.23]: SYNOPSIS-VK18.md#vk18423-orthogonality-of-f_1-on-1infty
-[VK18.5.05]: SYNOPSIS-VK18.md#vk18505-matrix-elements-of-un-11-first-expression
-[VK18.5.06]: SYNOPSIS-VK18.md#vk18506-matrix-elements-of-un-11-second-expression
-[VK18.6.03]: SYNOPSIS-VK18.md#vk18603-infinitesimal-operator-j_nn-1-of-so_0n-11
-[VK18.6.11]: SYNOPSIS-VK18.md#vk18611-first-order-matrom-relations
-[VK18.6.12]: SYNOPSIS-VK18.md#vk18612-matroms-of-son-in-the-variable-mucosgamma
-[VK18.6.18]: SYNOPSIS-VK18.md#vk18618-jacobi-symbol-for-son-matroms
-[VK18.7.09]: SYNOPSIS-VK18.md#vk18709-continuous-limits-the-equations
-[VK18.7.10]: SYNOPSIS-VK18.md#vk18710-one-variable-cases-and-sign-convention
-[VK18.7.11]: SYNOPSIS-VK18.md#vk18711-orthogonality-weights-eigenvalues-and-multiplicities
-[VK18.7.14]: SYNOPSIS-VK18.md#vk18714-bessel-expansion-of-ison-1-matroms
-[VK18.7.15]: SYNOPSIS-VK18.md#vk18715-bessel-expansions-of-ison-1-matrix-elements
-[VK18.7.16]: SYNOPSIS-VK18.md#vk18716-jacobi-and-exponential-expansions-for-son
-[VK19.1.06]: SYNOPSIS-VK19.md#vk19106-elliptic-and-parabolic-elements-of-discrete-groups
-[VK19.1.07]: SYNOPSIS-VK19.md#vk19107-equivalence-fundamental-domains-the-modular-group
-[VK19.1.08]: SYNOPSIS-VK19.md#vk19108-fundamental-domain-of-sl2z
-[VK19.1.09]: SYNOPSIS-VK19.md#vk19109-the-modular-curve-of-sl2z
-[VK19.1.11]: SYNOPSIS-VK19.md#vk19111-index-of-the-image-in-psl2z
-[VK19.1.15]: SYNOPSIS-VK19.md#vk19115-the-groups-γ₀n
-[VK19.1.18]: SYNOPSIS-VK19.md#vk19118-restriction-to-subgroups-the-field-𝔐₀
-[VK19.1.19]: SYNOPSIS-VK19.md#vk19119-dimension-formulas-even-weight
-[VK19.1.23]: SYNOPSIS-VK19.md#vk19123-cotangent-partial-fractions-and-lipschitz-formulas
-[VK19.1.30]: SYNOPSIS-VK19.md#vk19130-modular-forms-with-a-multiplier-system
-[VK19.1.32]: SYNOPSIS-VK19.md#vk19132-mellin-transform-and-the-theta-function
-[VK19.1.33]: SYNOPSIS-VK19.md#vk19133-analytic-continuation-of-ζ
-[VK19.1.35]: SYNOPSIS-VK19.md#vk19135-dirichlet-series-of-a-modular-form-hecke
-[VK19.1.36]: SYNOPSIS-VK19.md#vk19136-dirichlet-series-of-gₖ
-[VK19.2.10]: SYNOPSIS-VK19.md#vk19210-action-of-t-and-s-on-θ₁θ₄
-[VK19.2.11]: SYNOPSIS-VK19.md#vk19211-characterization-of-θ
-[VK19.2.16]: SYNOPSIS-VK19.md#vk19216-cosine-form-of-the-product
-[VK19.2.17]: SYNOPSIS-VK19.md#vk19217-products-for-θ₁-θ₂-θ₄
-[VK19.2.19]: SYNOPSIS-VK19.md#vk19219-logarithmic-derivative
-[VK19.2.24]: SYNOPSIS-VK19.md#vk19224-theta-functions-with-rational-characteristics
-[VK19.2.25]: SYNOPSIS-VK19.md#vk19225-relations-for-θ_ab
-[VK19.2.34]: SYNOPSIS-VK19.md#vk19234-bases-of-the-spaces-r_ℓω
-[VK19.2.37]: SYNOPSIS-VK19.md#vk19237-product-formulas
-[VK19.3.01]: SYNOPSIS-VK19.md#vk19301-level-n-theta-functions-and-auxiliary-theta-functions
-[VK19.3.06]: SYNOPSIS-VK19.md#vk19306-action-of-the-vector-fields-on-φ_j
-[VK19.3.10]: SYNOPSIS-VK19.md#vk19310-irreducibility-of-ρ_n
-[VK19.3.11]: SYNOPSIS-VK19.md#vk19311-the-isometry-φ-and-the-intertwining-operator
-[VK19.3.17]: SYNOPSIS-VK19.md#vk19317-orthonormal-basis-of-h_ωan
-[VK19.4.02]: SYNOPSIS-VK19.md#vk19402-residue-cocycle-and-the-central-extension-tilde-lmathfrak-g
-[VK19.4.06]: SYNOPSIS-VK19.md#vk19406-chevalley-generators-and-the-cartan-matrix-of-hatmathfrak-g
-[VK19.4.07]: SYNOPSIS-VK19.md#vk19407-example-roots-and-cartan-matrix-of-a_ell1-ellge2
-[VK19.4.10]: SYNOPSIS-VK19.md#vk19410-dynkin-diagrams-and-labels-of-the-untwisted-algebras
-[VK19.4.13]: SYNOPSIS-VK19.md#vk19413-a_11-roots-simple-reflections-and-hat-what-w_0cup-s_0hat-w_0
-[VK19.4.15]: SYNOPSIS-VK19.md#vk19415-a_11-rho-wrho-for-all-winhat-w
-[VK19.4.20]: SYNOPSIS-VK19.md#vk19420-chevalley-generators-of-hatmathfrak-gmu
-[VK19.4.22]: SYNOPSIS-VK19.md#vk19422-dynkin-diagrams-and-labels-of-the-twisted-algebras
-[VK19.4.24]: SYNOPSIS-VK19.md#vk19424-a_22-cartan-matrix-and-weyl-group
-[VK19.4.25]: SYNOPSIS-VK19.md#vk19425-a_22-rho-wrho-for-all-winhat-w
-[VK19.4.27]: SYNOPSIS-VK19.md#vk19427-generalized-cartan-matrices
-[VK19.4.28]: SYNOPSIS-VK19.md#vk19428-the-kacmoody-algebra-hatmathfrak-ga-and-the-classification
-[VK19.4.31]: SYNOPSIS-VK19.md#vk19431-fundamental-weights-and-the-form-on-hatmathfrak-h
-[VK19.4.33]: SYNOPSIS-VK19.md#vk19433-real-and-imaginary-roots-root-reflections-positive-roots
-[VK19.5.03]: SYNOPSIS-VK19.md#vk19503-highest-weight-representations
-[VK19.5.04]: SYNOPSIS-VK19.md#vk19504-verma-modules
-[VK19.5.06]: SYNOPSIS-VK19.md#vk19506-singular-vectors-in-verma-modules
-[VK19.5.07]: SYNOPSIS-VK19.md#vk19507-the-irreducible-modules-l_lambda-lambdain-p_
-[VK19.5.08]: SYNOPSIS-VK19.md#vk19508-formal-characters
-[VK19.5.13]: SYNOPSIS-VK19.md#vk19513-denominator-and-character-formulas-in-the-variables-u_ie-alpha_i
-[VK19.5.14]: SYNOPSIS-VK19.md#vk19514-q-specialization
-[VK19.6.01]: SYNOPSIS-VK19.md#vk19601-denominator-identity-of-a_11
-[VK19.6.03]: SYNOPSIS-VK19.md#vk19603-combinatorial-form-of-the-triple-product
-[VK19.6.06]: SYNOPSIS-VK19.md#vk19606-a_11-weyl-numerator-and-its-principal-specialization
-[VK19.6.07]: SYNOPSIS-VK19.md#vk19607-a_11-principally-specialized-characters
-[VK19.6.10]: SYNOPSIS-VK19.md#vk19610-a_22-weyl-numerator-and-its-principal-specialization
-[VK19.6.11]: SYNOPSIS-VK19.md#vk19611-a_22-principally-specialized-characters
-[VK19.7.03]: SYNOPSIS-VK19.md#vk19703-inversion-law-for-thetal_mu
-[VK19.7.04]: SYNOPSIS-VK19.md#vk19704-theta-functions-of-degree-m
-[VK19.7.06]: SYNOPSIS-VK19.md#vk19706-transformation-under-sl2mathbb-zltimes-hellmathbb-r
-[VK19.7.09]: SYNOPSIS-VK19.md#vk19709-the-group-g_mathbb-z-and-its-unitary-action
-[VK19.7.11]: SYNOPSIS-VK19.md#vk19711-coroots-and-the-coroot-lattice
-[VK19.7.12]: SYNOPSIS-VK19.md#vk19712-projection-to-the-finite-part
-[VK19.7.16]: SYNOPSIS-VK19.md#vk19716-the-lattice-m-for-the-classical-affine-algebras
-[VK19.7.18]: SYNOPSIS-VK19.md#vk19718-the-weight-set-plambda
-[VK19.7.20]: SYNOPSIS-VK19.md#vk19720-the-finite-weight-lattices-bar-p-bar-p
-[VK19.7.22]: SYNOPSIS-VK19.md#vk19722-theta-functions-theta_lambda-of-an-affine-algebra
-[VK19.7.24]: SYNOPSIS-VK19.md#vk19724-theta-function-expansion-of-characters
-[VK19.7.27]: SYNOPSIS-VK19.md#vk19727-the-spaces-mathfrak-f0_m-mathfrak-fpm_m
-[VK19.7.30]: SYNOPSIS-VK19.md#vk19730-the-modular-group-gamma-of-an-affine-algebra-invariance
-[VK19.7.31]: SYNOPSIS-VK19.md#vk19731-modular-transformations-of-thetam_mum-and-a_lambda
-[VK19.7.33]: SYNOPSIS-VK19.md#vk19733-denominator-a_rho-for-the-classical-affine-algebras
-[VK19.7.34]: SYNOPSIS-VK19.md#vk19734-the-function-ftau-and-blambda
-[VK19.7.35]: SYNOPSIS-VK19.md#vk19735-transformation-properties-of-a_rho
-[VK19.7.37]: SYNOPSIS-VK19.md#vk19737-modularity-of-f_yz-and-philambda_yz
-[VK19.8.04]: SYNOPSIS-VK19.md#vk19804-modular-properties-of-string-functions
-[VK19.8.08]: SYNOPSIS-VK19.md#vk19808-the-inverse-matrix-dlambda_lambda
-[VK19.8.10]: SYNOPSIS-VK19.md#vk19810-the-kacpeterson-formula-for-dmlambda_0_lambda
-[VK19.8.13]: SYNOPSIS-VK19.md#vk19813-string-functions-of-a1_1-levels-14
-[VK19.8.14]: SYNOPSIS-VK19.md#vk19814-string-functions-of-a1_1-level-5
-[VK19.8.15]: SYNOPSIS-VK19.md#vk19815-string-functions-of-a1_1-levels-68
-[VK19.8.16]: SYNOPSIS-VK19.md#vk19816-string-functions-of-a1_2
-[VK19.8.17]: SYNOPSIS-VK19.md#vk19817-string-functions-of-a2_2
-[VK19.8.18]: SYNOPSIS-VK19.md#vk19818-multiplicities-through-the-partition-function
-[VK19.8.20]: SYNOPSIS-VK19.md#vk19820-generating-function-of-k-and-the-inversion-formula-for-k
-[VK19.8.21]: SYNOPSIS-VK19.md#vk19821-partition-functions-of-a1_1-and-a1_2
-[VK19.8.24]: SYNOPSIS-VK19.md#vk19824-string-functions-of-a1_ell-through-k
-[VK19.8.27]: SYNOPSIS-VK19.md#vk19827-the-forms-tildethetan_n-and-their-expansion
-[VK19.8.28]: SYNOPSIS-VK19.md#vk19828-eta-product-identities-from-string-functions
-[VK19.8.29]: SYNOPSIS-VK19.md#vk19829-the-a1_1-character-quotient-in-terms-of-tildethetan_n
-[VK19.9.08]: SYNOPSIS-VK19.md#vk19908-inversion-of-the-branching-matrix
-[VK19.9.09]: SYNOPSIS-VK19.md#vk19909-double-series-formula-for-eell_jk
-[VK19.9.10]: SYNOPSIS-VK19.md#vk19910-branching-functions-as-hecke-forms
-[VK19.9.12]: SYNOPSIS-VK19.md#vk19912-branching-c1_2ellsupset-c1_ell
-[VK19.9.13]: SYNOPSIS-VK19.md#vk19913-the-jimbomiwa-determinants-det-t_1-det-t_2
-[VK09.3.17]: SYNOPSIS-VK09.md#vk09317-integral-representations-of-𝔔μ_ν
 [Koornwinder 2000]: https://staff.fnwi.uva.nl/t.h.koornwinder/art/comment/vilklimerrata.pdf
 [Klimyk 2006]: https://staff.fnwi.uva.nl/t.h.koornwinder/art/comment/klimykcorrect.pdf
 [E11.4.09]: #e11409-normalization-of-the-product-kernel-and-its-closed-forms
-[VK01.0.04]: SYNOPSIS-VK01.md#vk01004-lie-algebras-and-structure-constants
-[VK01.0.09]: SYNOPSIS-VK01.md#vk01009-group-actions-and-function-spaces
-[VK01.0.17]: SYNOPSIS-VK01.md#vk01017-semidirect-sums-of-lie-algebras
-[VK01.0.21]: SYNOPSIS-VK01.md#vk01021-partitions-of-unity-densities-integration-on-manifolds
-[VK01.1.01]: SYNOPSIS-VK01.md#vk01101-orthogonal-symplectic-and-unitary-groups
-[VK01.1.04]: SYNOPSIS-VK01.md#vk01104-lie-groups-and-parametric-equations
-[VK01.2.07]: SYNOPSIS-VK01.md#vk01207-symmetric-homogeneous-spaces
-[VK01.2.13]: SYNOPSIS-VK01.md#vk01213-pseudo-riemannian-symmetric-spaces
-[VK02.1.19]: SYNOPSIS-VK02.md#vk02119-infinitesimal-operators-in-infinite-dimension-smooth-vectors
-[VK02.2.19]: SYNOPSIS-VK02.md#vk02219-invariant-differential-operators
-[VK02.3.23]: SYNOPSIS-VK02.md#vk02323-character-expansion-of-central-functions
-[VK03.1.06]: SYNOPSIS-VK03.md#vk03106-the-complex-groups-so2mathbb-c-and-the-complexified-so11
-[VK03.1.08]: SYNOPSIS-VK03.md#vk03108-the-distribution-rlambda-on-mathbb-rn-and-quadratic-forms
-[VK03.4.06]: SYNOPSIS-VK03.md#vk03406-the-addition-formula-for-gamma-and-its-corollaries
-[VK03.5.01]: SYNOPSIS-VK03.md#vk03501-the-generalized-hypergeometric-series
-[VK03.5.35]: SYNOPSIS-VK03.md#vk03535-fractional-integrals-of-jacobi-polynomials
-[VK04.1.08]: SYNOPSIS-VK04.md#vk04108-matrix-elements-of-t_r
-[VK04.1.09]: SYNOPSIS-VK04.md#vk04109-addition-theorem-for-j_n
-[VK04.2.01]: SYNOPSIS-VK04.md#vk04201-the-pseudo-euclidean-plane
-[VK04.4.10]: SYNOPSIS-VK04.md#vk04410-sector-decomposition-of-the-lorentz-fourier-transform
-[VK05.1.09]: SYNOPSIS-VK05.md#vk05109-infinitesimal-operators-of-r_chi
-[VK05.3.08]: SYNOPSIS-VK05.md#vk05308-differentiation-formulas-for-psi
-[VK05.3.31]: SYNOPSIS-VK05.md#vk05331-christoffeldarboux-formula-for-hermite-polynomials
-[VK05.4.01]: SYNOPSIS-VK05.md#vk05401-factorization-of-g_xg_1t-and-the-kernel-identity
-[VK05.5.13]: SYNOPSIS-VK05.md#vk05513-generating-functions
-[VK06.3.08]: SYNOPSIS-VK06.md#vk06308-integral-representation-of-tl_mn
-[VK06.3.09]: SYNOPSIS-VK06.md#vk06309-euler-angle-factorization-and-the-functions-pl_mn
-[VK06.3.10]: SYNOPSIS-VK06.md#vk06310-hypergeometric-forms-of-tl_mntheta
-[VK06.5.09]: SYNOPSIS-VK06.md#vk06509-contour-integrals-in-the-w-plane
-[VK06.6.10]: SYNOPSIS-VK06.md#vk06610-mean-value-interpretation-on-the-hyperboloid
-[VK06.7.16]: SYNOPSIS-VK06.md#vk06716-three-term-recurrence-for-jacobi-polynomials
-[VK06.9.04]: SYNOPSIS-VK06.md#vk06904-characters-of-su2
-[VK07.2.04]: SYNOPSIS-VK07.md#vk07204-kernel-of-the-rotation
-[VK07.2.06]: SYNOPSIS-VK07.md#vk07206-kernels-of-lower-triangular-matrices
-[VK07.3.04]: SYNOPSIS-VK07.md#vk07304-gauss-contiguous-relations
-[VK07.4.05]: SYNOPSIS-VK07.md#vk07405-reflection-zmapsto-z
-[VK07.5.23]: SYNOPSIS-VK07.md#vk07523-reciprocal-integral-transforms-from-r_chig
-[VK07.7.10]: SYNOPSIS-VK07.md#vk07710-mellinbarnes-formulas-for-whittaker-functions
-[VK08.3.03]: SYNOPSIS-VK08.md#vk08303-terminating-_3f_2dots1-as-a-cgc
-[VK08.3.18]: SYNOPSIS-VK08.md#vk08318-summation-formulas-from-vk08207
-[VK08.4.03]: SYNOPSIS-VK08.md#vk08403-relations-between-rcs-and-cgcs
-[VK08.5.23]: SYNOPSIS-VK08.md#vk08523-contour-and-real-line-orthogonality-of-wilson-polynomials
-[VK08.5.24]: SYNOPSIS-VK08.md#vk08524-clebschgordan-coefficients-in-hahn-form
-[VK08.7.02]: SYNOPSIS-VK08.md#vk08702-recursion-and-analytic-continuation-of-the-coefficients
-[VK08.7.15]: SYNOPSIS-VK08.md#vk08715-invariant-kernels-for-hat-t_chi_1otimeshat-t_chi_2
-[VK08.7.16]: SYNOPSIS-VK08.md#vk08716-coefficients-for-principal-unitary-series
-[VK09.1.13]: SYNOPSIS-VK09.md#vk09113-the-lie-algebra-ison1
-[VK09.1.30]: SYNOPSIS-VK09.md#vk09130-laplacians-of-e_n-and-of-spheres
-[VK09.1.36]: SYNOPSIS-VK09.md#vk09136-invariant-measures-on-the-cone-and-its-sections
-[VK09.2.03]: SYNOPSIS-VK09.md#vk09203-finite-dimensional-representations-and-the-complex-cone
-[VK09.2.07]: SYNOPSIS-VK09.md#vk09207-density-of-spherical-harmonics-and-two-identities
-[VK09.2.18]: SYNOPSIS-VK09.md#vk09218-the-representations-tσε_pq-of-so_0pq
-[VK09.3.01]: SYNOPSIS-VK09.md#vk09301-gelfandtsetlin-basis-of-l2sn1
-[VK09.3.32]: SYNOPSIS-VK09.md#vk09332-continual-generating-function-and-convolution-for-legendre-functions
-[VK09.4.08]: SYNOPSIS-VK09.md#vk09408-basis-functions-on-hn-1_-and-mathbb-rn-1
-[VK09.4.29]: SYNOPSIS-VK09.md#vk09429-fourier-transform-on-son
-[VK09.5.38]: SYNOPSIS-VK09.md#vk09538-generating-function-for-mathfrak-pnsigma_kmj
-[VK09.6.31]: SYNOPSIS-VK09.md#vk09631-multinomial-addition-formula-and-a-squaring-formula
-[VK10.3.06]: SYNOPSIS-VK10.md#vk10306-poisson-images-of-the-cone-bases
-[VK10.4.07]: SYNOPSIS-VK10.md#vk10407-the-case-p--1-on-h
-[VK10.4.09]: SYNOPSIS-VK10.md#vk10409-associated-k_1n1-spherical-functions-on-h
-[VK10.4.22]: SYNOPSIS-VK10.md#vk10422-symmetry-relations-for-jacobi-functions
-[VK10.6.02]: SYNOPSIS-VK10.md#vk10602-residue-expansions
-[VK10.6.08]: SYNOPSIS-VK10.md#vk10608-sphericalhyperbolic-transition-coefficients
-[VK11.3.03]: SYNOPSIS-VK11.md#vk11303-zonal-spherical-functions-of-un
-[VK11.4.31]: SYNOPSIS-VK11.md#vk11431-product-formula-for-associated-spherical-functions-of-un-11
-[VK11.4.44]: SYNOPSIS-VK11.md#vk11444-zonal-functions-of-un-11-as-su11-functions
-[VK11.6.09]: SYNOPSIS-VK11.md#vk11609-matrix-elements-of-tnsigma-k-near-the-identity-of-glnmathbb-c
-[VK11.7.03]: SYNOPSIS-VK11.md#vk11703-the-group-spn-11-the-hyperboloid-and-the-cone
-[VK12.2.02]: SYNOPSIS-VK12.md#vk12202-automorphisms-of-n_1
-[VK12.2.05]: SYNOPSIS-VK12.md#vk12205-semidirect-products
-[VK12.3.04]: SYNOPSIS-VK12.md#vk12304-oscillator-operator-and-its-eigenspaces
-[VK12.3.07]: SYNOPSIS-VK12.md#vk12307-decomposition-under-sontimes-sl2mathbb-r
-[VK12.4.01]: SYNOPSIS-VK12.md#vk12401-the-group-unn_n
-[VK12.6.17]: SYNOPSIS-VK12.md#vk12617-jacobi-coefficients-of-costhetaisinthetacosvarphiell
-[VK12.6.25]: SYNOPSIS-VK12.md#vk12625-a-second-addition-theorem-outline
-[VK13.1.12]: SYNOPSIS-VK13.md#vk13112-distance-transitive-graphs
-[VK13.1.16]: SYNOPSIS-VK13.md#vk13116-dunkls-method-for-addition-theorems
-[VK13.1.31]: SYNOPSIS-VK13.md#vk13131-transfer-to-functions-on-s_n-and-the-relation-of-hahn-bases
-[VK13.2.02]: SYNOPSIS-VK13.md#vk13202-classical-forms-and-chevalley-groups-over-gfq
-[VK13.2.05]: SYNOPSIS-VK13.md#vk13205-elementary-q-identities
-[VK13.3.26]: SYNOPSIS-VK13.md#vk13326-beta-function-of-a-local-field
-[VK14.1.01]: SYNOPSIS-VK14.md#vk14101-q-shifted-factorials
-[VK14.1.14]: SYNOPSIS-VK14.md#vk14114-product-identities-from-the-triple-product-pentagonal-theorem
-[VK14.1.23]: SYNOPSIS-VK14.md#vk14123-the-q-exponential-e_q
-[VK14.1.27]: SYNOPSIS-VK14.md#vk14127-the-symmetric-q-gamma-function
-[VK14.3.02]: SYNOPSIS-VK14.md#vk14302-hopf-algebra-structure
-[VK14.3.08]: SYNOPSIS-VK14.md#vk14308-the-irreducible-representations-t_ell
-[VK14.3.19]: SYNOPSIS-VK14.md#vk14319-symmetries-under-ellmapsto-ell-1
-[VK14.6.36]: SYNOPSIS-VK14.md#vk14636-very-well-poised-_6varphi_5-and-_4varphi_3-sums
-[VK14.7.20]: SYNOPSIS-VK14.md#vk14720-orthogonality-of-q-gegenbauer-polynomials
-[VK14.8.19]: SYNOPSIS-VK14.md#vk14819-schur-orthogonality-q-analogue-of-the-peterweyl-theorem
-[VK16.2.06]: SYNOPSIS-VK16.md#vk16206-holomorphic-discrete-series-of-upq
-[VK17.3.04]: SYNOPSIS-VK17.md#vk17304-partial-ordering-of-spherical-weights
-[VK17.3.36]: SYNOPSIS-VK17.md#vk17336-eigenvalues-of-the-generalized-jacobi-polynomials
-[VK17.4.03]: SYNOPSIS-VK17.md#vk17403-euler-type-integrals
-[VK18.6.02]: SYNOPSIS-VK18.md#vk18602-principal-series-of-so_0n-11
-[VK19.1.24]: SYNOPSIS-VK19.md#vk19124-fourier-expansion-of-gₖ
-[VK19.2.21]: SYNOPSIS-VK19.md#vk19221-heisenberg-group-and-its-representation-on-entire-functions
-[VK19.4.11]: SYNOPSIS-VK19.md#vk19411-derivations-d_s-of-tilde-lmathfrak-g
 [E06.7.11]: #e06711-index-of-the-last-term-in-67411
 [E11.6.12]: #e11612-sign-factor-of-n-in-11613-5
 [E07.4.16]: #e07416-lower-limit-in-18-of-743
 [E16.2.07]: #e16207-arguments-in-the-norm-1-for-upq
 [E16.2.08]: #e16208-transformation-law-2-of-the-holomorphic-discrete-series-of-upq
-[VK03.5.13]: SYNOPSIS-VK03.md#vk03513-modified-bessel-functions
-[VK11.6.17]: SYNOPSIS-VK11.md#vk11617-special-cases-of-tnkrg_r
-[VK14.1.24]: SYNOPSIS-VK14.md#vk14124-the-second-q-exponential-e_1q
 [E15.1.17]: #e15117-last-block-of-a_s-for-mathfraksupq
-[VK01.0.10]: SYNOPSIS-VK01.md#vk01010-linear-maps-and-duals
-[VK01.0.15]: SYNOPSIS-VK01.md#vk01015-multilinear-bilinear-and-sesquilinear-forms
-[VK06.3.01]: SYNOPSIS-VK06.md#vk06301-matrix-elements-tl_mn
-[VK06.3.03]: SYNOPSIS-VK06.md#vk06303-hypergeometric-forms-in-alphadeltabetagamma
-[VK09.4.27]: SYNOPSIS-VK09.md#vk09427-integral-representations-of-dalpha_nu-and-of-k_nu

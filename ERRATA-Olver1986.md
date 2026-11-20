@@ -3,7 +3,6 @@
 Reference: Peter J. Olver, *Applications of Lie Groups to Differential Equations*, Graduate Texts
 in Mathematics 107, Springer-Verlag, New York, first edition, 1986. The local copy is
 [Olver 1986](References/Olver1986ApplicationsLieGroupsDifferentialEquations-SpringerGTM107.pdf).
-Synopsis: [SYNOPSIS-Olver1986](SYNOPSIS-Olver1986.md).
 
 Locators use printed page numbers. To get the one-based PDF page number, add 25 (except printed
 pp. 119–122, which are PDF pp. 146, 147, 144, 145 in the local copy).
@@ -1089,53 +1088,3 @@ edition.
 
 [Olver 1993 corrections]: https://www-users.cse.umn.edu/~olver/book_/sym1.pdf
 [Olver 1993 corrected-printing corrections]: https://www-users.cse.umn.edu/~olver/book_/sym2.pdf
-[O86.01.0.17]: SYNOPSIS-Olver1986.md#o8601017-the-exponential-map-of-sl2
-[O86.01.0.20]: SYNOPSIS-Olver1986.md#o8601020-conformal-maps-from-rotations-of-the-sphere
-[O86.01.1.02]: SYNOPSIS-Olver1986.md#o8601102-elementary-examples-of-manifolds
-[O86.01.1.05]: SYNOPSIS-Olver1986.md#o8601105-immersed-submanifolds-and-examples
-[O86.01.1.07]: SYNOPSIS-Olver1986.md#o8601107-implicitly-defined-submanifolds
-[O86.01.2.07]: SYNOPSIS-Olver1986.md#o8601207-a-local-group-that-is-not-global
-[O86.01.3.12]: SYNOPSIS-Olver1986.md#o8601312-commuting-flows
-[O86.01.5.13]: SYNOPSIS-Olver1986.md#o8601513-homotopy-operators-and-the-proof-of-the-poincaré-lemma
-[O86.02.0.06]: SYNOPSIS-Olver1986.md#o8602006-navierstokes-versus-euler-symmetries
-[O86.02.0.07]: SYNOPSIS-Olver1986.md#o8602007-group-classification-of-nonlinear-heat-conduction
-[O86.02.0.14]: SYNOPSIS-Olver1986.md#o8602014-symmetries-of-u_xx--0-maximal-symmetry-of-odes
-[O86.02.3.11]: SYNOPSIS-Olver1986.md#o8602311-second-prolongation-of-rotations-curvature
-[O86.02.4.05]: SYNOPSIS-Olver1986.md#o8602405-symmetry-algebra-of-the-wave-equation-in-21-dimensions
-[O86.02.6.03]: SYNOPSIS-Olver1986.md#o8602603-necessity-of-the-infinitesimal-criterion
-[O86.02.6.09]: SYNOPSIS-Olver1986.md#o8602609-prolongation-of-systems-total-nondegeneracy
-[O86.03.0.01]: SYNOPSIS-Olver1986.md#o8603001-mach-number-and-blast-wave-scaling-laws
-[O86.03.2.02]: SYNOPSIS-Olver1986.md#o8603202-scale-invariant-solutions-of-the-heat-equation
-[O86.03.2.04]: SYNOPSIS-Olver1986.md#o8603204-travelling-waves-of-the-kortewegde-vries-equation
-[O86.03.2.10]: SYNOPSIS-Olver1986.md#o8603210-no-so3-invariant-solutions-of-the-euler-equations
-[O86.03.2.11]: SYNOPSIS-Olver1986.md#o8603211-additional-symmetry-of-a-reduced-system-kapitanskiis-solutions
-[O86.03.3.07]: SYNOPSIS-Olver1986.md#o8603307-adjoint-table-of-the-kdv-symmetry-algebra
-[O86.03.3.11]: SYNOPSIS-Olver1986.md#o8603311-the-adjoint-invariant-of-the-heat-algebra
-[O86.03.3.15]: SYNOPSIS-Olver1986.md#o8603315-classification-of-heat-invariant-solutions
-[O86.03.4.06]: SYNOPSIS-Olver1986.md#o8603406-the-pi-theorem
-[O86.04.1.08]: SYNOPSIS-Olver1986.md#o8604108-euler-operator-under-point-transformations-of-the-plane
-[O86.04.3.08]: SYNOPSIS-Olver1986.md#o8604308-characteristics-in-the-wave-equation-example
-[O86.04.4.04]: SYNOPSIS-Olver1986.md#o8604404-conservation-laws-of-hyperelasticity
-[O86.04.4.07]: SYNOPSIS-Olver1986.md#o8604407-the-ten-geometric-conservation-laws-of-the-wave-equation
-[O86.05.0.03]: SYNOPSIS-Olver1986.md#o8605003-elementary-results-on-symmetries-and-recursion-operators
-[O86.05.0.06]: SYNOPSIS-Olver1986.md#o8605006-noether-type-results-in-exercises
-[O86.05.0.08]: SYNOPSIS-Olver1986.md#o8605008-operator-identities
-[O86.05.0.11]: SYNOPSIS-Olver1986.md#o8605011-higher-order-divergences-and-homogeneous-systems
-[O86.05.1.16]: SYNOPSIS-Olver1986.md#o8605116-polynomial-evolution-equations-the-commutativity-theorem
-[O86.05.1.17]: SYNOPSIS-Olver1986.md#o8605117-leading-coefficient-of-an-equation-with-a-nonelementary-symmetry
-[O86.05.2.09]: SYNOPSIS-Olver1986.md#o8605209-the-kdv-hierarchy
-[O86.05.3.04]: SYNOPSIS-Olver1986.md#o8605304-conservation-laws-of-burgers-equation
-[O86.05.3.10]: SYNOPSIS-Olver1986.md#o8605310-the-rungelenz-vector-of-the-kepler-problem
-[O86.05.3.14]: SYNOPSIS-Olver1986.md#o8605314-conservation-laws-of-the-two-dimensional-wave-equation
-[O86.05.4.10]: SYNOPSIS-Olver1986.md#o8605410-helmholtz-conditions-the-inverse-problem
-[O86.05.4.15]: SYNOPSIS-Olver1986.md#o8605415-null-lagrangians-as-explicit-divergences
-[O86.05.4.16]: SYNOPSIS-Olver1986.md#o8605416-null-divergences-as-explicit-total-curls
-[O86.06.0.01]: SYNOPSIS-Olver1986.md#o8606001-first-integrals-and-distinguished-functions
-[O86.06.0.03]: SYNOPSIS-Olver1986.md#o8606003-hamiltonjacobi-and-ostrogradsky
-[O86.06.2.05]: SYNOPSIS-Olver1986.md#o8606205-symplectic-spheres-in-mathfrakso3
-[O86.06.2.07]: SYNOPSIS-Olver1986.md#o8606207-darboux-theorem
-[O86.06.3.04]: SYNOPSIS-Olver1986.md#o8606304-reduction-of-order-by-a-first-integral
-[O86.06.3.06]: SYNOPSIS-Olver1986.md#o8606306-reduction-by-the-hamiltonian-itself
-[O86.06.3.13]: SYNOPSIS-Olver1986.md#o8606313-residual-symmetry-group-of-a-level-set
-[O86.07.0.02]: SYNOPSIS-Olver1986.md#o8607002-conservation-laws-moments-and-noether
-[O86.07.1.07]: SYNOPSIS-Olver1986.md#o8607107-the-two-hamiltonian-structures-of-the-kdv-equation

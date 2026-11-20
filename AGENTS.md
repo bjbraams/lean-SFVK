@@ -44,6 +44,9 @@ years 1991 through 1993, Representations ... Vols 1 through 3. The chapters in t
 are numbered consecutively, chapters 1-19 ignoring the introduction (ch 0). Synopses of
 those chapters are in files SYNOPSIS-VK01.md through SYNOPSIS-VK19.md and errata (or
 suspected errata) are in ERRATA-VK.md.
+The SYNOPSIS-*.md and STRUCTURE*.md files stay local and untracked (see `.gitignore`): they
+follow copyrighted books section by section. Never commit them, and never link to them from a
+tracked file (errata, roadmaps, code); mention them by file name at most.
 
 ## Dependencies and import layers (adopted 2026-11-19, following lean-DLMF)
 

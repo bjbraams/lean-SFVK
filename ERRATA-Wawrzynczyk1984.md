@@ -4,7 +4,6 @@ Reference: Antoni Wawrzyńczyk, *Group Representations and Special Functions*, e
 problems prepared by Aleksander Strasburger, translated by Bogdan Ziemian, D. Reidel /
 PWN–Polish Scientific Publishers, 1984. The local copy (a scan without text layer) is
 [References/Wawrzyńczyk1984GroupRepresentationsSpecialFunctions-ReidelKluwer.pdf](References/Wawrzyńczyk1984GroupRepresentationsSpecialFunctions-ReidelKluwer.pdf).
-Synopsis: [SYNOPSIS-Wawrzynczyk1984](SYNOPSIS-Wawrzynczyk1984.md).
 
 Locators use printed page numbers; printed page \(p\) is PDF page \(p+15\) throughout. Line
 numbers, where given, count from the top of the page; negative line numbers count from the
@@ -70,8 +69,6 @@ example a sign or normalization convention that differs from a modern reference.
 - Total: 615 entries, 164 errata (Confirmed 157, Normalization check 6, Open check 1).
 
 ## Chapter 1. Groups and Homogeneous Spaces
-
-Synopsis: Chapter 1 of [SYNOPSIS-Wawrzynczyk1984](SYNOPSIS-Wawrzynczyk1984.md).
 
 ### W84-E01.1.01. Automorphisms must be bijective
 
@@ -230,8 +227,6 @@ Target: [W84.01.8.05].
   above were read from the page images.
 
 ## Chapter 2. Representations of Locally Compact Groups
-
-Synopsis: Chapter 2 of [SYNOPSIS-Wawrzynczyk1984](SYNOPSIS-Wawrzynczyk1984.md).
 
 ### W84-E02.5.01. Bound for a positive definite function is not strict
 
@@ -809,7 +804,6 @@ Target: [W84.08.3.05].
 - p. 293: "special case of formula (8.3.8)" refers to (8.3.9), and "the left-hand side of
   (8.3.10)" to (8.3.12); p. 301: "Proposition 8.1.6" refers to Proposition 8.6.1; p. 308:
   "(7.8.10)" is (8.7.10).
-
 
 ## Chapter 9. Gegenbauer Polynomials
 
@@ -2396,144 +2390,3 @@ Target: [W84.F.23.01].
 - The table uses \(P^m_l\) with the factor \((-1)^m\) on \((-1,1)\) and Hobson's convention
   (no \((-1)^m\), \((z^2-1)^{m/2}\)) on \((1,\infty)\).
 - Formulas marked "(as printed)" in the synopsis were not independently verified.
-
-[W84.01.1.03]: SYNOPSIS-Wawrzynczyk1984.md#w8401103-homomorphisms-and-automorphisms
-[W84.01.3.02]: SYNOPSIS-Wawrzynczyk1984.md#w8401302-lie-subgroups
-[W84.01.4.01]: SYNOPSIS-Wawrzynczyk1984.md#w8401401-lie-transformation-groups-and-the-coset-manifold
-[W84.01.4.04]: SYNOPSIS-Wawrzynczyk1984.md#w8401404-fundamental-vector-fields-of-an-action
-[W84.01.4.05]: SYNOPSIS-Wawrzynczyk1984.md#w8401405-generators-for-sl2mathbb-r-on-p1mathbb-r-motions-of-the-plane
-[W84.01.4.08]: SYNOPSIS-Wawrzynczyk1984.md#w8401408-the-invariant-area-form-on-s2
-[W84.01.5.03]: SYNOPSIS-Wawrzynczyk1984.md#w8401503-problems-of-15-lie-groups-and-invariant-forms
-[W84.01.6.07]: SYNOPSIS-Wawrzynczyk1984.md#w8401607-the-algebra-l1g-and-convolution-inequalities
-[W84.01.8.01]: SYNOPSIS-Wawrzynczyk1984.md#w8401801-nilpotent-solvable-semisimple-and-simple-lie-algebras
-[W84.01.8.05]: SYNOPSIS-Wawrzynczyk1984.md#w8401805-problems-of-18
-[W84.02.5.04]: SYNOPSIS-Wawrzynczyk1984.md#w8402504-elementary-properties-of-positive-definite-functions
-[W84.02.8.01]: SYNOPSIS-Wawrzynczyk1984.md#w8402801-the-enveloping-algebra-as-differential-operators
-[W84.02.8.03]: SYNOPSIS-Wawrzynczyk1984.md#w8402803-the-schrödinger-representation
-[W84.03.1.09]: SYNOPSIS-Wawrzynczyk1984.md#w8403109-decomposable-and-diagonal-operators
-[W84.03.2.06]: SYNOPSIS-Wawrzynczyk1984.md#w8403206-invariant-differential-operators-and-plane-wave-eigenfunctions
-[W84.03.3.01]: SYNOPSIS-Wawrzynczyk1984.md#w8403301-paleywiener-theorem
-[W84.03.6.07]: SYNOPSIS-Wawrzynczyk1984.md#w8403607-problem-10-poisson-kernel-and-l1-inversion-on-mathbb-r
-[W84.03.6.08]: SYNOPSIS-Wawrzynczyk1984.md#w8403608-problems-1114-convolution-on-mathbb-t-riemannlebesgue-poisson-integral
-[W84.03.6.09]: SYNOPSIS-Wawrzynczyk1984.md#w8403609-problem-15-mellin-transform-of-derivatives
-[W84.04.4.05]: SYNOPSIS-Wawrzynczyk1984.md#w8404405-example-the-irreducible-representations-of-s_3
-[W84.04.7.05]: SYNOPSIS-Wawrzynczyk1984.md#w8404705-example-harmonic-analysis-on-o2
-[W84.05.1.12]: SYNOPSIS-Wawrzynczyk1984.md#w8405112-convolution-with-spherical-functions
-[W84.06.2.01]: SYNOPSIS-Wawrzynczyk1984.md#w8406201-mellin-transform-via-the-fourier-transform
-[W84.06.2.02]: SYNOPSIS-Wawrzynczyk1984.md#w8406202-fourier-transforms-of-x_pmz-1
-[W84.06.3.03]: SYNOPSIS-Wawrzynczyk1984.md#w8406303-a-mellinbarnes-integral-and-the-beta-integral-of-the-second-kind
-[W84.07.3.02]: SYNOPSIS-Wawrzynczyk1984.md#w8407302-grafs-addition-formula-and-its-specializations
-[W84.07.4.01]: SYNOPSIS-Wawrzynczyk1984.md#w8407401-spherical-transform-and-inversion-on-mathbb-c
-[W84.07.4.05]: SYNOPSIS-Wawrzynczyk1984.md#w8407405-problems-neumann-type-series-and-integrals
-[W84.08.1.02]: SYNOPSIS-Wawrzynczyk1984.md#w8408102-derivative-formula-for-the-matrix-elements
-[W84.08.1.03]: SYNOPSIS-Wawrzynczyk1984.md#w8408103-the-functions-pl_jk
-[W84.08.1.05]: SYNOPSIS-Wawrzynczyk1984.md#w8408105-pl_jk-as-jacobi-polynomials
-[W84.08.3.05]: SYNOPSIS-Wawrzynczyk1984.md#w8408305-addition-formulas
-[W84.08.4.04]: SYNOPSIS-Wawrzynczyk1984.md#w8408404-recurrences-and-the-associated-legendre-equation-for-pl_mk
-[W84.08.5.02]: SYNOPSIS-Wawrzynczyk1984.md#w8408502-mehlerdirichlet-formula
-[W84.08.7.06]: SYNOPSIS-Wawrzynczyk1984.md#w8408706-problems-explicit-formulas-for-pl_rs-and-pm_l
-[W84.08.7.08]: SYNOPSIS-Wawrzynczyk1984.md#w8408708-problems-associated-legendre-functions
-[W84.09.2.01]: SYNOPSIS-Wawrzynczyk1984.md#w8409201-homogeneous-polynomials-and-the-maps-tau-delta
-[W84.09.2.05]: SYNOPSIS-Wawrzynczyk1984.md#w8409205-harmonic-decomposition
-[W84.09.2.06]: SYNOPSIS-Wawrzynczyk1984.md#w8409206-the-intertwining-projection-onto-hl
-[W84.09.3.01]: SYNOPSIS-Wawrzynczyk1984.md#w8409301-gegenbauers-differential-equation
-[W84.09.3.02]: SYNOPSIS-Wawrzynczyk1984.md#w8409302-derivative-and-three-term-recurrences
-[W84.09.4.02]: SYNOPSIS-Wawrzynczyk1984.md#w8409402-laplace-type-integral-representation
-[W84.09.4.03]: SYNOPSIS-Wawrzynczyk1984.md#w8409403-product-reproducing-formula
-[W84.09.4.05]: SYNOPSIS-Wawrzynczyk1984.md#w8409405-gegenbauer-expansion-and-parseval-formula
-[W84.09.5.01]: SYNOPSIS-Wawrzynczyk1984.md#w8409501-mean-value-theorem-and-the-gegenbauer-addition-type-integral
-[W84.09.5.05]: SYNOPSIS-Wawrzynczyk1984.md#w8409505-problem-10-special-parameters-rodrigues-formula-generating-function
-[W84.09.5.06]: SYNOPSIS-Wawrzynczyk1984.md#w8409506-problem-11-gegenbauer-polynomials-for-real-lambda-frac12
-[W84.10.1.02]: SYNOPSIS-Wawrzynczyk1984.md#w8410102-iwasawa-decomposition-and-haar-measure
-[W84.10.1.03]: SYNOPSIS-Wawrzynczyk1984.md#w8410103-euler-angles-cartan-decomposition
-[W84.10.4.02]: SYNOPSIS-Wawrzynczyk1984.md#w8410402-irreducibility
-[W84.10.4.03]: SYNOPSIS-Wawrzynczyk1984.md#w8410403-recurrence-relations-and-the-associated-legendre-equation
-[W84.10.5.01]: SYNOPSIS-Wawrzynczyk1984.md#w8410501-horocyclic-coordinates
-[W84.10.5.03]: SYNOPSIS-Wawrzynczyk1984.md#w8410503-inversion-of-the-abel-transform-and-the-inversion-at-the-origin
-[W84.10.5.04]: SYNOPSIS-Wawrzynczyk1984.md#w8410504-plancherel-and-inversion-for-radial-functions-mehlerfock-transform
-[W84.10.5.05]: SYNOPSIS-Wawrzynczyk1984.md#w8410505-extension-to-arbitrary-finmathcal-dd
-[W84.10.5.06]: SYNOPSIS-Wawrzynczyk1984.md#w8410506-plane-waves-on-the-disc
-[W84.10.5.07]: SYNOPSIS-Wawrzynczyk1984.md#w8410507-fourier-transform-on-the-disc-inversion-and-plancherel
-[W84.10.5.08]: SYNOPSIS-Wawrzynczyk1984.md#w8410508-problems-iwasawa-components-poisson-kernel-measures
-[W84.10.5.10]: SYNOPSIS-Wawrzynczyk1984.md#w8410510-problem-8-laplacebeltrami-operator-on-d
-[W84.10.5.13]: SYNOPSIS-Wawrzynczyk1984.md#w8410513-problems-1418-consequences-of-the-addition-theorem-and-generating-function
-[W84.11.2.03]: SYNOPSIS-Wawrzynczyk1984.md#w8411203-polar-hyperbolic-coordinates-and-the-distance
-[W84.11.2.07]: SYNOPSIS-Wawrzynczyk1984.md#w8411207-invariant-measures-on-mathcal-h-and-g
-[W84.11.3.02]: SYNOPSIS-Wawrzynczyk1984.md#w8411302-spherical-transform-and-its-polar-form
-[W84.11.3.03]: SYNOPSIS-Wawrzynczyk1984.md#w8411303-inversion-and-plancherel-theorem-for-the-spherical-transform
-[W84.11.4.02]: SYNOPSIS-Wawrzynczyk1984.md#w8411402-plane-waves-on-mathcal-h
-[W84.11.4.08]: SYNOPSIS-Wawrzynczyk1984.md#w8411408-eigenfunctions-phi_nuj-and-the-spherical-harmonic-expansion
-[W84.11.4.09]: SYNOPSIS-Wawrzynczyk1984.md#w8411409-radial-part-of-phi_nulm
-[W84.11.4.10]: SYNOPSIS-Wawrzynczyk1984.md#w8411410-phi_nuj-as-associated-legendre-functions
-[W84.11.5.01]: SYNOPSIS-Wawrzynczyk1984.md#w8411501-the-wave-operator-and-the-laplacebeltrami-operator-on-mathcal-h
-[W84.11.6.01]: SYNOPSIS-Wawrzynczyk1984.md#w8411601-the-gelfandgraev-horospherical-transform
-[W84.11.6.02]: SYNOPSIS-Wawrzynczyk1984.md#w8411602-dual-transform-and-inversion-formula
-[W84.11.7.06]: SYNOPSIS-Wawrzynczyk1984.md#w8411706-problem-the-lie-algebra-of-the-lorentz-group
-[W84.12.1.05]: SYNOPSIS-Wawrzynczyk1984.md#w8412105-matrix-elements-as-taylor-coefficients
-[W84.12.1.07]: SYNOPSIS-Wawrzynczyk1984.md#w8412107-matrix-elements-of-mathcal-ulambda-for-g_1
-[W84.12.2.02]: SYNOPSIS-Wawrzynczyk1984.md#w8412202-integral-representation
-[W84.12.3.03]: SYNOPSIS-Wawrzynczyk1984.md#w8412303-differentialdifference-equations-for-f_nm
-[W84.12.3.06]: SYNOPSIS-Wawrzynczyk1984.md#w8412306-derivative-recurrence-and-differential-equation-of-lk_n
-[W84.12.4.04]: SYNOPSIS-Wawrzynczyk1984.md#w8412404-generating-function-for-the-hermite-functions
-[W84.12.6.03]: SYNOPSIS-Wawrzynczyk1984.md#w8412603-formal-dimension-and-laguerre-orthogonality
-[W84.12.6.06]: SYNOPSIS-Wawrzynczyk1984.md#w8412606-problem-bilinear-generating-identities-from-the-addition-formula
-[W84.12.6.07]: SYNOPSIS-Wawrzynczyk1984.md#w8412607-problem-explicit-sum-for-ll_n
-[W84.13.1.07]: SYNOPSIS-Wawrzynczyk1984.md#w8413107-the-riemann-p-equation-and-papperitz-form
-[W84.13.1.08]: SYNOPSIS-Wawrzynczyk1984.md#w8413108-the-hypergeometric-equation-as-a-p-equation
-[W84.13.1.09]: SYNOPSIS-Wawrzynczyk1984.md#w8413109-reduction-of-p-equations-to-the-hypergeometric-equation
-[W84.13.1.11]: SYNOPSIS-Wawrzynczyk1984.md#w8413111-example-the-legendre-equation
-[W84.13.1.12]: SYNOPSIS-Wawrzynczyk1984.md#w8413112-example-the-bessel-equation-and-bessel-functions-of-the-first-kind
-[W84.13.2.04]: SYNOPSIS-Wawrzynczyk1984.md#w8413204-analytic-continuation-of-f-by-a-double-loop-integral
-[W84.13.2.06]: SYNOPSIS-Wawrzynczyk1984.md#w8413206-gausss-summation-formula
-[W84.13.3.03]: SYNOPSIS-Wawrzynczyk1984.md#w8413303-legendre-functions-mathfrak-pl_mn
-[W84.13.4.02]: SYNOPSIS-Wawrzynczyk1984.md#w8413402-confluence-limit
-[W84.13.4.03]: SYNOPSIS-Wawrzynczyk1984.md#w8413403-integral-representations-of-_1f_1
-[W84.13.4.08]: SYNOPSIS-Wawrzynczyk1984.md#w8413408-problem-legendre-functions-of-the-second-kind
-[W84.13.4.12]: SYNOPSIS-Wawrzynczyk1984.md#w8413412-problem-contiguous-relations-and-the-derivative
-[W84.13.4.13]: SYNOPSIS-Wawrzynczyk1984.md#w8413413-problems-convergence-second-solutions-at-0-1-infty
-[W84.14.3.06]: SYNOPSIS-Wawrzynczyk1984.md#w8414306-torsion-form-and-the-bracket-of-basic-fields
-[W84.14.5.03]: SYNOPSIS-Wawrzynczyk1984.md#w8414503-induced-connection-on-a-hypersurface
-[W84.14.7.03]: SYNOPSIS-Wawrzynczyk1984.md#w8414703-example-the-poincaré-half-plane
-[W84.14.7.05]: SYNOPSIS-Wawrzynczyk1984.md#w8414705-exponential-map-in-non-positive-curvature
-[W84.15.5.02]: SYNOPSIS-Wawrzynczyk1984.md#w8415502-invariant-riemannian-structures-from-riemann-pairs
-[W84.15.5.07]: SYNOPSIS-Wawrzynczyk1984.md#w8415507-curvature-of-riemannian-symmetric-spaces
-[W84.15.6.05]: SYNOPSIS-Wawrzynczyk1984.md#w8415605-problem-the-real-grassmannian
-[W84.17.1.04]: SYNOPSIS-Wawrzynczyk1984.md#w8417104-killing-form-of-mathfrak-un-and-mathfraksun
-[W84.17.2.02]: SYNOPSIS-Wawrzynczyk1984.md#w8417202-real-forms-of-mathfrakslnmathbb-c-and-mathfrak-onmathbb-c
-[W84.17.5.01]: SYNOPSIS-Wawrzynczyk1984.md#w8417501-the-boundary-bkmgman
-[W84.17.5.02]: SYNOPSIS-Wawrzynczyk1984.md#w8417502-fixed-point-property
-[W84.17.6.07]: SYNOPSIS-Wawrzynczyk1984.md#w8417607-problems-36-cartan-subalgebras-cartan-numbers
-[W84.17.6.08]: SYNOPSIS-Wawrzynczyk1984.md#w8417608-problems-78-real-forms-and-conjugacy
-[W84.18.1.05]: SYNOPSIS-Wawrzynczyk1984.md#w8418105-poisson-kernel-as-a-jacobian
-[W84.18.1.08]: SYNOPSIS-Wawrzynczyk1984.md#w8418108-plane-waves-and-spherical-functions-on-lobachevsky-space
-[W84.18.3.03]: SYNOPSIS-Wawrzynczyk1984.md#w8418303-the-harish-chandra-homomorphism
-[W84.18.4.02]: SYNOPSIS-Wawrzynczyk1984.md#w8418402-harish-chandra-series
-[W84.18.5.01]: SYNOPSIS-Wawrzynczyk1984.md#w8418501-rank-one-the-radial-equation-and-the-series
-[W84.18.5.04]: SYNOPSIS-Wawrzynczyk1984.md#w8418504-helgasons-gamma-product-form-of-c
-[W84.18.5.05]: SYNOPSIS-Wawrzynczyk1984.md#w8418505-harish-chandras-integral-and-analytic-properties-of-c
-[W84.18.6.02]: SYNOPSIS-Wawrzynczyk1984.md#w8418602-plancherel-and-inversion-for-the-helgasonfourier-transform
-[W84.18.7.05]: SYNOPSIS-Wawrzynczyk1984.md#w8418705-the-operators-lambda_pm-and-helgasons-inversion-formula
-[W84.18.8.03]: SYNOPSIS-Wawrzynczyk1984.md#w8418803-paleywiener-theorem
-[W84.F.1.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f101-definition-and-elementary-values-of-gamma
-[W84.F.1.02]: SYNOPSIS-Wawrzynczyk1984.md#w84f102-reflection-duplication-values-on-vertical-lines
-[W84.F.1.03]: SYNOPSIS-Wawrzynczyk1984.md#w84f103-gausss-limit-formula
-[W84.F.1.04]: SYNOPSIS-Wawrzynczyk1984.md#w84f104-the-beta-function
-[W84.F.10.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f1001-definition-and-contour-integral
-[W84.F.10.02]: SYNOPSIS-Wawrzynczyk1984.md#w84f1002-addition-formulas-and-generating-function
-[W84.F.12.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f1201-representations-addition-theorem-equation
-[W84.F.13.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f1301-rodrigues-formula-and-generating-functions
-[W84.F.13.02]: SYNOPSIS-Wawrzynczyk1984.md#w84f1302-addition-formulas
-[W84.F.13.03]: SYNOPSIS-Wawrzynczyk1984.md#w84f1303-recurrences-equation-orthogonality-explicit-form
-[W84.F.14.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f1401-definition-and-properties
-[W84.F.16.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f1601-mellin-inversion-and-plancherel-relation-to-the-fourier-transform
-[W84.F.2.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f201-definition-mellin-representation-euler-product
-[W84.F.20.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f2001-spherical-harmonics
-[W84.F.22.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f2201-orthonormal-bases-of-polynomials
-[W84.F.23.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f2301-mehlerfock-inversion-and-plancherel
-[W84.F.3.02]: SYNOPSIS-Wawrzynczyk1984.md#w84f302-integral-representations-and-gausss-sum
-[W84.F.3.03]: SYNOPSIS-Wawrzynczyk1984.md#w84f303-elementary-properties
-[W84.F.6.02]: SYNOPSIS-Wawrzynczyk1984.md#w84f602-the-functions-pl_kj-closed-forms
-[W84.F.7.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f701-explicit-forms
-[W84.F.7.03]: SYNOPSIS-Wawrzynczyk1984.md#w84f703-recurrences-and-the-associated-legendre-equation
-[W84.F.8.01]: SYNOPSIS-Wawrzynczyk1984.md#w84f801-explicit-forms-and-integral-representations
-[W84.F.8.02]: SYNOPSIS-Wawrzynczyk1984.md#w84f802-recurrences-and-legendres-equation

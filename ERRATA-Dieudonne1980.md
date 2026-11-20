@@ -4,7 +4,6 @@ Reference: Jean Dieudonné, *Special Functions and Linear Representations of Lie
 Regional Conference Series in Mathematics 42, American Mathematical Society, Providence, R.I.,
 1980. The local copy is
 [References/Dieudonné1980SpecialFunctionsLinearRepresentationsLieGroups-AMS.CBMS42.pdf](References/Dieudonné1980SpecialFunctionsLinearRepresentationsLieGroups-AMS.CBMS42.pdf).
-Synopsis: [SYNOPSIS-Dieudonne1980](SYNOPSIS-Dieudonne1980.md).
 
 Locators use printed page numbers. To get the one-based PDF page number, add 5 (throughout the
 book). Line numbers, where given, count from the top of the page; negative line numbers count
@@ -598,49 +597,3 @@ No errata.
 - p. 58: "can be treated as the representations of the discrete series of \(SL(2,\mathbb R)\) in §14,
   using the Mellin transforms": in §14 the Mellin transforms (176)–(177) are applied to the
   principal series, not the discrete series ([D80.17.0.01]).
-
-[D80.01.0.01]: SYNOPSIS-Dieudonne1980.md#d8001001-the-exponential-as-a-homomorphism
-[D80.02.0.03]: SYNOPSIS-Dieudonne1980.md#d8002003-the-polynomial-representations-of-sl2c
-[D80.02.0.07]: SYNOPSIS-Dieudonne1980.md#d8002007-euler-angles-on-su2
-[D80.02.0.09]: SYNOPSIS-Dieudonne1980.md#d8002009-rodrigues-formula-for-pl_mn
-[D80.02.0.10]: SYNOPSIS-Dieudonne1980.md#d8002010-jacobi-polynomials-and-pl_mn
-[D80.02.0.11]: SYNOPSIS-Dieudonne1980.md#d8002011-legendre-polynomials-and-associated-legendre-functions
-[D80.02.0.12]: SYNOPSIS-Dieudonne1980.md#d8002012-composition-of-euler-angles
-[D80.02.0.14]: SYNOPSIS-Dieudonne1980.md#d8002014-multiplication-formulas
-[D80.03.7.01]: SYNOPSIS-Dieudonne1980.md#d8003701-isotypic-decomposition-of-unitary-representations
-[D80.03.7.02]: SYNOPSIS-Dieudonne1980.md#d8003702-finite-dimensional-representations-traces-and-equivalence
-[D80.03.9.03]: SYNOPSIS-Dieudonne1980.md#d8003903-clebschgordan-decomposition
-[D80.05.0.01]: SYNOPSIS-Dieudonne1980.md#d8005001-induced-representation
-[D80.06.0.05]: SYNOPSIS-Dieudonne1980.md#d8006005-zonal-spherical-functions-on-compact-groups
-[D80.07.1.01]: SYNOPSIS-Dieudonne1980.md#d8007101-su2-relative-to-its-diagonal-torus
-[D80.07.3.01]: SYNOPSIS-Dieudonne1980.md#d8007301-setting-for-s_n
-[D80.07.3.07]: SYNOPSIS-Dieudonne1980.md#d8007307-gegenbauer-polynomials
-[D80.08.0.01]: SYNOPSIS-Dieudonne1980.md#d8008001-summary-of-the-compact-case
-[D80.08.0.03]: SYNOPSIS-Dieudonne1980.md#d8008003-gelfands-theorem
-[D80.08.0.04]: SYNOPSIS-Dieudonne1980.md#d8008004-son1son-is-a-gelfand-pair
-[D80.08.0.05]: SYNOPSIS-Dieudonne1980.md#d8008005-three-classes-of-gelfand-pairs
-[D80.09.0.05]: SYNOPSIS-Dieudonne1980.md#d8009005-the-plancherelgodement-theorem
-[D80.09.0.09]: SYNOPSIS-Dieudonne1980.md#d8009009-inversion-via-approximate-units
-[D80.10.0.01]: SYNOPSIS-Dieudonne1980.md#d8010001-plancherel-transform-on-the-span-of-positive-type-measures
-[D80.10.0.07]: SYNOPSIS-Dieudonne1980.md#d8010007-the-spaces-p1-p2-and-fourier-reciprocity
-[D80.11.0.04]: SYNOPSIS-Dieudonne1980.md#d8011004-negative-results-on-the-line
-[D80.12.0.04]: SYNOPSIS-Dieudonne1980.md#d8012004-analyticity-in-the-semisimple-case
-[D80.12.0.05]: SYNOPSIS-Dieudonne1980.md#d8012005-converse-joint-eigenfunctions
-[D80.13.0.03]: SYNOPSIS-Dieudonne1980.md#d8013003-sl2mathbb-r-the-poincaré-half-plane-double-cosets
-[D80.13.0.04]: SYNOPSIS-Dieudonne1980.md#d8013004-legendre-functions-of-complex-index
-[D80.13.0.05]: SYNOPSIS-Dieudonne1980.md#d8013005-product-formula-boundedness
-[D80.14.0.04]: SYNOPSIS-Dieudonne1980.md#d8014004-quasi-invariant-measures-and-unitary-induction
-[D80.14.0.05]: SYNOPSIS-Dieudonne1980.md#d8014005-the-principal-series
-[D80.14.0.06]: SYNOPSIS-Dieudonne1980.md#d8014006-irreducibility-and-equivalences-of-the-principal-series
-[D80.14.0.07]: SYNOPSIS-Dieudonne1980.md#d8014007-the-quasi-unitary-group-and-the-circle-model
-[D80.14.0.09]: SYNOPSIS-Dieudonne1980.md#d8014009-matrix-coefficients-of-the-principal-series-in-the-circle-model
-[D80.14.0.10]: SYNOPSIS-Dieudonne1980.md#d8014010-the-spherical-principal-series
-[D80.14.0.12]: SYNOPSIS-Dieudonne1980.md#d8014012-representations-induced-from-so2
-[D80.14.0.14]: SYNOPSIS-Dieudonne1980.md#d8014014-the-complementary-series
-[D80.15.0.01]: SYNOPSIS-Dieudonne1980.md#d8015001-fundamental-domains-of-fuchsian-groups
-[D80.15.0.02]: SYNOPSIS-Dieudonne1980.md#d8015002-automorphic-functions
-[D80.15.0.04]: SYNOPSIS-Dieudonne1980.md#d8015004-periodization-and-the-kernel-of-vf
-[D80.15.0.05]: SYNOPSIS-Dieudonne1980.md#d8015005-spectral-decomposition-of-l2gammabackslash-gk
-[D80.16.0.03]: SYNOPSIS-Dieudonne1980.md#d8016003-all-positive-definite-spherical-functions-come-from-unitary-characters
-[D80.16.0.04]: SYNOPSIS-Dieudonne1980.md#d8016004-the-euclidean-motion-group-of-the-plane-j_0
-[D80.17.0.01]: SYNOPSIS-Dieudonne1980.md#d8017001-a-solvable-group-and-whittaker-functions

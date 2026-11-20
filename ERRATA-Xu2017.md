@@ -3,7 +3,6 @@
 Reference: Xiaoping Xu, *Representations of Lie Algebras and Partial Differential Equations*,
 Springer Nature Singapore, 2017 (DOI 10.1007/978-981-10-6391-6). The local copy is
 [References/Xu2017RepresentationsLieAlgebrasPartialDifferentialEquations-Springer.pdf](References/Xu2017RepresentationsLieAlgebrasPartialDifferentialEquations-Springer.pdf).
-Synopsis: [SYNOPSIS-Xu2017](SYNOPSIS-Xu2017.md).
 
 Locators use printed page numbers. The PDF omits blank pages, so the offset to the one-based PDF
 page number changes between chapters: add 32 in Chapters 1–2, 31 in Chapter 3, 30 in Chapter 4,
@@ -1050,7 +1049,6 @@ Target: [X17.10.4.02].
 - In (10.4.70) \(L(m_1,1,m_2,0,0,0)\) has one argument too many; it is \(L(m_1,1,m_2,0,0)\).
 - Theorem 10.3.1 and Corollaries 10.3.2–10.3.4 carry §10.3 numbers but appear in §10.4.
 
-
 ## Chapter 11. Representations of \(E_6\)
 
 ### X17-E11.2.01. Sign in the cubic identity for Dickson's invariant
@@ -1560,84 +1558,3 @@ Target: [X17.15.5.15].
 - (15.5.69): "\(X_N\)" means \(X_B\).
 - Formal power series identities in §§15.3–15.5 hold coefficientwise; complex powers in the
   prefactors and in Theorem 15.5.2 need a branch choice, which the source does not specify.
-
-[X17.01.1.01]: SYNOPSIS-Xu2017.md#x1701101-algebras-and-associative-algebras
-[X17.01.1.02]: SYNOPSIS-Xu2017.md#x1701102-groups-and-group-algebras
-[X17.01.5.03]: SYNOPSIS-Xu2017.md#x1701503-nilpotency-of-mathcal-k_n-and-of-strictly-upper-triangular-matrices
-[X17.02.2.03]: SYNOPSIS-Xu2017.md#x1702203-lifting-to-an-oscillator-polynomial-representation
-[X17.03.1.03]: SYNOPSIS-Xu2017.md#x1703103-root-data-of-the-classical-lie-algebras
-[X17.03.2.12]: SYNOPSIS-Xu2017.md#x1703212-weyl-groups-of-the-classical-root-systems
-[X17.03.4.02]: SYNOPSIS-Xu2017.md#x1703402-lattices-and-fundamental-weights-of-a_n-1-b_n-c_n-d_n
-[X17.03.4.03]: SYNOPSIS-Xu2017.md#x1703403-the-root-system-and-lattices-of-e_8
-[X17.03.4.04]: SYNOPSIS-Xu2017.md#x1703404-bases-of-e_7-and-e_6
-[X17.03.4.09]: SYNOPSIS-Xu2017.md#x1703409-automorphism-groups-modulo-the-weyl-group
-[X17.04.2.01]: SYNOPSIS-Xu2017.md#x1704201-engel-subalgebras-and-normalizers
-[X17.04.3.07]: SYNOPSIS-Xu2017.md#x1704307-the-torus-elements-sigmaa-on-mathfraksl_2-modules
-[X17.04.3.08]: SYNOPSIS-Xu2017.md#x1704308-automorphism-group-modulo-mathcal-emathcal-g
-[X17.04.4.04]: SYNOPSIS-Xu2017.md#x1704404-positive-roots-of-e_8-e_7-e_6
-[X17.05.1.01]: SYNOPSIS-Xu2017.md#x1705101-free-associative-tensor-and-symmetric-algebras
-[X17.05.2.06]: SYNOPSIS-Xu2017.md#x1705206-semisimple-algebras-tensor-decomposition-of-verma-and-irreducible-modules
-[X17.05.4.01]: SYNOPSIS-Xu2017.md#x1705401-the-casimir-element-and-its-eigenvalue
-[X17.06.1.03]: SYNOPSIS-Xu2017.md#x1706103-polynomial-solutions-of-a-wave-equation-in-riemannian-space
-[X17.06.2.01]: SYNOPSIS-Xu2017.md#x1706201-root-data-of-mathfrakslnmathbb-f
-[X17.06.2.06]: SYNOPSIS-Xu2017.md#x1706206-the-laplace-operator-and-the-mathfraksl2-relations
-[X17.06.2.07]: SYNOPSIS-Xu2017.md#x1706207-harmonic-polynomials-for-mathfraksln
-[X17.06.3.02]: SYNOPSIS-Xu2017.md#x1706302-signed-degree-grading
-[X17.06.5.03]: SYNOPSIS-Xu2017.md#x1706503-structure-theorem-for-n_11n_2
-[X17.06.5.04]: SYNOPSIS-Xu2017.md#x1706504-highest-weights-for-n_11n_2
-[X17.06.6.03]: SYNOPSIS-Xu2017.md#x1706603-norms-of-the-singular-vectors-boundary-cases
-[X17.06.6.04]: SYNOPSIS-Xu2017.md#x1706604-structure-theorem-for-n_1n_2
-[X17.06.6.05]: SYNOPSIS-Xu2017.md#x1706605-highest-weights-for-n_1n_2
-[X17.06.7.07]: SYNOPSIS-Xu2017.md#x1706707-finite-dimensional-mathfrakgln-modules-and-the-casimir
-[X17.06.8.03]: SYNOPSIS-Xu2017.md#x1706803-explicit-form-of-pi_kappan_1
-[X17.06.8.07]: SYNOPSIS-Xu2017.md#x1706807-case-n_11-twist-confined-to-swapped-variables
-[X17.07.1.03]: SYNOPSIS-Xu2017.md#x1707103-harmonic-polynomials-for-o2n
-[X17.07.3.05]: SYNOPSIS-Xu2017.md#x1707305-the-conformal-representation-of-o2n2
-[X17.07.4.02]: SYNOPSIS-Xu2017.md#x1707402-structure-of-pi_c-on-polynomials
-[X17.08.2.02]: SYNOPSIS-Xu2017.md#x1708202-invariant-operators-and-grading
-[X17.08.2.04]: SYNOPSIS-Xu2017.md#x1708204-structure-of-the-noncanonical-o2n1-modules
-[X17.08.3.02]: SYNOPSIS-Xu2017.md#x1708302-casimir-data-for-o2n1
-[X17.08.3.03]: SYNOPSIS-Xu2017.md#x1708303-characteristic-polynomial-of-widetildeomega-for-o2n1
-[X17.08.3.04]: SYNOPSIS-Xu2017.md#x1708304-the-conformal-representation-of-o2n3
-[X17.08.3.05]: SYNOPSIS-Xu2017.md#x1708305-shens-extension-for-o2n3
-[X17.08.3.08]: SYNOPSIS-Xu2017.md#x1708308-an-invariant-operator-for-o2n3
-[X17.08.3.09]: SYNOPSIS-Xu2017.md#x1708309-irreducibility-of-the-odd-conformal-extension
-[X17.08.4.01]: SYNOPSIS-Xu2017.md#x1708401-the-one-parameter-conformal-representation-of-o2n3
-[X17.08.4.02]: SYNOPSIS-Xu2017.md#x1708402-structure-of-pi_c-for-o2n3
-[X17.08.4.04]: SYNOPSIS-Xu2017.md#x1708404-odd-conformal-oscillator-representations
-[X17.09.1.05]: SYNOPSIS-Xu2017.md#x1709105-primitive-exterior-forms
-[X17.09.1.07]: SYNOPSIS-Xu2017.md#x1709107-irreducibility-of-the-weil-modules
-[X17.09.2.03]: SYNOPSIS-Xu2017.md#x1709203-main-theorem-irreducibility-of-the-graded-pieces
-[X17.09.3.02]: SYNOPSIS-Xu2017.md#x1709302-structure-of-the-projective-oscillator-module
-[X17.10.1.06]: SYNOPSIS-Xu2017.md#x1710106-exterior-square-and-cube-of-the-7-dimensional-module
-[X17.10.2.01]: SYNOPSIS-Xu2017.md#x1710201-the-five-variable-conformal-representation-of-g_2
-[X17.10.2.02]: SYNOPSIS-Xu2017.md#x1710202-irreducibility-of-the-conformal-g_2-module
-[X17.10.4.02]: SYNOPSIS-Xu2017.md#x1710402-the-quadratic-covariant-zeta
-[X17.11.2.02]: SYNOPSIS-Xu2017.md#x1711202-dicksons-cubic-invariant
-[X17.11.2.04]: SYNOPSIS-Xu2017.md#x1711204-decomposition-of-mathcal-a-and-dimension-identity
-[X17.11.2.08]: SYNOPSIS-Xu2017.md#x1711208-the-commutator-mathcal-d_2eta-and-mathcal-d-on-etam-multiples
-[X17.11.2.10]: SYNOPSIS-Xu2017.md#x1711210-main-theorem-dicksons-cubic-equation
-[X17.11.6.06]: SYNOPSIS-Xu2017.md#x1711606-further-explicit-cases
-[X17.12.6.04]: SYNOPSIS-Xu2017.md#x1712604-second-quadratic-identity-for-the-p_i
-[X17.12.6.05]: SYNOPSIS-Xu2017.md#x1712605-the-corresponding-identity-on-widehat-m
-[X17.12.6.06]: SYNOPSIS-Xu2017.md#x1712606-irreducibility-theorem-for-the-e_7-functor
-[X17.12.6.07]: SYNOPSIS-Xu2017.md#x1712607-scalar-and-vector-cases
-[X17.13.1.13]: SYNOPSIS-Xu2017.md#x1713113-super-analogue-of-the-theorem-on-harmonic-polynomials-for-glnm
-[X17.13.1.15]: SYNOPSIS-Xu2017.md#x1713115-indecomposability-and-super-howe-duality
-[X17.13.3.05]: SYNOPSIS-Xu2017.md#x1713305-indecomposability-for-osp2n2m
-[X17.13.3.06]: SYNOPSIS-Xu2017.md#x1713306-the-noncanonical-oscillator-representation-of-osp2n2m
-[X17.13.4.04]: SYNOPSIS-Xu2017.md#x1713404-noncanonical-representation-of-osp2n12m
-[X17.13.4.05]: SYNOPSIS-Xu2017.md#x1713405-noncanonical-harmonic-theorem-for-osp2n12m
-[X17.14.2.03]: SYNOPSIS-Xu2017.md#x1714203-binary-weight-code-of-the-exterior-cube
-[X17.14.2.04]: SYNOPSIS-Xu2017.md#x1714204-ternary-codes-of-the-exterior-square-and-cube
-[X17.14.2.05]: SYNOPSIS-Xu2017.md#x1714205-ternary-codes-from-the-adjoint-module-of-sln
-[X17.14.3.04]: SYNOPSIS-Xu2017.md#x1714304-spin-modules-and-their-weight-codes
-[X17.14.3.05]: SYNOPSIS-Xu2017.md#x1714305-weight-codes-of-the-adjoint-plus-spin-module
-[X17.15.1.01]: SYNOPSIS-Xu2017.md#x1715101-calogerosutherland-and-olshanetskyperelomov-hamiltonians
-[X17.15.1.06]: SYNOPSIS-Xu2017.md#x1715106-type-c-weyl-function-and-eigenfunctions
-[X17.15.1.07]: SYNOPSIS-Xu2017.md#x1715107-type-b-weyl-function-and-eigenfunctions
-[X17.15.2.02]: SYNOPSIS-Xu2017.md#x1715202-etingof-trace-function-of-type-a-and-the-sutherland-equation
-[X17.15.4.03]: SYNOPSIS-Xu2017.md#x1715403-auxiliary-variables-y-w-and-the-arguments-ξc
-[X17.15.4.06]: SYNOPSIS-Xu2017.md#x1715406-etingof-trace-of-sp2n-as-a-path-hypergeometric-function
-[X17.15.5.11]: SYNOPSIS-Xu2017.md#x1715511-differential-property-of-x_c
-[X17.15.5.15]: SYNOPSIS-Xu2017.md#x1715515-differential-properties-of-x_b-and-x_d

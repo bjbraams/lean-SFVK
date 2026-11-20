@@ -3,7 +3,6 @@
 Reference: George W. Bluman and Sukeyuki Kumei, *Symmetries and Differential Equations*,
 Applied Mathematical Sciences 81, Springer-Verlag, New York, 1989. The local copy is
 [References/BlumanKumei1989SymmetriesDifferentialEquations-Springer.AMS.pdf](References/BlumanKumei1989SymmetriesDifferentialEquations-Springer.AMS.pdf).
-Companion synopsis: [SYNOPSIS-BK](SYNOPSIS-BK.md).
 
 Locators use printed page numbers. To get the one-based PDF page number, add 12.
 
@@ -604,30 +603,3 @@ Target: [BK.07.2.08].
   \(c\) itself are also used implicitly (e.g. \(c=e^{x_1}\) for \(Ke^{Ax_1}\)).
 - §7.3.1: the sufficiency statement for (7.101) uses \(\lambda\) for the exponent constant called
   \(r\) in (7.21); it is unrelated to the \(\lambda\) of (7.97).
-
-[BK.02.2.07]: SYNOPSIS-BK.md#bk02207-lie-series-for-functions
-[BK.02.2.09]: SYNOPSIS-BK.md#bk02209-invariant-functions
-[BK.02.2.12]: SYNOPSIS-BK.md#bk02212-canonical-coordinates
-[BK.03.1.04]: SYNOPSIS-BK.md#bk03104-homogeneous-first-order-equations
-[BK.03.3.10]: SYNOPSIS-BK.md#bk03310-determining-equations-of-the-blasius-equation
-[BK.03.4.01]: SYNOPSIS-BK.md#bk03401-two-dimensional-subalgebras
-[BK.03.4.08]: SYNOPSIS-BK.md#bk03408-example-a-fourth-order-ode-with-a-three-parameter-solvable-group
-[BK.04.2.07]: SYNOPSIS-BK.md#bk04207-structure-theorems-for-admitted-generators-theorems-423-1-to-423-3
-[BK.04.2.08]: SYNOPSIS-BK.md#bk04208-structure-theorems-for-admitted-generators-theorems-423-4-to-423-7
-[BK.04.2.14]: SYNOPSIS-BK.md#bk04214-wave-equation-with-variable-speed-the-case-sigma0
-[BK.04.2.15]: SYNOPSIS-BK.md#bk04215-wave-equation-with-variable-speed-special-cases-of-i
-[BK.04.2.19]: SYNOPSIS-BK.md#bk04219-exercises-42-symmetry-groups-of-further-scalar-pdes
-[BK.04.3.03]: SYNOPSIS-BK.md#bk04303-determining-equations-for-systems-linear-systems
-[BK.04.3.07]: SYNOPSIS-BK.md#bk04307-group-classification-of-the-nonlinear-heat-potential-system
-[BK.04.4.09]: SYNOPSIS-BK.md#bk04409-fundamental-solution-of-the-axisymmetric-wave-equation
-[BK.04.4.13]: SYNOPSIS-BK.md#bk04413-heat-equation-on-a-finite-interval
-[BK.04.4.16]: SYNOPSIS-BK.md#bk04416-exercises-44-fundamental-solutions
-[BK.05.2.14]: SYNOPSIS-BK.md#bk05214-liebäcklund-generators-of-first-order-are-contact-generators
-[BK.05.3.05]: SYNOPSIS-BK.md#bk05305-recursion-operators-of-the-integrated-burgers-equation
-[BK.06.4.05]: SYNOPSIS-BK.md#bk06405-linearization-of-a-nonlinear-telegraph-system
-[BK.06.4.11]: SYNOPSIS-BK.md#bk06411-exercises-64
-[BK.06.5.04]: SYNOPSIS-BK.md#bk06504-parabolic-equations-criterion-and-mapping
-[BK.07.2.04]: SYNOPSIS-BK.md#bk07204-burgers-equation-potential-symmetries
-[BK.07.2.05]: SYNOPSIS-BK.md#bk07205-nonlinear-heat-conduction-classification-of-potential-symmetries
-[BK.07.2.06]: SYNOPSIS-BK.md#bk07206-the-integrated-nonlinear-heat-equation
-[BK.07.2.08]: SYNOPSIS-BK.md#bk07208-point-symmetries-of-r-versus-s

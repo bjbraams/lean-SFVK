@@ -4,7 +4,7 @@ Reference: G. Heckman and H. Schlichtkrull, *Harmonic Analysis and Special Funct
 Symmetric Spaces*, Perspectives in Mathematics 16, Academic Press (preface dated March 1994).
 Part I (Heckman, *Hypergeometric and Spherical Functions*), Part II (Schlichtkrull,
 *Semisimple Symmetric Spaces*), Part III (Heckman, *\(K\)-invariant Eisenstein Integrals*).
-The local copy is in [References](References/); the synopsis is [SYNOPSIS-HS](SYNOPSIS-HS.md).
+The local copy is in [References](References/).
 
 Locators use printed page numbers. The pagination is continuous through the book, but the PDF
 omits the title, contents and part-title pages. To get the one-based PDF page number, add 2 in
@@ -453,27 +453,3 @@ Target: [HS3.04.0.01].
   in Section 2 they are subgroups of \(U\); see the Part III conventions of the synopsis.
 - (2.13) is a product over all of \(R\) with exponent \(k_\alpha\), equivalent to a product over
   \(R_+\) with exponent \(2k_\alpha\) as in (3.10).
-
-[HS1.01.2.11]: SYNOPSIS-HS.md#hs101211-recurrence-for-operators-commuting-with-lk
-[HS1.01.3.03]: SYNOPSIS-HS.md#hs101303-rank-one-classical-jacobi-polynomials
-[HS1.02.1.05]: SYNOPSIS-HS.md#hs102105-quantum-integrability-of-the-calogeromoser-operator
-[HS1.03.1.09]: SYNOPSIS-HS.md#hs103109-injectivity-and-degree-of-the-harish-chandra-mapping
-[HS1.04.1.02]: SYNOPSIS-HS.md#hs104102-harmonic-differential-operators-and-chevalleys-decomposition
-[HS1.04.3.02]: SYNOPSIS-HS.md#hs104302-presentation-of-the-affine-braid-group
-[HS1.04.3.03]: SYNOPSIS-HS.md#hs104303-translation-elements
-[HS1.04.3.04]: SYNOPSIS-HS.md#hs104304-coxeter-type-presentation
-[HS1.04.3.08]: SYNOPSIS-HS.md#hs104308-the-second-eigenvector-of-a-simple-loop
-[HS1.04.3.09]: SYNOPSIS-HS.md#hs104309-hecke-relations-for-the-monodromy
-[HS1.05.3.03]: SYNOPSIS-HS.md#hs105303-the-mathfraksl2-computation
-[HS2.03.0.03]: SYNOPSIS-HS.md#hs203003-sigma-minimal-parabolics-are-minimal-sigmatheta-stable-parabolics
-[HS2.05.0.16]: SYNOPSIS-HS.md#hs205016-standard-intertwining-operators-convergence
-[HS2.06.0.03]: SYNOPSIS-HS.md#hs206003-example-the-hyperbolic-space
-[HS2.06.0.08]: SYNOPSIS-HS.md#hs206008-example-singular-h-fixed-distributions-on-the-hyperbolic-space
-[HS2.07.0.06]: SYNOPSIS-HS.md#hs207006-riemannian-case-of-the-main-theorem
-[HS2.07.0.16]: SYNOPSIS-HS.md#hs207016-example-harish-chandra-series-for-the-hyperbolic-space
-[HS2.08.0.03]: SYNOPSIS-HS.md#hs208003-example-the-hyperbolic-space-and-gausss-equation
-[HS2.08.0.05]: SYNOPSIS-HS.md#hs208005-example-the-scattering-coefficient-ccirc_-lambda
-[HS2.08.0.09]: SYNOPSIS-HS.md#hs208009-intertwining-with-mathbf-dgh
-[HS2.08.0.17]: SYNOPSIS-HS.md#hs208017-example-plancherel-formula-for-the-hyperbolic-space
-[HS3.04.0.01]: SYNOPSIS-HS.md#hs304001-three-coordinates-and-the-exponent-scheme
-[HS3.04.0.04]: SYNOPSIS-HS.md#hs304004-square-integrable-eigenfunctions-in-rank-one

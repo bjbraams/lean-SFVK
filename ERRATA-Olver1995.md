@@ -3,7 +3,6 @@
 Reference: Peter J. Olver, *Equivalence, Invariants, and Symmetry*, Cambridge University Press,
 Cambridge, 1995. Local copy:
 [References/Olver1995EquivalenceInvariantsSymmetry-Cambridge.pdf](References/Olver1995EquivalenceInvariantsSymmetry-Cambridge.pdf).
-Synopsis: [SYNOPSIS-Olver1995](SYNOPSIS-Olver1995.md).
 
 Locators use printed page numbers. To get the one-based PDF page number, add 16 (throughout the
 book). Line numbers, where given, count from the top of the page; negative line numbers count
@@ -1934,7 +1933,6 @@ Target: [O95.13.3.05].
 - The provisional notion "\(n\)-integrable" (p. 413) is superseded in Chapter 15 by conditions on
   ordinary/regular integral elements.
 
-
 ## Chapter 14. Frobenius' Theorem
 
 ### O95-E14.3.01. Indices in the Goursat normal form
@@ -2074,101 +2072,3 @@ checked on the page image.
 
 [Olver EIS 2nd printing]: https://www-users.cse.umn.edu/~olver/book_/eis2.pdf
 [Olver EIS 1st printing]: https://www-users.cse.umn.edu/~olver/book_/eis1.pdf
-[O95.01.2.03]: SYNOPSIS-Olver1995.md#o9501203-local-diffeomorphisms-and-covering-maps
-[O95.01.2.05]: SYNOPSIS-Olver1995.md#o9501205-functional-dependence
-[O95.01.3.03]: SYNOPSIS-Olver1995.md#o9501303-examples-of-submanifolds
-[O95.01.3.07]: SYNOPSIS-Olver1995.md#o9501307-regular-varieties
-[O95.01.5.02]: SYNOPSIS-Olver1995.md#o9501502-bracket-as-commutator-of-flows
-[O95.01.7.09]: SYNOPSIS-Olver1995.md#o9501709-the-angle-form
-[O95.01.8.02]: SYNOPSIS-Olver1995.md#o9501802-pfaffdarboux-normal-form
-[O95.02.1.07]: SYNOPSIS-Olver1995.md#o9502107-linear-and-projective-isotropy-groups
-[O95.02.11.04]: SYNOPSIS-Olver1995.md#o95021104-infinitesimal-criterion-for-invariant-submanifolds-and-equations
-[O95.02.12.03]: SYNOPSIS-Olver1995.md#o95021203-invariant-frame-for-se2-on-mathbb-r3
-[O95.02.13.04]: SYNOPSIS-Olver1995.md#o95021304-invariant-coframes
-[O95.02.2.04]: SYNOPSIS-Olver1995.md#o9502204-regular-and-semi-regular-actions
-[O95.02.2.05]: SYNOPSIS-Olver1995.md#o9502205-orbit-dimension-and-freeness
-[O95.02.4.05]: SYNOPSIS-Olver1995.md#o9502405-cross-ratio
-[O95.02.6.01]: SYNOPSIS-Olver1995.md#o9502601-structure-constants
-[O95.02.8.04]: SYNOPSIS-Olver1995.md#o9502804-centre-normalizer-ideals
-[O95.03.2.06]: SYNOPSIS-Olver1995.md#o9503206-classification-and-restriction-to-so2
-[O95.03.4.04]: SYNOPSIS-Olver1995.md#o9503404-determinantal-and-projective-infinitesimal-multipliers
-[O95.03.5.04]: SYNOPSIS-Olver1995.md#o9503504-obstruction-from-ineffective-subgroups
-[O95.03.6.02]: SYNOPSIS-Olver1995.md#o9503602-the-discriminant-of-a-binary-quadratic
-[O95.03.6.03]: SYNOPSIS-Olver1995.md#o9503603-infinitesimal-criterion-for-invariants-of-binary-forms
-[O95.03.6.11]: SYNOPSIS-Olver1995.md#o9503611-vanishing-hessian
-[O95.03.6.14]: SYNOPSIS-Olver1995.md#o9503614-a-rational-basis-of-covariants
-[O95.03.6.15]: SYNOPSIS-Olver1995.md#o9503615-covariants-of-the-binary-quartic
-[O95.04.2.02]: SYNOPSIS-Olver1995.md#o9504202-invariant-functions-via-invariants
-[O95.04.3.03]: SYNOPSIS-Olver1995.md#o9504303-prolonged-transformations
-[O95.04.5.06]: SYNOPSIS-Olver1995.md#o9504506-evolutionary-form-of-the-prolongation
-[O95.04.5.08]: SYNOPSIS-Olver1995.md#o9504508-the-three-sl2-actions-via-prolongation
-[O95.04.6.05]: SYNOPSIS-Olver1995.md#o9504605-horizontal-forms-and-horizontal-components
-[O95.04.7.04]: SYNOPSIS-Olver1995.md#o9504704-generating-functions
-[O95.04.7.07]: SYNOPSIS-Olver1995.md#o9504707-first-order-contact-transformations-general-case
-[O95.04.8.02]: SYNOPSIS-Olver1995.md#o9504802-first-order-contact-vector-fields
-[O95.04.9.03]: SYNOPSIS-Olver1995.md#o9504903-contact-equivalence-of-the-transitive-sl2-actions
-[O95.05.4.01]: SYNOPSIS-Olver1995.md#o9505401-ovsiannikovs-theorem
-[O95.05.5.04]: SYNOPSIS-Olver1995.md#o9505504-projective-action-of-sl2-and-relative-differential-invariants
-[O95.05.5.05]: SYNOPSIS-Olver1995.md#o9505505-hessian-jacobian-and-the-fundamental-invariants-for-nne0
-[O95.05.5.07]: SYNOPSIS-Olver1995.md#o9505507-the-case-n0-and-the-schwarzian-derivative
-[O95.05.5.08]: SYNOPSIS-Olver1995.md#o9505508-orbit-dimensions-for-one-independent-and-one-dependent-variable
-[O95.05.5.09]: SYNOPSIS-Olver1995.md#o9505509-lies-classification-of-planar-differential-invariants
-[O95.05.6.04]: SYNOPSIS-Olver1995.md#o9505604-invariant-coframes-and-linear-fractional-invariants
-[O95.05.7.02]: SYNOPSIS-Olver1995.md#o9505702-independence-of-differentiated-invariants
-[O95.05.8.03]: SYNOPSIS-Olver1995.md#o9505803-macaulays-theorem
-[O95.05.8.04]: SYNOPSIS-Olver1995.md#o9505804-counting-differentiated-invariants
-[O95.05.8.05]: SYNOPSIS-Olver1995.md#o9505805-finite-generation-of-differential-invariants
-[O95.05.8.06]: SYNOPSIS-Olver1995.md#o9505806-rotations-of-the-independent-variables
-[O95.06.10.01]: SYNOPSIS-Olver1995.md#o95061001-linear-ode-of-a-curve
-[O95.06.2.05]: SYNOPSIS-Olver1995.md#o9506205-symmetry-algebra-of-the-heat-equation
-[O95.06.3.02]: SYNOPSIS-Olver1995.md#o9506302-homogeneous-first-order-equations
-[O95.06.3.04]: SYNOPSIS-Olver1995.md#o9506304-reduced-equations-inherit-the-normalizer
-[O95.06.4.02]: SYNOPSIS-Olver1995.md#o9506402-rotationally-invariant-odes-and-pdes
-[O95.06.4.05]: SYNOPSIS-Olver1995.md#o9506405-schwarzs-theorem-on-the-schwarzian-equation
-[O95.06.4.06]: SYNOPSIS-Olver1995.md#o9506406-second-action-of-sl2
-[O95.06.4.07]: SYNOPSIS-Olver1995.md#o9506407-third-action-of-sl2
-[O95.06.4.08]: SYNOPSIS-Olver1995.md#o9506408-the-chazy-equation
-[O95.06.5.02]: SYNOPSIS-Olver1995.md#o9506502-the-lie-determinant
-[O95.06.9.02]: SYNOPSIS-Olver1995.md#o9506902-gauge-normal-form
-[O95.06.9.09]: SYNOPSIS-Olver1995.md#o9506909-the-relative-invariants-vi-wilczynski
-[O95.06.9.10]: SYNOPSIS-Olver1995.md#o9506910-characterizations-of-trivial-and-constant-coefficient-equations
-[O95.07.1.03]: SYNOPSIS-Olver1995.md#o9507103-null-lagrangians
-[O95.07.3.02]: SYNOPSIS-Olver1995.md#o9507302-scalar-point-transformations
-[O95.07.4.03]: SYNOPSIS-Olver1995.md#o9507403-potential-boussinesq-equation
-[O95.07.5.02]: SYNOPSIS-Olver1995.md#o9507502-rotation-invariant-problems
-[O95.07.7.02]: SYNOPSIS-Olver1995.md#o9507702-reduction-of-order-by-two
-[O95.08.5.04]: SYNOPSIS-Olver1995.md#o9508504-two-dimensional-coframes-with-constant-invariants
-[O95.08.7.02]: SYNOPSIS-Olver1995.md#o9508702-reduced-classifying-manifolds-and-determinantal-conditions
-[O95.09.3.02]: SYNOPSIS-Olver1995.md#o9509302-example-fiber-preserving-equivalence-of-second-order-odes
-[O95.10.2.01]: SYNOPSIS-Olver1995.md#o9510201-absorption-equations-and-essential-torsion
-[O95.10.3.02]: SYNOPSIS-Olver1995.md#o9510302-direct-equivalence-invariant-coframe-and-structure-equations
-[O95.10.3.04]: SYNOPSIS-Olver1995.md#o9510304-gauge-equivalence-of-operators
-[O95.10.4.03]: SYNOPSIS-Olver1995.md#o9510403-rank-zero-maximally-symmetric-lagrangians
-[O95.10.6.02]: SYNOPSIS-Olver1995.md#o9510602-complex-point-equivalence-invariant-coframe
-[O95.10.6.03]: SYNOPSIS-Olver1995.md#o9510603-rank-zero-and-rank-one-point-classification
-[O95.10.7.01]: SYNOPSIS-Olver1995.md#o9510701-binary-forms-and-their-lagrangians
-[O95.10.7.03]: SYNOPSIS-Olver1995.md#o9510703-binary-cubics-and-quartics
-[O95.10.8.02]: SYNOPSIS-Olver1995.md#o9510802-structure-equations-and-the-eight-invariants
-[O95.11.0.02]: SYNOPSIS-Olver1995.md#o9511002-structure-equations-for-second-order-odes
-[O95.11.5.01]: SYNOPSIS-Olver1995.md#o9511501-equivalence-problem-for-second-order-contact-forms
-[O95.11.5.02]: SYNOPSIS-Olver1995.md#o9511502-second-order-contact-transformations-and-bäcklunds-theorem
-[O95.11.6.02]: SYNOPSIS-Olver1995.md#o9511602-darboux-normal-forms-in-three-dimensions-analytic
-[O95.11.8.04]: SYNOPSIS-Olver1995.md#o9511804-branches-of-the-two-formvector-field-problem
-[O95.12.2.05]: SYNOPSIS-Olver1995.md#o9512205-isometry-groups-of-surfaces
-[O95.12.2.06]: SYNOPSIS-Olver1995.md#o9512206-derived-invariants-of-a-surface
-[O95.12.2.07]: SYNOPSIS-Olver1995.md#o9512207-surfaces-with-a-one-parameter-isometry-group
-[O95.12.2.08]: SYNOPSIS-Olver1995.md#o9512208-rank-two-and-rank-three-surfaces-the-adapted-coframe
-[O95.12.4.01]: SYNOPSIS-Olver1995.md#o9512401-absorption-for-the-orthogonal-group-is-determinate
-[O95.12.4.02]: SYNOPSIS-Olver1995.md#o9512402-structure-coefficients-and-the-levi-civita-connection-in-a-frame
-[O95.12.4.08]: SYNOPSIS-Olver1995.md#o9512408-maximal-isometry-groups
-[O95.12.5.01]: SYNOPSIS-Olver1995.md#o9512501-prolongation-in-the-indeterminate-case
-[O95.12.6.05]: SYNOPSIS-Olver1995.md#o9512605-point-equivalence-two-prolongations
-[O95.13.1.03]: SYNOPSIS-Olver1995.md#o9513103-a-single-one-form-in-three-dimensions
-[O95.13.2.02]: SYNOPSIS-Olver1995.md#o9513202-derived-contact-ideals-bäcklunds-theorem
-[O95.13.3.05]: SYNOPSIS-Olver1995.md#o9513305-a-rank-two-pfaffian-system-in-three-dimensions
-[O95.14.1.01]: SYNOPSIS-Olver1995.md#o9514101-frobenius-theorem-vector-field-version
-[O95.14.3.04]: SYNOPSIS-Olver1995.md#o9514304-goursat-normal-form
-[O95.14.4.04]: SYNOPSIS-Olver1995.md#o9514404-regular-coframes-and-stabilization-of-ranks
-[O95.14.5.04]: SYNOPSIS-Olver1995.md#o9514504-global-equivalence-of-coframes-of-maximal-rank
-[O95.15.3.02]: SYNOPSIS-Olver1995.md#o9515302-cartankähler-theorem
-[O95.T.6.01]: SYNOPSIS-Olver1995.md#o95t601-primitive-lie-algebras-of-vector-fields-in-mathbb-r2

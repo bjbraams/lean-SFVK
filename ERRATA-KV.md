@@ -46,22 +46,20 @@ overbarred \(\in\), which means \(\notin\).
 
 ## Summary by chapter
 
-- Chapter 1 ([SYNOPSIS-KV01](SYNOPSIS-KV01.md), 36 entries): 18 errata (Confirmed 17, Normalization
+- Chapter 1 (36 entries): 18 errata (Confirmed 17, Normalization
   check 1).
-- Chapter 2 ([SYNOPSIS-KV02](SYNOPSIS-KV02.md), 33 entries): 13 errata (Confirmed 13).
-- Chapter 3 ([SYNOPSIS-KV03](SYNOPSIS-KV03.md), 73 entries): 22 errata (Confirmed 19, Normalization
+- Chapter 2 (33 entries): 13 errata (Confirmed 13).
+- Chapter 3 (73 entries): 22 errata (Confirmed 19, Normalization
   check 1, Open check 2).
-- Chapter 4 ([SYNOPSIS-KV04](SYNOPSIS-KV04.md), 73 entries): 37 errata (Confirmed 31, Normalization
+- Chapter 4 (73 entries): 37 errata (Confirmed 31, Normalization
   check 2, Open check 4).
-- Chapter 5 ([SYNOPSIS-KV05](SYNOPSIS-KV05.md), 25 entries): 8 errata (Confirmed 7, Normalization
+- Chapter 5 (25 entries): 8 errata (Confirmed 7, Normalization
   check 1).
-- Chapter 6 ([SYNOPSIS-KV06](SYNOPSIS-KV06.md), 50 entries): 18 errata (Confirmed 18).
+- Chapter 6 (50 entries): 18 errata (Confirmed 18).
 
 Totals: Confirmed 105, Normalization check 5, Open check 6; 116 errata and 290 synopsis entries.
 
 ## Chapter 1. Representations of Lie groups relating to special functions
-
-Synopsis: [SYNOPSIS-KV01](SYNOPSIS-KV01.md).
 
 ### E01.1.01. \(\mathrm{ad}\,H\) is self-adjoint, not skew-Hermitian
 
@@ -312,7 +310,6 @@ although Chapter 2 states the basis \(z^n/\sqrt{n!}\). An unstated rescaling of 
 or of the inner product reconciles the displays.
 Target: [KV01.2.18], [KV02.2.16].
 
-
 ### Conventions and notation (not errata)
 
 - In §1.2 the source's \(N\) is lower triangular and \(\bar N\) upper triangular; with
@@ -327,8 +324,6 @@ Target: [KV01.2.18], [KV02.2.16].
   one with \((x^j,x^k)=\delta_{jk}j!(2l-j)!\) (checked for \(l\le2\)).
 
 ## Chapter 2. Matrix elements of representations and special functions
-
-Synopsis: [SYNOPSIS-KV02](SYNOPSIS-KV02.md).
 
 ### E02.1.01. Direction of an operator function belonging to a pair
 
@@ -553,7 +548,6 @@ Evidence: at \(\varphi=0\), \(d_n(0)=e\) and the matrix element must be 1; the p
 expression is a constant independent of \(\varphi\).
 Target: [KV02.2.18].
 
-
 ### Conventions and notation (not errata)
 
 - The source's \(\mathcal P^\tau_{mn}\) and \(\mathfrak P^\tau_{mn}\) are written as
@@ -572,8 +566,6 @@ Target: [KV02.2.18].
   space (see [E01.2.06]).
 
 ## Chapter 3. Functional relations for special functions related to matrix elements
-
-Synopsis: [SYNOPSIS-KV03](SYNOPSIS-KV03.md).
 
 ### E03.1.01. Range of the boost parameter
 
@@ -906,7 +898,6 @@ derivatives along the three one-parameter subgroups at \(\tau=0.37\), \(t=0.8\) 
 with \(+\tau(\tau+1)\) on the right, is correct and agrees with the corrected eigenvalue.
 Target: [KV03.4.08].
 
-
 ### Conventions and notation (not errata)
 
 - The source's \(P^l_{mn}(\cos\theta)\) of Chapter 2, (19a) is phase-free and real; the
@@ -930,8 +921,6 @@ Target: [KV03.4.08].
   \(\sigma\).
 
 ## Chapter 4. Representations of Lie Groups in "Continuous" Bases and Special Functions
-
-Synopsis: [SYNOPSIS-KV04](SYNOPSIS-KV04.md).
 
 ### E04.1.01. Affine gamma kernel: dilation factor
 
@@ -1530,7 +1519,6 @@ and gives \(0\) for \((m,n)=(1,2)\); it is the Koekoek–Swarttouw continuous Ha
 parameters \((a,\bar b,a,b)\), \(x\mapsto-x\).
 Target: [KV04.4.07].
 
-
 ### Conventions and notation (not errata)
 
 - The kernels of Chapter 4 use non-uniform parabolic normalizations:
@@ -1552,8 +1540,6 @@ Target: [KV04.4.07].
   separating the poles of \(\Gamma(\kappa+v)\) from those of \(\Gamma(\mu+\frac12-v)\)) are correct.
 
 ## Chapter 5. Group Representations and Integral Transforms
-
-Synopsis: [SYNOPSIS-KV05](SYNOPSIS-KV05.md).
 
 ### E05.1.01. Macdonald reciprocal pair: \(H\) for \(K\)
 
@@ -1697,7 +1683,6 @@ continuous \(0.25678\) + discrete \(5.74322\) = \(\|f\|^2=6\)), and at \(\kappa=
 Kontorovich–Lebedev transform.
 Target: [KV05.2.14]
 
-
 ### Conventions and notation (not errata)
 
 - §2.2, p. 232, (9) and (11): \(\sum_{l=-1-\epsilon}^{N}\) with \(N=-\min(|m|,|n|)\le-1-\epsilon\)
@@ -1707,8 +1692,6 @@ Target: [KV05.2.14]
 - §2.4, p. 233, (16): both sides carry the factor \(1/\sqrt{2\pi}\), which cancels.
 
 ## Chapter 6. Group Representations and Polynomials of a Discrete Variable
-
-Synopsis: [SYNOPSIS-KV06](SYNOPSIS-KV06.md).
 
 ### E06.1.01. Parameter range of Krawtchouk orthogonality
 
@@ -1939,7 +1922,6 @@ Evidence: for \(\varrho_1=2\), \(\varrho_2=3\), \(n=k=1\), \(x=2\), \(y=1\) the 
 \(n,k,x,y\le2\); it is the inversion of (25) by Krawtchouk orthogonality.
 Target: [KV06.3.07]
 
-
 ### Conventions and notation (not errata)
 
 - §1.1, p. 236: in \(\alpha_m=\sum_{n\in I}f(x)\overline{F(x;m,g)}\) the summation variable is
@@ -1952,7 +1934,6 @@ Target: [KV06.3.07]
   It is not a finite-support condition; orthogonality on \(\{0,\dots,N\}\) needs one lower
   parameter equal to \(-N\) ([KV06.2.23]).
 
-
 [E01.2.06]: #e01206-fock-inner-product-for-the-oscillator-representations
 [E02.2.01]: #e02201-basis-in-which-1516-and-the-s_3-formulas-hold
 [E02.2.05]: #e02205-canonical-basis-phase-in-1920
@@ -1962,127 +1943,3 @@ Target: [KV06.3.07]
 [E04.1.14]: #e04114-jacobi-form-47-of-the-discrete-series-kernel-k21
 [E04.4.02]: #e04402-continuous-hahn-weight-and-norm
 [E06.1.06]: #e06106-missing-complex-conjugation-for-krawtchoukmeixner-functions
-[KV01.1.02]: SYNOPSIS-KV01.md#kv01102-restricted-roots-and-rho
-[KV01.1.04]: SYNOPSIS-KV01.md#kv01104-parabolic-subgroups
-[KV01.1.05]: SYNOPSIS-KV01.md#kv01105-cartan-decomposition
-[KV01.1.08]: SYNOPSIS-KV01.md#kv01108-haar-measure-in-cartan-coordinates
-[KV01.1.10]: SYNOPSIS-KV01.md#kv01110-decompositions-of-sl2mathbb-r
-[KV01.1.12]: SYNOPSIS-KV01.md#kv01112-subgroups-of-so_0n1-and-son1
-[KV01.1.13]: SYNOPSIS-KV01.md#kv01113-hyperboloid-cone-and-the-iwasawa-parameter
-[KV01.1.14]: SYNOPSIS-KV01.md#kv01114-un1-and-un1
-[KV01.1.17]: SYNOPSIS-KV01.md#kv01117-the-triangular-groups-s-s_1-s_2-s_3-and-h
-[KV01.1.18]: SYNOPSIS-KV01.md#kv01118-the-oscillator-group-s_4
-[KV01.2.01]: SYNOPSIS-KV01.md#kv01201-nonunitary-spherical-series
-[KV01.2.05]: SYNOPSIS-KV01.md#kv01205-discrete-series-of-sl2mathbb-r
-[KV01.2.10]: SYNOPSIS-KV01.md#kv01210-representations-of-son1-on-the-boundary-sphere
-[KV01.2.13]: SYNOPSIS-KV01.md#kv01213-the-affine-group-of-the-line
-[KV01.2.17]: SYNOPSIS-KV01.md#kv01217-the-circle-operators-of-s_3
-[KV01.2.18]: SYNOPSIS-KV01.md#kv01218-fock-space-representations-of-s_4
-[KV02.1.05]: SYNOPSIS-KV02.md#kv02105-functions-belonging-to-representations-of-a-subgroup
-[KV02.1.06]: SYNOPSIS-KV02.md#kv02106-expansion-of-operator-functions-theorem-3
-[KV02.1.07]: SYNOPSIS-KV02.md#kv02107-expansion-of-vector-functions-theorem-4
-[KV02.2.01]: SYNOPSIS-KV02.md#kv02201-the-case-su11-integral-representation
-[KV02.2.02]: SYNOPSIS-KV02.md#kv02202-the-case-su11-hypergeometric-expressions
-[KV02.2.03]: SYNOPSIS-KV02.md#kv02203-the-case-su11-jacobi-functions-and-euler-angles
-[KV02.2.05]: SYNOPSIS-KV02.md#kv02205-the-case-su11-discrete-series
-[KV02.2.06]: SYNOPSIS-KV02.md#kv02206-the-case-su2-jacobi-polynomials
-[KV02.2.07]: SYNOPSIS-KV02.md#kv02207-the-case-su2-legendre-polynomials-and-associated-functions
-[KV02.2.10]: SYNOPSIS-KV02.md#kv02210-the-case-so_0n1-zonal-spherical-functions
-[KV02.2.12]: SYNOPSIS-KV02.md#kv02212-the-case-so_0n1-associated-spherical-functions
-[KV02.2.14]: SYNOPSIS-KV02.md#kv02214-the-case-ison-bessel-functions
-[KV02.2.16]: SYNOPSIS-KV02.md#kv02216-the-group-s_4-laguerre-functions
-[KV02.2.17]: SYNOPSIS-KV02.md#kv02217-the-group-s_3-hermite-polynomials
-[KV02.2.18]: SYNOPSIS-KV02.md#kv02218-the-case-un-jacobi-polynomials
-[KV03.1.03]: SYNOPSIS-KV03.md#kv03103-rank-one-geometry
-[KV03.1.07]: SYNOPSIS-KV03.md#kv03107-addition-theorem-for-pl_mn
-[KV03.1.10]: SYNOPSIS-KV03.md#kv03110-addition-theorem-for-associated-legendre-functions
-[KV03.1.13]: SYNOPSIS-KV03.md#kv03113-gegenbauer-addition-theorem-for-bessel-functions
-[KV03.1.16]: SYNOPSIS-KV03.md#kv03116-derivative-of-jacobi-polynomials
-[KV03.1.18]: SYNOPSIS-KV03.md#kv03118-addition-theorem-for-jacobi-functions
-[KV03.1.20]: SYNOPSIS-KV03.md#kv03120-factorization-identities-in-the-triangular-group
-[KV03.1.21]: SYNOPSIS-KV03.md#kv03121-first-addition-theorem-for-laguerre-polynomials
-[KV03.1.22]: SYNOPSIS-KV03.md#kv03122-second-addition-theorem-for-laguerre-polynomials
-[KV03.1.27]: SYNOPSIS-KV03.md#kv03127-addition-theorem-at-varphi_2pi2
-[KV03.1.33]: SYNOPSIS-KV03.md#kv03133-orthogonality-of-pl_mn
-[KV03.2.01]: SYNOPSIS-KV03.md#kv03201-general-product-formula
-[KV03.2.02]: SYNOPSIS-KV03.md#kv03202-product-formula-for-associated-spherical-functions
-[KV03.2.07]: SYNOPSIS-KV03.md#kv03207-product-formula-for-associated-legendre-functions
-[KV03.2.12]: SYNOPSIS-KV03.md#kv03212-product-formulas-for-laguerre-polynomials
-[KV03.3.03]: SYNOPSIS-KV03.md#kv03303-generating-function-for-mathfrak-ptau_mn
-[KV03.3.04]: SYNOPSIS-KV03.md#kv03304-contour-integral-for-mathfrak-ptau_mn
-[KV03.3.05]: SYNOPSIS-KV03.md#kv03305-multiplication-formulas
-[KV03.3.06]: SYNOPSIS-KV03.md#kv03306-mellin-integral-for-mathfrak-ptau_mn
-[KV03.3.07]: SYNOPSIS-KV03.md#kv03307-mellin-integral-for-legendre-functions
-[KV03.3.08]: SYNOPSIS-KV03.md#kv03308-inverse-mellin-formulas
-[KV03.3.09]: SYNOPSIS-KV03.md#kv03309-generating-function-for-discrete-series-functions
-[KV03.3.12]: SYNOPSIS-KV03.md#kv03312-cauchy-integral-for-pl_mn
-[KV03.3.13]: SYNOPSIS-KV03.md#kv03313-generating-functions-in-the-degree-l
-[KV03.3.14]: SYNOPSIS-KV03.md#kv03314-gegenbauer-expansion-of-cosh-t-cosvarphisinh-tsigma
-[KV03.4.03]: SYNOPSIS-KV03.md#kv03403-eigenvalue-equations-for-matrix-elements
-[KV03.4.08]: SYNOPSIS-KV03.md#kv03408-differential-equations-from-su11
-[KV04.1.02]: SYNOPSIS-KV04.md#kv04102-affine-group-of-the-line-gamma-kernel
-[KV04.1.04]: SYNOPSIS-KV04.md#kv04104-iso11-null-translations
-[KV04.1.07]: SYNOPSIS-KV04.md#kv04107-s_1-gamma-kernels-of-one-parameter-subgroups
-[KV04.1.08]: SYNOPSIS-KV04.md#kv04108-s_1-whittaker-kernels
-[KV04.1.09]: SYNOPSIS-KV04.md#kv04109-s_2-parabolic-cylinder-kernels
-[KV04.1.11]: SYNOPSIS-KV04.md#kv04111-sl2mathbb-r-elliptic-matrix-elements
-[KV04.1.12]: SYNOPSIS-KV04.md#kv04112-sl2mathbb-r-hyperbolic-kernels-of-boosts
-[KV04.1.14]: SYNOPSIS-KV04.md#kv04114-sl2mathbb-r-parabolic-kernels
-[KV04.1.15]: SYNOPSIS-KV04.md#kv04115-sl2mathbb-r-elliptic-to-hyperbolic-kernels-of-g_-t
-[KV04.1.16]: SYNOPSIS-KV04.md#kv04116-sl2mathbb-r-elliptic-to-parabolic-kernels-of-g_2t
-[KV04.1.19]: SYNOPSIS-KV04.md#kv04119-discrete-series-three-bases-of-l20infty
-[KV04.1.21]: SYNOPSIS-KV04.md#kv04121-discrete-series-elliptic-matrix-elements-of-g_2t
-[KV04.1.22]: SYNOPSIS-KV04.md#kv04122-discrete-series-elliptic-to-parabolic-kernel-of-g_2t
-[KV04.1.23]: SYNOPSIS-KV04.md#kv04123-discrete-series-elliptic-to-hyperbolic-kernel-of-g_-t
-[KV04.1.27]: SYNOPSIS-KV04.md#kv04127-discrete-series-kernel-as-a-meixnerpollaczek-polynomial
-[KV04.1.28]: SYNOPSIS-KV04.md#kv04128-orthogonality-and-completeness-of-meixnerpollaczek-polynomials
-[KV04.2.03]: SYNOPSIS-KV04.md#kv04203-barnes-integrals-for-hankel-functions
-[KV04.2.07]: SYNOPSIS-KV04.md#kv04207-barnes-integral-for-the-parabolic-cylinder-function
-[KV04.2.08]: SYNOPSIS-KV04.md#kv04208-mellin-transform-of-the-macdonald-function
-[KV04.2.09]: SYNOPSIS-KV04.md#kv04209-mellin-transforms-of-hankel-and-macdonald-functions-with-three-regimes
-[KV04.2.11]: SYNOPSIS-KV04.md#kv04211-whittaker-mellin-convolutions-from-sl2mathbb-r
-[KV04.2.13]: SYNOPSIS-KV04.md#kv04213-taylor-type-translation-series-for-d_nu
-[KV04.2.14]: SYNOPSIS-KV04.md#kv04214-mellin-transform-of-hypergeometric-functions
-[KV04.3.06]: SYNOPSIS-KV04.md#kv04306-continual-addition-theorem-for-whittaker-functions
-[KV04.3.07]: SYNOPSIS-KV04.md#kv04307-continual-addition-theorem-for-whittaker-functions-crossing-product
-[KV04.3.08]: SYNOPSIS-KV04.md#kv04308-continual-addition-theorem-for-parabolic-cylinder-functions
-[KV04.3.09]: SYNOPSIS-KV04.md#kv04309-residue-series-for-parabolic-cylinder-functions
-[KV04.3.12]: SYNOPSIS-KV04.md#kv04312-mixed-addition-theorem-whittaker-product-integral
-[KV04.3.13]: SYNOPSIS-KV04.md#kv04313-mixed-addition-theorem-whittakermacdonald-integral-and-mathfrak-q
-[KV04.3.14]: SYNOPSIS-KV04.md#kv04314-mixed-addition-theorem-whittaker-series
-[KV04.3.15]: SYNOPSIS-KV04.md#kv04315-mixed-addition-theorem-laguerre-series
-[KV04.3.16]: SYNOPSIS-KV04.md#kv04316-mixed-addition-theorem-whittakerjacobi-integral
-[KV04.3.17]: SYNOPSIS-KV04.md#kv04317-mixed-addition-theorem-bessellaguerre-integral
-[KV04.3.18]: SYNOPSIS-KV04.md#kv04318-mixed-addition-theorem-besselwhittaker-integral
-[KV04.4.03]: SYNOPSIS-KV04.md#kv04403-hyperbolic-clebschgordan-coefficients
-[KV04.4.07]: SYNOPSIS-KV04.md#kv04407-orthogonality-and-completeness-of-continuous-hahn-polynomials
-[KV05.1.03]: SYNOPSIS-KV05.md#kv05103-macdonald-reciprocal-pair
-[KV05.1.07]: SYNOPSIS-KV05.md#kv05107-ellipticparabolic-reciprocal-pair
-[KV05.1.10]: SYNOPSIS-KV05.md#kv05110-meixnerpollaczek-jacobi-expansion
-[KV05.2.02]: SYNOPSIS-KV05.md#kv05202-fourier-inversion-on-sl2mathbb-r
-[KV05.2.03]: SYNOPSIS-KV05.md#kv05203-plancherel-formula-on-sl2mathbb-r
-[KV05.2.04]: SYNOPSIS-KV05.md#kv05204-euler-coordinates-on-su11-and-haar-normalization
-[KV05.2.05]: SYNOPSIS-KV05.md#kv05205-expansion-of-functions-of-cosh-t-in-mn-matrix-elements
-[KV05.2.07]: SYNOPSIS-KV05.md#kv05207-jacobi-functions
-[KV05.2.12]: SYNOPSIS-KV05.md#kv05212-index-transform-with-j_irho-j_-irho
-[KV05.2.13]: SYNOPSIS-KV05.md#kv05213-index-transform-with-j_irhoj_-irho
-[KV05.2.14]: SYNOPSIS-KV05.md#kv05214-whittaker-index-transform
-[KV06.1.04]: SYNOPSIS-KV06.md#kv06104-krawtchouk-orthogonality
-[KV06.1.09]: SYNOPSIS-KV06.md#kv06109-discrete-series-matrix-elements-of-su11
-[KV06.1.10]: SYNOPSIS-KV06.md#kv06110-meixner-polynomials
-[KV06.1.13]: SYNOPSIS-KV06.md#kv06113-meixner-difference-equation-recurrence-and-difference-derivative
-[KV06.1.14]: SYNOPSIS-KV06.md#kv06114-meixner-generating-function
-[KV06.1.16]: SYNOPSIS-KV06.md#kv06116-oscillator-matrix-elements-and-charlier-orthogonality
-[KV06.1.19]: SYNOPSIS-KV06.md#kv06119-orthogonality-of-krawtchoukmeixner-functions
-[KV06.1.20]: SYNOPSIS-KV06.md#kv06120-complementary-series
-[KV06.2.03]: SYNOPSIS-KV06.md#kv06203-product-of-matrix-elements
-[KV06.2.04]: SYNOPSIS-KV06.md#kv06204-hypergeometric-formula-for-cgcs
-[KV06.2.10]: SYNOPSIS-KV06.md#kv06210-hahn-symmetries
-[KV06.2.11]: SYNOPSIS-KV06.md#kv06211-hahn-difference-equation-and-recurrences
-[KV06.2.12]: SYNOPSIS-KV06.md#kv06212-integral-representation-of-hahn-polynomials
-[KV06.2.13]: SYNOPSIS-KV06.md#kv06213-limits-of-hahn-polynomials
-[KV06.2.15]: SYNOPSIS-KV06.md#kv06215-product-formula-for-krawtchouk-polynomials
-[KV06.2.16]: SYNOPSIS-KV06.md#kv06216-addition-theorem-for-krawtchouk-polynomials
-[KV06.2.20]: SYNOPSIS-KV06.md#kv06220-connection-formula-for-meixner-polynomials
-[KV06.2.23]: SYNOPSIS-KV06.md#kv06223-racah-orthogonality-difference-equation-and-difference-derivative
-[KV06.3.07]: SYNOPSIS-KV06.md#kv06307-addition-theorem-for-charlier-polynomials
