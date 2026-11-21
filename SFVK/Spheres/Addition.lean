@@ -70,6 +70,8 @@ theorem integral_sphereEval_mul_zonalPolynomial {n : ℕ} (hn : 2 ≤ n) {l : �
 
 namespace ZonalBounds
 
+/-- The normalized Gegenbauer form has absolute value at most one on the unit interval in dimension
+at least three. -/
 private theorem zonalPolynomial_bound_of_three_le {n : ℕ} (hn : 3 ≤ n) (l : ℕ) {t : ℝ}
     (ht : |t| ≤ 1) : |(zonalPolynomial n l).eval t| ≤ 1 := by
   let lam := ((n : ℝ) - 2) / 2
@@ -106,6 +108,8 @@ theorem abs_zonalPolynomial_eval_le_one {n : ℕ} (hn : 2 ≤ n) (l : ℕ) {t : 
 
 namespace ZonalOrthogonality
 
+/-- The real harmonic space in dimension two has dimension one in degree zero and two in positive
+degree. -/
 private theorem finrank_harmonicSubmodule_two (l : ℕ) :
     Module.finrank ℝ (MvPolynomial.harmonicSubmodule (Fin 2) ℝ l) = if l = 0 then 1 else 2 := by
   rcases l with _ | _ | l
@@ -117,6 +121,8 @@ private theorem finrank_harmonicSubmodule_two (l : ℕ) :
     rw [MvPolynomial.finrank_harmonicSubmodule_add_two]
     simp
 
+/-- The two-dimensional zonal polynomials are orthogonal for the cosine projection of circle
+measure. -/
 private theorem orthogonality_two (l l' : ℕ) :
     polarConstant 2 * ∫ t in Ioo (-1 : ℝ) 1,
         (zonalPolynomial 2 l).eval t * (zonalPolynomial 2 l').eval t *
@@ -154,6 +160,7 @@ private theorem orthogonality_two (l l' : ℕ) :
   · rw [ite_eq_right hll, Chebyshev.integral_eval_T_real_mul_eval_T_real_measureT_of_ne hll,
       mul_zero]
 
+/-- The one-coordinate polar weight has total mass given by the reciprocal polar constant. -/
 private theorem sphere_polarWeight_mass {n : ℕ} (hn : 2 ≤ n) :
     polarConstant n * ∫ t in Ioo (-1 : ℝ) 1, (1 - t ^ 2) ^ (((n : ℝ) - 3) / 2) = 1 := by
   let j : Fin n := ⟨0, by omega⟩
@@ -168,6 +175,8 @@ private theorem sphere_polarWeight_mass {n : ℕ} (hn : 2 ≤ n) :
   simpa only [integral_const, probReal_univ, one_smul, one_mul] using
     (integral_inner_sphereMeasure hn hη (fun _ => (1 : ℝ)) continuous_const).symm
 
+/-- The harmonic dimension converts the Gegenbauer squared norm to the normalized zonal squared
+norm. -/
 private theorem dimension_eq_gegenbauerNormalization {n : ℕ} (hn : 3 ≤ n) (l : ℕ) :
     let lam := ((n : ℝ) - 2) / 2
     (Module.finrank ℝ (MvPolynomial.harmonicSubmodule (Fin n) ℝ l) : ℂ) * (lam : ℂ) =
@@ -194,6 +203,8 @@ private theorem dimension_eq_gegenbauerNormalization {n : ℕ} (hn : 3 ≤ n) (l
   field_simp [Nat.cast_ne_zero.mpr m.factorial_ne_zero, Nat.cast_ne_zero.mpr l.factorial_ne_zero]
   linear_combination hC
 
+/-- The normalized zonal polynomials are orthogonal for the sphere projection in dimensions at least
+three. -/
 private theorem orthogonality_three_le {n : ℕ} (hn : 3 ≤ n) (l l' : ℕ) :
     polarConstant n * ∫ t in Ioo (-1 : ℝ) 1,
         (zonalPolynomial n l).eval t * (zonalPolynomial n l').eval t *

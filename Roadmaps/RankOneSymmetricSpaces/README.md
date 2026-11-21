@@ -209,7 +209,7 @@ Sources: DLMF 15.9.11; Klimyk–Vilenkin Part II Ch. 5 §2.4, (12), p. 233; Vile
 
 `jacobiFunction α β λ t` and `jacobiOperator α β u t` as in Conventions. Prove:
 - **Value at the origin** (`jacobiFunction_zero`): `φ_λ(0) = 1` for `α + 1 ∉ {0, −1, …}`;
-- **Evenness** (`jacobiFunction_neg`, `jacobiFunction_even`): `φ_{−λ} = φ_λ` and
+- **Evenness** (`jacobiFunction_neg_spectral`, `jacobiFunction_even`): `φ_{−λ} = φ_λ` and
   `φ_λ(−t) = φ_λ(t)`;
 - **Holomorphy** (`differentiable_jacobiFunction`): `φ_λ(t)` is entire in `λ`;
 - **The Jacobi equation** (`jacobiOperator_jacobiFunction`): `L φ_λ = −(λ² + ρ²) φ_λ` on
@@ -284,7 +284,7 @@ pp. 627–628.
 - **Normalization** (`cFunction_neg_I_mul_rho`): `c(−iρ) = 1`;
 - **Asymptotics** (`tendsto_jacobiFunction_mul_exp`): for `Im λ < 0`,
   `φ_λ(t) e^{(ρ−iλ)t} → c(λ)`;
-- **Growth of the Plancherel density** (`norm_cFunction_inv_sq_le`): for real `α > −1`,
+- **Growth of the Plancherel density** (`exists_norm_cFunction_inv_sq_le`): for real `α > −1`,
   `|c(λ)|⁻² ≤ C (1 + |λ|)^{2α+1}` on the real line;
 - `c(λ)` has no zeros on `ℝ \ {0}`, and for real `α, β` and real `λ`, `c(−λ) = conj c(λ)`.
 

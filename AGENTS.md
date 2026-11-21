@@ -106,7 +106,9 @@ and the meaning of totalized series and integrals when adopting upstream stateme
   name prefix and never in an `…Aux` namespace.
 - Every declaration name is spelled out (`circleDenominator`, not `circleDenom`;
   `magneticWeight`, not `edWeight`; `wignerSmallD`, not `smallD`), with no source initials and
-  no single variable letters (`eulerMiddle`, not `bBeta`). Lemma names follow Mathlib's
+  no single variable letters (`eulerMiddle`, not `bBeta`). Coordinate projections of a structure
+  may use the source letters when the structure and field docstrings identify their roles.
+  Name theorems about those projections after their mathematical roles. Lemma names follow Mathlib's
   conclusion-first style (`isUnitary_principalSeries_iff`, `continuous_matrixElement`). A suffix
   `_one` means "at the identity"; name a statement about spin one half `…_spinHalf`. Names never
   carry identifiers of development rounds or agents, neither in declarations nor in file names.

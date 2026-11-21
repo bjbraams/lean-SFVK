@@ -45,6 +45,7 @@ def sixJ (a b c d e f : ℕ) : ℝ :=
       ∑ z ∈ Finset.range ((a + b + d + e) / 2 + 1), sixJTerm a b c d e f z
   else 0
 
+/-- The Wigner 6-j symbol is the Racah factorial sum when the four triangle conditions hold. -/
 theorem sixJ_def (a b c d e f : ℕ) :
     sixJ a b c d e f =
       if IsTriad a b c ∧ IsTriad a e f ∧ IsTriad d b f ∧ IsTriad d e c then
@@ -54,6 +55,7 @@ theorem sixJ_def (a b c d e f : ℕ) :
       else 0 :=
   rfl
 
+/-- A Wigner 6-j symbol vanishes when its four triangle conditions fail. -/
 theorem sixJ_eq_zero_of_not {a b c d e f : ℕ}
     (h : ¬ (IsTriad a b c ∧ IsTriad a e f ∧ IsTriad d b f ∧ IsTriad d e c)) :
     sixJ a b c d e f = 0 := by
@@ -69,6 +71,7 @@ def recouplingCoefficient (d₁ d₂ d₃ d₁₂ d₂₃ D I : ℕ) : ℝ :=
       clebschGordan d₁ d₂ d₁₂ i₁ i₂ i₁₂ * clebschGordan d₁₂ d₃ D i₁₂ i₃ I *
         clebschGordan d₂ d₃ d₂₃ i₂ i₃ i₂₃ * clebschGordan d₁ d₂₃ D i₁ i₂₃ I
 
+/-- The recoupling coefficient is the finite contraction of four Clebsch–Gordan coefficients. -/
 theorem recouplingCoefficient_def (d₁ d₂ d₃ d₁₂ d₂₃ D I : ℕ) :
     recouplingCoefficient d₁ d₂ d₃ d₁₂ d₂₃ D I =
       ∑ i₁ ∈ Finset.range (d₁ + 1), ∑ i₂ ∈ Finset.range (d₂ + 1), ∑ i₃ ∈ Finset.range (d₃ + 1),

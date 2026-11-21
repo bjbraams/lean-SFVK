@@ -42,6 +42,7 @@ namespace SFVK.MotionGroups
 def hyperbolaAction (R : ℂ) (g : ISO11) (Φ : ℝ → ℂ) (θ : ℝ) : ℂ :=
   Complex.exp (-R * (g.a.1 * Real.cosh θ - g.a.2 * Real.sinh θ : ℝ)) * Φ (θ - g.s)
 
+/-- The hyperbola model multiplies by its exponential weight and shifts the rapidity. -/
 theorem hyperbolaAction_def (R : ℂ) (g : ISO11) (Φ : ℝ → ℂ) (θ : ℝ) :
     hyperbolaAction R g Φ θ =
       Complex.exp (-R * (g.a.1 * Real.cosh θ - g.a.2 * Real.sinh θ : ℝ)) * Φ (θ - g.s) :=
@@ -81,6 +82,8 @@ p. 175. -/
 @[expose]
 def fourierLaplace (Φ : ℝ → ℂ) (lam : ℂ) : ℂ := ∫ θ, Φ θ * Complex.exp (lam * θ)
 
+/-- The two-sided Laplace transform integrates against the exponential with positive spectral sign.
+-/
 theorem fourierLaplace_def (Φ : ℝ → ℂ) (lam : ℂ) :
     fourierLaplace Φ lam = ∫ θ, Φ θ * Complex.exp (lam * θ) :=
   rfl

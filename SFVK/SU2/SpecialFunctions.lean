@@ -231,6 +231,39 @@ theorem matrixElement_euler (d : ℕ) (i k : Fin (d + 1)) (α β γ : ℝ) :
   simp only [WignerSmallD.matrixElement_torusExp, ite_mul, zero_mul, Finset.sum_ite_eq,
     Finset.mem_univ, ite_true, WignerSmallD.matrixElement_eulerMiddle]
 
+namespace WignerSmallD
+
+/-- The change of indices from the Wigner sum to the Jacobi sum permutes the four factorial
+arguments of the normalization. -/
+private theorem factorial_product_eq (d i k a b r : ℕ) (hi : i ≤ d) (hk : k ≤ d)
+    (ha : a = (k - i) + (i - k)) (hb : b = (d - i - k) + (i + k - d))
+    (hr : r = min (min i k) (min (d - i) (d - k))) :
+    ((i.factorial : ℝ) * (d - i).factorial) * ((k.factorial : ℝ) * (d - k).factorial) =
+      ((r.factorial : ℝ) * (d - r).factorial) *
+        (((r + a).factorial : ℝ) * (r + b).factorial) := by
+  rcases le_total i k with hik | hki <;> rcases le_total (i + k) d with hikd | hdik
+  · have h₁ : r = i := by omega
+    have h₂ : r + a = k := by omega
+    have h₃ : r + b = d - k := by omega
+    rw [h₂, h₃, h₁]
+  · have h₁ : r = d - k := by omega
+    have h₂ : r + a = d - i := by omega
+    have h₃ : r + b = i := by omega
+    rw [h₂, h₃, h₁, Nat.sub_sub_self hk]
+    ring
+  · have h₁ : r = k := by omega
+    have h₂ : r + a = i := by omega
+    have h₃ : r + b = d - i := by omega
+    rw [h₂, h₃, h₁]
+    ring
+  · have h₁ : r = d - i := by omega
+    have h₂ : r + a = d - k := by omega
+    have h₃ : r + b = k := by omega
+    rw [h₂, h₃, h₁, Nat.sub_sub_self hi]
+    ring
+
+end WignerSmallD
+
 set_option maxHeartbeats 1000000 in
 /-- The Jacobi form at all real angles, with degree `r` and parameters `a, b`
 determined by the two magnetic weights. -/
@@ -265,29 +298,8 @@ theorem wignerSmallD_eq_jacobi (d i k : ℕ) (hi : i ≤ d) (hk : k ≤ d) (β :
   let rightNorm : ℝ := (k.factorial : ℝ) * (d - k).factorial
   let numerator : ℝ := (r.factorial : ℝ) * (d - r).factorial
   let denominator : ℝ := ((r + a).factorial : ℝ) * (r + b).factorial
-  -- The four factorial arguments are the same up to permutation.
-  have hnorms : leftNorm * rightNorm = numerator * denominator := by
-    dsimp only [leftNorm, rightNorm, numerator, denominator]
-    rcases le_total i k with hik | hki <;> rcases le_total (i + k) d with hikd | hdik
-    · have h₁ : r = i := by omega
-      have h₂ : r + a = k := by omega
-      have h₃ : r + b = d - k := by omega
-      rw [h₂, h₃, h₁]
-    · have h₁ : r = d - k := by omega
-      have h₂ : r + a = d - i := by omega
-      have h₃ : r + b = i := by omega
-      rw [h₂, h₃, h₁, Nat.sub_sub_self hk]
-      ring
-    · have h₁ : r = k := by omega
-      have h₂ : r + a = i := by omega
-      have h₃ : r + b = d - i := by omega
-      rw [h₂, h₃, h₁]
-      ring
-    · have h₁ : r = d - i := by omega
-      have h₂ : r + a = d - k := by omega
-      have h₃ : r + b = k := by omega
-      rw [h₂, h₃, h₁, Nat.sub_sub_self hi]
-      ring
+  have hnorms : leftNorm * rightNorm = numerator * denominator :=
+    WignerSmallD.factorial_product_eq d i k a b r hi hk ha hb hrDef
   have hnormalize : Real.sqrt (leftNorm / rightNorm) * rightNorm =
       Real.sqrt (numerator / denominator) * denominator := by
     rw [WignerSmallD.sqrt_div_mul_eq_sqrt_mul (by dsimp [leftNorm]; positivity)

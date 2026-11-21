@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Bastiaan J Braams. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bastiaan J Braams
+-/
 module
 
 public import Mathlib
@@ -195,12 +200,12 @@ theorem boostMatrixElement_zero (τ : ℂ) (n : ℝ) (k : ℤ) :
   sorry
 
 /-- README 1.1. **Holomorphy in the degree.** -/
-theorem differentiable_boostMatrixElement (m n t : ℝ) :
+theorem differentiable_boostMatrixElement_degree (m n t : ℝ) :
     Differentiable ℂ fun τ => boostMatrixElement τ m n t := by
   sorry
 
 /-- README 1.1. **Smoothness in `t`.** -/
-theorem contDiff_boostMatrixElement (τ : ℂ) (m n : ℝ) :
+theorem contDiff_boostMatrixElement_radius (τ : ℂ) (m n : ℝ) :
     ContDiff ℝ ∞ fun t => boostMatrixElement τ m n t := by
   sorry
 
@@ -282,7 +287,8 @@ theorem norm_boostMatrixElement_le_one (τ : ℂ) (hτ : τ.re = -1 / 2) (e : Fi
 
 /-- README 2.1. **Complementary series.** For real `-1 < τ < 0`, with `w = complementaryWeight τ`,
 `Σ_k w(k)/w(n) |𝔓^τ_{kn}|² = 1` and `(w(m)/w(n))^{1/2} |𝔓^τ_{mn}| ≤ 1`. -/
-theorem hasSum_complementary (τ : ℝ) (hτ : τ ∈ Ioo (-1) 0) (m n : ℤ) (t : ℝ) :
+theorem hasSum_complementarySeries_weighted_norm_sq (τ : ℝ) (hτ : τ ∈ Ioo (-1) 0) (m n : ℤ)
+    (t : ℝ) :
     HasSum (fun k : ℤ => complementaryWeight τ k / complementaryWeight τ n *
         ‖boostMatrixElement τ k n t‖ ^ 2) 1 ∧
       Real.sqrt (complementaryWeight τ m / complementaryWeight τ n) *
@@ -563,9 +569,9 @@ end SU11
 #check @SU11.circleAct
 #check @SU11.circleDenominator
 #check @SU11.conj_boostMatrixElement
-#check @SU11.contDiff_boostMatrixElement
+#check @SU11.contDiff_boostMatrixElement_radius
 #check @SU11.cosh_of_boost_mul_euler
-#check @SU11.differentiable_boostMatrixElement
+#check @SU11.differentiable_boostMatrixElement_degree
 #check @SU11.discreteAction
 #check @SU11.discreteMatrixElement_boost_coeff
 #check @SU11.discreteMatrixElement_euler
@@ -579,7 +585,7 @@ end SU11
 #check @SU11.hasSum_boostMatrixElement_degree
 #check @SU11.hasSum_boostMatrixElement_fourier
 #check @SU11.hasSum_boostMatrixElement_row
-#check @SU11.hasSum_complementary
+#check @SU11.hasSum_complementarySeries_weighted_norm_sq
 #check @SU11.hasSum_norm_sq_boostMatrixElement
 #check @SU11.hasSum_norm_sq_discreteMatrixElement
 #check @SU11.IsPrincipalSeriesRealization

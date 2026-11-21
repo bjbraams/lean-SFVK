@@ -36,6 +36,7 @@ def hahn (N n : ℕ) (α β x : ℝ) : ℝ :=
         (ascPochhammer ℝ k).eval (-x) /
       ((ascPochhammer ℝ k).eval (α + 1) * (ascPochhammer ℝ k).eval (-(N : ℝ)) * k.factorial)
 
+/-- The Hahn polynomial is a finite terminating hypergeometric sum on the integer lattice. -/
 theorem hahn_def (N n : ℕ) (α β x : ℝ) :
     hahn N n α β x =
       ∑ k ∈ Finset.range (n + 1),
@@ -59,6 +60,7 @@ def racahPolynomial (n : ℕ) (α β γ δ y : ℝ) : ℝ :=
       ((ascPochhammer ℝ k).eval (α + 1) * (ascPochhammer ℝ k).eval (β + δ + 1) *
         (ascPochhammer ℝ k).eval (γ + 1) * k.factorial)
 
+/-- The Racah polynomial is written as a finite sum in the quadratic lattice coordinate. -/
 theorem racahPolynomial_def (n : ℕ) (α β γ δ y : ℝ) :
     racahPolynomial n α β γ δ y =
       ∑ k ∈ Finset.range (n + 1),

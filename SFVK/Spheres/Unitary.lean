@@ -151,13 +151,12 @@ private def transposeMeasurableEquiv (n : ℕ) : UnitaryMatrixGroup n ≃ᵐ Uni
 end UnitaryActions
 
 open UnitaryActions in
-set_option linter.unusedVariables false in
-/-- **Transitivity.** For `n ≥ 1`, `U(n)` acts transitively on the unit sphere of `ℂⁿ`. -/
-theorem exists_unitaryRotate_eq {n : ℕ} (hn : 1 ≤ n) {η ξ : EuclideanSpace ℂ (Fin n)}
-    (hη : ‖η‖ = 1) (hξ : ‖ξ‖ = 1) : ∃ g : UnitaryMatrixGroup n, unitaryRotate g η = ξ := by
+/-- Any two vectors of equal norm in `ℂⁿ` differ by a unitary rotation. -/
+theorem exists_unitaryRotate_eq {n : ℕ} {η ξ : EuclideanSpace ℂ (Fin n)}
+    (h : ‖η‖ = ‖ξ‖) : ∃ g : UnitaryMatrixGroup n, unitaryRotate g η = ξ := by
   obtain ⟨g, hg⟩ := exists_unitaryRotate_eq_of_inner_eq (ι := Unit) (v := fun _ => η)
     (w := fun _ => ξ) (fun _ _ => by rw [inner_self_eq_norm_sq_to_K, inner_self_eq_norm_sq_to_K,
-      hη, hξ])
+      h])
   exact ⟨g, hg ()⟩
 
 namespace DiskMeasure
@@ -231,8 +230,7 @@ private theorem map_norm_sq_inner_complexSphereMeasure {n : ℕ} (hn : 2 ≤ n)
     (complexSphereMeasure n).map (fun ξ : ComplexSphere n => ‖⟪η, ξ.val⟫_ℂ‖ ^ 2) =
       betaMeasure 1 ((n : ℝ) - 1) := by
   let j : Fin n := ⟨0, by omega⟩
-  obtain ⟨g, hg⟩ := exists_unitaryRotate_eq (show 1 ≤ n by omega) hη
-    (show ‖(EuclideanSpace.single j 1 : EuclideanSpace ℂ (Fin n))‖ = 1 by simp)
+  obtain ⟨g, hg⟩ := exists_unitaryRotate_eq (ξ := EuclideanSpace.single j 1) (by simpa using hη)
   let e := Matrix.UnitaryGroup.toLinearIsometryEquiv g
   have he : e η = EuclideanSpace.single j 1 := by
     simpa only [e, Matrix.UnitaryGroup.toLinearIsometryEquiv_apply, unitaryRotate_def,
@@ -495,7 +493,7 @@ theorem isGelfandPair_unitaryMatrixGroup (n : ℕ) (η : EuclideanSpace ℂ (Fin
     rw [Complex.norm_real, Real.norm_of_nonneg (norm_nonneg _), inv_mul_cancel₀]
     exact norm_ne_zero_iff.mpr hη
   have he : ‖e‖ = 1 := by simp [e, PiLp.norm_single]
-  obtain ⟨u, hu⟩ := exists_unitaryRotate_eq hn hnorm he
+  obtain ⟨u, hu⟩ := exists_unitaryRotate_eq (hnorm.trans he.symm)
   have humap : unitaryRotate u η = a • e := by
     rw [← hu]
     simp only [unitaryRotate_def, map_smul, smul_smul, mul_inv_cancel₀ ha, one_smul]
@@ -572,10 +570,8 @@ theorem diskHarmonic_mem_bidegreeHarmonic {n : ℕ} (hn : 2 ≤ n) (p q : ℕ)
     diskHarmonic n p q η ∈ bidegreeHarmonic n p q := by
   sorry
 
-set_option linter.unusedVariables false in
-/-- **Values on the sphere.** For `n ≥ 2` and `|ξ| = 1`, the `U(n)`-zonal harmonic takes the
-value `R^{n-2}_{p,q}(⟪η, ξ⟫)`. -/
-theorem evalC_diskHarmonic {n : ℕ} (hn : 2 ≤ n) (p q : ℕ) (η : EuclideanSpace ℂ (Fin n))
+/-- On the unit sphere, the `U(n)`-zonal harmonic takes the value `R^{n-2}_{p,q}(⟪η, ξ⟫)`. -/
+theorem evalC_diskHarmonic {n : ℕ} (p q : ℕ) (η : EuclideanSpace ℂ (Fin n))
     {ξ : EuclideanSpace ℂ (Fin n)} (hξ : ‖ξ‖ = 1) :
     evalC ξ (diskHarmonic n p q η) = diskPolynomial ((n : ℝ) - 2) p q ⟪η, ξ⟫_ℂ := by
   simp only [diskHarmonic_def, diskPolynomial_def, evalC_def, map_sum, map_mul, map_sub, map_pow,

@@ -157,6 +157,51 @@ theorem integral_besselJ_circleMean (R : ℂ) (m n : ℤ) (r₁ r₂ : ℝ) :
   rw [← mul_assoc, mul_inv_cancel₀ hpi, one_mul] at h
   simpa only [c, mul_assoc] using h
 
+/-- Folding the periodic integral about zero pairs the contributions at opposite angles. -/
+private theorem integral_circle_fold (F H : ℝ → ℂ) (Fc : AddCircle (2 * π) → ℂ)
+    (hFc : ∀ t : ℝ, Fc (t : AddCircle (2 * π)) = F t) (hF : Continuous F)
+    (hpair : ∀ t ∈ Ioo 0 π, F t + F (-t) = 2 * H t) :
+    (∫ t in (0 : ℝ)..2 * π, F t) = 2 * ∫ t in Ioo (0 : ℝ) π, H t := by
+  have : Fact (0 < 2 * π) := ⟨Real.two_pi_pos⟩
+  have hsame : (∫ t in (-π)..π, F t) = ∫ t in (0 : ℝ)..2 * π, F t := by
+    simp_rw [← hFc]
+    have hleft := AddCircle.intervalIntegral_preimage (2 * π) (-π) Fc
+    have hright := AddCircle.intervalIntegral_preimage (2 * π) 0 Fc
+    rw [show -π + 2 * π = π by ring] at hleft
+    rw [zero_add] at hright
+    exact hleft.trans hright.symm
+  rw [← hsame, ← intervalIntegral.integral_add_adjacent_intervals
+    (hF.intervalIntegrable (-π) 0) (hF.intervalIntegrable 0 π)]
+  rw [show (∫ t in (-π)..(0 : ℝ), F t) = ∫ t in (0 : ℝ)..π, F (-t) by
+    simpa only [neg_zero] using (intervalIntegral.integral_comp_neg F (a := 0) (b := π)).symm]
+  have hneg : IntervalIntegrable (fun t => F (-t)) volume 0 π :=
+    (hF.comp continuous_neg).intervalIntegrable 0 π
+  rw [add_comm, ← intervalIntegral.integral_add (hF.intervalIntegrable 0 π) hneg,
+    intervalIntegral.integral_of_le Real.pi_pos.le, integral_Ioc_eq_integral_Ioo,
+    ← integral_const_mul]
+  exact setIntegral_congr_fun measurableSet_Ioo hpair
+
+/-- The cosine law determines the angular derivative of the radial length away from zero. -/
+private theorem hasDerivAt_radius_of_sq (r₁ r₂ : ℝ) (radius : ℝ → ℝ)
+    (hrad : ∀ t, 0 < radius t)
+    (hradSq : ∀ t, radius t ^ 2 = r₁ ^ 2 + r₂ ^ 2 + 2 * r₁ * r₂ * Real.cos t) (t : ℝ) :
+    HasDerivAt radius (-(r₁ * r₂ * Real.sin t) / radius t) t := by
+  let s (t : ℝ) := r₁ ^ 2 + r₂ ^ 2 + 2 * r₁ * r₂ * Real.cos t
+  have hsr (t : ℝ) : Real.sqrt (s t) = radius t := by
+    rw [show s t = radius t ^ 2 from (hradSq t).symm, Real.sqrt_sq (hrad t).le]
+  have hs : HasDerivAt s (-(2 * r₁ * r₂ * Real.sin t)) t := by
+    convert ((Real.hasDerivAt_cos t).const_mul (2 * r₁ * r₂)).const_add (r₁ ^ 2 + r₂ ^ 2) using 1
+    ring
+  have hn : s t ≠ 0 := by
+    dsimp only [s]
+    rw [← hradSq]
+    exact pow_ne_zero _ (hrad t).ne'
+  have h := (Real.hasDerivAt_sqrt hn).comp t hs
+  have hf : Real.sqrt ∘ s = radius := funext hsr
+  rw [hf, hsr] at h
+  convert h using 1
+  field_simp [(hrad t).ne']
+
 /-- Radial form of the multiplication formula (Vilenkin–Klimyk Vol. 1 §4.1.4 (8)–(9),
 pp. 169–170, with the cosine where the printed (8) has the exponential): for `r₁, r₂ > 0`,
 `r₁ ≠ r₂`, `J_{n-m}(r₁) J_m(r₂) = (2/π) ∫_{|r₁-r₂|}^{r₁+r₂} cos(nφ - mφ₂) r Jₙ(r) / √Δ dr`,
@@ -229,13 +274,6 @@ theorem besselJ_mul_besselJ_eq_integral (m n : ℤ) {r₁ r₂ : ℝ} (h₁ : 0 
     simp only [Fc, F, radius, w, fourier_circle_coe, Int.cast_one, one_mul, Int.cast_neg]
     congr 3
     ring
-  have hsame : (∫ t in (-π)..π, F t) = ∫ t in (0 : ℝ)..2 * π, F t := by
-    simp_rw [← hFc]
-    have hleft := AddCircle.intervalIntegral_preimage (2 * π) (-π) Fc
-    have hright := AddCircle.intervalIntegral_preimage (2 * π) 0 Fc
-    rw [show -π + 2 * π = π by ring] at hleft
-    rw [zero_add] at hright
-    exact hleft.trans hright.symm
   have hcontW : Continuous w := by dsimp only [w]; fun_prop
   have hJ : Continuous (besselJ (n : ℂ)) :=
     continuousOn_univ.mp (Complex.analyticOnNhd_besselJ_int n).continuousOn
@@ -246,37 +284,11 @@ theorem besselJ_mul_besselJ_eq_integral (m n : ℤ) {r₁ r₂ : ℝ} (h₁ : 0 
     have hpow := h.zpow₀ n fun t => Or.inl (div_ne_zero (hw t)
       (Complex.ofReal_ne_zero.mpr (hrad t).ne'))
     exact (hpow.mul he).mul (hJ.comp (Complex.continuous_ofReal.comp hcontW.norm))
-  have hfold :
-      (∫ t in (0 : ℝ)..2 * π, F t) =
-        2 * ∫ t in Ioo (0 : ℝ) π, (Real.cos (phase t) : ℂ) * besselJ n (radius t) := by
-    rw [← hsame, ← intervalIntegral.integral_add_adjacent_intervals
-      (hF.intervalIntegrable (-π) 0) (hF.intervalIntegrable 0 π)]
-    rw [show (∫ t in (-π)..(0 : ℝ), F t) = ∫ t in (0 : ℝ)..π, F (-t) by
-      simpa only [neg_zero] using (intervalIntegral.integral_comp_neg F (a := 0) (b := π)).symm]
-    have hneg : IntervalIntegrable (fun t => F (-t)) volume 0 π :=
-      (hF.comp continuous_neg).intervalIntegrable 0 π
-    rw [add_comm, ← intervalIntegral.integral_add (hF.intervalIntegrable 0 π) hneg,
-      intervalIntegral.integral_of_le Real.pi_pos.le, integral_Ioc_eq_integral_Ioo,
-      ← integral_const_mul]
-    exact setIntegral_congr_fun measurableSet_Ioo hpair
-  let s (t : ℝ) := r₁ ^ 2 + r₂ ^ 2 + 2 * r₁ * r₂ * Real.cos t
-  have hsr (t : ℝ) : Real.sqrt (s t) = radius t := by
-    rw [show s t = radius t ^ 2 from (hradSq t).symm, Real.sqrt_sq (hrad t).le]
+  have hfold := integral_circle_fold F
+    (fun t => (Real.cos (phase t) : ℂ) * besselJ n (radius t)) Fc hFc hF hpair
   let speed (t : ℝ) := -(r₁ * r₂ * Real.sin t) / radius t
-  have hderiv (t : ℝ) (_ : t ∈ Ioo (0 : ℝ) π) : HasDerivAt radius (speed t) t := by
-    have hs : HasDerivAt s (-(2 * r₁ * r₂ * Real.sin t)) t := by
-      convert ((Real.hasDerivAt_cos t).const_mul (2 * r₁ * r₂)).const_add (r₁ ^ 2 + r₂ ^ 2) using 1
-      ring
-    have hn : s t ≠ 0 := by
-      dsimp only [s]
-      rw [← hradSq]
-      exact pow_ne_zero _ (hrad t).ne'
-    have h := (Real.hasDerivAt_sqrt hn).comp t hs
-    have hf : Real.sqrt ∘ s = radius := funext hsr
-    rw [hf, hsr] at h
-    convert h using 1
-    dsimp only [speed]
-    field_simp [(hrad t).ne']
+  have hderiv (t : ℝ) (_ : t ∈ Ioo (0 : ℝ) π) : HasDerivAt radius (speed t) t :=
+    hasDerivAt_radius_of_sq r₁ r₂ radius hrad hradSq t
   have hsign (t : ℝ) (ht : t ∈ Ioo (0 : ℝ) π) : speed t ≤ 0 := by
     dsimp only [speed]
     have hs := Real.sin_pos_of_pos_of_lt_pi ht.1 ht.2

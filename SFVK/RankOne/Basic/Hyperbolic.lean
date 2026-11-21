@@ -55,10 +55,12 @@ namespace SFVK.RankOne
 def lorentz {n : ℕ} (x y : Fin (n + 1) → ℝ) : ℝ :=
   x 0 * y 0 - ∑ i : Fin n, x i.succ * y i.succ
 
+/-- The Lorentz pairing is the time-coordinate product minus the spatial dot product. -/
 theorem lorentz_def {n : ℕ} (x y : Fin (n + 1) → ℝ) :
     lorentz x y = x 0 * y 0 - ∑ i : Fin n, x i.succ * y i.succ :=
   rfl
 
+/-- The Lorentz pairing over the reals is symmetric. -/
 theorem lorentz_comm {n : ℕ} (x y : Fin (n + 1) → ℝ) : lorentz x y = lorentz y x := by
   simp only [lorentz_def, mul_comm]
 
@@ -66,6 +68,7 @@ theorem lorentz_comm {n : ℕ} (x y : Fin (n + 1) → ℝ) : lorentz x y = loren
 @[expose]
 def hyperboloid (n : ℕ) : Set (Fin (n + 1) → ℝ) := {x | lorentz x x = 1 ∧ 0 < x 0}
 
+/-- The upper unit hyperboloid consists of positive-time vectors with Lorentz square one. -/
 theorem mem_hyperboloid {n : ℕ} {x : Fin (n + 1) → ℝ} :
     x ∈ hyperboloid n ↔ lorentz x x = 1 ∧ 0 < x 0 :=
   Iff.rfl
@@ -74,13 +77,16 @@ theorem mem_hyperboloid {n : ℕ} {x : Fin (n + 1) → ℝ} :
 @[expose]
 def basePoint (n : ℕ) : Fin (n + 1) → ℝ := Pi.single 0 1
 
+/-- The base point has time coordinate one and vanishing spatial coordinates. -/
 theorem basePoint_def (n : ℕ) : basePoint n = Pi.single 0 1 :=
   rfl
 
+/-- Pairing with the base point extracts the time coordinate. -/
 theorem lorentz_basePoint_left {n : ℕ} (x : Fin (n + 1) → ℝ) :
     lorentz (basePoint n) x = x 0 := by
   simp [lorentz_def, basePoint_def, Fin.succ_ne_zero]
 
+/-- The base point lies on the upper unit hyperboloid. -/
 theorem basePoint_mem_hyperboloid (n : ℕ) : basePoint n ∈ hyperboloid n := by
   refine ⟨?_, ?_⟩
   · rw [lorentz_basePoint_left]
@@ -91,6 +97,7 @@ theorem basePoint_mem_hyperboloid (n : ℕ) : basePoint n ∈ hyperboloid n := b
 @[expose]
 def hyperbolicDist {n : ℕ} (x y : Fin (n + 1) → ℝ) : ℝ := Real.arcosh (lorentz x y)
 
+/-- The hyperbolic distance is the inverse hyperbolic cosine of the Lorentz pairing. -/
 theorem hyperbolicDist_def {n : ℕ} (x y : Fin (n + 1) → ℝ) :
     hyperbolicDist x y = Real.arcosh (lorentz x y) :=
   rfl
@@ -100,6 +107,7 @@ theorem hyperbolicDist_basePoint_left {n : ℕ} (x : Fin (n + 1) → ℝ) :
     hyperbolicDist (basePoint n) x = Real.arcosh (x 0) := by
   rw [hyperbolicDist_def, lorentz_basePoint_left]
 
+/-- The distance from a point of the hyperboloid to itself is zero. -/
 theorem hyperbolicDist_self {n : ℕ} {x : Fin (n + 1) → ℝ} (hx : x ∈ hyperboloid n) :
     hyperbolicDist x x = 0 := by
   rw [hyperbolicDist_def, hx.1, Real.arcosh_zero]
@@ -139,6 +147,7 @@ def lorentzGroup (n : ℕ) : Subgroup (Matrix.SpecialLinearGroup (Fin (n + 1)) �
         rw [← hg']
         exact Set.mem_image_of_mem _ hx
 
+/-- Membership means preservation of the Lorentz pairing and of the positive time sheet. -/
 theorem mem_lorentzGroup_iff {n : ℕ} {g : Matrix.SpecialLinearGroup (Fin (n + 1)) ℝ} :
     g ∈ lorentzGroup n ↔ (∀ x y, lorentz (g.1 *ᵥ x) (g.1 *ᵥ y) = lorentz x y) ∧
       (fun x => g.1 *ᵥ x) '' hyperboloid n = hyperboloid n :=
@@ -175,6 +184,7 @@ def rotationSubgroup (n : ℕ) : Subgroup (lorentzGroup n) where
       inv_mul_cancel]
     simp
 
+/-- Membership in the rotation subgroup means fixing the base point. -/
 theorem mem_rotationSubgroup_iff {n : ℕ} {g : lorentzGroup n} :
     g ∈ rotationSubgroup n ↔
       (g : Matrix.SpecialLinearGroup (Fin (n + 1)) ℝ).1 *ᵥ basePoint n = basePoint n :=
@@ -185,14 +195,17 @@ theorem mem_rotationSubgroup_iff {n : ℕ} {g : lorentzGroup n} :
 def orbitMap (n : ℕ) (g : lorentzGroup n) : Fin (n + 1) → ℝ :=
   (g : Matrix.SpecialLinearGroup (Fin (n + 1)) ℝ).1 *ᵥ basePoint n
 
+/-- The orbit map sends a Lorentz transformation to its value at the base point. -/
 theorem orbitMap_def (n : ℕ) (g : lorentzGroup n) :
     orbitMap n g = (g : Matrix.SpecialLinearGroup (Fin (n + 1)) ℝ).1 *ᵥ basePoint n :=
   rfl
 
+/-- The identity Lorentz transformation maps to the base point. -/
 @[simp]
 theorem orbitMap_one (n : ℕ) : orbitMap n 1 = basePoint n := by
   simp [orbitMap_def]
 
+/-- The orbit lies in the positive sheet of the unit hyperboloid. -/
 theorem orbitMap_mem_hyperboloid (n : ℕ) (g : lorentzGroup n) : orbitMap n g ∈ hyperboloid n :=
   mulVec_mem_hyperboloid g (basePoint_mem_hyperboloid n)
 
@@ -201,6 +214,8 @@ theorem orbitMap_mem_hyperboloid (n : ℕ) (g : lorentzGroup n) : orbitMap n g �
 def hyperboloidChart (n : ℕ) (y : Fin n → ℝ) : Fin (n + 1) → ℝ :=
   Fin.cons (Real.sqrt (1 + ∑ i, y i ^ 2)) y
 
+/-- The spatial chart appends the positive square root of one plus the spatial norm squared as time
+coordinate. -/
 theorem hyperboloidChart_def (n : ℕ) (y : Fin n → ℝ) :
     hyperboloidChart n y = Fin.cons (Real.sqrt (1 + ∑ i, y i ^ 2)) y :=
   rfl
@@ -215,6 +230,7 @@ theorem continuous_hyperboloidChart (n : ℕ) : Continuous (hyperboloidChart n) 
   · simp only [hyperboloidChart_def, Fin.cons_succ]
     fun_prop
 
+/-- Every spatial chart value lies on the upper unit hyperboloid. -/
 theorem hyperboloidChart_mem_hyperboloid (n : ℕ) (y : Fin n → ℝ) :
     hyperboloidChart n y ∈ hyperboloid n := by
   have hs : 0 ≤ 1 + ∑ i, y i ^ 2 := by positivity
@@ -232,6 +248,7 @@ def hyperbolicMeasure (n : ℕ) : Measure (Fin (n + 1) → ℝ) :=
   ((volume : Measure (Fin n → ℝ)).withDensity fun y =>
     ENNReal.ofReal (Real.sqrt (1 + ∑ i, y i ^ 2))⁻¹).map (hyperboloidChart n)
 
+/-- Hyperbolic volume is the pushforward of weighted Lebesgue measure under the spatial chart. -/
 theorem hyperbolicMeasure_def (n : ℕ) :
     hyperbolicMeasure n = ((volume : Measure (Fin n → ℝ)).withDensity fun y =>
       ENNReal.ofReal (Real.sqrt (1 + ∑ i, y i ^ 2))⁻¹).map (hyperboloidChart n) :=
@@ -241,6 +258,7 @@ theorem hyperbolicMeasure_def (n : ℕ) :
 @[expose]
 def sphereArea (n : ℕ) : ℝ := 2 * π ^ ((n : ℝ) / 2) / Real.Gamma ((n : ℝ) / 2)
 
+/-- The area of the real unit sphere is expressed by the Gamma normalization. -/
 theorem sphereArea_def (n : ℕ) :
     sphereArea n = 2 * π ^ ((n : ℝ) / 2) / Real.Gamma ((n : ℝ) / 2) :=
   rfl
@@ -259,6 +277,8 @@ def hyperbolicLaplacian (n : ℕ) (f : (Fin (n + 1) → ℝ) → ℂ) (x : Fin (
   ∑ i : Fin n, iteratedDeriv 2 (fun s : ℝ => fe (x + s • Pi.single i.succ 1)) 0 -
     iteratedDeriv 2 (fun s : ℝ => fe (x + s • Pi.single 0 1)) 0
 
+/-- The hyperbolic Laplacian is the signed ambient second derivative of the homogeneous extension.
+-/
 theorem hyperbolicLaplacian_def (n : ℕ) (f : (Fin (n + 1) → ℝ) → ℂ) (x : Fin (n + 1) → ℝ) :
     hyperbolicLaplacian n f x =
       ∑ i : Fin n, iteratedDeriv 2
@@ -274,6 +294,7 @@ def boundaryVector (n : ℕ) (b : Metric.sphere (0 : EuclideanSpace ℝ (Fin n))
     Fin (n + 1) → ℝ :=
   Fin.cons 1 fun i => (b : EuclideanSpace ℝ (Fin n)) i
 
+/-- A unit spatial direction becomes a null boundary vector with time coordinate one. -/
 theorem boundaryVector_def (n : ℕ) (b : Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1) :
     boundaryVector n b = Fin.cons 1 fun i => (b : EuclideanSpace ℝ (Fin n)) i :=
   rfl
@@ -301,6 +322,7 @@ through averages. -/
 def sphereMeasure (n : ℕ) : Measure (Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1) :=
   (volume : Measure (EuclideanSpace ℝ (Fin n))).toSphere
 
+/-- The boundary surface measure is induced by ambient Lebesgue measure. -/
 theorem sphereMeasure_def (n : ℕ) :
     sphereMeasure n = (volume : Measure (EuclideanSpace ℝ (Fin n))).toSphere :=
   rfl
@@ -309,6 +331,7 @@ theorem sphereMeasure_def (n : ℕ) :
 @[expose]
 def plancherelConstant (n : ℕ) : ℝ := 2 ^ (n - 1) / (2 * π * sphereArea n)
 
+/-- The spherical Plancherel constant uses the sphere area and the Jacobi weight normalization. -/
 theorem plancherelConstant_def (n : ℕ) :
     plancherelConstant n = 2 ^ (n - 1) / (2 * π * sphereArea n) :=
   rfl
@@ -321,6 +344,7 @@ def abelTransform (m : ℕ) (F : ℝ → ℂ) (s : ℝ) : ℂ :=
   Real.exp (-(m * s / 2)) *
     ∫ v : Fin m → ℝ, F (Real.arcosh (Real.cosh s + (∑ i, v i ^ 2) * Real.exp (-s) / 2))
 
+/-- The Abel transform integrates a radial profile over the transverse horospherical coordinates. -/
 theorem abelTransform_def (m : ℕ) (F : ℝ → ℂ) (s : ℝ) :
     abelTransform m F s = Real.exp (-(m * s / 2)) *
       ∫ v : Fin m → ℝ, F (Real.arcosh (Real.cosh s + (∑ i, v i ^ 2) * Real.exp (-s) / 2)) :=
@@ -334,6 +358,8 @@ def helgasonFourier (n : ℕ) (f : (Fin (n + 1) → ℝ) → ℂ) (lam : ℂ)
   ∫ x, f x * (lorentz x (boundaryVector n b) : ℂ) ^ (I * lam - ((n : ℂ) - 1) / 2)
     ∂hyperbolicMeasure n
 
+/-- The Helgason transform integrates against a complex power of the null-boundary Lorentz pairing.
+-/
 theorem helgasonFourier_def (n : ℕ) (f : (Fin (n + 1) → ℝ) → ℂ) (lam : ℂ)
     (b : Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1) :
     helgasonFourier n f lam b =

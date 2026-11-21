@@ -21,7 +21,7 @@ Tau Ceti to bound the ratios at infinity and at finite height, respectively.
 
 ## Main result
 
-* `SFVK.RankOne.norm_cFunction_inv_sq_le`.
+* `SFVK.RankOne.exists_norm_cFunction_inv_sq_le`.
 -/
 
 public noncomputable section
@@ -326,7 +326,7 @@ end JacobiDensity
 set_option maxHeartbeats 1200000 in
 /-- **Polynomial growth of the Plancherel density**: for real `α > −1`,
 `|c(λ)|⁻² ≤ C (1 + |λ|)^{2α + 1}` on the real line. -/
-theorem norm_cFunction_inv_sq_le (α β : ℝ) (hα : -1 < α) :
+theorem exists_norm_cFunction_inv_sq_le (α β : ℝ) (hα : -1 < α) :
     ∃ C, ∀ lam : ℝ, ‖cFunction α β lam‖⁻¹ ^ 2 ≤ C * (1 + |lam|) ^ (2 * α + 1) := by
   let x := (α + β + 1) / 2
   let y := (α - β + 1) / 2

@@ -217,11 +217,9 @@ theorem racahPolynomial_eq_dlmf (n : ℕ) (α β γ δ y : ℝ) :
   push_cast
   ring
 
-set_option linter.unusedVariables false in
 /-- **Hahn polynomials as limits of Racah polynomials** (DLMF 18.26.10). The complex limit
 in lean-DLMF holds for the full domain of the totalized finite sums. -/
-theorem tendsto_racahPolynomial_hahn {N n : ℕ} (hn : n ≤ N) {α : ℝ}
-    (hα : (ascPochhammer ℝ n).eval (α + 1) ≠ 0) (β x : ℝ) :
+theorem tendsto_racahPolynomial_hahn {N n : ℕ} {α : ℝ} (β x : ℝ) :
     Tendsto (fun δ ↦ racahPolynomial n α β (-(N : ℝ) - 1) δ x) atTop
       (𝓝 (hahn N n α β x)) := by
   apply Filter.tendsto_ofReal_iff.mp

@@ -5,7 +5,7 @@ Authors: Bastiaan J Braams
 -/
 module
 
-public import SFVK.SU11.Basic.MatrixElementsBasic
+public import SFVK.SU11.Basic.BoostMatrixElements
 public import SFVK.SU11.Basic.CircleModel
 public import SFVKMathlib.RepresentationTheory.Continuous.MatrixElement
 public import Mathlib.Analysis.Fourier.AddCircle
@@ -14,6 +14,7 @@ public import DLMF.Hypergeometric.Basic
 import Mathlib.Analysis.Normed.Ring.InfiniteSum
 import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
 import Mathlib.MeasureTheory.Measure.Haar.Unique
+import SFVKMathlib.Analysis.Fourier.AddCircle
 
 /-!
 # Fourier kernels for the matrix elements of `SU(1,1)`
@@ -51,25 +52,13 @@ theorem boostBase_conj (t : ℝ) (z : ℂ) :
 
 /-- The real part of the base is positive on the unit circle. -/
 theorem boostBase_re_pos (t : ℝ) {z : ℂ} (hz : ‖z‖ = 1) :
-    0 < (boostBase t z).re := by
-  have hzreal : |z.re| ≤ 1 := (abs_re_le_norm z).trans_eq hz
-  have hp : 0 < Real.cosh (t / 2) - |Real.sinh (t / 2)| := by
-    rw [← Real.cosh_abs (t / 2), Real.abs_sinh, Real.cosh_sub_sinh]
-    exact Real.exp_pos _
-  have h : |Real.sinh (t / 2) * z.re| ≤ |Real.sinh (t / 2)| := by
-    rw [abs_mul]
-    exact mul_le_of_le_one_right (abs_nonneg _) hzreal
-  simp only [boostBase, add_re, ofReal_re, re_ofReal_mul]
-  linarith [neg_abs_le (Real.sinh (t / 2) * z.re)]
+    0 < (boostBase t z).re :=
+  (Real.exp_pos _).trans_le (BoostMatrixElements.exp_neg_abs_le_re_of_norm_le_one t hz.le)
 
 /-- The boost base lies in the principal branch domain on the unit circle. -/
 theorem boostBase_mem_slitPlane (t : ℝ) {z : ℂ} (hz : ‖z‖ = 1) :
     boostBase t z ∈ slitPlane :=
   Or.inl (boostBase_re_pos t hz)
-
-/-- The unit-circle Fourier character is the integer power of the first character. -/
-private theorem fourier_eq_zpow (k : ℤ) (θ : 𝕋) : fourier k θ = fourier 1 θ ^ k := by
-  rw [fourier_apply, fourier_one, AddCircle.toCircle_zsmul, Circle.coe_zpow]
 
 /-- Negating the angle conjugates the Fourier character. -/
 theorem fourier_neg_angle (k : ℤ) (θ : 𝕋) : fourier k (-θ) = conj (fourier k θ) := by
@@ -77,7 +66,7 @@ theorem fourier_neg_angle (k : ℤ) (θ : 𝕋) : fourier k (-θ) = conj (fourie
 
 /-- The half-period character value is the parity sign. -/
 theorem fourier_half_period (k : ℤ) : fourier k (↑π : 𝕋) = (-1 : ℂ) ^ k := by
-  rw [fourier_eq_zpow, fourier_coe_two_pi]
+  rw [AddCircle.fourier_eq_zpow, fourier_coe_two_pi]
   simp [Complex.exp_pi_mul_I]
 
 /-- The integral convention for the boost matrix element extracts Fourier index `-k`. -/
@@ -230,7 +219,7 @@ private theorem principalAction_boost_fourier (τ : ℂ) (e : Fin 2) (n : ℤ) (
     rw [← h2, ← h1, div_eq_mul_inv]
     ring
   simp only [principalAction_def, principalMultiplier_def, circleDenominator_boost]
-  rw [fourier_eq_zpow n _, hm, div_zpow, mul_zpow, hkernel, fourier_eq_zpow n θ]
+  rw [AddCircle.fourier_eq_zpow n _, hm, div_zpow, mul_zpow, hkernel, AddCircle.fourier_eq_zpow n θ]
   dsimp only [a, b, z]
   rw [div_eq_mul_inv, div_eq_mul_inv]
   ring
@@ -335,7 +324,7 @@ theorem hasSum_boostLaurentCoefficient (τ : ℂ) (n t : ℝ) (θ : 𝕋) :
   have hb := hasSum_boostBase_cpow (τ - n) t ((norm_conj _).trans hz)
   have hab := ha.mul hb (summable_mul_of_summable_norm ha.summable.norm hb.summable.norm)
   let freq (p : ℕ × ℕ) : ℤ := (p.1 : ℤ) - p.2
-  have hp (m : ℕ) : z ^ m = fourier (m : ℤ) θ := by rw [fourier_eq_zpow, zpow_natCast]
+  have hp (m : ℕ) : z ^ m = fourier (m : ℤ) θ := by rw [AddCircle.fourier_eq_zpow, zpow_natCast]
   have hn (m : ℕ) : (conj z) ^ m = fourier (-(m : ℤ)) θ := by
     rw [fourier_neg, ← hp, map_pow]
   refine (hab.tsum_fiberwise freq).congr_fun fun k => ?_

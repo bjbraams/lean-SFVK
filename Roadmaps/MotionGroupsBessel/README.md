@@ -739,7 +739,8 @@ solution space regular at `0` with `F(0) = 1` is `{Ω_n(λ, ·)}` for `−λ²` 
 Sources: Vilenkin–Klimyk Vol. 2 §9.3.3 (3), pp. 48–49; DLMF 10.60.7 and 14.30.9.
 
 Prove:
-- **Plane-wave expansion in `ℝ³`** (`hasSum_planeWave_sphericalHarmonic`): for `κ, r > 0`,
+- **Plane-wave expansion in `ℝ³`** (`hasSum_planeWave_sphericalHarmonic`): for `κ, r > 0` and both
+  polar angles in `[0, π]`,
   `e^{i⟨κ k̂, r x̂⟩} = 4π Σ_l i^l j_l(κr) Σ_m Y_l^m(k̂) conj Y_l^m(x̂)` with
   `j_l(z) = √(π/(2z)) J_{l+1/2}(z)` and SpecialFunctionsSU2MatrixElements' `Y_l^m`;
 - for general `n ≥ 2` the zonal form

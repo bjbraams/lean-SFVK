@@ -66,8 +66,8 @@ The roadmap is complete when Tau Ceti proves all of the following.
 5. **Gel'fand pairs and spherical functions** (5.1–5.4).
 
 The numbers are those of the layers below, and `k.n` names subsection `n` of Layer `k`.
-`Suggested.lean` states the headlines that carry a Lean name, each with every conclusion the
-README attaches to it; it is not an exhaustive acceptance test, and the other headlines are
+`Coordinates.lean` and `Suggested.lean` state the headlines that carry a Lean name, each with
+every conclusion the README attaches to it. Other headlines are
 targets of the same standing, stated in prose. The `**Checks.**` and `### Examples` of each layer
 are statements to prove; they test the conventions on explicit values.
 
@@ -330,7 +330,8 @@ the identification of the sphere models of `M(2)` and `M(3)` with its Euclidean 
   decomposition), of which 0.1 is the `SU(1,1)` instance; and its Lie functor, for the general
   form of 5.4.
 
-`Suggested.lean` imports no other roadmap; it uses Tau Ceti's declarations above directly.
+The two Lean modules import no other roadmap and use the Tau Ceti declarations above directly.
+The build command is `lake build SFVKRoadmaps`.
 
 ## How to read the build
 
@@ -462,10 +463,10 @@ and a matrix of `SOn n` (Mathlib's `Matrix.specialOrthogonalGroup`) acting by `r
 `(a, k)(a', k') = (a + k a', k k')` and the topology of `ℝⁿ × SO(n)`; it is the matrix group
 `[[k, a], [0, 1]]`, and `ISO2` is `M(2)`. `ISO11` is `ISO(1,1) = ℝ² ⋊ SO₀(1,1)`: pairs `(a, s)`
 with `(a, s)(a', s') = (a + Λ_s a', s + s')` for the boost `lorentzBoost s`. The group laws are
-proved in `Suggested.lean`. Mathlib, Tau Ceti and the roadmaps on main have these groups at most
+proved in `Coordinates.lean`. Mathlib, Tau Ceti and the roadmaps on main have these groups at most
 algebraically (Tau Ceti's affine isometry group as a semidirect product, without topology). Prove:
 - **`M(n)` is a topological group** and **`M(n)` is locally compact** (instances of
-  `Suggested.lean`), and the same for `ISO(1,1)`;
+  `Coordinates.lean`), and the same for `ISO(1,1)`;
 - **Haar measure of `M(n)`; unimodularity** (`motionHaar_isHaarMeasure`): for the Haar probability
   measure `ν` of `SO(n)`, `motionHaar n ν = da dk` is a Haar measure of `M(n)` and is right
   invariant;

@@ -336,6 +336,8 @@ theorem coeff_zonalPolynomial_eq_zero_of_not_even {n l j : ℕ} (hn : 2 ≤ n) (
   rw [hl] at he
   rcases neg_one_pow_eq_or ℝ j with hh | hh <;> rw [hh] at he <;> linarith
 
+/-- Away from the origin, evaluation of the homogeneous zonal harmonic is the radial factor times
+its zonal polynomial. -/
 private theorem eval_zonalHarmonic_of_ne_zero {n : ℕ} (hn : 2 ≤ n) (l : ℕ)
     (η : EuclideanSpace ℝ (Fin n)) {x : EuclideanSpace ℝ (Fin n)} (hx : x ≠ 0) :
     MvPolynomial.eval (fun i => x i) (zonalHarmonic n l η) =
@@ -359,6 +361,7 @@ private theorem eval_zonalHarmonic_of_ne_zero {n : ℕ} (hn : 2 ≤ n) (l : ℕ)
   · rw [ite_eq_right hpar, coeff_zonalPolynomial_eq_zero_of_not_even hn hjl hpar,
       zero_mul, mul_zero]
 
+/-- The zonal harmonic is homogeneous of its prescribed degree. -/
 private theorem isHomogeneous_zonalHarmonic (n l : ℕ) (η : EuclideanSpace ℝ (Fin n)) :
     (zonalHarmonic n l η).IsHomogeneous l := by
   have hL : (linearForm η).IsHomogeneous 1 := by

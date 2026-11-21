@@ -52,6 +52,7 @@ def jacobiOperator (α β : ℂ) (u : ℝ → ℂ) (t : ℝ) : ℂ :=
     ((2 * α + 1) * (Real.cosh t / Real.sinh t : ℝ) + (2 * β + 1) * (Real.tanh t : ℂ)) *
       deriv u t
 
+/-- The Jacobi operator is the second derivative plus the first derivative with hyperbolic drift. -/
 theorem jacobiOperator_def (α β : ℂ) (u : ℝ → ℂ) (t : ℝ) :
     jacobiOperator α β u t = deriv (deriv u) t +
       ((2 * α + 1) * (Real.cosh t / Real.sinh t : ℝ) + (2 * β + 1) * (Real.tanh t : ℂ)) *
@@ -67,6 +68,7 @@ def cFunction (α β lam : ℂ) : ℂ :=
   (2 : ℂ) ^ (α + β + 1 - I * lam) * Gamma (α + 1) * Gamma (I * lam) /
     (Gamma ((I * lam + (α + β + 1)) / 2) * Gamma ((I * lam + α - β + 1) / 2))
 
+/-- The Jacobi `c`-function is the ratio of Gamma factors with its power-of-two constant. -/
 theorem cFunction_def (α β lam : ℂ) :
     cFunction α β lam = (2 : ℂ) ^ (α + β + 1 - I * lam) * Gamma (α + 1) * Gamma (I * lam) /
       (Gamma ((I * lam + (α + β + 1)) / 2) * Gamma ((I * lam + α - β + 1) / 2)) :=
@@ -92,6 +94,8 @@ theorem cFunction_neg_I_mul_rho (α β : ℂ) (hα : ∀ k : ℕ, α + 1 ≠ -k)
 def jacobiWeight (α β t : ℝ) : ℝ :=
   (2 * Real.sinh t) ^ (2 * α + 1) * (2 * Real.cosh t) ^ (2 * β + 1)
 
+/-- The Jacobi weight is the product of the specified real powers of twice the hyperbolic sine and
+cosine. -/
 theorem jacobiWeight_def (α β t : ℝ) :
     jacobiWeight α β t = (2 * Real.sinh t) ^ (2 * α + 1) * (2 * Real.cosh t) ^ (2 * β + 1) :=
   rfl
@@ -105,6 +109,7 @@ theorem jacobiWeight_neg_half_neg_half (t : ℝ) : jacobiWeight (-1 / 2) (-1 / 2
 def jacobiMeasure (α β : ℝ) : Measure ℝ :=
   (volume.restrict (Ioi 0)).withDensity fun t => ENNReal.ofReal (jacobiWeight α β t)
 
+/-- The Jacobi measure on the positive half-line has density `jacobiWeight`. -/
 theorem jacobiMeasure_def (α β : ℝ) :
     jacobiMeasure α β =
       (volume.restrict (Ioi 0)).withDensity fun t => ENNReal.ofReal (jacobiWeight α β t) :=
@@ -116,6 +121,8 @@ def jacobiPlancherelMeasure (α β : ℝ) : Measure ℝ :=
   (volume.restrict (Ioi (0 : ℝ))).withDensity fun lam : ℝ =>
     ENNReal.ofReal ((2 * π)⁻¹ * ‖cFunction α β lam‖⁻¹ ^ 2)
 
+/-- The positive spectral half-line is weighted by the inverse squared norm of the Jacobi
+`c`-function. -/
 theorem jacobiPlancherelMeasure_def (α β : ℝ) :
     jacobiPlancherelMeasure α β = (volume.restrict (Ioi (0 : ℝ))).withDensity fun lam : ℝ =>
       ENNReal.ofReal ((2 * π)⁻¹ * ‖cFunction α β lam‖⁻¹ ^ 2) :=

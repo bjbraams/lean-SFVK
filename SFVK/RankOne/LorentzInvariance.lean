@@ -172,7 +172,7 @@ private theorem hasDerivAt_shellTime (q : ℝ) (hq : 0 ≤ q) {r : ℝ} (hr : 0 
 /-- The time coordinate increases with the radius on the shell. -/
 private theorem monotoneOn_shellTime (q : ℝ) :
     MonotoneOn (shellTime q) (Ioo 1 2) := by
-  intro r hr t ht hrt
+  intro r hr t _ hrt
   exact Real.sqrt_le_sqrt (add_le_add_left (pow_le_pow_left₀ (zero_le_one.trans hr.1.le) hrt _) _)
 
 /-- The radius parametrizes each time slice of the shell. -/

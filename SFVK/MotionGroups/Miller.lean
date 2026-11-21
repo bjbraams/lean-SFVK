@@ -12,6 +12,7 @@ import DLMF.Bessel.Basic.RegularizedSeries
 import Mathlib.Analysis.Fourier.AddCircle
 import Mathlib.Analysis.Normed.Ring.InfiniteSum
 import SFVK.MotionGroups.CircleModel
+import SFVKMathlib.Analysis.Fourier.AddCircle
 
 /-!
 # Miller's model of `T₃`: generating function, addition theorem and Bessel form
@@ -127,7 +128,7 @@ private theorem hasSum_fourier_exponentialLaurent (u v : ℂ) (ψ : AddCircle (2
   let z : ℂ := fourier 1 ψ
   have hz : z ≠ 0 := Circle.coe_ne_zero _
   exact (hasSum_exponentialLaurent u v hz).congr_fun fun k => by
-    rw [fourier_eq_zpow, smul_eq_mul, mul_comm]
+    rw [AddCircle.fourier_eq_zpow, smul_eq_mul, mul_comm]
 
 /-- The Fourier series of a product has the convoluted coefficients. -/
 private theorem hasSum_fourier_convolution {a b : ℤ → ℂ} {A B : AddCircle (2 * π) → ℂ}

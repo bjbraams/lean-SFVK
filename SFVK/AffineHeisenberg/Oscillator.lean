@@ -6,19 +6,22 @@ Authors: Bastiaan J Braams
 module
 
 public import SFVK.AffineHeisenberg.Basic
-public import SFVK.AffineHeisenberg.Heisenberg
+public import SFVK.AffineHeisenberg.Fock
+public import SFVK.AffineHeisenberg.Schrodinger
 
 /-!
-# the oscillator group on the Fock space
+# The oscillator group on the Fock space
 
-Statements of §4 of the roadmap `Roadmaps/AffineHeisenbergGroups/README.md` (section numbers
-`§x.y`).
+The oscillator cocycle acts on the holomorphic subspace of `L²` for the normalized
+Gaussian measure. The stated properties are unitarity, invariance and irreducibility
+of the Fock subspace, restriction to the Heisenberg action, and a formula for the
+matrix elements in the monomial basis.
+
 Sources: Miller §4-14 (4.119)–(4.121), Theorem 4.2, pp. 121–122, §4-15 (4.122)–(4.123), Lemma 4.5,
 pp. 122–123.
-Theorems not yet proved are stated with `sorry`.
 -/
 
-@[expose] public section
+public section
 
 noncomputable section
 
@@ -27,7 +30,8 @@ namespace SFVK.AffineHeisenberg
 open MeasureTheory Set Complex MulAction
 open scoped Real ComplexConjugate InnerProductSpace ENNReal
 
-/-- §4.1. **Oscillator representations.** -/
+/-- The (L²) oscillator action is unitary, realizes the cocycle, preserves the Fock subspace,
+acts irreducibly there, and restricts to the Heisenberg action. -/
 theorem oscillatorFock_spec (lam : ℝ) :
     (∀ g F, (oscillatorFock lam g F : ℂ → ℂ) =ᵐ[fockMeasure]
       multiplierAction (oscillatorCocycle lam) g F) ∧
@@ -40,7 +44,8 @@ theorem oscillatorFock_spec (lam : ℝ) :
       fockHeisenbergAction p F := by
   sorry
 
-/-- §4.1. **Oscillator matrix elements.** -/
+/-- The oscillator matrix element is the Heisenberg Hermite coefficient times the rotational
+and central phase. -/
 theorem inner_fockMonomial_oscillatorFock (lam : ℝ) (g : Oscillator) (m n : ℕ) :
     ⟪fockMonomial m, oscillatorFock lam g (fockMonomial n)⟫_ℂ =
       Complex.exp ((lam * g.α - 2 * g.δ + n * g.α : ℝ) * Complex.I) *

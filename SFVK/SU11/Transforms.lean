@@ -5,7 +5,7 @@ Authors: Bastiaan J Braams
 -/
 module
 
-public import SFVK.SU11.Basic.MatrixElementsBasic
+public import SFVK.SU11.Basic.BoostMatrixElements
 public import Mathlib.MeasureTheory.Function.LpSpace.Basic
 public import Mathlib.MeasureTheory.Integral.Bochner.Basic
 public import Mathlib.Analysis.Calculus.ContDiff.Defs

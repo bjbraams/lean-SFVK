@@ -47,6 +47,8 @@ def zonalPolynomial (n l : ℕ) : ℝ[X] :=
     C ((ascPochhammer ℝ k).eval (-(l : ℝ)) * (ascPochhammer ℝ k).eval ((l : ℝ) + n - 2) /
       ((ascPochhammer ℝ k).eval (((n : ℝ) - 1) / 2) * k !)) * (C (1 / 2) * (1 - X)) ^ k
 
+/-- The zonal polynomial is a finite sum in the radial coordinate with its specified dimension and
+degree normalization. -/
 theorem zonalPolynomial_def (n l : ℕ) :
     zonalPolynomial n l = ∑ k ∈ Finset.range (l + 1),
       C ((ascPochhammer ℝ k).eval (-(l : ℝ)) * (ascPochhammer ℝ k).eval ((l : ℝ) + n - 2) /
@@ -83,10 +85,12 @@ theorem zonalPolynomial_one_right {n : ℕ} (hn : 2 ≤ n) : zonalPolynomial n 1
 def linearForm {n : ℕ} (η : EuclideanSpace ℝ (Fin n)) : MvPolynomial (Fin n) ℝ :=
   ∑ i, MvPolynomial.C (η i) * MvPolynomial.X i
 
+/-- The linear form is the polynomial whose coefficients are the coordinates of the pole. -/
 theorem linearForm_def {n : ℕ} (η : EuclideanSpace ℝ (Fin n)) :
     linearForm η = ∑ i, MvPolynomial.C (η i) * MvPolynomial.X i :=
   rfl
 
+/-- Evaluation of the linear form gives the real inner product with the pole. -/
 @[simp]
 theorem eval_linearForm {n : ℕ} (η x : EuclideanSpace ℝ (Fin n)) :
     MvPolynomial.eval (fun i => x i) (linearForm η) = ⟪η, x⟫_ℝ := by
@@ -103,6 +107,7 @@ def zonalHarmonic (n l : ℕ) (η : EuclideanSpace ℝ (Fin n)) : MvPolynomial (
         MvPolynomial.normSq (Fin n) ℝ ^ ((l - j) / 2)
     else 0
 
+/-- Homogenize the zonal polynomial in the pole coordinate and the squared norm. -/
 theorem zonalHarmonic_def (n l : ℕ) (η : EuclideanSpace ℝ (Fin n)) :
     zonalHarmonic n l η = ∑ j ∈ Finset.range (l + 1),
       if Even (l - j) then
@@ -116,6 +121,8 @@ theorem zonalHarmonic_def (n l : ℕ) (η : EuclideanSpace ℝ (Fin n)) :
 def zonalSpherical (n l : ℕ) (η : EuclideanSpace ℝ (Fin n)) (g : RotationGroup n) : ℂ :=
   ((zonalPolynomial n l).eval ⟪η, rotate g η⟫_ℝ : ℝ)
 
+/-- The real spherical function is the zonal polynomial evaluated at the overlap with the rotated
+pole. -/
 theorem zonalSpherical_apply (n l : ℕ) (η : EuclideanSpace ℝ (Fin n)) (g : RotationGroup n) :
     zonalSpherical n l η g = ((zonalPolynomial n l).eval ⟪η, rotate g η⟫_ℝ : ℝ) :=
   rfl
@@ -135,6 +142,8 @@ def branchFactor (m l k : ℕ) : MvPolynomial (Fin (m + 1)) ℝ :=
         MvPolynomial.X (Fin.last m) ^ j * MvPolynomial.normSq (Fin (m + 1)) ℝ ^ ((l - k - j) / 2)
     else 0
 
+/-- The branching factor is the homogenized zonal polynomial of the last coordinate in the effective
+dimension. -/
 theorem branchFactor_def (m l k : ℕ) :
     branchFactor m l k = ∑ j ∈ Finset.range (l - k + 1),
       if Even (l - k - j) then
@@ -150,6 +159,8 @@ on `ℝᵐ` to polynomials on `ℝ^{m+1}`. -/
 def branchHarmonic (m l k : ℕ) : MvPolynomial (Fin m) ℝ →ₗ[ℝ] MvPolynomial (Fin (m + 1)) ℝ :=
   LinearMap.mulLeft ℝ (branchFactor m l k) ∘ₗ (MvPolynomial.rename Fin.castSucc).toLinearMap
 
+/-- A branch polynomial is the renamed lower-dimensional harmonic multiplied by its branching
+factor. -/
 theorem branchHarmonic_apply (m l k : ℕ) (h : MvPolynomial (Fin m) ℝ) :
     branchHarmonic m l k h = branchFactor m l k * MvPolynomial.rename Fin.castSucc h :=
   rfl

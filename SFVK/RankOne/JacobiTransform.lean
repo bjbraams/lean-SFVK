@@ -14,6 +14,7 @@ import Mathlib.Analysis.Calculus.Deriv.Support
 import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 import Mathlib.MeasureTheory.Integral.IntegralEqImproper
+import SFVKMathlib.Analysis.Complex.GaussCutPlane
 
 /-!
 # The Jacobi transform
@@ -55,6 +56,8 @@ namespace SFVK.RankOne
 def jacobiTransform (α β : ℝ) (f : ℝ → ℂ) (lam : ℂ) : ℂ :=
   ∫ t in Ioi 0, f t * jacobiFunction α β lam t * jacobiWeight α β t
 
+/-- The Jacobi transform integrates the profile against the Jacobi function and its radial measure.
+-/
 theorem jacobiTransform_def (α β : ℝ) (f : ℝ → ℂ) (lam : ℂ) :
     jacobiTransform α β f lam = ∫ t in Ioi 0, f t * jacobiFunction α β lam t * jacobiWeight α β t :=
   rfl
@@ -62,7 +65,7 @@ theorem jacobiTransform_def (α β : ℝ) (f : ℝ → ℂ) (lam : ℂ) :
 /-- **Evenness**: `f̃(−λ) = f̃(λ)`. -/
 theorem jacobiTransform_neg (α β : ℝ) (f : ℝ → ℂ) (lam : ℂ) :
     jacobiTransform α β f (-lam) = jacobiTransform α β f lam := by
-  simp only [jacobiTransform_def, jacobiFunction_neg]
+  simp only [jacobiTransform_def, jacobiFunction_neg_spectral]
 
 /-- The Jacobi function is jointly continuous in the spectral parameter and radius. -/
 theorem continuous_jacobiFunction_joint (α β : ℂ) :
@@ -71,11 +74,13 @@ theorem continuous_jacobiFunction_joint (α β : ℂ) :
     ((α + β + 1 + I * p.1) / 2, (α + β + 1 - I * p.1) / 2, α + 1, -(Complex.sinh p.2) ^ 2)
   have harg : Continuous arg := by dsimp [arg]; fun_prop
   have hc := differentiableOn_regularizedGaussHypergeometric_joint.continuousOn.comp_continuous
-    harg (fun p => neg_sinh_sq_mem_cutPlane p.2)
+    harg (fun p => Complex.neg_sinh_sq_mem_gaussCutPlane p.2)
   exact continuous_const.mul hc
 
 namespace JacobiTransform
 
+/-- A compactly supported positive-half-line integral reduces to a finite interval containing its
+support. -/
 private theorem eq_integral_Ioc (α β : ℝ) (f : ℝ → ℂ) {R : ℝ}
     (hf : ∀ t, R < t → f t = 0) (z : ℂ) :
     jacobiTransform α β f z = ∫ t in Ioc 0 R, f t * jacobiFunction α β z t *
@@ -86,6 +91,8 @@ private theorem eq_integral_Ioc (α β : ℝ) (f : ℝ → ℂ) {R : ℝ}
   have htR : R < t := lt_of_not_ge fun h => ht.2 ⟨ht.1, h⟩
   simp only [hf t htR, zero_mul]
 
+/-- For a differentiable function with continuous derivative, the divided slope from zero is
+continuous. -/
 private theorem continuous_dslope_zero {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {f : ℝ → E} (hf : Continuous f) (hf₀ : DifferentiableAt ℝ f 0) :
     Continuous (dslope f 0) :=
@@ -95,10 +102,12 @@ private theorem continuous_dslope_zero {E : Type*} [NormedAddCommGroup E] [Norme
       exact continuousAt_dslope_same.mpr hf₀
     · exact (continuousAt_dslope_of_ne ht).mpr hf.continuousAt
 
+/-- Away from zero the divided slope of the hyperbolic sine is its value divided by the argument. -/
 private theorem dslope_sinh_zero_apply (t : ℝ) (ht : t ≠ 0) :
     dslope Real.sinh 0 t = Real.sinh t / t := by
   rw [dslope_of_ne _ ht, slope_def_field, Real.sinh_zero, sub_zero, sub_zero]
 
+/-- The divided slope of the hyperbolic sine from zero is positive. -/
 private theorem dslope_sinh_zero_pos (t : ℝ) : 0 < dslope Real.sinh 0 t := by
   rcases lt_trichotomy t 0 with h | rfl | h
   · rw [dslope_sinh_zero_apply _ h.ne]
@@ -107,9 +116,11 @@ private theorem dslope_sinh_zero_pos (t : ℝ) : 0 < dslope Real.sinh 0 t := by
   · rw [dslope_sinh_zero_apply _ h.ne']
     exact div_pos (Real.sinh_pos_iff.mpr h) h
 
+/-- The continuous factor remaining after the origin power is extracted from the Jacobi weight. -/
 private def weightFactor (α β : ℝ) (t : ℝ) : ℝ :=
   (2 * dslope Real.sinh 0 t) ^ (2 * α + 1) * (2 * Real.cosh t) ^ (2 * β + 1)
 
+/-- The regular factor of the Jacobi weight is continuous. -/
 private theorem continuous_weightFactor (α β : ℝ) : Continuous (weightFactor α β) := by
   have hs := continuous_dslope_zero Real.continuous_sinh (Real.hasDerivAt_sinh 0).differentiableAt
   exact ((continuous_const.mul hs).rpow_const
@@ -117,6 +128,7 @@ private theorem continuous_weightFactor (α β : ℝ) : Continuous (weightFactor
     ((continuous_const.mul Real.continuous_cosh).rpow_const
       (fun x => Or.inl (mul_pos two_pos (Real.cosh_pos x)).ne'))
 
+/-- On the positive half-line the Jacobi weight is the origin power times its regular factor. -/
 private theorem jacobiWeight_eq_rpow_mul (α β : ℝ) {t : ℝ} (ht : 0 < t) :
     jacobiWeight α β t = t ^ (2 * α + 1) * weightFactor α β t := by
   have hs : 2 * Real.sinh t = t * (2 * dslope Real.sinh 0 t) := by
@@ -125,6 +137,7 @@ private theorem jacobiWeight_eq_rpow_mul (α β : ℝ) {t : ℝ} (ht : 0 < t) :
   rw [jacobiWeight_def, hs, Real.mul_rpow ht.le (mul_pos two_pos (dslope_sinh_zero_pos t)).le]
   simp only [weightFactor, mul_assoc]
 
+/-- The Jacobi weight is locally integrable at zero in its Jacobi parameter range. -/
 private theorem integrableOn_jacobiWeight (α β : ℝ) (hα : -1 < α) (R : ℝ) :
     IntegrableOn (jacobiWeight α β) (Ioc 0 R) := by
   have hp := (intervalIntegral.intervalIntegrable_rpow' (a := (0 : ℝ)) (b := R)
@@ -135,6 +148,7 @@ private theorem integrableOn_jacobiWeight (α β : ℝ) (hα : -1 < α) (R : ℝ
   change weightFactor α β t * t ^ (2 * α + 1) = _
   rw [jacobiWeight_eq_rpow_mul α β ht.1, mul_comm]
 
+/-- A continuous function times the Jacobi weight is integrable on bounded radial intervals. -/
 private theorem integrableOn_mul_jacobiWeight (α β : ℝ) (hα : -1 < α) {g : ℝ → ℂ}
     (hg : Continuous g) (R : ℝ) :
     IntegrableOn (fun t => g t * (jacobiWeight α β t : ℂ)) (Ioc 0 R) := by
@@ -147,6 +161,7 @@ private theorem integrableOn_mul_jacobiWeight (α β : ℝ) (hα : -1 < α) {g :
   exact hw.bdd_mul hg.aestronglyMeasurable
     (ae_restrict_of_forall_mem measurableSet_Ioc fun t ht => hC t ⟨ht.1.le, ht.2⟩)
 
+/-- The derivative at zero of a differentiable even function vanishes. -/
 private theorem deriv_even_zero {f : ℝ → ℂ} (hf : DifferentiableAt ℝ f 0)
     (heven : ∀ t, f (-t) = f t) : deriv f 0 = 0 := by
   have hf' : HasDerivAt f (deriv f 0) (-(0 : ℝ)) := by
@@ -157,6 +172,7 @@ private theorem deriv_even_zero {f : ℝ → ℂ} (hf : DifferentiableAt ℝ f 0
   rw [show (fun t => f (-t)) = f from funext heven] at h
   linear_combination (1 / 2 : ℂ) * h.deriv
 
+/-- Compute the logarithmic derivative of the Jacobi weight at a positive radius. -/
 private theorem hasDerivAt_jacobiWeight (α β : ℝ) {t : ℝ} (ht : 0 < t) :
     HasDerivAt (jacobiWeight α β)
       (jacobiWeight α β t * ((2 * α + 1) * (Real.cosh t / Real.sinh t) +
@@ -294,11 +310,6 @@ theorem jacobiTransform_jacobiOperator (α β : ℝ) (hα : -1 < α) (f : ℝ �
       ← hfSlopeEq t, ← hφSlopeEq t]
     push_cast
     ring
-  have hreg : ∀ j : ℕ, (α : ℂ) + 1 ≠ -(j : ℂ) := by
-    intro j hj
-    have hr := congrArg Complex.re hj
-    simp only [add_re, ofReal_re, one_re, neg_re, natCast_re] at hr
-    linarith [Nat.cast_nonneg (α := ℝ) j]
   let g (t : ℝ) := jacobiOperator α β f t * φ t * (w t : ℂ)
   let l (t : ℝ) := f t * φ t * (w t : ℂ)
   have hHD (t : ℝ) (ht : t ∈ Ioi (0 : ℝ)) : HasDerivAt H (g t + κ * l t) t := by
@@ -306,7 +317,7 @@ theorem jacobiTransform_jacobiOperator (α β : ℝ) (hα : -1 < α) (f : ℝ �
     have hp := ((hf'' t).hasDerivAt.mul (hφ' t).hasDerivAt).sub
       ((hf' t).hasDerivAt.mul (hφ'' t).hasDerivAt)
     have h := hw.mul hp
-    have hφD := jacobiOperator_jacobiFunction α β lam hreg ht
+    have hφD := jacobiOperator_jacobiFunction α β lam ht
     rw [jacobiOperator_def] at hφD
     change deriv (deriv φ) t +
       ((2 * (α : ℂ) + 1) * (Real.cosh t / Real.sinh t : ℝ) +

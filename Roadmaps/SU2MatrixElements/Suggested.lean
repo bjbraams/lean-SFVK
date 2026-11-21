@@ -1,6 +1,7 @@
 /-
 Copyright (c) 2026 The Tau Ceti contributors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bastiaan J Braams
 -/
 module
 
@@ -158,6 +159,7 @@ invariant inner product. -/
 def monomialNorm (d : ℕ) (i : Fin (d + 1)) : ℝ :=
   Real.sqrt ((i : ℕ).factorial * (d - i).factorial)
 
+/-- The squared norm assigned to a basis monomial is strictly positive. -/
 theorem monomialNorm_pos (d : ℕ) (i : Fin (d + 1)) : 0 < monomialNorm d i :=
   Real.sqrt_pos.2 (by positivity)
 
@@ -175,6 +177,7 @@ standard basis vector `e_i` corresponds to the normalized monomial
 def unitaryModel (d : ℕ) : ContRepresentation ℂ SU2 (EuclideanSpace ℂ (Fin (d + 1))) :=
   (scale d).congr (symPowerModel d)
 
+/-- The finite-dimensional unitary model varies continuously with the group element. -/
 theorem continuous_unitaryModel (d : ℕ) : Continuous (unitaryModel d) :=
   (scale d).continuous_congr (continuous_symPowerModel d)
 

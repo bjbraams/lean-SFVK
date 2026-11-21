@@ -35,6 +35,8 @@ def IsTriad (d₁ d₂ d : ℕ) : Prop :=
 instance (d₁ d₂ d : ℕ) : Decidable (IsTriad d₁ d₂ d) := by
   unfold IsTriad; infer_instance
 
+/-- The doubled-spin triangle condition consists of the triangle inequalities and even total degree.
+-/
 theorem isTriad_def (d₁ d₂ d : ℕ) :
     IsTriad d₁ d₂ d ↔ d ≤ d₁ + d₂ ∧ d₁ ≤ d₂ + d ∧ d₂ ≤ d₁ + d ∧ Even (d₁ + d₂ + d) :=
   Iff.rfl
@@ -70,6 +72,7 @@ def clebschGordan (d₁ d₂ d i₁ i₂ i : ℕ) : ℝ :=
       ∑ z ∈ Finset.range ((d₁ + d₂ - d) / 2 + 1), clebschGordanTerm d₁ d₂ d i₁ i₂ z
   else 0
 
+/-- The coefficient is the factorial sum on admissible indices and zero outside that range. -/
 theorem clebschGordan_def (d₁ d₂ d i₁ i₂ i : ℕ) :
     clebschGordan d₁ d₂ d i₁ i₂ i =
       if IsTriad d₁ d₂ d ∧ i₁ ≤ d₁ ∧ i₂ ≤ d₂ ∧ i ≤ d ∧
@@ -107,6 +110,8 @@ def threeJ (d₁ d₂ d₃ i₁ i₂ i₃ : ℕ) : ℝ :=
       clebschGordan d₁ d₂ d₃ i₁ i₂ (d₃ - i₃)
   else 0
 
+/-- The Wigner 3-j symbol is the signed coefficient with the last weight reversed and the dimension
+factor divided out. -/
 theorem threeJ_def (d₁ d₂ d₃ i₁ i₂ i₃ : ℕ) :
     threeJ d₁ d₂ d₃ i₁ i₂ i₃ =
       if i₃ ≤ d₃ then
@@ -121,12 +126,15 @@ def triangleCoefficient (d₁ d₂ d₃ : ℕ) : ℝ :=
   Real.sqrt ((((d₁ + d₂ - d₃) / 2).factorial * ((d₁ + d₃ - d₂) / 2).factorial *
     ((d₂ + d₃ - d₁) / 2).factorial : ℕ) / (((d₁ + d₂ + d₃) / 2 + 1).factorial : ℕ))
 
+/-- The triangle coefficient is the ratio of the three triangle factorials to the total-degree
+factorial. -/
 theorem triangleCoefficient_def (d₁ d₂ d₃ : ℕ) :
     triangleCoefficient d₁ d₂ d₃ =
       Real.sqrt ((((d₁ + d₂ - d₃) / 2).factorial * ((d₁ + d₃ - d₂) / 2).factorial *
         ((d₂ + d₃ - d₁) / 2).factorial : ℕ) / (((d₁ + d₂ + d₃) / 2 + 1).factorial : ℕ)) :=
   rfl
 
+/-- The triangle coefficient is nonnegative. -/
 theorem triangleCoefficient_nonneg (d₁ d₂ d₃ : ℕ) : 0 ≤ triangleCoefficient d₁ d₂ d₃ :=
   Real.sqrt_nonneg _
 

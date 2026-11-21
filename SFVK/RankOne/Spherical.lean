@@ -53,6 +53,7 @@ namespace SFVK.RankOne
 def sphericalFunction (n : ℕ) (lam : ℂ) (x : Fin (n + 1) → ℝ) : ℂ :=
   jacobiFunction ((n : ℂ) / 2 - 1) (-1 / 2) lam (Real.arcosh (x 0))
 
+/-- The hyperbolic spherical function is the Jacobi function of the distance from the base point. -/
 theorem sphericalFunction_def (n : ℕ) (lam : ℂ) (x : Fin (n + 1) → ℝ) :
     sphericalFunction n lam x =
       jacobiFunction ((n : ℂ) / 2 - 1) (-1 / 2) lam (Real.arcosh (x 0)) :=
@@ -81,9 +82,8 @@ theorem sphericalFunction_eq_average (n : ℕ) (hn : 2 ≤ n) (lam : ℂ) {x : F
   sorry
 
 set_option maxHeartbeats 1500000 in
-set_option linter.unusedVariables false in
 /-- **Eigenfunction**: `Δφ_λ = −(λ² + ρ²) φ_λ` on `ℍⁿ`. -/
-theorem hyperbolicLaplacian_sphericalFunction (n : ℕ) (hn : 2 ≤ n) (lam : ℂ)
+theorem hyperbolicLaplacian_sphericalFunction (n : ℕ) (lam : ℂ)
     {x : Fin (n + 1) → ℝ} (hx : x ∈ hyperboloid n) :
     hyperbolicLaplacian n (sphericalFunction n lam) x =
       -(lam ^ 2 + (((n : ℂ) - 1) / 2) ^ 2) * sphericalFunction n lam x := by
@@ -193,7 +193,7 @@ theorem isSphericalFunction_iff (n : ℕ) (hn : 2 ≤ n) (ν : Measure (rotation
   sorry
 
 /-- **`φ_λ = φ_μ` exactly when `μ = ±λ`.** -/
-theorem sphericalFunction_comp_orbitMap_eq_iff (n : ℕ) (hn : 2 ≤ n) (lam μ : ℂ) :
+theorem sphericalFunction_comp_orbitMap_eq_iff (n : ℕ) (hn : 1 ≤ n) (lam μ : ℂ) :
     ((fun g => sphericalFunction n lam (orbitMap n g)) =
       fun g => sphericalFunction n μ (orbitMap n g)) ↔ (μ = lam ∨ μ = -lam) := by
   constructor
@@ -204,16 +204,16 @@ theorem sphericalFunction_comp_orbitMap_eq_iff (n : ℕ) (hn : 2 ≤ n) (lam μ 
       exact congrFun h g
     have hx := basePoint_mem_hyperboloid n
     have hLap := hyperbolicLaplacian_congr hEq hx
-    rw [hyperbolicLaplacian_sphericalFunction n hn lam hx,
-      hyperbolicLaplacian_sphericalFunction n hn μ hx,
-      sphericalFunction_basePoint n (by omega : 1 ≤ n),
-      sphericalFunction_basePoint n (by omega : 1 ≤ n), mul_one, mul_one] at hLap
+    rw [hyperbolicLaplacian_sphericalFunction n lam hx,
+      hyperbolicLaplacian_sphericalFunction n μ hx,
+      sphericalFunction_basePoint n hn,
+      sphericalFunction_basePoint n hn, mul_one, mul_one] at hLap
     have hsquare : μ ^ 2 = lam ^ 2 := by linear_combination hLap
     exact sq_eq_sq_iff_eq_or_eq_neg.mp hsquare
   · rintro (rfl | rfl)
     · rfl
     · funext g
-      exact (jacobiFunction_neg _ _ _ _).symm
+      exact (jacobiFunction_neg_spectral _ _ _ _).symm
 
 end Gelfand
 
@@ -222,22 +222,22 @@ end Gelfand
 def sphericalTransform (n : ℕ) (f : (Fin (n + 1) → ℝ) → ℂ) (lam : ℂ) : ℂ :=
   ∫ x, f x * sphericalFunction n lam x ∂hyperbolicMeasure n
 
+/-- The spherical transform integrates against the spherical function with respect to hyperbolic
+volume. -/
 theorem sphericalTransform_def (n : ℕ) (f : (Fin (n + 1) → ℝ) → ℂ) (lam : ℂ) :
     sphericalTransform n f lam = ∫ x, f x * sphericalFunction n lam x ∂hyperbolicMeasure n :=
   rfl
 
-set_option linter.unusedVariables false in
-/-- **The spherical transform is a Jacobi transform**: for radial `f = F ∘ d(o, ·)`,
-`Sf(λ) = ω_{n−1} 2^{1−n} F̃(λ)` at `(α, β) = (n/2 − 1, −1/2)`. -/
-theorem sphericalTransform_radial (n : ℕ) (hn : 2 ≤ n) (F : ℝ → ℂ) (hF : Continuous F)
-    (hFs : HasCompactSupport F) (lam : ℂ) :
+/-- For `n ≥ 1` and measurable radial profile `F`, the spherical transform of
+`F ∘ d(o, ·)` is `ω_{n−1} 2^{1−n} F̃(λ)` at `(α, β) = (n/2 − 1, −1/2)`. -/
+theorem sphericalTransform_radial (n : ℕ) (hn : 1 ≤ n) (F : ℝ → ℂ) (hF : Measurable F)
+    (lam : ℂ) :
     sphericalTransform n (fun x => F (Real.arcosh (x 0))) lam =
       (sphereArea n / 2 ^ (n - 1) : ℝ) * jacobiTransform ((n : ℝ) / 2 - 1) (-1 / 2) F lam := by
   let φ (r : ℝ) := jacobiFunction ((n : ℂ) / 2 - 1) (-1 / 2) lam r
   have hφ : Continuous φ := continuous_iff_continuousAt.mpr
     (fun r => (analyticAt_jacobiFunction_radius ((n : ℂ) / 2 - 1) (-1 / 2) lam r).continuousAt)
-  have h := integral_hyperbolicMeasure_radial n (by omega) (fun r => F r * φ r)
-    (hF.measurable.mul hφ.measurable)
+  have h := integral_hyperbolicMeasure_radial n hn (fun r => F r * φ r) (hF.mul hφ.measurable)
   simp only [sphericalTransform_def, sphericalFunction_def, φ] at h ⊢
   rw [h, jacobiTransform_def]
   have hcast : (((n : ℝ) / 2 - 1 : ℝ) : ℂ) = (n : ℂ) / 2 - 1 := by push_cast; ring
@@ -310,9 +310,8 @@ theorem sphericalTransform_eq_integral_abelTransform (m : ℕ) (F : ℝ → ℂ)
       ∫ s, abelTransform m F s * exp (I * lam * s) := by
   sorry
 
-set_option linter.unusedVariables false in
 /-- **The Abel transform of `ℍ³`**: `𝒜F(s) = 2π ∫_{cosh s}^∞ F(arcosh u) du`. -/
-theorem abelTransform_two (F : ℝ → ℂ) (hF : Continuous F) (hFs : HasCompactSupport F) (s : ℝ) :
+theorem abelTransform_two (F : ℝ → ℂ) (s : ℝ) :
     abelTransform 2 F s = 2 * π * ∫ u in Ioi (Real.cosh s), F (Real.arcosh u) := by
   let u (r : ℝ) := Real.cosh s + r ^ 2 * Real.exp (-s) / 2
   let g (r : ℝ) := F (Real.arcosh (u r))
@@ -349,7 +348,7 @@ theorem abelTransform_two (F : ℝ → ℂ) (hF : Continuous F) (hFs : HasCompac
       (Real.cosh s)
     convert h using 1
     all_goals simp [u]
-    all_goals ring_nf
+    ring_nf
   have hIntegral :
       ∫ x in Ioi (Real.cosh s), F (Real.arcosh x) =
         Real.exp (-s) • ∫ r in Ioi (0 : ℝ), r • g r := by

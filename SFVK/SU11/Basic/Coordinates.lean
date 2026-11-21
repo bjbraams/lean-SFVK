@@ -51,15 +51,15 @@ def su11 : Subgroup (SpecialLinearGroup (Fin 2) ℂ) where
       (adjugate g.1) 1 1 = conj ((adjugate g.1) 0 0)
     simp [Matrix.adjugate_fin_two, hg₁, hg₂]
 
-/-- Membership in `SU(1,1)` is the conjugate symmetry of the two rows. -/
-theorem mem_su11 {g : SpecialLinearGroup (Fin 2) ℂ} :
-    g ∈ su11 ↔ g.1 1 0 = conj (g.1 0 1) ∧ g.1 1 1 = conj (g.1 0 0) :=
-  (Iff.rfl)
-
 /-- The group `SU(1,1)`, with the subspace topology from `SL(2, ℂ)`. -/
 abbrev SU11 := ↥su11
 
 namespace SU11
+
+/-- Membership in `SU(1,1)` is the conjugate symmetry of the two rows. -/
+theorem mem_su11 {g : SpecialLinearGroup (Fin 2) ℂ} :
+    g ∈ su11 ↔ g.1 1 0 = conj (g.1 0 1) ∧ g.1 1 1 = conj (g.1 0 0) :=
+  (Iff.rfl)
 
 /-- The Borel σ-algebra on `SU(1,1)`. -/
 instance : MeasurableSpace SU11 := borel SU11

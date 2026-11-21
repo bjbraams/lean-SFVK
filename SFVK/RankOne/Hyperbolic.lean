@@ -14,6 +14,8 @@ import Mathlib.Analysis.SpecialFunctions.Arcosh
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import TauCeti.LinearAlgebra.Matrix.OneSubVecMulVec
+import TauCeti.Analysis.Calculus.IteratedFDeriv.Prod
+import TauCeti.Analysis.InnerProductSpace.Laplacian.ParametricIntegral
 import Mathlib.Analysis.Calculus.IteratedDeriv.FaaDiBruno
 import Mathlib.MeasureTheory.Function.JacobianOneDim
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
@@ -24,7 +26,8 @@ import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 Transitivity of `SO₀(n, 1)` on `ℍⁿ`, invariance of the distance, invariance of the volume and its
 polar and horospherical forms, invariance and radial part of the Laplace–Beltrami operator, plane
 waves and Poisson integrals, and the Gel'fand pair `(SO₀(n, 1), SO(n))`. The transitivity proof
-uses the determinant of a rank-one perturbation of the identity from Tau Ceti.
+uses the determinant of a rank-one perturbation of the identity from Tau Ceti. The Poisson
+integral uses Tau Ceti’s Laplacian formula for integrals over compact parameter spaces.
 
 Sources: Wawrzyńczyk, *Group Representations and Special Functions*, §11.1, (11.1.6), p. 392;
 §11.5, (11.5.1)–(11.5.8), Theorem 11.5.1, pp. 411–412; §18.1, Proposition 18.1.6,
@@ -40,6 +43,7 @@ Special Functions on Symmetric Spaces*, Part I §5.4, (5.4.3), p. 83.
   projection.
 * `SFVK.RankOne.hyperbolicLaplacian_radial`: the radial Laplacian.
 * `SFVK.RankOne.hyperbolicLaplacian_planeWave`: the plane-wave eigenvalue.
+* `SFVK.RankOne.hyperbolicLaplacian_poisson`: harmonicity of the Poisson integral.
 -/
 
 public noncomputable section
@@ -386,10 +390,13 @@ theorem integral_hyperbolicMeasure_radial (n : ℕ) (hn : 1 ≤ n) (F : ℝ → 
 
 namespace HyperbolicLaplacian
 
+/-- A vector supported only at time index zero contributes only the time product to the Lorentz
+pairing. -/
 private theorem lorentz_single_zero {n : ℕ} (x : Fin (n + 1) → ℝ) :
     lorentz (Pi.single 0 1) x = x 0 :=
   lorentz_basePoint_left x
 
+/-- A vector supported at one spatial index contributes the negative corresponding product. -/
 private theorem lorentz_single_succ {n : ℕ} (i : Fin n) (x : Fin (n + 1) → ℝ) :
     lorentz (Pi.single i.succ 1) x = -x i.succ := by
   simp only [lorentz_def, Pi.single_eq_of_ne (Fin.succ_ne_zero i).symm, zero_mul, zero_sub]
@@ -400,6 +407,8 @@ private theorem lorentz_single_succ {n : ℕ} (i : Fin n) (x : Fin (n + 1) → �
     rw [Pi.single_eq_of_ne (fun h => hji (Fin.succ_inj.mp h)), zero_mul]
 
 set_option maxHeartbeats 800000 in
+/-- Compute the first two derivatives of the Lorentz projection after normalization along a
+coordinate line. -/
 private theorem derivatives_normalizedProjection (u v a d : ℝ) :
     let z (s : ℝ) := (u + v * s) * (Real.sqrt (1 + 2 * a * s + d * s ^ 2))⁻¹
     z 0 = u ∧ ContDiffAt ℝ 2 z 0 ∧ deriv z 0 = v - u * a ∧
@@ -463,6 +472,23 @@ private theorem derivatives_normalizedProjection (u v a d : ℝ) :
         (v * r' 0 + (v * r' 0 + l 0 * (3 * a ^ 2 - d))) 0 := h
     rw [h'.deriv, hr'Zero, hlZero]
     ring
+
+open InnerProductSpace in
+/-- The second derivative along the line is integrable over the compact parameter space. -/
+private theorem integrable_iteratedDeriv_compact {S P : Type*}
+    [TopologicalSpace S] [CompactSpace S] [MeasurableSpace S] [OpensMeasurableSpace S]
+    [NormedAddCommGroup P] [NormedSpace ℝ P] {ν : Measure S} [IsFiniteMeasure ν]
+    {K : ℝ × P → ℂ} {W : Set (ℝ × P)} (hW : IsOpen W) (hK : ContDiffOn ℝ 2 K W)
+    {ι : S → P} (hι : Continuous ι) {s : ℝ} (hs : ∀ b, (s, ι b) ∈ W) :
+    Integrable (fun b => iteratedDeriv 2 (fun t => K (t, ι b)) s) ν := by
+  have hD := ContDiffOn.fderiv_partial_of_isOpen (m := 1) hK hW
+  have hD' := (ContDiffOn.fderiv_partial_of_isOpen (m := 0) (by simpa using hD) hW).continuousOn
+  have htrace := (TauCeti.traceL (E := ℝ) (F := ℂ)).continuous.comp_continuousOn hD'
+  have hderiv : ContinuousOn (fun p : ℝ × P => iteratedDeriv 2 (fun t => K (t, p.2)) p.1) W := by
+    refine htrace.congr fun p _ => ?_
+    simp [← TauCeti.laplacian_eq_traceL, laplacian_eq_iteratedDeriv_real]
+  simpa only [one_smul] using
+    TauCeti.integrable_smul_of_continuousOn (integrable_const (1 : ℝ)) hι hderiv hs
 
 end HyperbolicLaplacian
 
@@ -682,6 +708,7 @@ theorem hyperbolicLaplacian_radial (n : ℕ) (F : ℝ → ℂ) (hF : ContDiffOn 
 
 namespace HyperbolicLaplacian
 
+/-- A point of the upper hyperboloid pairs positively with every null boundary direction. -/
 private theorem lorentz_boundaryVector_pos (n : ℕ) {x : Fin (n + 1) → ℝ}
     (hx : x ∈ hyperboloid n) (b : Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1) :
     0 < lorentz x (boundaryVector n b) := by
@@ -706,6 +733,7 @@ private theorem lorentz_boundaryVector_pos (n : ℕ) {x : Fin (n + 1) → ℝ}
   rw [lorentz_def, hy, mul_one, sub_pos]
   exact hC.trans_lt hrad
 
+/-- Differentiate the principal complex power of a positive real base along the real axis. -/
 private theorem hasDerivAt_ofReal_cpow (σ : ℂ) {s : ℝ} (hs : 0 < s) :
     HasDerivAt (fun t : ℝ => (t : ℂ) ^ σ) (σ * (s : ℂ) ^ (σ - 1)) s := by
   have h := ((hasDerivAt_id (s : ℂ)).cpow_const (c := σ)
@@ -764,6 +792,7 @@ theorem hyperbolicLaplacian_planeWave (n : ℕ) (μ : ℂ)
       ring
     _ = _ := by rw [hm 2, hm 1]; dsimp only [σ]; ring
 
+open HyperbolicLaplacian LorentzGeometry InnerProductSpace in
 /-- **Poisson integrals are harmonic**: `Δ ∫ [x, b̃]^{1−n} F(b) dσ(b) = 0` on `ℍⁿ`. -/
 theorem hyperbolicLaplacian_poisson (n : ℕ) (hn : 2 ≤ n)
     (F : Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1 → ℂ) (hF : Continuous F)
@@ -771,13 +800,99 @@ theorem hyperbolicLaplacian_poisson (n : ℕ) (hn : 2 ≤ n)
     hyperbolicLaplacian n
         (fun y => ⨍ b, (lorentz y (boundaryVector n b) : ℂ) ^ (1 - (n : ℂ)) * F b ∂sphereMeasure n)
         x = 0 := by
-  sorry
+  let E := Fin (n + 1) → ℝ
+  let S := Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1
+  let μ : Measure S := sphereMeasure n
+  let ν := (μ univ)⁻¹ • μ
+  let : Nontrivial (EuclideanSpace ℝ (Fin n)) := Module.nontrivial_of_finrank_pos
+    (show 0 < Module.finrank ℝ (EuclideanSpace ℝ (Fin n)) by
+      simpa using (show 0 < n by omega))
+  let : IsFiniteMeasure μ := by
+    dsimp only [μ]
+    rw [sphereMeasure_def]
+    infer_instance
+  let : IsFiniteMeasure ν := ⟨by
+    dsimp only [ν]
+    rw [smul_apply, smul_eq_mul]
+    by_cases h : μ univ = 0
+    · simp [h]
+    · rw [ENNReal.inv_mul_cancel h (measure_ne_top μ univ)]
+      exact ENNReal.one_lt_top⟩
+  let σ : ℂ := 1 - n
+  let U (b : S) (y : E) : ℂ := (lorentz y (boundaryVector n b) : ℂ) ^ σ
+  let extend (y : E) : E := (Real.sqrt (lorentz y y))⁻¹ • y
+  let L (v : E) (b : S) (s : ℝ) : ℂ := U b (extend (x + s • v)) * F b
+  have hderiv (v : E) :
+      iteratedDeriv 2 (fun s => ∫ b, L v b s ∂ν) 0 =
+          ∫ b, iteratedDeriv 2 (L v b) 0 ∂ν ∧
+        Integrable (fun b => iteratedDeriv 2 (L v b) 0) ν := by
+    let ι (b : S) : E × ℂ := (boundaryVector n b, F b)
+    have hBoundary : Continuous (boundaryVector n) := by
+      refine continuous_pi fun i => ?_
+      refine Fin.cases ?_ (fun j => ?_) i
+      · simp only [boundaryVector_def, Fin.cons_zero]
+        exact continuous_const
+      · simp only [boundaryVector_def, Fin.cons_succ]
+        exact (PiLp.continuous_apply 2 (fun _ : Fin n => ℝ) j).comp continuous_subtype_val
+    have hι : Continuous ι := hBoundary.prodMk hF
+    let ray (t : ℝ × (E × ℂ)) : E := x + t.1 • v
+    let a (t : ℝ × (E × ℂ)) : ℝ := lorentz (ray t) (ray t)
+    let b (t : ℝ × (E × ℂ)) : ℝ := lorentz (ray t) t.2.1
+    let W : Set (ℝ × (E × ℂ)) := {t | 0 < a t ∧ 0 < b t}
+    let K (t : ℝ × (E × ℂ)) : ℂ := (lorentz (extend (ray t)) t.2.1 : ℂ) ^ σ * t.2.2
+    have hA : ContDiff ℝ 2 a := by dsimp only [a, lorentz_def, ray]; fun_prop
+    have hB : ContDiff ℝ 2 b := by dsimp only [b, lorentz_def, ray]; fun_prop
+    have hW : IsOpen W := (isOpen_lt continuous_const hA.continuous).inter
+      (isOpen_lt continuous_const hB.continuous)
+    have hW₀ (b : S) : (0, ι b) ∈ W := by
+      change 0 < lorentz (x + (0 : ℝ) • v) (x + (0 : ℝ) • v) ∧
+        0 < lorentz (x + (0 : ℝ) • v) (boundaryVector n b)
+      simpa only [zero_smul, add_zero, hx.1] using
+        And.intro zero_lt_one (lorentz_boundaryVector_pos n hx b)
+    let base (t : ℝ × (E × ℂ)) : ℝ := (Real.sqrt (a t))⁻¹ * b t
+    have hAp (t : ℝ × (E × ℂ)) (ht : t ∈ W) : 0 < a t := ht.1
+    have hBp (t : ℝ × (E × ℂ)) (ht : t ∈ W) : 0 < b t := ht.2
+    have hsqrt : ContDiffOn ℝ 2 (fun t => Real.sqrt (a t)) W :=
+      hA.contDiffOn.sqrt (fun t ht => (hAp t ht).ne')
+    have hbase : ContDiffOn ℝ 2 base W :=
+      (hsqrt.inv fun t ht => (Real.sqrt_pos.2 (hAp t ht)).ne').mul hB.contDiffOn
+    have hpos (t : ℝ × (E × ℂ)) (ht : t ∈ W) : 0 < base t :=
+      mul_pos (inv_pos.2 (Real.sqrt_pos.2 (hAp t ht))) (hBp t ht)
+    have hK : ContDiffOn ℝ 2 K W := by
+      have hlog := Complex.ofRealCLM.contDiff.comp_contDiffOn
+        (hbase.log fun t ht => (hpos t ht).ne')
+      have hproj : ContDiff ℝ 2 (fun t : ℝ × (E × ℂ) => t.2.2) := by fun_prop
+      refine ((hlog.mul (contDiffOn_const (c := σ))).cexp.mul hproj.contDiffOn).congr ?_
+      intro t ht
+      change (lorentz (extend (ray t)) t.2.1 : ℂ) ^ σ * t.2.2 =
+        Complex.exp ((Real.log (base t) : ℂ) * σ) * t.2.2
+      rw [show lorentz (extend (ray t)) t.2.1 = base t from lorentz_smul_left _ _ _,
+        cpow_def_of_ne_zero (ofReal_ne_zero.mpr (hpos t ht).ne'), ofReal_log (hpos t ht).le]
+    have h := TauCeti.laplacian_integral_smul_of_contDiffOn (μ := ν)
+      (hg := integrable_const (1 : ℝ)) hι hW hK hW₀
+    simp only [one_smul, laplacian_eq_iteratedDeriv_real] at h
+    exact ⟨h, integrable_iteratedDeriv_compact hW hK hι hW₀⟩
+  rw [hyperbolicLaplacian_def]
+  change ∑ i : Fin n, iteratedDeriv 2 (fun s => ∫ b, L (Pi.single i.succ 1) b s ∂ν) 0 -
+    iteratedDeriv 2 (fun s => ∫ b, L (Pi.single 0 1) b s ∂ν) 0 = 0
+  simp_rw [(hderiv _).1]
+  rw [← integral_finsetSum _ (fun i _ => (hderiv (Pi.single i.succ 1)).2),
+    ← integral_sub (integrable_finsetSum _ (fun i _ => (hderiv (Pi.single i.succ 1)).2))
+      (hderiv (Pi.single 0 1)).2]
+  refine integral_eq_zero_of_ae (ae_of_all _ fun b => ?_)
+  simp only [L, iteratedDeriv_mul_const_field, ← Finset.sum_mul, ← sub_mul]
+  change hyperbolicLaplacian n (U b) x * F b = 0
+  have h := hyperbolicLaplacian_planeWave n ((n : ℂ) - 1) b hx
+  have hσ : -((n : ℂ) - 1) = σ := by dsimp only [σ]; ring
+  have hzero : ((n : ℂ) - 1) - n + 1 = 0 := by ring
+  rw [hσ, hzero, mul_zero, zero_mul] at h
+  rw [show hyperbolicLaplacian n (U b) x = 0 from h, zero_mul]
 
 section Gelfand
 
 attribute [local instance] borel
 
-/-- **`(SO₀(n, 1), SO(n))` is a Gel'fand pair**, by the involution `g ↦ J (gᵀ)⁻¹ J`. -/
+/-- The Lorentz group and its rotation subgroup form a Gel'fand pair for Haar measure. -/
 theorem isGelfandPair_lorentzGroup (n : ℕ) (μ : Measure (lorentzGroup n)) [μ.IsHaarMeasure] :
     Subgroup.IsGelfandPair (rotationSubgroup n) μ := by
   sorry

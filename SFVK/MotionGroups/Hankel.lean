@@ -21,6 +21,9 @@ public import SFVK.MotionGroups.CircleModel
 import SFVK.MotionGroups.Spherical
 import TauCeti.Geometry.Euclidean.Volume.Sphere
 import TauCeti.MeasureTheory.Constructions.HaarToSphere
+import SFVKMathlib.Analysis.Fourier.AddCircle
+import DLMF.WaveEquation.Helmholtz
+import TauCeti.Analysis.InnerProductSpace.Laplacian.Basic
 
 /-!
 # The quasi-regular representation of `M(n)` and the Hankel transform
@@ -37,12 +40,14 @@ p. 57. The Laguerre eigenfunction formula follows from lean-DLMF's
 `integral_laguerreExtended_hankel` by the change of variables `t = r²`. The radial Fourier
 formula uses Tau Ceti's polar integration theorem and the area of the unit sphere. The angular
 formula uses its complex-plane isometry, Mathlib's polar integration and Bessel's circle integral.
+For cylindrical waves, lean-DLMF supplies the Cartesian Helmholtz equation and Tau Ceti
+transports the Laplacian through a linear isometry.
 -/
 
 public noncomputable section
 
-open AddCircle Complex MeasureTheory Set
-open scoped Real InnerProductSpace FourierTransform Laplacian
+open AddCircle Complex MeasureTheory Set Filter
+open scoped Real InnerProductSpace FourierTransform Laplacian ContDiff ComplexConjugate Topology
 
 namespace SFVK.MotionGroups
 
@@ -52,7 +57,7 @@ local instance : Fact (0 < 2 * π) := ⟨Real.two_pi_pos⟩
 /-- Fourier transform of a translate-rotate (Vilenkin–Klimyk Vol. 1 §4.4.1, pp. 193–195):
 `𝓕(f ∘ g⁻¹)(ξ) = e^{-2πi⟨a, ξ⟩} 𝓕f(k⁻¹ ξ)`. -/
 theorem fourier_comp_motionApply {n : ℕ} (g : MotionGroup n)
-    (f : EuclideanSpace ℝ (Fin n) → ℂ) (hf : Integrable f) (ξ : EuclideanSpace ℝ (Fin n)) :
+    (f : EuclideanSpace ℝ (Fin n) → ℂ) (ξ : EuclideanSpace ℝ (Fin n)) :
     𝓕 (fun x => f (motionApply g⁻¹ x)) ξ =
       Complex.exp (-(2 * π * ⟪g.a, ξ⟫_ℝ : ℝ) * I) * 𝓕 f (rotE g.k⁻¹ ξ) := by
   let V := EuclideanSpace ℝ (Fin n)
@@ -81,21 +86,203 @@ theorem fourier_comp_motionApply {n : ℕ} (g : MotionGroup n)
 
 /-- On the circle `|ξ| = ρ` the quasi-regular representation is `T_{-2πρ}`. -/
 theorem fourier_comp_motionApply_circle (g : MotionGroup 2)
-    (f : EuclideanSpace ℝ (Fin 2) → ℂ) (hf : Integrable f) (ρ : ℝ) (ψ : 𝕋) :
+    (f : EuclideanSpace ℝ (Fin 2) → ℂ) (ρ : ℝ) (ψ : 𝕋) :
     𝓕 (fun x => f (motionApply g⁻¹ x)) (ρ • unitVec ψ) =
       circleAction (-(2 * π * ρ)) g (fun ψ' => 𝓕 f (ρ • unitVec ψ')) ψ := by
-  rw [fourier_comp_motionApply g f hf, circleAction_def, unitVec_sub_rotAngle, rotE_def, map_smul,
+  rw [fourier_comp_motionApply g f, circleAction_def, unitVec_sub_rotAngle, rotE_def, map_smul,
     ← rotE_def, real_inner_smul_right]
   push_cast
   congr 2
   ring
 
+namespace CylindricalWaves
+
+open DLMF.WaveEquation DLMF.Bessel InnerProductSpace
+
+/-- Restriction to a line differentiates in its direction. -/
+private theorem iteratedDeriv_affine_line {f : ℂ → ℂ} (hf : ContDiff ℝ 2 f)
+    (a v : ℂ) (t : ℝ) :
+    iteratedDeriv 2 (fun s : ℝ => f (s • v + a)) t =
+      iteratedFDeriv ℝ 2 f (t • v + a) (fun _ => v) := by
+  let L : ℝ →L[ℝ] ℂ := (ContinuousLinearMap.id ℝ ℝ).smulRight v
+  have h : (fun s : ℝ => f (s • v + a)) = (fun z => f (z + a)) ∘ L := rfl
+  have htrans : ContDiff ℝ 2 (fun z : ℂ => z + a) := by fun_prop
+  have hshift : ContDiff ℝ 2 (fun z : ℂ => f (z + a)) := hf.comp htrans
+  rw [h, iteratedDeriv_eq_iteratedFDeriv,
+    L.iteratedFDeriv_comp_right hshift t le_rfl,
+    iteratedFDeriv_comp_add_right]
+  simp [L, ContinuousMultilinearMap.compContinuousLinearMap_apply]
+
+/-- The Cartesian cylinder wave is an entire regularized Bessel series on the real plane. -/
+private theorem contDiff_cylinderWave (m : ℕ) (R : ℂ) :
+    ContDiff ℝ 2 (fun z : ℂ => cylinderWave m R z.re z.im) := by
+  let arg (z : ℂ) := -(R ^ 2) * ((z.re : ℂ) ^ 2 + (z.im : ℂ) ^ 2) / 4
+  have hre : ContDiff ℝ 2 (fun z : ℂ => (z.re : ℂ)) := (ofRealCLM.comp reCLM).contDiff
+  have him : ContDiff ℝ 2 (fun z : ℂ => (z.im : ℂ)) := (ofRealCLM.comp imCLM).contDiff
+  have hcoeff : ContDiff ℝ 2 (fun _ : ℂ => -(R ^ 2)) := contDiff_const
+  have hi : ContDiff ℝ 2 (fun _ : ℂ => I) := contDiff_const
+  have harg : ContDiff ℝ 2 arg := (hcoeff.mul ((hre.pow 2).add (him.pow 2))).div_const _
+  have han : ContDiff ℝ 2 (regularizedHG01 (m + 1)) := by
+    refine contDiff_iff_contDiffAt.mpr fun z => ?_
+    exact ((analyticAt_regularized0F1 (m + 1) z).restrictScalars).contDiffAt
+  exact ((hre.add (hi.mul him)).pow m).mul (han.comp harg)
+
+/-- The Laplacian of the Cartesian cylinder wave agrees with the two partial derivatives in
+lean-DLMF's Helmholtz equation. -/
+private theorem laplacian_cylinderWave (m : ℕ) (R : ℂ) (z : ℂ) :
+    Δ (fun w : ℂ => cylinderWave m R w.re w.im) z =
+      -R ^ 2 * cylinderWave m R z.re z.im := by
+  let f (w : ℂ) := cylinderWave m R w.re w.im
+  have hx := iteratedDeriv_affine_line (contDiff_cylinderWave m R) (z.im • I) 1 z.re
+  have hy := iteratedDeriv_affine_line (contDiff_cylinderWave m R) (z.re : ℂ) I z.im
+  have hzx : z.re • (1 : ℂ) + z.im • I = z := by
+    simp only [Complex.real_smul, mul_one, re_add_im]
+  have hzy : z.im • I + (z.re : ℂ) = z := by
+    simpa only [add_comm, Complex.real_smul, mul_one] using hzx
+  have he₁ (t : ℝ) : f (t • (1 : ℂ) + z.im • I) = cylinderWave m R t z.im := by
+    simp [f, Complex.real_smul, mul_re, mul_im]
+  have he₂ (t : ℝ) : f (t • I + (z.re : ℂ)) = cylinderWave m R z.re t := by
+    simp [f, Complex.real_smul, mul_re, mul_im]
+  rw [hzx, funext he₁] at hx
+  rw [hzy, funext he₂] at hy
+  change Δ f z = _
+  rw [laplacian_eq_iteratedFDeriv_complexPlane]
+  have h₁ : (fun _ : Fin 2 => (1 : ℂ)) = ![1, 1] := by
+    funext i; fin_cases i <;> rfl
+  have h₂ : (fun _ : Fin 2 => I) = ![I, I] := by
+    funext i; fin_cases i <;> rfl
+  rw [h₁] at hx
+  rw [h₂] at hy
+  change iteratedFDeriv ℝ 2 (fun w : ℂ => cylinderWave m R w.re w.im) z ![1, 1] +
+    iteratedFDeriv ℝ 2 (fun w : ℂ => cylinderWave m R w.re w.im) z ![I, I] = _
+  rw [← hx, ← hy]
+  have h := helmholtz_cylinderWave m R z.re z.im
+  rw [laplacian2] at h
+  linear_combination h
+
+/-- Away from the origin the regularized Cartesian wave has the usual positive-order Bessel
+normalization. -/
+private theorem besselJ_mul_zpow_nat (m : ℕ) (R : ℂ) {z : ℂ} (hz : z ≠ 0) :
+    besselJ (m : ℤ) (R * ‖z‖) * (z / ‖z‖) ^ (m : ℤ) =
+      (R / 2) ^ m * cylinderWave m R z.re z.im := by
+  have hnorm : (‖z‖ : ℂ) ≠ 0 := ofReal_ne_zero.mpr (norm_ne_zero_iff.mpr hz)
+  have hcoord : (z.re : ℂ) + I * z.im = z := by rw [mul_comm I, Complex.re_add_im]
+  have hsq : ((z.re : ℂ) ^ 2 + (z.im : ℂ) ^ 2) = (‖z‖ : ℂ) ^ 2 := by
+    norm_cast
+    rw [← Complex.normSq_eq_norm_sq, Complex.normSq_apply]
+    ring
+  rw [Int.cast_natCast, zpow_natCast, besselJ_eq_regularized, cpow_natCast,
+    cylinderWave, hcoord, hsq]
+  rw [show -((R * (‖z‖ : ℂ)) ^ 2 / 4) = -(R ^ 2) * (‖z‖ : ℂ) ^ 2 / 4 by ring,
+    show R * (‖z‖ : ℂ) / 2 = (R / 2) * (‖z‖ : ℂ) by ring, mul_pow, div_pow]
+  rw [div_pow]
+  field_simp [pow_ne_zero m hnorm]
+
+/-- The angular factor at the opposite order is the positive-order factor of the reflected
+point. -/
+private theorem besselJ_mul_zpow_neg_nat (m : ℕ) (R : ℂ) {z : ℂ} (hz : z ≠ 0) :
+    besselJ (-(m : ℤ)) (R * ‖z‖) * (z / ‖z‖) ^ (-(m : ℤ)) =
+      ((-1 : ℂ) ^ m * (R / 2) ^ m) * cylinderWave m R (conj z).re (conj z).im := by
+  have hnorm : (‖z‖ : ℂ) ≠ 0 := ofReal_ne_zero.mpr (norm_ne_zero_iff.mpr hz)
+  have hconj : (z / ‖z‖)⁻¹ = conj z / ‖z‖ := by
+    apply inv_eq_of_mul_eq_one_right
+    rw [div_mul_div_comm, Complex.mul_conj, Complex.normSq_eq_norm_sq, ofReal_pow,
+      ← pow_two]
+    exact div_self (pow_ne_zero 2 hnorm)
+  rw [Complex.besselJ_neg_int, zpow_natCast, zpow_neg, zpow_natCast, ← inv_pow, hconj]
+  have he := besselJ_mul_zpow_nat m R (z := conj z) (by simpa using hz)
+  rw [Complex.norm_conj, zpow_natCast] at he
+  rw [mul_assoc, he, ← mul_assoc]
+
+end CylindricalWaves
+
+open CylindricalWaves DLMF.WaveEquation InnerProductSpace in
 /-- Cylindrical waves: `u(x) = Jₙ(R|x|) (x/|x|)ⁿ` (complex coordinate) satisfies `Δu = -R² u`
 away from the origin. -/
 theorem laplacian_cylindricalWave (R : ℂ) (n : ℤ) {x : EuclideanSpace ℝ (Fin 2)} (hx : x ≠ 0) :
     Δ (fun y : EuclideanSpace ℝ (Fin 2) => besselJ n (R * ‖y‖) * (toComplex y / ‖y‖) ^ n) x =
       -R ^ 2 * (besselJ n (R * ‖x‖) * (toComplex x / ‖x‖) ^ n) := by
-  sorry
+  let E := EuclideanSpace ℝ (Fin 2)
+  let e : E ≃ₗᵢ[ℝ] ℂ := (EuclideanSpace.finTwoEquivProd ℝ).trans Complex.equivRealProdLp.symm
+  have he (y : E) : e y = toComplex y := by
+    rw [show e y = Complex.equivRealProdLp.symm (EuclideanSpace.finTwoEquivProd ℝ y) from rfl,
+      Complex.equivRealProdLp_symm_apply, EuclideanSpace.finTwoEquivProd_apply_fst,
+      EuclideanSpace.finTwoEquivProd_apply_snd, toComplex_def]
+  let F (z : ℂ) := besselJ n (R * ‖z‖) * (z / ‖z‖) ^ n
+  have hfun : (fun y : E => besselJ n (R * ‖y‖) * (toComplex y / ‖y‖) ^ n) = F ∘ e := by
+    funext y
+    dsimp only [F, Function.comp_apply]
+    rw [e.norm_map, he]
+  have heval := congrFun hfun x
+  rw [hfun, TauCeti.laplacian_comp_linearIsometryEquiv_right, heval]
+  simp only [Function.comp_apply]
+  let z := e x
+  have hz : z ≠ 0 := fun h => hx (e.injective (h.trans e.map_zero.symm))
+  change Δ F z = -R ^ 2 * F z
+  have hnz : ∀ᶠ w : ℂ in 𝓝 z, w ≠ 0 :=
+    isClosed_singleton.isOpen_compl.mem_nhds hz
+  rcases n with m | m
+  · let G (w : ℂ) := cylinderWave m R w.re w.im
+    let c : ℂ := (R / 2) ^ m
+    have h : F =ᶠ[𝓝 z] c • G := hnz.mono fun w hw => besselJ_mul_zpow_nat m R hw
+    rw [(laplacian_congr_nhds h).eq_of_nhds, h.eq_of_nhds, laplacian_smul c
+      (contDiff_cylinderWave m R).contDiffAt, laplacian_cylinderWave]
+    simp only [Pi.smul_apply, smul_eq_mul, G]
+    ring
+  · let m' := m + 1
+    let G (w : ℂ) := cylinderWave m' R w.re w.im
+    let c : ℂ := (-1) ^ m' * (R / 2) ^ m'
+    have hn : Int.negSucc m = -(m' : ℤ) := by dsimp [m']; omega
+    have h : F =ᶠ[𝓝 z] c • (G ∘ Complex.conjLIE) := by
+      refine hnz.mono fun w hw => ?_
+      simpa only [F, hn, c, G, Pi.smul_apply, Function.comp_apply, smul_eq_mul,
+        Complex.conjLIE_apply, Int.cast_neg] using besselJ_mul_zpow_neg_nat m' R hw
+    have hG : ContDiff ℝ 2 (G ∘ Complex.conjLIE) :=
+      (contDiff_cylinderWave m' R).comp Complex.conjLIE.toContinuousLinearEquiv.contDiff
+    rw [(laplacian_congr_nhds h).eq_of_nhds, h.eq_of_nhds, laplacian_smul c hG.contDiffAt,
+      TauCeti.laplacian_comp_linearIsometryEquiv_right]
+    simp only [G, Pi.smul_apply, smul_eq_mul, Function.comp_apply, laplacian_cylinderWave]
+    ring
+
+namespace PolarFourier
+
+/-- The angular Fourier kernel on a full turn integrates to the integer-order Bessel kernel
+with the normalization of the unnormalized angular measure. -/
+private theorem integral_angularKernel (n : ℤ) (ρ β r : ℝ)
+    (hβ : ρ • unitVec (β : 𝕋) = planePoint ρ β) :
+    (∫ θ in Ioo (-π) π, Complex.exp (I * (-(2 * π * (r : ℂ))) *
+      (⟪ρ • unitVec (β : 𝕋), unitVec (θ : 𝕋)⟫_ℝ : ℝ)) * fourier n (θ : 𝕋)) =
+      2 * π * ((-I) ^ n * fourier n (β : 𝕋) * besselJ n (2 * π * ρ * r)) := by
+  let P (u : 𝕋) :=
+    Complex.exp (I * (-(2 * π * (r : ℂ))) *
+      (⟪ρ • unitVec (β : 𝕋), unitVec u⟫_ℝ : ℝ)) * fourier n u
+  let ν := (volume : Measure ℝ).restrict (Ioo (-π) π)
+  change (∫ θ, P (θ : 𝕋) ∂ν) = _
+  have h := integral_exp_inner_fourier (-(2 * π * r)) ρ β n
+  rw [← hβ] at h
+  change (∫ u, P u ∂haarAddCircle) = _ at h
+  rw [AddCircle.integral_haarAddCircle, Complex.real_smul,
+    ← AddCircle.intervalIntegral_preimage (2 * π) (-π),
+    show -π + 2 * π = π by ring, intervalIntegral.integral_of_le (by linarith [Real.pi_pos]),
+    integral_Ioc_eq_integral_Ioo] at h
+  have hπ : (2 * π : ℂ) ≠ 0 :=
+    mul_ne_zero (by norm_num) (Complex.ofReal_ne_zero.mpr Real.pi_ne_zero)
+  push_cast at h
+  have h' : (2 * π : ℂ)⁻¹ * (∫ θ, P (θ : 𝕋) ∂ν) =
+      I ^ n * Complex.exp (n * β * I) * besselJ n (-(2 * π * (r : ℂ)) * ρ) := h
+  calc
+    _ = (2 * π : ℂ) *
+        (I ^ n * Complex.exp (n * β * I) * besselJ n (-(2 * π * (r : ℂ)) * ρ)) :=
+      by rw [← h', ← mul_assoc, mul_inv_cancel₀ hπ, one_mul]
+    _ = _ := by
+      rw [show -(2 * π * (r : ℂ)) * ρ = -(2 * π * ρ * r) by ring, besselJ_int_neg,
+        fourier_circle_coe]
+      have hpow : I ^ n * (-1 : ℂ) ^ n = (-I) ^ n := by
+        rw [← mul_zpow, mul_neg_one]
+      linear_combination
+        (2 * π * Complex.exp (n * β * I) * besselJ n (2 * π * ρ * r)) * hpow
+
+end PolarFourier
 
 /-- Fourier transform of an angular mode (Vilenkin–Klimyk Vol. 1 §4.4.2 (3), p. 196, in
 Mathlib's normalization): `𝓕(φ(|x|) e^{inα})(ρ e(ψ)) = 2π (-i)ⁿ e^{inψ} (Hₙφ)(2πρ)`. -/
@@ -139,7 +326,7 @@ theorem fourier_angularMode (n : ℤ) (φ : ℝ → ℂ)
       ring
     dsimp only [K, F, P]
     rw [hnorm', hcoord, hphase, mul_div_cancel_left₀ _ (Complex.ofReal_ne_zero.mpr hr.ne'),
-      ← fourier_eq_zpow, Complex.real_smul]
+      ← AddCircle.fourier_eq_zpow, Complex.real_smul]
     ring
   let μ := (volume : Measure ℝ).restrict (Ioi 0)
   let ν := (volume : Measure ℝ).restrict (Ioo (-π) π)
@@ -183,30 +370,8 @@ theorem fourier_angularMode (n : ℤ) (φ : ℝ → ℂ)
     ring
   have hmean (r : ℝ) :
       ∫ θ, P r (θ : 𝕋) ∂ν = 2 * π * ((-I) ^ n * fourier n (β : 𝕋) *
-        besselJ n (2 * π * ρ * r)) := by
-    have h := integral_exp_inner_fourier (-(2 * π * r)) ρ β n
-    rw [← hβ] at h
-    change (∫ u, P r u ∂haarAddCircle) = _ at h
-    rw [AddCircle.integral_haarAddCircle, Complex.real_smul,
-      ← AddCircle.intervalIntegral_preimage (2 * π) (-π),
-      show -π + 2 * π = π by ring, intervalIntegral.integral_of_le (by linarith [Real.pi_pos]),
-      integral_Ioc_eq_integral_Ioo] at h
-    have hπ : (2 * π : ℂ) ≠ 0 :=
-      mul_ne_zero (by norm_num) (Complex.ofReal_ne_zero.mpr Real.pi_ne_zero)
-    push_cast at h
-    have h' : (2 * π : ℂ)⁻¹ * (∫ θ, P r (θ : 𝕋) ∂ν) =
-        I ^ n * Complex.exp (n * β * I) * besselJ n (-(2 * π * (r : ℂ)) * ρ) := h
-    calc
-      _ = (2 * π : ℂ) *
-          (I ^ n * Complex.exp (n * β * I) * besselJ n (-(2 * π * (r : ℂ)) * ρ)) :=
-        by rw [← h', ← mul_assoc, mul_inv_cancel₀ hπ, one_mul]
-      _ = _ := by
-        rw [show -(2 * π * (r : ℂ)) * ρ = -(2 * π * ρ * r) by ring, besselJ_int_neg,
-          fourier_circle_coe]
-        have hpow : I ^ n * (-1 : ℂ) ^ n = (-I) ^ n := by
-          rw [← mul_zpow, mul_neg_one]
-        linear_combination
-          (2 * π * Complex.exp (n * β * I) * besselJ n (2 * π * ρ * r)) * hpow
+        besselJ n (2 * π * ρ * r)) :=
+    PolarFourier.integral_angularKernel n ρ β r hβ
   have hF : (𝓕 (fun x : E => φ ‖x‖ * (toComplex x / ‖x‖) ^ n) (ρ • unitVec (β : 𝕋))) =
       ∫ x, F x := by
     rw [Real.fourier_eq']
@@ -229,15 +394,16 @@ theorem fourier_angularMode (n : ℤ) (φ : ℝ → ℂ)
 
 /-- Hankel inversion for real `ν > -1` on smooth functions with compact support in `(0, ∞)`
 (Vilenkin–Klimyk Vol. 1 §4.4.2, pp. 196–197; Vol. 2 §10.2.6 (3)–(4), pp. 186–187). -/
-theorem hankelTransform_hankelTransform {ν : ℝ} (hν : -1 < ν) (φ : ℝ → ℂ) (hφ : ContDiff ℝ ⊤ φ)
-    (hc : HasCompactSupport φ) (hs : tsupport φ ⊆ Ioi 0) {r : ℝ} (hr : 0 < r) :
+theorem hankelTransform_hankelTransform {ν : ℝ} (hν : -1 < ν) (φ : ℝ → ℂ)
+    (hφ : ContDiff ℝ ∞ φ) (hc : HasCompactSupport φ) (hs : tsupport φ ⊆ Ioi 0)
+    {r : ℝ} (hr : 0 < r) :
     hankelTransform ν (hankelTransform ν φ) r = φ r := by
   sorry
 
 /-- Plancherel for the Hankel transform (Vilenkin–Klimyk Vol. 1 §4.4.2, pp. 196–197; Vol. 2
 §10.2.6 (5), pp. 186–187). -/
-theorem lintegral_hankelTransform {ν : ℝ} (hν : -1 < ν) (φ : ℝ → ℂ) (hφ : ContDiff ℝ ⊤ φ)
-    (hc : HasCompactSupport φ) (hs : tsupport φ ⊆ Ioi 0) :
+theorem lintegral_hankelTransform {ν : ℝ} (hν : -1 < ν) (φ : ℝ → ℂ)
+    (hφ : ContDiff ℝ ∞ φ) (hc : HasCompactSupport φ) (hs : tsupport φ ⊆ Ioi 0) :
     ∫⁻ R in Ioi (0 : ℝ), ‖hankelTransform ν φ R‖ₑ ^ 2 * ENNReal.ofReal R =
       ∫⁻ r in Ioi (0 : ℝ), ‖φ r‖ₑ ^ 2 * ENNReal.ofReal r := by
   sorry
@@ -304,6 +470,41 @@ theorem hankelTransform_laguerre {ν : ℝ} (hν : -1 < ν) (k : ℕ) {lam : ℝ
   push_cast
   ring
 
+namespace PolarFourier
+
+/-- The sphere area, Bessel normalization and radial Jacobian combine into the scalar
+normalization of the Euclidean radial Fourier transform. -/
+private theorem radialCoefficient (n : ℕ) (hn : 1 ≤ n) {q r : ℝ} (hq : 0 < q) (hr : 0 < r) :
+    let c : ℝ := (n : ℝ) / 2
+    r ^ (n - 1) * (2 * π ^ c / Real.Gamma c) *
+      (Real.Gamma c * (2 / (2 * π * q * r)) ^ (c - 1)) =
+        2 * π * q ^ (1 - c) * r ^ c := by
+  dsimp only
+  set c := (n : ℝ) / 2
+  have hc : 0 < c := div_pos (by exact_mod_cast (by omega : 0 < n)) two_pos
+  have hΓ : Real.Gamma c ≠ 0 := (Real.Gamma_pos_of_pos hc).ne'
+  have he : (2 : ℝ) / (2 * π * q * r) = (π * q * r)⁻¹ := by
+    field_simp [Real.pi_ne_zero, hq.ne', hr.ne']
+  rw [he, Real.inv_rpow (by positivity), Real.mul_rpow (by positivity : 0 ≤ π * q) hr.le,
+    Real.mul_rpow Real.pi_pos.le hq.le, mul_inv_rev, mul_inv_rev]
+  have hp : π ^ c * (π ^ (c - 1))⁻¹ = π := by
+    rw [← div_eq_mul_inv, ← Real.rpow_sub Real.pi_pos, show c - (c - 1) = 1 by ring,
+      Real.rpow_one]
+  have hq' : (q ^ (c - 1))⁻¹ = q ^ (1 - c) := by
+    rw [← Real.rpow_neg hq.le, neg_sub]
+  have hr' : r ^ (n - 1) * (r ^ (c - 1))⁻¹ = r ^ c := by
+    rw [← Real.rpow_natCast, ← div_eq_mul_inv, ← Real.rpow_sub hr,
+      Nat.cast_sub hn, Nat.cast_one]
+    congr 1
+    dsimp [c]
+    ring
+  calc
+    _ = 2 * (π ^ c * (π ^ (c - 1))⁻¹) * (q ^ (c - 1))⁻¹ *
+        (r ^ (n - 1) * (r ^ (c - 1))⁻¹) := by field_simp [hΓ]
+    _ = _ := by rw [hp, hq', hr']
+
+end PolarFourier
+
 /-- Fourier transform of a radial function on `ℝⁿ` (Vilenkin–Klimyk Vol. 2 §10.2.6 (1)–(2),
 p. 186): `𝓕f(ξ) = 2π |ξ|^{1-n/2} ∫₀^∞ φ(r) J_{n/2-1}(2π|ξ| r) r^{n/2} dr` for `f(x) = φ(|x|)`,
 `ξ ≠ 0`. -/
@@ -338,31 +539,12 @@ theorem fourier_radial {n : ℕ} (hn : 1 ≤ n) (φ : ℝ → ℂ)
   have hσ : (σ univ).toReal = 2 * π ^ c / Real.Gamma c := by
     dsimp only [σ]
     rw [TauCeti.toSphere_volume_apply_univ, hdim, ENNReal.toReal_ofReal (by positivity)]
-  have hΓ : Real.Gamma c ≠ 0 := (Real.Gamma_pos_of_pos hc).ne'
   have hcoef (r : ℝ) (hr : 0 < r) :
       r ^ (n - 1) * (σ univ).toReal *
         (Real.Gamma c * (2 / (2 * π * q * r)) ^ (c - 1)) =
       2 * π * q ^ (1 - c) * r ^ c := by
     rw [hσ]
-    have he : (2 : ℝ) / (2 * π * q * r) = (π * q * r)⁻¹ := by
-      field_simp [Real.pi_ne_zero, hq.ne', hr.ne']
-    rw [he, Real.inv_rpow (by positivity), Real.mul_rpow (by positivity : 0 ≤ π * q) hr.le,
-      Real.mul_rpow Real.pi_pos.le hq.le, mul_inv_rev, mul_inv_rev]
-    have hp : π ^ c * (π ^ (c - 1))⁻¹ = π := by
-      rw [← div_eq_mul_inv, ← Real.rpow_sub Real.pi_pos, show c - (c - 1) = 1 by ring,
-        Real.rpow_one]
-    have hq' : (q ^ (c - 1))⁻¹ = q ^ (1 - c) := by
-      rw [← Real.rpow_neg hq.le, neg_sub]
-    have hr' : r ^ (n - 1) * (r ^ (c - 1))⁻¹ = r ^ c := by
-      rw [← Real.rpow_natCast, ← div_eq_mul_inv, ← Real.rpow_sub hr,
-        Nat.cast_sub hn, Nat.cast_one]
-      congr 1
-      dsimp [c]
-      ring
-    calc
-      _ = 2 * (π ^ c * (π ^ (c - 1))⁻¹) * (q ^ (c - 1))⁻¹ *
-          (r ^ (n - 1) * (r ^ (c - 1))⁻¹) := by field_simp [hΓ]
-      _ = _ := by rw [hp, hq', hr']
+    exact PolarFourier.radialCoefficient n hn hq hr
   have hfourier : 𝓕 (fun x : E => φ ‖x‖) ξ = ∫ x, F x := by
     rw [Real.fourier_eq']
     simp only [F, smul_eq_mul, neg_mul, Complex.ofReal_neg]
@@ -402,7 +584,7 @@ theorem fourier_radial {n : ℕ} (hn : 1 ≤ n) (φ : ℝ → ℂ)
   have hslit : (2 * π : ℂ) ∈ slitPlane := by
     rw [← Complex.ofReal_ofNat, ← Complex.ofReal_mul]
     exact Complex.ofReal_mem_slitPlane.mpr hp
-  rw [havg r hr', besselZonal_eq_besselJ hn hslit (mul_pos hq hr'), Complex.real_smul]
+  rw [havg r hr', besselZonal_eq_besselJ hslit (mul_pos hq hr'), Complex.real_smul]
   have harg : 2 / ((2 * π : ℂ) * ((q * r : ℝ) : ℂ)) =
       ((2 / (2 * π * q * r) : ℝ) : ℂ) := by push_cast; ring
   have horder : ((n : ℂ) / 2 - 1) = ((c - 1 : ℝ) : ℂ) := by simp [c]

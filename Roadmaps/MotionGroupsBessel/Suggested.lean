@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Bastiaan J Braams. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bastiaan J Braams
+-/
 module
 
 public import Mathlib
@@ -61,15 +66,18 @@ instance (n : ℕ) : BorelSpace (SOn n) := ⟨rfl⟩
 def rotE {n : ℕ} (k : SOn n) (a : EuclideanSpace ℝ (Fin n)) : EuclideanSpace ℝ (Fin n) :=
   Matrix.toEuclideanLin k.1 a
 
+/-- A product of rotations acts by composition on Euclidean vectors. -/
 theorem rotE_mul {n : ℕ} (k k' : SOn n) (a : EuclideanSpace ℝ (Fin n)) :
     rotE (k * k') a = rotE k (rotE k' a) := by
   simp only [rotE, Submonoid.coe_mul, toEuclideanLin_eq_toLin_orthonormal]
   rw [Matrix.toLin_mul _ (EuclideanSpace.basisFun (Fin n) ℝ).toBasis]
   rfl
 
+/-- The identity rotation fixes each Euclidean vector. -/
 theorem rotE_one {n : ℕ} (a : EuclideanSpace ℝ (Fin n)) : rotE (1 : SOn n) a = a := by
   simp [rotE]
 
+/-- A rotation distributes over vector addition. -/
 theorem rotE_add {n : ℕ} (k : SOn n) (a b : EuclideanSpace ℝ (Fin n)) :
     rotE k (a + b) = rotE k a + rotE k b := by
   simp [rotE]
@@ -93,16 +101,22 @@ instance : One (MotionGroup n) := ⟨⟨0, 1⟩⟩
 
 instance : Inv (MotionGroup n) := ⟨fun g => ⟨-rotE g.k⁻¹ g.a, g.k⁻¹⟩⟩
 
+/-- The translation of a product in `MotionGroup`. -/
 @[simp] theorem mul_a (g h : MotionGroup n) : (g * h).a = g.a + rotE g.k h.a := rfl
 
+/-- The rotation of a product in `MotionGroup`. -/
 @[simp] theorem mul_k (g h : MotionGroup n) : (g * h).k = g.k * h.k := rfl
 
+/-- The translation of the identity in `MotionGroup`. -/
 @[simp] theorem one_a : (1 : MotionGroup n).a = 0 := rfl
 
+/-- The rotation of the identity in `MotionGroup`. -/
 @[simp] theorem one_k : (1 : MotionGroup n).k = 1 := rfl
 
+/-- The translation of the inverse in `MotionGroup`. -/
 @[simp] theorem inv_a (g : MotionGroup n) : g⁻¹.a = -rotE g.k⁻¹ g.a := rfl
 
+/-- The rotation of the inverse in `MotionGroup`. -/
 @[simp] theorem inv_k (g : MotionGroup n) : g⁻¹.k = g.k⁻¹ := rfl
 
 instance : Group (MotionGroup n) where
@@ -132,6 +146,7 @@ end MotionGroup
 def lorentzBoost (s : ℝ) (p : ℝ × ℝ) : ℝ × ℝ :=
   (p.1 * Real.cosh s + p.2 * Real.sinh s, p.1 * Real.sinh s + p.2 * Real.cosh s)
 
+/-- Boosts with added rapidities act by composition. -/
 theorem lorentzBoost_add (s s' : ℝ) (p : ℝ × ℝ) :
     lorentzBoost (s + s') p = lorentzBoost s (lorentzBoost s' p) := by
   simp only [lorentzBoost, Real.cosh_add, Real.sinh_add, Prod.mk.injEq]
@@ -154,8 +169,10 @@ instance : One ISO11 := ⟨⟨0, 0⟩⟩
 
 instance : Inv ISO11 := ⟨fun g => ⟨-lorentzBoost (-g.s) g.a, -g.s⟩⟩
 
+/-- The translation of a product in `ISO11`. -/
 @[simp] theorem mul_a (g h : ISO11) : (g * h).a = g.a + lorentzBoost g.s h.a := rfl
 
+/-- The rapidity of a product in `ISO11`. -/
 @[simp] theorem mul_s (g h : ISO11) : (g * h).s = g.s + h.s := rfl
 
 instance : Group ISO11 where
@@ -511,16 +528,22 @@ instance : One T3 := ⟨⟨0, 0, 0⟩⟩
 
 instance : Inv T3 := ⟨fun g => ⟨-(Complex.exp (-g.τ) * g.b), -(Complex.exp g.τ * g.c), -g.τ⟩⟩
 
+/-- The raising coordinate of a product in `T3`. -/
 @[simp] theorem mul_b (g h : T3) : (g * h).b = g.b + Complex.exp g.τ * h.b := rfl
 
+/-- The lowering coordinate of a product in `T3`. -/
 @[simp] theorem mul_c (g h : T3) : (g * h).c = g.c + Complex.exp (-g.τ) * h.c := rfl
 
+/-- The diagonal coordinate of a product in `T3`. -/
 @[simp] theorem mul_τ (g h : T3) : (g * h).τ = g.τ + h.τ := rfl
 
+/-- The raising coordinate of the identity in `T3`. -/
 @[simp] theorem one_b : (1 : T3).b = 0 := rfl
 
+/-- The lowering coordinate of the identity in `T3`. -/
 @[simp] theorem one_c : (1 : T3).c = 0 := rfl
 
+/-- The diagonal coordinate of the identity in `T3`. -/
 @[simp] theorem one_τ : (1 : T3).τ = 0 := rfl
 
 instance : Group T3 where
@@ -627,18 +650,19 @@ def fourierLaplace (Φ : ℝ → ℂ) (lam : ℂ) : ℂ := ∫ θ, Φ θ * Compl
 
 /-- README 4.2. **Boosts act diagonally** in the Laplace realization (Vilenkin–Klimyk §4.2.4
 (3)). -/
-theorem fourierLaplace_hyperbolaAction_boost (R : ℂ) (s : ℝ) (Φ : ℝ → ℂ) (hΦ : Continuous Φ)
-    (hc : HasCompactSupport Φ) (lam : ℂ) :
+theorem fourierLaplace_hyperbolaAction_boost (R : ℂ) (s : ℝ) (Φ : ℝ → ℂ)
+    (lam : ℂ) :
     fourierLaplace (hyperbolaAction R ⟨0, s⟩ Φ) lam =
       Complex.exp (lam * s) * fourierLaplace Φ lam := by
   sorry
 
+open scoped ContDiff in
 /-- README 4.2. **Translations act by the Macdonald kernel** (Vilenkin–Klimyk §4.2.4 (4)–(6)):
 for `Re R > 0`, `r > 0` and real `a`,
 `F_g(λ) = (1/2π) ∫ (∫ e^{-R r cosh θ + (λ - a - it) θ} dθ) F(a + it) dt`, and the inner integral
 is `2 K_{λ-a-it}(R r)`. -/
 theorem fourierLaplace_hyperbolaAction_translation {R : ℂ} (hR : 0 < R.re) {r : ℝ} (hr : 0 < r)
-    (a : ℝ) (Φ : ℝ → ℂ) (hΦ : ContDiff ℝ ⊤ Φ) (hc : HasCompactSupport Φ) (lam : ℂ) :
+    (a : ℝ) (Φ : ℝ → ℂ) (hΦ : ContDiff ℝ ∞ Φ) (hc : HasCompactSupport Φ) (lam : ℂ) :
     fourierLaplace (hyperbolaAction R ⟨(r, 0), 0⟩ Φ) lam =
       (2 * π)⁻¹ * ∫ t : ℝ,
         (∫ θ : ℝ, Complex.exp (-R * r * Real.cosh θ + (lam - (a + t * I)) * θ)) *
@@ -655,14 +679,14 @@ def motionApply {n : ℕ} (g : MotionGroup n) (x : EuclideanSpace ℝ (Fin n)) :
 /-- README 5.1. **Fourier transform of a translate-rotate**:
 `𝓕(f ∘ g⁻¹)(ξ) = e^{-2πi⟨a, ξ⟩} 𝓕f(k⁻¹ ξ)`. -/
 theorem fourier_comp_motionApply {n : ℕ} (g : MotionGroup n)
-    (f : EuclideanSpace ℝ (Fin n) → ℂ) (hf : Integrable f) (ξ : EuclideanSpace ℝ (Fin n)) :
+    (f : EuclideanSpace ℝ (Fin n) → ℂ) (ξ : EuclideanSpace ℝ (Fin n)) :
     𝓕 (fun x => f (motionApply g⁻¹ x)) ξ =
       Complex.exp (-(2 * π * ⟪g.a, ξ⟫_ℝ : ℝ) * I) * 𝓕 f (rotE g.k⁻¹ ξ) := by
   sorry
 
 /-- README 5.1. **On the circle `|ξ| = ρ` the quasi-regular representation is `T_{-2πρ}`.** -/
 theorem fourier_comp_motionApply_circle (g : MotionGroup 2)
-    (f : EuclideanSpace ℝ (Fin 2) → ℂ) (hf : Integrable f) (ρ : ℝ) (ψ : 𝕋) :
+    (f : EuclideanSpace ℝ (Fin 2) → ℂ) (ρ : ℝ) (ψ : 𝕋) :
     𝓕 (fun x => f (motionApply g⁻¹ x)) (ρ • unitVec ψ) =
       circleAction (-(2 * π * ρ)) g (fun ψ' => 𝓕 f (ρ • unitVec ψ')) ψ := by
   sorry
@@ -686,17 +710,20 @@ theorem fourier_angularMode (n : ℤ) (φ : ℝ → ℂ)
       2 * π * (-I) ^ n * fourier n ψ * hankelTransform n φ (2 * π * ρ) := by
   sorry
 
+open scoped ContDiff in
 /-- README 5.2. **Hankel inversion** for real `ν > -1` on smooth functions with compact support
 in `(0, ∞)` (Vilenkin–Klimyk §4.4.2 (4); Vol. 2 §10.2.6 (3)–(4)). -/
-theorem hankelTransform_hankelTransform {ν : ℝ} (hν : -1 < ν) (φ : ℝ → ℂ) (hφ : ContDiff ℝ ⊤ φ)
-    (hc : HasCompactSupport φ) (hs : tsupport φ ⊆ Ioi 0) {r : ℝ} (hr : 0 < r) :
+theorem hankelTransform_hankelTransform {ν : ℝ} (hν : -1 < ν) (φ : ℝ → ℂ)
+    (hφ : ContDiff ℝ ∞ φ) (hc : HasCompactSupport φ) (hs : tsupport φ ⊆ Ioi 0)
+    {r : ℝ} (hr : 0 < r) :
     hankelTransform ν (hankelTransform ν φ) r = φ r := by
   sorry
 
+open scoped ContDiff in
 /-- README 5.2. **Plancherel for the Hankel transform** (Vilenkin–Klimyk §4.4.2 (5); Vol. 2
 §10.2.6 (5)). -/
-theorem lintegral_hankelTransform {ν : ℝ} (hν : -1 < ν) (φ : ℝ → ℂ) (hφ : ContDiff ℝ ⊤ φ)
-    (hc : HasCompactSupport φ) (hs : tsupport φ ⊆ Ioi 0) :
+theorem lintegral_hankelTransform {ν : ℝ} (hν : -1 < ν) (φ : ℝ → ℂ)
+    (hφ : ContDiff ℝ ∞ φ) (hc : HasCompactSupport φ) (hs : tsupport φ ⊆ Ioi 0) :
     ∫⁻ R in Ioi (0 : ℝ), ‖hankelTransform ν φ R‖ₑ ^ 2 * ENNReal.ofReal R =
       ∫⁻ r in Ioi (0 : ℝ), ‖φ r‖ₑ ^ 2 * ENNReal.ofReal r := by
   sorry
@@ -749,7 +776,7 @@ def rotationSubgroup (n : ℕ) : Subgroup (MotionGroup n) where
 
 /-- README 6.1. **Bessel form of the zonal function**: for `λ` in the slit plane and `r > 0`,
 `Ω_n(λ, r) = Γ(n/2) (2/(λr))^{n/2-1} J_{n/2-1}(λr)`. -/
-theorem besselZonal_eq_besselJ {n : ℕ} (hn : 1 ≤ n) {lam : ℂ} (hlam : lam ∈ slitPlane) {r : ℝ}
+theorem besselZonal_eq_besselJ {n : ℕ} {lam : ℂ} (hlam : lam ∈ slitPlane) {r : ℝ}
     (hr : 0 < r) :
     besselZonal n lam r =
       Complex.Gamma (n / 2) * (2 / (lam * r)) ^ ((n : ℂ) / 2 - 1) *
@@ -805,7 +832,7 @@ theorem matrixElement_circleRep_zero_zero (R : ℂ) (g : MotionGroup 2) :
 SpecialFunctionsSU2MatrixElements §6.1:
 `e^{i⟨k, x⟩} = 4π Σ_l i^l j_l(κr) Σ_m Y_l^m(k̂) conj Y_l^m(x̂)`, `j_l(z) = √(π/2z) J_{l+1/2}(z)`. -/
 theorem hasSum_planeWave_sphericalHarmonic {κ r : ℝ} (hκ : 0 < κ) (hr : 0 < r)
-    (θ φ θ' φ' : ℝ) :
+    (θ φ θ' φ' : ℝ) (hθ : θ ∈ Set.Icc 0 π) (hθ' : θ' ∈ Set.Icc 0 π) :
     HasSum (fun l : ℕ => 4 * π * I ^ l *
         (Real.sqrt (π / (2 * (κ * r))) * besselJ (l + 1 / 2 : ℂ) (κ * r)) *
         ∑ i ∈ Finset.range (2 * l + 1),

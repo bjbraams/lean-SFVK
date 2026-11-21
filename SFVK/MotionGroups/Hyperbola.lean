@@ -5,9 +5,10 @@ Authors: Bastiaan J Braams
 -/
 module
 
-public import DLMF.Bessel.KIntegralRep
+public import DLMF.Bessel.Basic.Definitions
 public import TauCeti.RepresentationTheory.Continuous.Unitary.Basic
 public import SFVK.MotionGroups.Basic.Hyperbola
+import DLMF.Bessel.KIntegralRep
 import Mathlib.Analysis.Fourier.Inversion
 import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.MeasureTheory.Measure.Haar.NormedSpace
@@ -22,7 +23,7 @@ import TauCeti.MeasureTheory.Function.Lp.DominatedConvergence
 # The hyperbola model of `ISO(1,1)` and the Macdonald kernel
 
 The operators of the hyperbola model form a representation; it has an `L²(ℝ)` realization
-exactly for `Re R = 0`, and it is unitary there; in the two-sided Laplace realization the boosts
+exactly for `Re R = 0`, and that realization is unitary. In the two-sided Laplace model boosts
 act diagonally and the translations by an integral kernel whose inner integral is
 `2 K_{λ-a-it}(R r)`. Vilenkin–Klimyk, *Representation of Lie Groups and Special Functions*,
 Vol. 1, §§4.2.1–4.2.4, pp. 171–176; DLMF 10.32.9 through lean-DLMF's
@@ -296,14 +297,22 @@ theorem exists_hyperbolaRealization_iff (R : ℂ) :
     (∃ U, IsHyperbolaRealization R U) ↔ R.re = 0 := by
   exact ⟨fun ⟨U, hU⟩ => re_eq_zero_of_realization hU, exists_realization⟩
 
-/-- The hyperbola model is unitary on the imaginary axis. -/
-theorem isUnitary_hyperbolaRep {R : ℂ} (hR : R.re = 0) : (hyperbolaRep R).IsUnitary := by
-  exact isUnitary_of_realization hR (isHyperbolaRealization_hyperbolaRep (exists_realization hR))
+/-- The totalized hyperbola representation is unitary for every parameter.
+For `R.re ≠ 0` its value is the trivial representation. The parameter range for the
+pointwise model is given by `exists_hyperbolaRealization_iff`. -/
+theorem isUnitary_hyperbolaRep (R : ℂ) : (hyperbolaRep R).IsUnitary := by
+  classical
+  by_cases hR : R.re = 0
+  · exact isUnitary_of_realization hR
+      (isHyperbolaRealization_hyperbolaRep (exists_realization hR))
+  · unfold hyperbolaRep
+    rw [dite_eq_right (fun h => hR ((exists_hyperbolaRealization_iff R).mp h))]
+    exact ContRepresentation.isUnitary_trivial
 
 /-- Boosts act diagonally in the Laplace realization (Vilenkin–Klimyk Vol. 1 §4.2.4 (3),
 pp. 175–176). -/
-theorem fourierLaplace_hyperbolaAction_boost (R : ℂ) (s : ℝ) (Φ : ℝ → ℂ) (hΦ : Continuous Φ)
-    (hc : HasCompactSupport Φ) (lam : ℂ) :
+theorem fourierLaplace_hyperbolaAction_boost (R : ℂ) (s : ℝ) (Φ : ℝ → ℂ)
+    (lam : ℂ) :
     fourierLaplace (hyperbolaAction R ⟨0, s⟩ Φ) lam =
       Complex.exp (lam * s) * fourierLaplace Φ lam := by
   simp only [fourierLaplace_def, hyperbolaAction_def, Prod.fst_zero, Prod.snd_zero,
@@ -321,7 +330,7 @@ theorem fourierLaplace_hyperbolaAction_boost (R : ℂ) (s : ℝ) (Φ : ℝ → �
 pp. 175–176): for `Re R > 0`, `r > 0` and real `a`,
 `F_g(λ) = (1/2π) ∫ (∫ e^{-R r cosh θ + (λ - a - it) θ} dθ) F(a + it) dt`. -/
 theorem fourierLaplace_hyperbolaAction_translation {R : ℂ} (hR : 0 < R.re) {r : ℝ} (hr : 0 < r)
-    (a : ℝ) (Φ : ℝ → ℂ) (hΦ : ContDiff ℝ ⊤ Φ) (hc : HasCompactSupport Φ) (lam : ℂ) :
+    (a : ℝ) (Φ : ℝ → ℂ) (hΦ : ContDiff ℝ ∞ Φ) (hc : HasCompactSupport Φ) (lam : ℂ) :
     fourierLaplace (hyperbolaAction R ⟨(r, 0), 0⟩ Φ) lam =
       (2 * π)⁻¹ * ∫ t : ℝ,
         (∫ θ : ℝ, Complex.exp (-R * r * Real.cosh θ + (lam - (a + t * I)) * θ)) *
@@ -330,13 +339,13 @@ theorem fourierLaplace_hyperbolaAction_translation {R : ℂ} (hR : 0 < R.re) {r 
   let K (x : ℝ) := DLMF.Bessel.besselKKernel (lam - a) (R * r) x
   let P (t : ℝ) := fourierLaplace Φ (a + t * I)
   let e (t x : ℝ) := Complex.exp (-(t * x : ℝ) * I)
-  have hf : ContDiff ℝ ⊤ f := by
-    have hcast : ContDiff ℝ ⊤ (fun x : ℝ => (x : ℂ)) := Complex.ofRealCLM.contDiff
+  have hf : ContDiff ℝ ∞ f := by
+    have hcast : ContDiff ℝ ∞ (fun x : ℝ => (x : ℂ)) := Complex.ofRealCLM.contDiff
     exact hΦ.mul ((contDiff_const.mul hcast).cexp)
   have hfc : HasCompactSupport f := hc.mul_right (f' := fun x : ℝ => Complex.exp (a * x))
   have hfi : Integrable f := hf.continuous.integrable_of_hasCompactSupport hfc
   have hh : Integrable (𝓕 f) :=
-    (hf.of_le (show (∞ : ℕ∞ω) ≤ ⊤ from le_top)).integrable_fourier_of_hasCompactSupport hfc
+    hf.integrable_fourier_of_hasCompactSupport hfc
   have hP (t : ℝ) : P t = 𝓕⁻ f (t / (2 * π)) := by
     change fourierLaplace Φ (a + t * I) = _
     rw [Real.fourierInv_eq', fourierLaplace_def]

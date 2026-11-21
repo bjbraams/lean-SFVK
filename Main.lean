@@ -8,4 +8,10 @@ module
 public import SFVK
 public import SFVKMathlib
 
-/-! # Special functions and group representations, following Vilenkin and Klimyk -/
+/-!
+# Special functions and group representations
+
+The library entry point for the formalization following Vilenkin and Klimyk. Import this
+module for the group models and special-function theorems from `SFVK` together with the
+measure-theoretic, Fourier, and representation-theoretic extensions from `SFVKMathlib`.
+-/

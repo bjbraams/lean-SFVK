@@ -14,15 +14,18 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 public import SFVK.AffineHeisenberg.Basic
 
 /-!
-# the `ax + b` group, the Mellin transform and the Gamma function
+# The affine group, the Mellin transform and the Gamma function
 
-Statements of §1 of the roadmap `Roadmaps/AffineHeisenbergGroups/README.md` (section numbers
-`§x.y`).
+The affine action multiplies by `e^{λ b x}` and dilates by `a > 0`. The Mellin transform
+diagonalizes dilation, converts the infinitesimal operators to shifts and multipliers,
+and yields a Gamma kernel on a vertical contour. The addition identities are forms
+of the beta integral.
+
 Sources: Vilenkin–Klimyk Vol. 1 §3.4, pp. 128–135; Klimyk–Vilenkin Ch. 4 §1.2, p. 204, §3.1, p. 218.
 The two beta integrals use lean-DLMF's Mellin and Mellin–Barnes formulas.
 -/
 
-@[expose] public section
+public section
 
 noncomputable section
 
@@ -31,34 +34,36 @@ namespace SFVK.AffineHeisenberg
 open MeasureTheory Set Complex MulAction
 open scoped Real ComplexConjugate InnerProductSpace ENNReal
 
-/-- §1.1. **Representation law.** -/
-theorem affineAction_mul (lam : ℂ) :
-    (∀ g h : AxB, ∀ f, affineAction lam (g * h) f = affineAction lam g (affineAction lam h f)) ∧
-      ∀ f, affineAction lam 1 f = f := by
-  refine ⟨fun g h f => ?_, fun f => ?_⟩
-  · funext x
-    simp only [affineAction, AxB.mul_a, AxB.mul_b]
-    rw [show lam * ((g.a * h.b + g.b : ℝ) : ℂ) * x =
-        lam * g.b * x + lam * h.b * ((g.a * x : ℝ) : ℂ) by push_cast; ring, Complex.exp_add,
-      mul_assoc, mul_comm g.a h.a, mul_assoc]
-    rw [mul_assoc h.a]
-  · funext x
-    simp [affineAction]
+/-- The affine action of a product is the composition of the two affine actions. -/
+theorem affineAction_mul (lam : ℂ) (g h : AxB) (f : ℝ → ℂ) :
+    affineAction lam (g * h) f = affineAction lam g (affineAction lam h f) := by
+  funext x
+  simp only [affineAction, AxB.dilation_mul, AxB.translation_mul]
+  rw [show lam * ((g.a * h.b + g.b : ℝ) : ℂ) * x =
+      lam * g.b * x + lam * h.b * ((g.a * x : ℝ) : ℂ) by push_cast; ring, Complex.exp_add,
+    mul_assoc, mul_comm g.a h.a, mul_assoc]
+  rw [mul_assoc h.a]
 
-/-- §1.1. **Dictionary** to SpecialFunctionsGroupModels §2.4. -/
+/-- The identity affine transformation acts as the identity operator. -/
+@[simp]
+theorem affineAction_one (lam : ℂ) (f : ℝ → ℂ) : affineAction lam 1 f = f := by
+  funext x
+  simp [affineAction]
+
+/-- An imaginary affine parameter gives the pointwise action of the affine cocycle. -/
 theorem affineAction_mul_I (ρ : ℝ) :
     affineAction (ρ * Complex.I) = multiplierAction (axbCocycle ρ) := by
   funext g f x
   simp only [affineAction, multiplierAction, axbCocycle]
   have hx : g⁻¹ • x = g.a * x := by
     show x / g⁻¹.a = g.a * x
-    rw [AxB.inv_a, div_inv_eq_mul, mul_comm]
+    rw [AxB.dilation_inv, div_inv_eq_mul, mul_comm]
   rw [hx]
   congr 2
   push_cast
   ring
 
-/-- §1.1. **Dilations are diagonal.** -/
+/-- The Mellin transform of a dilation by `a > 0` is multiplied by `a^{-w}`. -/
 theorem mellin_affineAction_dilation (lam : ℂ) (a : ℝ) (ha : 0 < a) (f : ℝ → ℂ) (w : ℂ) :
     mellin (affineAction lam ⟨a, 0, ha⟩ f) w = (a : ℂ) ^ (-w) * mellin f w := by
   have : affineAction lam ⟨a, 0, ha⟩ f = fun x => f (a * x) := by
@@ -155,15 +160,8 @@ theorem mellin_deriv (f : ℝ → ℂ) (w : ℂ) (hf : ContDiff ℝ 1 f)
     mellin (deriv f) w = mellin (deriv f) ((w - 1) + 1) := by rw [sub_add_cancel]
     _ = _ := by rw [← mellin_mul_variable, mellin_mul_deriv f (w - 1) hf hfc hf0]
 
-/-- §1.1. **Infinitesimal operators.** -/
-theorem mellin_infinitesimal :
-    (∀ (f : ℝ → ℂ) (w : ℂ), mellin (fun x => (x : ℂ) * f x) w = mellin f (w + 1)) ∧
-    ∀ (f : ℝ → ℂ) (w : ℂ), ContDiff ℝ 1 f → HasCompactSupport f → tsupport f ⊆ Ioi 0 →
-      mellin (fun x => (x : ℂ) * deriv f x) w = -w * mellin f w := by
-  refine ⟨mellin_mul_variable, fun f w hf hfc hs => ?_⟩
-  exact mellin_mul_deriv f w hf hfc (fun h => lt_irrefl (0 : ℝ) (hs h))
-
-/-- §1.2. **Gamma kernel.** -/
+/-- The Mellin transform of the affine action is a vertical integral with the Gamma kernel
+when the exponential factor decays and `c < Re w`. -/
 theorem mellin_affineAction_eq_integral (lam : ℂ) (a b : ℝ) (ha : 0 < a)
     (hlam : 0 < (-lam * b).re) (f : ℝ → ℂ) (hf : ContDiff ℝ 1 f) (hfc : HasCompactSupport f)
     (hfs : tsupport f ⊆ Ioi 0) (w : ℂ) (c : ℝ) (hc : c < w.re) :

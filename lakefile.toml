@@ -10,12 +10,14 @@ relaxedAutoImplicit = false
 
 [[lean_lib]]
 name = "Main"
-roots = ["SFVK", "SFVKMathlib"]
-globs = ["SFVK", "SFVK.+", "SFVKMathlib", "SFVKMathlib.+"]
+roots = ["Main", "SFVK", "SFVKMathlib"]
+globs = ["Main", "SFVK", "SFVK.+", "SFVKMathlib", "SFVKMathlib.+"]
 
-[[lean_exe]]
-name = "main"
-root = "Main"
+# The roadmap sketches are available as a separate, non-default build target.
+[[lean_lib]]
+name = "SFVKRoadmaps"
+roots = ["Roadmaps"]
+globs = ["Roadmaps.+"]
 
 [[require]]
 name = "mathlib"

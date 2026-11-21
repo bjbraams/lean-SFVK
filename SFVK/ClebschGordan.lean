@@ -11,3 +11,11 @@ public import SFVK.ClebschGordan.Coupling
 public import SFVK.ClebschGordan.Polynomials
 public import SFVK.ClebschGordan.SixJ
 public import SFVK.ClebschGordan.ThreeJ
+
+/-!
+# Coupling and recoupling of SU(2) representations
+
+The labels are doubled spins and natural weight indices. The modules give the
+Clebsch–Gordan coefficients, coupled vectors, Wigner 3-j and 6-j symbols, and the
+comparisons with Hahn and Racah polynomials.
+-/

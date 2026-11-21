@@ -45,6 +45,7 @@ angle of `k`, and complex `R`. -/
 def circleAction (R : ℂ) (g : MotionGroup 2) (f : 𝕋 → ℂ) (ψ : 𝕋) : ℂ :=
   Complex.exp (I * R * (⟪g.a, unitVec ψ⟫_ℝ : ℝ)) * f (ψ - rotAngle g.k)
 
+/-- The plane motion acts by a plane-wave multiplier and a shift of the circle argument. -/
 theorem circleAction_def (R : ℂ) (g : MotionGroup 2) (f : 𝕋 → ℂ) (ψ : 𝕋) :
     circleAction R g f ψ =
       Complex.exp (I * R * (⟪g.a, unitVec ψ⟫_ℝ : ℝ)) * f (ψ - rotAngle g.k) :=
@@ -81,6 +82,8 @@ def motionAction {n : ℕ} (R : ℝ) (g : MotionGroup n) (f : EuclideanSpace ℝ
     (ξ : EuclideanSpace ℝ (Fin n)) : ℂ :=
   Complex.exp ((R * ⟪g.a, ξ⟫_ℝ : ℝ) * Complex.I) * f (rotE g.k⁻¹ ξ)
 
+/-- The action on a circle vector is the circle model evaluated at a chosen almost-everywhere
+representative. -/
 theorem motionAction_def {n : ℕ} (R : ℝ) (g : MotionGroup n) (f : EuclideanSpace ℝ (Fin n) → ℂ)
     (ξ : EuclideanSpace ℝ (Fin n)) :
     motionAction R g f ξ = Complex.exp ((R * ⟪g.a, ξ⟫_ℝ : ℝ) * Complex.I) * f (rotE g.k⁻¹ ξ) :=

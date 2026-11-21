@@ -52,28 +52,34 @@ abbrev SOn (n : ℕ) := Matrix.specialOrthogonalGroup (Fin n) ℝ
 def rotE {n : ℕ} (k : SOn n) (a : EuclideanSpace ℝ (Fin n)) : EuclideanSpace ℝ (Fin n) :=
   Matrix.toEuclideanLin k.1 a
 
+/-- The Euclidean action of a rotation is its matrix action on coordinates. -/
 theorem rotE_def {n : ℕ} (k : SOn n) (a : EuclideanSpace ℝ (Fin n)) :
     rotE k a = Matrix.toEuclideanLin k.1 a :=
   rfl
 
+/-- A product of rotations acts by composition on Euclidean vectors. -/
 theorem rotE_mul {n : ℕ} (k k' : SOn n) (a : EuclideanSpace ℝ (Fin n)) :
     rotE (k * k') a = rotE k (rotE k' a) := by
   simp only [rotE, Submonoid.coe_mul, Matrix.toEuclideanLin_eq_toLin_orthonormal]
   rw [Matrix.toLin_mul _ (EuclideanSpace.basisFun (Fin n) ℝ).toBasis]
   rfl
 
+/-- The identity rotation fixes each Euclidean vector. -/
 @[simp]
 theorem rotE_one {n : ℕ} (a : EuclideanSpace ℝ (Fin n)) : rotE (1 : SOn n) a = a := by
   simp [rotE]
 
+/-- A rotation distributes over vector addition. -/
 theorem rotE_add {n : ℕ} (k : SOn n) (a b : EuclideanSpace ℝ (Fin n)) :
     rotE k (a + b) = rotE k a + rotE k b := by
   simp [rotE]
 
+/-- A rotation fixes the zero vector. -/
 @[simp]
 theorem rotE_zero {n : ℕ} (k : SOn n) : rotE k 0 = 0 := by
   simp [rotE]
 
+/-- Rotating a negated vector negates its rotated image. -/
 @[simp]
 theorem rotE_neg {n : ℕ} (k : SOn n) (a : EuclideanSpace ℝ (Fin n)) :
     rotE k (-a) = -rotE k a := by
@@ -97,16 +103,22 @@ instance : One (MotionGroup n) := ⟨⟨0, 1⟩⟩
 
 instance : Inv (MotionGroup n) := ⟨fun g => ⟨-rotE g.k⁻¹ g.a, g.k⁻¹⟩⟩
 
+/-- The translation of a product in `MotionGroup`. -/
 @[simp] theorem mul_a (g h : MotionGroup n) : (g * h).a = g.a + rotE g.k h.a := rfl
 
+/-- The rotation of a product in `MotionGroup`. -/
 @[simp] theorem mul_k (g h : MotionGroup n) : (g * h).k = g.k * h.k := rfl
 
+/-- The translation of the identity in `MotionGroup`. -/
 @[simp] theorem one_a : (1 : MotionGroup n).a = 0 := rfl
 
+/-- The rotation of the identity in `MotionGroup`. -/
 @[simp] theorem one_k : (1 : MotionGroup n).k = 1 := rfl
 
+/-- The translation of the inverse in `MotionGroup`. -/
 @[simp] theorem inv_a (g : MotionGroup n) : g⁻¹.a = -rotE g.k⁻¹ g.a := rfl
 
+/-- The rotation of the inverse in `MotionGroup`. -/
 @[simp] theorem inv_k (g : MotionGroup n) : g⁻¹.k = g.k⁻¹ := rfl
 
 instance : Group (MotionGroup n) where
@@ -137,20 +149,24 @@ Vol. 1 §4.2.2 (1), p. 172. -/
 def lorentzBoost (s : ℝ) (p : ℝ × ℝ) : ℝ × ℝ :=
   (p.1 * Real.cosh s + p.2 * Real.sinh s, p.1 * Real.sinh s + p.2 * Real.cosh s)
 
+/-- A boost mixes the two coordinates by the hyperbolic sine and cosine of its rapidity. -/
 theorem lorentzBoost_def (s : ℝ) (p : ℝ × ℝ) :
     lorentzBoost s p =
       (p.1 * Real.cosh s + p.2 * Real.sinh s, p.1 * Real.sinh s + p.2 * Real.cosh s) :=
   rfl
 
+/-- Boosts with added rapidities act by composition. -/
 theorem lorentzBoost_add (s s' : ℝ) (p : ℝ × ℝ) :
     lorentzBoost (s + s') p = lorentzBoost s (lorentzBoost s' p) := by
   simp only [lorentzBoost, Real.cosh_add, Real.sinh_add, Prod.mk.injEq]
   constructor <;> ring
 
+/-- The boost at rapidity zero is the identity map. -/
 @[simp]
 theorem lorentzBoost_zero (p : ℝ × ℝ) : lorentzBoost 0 p = p := by
   simp [lorentzBoost]
 
+/-- A boost fixes the origin. -/
 @[simp]
 theorem lorentzBoost_apply_zero (s : ℝ) : lorentzBoost s 0 = 0 := by
   simp [lorentzBoost]
@@ -171,16 +187,22 @@ instance : One ISO11 := ⟨⟨0, 0⟩⟩
 
 instance : Inv ISO11 := ⟨fun g => ⟨-lorentzBoost (-g.s) g.a, -g.s⟩⟩
 
+/-- The translation of a product in `ISO11`. -/
 @[simp] theorem mul_a (g h : ISO11) : (g * h).a = g.a + lorentzBoost g.s h.a := rfl
 
+/-- The rapidity of a product in `ISO11`. -/
 @[simp] theorem mul_s (g h : ISO11) : (g * h).s = g.s + h.s := rfl
 
+/-- The translation of the identity in `ISO11`. -/
 @[simp] theorem one_a : (1 : ISO11).a = 0 := rfl
 
+/-- The rapidity of the identity in `ISO11`. -/
 @[simp] theorem one_s : (1 : ISO11).s = 0 := rfl
 
+/-- The translation of the inverse in `ISO11`. -/
 @[simp] theorem inv_a (g : ISO11) : g⁻¹.a = -lorentzBoost (-g.s) g.a := rfl
 
+/-- The rapidity of the inverse in `ISO11`. -/
 @[simp] theorem inv_s (g : ISO11) : g⁻¹.s = -g.s := rfl
 
 instance : Group ISO11 where
@@ -219,6 +241,7 @@ def rotation (α : ℝ) : SOn 2 :=
     · simp [Matrix.det_fin_two]
       nlinarith [Real.sin_sq_add_cos_sq α]⟩
 
+/-- The plane rotation has the usual sine and cosine entries in its underlying matrix. -/
 theorem coe_rotation (α : ℝ) :
     (rotation α : Matrix (Fin 2) (Fin 2) ℝ) =
       !![Real.cos α, -Real.sin α; Real.sin α, Real.cos α] :=
@@ -228,6 +251,8 @@ theorem coe_rotation (α : ℝ) :
 @[expose]
 def toComplex (a : EuclideanSpace ℝ (Fin 2)) : ℂ := (a 0 : ℂ) + (a 1 : ℂ) * I
 
+/-- The complex coordinate of a real plane vector uses the first component as its real part and the
+second as its imaginary part. -/
 theorem toComplex_def (a : EuclideanSpace ℝ (Fin 2)) : toComplex a = (a 0 : ℂ) + (a 1 : ℂ) * I :=
   rfl
 
@@ -236,10 +261,12 @@ theorem toComplex_def (a : EuclideanSpace ℝ (Fin 2)) : toComplex a = (a 0 : �
 def planePoint (r φ : ℝ) : EuclideanSpace ℝ (Fin 2) :=
   WithLp.toLp 2 ![r * Real.cos φ, r * Real.sin φ]
 
+/-- The first coordinate of the polar point is the radius times the cosine. -/
 @[simp]
 theorem planePoint_apply_zero (r φ : ℝ) : planePoint r φ 0 = r * Real.cos φ :=
   rfl
 
+/-- The second coordinate of the polar point is the radius times the sine. -/
 @[simp]
 theorem planePoint_apply_one (r φ : ℝ) : planePoint r φ 1 = r * Real.sin φ :=
   rfl
@@ -250,6 +277,7 @@ character `fourier 1 ψ = e^{iψ}`. -/
 def unitVec (ψ : 𝕋) : EuclideanSpace ℝ (Fin 2) :=
   WithLp.toLp 2 ![(fourier 1 ψ : ℂ).re, (fourier 1 ψ : ℂ).im]
 
+/-- The circle vector consists of the real and imaginary parts of the first Fourier character. -/
 theorem unitVec_def (ψ : 𝕋) :
     unitVec ψ = WithLp.toLp 2 ![(fourier 1 ψ : ℂ).re, (fourier 1 ψ : ℂ).im] :=
   rfl
@@ -258,6 +286,7 @@ theorem unitVec_def (ψ : 𝕋) :
 @[expose]
 def rotAngle (k : SOn 2) : 𝕋 := (Complex.arg ((k.1 0 0 : ℂ) + (k.1 1 0 : ℂ) * I) : 𝕋)
 
+/-- The angle of a plane rotation is the circle element of its complex first column. -/
 theorem rotAngle_def (k : SOn 2) :
     rotAngle k = (Complex.arg ((k.1 0 0 : ℂ) + (k.1 1 0 : ℂ) * I) : 𝕋) :=
   rfl
@@ -267,6 +296,7 @@ p. 165. -/
 @[expose]
 def polar (r φ α : ℝ) : MotionGroup 2 := ⟨planePoint r φ, rotation α⟩
 
+/-- The polar motion has the specified polar translation and a plane rotation. -/
 theorem polar_def (r φ α : ℝ) : polar r φ α = ⟨planePoint r φ, rotation α⟩ :=
   rfl
 
@@ -276,6 +306,7 @@ def motionApply {n : ℕ} (g : MotionGroup n) (x : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) :=
   g.a + rotE g.k x
 
+/-- A Euclidean motion rotates a point and then adds its translation. -/
 theorem motionApply_def {n : ℕ} (g : MotionGroup n) (x : EuclideanSpace ℝ (Fin n)) :
     motionApply g x = g.a + rotE g.k x :=
   rfl
@@ -302,6 +333,7 @@ def rotationSubgroup (n : ℕ) : Subgroup (MotionGroup n) where
     change -rotE g.k⁻¹ g.a = 0
     simp [hg]
 
+/-- The rotation subgroup consists of Euclidean motions with zero translation. -/
 theorem mem_rotationSubgroup {n : ℕ} (g : MotionGroup n) :
     g ∈ rotationSubgroup n ↔ g.a = 0 :=
   Iff.rfl

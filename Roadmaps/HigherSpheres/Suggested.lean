@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Bastiaan J Braams. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bastiaan J Braams
+-/
 module
 
 public import Mathlib
@@ -104,6 +109,7 @@ instance (n : ℕ) : MulAction (SOn n) (EuclideanSpace ℝ (Fin n)) where
     rw [Matrix.toLin_mul _ (EuclideanSpace.basisFun (Fin n) ℝ).toBasis]
     rfl
 
+/-- The real sphere action is evaluation of the underlying orthogonal matrix. -/
 theorem smul_def {n : ℕ} (k : SOn n) (a : EuclideanSpace ℝ (Fin n)) :
     k • a = Matrix.toEuclideanLin k.1 a := rfl
 
@@ -184,6 +190,8 @@ def zonalPolynomial (n l : ℕ) : ℝ[X] :=
     C ((ascPochhammer ℝ k).eval (-(l : ℝ)) * (ascPochhammer ℝ k).eval ((l : ℝ) + n - 2) /
       ((ascPochhammer ℝ k).eval (((n : ℝ) - 1) / 2) * k !)) * (C (1 / 2) * (1 - X)) ^ k
 
+/-- The zonal polynomial is a finite sum in the radial coordinate with its specified dimension and
+degree normalization. -/
 theorem zonalPolynomial_def (n l : ℕ) :
     zonalPolynomial n l = ∑ k ∈ Finset.range (l + 1),
       C ((ascPochhammer ℝ k).eval (-(l : ℝ)) * (ascPochhammer ℝ k).eval ((l : ℝ) + n - 2) /
@@ -254,6 +262,7 @@ theorem zonalPolynomial_ode {n : ℕ} (hn : 2 ≤ n) (l : ℕ) :
 def linearForm {n : ℕ} (η : EuclideanSpace ℝ (Fin n)) : MvPolynomial (Fin n) ℝ :=
   ∑ i, MvPolynomial.C (η i) * MvPolynomial.X i
 
+/-- Evaluation of the linear form gives the real inner product with the pole. -/
 theorem eval_linearForm {n : ℕ} (η x : EuclideanSpace ℝ (Fin n)) :
     MvPolynomial.eval (fun i => x i) (linearForm η) = ⟪η, x⟫_ℝ := by
   simp [linearForm, PiLp.inner_apply, mul_comm]
@@ -426,6 +435,8 @@ def branchHarmonic (m l k : ℕ) :
     MvPolynomial (Fin m) ℝ →ₗ[ℝ] MvPolynomial (Fin (m + 1)) ℝ :=
   LinearMap.mulLeft ℝ (branchFactor m l k) ∘ₗ (MvPolynomial.rename Fin.castSucc).toLinearMap
 
+/-- A branch polynomial is the renamed lower-dimensional harmonic multiplied by its branching
+factor. -/
 theorem branchHarmonic_apply (m l k : ℕ) (h : MvPolynomial (Fin m) ℝ) :
     branchHarmonic m l k h = branchFactor m l k * MvPolynomial.rename Fin.castSucc h := rfl
 
@@ -488,6 +499,7 @@ instance (n : ℕ) : MulAction (Un n) (EuclideanSpace ℂ (Fin n)) where
     rw [Matrix.toLin_mul _ (EuclideanSpace.basisFun (Fin n) ℂ).toBasis]
     rfl
 
+/-- The complex sphere action is evaluation of the underlying unitary matrix. -/
 theorem smul_def_unitary {n : ℕ} (k : Un n) (a : EuclideanSpace ℂ (Fin n)) :
     k • a = Matrix.toEuclideanLin k.1 a := rfl
 
@@ -570,6 +582,8 @@ def diskPolynomial (α : ℝ) (p q : ℕ) (w : ℂ) : ℂ :=
     (((-1) ^ i * (p.choose i * q.choose i * i ! : ℝ) / (ascPochhammer ℝ i).eval (α + 1) : ℝ) : ℂ) *
       ((1 - ‖w‖ ^ 2 : ℝ) : ℂ) ^ i * w ^ (p - i) * conj w ^ (q - i)
 
+/-- The disk polynomial is the finite sum in the coordinate, its conjugate, and the radial factors.
+-/
 theorem diskPolynomial_def (α : ℝ) (p q : ℕ) (w : ℂ) :
     diskPolynomial α p q w = ∑ i ∈ Finset.range (min p q + 1),
       (((-1) ^ i * (p.choose i * q.choose i * i ! : ℝ) / (ascPochhammer ℝ i).eval (α + 1) : ℝ) :
@@ -632,7 +646,7 @@ theorem diskHarmonic_mem {n : ℕ} (hn : 2 ≤ n) (p q : ℕ) {η : EuclideanSpa
 
 /-- README 6.4. **Values on the sphere.** For unit `ξ`, `diskHarmonic` takes the value
 `R^{n-2}_{p,q}(⟪η, ξ⟫)`. -/
-theorem evalC_diskHarmonic {n : ℕ} (hn : 2 ≤ n) (p q : ℕ) (η : EuclideanSpace ℂ (Fin n))
+theorem evalC_diskHarmonic {n : ℕ} (p q : ℕ) (η : EuclideanSpace ℂ (Fin n))
     {ξ : EuclideanSpace ℂ (Fin n)} (hξ : ‖ξ‖ = 1) :
     evalC ξ (diskHarmonic n p q η) = diskPolynomial ((n : ℝ) - 2) p q ⟪η, ξ⟫_ℂ := by
   sorry

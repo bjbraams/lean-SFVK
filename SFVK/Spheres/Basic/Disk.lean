@@ -47,10 +47,13 @@ namespace SFVK.Spheres
 def bidegreeWeight (n : ℕ) : Fin n ⊕ Fin n → ℕ × ℕ :=
   Sum.elim (fun _ => (1, 0)) (fun _ => (0, 1))
 
+/-- A holomorphic coordinate variable has weight one in the first degree and zero in the second. -/
 @[simp]
 theorem bidegreeWeight_inl (n : ℕ) (j : Fin n) : bidegreeWeight n (Sum.inl j) = (1, 0) :=
   rfl
 
+/-- An antiholomorphic coordinate variable has weight zero in the first degree and one in the
+second. -/
 @[simp]
 theorem bidegreeWeight_inr (n : ℕ) (j : Fin n) : bidegreeWeight n (Sum.inr j) = (0, 1) :=
   rfl
@@ -62,6 +65,8 @@ def complexLaplacian (n : ℕ) :
   ∑ j, (MvPolynomial.pderiv (R := ℂ) (Sum.inl j)).toLinearMap ∘ₗ
     (MvPolynomial.pderiv (R := ℂ) (Sum.inr j)).toLinearMap
 
+/-- The complex Laplacian is the sum of the matching mixed holomorphic and antiholomorphic
+derivatives. -/
 theorem complexLaplacian_apply (n : ℕ) (f : MvPolynomial (Fin n ⊕ Fin n) ℂ) :
     complexLaplacian n f =
       ∑ j, MvPolynomial.pderiv (Sum.inl j) (MvPolynomial.pderiv (Sum.inr j) f) := by
@@ -73,6 +78,8 @@ def bidegreeHarmonic (n p q : ℕ) : Submodule ℂ (MvPolynomial (Fin n ⊕ Fin 
   MvPolynomial.weightedHomogeneousSubmodule ℂ (bidegreeWeight n) (p, q) ⊓
     LinearMap.ker (complexLaplacian n)
 
+/-- A polynomial is bidegree harmonic precisely when it has the given bidegree and is killed by the
+complex Laplacian. -/
 theorem mem_bidegreeHarmonic_iff {n p q : ℕ} {f : MvPolynomial (Fin n ⊕ Fin n) ℂ} :
     f ∈ bidegreeHarmonic n p q ↔
       f.IsWeightedHomogeneous (bidegreeWeight n) (p, q) ∧ complexLaplacian n f = 0 := by
@@ -83,6 +90,8 @@ theorem mem_bidegreeHarmonic_iff {n p q : ℕ} {f : MvPolynomial (Fin n ⊕ Fin 
 def evalC {n : ℕ} (z : EuclideanSpace ℂ (Fin n)) (f : MvPolynomial (Fin n ⊕ Fin n) ℂ) : ℂ :=
   MvPolynomial.eval (Sum.elim (fun j => z j) (fun j => conj (z j))) f
 
+/-- Evaluate the holomorphic variables at the coordinates and the antiholomorphic variables at their
+conjugates. -/
 theorem evalC_def {n : ℕ} (z : EuclideanSpace ℂ (Fin n)) (f : MvPolynomial (Fin n ⊕ Fin n) ℂ) :
     evalC z f = MvPolynomial.eval (Sum.elim (fun j => z j) (fun j => conj (z j))) f :=
   rfl
@@ -95,6 +104,8 @@ def diskPolynomial (α : ℝ) (p q : ℕ) (w : ℂ) : ℂ :=
     (((-1) ^ i * (p.choose i * q.choose i * i ! : ℝ) / (ascPochhammer ℝ i).eval (α + 1) : ℝ) : ℂ) *
       ((1 - ‖w‖ ^ 2 : ℝ) : ℂ) ^ i * w ^ (p - i) * conj w ^ (q - i)
 
+/-- The disk polynomial is the finite sum in the coordinate, its conjugate, and the radial factors.
+-/
 theorem diskPolynomial_def (α : ℝ) (p q : ℕ) (w : ℂ) :
     diskPolynomial α p q w = ∑ i ∈ Finset.range (min p q + 1),
       (((-1) ^ i * (p.choose i * q.choose i * i ! : ℝ) / (ascPochhammer ℝ i).eval (α + 1) : ℝ) :
@@ -141,6 +152,7 @@ def diskHarmonic (n p q : ℕ) (η : EuclideanSpace ℂ (Fin n)) : MvPolynomial 
       (ascPochhammer ℝ i).eval ((n : ℝ) - 1) : ℝ) : ℂ)) *
       (r2 - w * wb) ^ i * w ^ (p - i) * wb ^ (q - i)
 
+/-- The disk harmonic is the polynomial representative with the chosen pole and bidegree. -/
 theorem diskHarmonic_def (n p q : ℕ) (η : EuclideanSpace ℂ (Fin n)) :
     diskHarmonic n p q η = ∑ i ∈ Finset.range (min p q + 1),
       MvPolynomial.C ((((-1) ^ i * (p.choose i * q.choose i * i ! : ℝ) /
@@ -157,6 +169,8 @@ theorem diskHarmonic_def (n p q : ℕ) (η : EuclideanSpace ℂ (Fin n)) :
 def diskSpherical (n p q : ℕ) (η : EuclideanSpace ℂ (Fin n)) (g : UnitaryMatrixGroup n) : ℂ :=
   diskPolynomial ((n : ℝ) - 2) p q ⟪unitaryRotate g η, η⟫_ℂ
 
+/-- The disk spherical function evaluates the disk polynomial at the overlap with the rotated pole.
+-/
 theorem diskSpherical_apply (n p q : ℕ) (η : EuclideanSpace ℂ (Fin n))
     (g : UnitaryMatrixGroup n) :
     diskSpherical n p q η g = diskPolynomial ((n : ℝ) - 2) p q ⟪unitaryRotate g η, η⟫_ℂ :=

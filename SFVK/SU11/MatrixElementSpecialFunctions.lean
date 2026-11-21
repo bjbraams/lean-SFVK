@@ -5,7 +5,7 @@ Authors: Bastiaan J Braams
 -/
 module
 
-public import SFVK.SU11.Basic.MatrixElementsBasic
+public import SFVK.SU11.Basic.BoostMatrixElements
 public import DLMF.Legendre.Basic.Functions
 public import DLMF.Legendre.Basic.Associated
 public import DLMF.Hypergeometric.Basic
@@ -15,6 +15,7 @@ public import Mathlib.RingTheory.Polynomial.Pochhammer
 import SFVK.SU11.MatrixElementKernels
 import DLMF.Legendre.Laplace
 import DLMF.Hypergeometric.ArgumentContinuation
+import SFVKMathlib.Analysis.Complex.GaussCutPlane
 
 /-!
 # Special function formulas for `SU(1,1)` boost matrix elements
@@ -272,12 +273,6 @@ private theorem pochhammer_mul_invGamma_add_nat (a : ℂ) (n : ℕ) :
   | succ n hn =>
     rw [pochhammer_succ, Nat.cast_succ, ← add_assoc, mul_assoc, hstep, hn]
 
-/-- Negative squared hyperbolic sines belong to the Gauss cut plane. -/
-private theorem neg_sinh_sq_mem_cutPlane (t : ℝ) :
-    -((Real.sinh t : ℂ) ^ 2) ∈ cutPlane := by
-  rw [mem_cutPlane, sub_neg_eq_add, ← ofReal_pow, ← ofReal_one, ← ofReal_add, mem_slitPlane_iff]
-  exact Or.inl (by rw [ofReal_re]; positivity)
-
 /-- **Associated Legendre functions.** For `m ∈ ℕ` and `t > 0`,
 `𝔓^τ_{m0}(cosh t) / Γ(τ + 1) = P^{-m}_τ(cosh t) / Γ(τ - m + 1)` with lean-DLMF's `P^μ_ν`
 (DLMF 14.3.6). -/
@@ -301,7 +296,8 @@ theorem boostMatrixElement_eq_associatedP (τ : ℂ) (m : ℕ) (t : ℝ) (ht : 0
     simpa only [ofReal_div, ofReal_sub, ofReal_one, ofReal_ofNat, ofReal_neg, ofReal_pow] using
       congrArg Complex.ofReal h
   rw [hz, show (1 : ℂ) - -(m : ℂ) = (m : ℂ) + 1 by ring,
-    regularizedGaussHypergeometric_symm (τ + 1) (-τ) _ (neg_sinh_sq_mem_cutPlane (t / 2))]
+    regularizedGaussHypergeometric_symm (τ + 1) (-τ) _
+      (by simpa only [← Complex.ofReal_sinh] using Complex.neg_sinh_sq_mem_gaussCutPlane (t / 2))]
   have hlogs : log ((Real.cosh t : ℂ) + 1) - log ((Real.cosh t : ℂ) - 1) =
       (2 : ℂ) * ((Real.log c : ℂ) - (Real.log s : ℂ)) := by
     rw [← ofReal_one, ← ofReal_add, ← ofReal_sub, hplus, hminus,
@@ -434,7 +430,7 @@ private theorem boostMatrixElement_reflect_nat (τ : ℂ) (n : ℝ) (k : ℕ) (t
   rw [hpoch, show -(-τ - 1) - n = τ - n + 1 by ring,
     show -τ - 1 - n + 1 = -τ - n by ring,
     regularizedGaussHypergeometric_symm (τ - n + 1) (-τ - n) _
-      (neg_sinh_sq_mem_cutPlane (t / 2))]
+      (by simpa only [← Complex.ofReal_sinh] using Complex.neg_sinh_sq_mem_gaussCutPlane (t / 2))]
   let D : ℂ := (Real.sinh (t / 2) : ℂ) ^ k *
     (Real.cosh (t / 2) : ℂ) ^ (-((m + n : ℝ) : ℂ)) *
     regularizedGaussHypergeometric (-τ - n) (τ - n + 1) ((k : ℂ) + 1)

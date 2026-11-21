@@ -11,10 +11,13 @@
 - The Euler Haar measure proof in `SFVK.SU2.Coordinates` uses Tau Ceti's
   `ContRepresentation.schur_orthogonality_basis` and Mathlib's
   measure extensionality for separating star subalgebras.
-- `SFVK.RepresentationTheory.MatrixElements` uses Mathlib's
-  `HilbertBasis.hasSum_inner_mul_inner` and relates its convention to Tau Ceti's
-  `ContRepresentation.matrixCoeff`. The `SU(1,1)` circle model uses Mathlib's
+- `SFVKMathlib.RepresentationTheory.Continuous.MatrixElement` uses Mathlib's
+  `HilbertBasis.hasSum_inner_mul_inner` and `lp.hasSum_norm` for matrix multiplication
+  and Parseval. It relates its convention to Tau Ceti's `ContRepresentation.matrixCoeff`.
+  The `SU(1,1)` circle model uses Mathlib's
   `AddCircle.haarAddCircle` and `fourierLp`.
+- The shared Fourier-character power formula in `SFVKMathlib.Analysis.Fourier.AddCircle`
+  uses Mathlib's `AddCircle.toCircle_zsmul` and `Circle.coe_zpow`.
 - `SFVK.SU2.SpecialFunctions` uses lean-DLMF's
   `DLMF.OrthogonalPolynomials.jacobiPolynomialP`,
   `DLMF.OrthogonalPolynomials.legendrePolynomialP` and `DLMF.Legendre.ferrersPNat`.
@@ -58,11 +61,17 @@
   Chebyshev orthogonality.
 - The radial Fourier transform uses Tau Ceti's polar integration and unit sphere area formulas.
   The angular transform uses Tau Ceti's complex-plane isometry and Mathlib's
-  `Complex.integral_comp_polarCoord_symm`. The zonal Bessel sphere mean uses Tau Ceti's
+  `Complex.integral_comp_polarCoord_symm`. The cylindrical-wave eigenvalue uses lean-DLMF's
+  `DLMF.WaveEquation.helmholtz_cylinderWave` and Tau Ceti's
+  `laplacian_comp_linearIsometryEquiv_right`. The zonal Bessel sphere mean uses Tau Ceti's
   von Mises–Fisher normalizer, holomorphy of parameter
   integrals, and the Rademacher law for the two-point sphere. The zonal Bessel boundedness
   criterion uses lean-DLMF's `besselI_isEquivalent_sector`, and the Laguerre eigenfunction
   proof uses its `integral_laguerreExtended_hankel`.
+- The Gegenbauer and Wigner contractions use lean-DLMF's
+  `JacobiBesselLimit.tendsto_scaled_series`. The Gegenbauer normalization uses Mathlib's
+  `Complex.Gamma_mul_Gamma_add_half`, and the Wigner limit uses `Complex.besselJ_neg_int`
+  for negative magnetic-weight differences.
 - The hyperbola model uses Mathlib's continuous measure-preserving composition on `L²`, Tau Ceti's
   dominated convergence on `L²` and Fourier integrability for smooth compactly supported functions,
   and lean-DLMF's Bessel kernel integrability. The Bessel circle mean and matrix addition in
@@ -82,8 +91,13 @@
 - `SFVK.RankOne.Jacobi` and `HarishChandra` use lean-DLMF's Gauss differential equation,
   transformations, boundary limits, and parameter holomorphy. The Jacobi transform uses
   DLMFMathlib's theorem for differentiating a locally dominated parameter integral.
+  `SFVK.RankOne.JacobiIdentities` uses Tau Ceti's `ofReal_exp_cpow` for the real
+  exponential in the elementary formulas. The shared radial branch condition uses
+  lean-DLMF's `DLMF.Hypergeometric.mem_cutPlane`.
   Hyperbolic polar integration and Laplacians use Mathlib's Haar-to-sphere and second-order
-  chain-rule APIs. Horospherical integration uses its monotone change of variables and
+  chain-rule APIs. Harmonicity of the Poisson integral uses Tau Ceti’s
+  `laplacian_integral_smul_of_contDiffOn` over the compact boundary.
+  Horospherical integration uses Mathlib’s monotone change of variables and
   Haar measure scaling. Lorentz invariance uses Mathlib's
   `Measure.map_linearMap_addHaar_eq_smul_addHaar` and `iteratedDeriv_vcomp_two`.
   The Jacobi density bound uses Mathlib's Gamma duplication formula,

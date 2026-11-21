@@ -5,7 +5,7 @@ Authors: Bastiaan J Braams
 -/
 module
 
-public import SFVK.SU11.Basic.MatrixElementsBasic
+public import SFVK.SU11.Basic.BoostMatrixElements
 import SFVK.SU11.MatrixElementKernels
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv

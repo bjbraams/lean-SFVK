@@ -51,20 +51,24 @@ def rotate {n : ℕ} (g : RotationGroup n) (x : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) :=
   Matrix.toEuclideanLin g.1 x
 
+/-- The rotation action on Euclidean vectors is the underlying matrix acting on coordinates. -/
 theorem rotate_def {n : ℕ} (g : RotationGroup n) (x : EuclideanSpace ℝ (Fin n)) :
     rotate g x = Matrix.toEuclideanLin g.1 x :=
   rfl
 
+/-- The identity rotation fixes each vector. -/
 @[simp]
 theorem rotate_one {n : ℕ} (x : EuclideanSpace ℝ (Fin n)) : rotate (1 : RotationGroup n) x = x := by
   simp [rotate]
 
+/-- A product of rotations acts by composition. -/
 theorem rotate_mul {n : ℕ} (g h : RotationGroup n) (x : EuclideanSpace ℝ (Fin n)) :
     rotate (g * h) x = rotate g (rotate h x) := by
   simp only [rotate, Submonoid.coe_mul, Matrix.toEuclideanLin_eq_toLin_orthonormal]
   rw [Matrix.toLin_mul _ (EuclideanSpace.basisFun (Fin n) ℝ).toBasis]
   rfl
 
+/-- The inverse rotation undoes the forward rotation on a vector. -/
 theorem rotate_inv_rotate {n : ℕ} (g : RotationGroup n) (x : EuclideanSpace ℝ (Fin n)) :
     rotate g⁻¹ (rotate g x) = x := by
   rw [← rotate_mul, inv_mul_cancel, rotate_one]
@@ -83,6 +87,7 @@ def rotationStabilizer {n : ℕ} (η : EuclideanSpace ℝ (Fin n)) : Subgroup (R
     conv_lhs => rw [← hg]
     exact rotate_inv_rotate g η
 
+/-- The rotation stabilizer consists of the rotations that fix the specified vector. -/
 theorem mem_rotationStabilizer {n : ℕ} {η : EuclideanSpace ℝ (Fin n)} {g : RotationGroup n} :
     g ∈ rotationStabilizer η ↔ rotate g η = η :=
   Iff.rfl
@@ -99,6 +104,7 @@ def sphereMeasure (n : ℕ) : Measure (Sphere n) :=
   ((volume : Measure (EuclideanSpace ℝ (Fin n))).toSphere univ)⁻¹ •
     (volume : Measure (EuclideanSpace ℝ (Fin n))).toSphere
 
+/-- The real sphere probability measure is the surface measure divided by its total mass. -/
 theorem sphereMeasure_def (n : ℕ) :
     sphereMeasure n = ((volume : Measure (EuclideanSpace ℝ (Fin n))).toSphere univ)⁻¹ •
       (volume : Measure (EuclideanSpace ℝ (Fin n))).toSphere :=
@@ -109,6 +115,8 @@ theorem sphereMeasure_def (n : ℕ) :
 @[expose]
 def polarConstant (n : ℕ) : ℝ := Real.Gamma ((n : ℝ) / 2) / (√π * Real.Gamma (((n : ℝ) - 1) / 2))
 
+/-- The constant normalizing the one-coordinate density is the quotient of the indicated Gamma
+factors. -/
 theorem polarConstant_def (n : ℕ) :
     polarConstant n = Real.Gamma ((n : ℝ) / 2) / (√π * Real.Gamma (((n : ℝ) - 1) / 2)) :=
   rfl
@@ -133,21 +141,25 @@ def unitaryRotate {n : ℕ} (g : UnitaryMatrixGroup n) (z : EuclideanSpace ℂ (
     EuclideanSpace ℂ (Fin n) :=
   Matrix.toEuclideanLin g.1 z
 
+/-- The unitary action on complex Euclidean vectors is matrix multiplication on coordinates. -/
 theorem unitaryRotate_def {n : ℕ} (g : UnitaryMatrixGroup n) (z : EuclideanSpace ℂ (Fin n)) :
     unitaryRotate g z = Matrix.toEuclideanLin g.1 z :=
   rfl
 
+/-- The identity unitary matrix fixes each vector. -/
 @[simp]
 theorem unitaryRotate_one {n : ℕ} (z : EuclideanSpace ℂ (Fin n)) :
     unitaryRotate (1 : UnitaryMatrixGroup n) z = z := by
   simp [unitaryRotate]
 
+/-- Unitary matrix multiplication acts by composition on vectors. -/
 theorem unitaryRotate_mul {n : ℕ} (g h : UnitaryMatrixGroup n) (z : EuclideanSpace ℂ (Fin n)) :
     unitaryRotate (g * h) z = unitaryRotate g (unitaryRotate h z) := by
   simp only [unitaryRotate, Submonoid.coe_mul, Matrix.toEuclideanLin_eq_toLin_orthonormal]
   rw [Matrix.toLin_mul _ (EuclideanSpace.basisFun (Fin n) ℂ).toBasis]
   rfl
 
+/-- The inverse unitary matrix undoes its forward action. -/
 theorem unitaryRotate_inv_unitaryRotate {n : ℕ} (g : UnitaryMatrixGroup n)
     (z : EuclideanSpace ℂ (Fin n)) : unitaryRotate g⁻¹ (unitaryRotate g z) = z := by
   rw [← unitaryRotate_mul, inv_mul_cancel, unitaryRotate_one]
@@ -166,6 +178,7 @@ def unitaryStabilizer {n : ℕ} (η : EuclideanSpace ℂ (Fin n)) :
     conv_lhs => rw [← hg]
     exact unitaryRotate_inv_unitaryRotate g η
 
+/-- The stabilizer consists of the unitary matrices fixing the specified vector. -/
 theorem mem_unitaryStabilizer {n : ℕ} {η : EuclideanSpace ℂ (Fin n)}
     {g : UnitaryMatrixGroup n} : g ∈ unitaryStabilizer η ↔ unitaryRotate g η = η :=
   Iff.rfl
@@ -180,6 +193,8 @@ def complexSphereMeasure (n : ℕ) : Measure (ComplexSphere n) :=
   ((volume : Measure (EuclideanSpace ℂ (Fin n))).toSphere univ)⁻¹ •
     (volume : Measure (EuclideanSpace ℂ (Fin n))).toSphere
 
+/-- The complex sphere uses the normalized real surface measure for its underlying Euclidean norm.
+-/
 theorem complexSphereMeasure_def (n : ℕ) :
     complexSphereMeasure n = ((volume : Measure (EuclideanSpace ℂ (Fin n))).toSphere univ)⁻¹ •
       (volume : Measure (EuclideanSpace ℂ (Fin n))).toSphere :=

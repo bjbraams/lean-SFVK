@@ -31,6 +31,8 @@ def coupledVector (d₁ d₂ d : ℕ) (i : Fin (d + 1)) :
     (clebschGordan d₁ d₂ d i₁ i₂ i : ℂ) •
       (EuclideanSpace.single i₁ (1 : ℂ) ⊗ₜ[ℂ] EuclideanSpace.single i₂ (1 : ℂ))
 
+/-- The coupled vector is the Clebsch–Gordan expansion in the tensor products of the monomial basis
+vectors. -/
 theorem coupledVector_def (d₁ d₂ d : ℕ) (i : Fin (d + 1)) :
     coupledVector d₁ d₂ d i =
       ∑ i₁ : Fin (d₁ + 1), ∑ i₂ : Fin (d₂ + 1),

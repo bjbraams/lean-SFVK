@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Bastiaan J Braams. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bastiaan J Braams
+-/
 module
 
 public import Mathlib
@@ -135,7 +140,7 @@ theorem jacobiFunction_zero (α β lam : ℂ) (hα : ∀ k : ℕ, α + 1 ≠ -k)
   sorry
 
 /-- README 0.1. **Evenness in the spectral parameter**: `φ_{−λ} = φ_λ`. -/
-theorem jacobiFunction_neg (α β lam : ℂ) (t : ℝ) :
+theorem jacobiFunction_neg_spectral (α β lam : ℂ) (t : ℝ) :
     jacobiFunction α β (-lam) t = jacobiFunction α β lam t := by
   sorry
 
@@ -150,7 +155,7 @@ theorem differentiable_jacobiFunction (α β : ℂ) (t : ℝ) :
   sorry
 
 /-- README 0.1. **The Jacobi equation**: `L φ_λ = −(λ² + ρ²) φ_λ` on `t > 0`. -/
-theorem jacobiOperator_jacobiFunction (α β lam : ℂ) (hα : ∀ k : ℕ, α + 1 ≠ -k) {t : ℝ}
+theorem jacobiOperator_jacobiFunction (α β lam : ℂ) {t : ℝ}
     (ht : 0 < t) :
     jacobiOperator α β (jacobiFunction α β lam) t =
       -(lam ^ 2 + (α + β + 1) ^ 2) * jacobiFunction α β lam t := by
@@ -194,7 +199,7 @@ theorem jacobiFunction_quadratic (α lam : ℂ) (t : ℝ) :
   sorry
 
 /-- README 0.3. **`Φ_λ` solves the Jacobi equation** on `t > 0` for `iλ ∉ {1, 2, …}`. -/
-theorem jacobiOperator_harishChandraSeries (α β lam : ℂ) (hlam : ∀ k : ℕ, I * lam ≠ k + 1)
+theorem jacobiOperator_harishChandraSeries (α β lam : ℂ)
     {t : ℝ} (ht : 0 < t) :
     jacobiOperator α β (harishChandraSeries α β lam) t =
       -(lam ^ 2 + (α + β + 1) ^ 2) * harishChandraSeries α β lam t := by
@@ -208,7 +213,7 @@ theorem tendsto_harishChandraSeries (α β lam : ℂ) (hlam : ∀ k : ℕ, I * l
 
 /-- README 0.3. **The connection formula**: `φ_λ = c(λ) Φ_λ + c(−λ) Φ_{−λ}` on `t > 0`, for
 `iλ ∉ ℤ` and `α ∉ {−1, −2, …}`. -/
-theorem jacobiFunction_eq_cFunction (α β lam : ℂ) (hα : ∀ k : ℕ, α + 1 ≠ -k)
+theorem jacobiFunction_eq_cFunction (α β lam : ℂ)
     (hlam : ∀ k : ℤ, I * lam ≠ k) {t : ℝ} (ht : 0 < t) :
     jacobiFunction α β lam t =
       cFunction α β lam * harishChandraSeries α β lam t +
@@ -223,7 +228,7 @@ theorem cFunction_neg_I_mul_rho (α β : ℂ) (hα : ∀ k : ℕ, α + 1 ≠ -k)
   sorry
 
 /-- README 0.3. **Asymptotics**: for `Im λ < 0`, `φ_λ(t) e^{(ρ − iλ)t} → c(λ)`. -/
-theorem tendsto_jacobiFunction_mul_exp (α β lam : ℂ) (hα : ∀ k : ℕ, α + 1 ≠ -k)
+theorem tendsto_jacobiFunction_mul_exp (α β lam : ℂ)
     (hlam : lam.im < 0) :
     Tendsto (fun t : ℝ => jacobiFunction α β lam t * exp ((α + β + 1 - I * lam) * t))
       atTop (𝓝 (cFunction α β lam)) := by
@@ -231,7 +236,7 @@ theorem tendsto_jacobiFunction_mul_exp (α β lam : ℂ) (hα : ∀ k : ℕ, α 
 
 /-- README 0.3. **Polynomial growth of the Plancherel density**: for real `α > −1` and `β`,
 `|c(λ)|⁻² ≤ C (1 + |λ|)^{2α + 1}` on the real line. -/
-theorem norm_cFunction_inv_sq_le (α β : ℝ) (hα : -1 < α) :
+theorem exists_norm_cFunction_inv_sq_le (α β : ℝ) (hα : -1 < α) :
     ∃ C, ∀ lam : ℝ, ‖cFunction α β lam‖⁻¹ ^ 2 ≤ C * (1 + |lam|) ^ (2 * α + 1) := by
   sorry
 
@@ -560,7 +565,7 @@ theorem sphericalFunction_eq_average (n : ℕ) (hn : 2 ≤ n) (lam : ℂ) {x : F
   sorry
 
 /-- README 3.1. **Eigenfunction**: `Δφ_λ = −(λ² + ρ²) φ_λ` on `ℍⁿ`. -/
-theorem hyperbolicLaplacian_sphericalFunction (n : ℕ) (hn : 2 ≤ n) (lam : ℂ)
+theorem hyperbolicLaplacian_sphericalFunction (n : ℕ) (lam : ℂ)
     {x : Fin (n + 1) → ℝ} (hx : x ∈ hyperboloid n) :
     hyperbolicLaplacian n (sphericalFunction n lam) x =
       -(lam ^ 2 + (((n : ℂ) - 1) / 2) ^ 2) * sphericalFunction n lam x := by
@@ -597,8 +602,8 @@ def plancherelConstant (n : ℕ) : ℝ := 2 ^ (n - 1) / (2 * π * sphereArea n)
 /-- README 4.1. **The spherical transform is the Jacobi transform**: for radial
 `f = F ∘ d(o, ·)` with `F` continuous of compact support,
 `Sf(λ) = ω_{n−1} 2^{1−n} F̃(λ)` with `(α, β) = (n/2 − 1, −1/2)`. -/
-theorem sphericalTransform_radial (n : ℕ) (hn : 2 ≤ n) (F : ℝ → ℂ) (hF : Continuous F)
-    (hFs : HasCompactSupport F) (lam : ℂ) :
+theorem sphericalTransform_radial (n : ℕ) (hn : 1 ≤ n) (F : ℝ → ℂ) (hF : Measurable F)
+    (lam : ℂ) :
     sphericalTransform n (fun x => F (Real.arcosh (x 0))) lam =
       (sphereArea n / 2 ^ (n - 1) : ℝ) * jacobiTransform ((n : ℝ) / 2 - 1) (-1 / 2) F lam := by
   sorry
@@ -639,7 +644,7 @@ theorem sphericalTransform_eq_integral_abelTransform (m : ℕ) (F : ℝ → ℂ)
   sorry
 
 /-- README 4.2. **The Abel transform of `ℍ³`**: `𝒜F(s) = 2π ∫_{cosh s}^∞ F(arcosh u) du`. -/
-theorem abelTransform_two (F : ℝ → ℂ) (hF : Continuous F) (hFs : HasCompactSupport F) (s : ℝ) :
+theorem abelTransform_two (F : ℝ → ℂ) (s : ℝ) :
     abelTransform 2 F s = 2 * π * ∫ u in Ioi (Real.cosh s), F (Real.arcosh u) := by
   sorry
 

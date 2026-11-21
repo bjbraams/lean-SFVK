@@ -6,6 +6,8 @@ Authors: Bastiaan J Braams
 module -- shake: keep-all
 
 public import SFVKMathlib.Analysis.Complex.EulerPhases
+public import SFVKMathlib.Analysis.Complex.GaussCutPlane
+public import SFVKMathlib.Analysis.Fourier.AddCircle
 public import SFVKMathlib.MeasureTheory.Group.GelfandPair
 public import SFVKMathlib.MeasureTheory.Group.MatrixGroups
 public import SFVKMathlib.MeasureTheory.Group.Multiplier
@@ -20,6 +22,8 @@ They use the namespaces of the APIs they extend.
 
 * `SFVKMathlib.Analysis.Complex.EulerPhases`: half-sum and half-difference coordinates on
   the product of two unit circles.
+* `SFVKMathlib.Analysis.Complex.GaussCutPlane`: the Gauss branch condition for radial arguments.
+* `SFVKMathlib.Analysis.Fourier.AddCircle`: integer powers of circle Fourier characters.
 * `SFVKMathlib.MeasureTheory.Group.GelfandPair`: bi-invariant functions, Gel'fand pairs and
   spherical functions of a subgroup.
 * `SFVKMathlib.MeasureTheory.Group.MatrixGroups`: Borel structures on `SO(n)` and `U(n)`.

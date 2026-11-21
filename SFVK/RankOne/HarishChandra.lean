@@ -42,6 +42,8 @@ def harishChandraSeries (α β lam : ℂ) (t : ℝ) : ℂ :=
     regularizedGaussHypergeometric ((α + β + 1 - I * lam) / 2) ((α - β + 1 - I * lam) / 2)
       (1 - I * lam) ((Real.cosh t : ℂ) ^ 2)⁻¹
 
+/-- The Harish–Chandra solution is an exponential power prefactor times a Gauss function at the
+inverse squared hyperbolic cosine. -/
 theorem harishChandraSeries_def (α β lam : ℂ) (t : ℝ) :
     harishChandraSeries α β lam t =
       ((2 * Real.cosh t : ℝ) : ℂ) ^ (I * lam - (α + β + 1)) * Gamma (1 - I * lam) *
@@ -51,6 +53,7 @@ theorem harishChandraSeries_def (α β lam : ℂ) (t : ℝ) :
 
 namespace HarishChandra
 
+/-- Differentiate the inverse squared hyperbolic cosine at a real argument. -/
 private theorem hasDerivAt_cosh_inv_sq (s : ℝ) :
     HasDerivAt (fun t : ℝ => ((Complex.cosh t) ^ 2)⁻¹)
       (-2 * ((Complex.cosh s) ^ 2)⁻¹ * (Complex.sinh s / Complex.cosh s)) s := by
@@ -62,6 +65,7 @@ private theorem hasDerivAt_cosh_inv_sq (s : ℝ) :
   simp only [Nat.cast_ofNat, Nat.reduceSub, pow_one, Pi.pow_apply]
   field_simp [hc]
 
+/-- The derivative of the hyperbolic tangent is the inverse squared hyperbolic cosine. -/
 private theorem hasDerivAt_sinh_div_cosh (s : ℝ) :
     HasDerivAt (fun t : ℝ => Complex.sinh t / Complex.cosh t)
       ((Complex.cosh s ^ 2)⁻¹) s := by
@@ -72,6 +76,8 @@ private theorem hasDerivAt_sinh_div_cosh (s : ℝ) :
   refine h.congr_deriv ?_
   simp only [← pow_two, Complex.cosh_sq_sub_sinh_sq, one_div]
 
+/-- The derivative of the Harish–Chandra prefactor uses the hyperbolic tangent as its logarithmic
+derivative. -/
 private theorem hasDerivAt_prefactor (σ c : ℂ) (s : ℝ) :
     HasDerivAt (fun t : ℝ => Gamma c * (2 * Complex.cosh t) ^ σ)
       (Gamma c * (2 * Complex.cosh s) ^ σ * (σ * (Complex.sinh s / Complex.cosh s))) s := by
@@ -87,6 +93,8 @@ private theorem hasDerivAt_prefactor (σ c : ℂ) (s : ℝ) :
   rw [sub_eq_add_neg σ, cpow_add _ _ (mul_ne_zero (by norm_num) hc), cpow_neg_one]
   field_simp [hc]
 
+/-- The inverse squared hyperbolic cosine at a positive real point belongs to the principal Gauss
+domain. -/
 private theorem inv_cosh_sq_mem_cutPlane {s : ℝ} (hs : 0 < s) :
     (Complex.cosh s ^ 2)⁻¹ ∈ cutPlane := by
   apply mem_cutPlane_of_norm_lt_one
@@ -96,6 +104,8 @@ private theorem inv_cosh_sq_mem_cutPlane {s : ℝ} (hs : 0 < s) :
   rw [Real.cosh_sq]
   exact lt_add_of_pos_left _ (sq_pos_of_pos (Real.sinh_pos_iff.mpr hs))
 
+/-- The inverse squared hyperbolic cosine contributes its chain-rule factor to the derivative of the
+Gauss function. -/
 private theorem hasDerivAt_gauss_inv_cosh_sq (a b c : ℂ) {s : ℝ} (hs : 0 < s) :
     HasDerivAt (fun t : ℝ => regularizedGaussHypergeometric a b c ((Complex.cosh t ^ 2)⁻¹))
       ((a * b * regularizedGaussHypergeometric (a + 1) (b + 1) (c + 1)
@@ -118,9 +128,8 @@ private theorem hasDerivAt_gauss_inv_cosh_sq (a b c : ℂ) {s : ℝ} (hs : 0 < s
 end HarishChandra
 
 set_option maxHeartbeats 1400000 in
-set_option linter.unusedVariables false in
 /-- **`Φ_λ` solves the Jacobi equation** on `t > 0` for `iλ ∉ {1, 2, …}`. -/
-theorem jacobiOperator_harishChandraSeries (α β lam : ℂ) (hlam : ∀ k : ℕ, I * lam ≠ k + 1)
+theorem jacobiOperator_harishChandraSeries (α β lam : ℂ)
     {t : ℝ} (ht : 0 < t) :
     jacobiOperator α β (harishChandraSeries α β lam) t =
       -(lam ^ 2 + (α + β + 1) ^ 2) * harishChandraSeries α β lam t := by

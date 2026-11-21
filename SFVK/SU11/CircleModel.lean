@@ -139,6 +139,7 @@ private theorem integral_fourier_natCast_circleAct (g : SU11) (n : ℕ) :
 private noncomputable def circleIntegralFunctional (μ : Measure 𝕋) [IsFiniteMeasure μ] :
     C(𝕋, ℂ) →L[ℂ] ℂ := (L1.integralCLM' ℂ).comp (ContinuousMap.toLp 1 μ ℂ)
 
+/-- The bounded functional on circle `L²` evaluates to integration against its kernel. -/
 private theorem circleIntegralFunctional_apply (μ : Measure 𝕋) [IsFiniteMeasure μ] (f : C(𝕋, ℂ)) :
     circleIntegralFunctional μ f = ∫ θ, f θ ∂μ := by
   rw [circleIntegralFunctional, ContinuousLinearMap.comp_apply, ← L1.integral_eq',

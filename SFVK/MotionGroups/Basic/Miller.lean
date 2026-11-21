@@ -50,22 +50,31 @@ instance : One T3 := ⟨⟨0, 0, 0⟩⟩
 
 instance : Inv T3 := ⟨fun g => ⟨-(Complex.exp (-g.τ) * g.b), -(Complex.exp g.τ * g.c), -g.τ⟩⟩
 
+/-- The raising coordinate of a product in `T3`. -/
 @[simp] theorem mul_b (g h : T3) : (g * h).b = g.b + Complex.exp g.τ * h.b := rfl
 
+/-- The lowering coordinate of a product in `T3`. -/
 @[simp] theorem mul_c (g h : T3) : (g * h).c = g.c + Complex.exp (-g.τ) * h.c := rfl
 
+/-- The diagonal coordinate of a product in `T3`. -/
 @[simp] theorem mul_τ (g h : T3) : (g * h).τ = g.τ + h.τ := rfl
 
+/-- The raising coordinate of the identity in `T3`. -/
 @[simp] theorem one_b : (1 : T3).b = 0 := rfl
 
+/-- The lowering coordinate of the identity in `T3`. -/
 @[simp] theorem one_c : (1 : T3).c = 0 := rfl
 
+/-- The diagonal coordinate of the identity in `T3`. -/
 @[simp] theorem one_τ : (1 : T3).τ = 0 := rfl
 
+/-- The raising coordinate of the inverse in `T3`. -/
 @[simp] theorem inv_b (g : T3) : g⁻¹.b = -(Complex.exp (-g.τ) * g.b) := rfl
 
+/-- The lowering coordinate of the inverse in `T3`. -/
 @[simp] theorem inv_c (g : T3) : g⁻¹.c = -(Complex.exp g.τ * g.c) := rfl
 
+/-- The diagonal coordinate of the inverse in `T3`. -/
 @[simp] theorem inv_τ (g : T3) : g⁻¹.τ = -g.τ := rfl
 
 instance : Group T3 where
@@ -87,6 +96,7 @@ end T3
 def millerAction (ω m₀ : ℂ) (g : T3) (f : ℂ → ℂ) (z : ℂ) : ℂ :=
   Complex.exp (ω * g.b * z + ω * g.c / z + m₀ * g.τ) * f (Complex.exp g.τ * z)
 
+/-- Miller's `T₃` acts by an exponential multiplier and rescales the complex argument. -/
 theorem millerAction_def (ω m₀ : ℂ) (g : T3) (f : ℂ → ℂ) (z : ℂ) :
     millerAction ω m₀ g f z =
       Complex.exp (ω * g.b * z + ω * g.c / z + m₀ * g.τ) * f (Complex.exp g.τ * z) :=
@@ -123,6 +133,8 @@ def millerMatrix (ω m₀ : ℂ) (l k : ℤ) (g : T3) : ℂ :=
     ∑' s : ℕ, (ω * g.b) ^ (s + (l - k).toNat) * (ω * g.c) ^ (s + (k - l).toNat) /
       (((s + (l - k).toNat).factorial : ℂ) * ((s + (k - l).toNat).factorial : ℂ))
 
+/-- The matrix entry is the Laurent coefficient in Miller's `T₃` model, with the diagonal
+exponential factor. -/
 theorem millerMatrix_def (ω m₀ : ℂ) (l k : ℤ) (g : T3) :
     millerMatrix ω m₀ l k g =
       Complex.exp ((k + m₀) * g.τ) *
@@ -136,6 +148,8 @@ theorem millerMatrix_def (ω m₀ : ℂ) (l k : ℤ) (g : T3) :
 def besselJEntire (m y : ℂ) : ℂ :=
   ∑' k : ℕ, (-y / 4) ^ k / ((2 : ℂ) ^ m * (k.factorial : ℂ) * Complex.Gamma (m + k + 1))
 
+/-- The entire Bessel normalization is the power series in the squared argument with reciprocal
+Gamma coefficients. -/
 theorem besselJEntire_def (m y : ℂ) :
     besselJEntire m y =
       ∑' k : ℕ, (-y / 4) ^ k / ((2 : ℂ) ^ m * (k.factorial : ℂ) * Complex.Gamma (m + k + 1)) :=

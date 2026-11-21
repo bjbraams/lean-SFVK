@@ -163,10 +163,10 @@ Sources: Vilenkin–Klimyk Vol. 1 §5.1.1 (1)–(13), pp. 207–208; Klimyk–Vi
 206; Dieudonné §17, p. 58.
 
 `TriangularGroup` is the group of the Conventions with the one-parameter subgroups
-`g_+(t) = (t, 0, 0, 0)` (`gPlus`), `g_−(t) = (0, 0, t, 0)` (`gMinus`), `z(t) = (0, t, 0, 0)`
-(`centreElt`), `ε(t) = (0, 0, 0, t)` (`dilation`), and
-`g_1(t) = [[1, t, t²/2], [0, 1, t], [0, 0, 1]] = (t, t²/2, t, 0)` (`gOne`),
-`g_2(t) = [[1, −t, −t²/2], [0, 1, t], [0, 0, 1]] = (−t, −t²/2, t, 0)` (`gTwo`). Prove:
+`g_+(t) = (t, 0, 0, 0)` (`translationElement`), `g_−(t) = (0, 0, t, 0)` (`modulationElement`), `z(t) = (0, t, 0, 0)`
+(`centralElement`), `ε(t) = (0, 0, 0, t)` (`dilation`), and
+`g_1(t) = [[1, t, t²/2], [0, 1, t], [0, 0, 1]] = (t, t²/2, t, 0)` (`equalTranslationModulation`),
+`g_2(t) = [[1, −t, −t²/2], [0, 1, t], [0, 0, 1]] = (−t, −t²/2, t, 0)` (`oppositeTranslationModulation`). Prove:
 - **Matrix realization** (`TriangularGroup.toMatrix_mul`): `toMatrix` is a multiplicative and
   injective map into `3 × 3` real matrices;
 - **Centre** (`TriangularGroup.mem_center_iff`): the centre is `{z(t)}` (Vilenkin–Klimyk §5.1.1, p.
@@ -423,11 +423,11 @@ Sources: Vilenkin–Klimyk Vol. 1 §5.1.4 (1)–(6), pp. 211–212; Klimyk–Vil
 (14)–(17), p. 206.
 
 Prove, for `t > 0`:
-- **Kernels of `g_+(t)`** (`triangularKernel_gPlus`): `K_{++} = Γ(μ − λ) Γ(λ) t^{λ−μ} / (2πi Γ(μ))`
+- **Kernels of `g_+(t)`** (`triangularKernel_translationElement`): `K_{++} = Γ(μ − λ) Γ(λ) t^{λ−μ} / (2πi Γ(μ))`
   for `Re μ > Re λ > 0`; `K_{−+} = Γ(λ) Γ(1 − μ) t^{λ−μ} / (2πi Γ(λ − μ + 1))` for `Re λ > 0`,
   `Re μ < 1`; `K_{−−} = Γ(1 − μ) Γ(μ − λ) t^{λ−μ} / (2πi Γ(1 − λ))` for `Re λ < Re μ < 1`;
   `K_{+−} = 0`;
-- **Kernel of `g_−(t)`** (`triangularKernel_gMinus`): for `Re(σt) < 0` and `Re λ > Re μ`,
+- **Kernel of `g_−(t)`** (`triangularKernel_modulationElement`): for `Re(σt) < 0` and `Re λ > Re μ`,
   `K_{++} = Γ(λ − μ) (−σt)^{μ−λ} / (2πi)` and `K_{+−} = K_{−+} = 0`.
 
 These are Beta and Gamma integrals: `∫_t^∞ y^{−μ}(y − t)^{λ−1} dy = B(λ, μ − λ) t^{λ−μ}`.
@@ -448,11 +448,11 @@ Sources: Vilenkin–Klimyk Vol. 1 §5.1.4 (7)–(14), pp. 212–213; Klimyk–Vi
 (18)–(21), p. 207; Dieudonné §17, p. 58.
 
 Let `σ = −1` and `t > 0`. Prove:
-- **Whittaker kernels of `g_1(t)`** (`triangularKernel_gOne`):
+- **Whittaker kernels of `g_1(t)`** (`triangularKernel_equalTranslationModulation`):
   `K_{++}(λ, μ; g_1(t)) = Γ(λ) W_{(1−λ−μ)/2, (λ−μ)/2}(t²) / (2πi t)` for `Re λ > 0`;
   `K_{−+}(λ, μ; g_1(t)) = Γ(λ) Γ(1 − μ) M_{(1−λ−μ)/2, (λ−μ)/2}(t²) / (2πi t Γ(λ − μ + 1))` for
   `Re λ > 0`, `Re μ < 1`; `K_{+−}(g_1(t)) = 0`;
-- **Whittaker kernels of `g_2(t)`** (`triangularKernel_gTwo`):
+- **Whittaker kernels of `g_2(t)`** (`triangularKernel_oppositeTranslationModulation`):
   `K_{++}(λ, μ; g_2(t)) = Γ(1 − μ) W_{(λ+μ−1)/2, (λ−μ)/2}(t²) / (2πi t)` for `Re μ < 1`;
   `K_{+−}(λ, μ; g_2(t)) = Γ(λ) Γ(1 − μ) M_{(λ+μ−1)/2, (λ−μ)/2}(t²) / (2πi t Γ(λ − μ + 1))` for
   `Re λ > 0`, `Re μ < 1`; `K_{−+}(g_2(t)) = 0`;
@@ -579,7 +579,7 @@ Klimyk–Vilenkin Chapter 6, §1.4 (5)–(7), p. 239.
 
 The Charlier polynomial is `charlier a n = Σ_{j ≤ n} C(n, j) (−1/a)^j x(x − 1)⋯(x − j + 1)`, the
 `₂F₀(−n, −x; ; −1/a)` of DLMF 18.20.8. Prove:
-- **Charlier matrix elements** (`hermiteMatrixElement_charlier`): for `x ≠ 0` and `a = x²/2`,
+- **Charlier matrix elements** (`hermiteMatrixElement_charlier`): for `x > 0` and `a = x²/2`,
   `E_{kn}(x, 0, 0) = (−1)^k (k! n!)^{−1/2} a^{(k+n)/2} e^{−a/2} c_k(n; a)`;
 - **Charlier and Laguerre** (`charlier_eq_laguerre`): for `a ≠ 0` and natural `x`,
   `c_n(x; a) = (−1)^n n! a^{−n} L_n^{(x−n)}(a)`;

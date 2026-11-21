@@ -7,6 +7,7 @@ module
 
 public import SFVK.SU11.Basic.CircleModel
 public import SFVK.SU11.Basic.Coordinates
+public import SFVK.SU11.Basic.BoostMatrixElements
 public import SFVK.SU11.Basic.MatrixElementsBasic
 
 /-!

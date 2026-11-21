@@ -45,6 +45,8 @@ variable [MeasurableSpace G]
 @[expose]
 def groupConvolution (μ : Measure G) (f h : G → ℂ) (x : G) : ℂ := ∫ y, f y * h (y⁻¹ * x) ∂μ
 
+/-- Group convolution integrates the first function at the integration variable and the second at
+its inverse times the output point. -/
 theorem groupConvolution_def (μ : Measure G) (f h : G → ℂ) (x : G) :
     groupConvolution μ f h x = ∫ y, f y * h (y⁻¹ * x) ∂μ :=
   rfl
@@ -55,10 +57,12 @@ namespace Subgroup
 
 /-- A function on `G` is bi-invariant under `K` when `f(k₁ x k₂) = f(x)` for `k₁, k₂ ∈ K`. -/
 @[expose]
-def IsBiInvariant (K : Subgroup G) (f : G → ℂ) : Prop :=
+def IsBiInvariant {V : Type*} (K : Subgroup G) (f : G → V) : Prop :=
   ∀ k₁ ∈ K, ∀ k₂ ∈ K, ∀ x, f (k₁ * x * k₂) = f x
 
-theorem isBiInvariant_def (K : Subgroup G) (f : G → ℂ) :
+/-- Bi-invariance means that multiplication on either side by elements of the subgroup leaves the
+function unchanged. -/
+theorem isBiInvariant_def {V : Type*} (K : Subgroup G) (f : G → V) :
     K.IsBiInvariant f ↔ ∀ k₁ ∈ K, ∀ k₂ ∈ K, ∀ x, f (k₁ * x * k₂) = f x :=
   Iff.rfl
 
@@ -88,6 +92,8 @@ def IsGelfandPair (K : Subgroup G) (μ : Measure G) : Prop :=
     Continuous h → HasCompactSupport h → K.IsBiInvariant h →
       groupConvolution μ f h = groupConvolution μ h f
 
+/-- A Gel'fand pair has commutative convolution on continuous compactly supported bi-invariant
+functions. -/
 theorem isGelfandPair_def (K : Subgroup G) (μ : Measure G) :
     K.IsGelfandPair μ ↔ ∀ f h : G → ℂ, Continuous f → HasCompactSupport f → K.IsBiInvariant f →
       Continuous h → HasCompactSupport h → K.IsBiInvariant h →
@@ -137,6 +143,8 @@ required. -/
 def IsSphericalFunction (K : Subgroup G) (ν : Measure K) (φ : G → ℂ) : Prop :=
   Continuous φ ∧ K.IsBiInvariant φ ∧ φ 1 = 1 ∧ ∀ x y, ∫ k : K, φ (x * k * y) ∂ν = φ x * φ y
 
+/-- A spherical function is continuous, bi-invariant, normalized at the identity, and satisfies the
+subgroup mean identity. -/
 theorem isSphericalFunction_def (K : Subgroup G) (ν : Measure K) (φ : G → ℂ) :
     K.IsSphericalFunction ν φ ↔
       Continuous φ ∧ K.IsBiInvariant φ ∧ φ 1 = 1 ∧

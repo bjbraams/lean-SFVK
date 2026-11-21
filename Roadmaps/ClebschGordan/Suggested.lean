@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Bastiaan J Braams. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bastiaan J Braams
+-/
 module
 
 public import Mathlib
@@ -43,6 +48,7 @@ open scoped Real ComplexConjugate InnerProductSpace TensorProduct ComplexOrder
 def monomialNorm (d : ℕ) (i : Fin (d + 1)) : ℝ :=
   Real.sqrt ((i : ℕ).factorial * (d - i).factorial)
 
+/-- The squared norm assigned to a basis monomial is strictly positive. -/
 theorem monomialNorm_pos (d : ℕ) (i : Fin (d + 1)) : 0 < monomialNorm d i :=
   Real.sqrt_pos.2 (by positivity)
 
@@ -625,8 +631,7 @@ theorem sum_racahPolynomial_mul {N n m : ℕ} (hn : n ≤ N) (hm : m ≤ N) {β 
 
 /-- **Hahn polynomials as limits of Racah polynomials** (DLMF 18.26.10):
 `R_n(x(x + γ + δ + 1); α, β, -N - 1, δ) → Q_n(x; α, β, N)` as `δ → ∞`. -/
-theorem tendsto_racahPolynomial_hahn {N n : ℕ} (hn : n ≤ N) {α : ℝ}
-    (hα : (ascPochhammer ℝ n).eval (α + 1) ≠ 0) (β x : ℝ) :
+theorem tendsto_racahPolynomial_hahn {N n : ℕ} {α : ℝ} (β x : ℝ) :
     Tendsto (fun δ ↦ racahPolynomial n α β (-(N : ℝ) - 1) δ x) atTop
       (𝓝 (hahn N n α β x)) := by
   sorry

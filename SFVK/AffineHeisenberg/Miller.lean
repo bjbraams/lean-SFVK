@@ -15,13 +15,15 @@ import Mathlib.Analysis.Analytic.Uniqueness
 /-!
 # Miller's group `G(0, 1)` and the Laguerre addition theorem
 
-Statements of §5 of the roadmap `Roadmaps/AffineHeisenbergGroups/README.md` (section numbers
-`§x.y`).
+The group acts on entire functions by an affine change of argument and an exponential
+factor. On the monomials, the resulting matrix elements have a Laguerre form. The
+representation law yields their addition formula, and the generating series sums
+to a rational factor times an exponential.
+
 Sources: Miller §4-2 (4.17)–(4.28), pp. 85–88; Wawrzyńczyk (12.2.1), p. 429.
-Theorems not yet proved are stated with `sorry`.
 -/
 
-@[expose] public section
+public section
 
 noncomputable section
 
@@ -31,13 +33,14 @@ open MeasureTheory Set Complex MulAction
 open DLMF.Hypergeometric DLMF.OrthogonalPolynomials
 open scoped Real ComplexConjugate InnerProductSpace ENNReal
 
-/-- §5.1. **Representation law.** -/
+/-- Multiplication in Miller’s group corresponds to composition of its pointwise operators. -/
 theorem millerAction_mul (μ ω : ℂ) (g h : MillerGroup) (f : ℂ → ℂ) :
     millerAction μ ω (g * h) f = millerAction μ ω g (millerAction μ ω h f) := by
   funext z
   have h1 : Complex.exp g.τ * Complex.exp (-g.τ) = 1 := by rw [← Complex.exp_add]; simp
-  simp only [millerAction, MillerGroup.mul_a, MillerGroup.mul_b, MillerGroup.mul_c,
-    MillerGroup.mul_τ]
+  simp only [millerAction, MillerGroup.centralCoordinate_mul, MillerGroup.modulation_mul,
+    MillerGroup.translation_mul,
+    MillerGroup.logDilation_mul]
   rw [← mul_assoc, ← Complex.exp_add]
   congr 1
   · congr 1
@@ -46,7 +49,7 @@ theorem millerAction_mul (μ ω : ℂ) (g h : MillerGroup) (f : ℂ → ℂ) :
     rw [Complex.exp_add]
     linear_combination (Complex.exp h.τ * h.c) * h1
 
-/-- §5.1. **Real points.** -/
+/-- On real coordinates, Miller’s operator acts by the triangular group formula. -/
 theorem millerAction_eq_triangularAction (μ ω : ℂ) :
     (∀ (a b c τ a' b' c' τ' : ℝ),
       millerToTriangular (a + a' + Real.exp τ * c * b') (b + Real.exp τ * b')
@@ -58,11 +61,11 @@ theorem millerAction_eq_triangularAction (μ ω : ℂ) :
   refine ⟨fun a b c τ a' b' c' τ' => ?_, fun a b c τ f x => ?_⟩
   · have h1 : Real.exp τ * Real.exp (-τ) = 1 := by rw [← Real.exp_add]; simp
     ext
-    · simp only [millerToTriangular, TriangularGroup.mul_a, Real.exp_add]
+    · simp only [millerToTriangular, TriangularGroup.translation_mul, Real.exp_add]
       linear_combination (Real.exp τ' * c') * h1
-    · simp only [millerToTriangular, TriangularGroup.mul_b]
-    · simp only [millerToTriangular, TriangularGroup.mul_d]
-    · simp only [millerToTriangular, TriangularGroup.mul_τ]
+    · simp only [millerToTriangular, TriangularGroup.centralCoordinate_mul]
+    · simp only [millerToTriangular, TriangularGroup.modulation_mul]
+    · simp only [millerToTriangular, TriangularGroup.logDilation_mul]
   · simp only [millerAction, triangularAction, triangularCocycle, millerToTriangular]
     push_cast
     congr 1
@@ -135,7 +138,7 @@ private theorem laguerreExtended_eq_choose_sum (k l : ℕ) (x : ℂ) :
     have hkj : k < j := by simp only [Finset.mem_range] at hj'; omega
     simp [hpoch j hjl, Nat.descFactorial_eq_zero_iff_lt.mpr hkj]
 
-/-- §5.1. **Matrix elements.** -/
+/-- The expansion of a transformed monomial has Miller’s matrix elements as coefficients. -/
 theorem hasSum_millerAction_monomial (μ ω : ℂ) (g : MillerGroup) (k : ℕ) (z : ℂ) :
     HasSum (fun l => millerMatrixElement μ ω l k g * z ^ l)
       (millerAction μ ω g (fun z => z ^ k) z) := by
@@ -155,7 +158,8 @@ theorem hasSum_millerAction_monomial (μ ω : ℂ) (g : MillerGroup) (k : ℕ) (
   rw [millerMatrixElement]
   ring
 
-/-- §5.1. **Laguerre form.** -/
+/-- At a nonzero translation coordinate, the matrix element is a Laguerre polynomial
+with its exponential and power factors. -/
 theorem millerMatrixElement_eq_laguerre (μ ω : ℂ) (g : MillerGroup) (hc : g.c ≠ 0) (l k : ℕ) :
     millerMatrixElement μ ω l k g =
       Complex.exp (μ * g.a + (k - ω) * g.τ) * g.c ^ ((k : ℤ) - l) *
@@ -268,7 +272,7 @@ private theorem millerCoefficients_unique {a b : ℕ → ℂ} {f : ℂ → ℂ}
     ((series ha).eq_formalMultilinearSeries (series hb))
 
 
-/-- §5.1. **Addition theorem.** -/
+/-- The matrix element of a product sums over the intermediate monomial degrees. -/
 theorem hasSum_millerMatrixElement_mul (μ ω : ℂ) (g h : MillerGroup) (l k : ℕ) :
     HasSum (fun j => millerMatrixElement μ ω l j g * millerMatrixElement μ ω j k h)
       (millerMatrixElement μ ω l k (g * h)) := by
@@ -311,7 +315,7 @@ theorem hasSum_millerMatrixElement_mul (μ ω : ℂ) (g h : MillerGroup) (l k : 
   rw [show (∑' j, A l j) = millerMatrixElement μ ω l k (g * h) from congrFun hcoeff l] at hs
   simpa only [A, mul_comm] using hs
 
-/-- §5.1. **Generating function.** -/
+/-- The Laguerre generating function sums on the open unit disk. -/
 theorem hasSum_laguerre_generating (m : ℕ) (x z : ℂ) :
     HasSum (fun n : ℕ => laguerreExtended ((m : ℂ) - n) n x * z ^ n)
       (Complex.exp (-x * z) * (1 + z) ^ m) := by

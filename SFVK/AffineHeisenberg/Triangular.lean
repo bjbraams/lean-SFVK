@@ -25,7 +25,7 @@ Sources: Vilenkin–Klimyk Vol. 1 §§5.1–5.2, pp. 207–220; Klimyk–Vilenki
 The kernel realization uses Mellin inversion and vertical decay of the Mellin transform.
 -/
 
-@[expose] public section
+public section
 
 noncomputable section
 
@@ -41,13 +41,13 @@ theorem isMultiplierCocycle_triangularCocycle (σ ω : ℂ) :
   have hx : ∀ (g : TriangularGroup) (x : ℝ), g⁻¹ • x = Real.exp g.τ * x + g.a := by
     intro g x
     show Real.exp (-g⁻¹.τ) * (x - g⁻¹.a) = _
-    simp only [TriangularGroup.inv_τ, TriangularGroup.inv_a, neg_neg]
+    simp only [TriangularGroup.logDilation_inv, TriangularGroup.translation_inv, neg_neg]
     have : Real.exp g.τ * Real.exp (-g.τ) = 1 := by rw [← Real.exp_add]; simp
     linear_combination g.a * this
   refine ⟨⟨fun x => by simp [triangularCocycle], fun g h x => ?_⟩, ?_⟩
   · rw [hx]
-    simp only [triangularCocycle, TriangularGroup.mul_τ, TriangularGroup.mul_d,
-      TriangularGroup.mul_b, ← Complex.exp_add]
+    simp only [triangularCocycle, TriangularGroup.logDilation_mul, TriangularGroup.modulation_mul,
+      TriangularGroup.centralCoordinate_mul, ← Complex.exp_add]
     congr 1
     push_cast
     ring
@@ -117,10 +117,10 @@ theorem lintegral_triangularAction_iff (σ ω : ℂ) :
       simp_rw [hpt]
       rw [lintegral_indicator_const measurableSet_Icc]
       simp [Real.volume_Icc]
-    have hs := h (centreElt 1) test htM
-    have hcentre (x : ℝ) : ‖triangularAction σ ω (centreElt 1) test x‖ₑ ^ 2 =
+    have hs := h (centralElement 1) test htM
+    have hcentre (x : ℝ) : ‖triangularAction σ ω (centralElement 1) test x‖ₑ ^ 2 =
         ENNReal.ofReal (Real.exp (2 * σ.re)) * ‖test x‖ₑ ^ 2 := by
-      simp only [triangularAction, triangularCocycle, centreElt, ofReal_zero, ofReal_one,
+      simp only [triangularAction, triangularCocycle, centralElement, ofReal_zero, ofReal_one,
         mul_zero, zero_mul, zero_add, mul_one, Real.exp_zero, one_mul, add_zero, eNorm_mul,
         mul_pow, eNorm_cexp_sq]
     simp_rw [hcentre] at hs
@@ -138,7 +138,9 @@ theorem lintegral_triangularAction_iff (σ ω : ℂ) :
     rw [lintegral_triangularAction_eq σ ω hσ g f, hω]
     norm_num
 
-/-- §2.1. **Unitary representations.** -/
+/-- The triangular representation realizes its multiplier almost everywhere and is unitary.
+For nonzero modulation parameter it is irreducible, and the pair of real parameters
+classifies unitary equivalence among these representations. -/
 theorem triangularRep_spec (γ ρ γ' ρ' : ℝ) :
     (∀ g f, (triangularRep γ ρ g f : ℝ → ℂ) =ᵐ[volume]
       triangularAction (γ * Complex.I) (1 / 2 + ρ * Complex.I) g f) ∧
@@ -173,27 +175,28 @@ private theorem hasDerivAt_exp_mul_real (a : ℂ) :
 
 /-- §2.2. **Infinitesimal operators.** -/
 theorem hasDerivAt_triangularAction (σ ω : ℂ) (f : ℝ → ℂ) (hf : ContDiff ℝ 1 f) (x : ℝ) :
-    HasDerivAt (fun t => triangularAction σ ω (gPlus t) f x) (deriv f x) 0 ∧
-    HasDerivAt (fun t => triangularAction σ ω (gMinus t) f x) (σ * x * f x) 0 ∧
-    HasDerivAt (fun t => triangularAction σ ω (centreElt t) f x) (σ * f x) 0 ∧
+    HasDerivAt (fun t => triangularAction σ ω (translationElement t) f x) (deriv f x) 0 ∧
+    HasDerivAt (fun t => triangularAction σ ω (modulationElement t) f x) (σ * x * f x) 0 ∧
+    HasDerivAt (fun t => triangularAction σ ω (centralElement t) f x) (σ * f x) 0 ∧
     HasDerivAt (fun t => triangularAction σ ω (dilation t) f x)
       (ω * f x + x * deriv f x) 0 := by
   have hdiff (y : ℝ) : HasDerivAt f (deriv f y) y :=
     (hf.differentiable (by norm_num) y).hasDerivAt
   constructor
   · have hbase : HasDerivAt f (deriv f x) ((fun t : ℝ => x + t) 0) := by simpa using hdiff x
-    simpa [triangularAction, triangularCocycle, gPlus, add_comm, Function.comp_def] using
+    simpa [triangularAction, triangularCocycle, translationElement, add_comm,
+      Function.comp_def] using
       hbase.scomp (0 : ℝ) ((hasDerivAt_id (0 : ℝ)).const_add x)
   constructor
   · have h := (hasDerivAt_exp_mul_real (σ * x)).mul_const (f x)
     convert h using 1
     funext t
-    simp only [triangularAction, triangularCocycle, gMinus, Complex.ofReal_zero,
+    simp only [triangularAction, triangularCocycle, modulationElement, Complex.ofReal_zero,
       mul_zero, zero_add, Real.exp_zero, one_mul, add_zero]
     congr 2
     ring
   constructor
-  · simpa [triangularAction, triangularCocycle, centreElt] using
+  · simpa [triangularAction, triangularCocycle, centralElement] using
       (hasDerivAt_exp_mul_real σ).mul_const (f x)
   · have hbase : HasDerivAt f (deriv f x) ((fun t : ℝ => Real.exp t * x) 0) := by
       simpa using hdiff x
@@ -207,7 +210,7 @@ theorem hasDerivAt_triangularAction (σ ω : ℂ) (f : ℝ → ℂ) (hf : ContDi
 theorem signedMellin_dilation_centre (σ ω : ℂ) (f : ℝ → ℂ) (ε : ℤˣ) (lam : ℂ) (τ b : ℝ) :
     signedMellin (triangularAction σ ω (dilation τ) f) ε lam =
       Complex.exp ((ω - lam) * τ) * signedMellin f ε lam ∧
-    signedMellin (triangularAction σ ω (centreElt b) f) ε lam =
+    signedMellin (triangularAction σ ω (centralElement b) f) ε lam =
       Complex.exp (σ * b) * signedMellin f ε lam := by
   have hpow : ((Real.exp τ : ℝ) : ℂ) ^ (-lam) = Complex.exp (-lam * τ) := by
     rw [Complex.cpow_def_of_ne_zero (Complex.ofReal_ne_zero.mpr (Real.exp_ne_zero τ)),
@@ -226,7 +229,8 @@ theorem signedMellin_dilation_centre (σ ω : ℂ) (f : ℝ → ℂ) (ε : ℤˣ
       smul_eq_mul, smul_eq_mul, ← mul_assoc, ← Complex.exp_add]
     congr 3
     ring
-  · simp only [signedMellin, triangularAction, triangularCocycle, centreElt, Complex.ofReal_zero,
+  · simp only [signedMellin, triangularAction, triangularCocycle, centralElement,
+    Complex.ofReal_zero,
       mul_zero, zero_mul, add_zero, zero_add, Real.exp_zero, one_mul]
     simpa only [smul_eq_mul] using
       mellin_const_smul (fun x : ℝ => f (((ε : ℤ) : ℝ) * x)) lam (Complex.exp (σ * b))
@@ -276,6 +280,8 @@ theorem signedMellin_infinitesimal (f : ℝ → ℂ) (ε : ℤˣ) (lam : ℂ) :
       ((ε : ℤ) : ℂ) * mellin F (lam + 1)
     rw [hfun, mellin_const_smul, smul_eq_mul, mellin_mul_variable, hcoord]
 
+/-- A continuous function with compact support on the positive half-line has a convergent Mellin
+integral on every line. -/
 private theorem mellinConvergent_of_isCompact_support (f : ℝ → ℂ) (c : ℝ)
     (hf : ContinuousOn f (Ioi 0)) (hc : IsCompact (tsupport f ∩ Ioi 0)) :
     MellinConvergent f c := by
@@ -286,12 +292,16 @@ private theorem mellinConvergent_of_isCompact_support (f : ℝ → ℂ) (c : ℝ
       (hf.comp_continuous (by fun_prop) (fun u => Real.exp_pos _))
   exact hGc.integrable_of_hasCompactSupport (hasCompactSupport_mellinLog f c hc)
 
+/-- Under compact positive support, the Mellin transform is continuous along a fixed vertical line.
+-/
 private theorem continuous_mellin_vertical (f : ℝ → ℂ) (c : ℝ)
     (hf : MellinConvergent f c) : Continuous (fun s : ℝ => mellin f (c + s * I)) := by
   simp_rw [mellin_vertical_eq_fourier, Real.fourier_eq]
   exact (VectorFourier.fourierIntegral_continuous Real.continuous_fourierChar
     (innerSL ℝ).continuous₂ hf.integrable_log_weight).comp (by fun_prop)
 
+/-- Smoothness and compact positive support give integrability of the Mellin transform on a vertical
+line. -/
 private theorem verticalIntegrable_mellin_of_isCompact_support (f : ℝ → ℂ) (c : ℝ)
     (hf : ContDiffOn ℝ 2 f (Ioi 0)) (hc : IsCompact (tsupport f ∩ Ioi 0)) :
     VerticalIntegrable (mellin f) c := by
@@ -306,6 +316,7 @@ private theorem verticalIntegrable_mellin_of_isCompact_support (f : ℝ → ℂ)
   rw [← div_eq_mul_inv, le_div_iff₀ hd]
   simpa only [mul_comm] using h
 
+/-- A real base raised to a fixed principal complex power is measurable. -/
 private theorem measurable_complexPower {α : Type*} [MeasurableSpace α]
     {f g : α → ℂ} (hf : Measurable f) (hg : Measurable g) :
     Measurable (fun x => f x ^ g x) := by
@@ -314,23 +325,28 @@ private theorem measurable_complexPower {α : Type*} [MeasurableSpace α]
     (Measurable.ite (measurableSet_eq_fun hg measurable_const) measurable_const measurable_const)
     (Complex.continuous_exp.measurable.comp ((Complex.measurable_log.comp hf).mul hg))
 
+/-- The positive magnitudes for which the transformed argument has the prescribed output sign. -/
 private def signedRegion (a r : ℝ) (ε η : ℤˣ) : Set ℝ :=
   Ioi 0 ∩ {x | 0 < ((η : ℤ) : ℝ) * (r * ((ε : ℤ) : ℝ) * x + a)}
 
+/-- The sign restriction on positive magnitudes is measurable. -/
 private theorem measurableSet_signedRegion (a r : ℝ) (ε η : ℤˣ) :
     MeasurableSet (signedRegion a r ε η) := by
   unfold signedRegion
   exact measurableSet_Ioi.inter (measurableSet_lt measurable_const (by fun_prop))
 
-private theorem integrableOn_signedRegion_gPlus (t alpha c : ℝ) (ht : 0 < t)
+/-- The translated positive-half-line kernel is integrable on each sign region under the Mellin
+strip hypotheses. -/
+private theorem integrableOn_signedRegion_translationElement (t alpha c : ℝ) (ht : 0 < t)
     (ha : 0 < alpha) (hac : alpha < c) (hc : c < 1) (ε η : ℤˣ) :
     IntegrableOn (fun x => x ^ (alpha - 1) *
       |((ε : ℤ) : ℝ) * x + t| ^ (-c)) (signedRegion t 1 ε η) := by
   let G : ℝ → ℂ := fun x => (x : ℂ) ^ ((alpha : ℂ) - 1) *
     ((|((ε : ℤ) : ℝ) * x + t| : ℝ) : ℂ) ^ (-(c : ℂ))
   have hConvert : (∫ x in signedRegion t 1 ε η, G x) =
-      (2 * π * I) * triangularKernel 0 0 ε η alpha c (gPlus t) := by
-    simp only [triangularKernel, gPlus, G, signedRegion, ofReal_zero, mul_zero, zero_mul,
+      (2 * π * I) * triangularKernel 0 0 ε η alpha c (translationElement t) := by
+    simp only [triangularKernel, translationElement, G, signedRegion, ofReal_zero, mul_zero,
+      zero_mul,
       add_zero, Complex.exp_zero, Real.exp_zero, one_mul, mul_one,
       one_div, ← mul_assoc]
     rw [mul_inv_cancel₀ (by
@@ -353,8 +369,8 @@ private theorem integrableOn_signedRegion_gPlus (t alpha c : ℝ) (ht : 0 < t)
         linarith
       · exact False.elim
     exact hE.symm ▸ integrableOn_empty
-  · have hK : triangularKernel 0 0 ε η alpha c (gPlus t) ≠ 0 := by
-      have h := triangularKernel_gPlus 0 0 (alpha : ℂ) (c : ℂ) t ht
+  · have hK : triangularKernel 0 0 ε η alpha c (translationElement t) ≠ 0 := by
+      have h := triangularKernel_translationElement 0 0 (alpha : ℂ) (c : ℂ) t ht
       rcases Int.units_eq_one_or ε with rfl | rfl <;> rcases Int.units_eq_one_or η with rfl | rfl
       · rw [h.1 hAC hA]
         exact mul_ne_zero (div_ne_zero (mul_ne_zero (hΓ _ (by simp only [sub_re]; linarith))
@@ -388,6 +404,8 @@ private theorem integrableOn_signedRegion_gPlus (t alpha c : ℝ) (ht : 0 < t)
     rw [norm_mul, norm_cpow_eq_rpow_re_of_pos hX, norm_cpow_eq_rpow_re_of_pos hY,
       sub_re, neg_re, ofReal_re, ofReal_re, one_re]
 
+/-- The affine change of the input variable preserves the Mellin kernel integrability on the
+corresponding sign region. -/
 private theorem integrableOn_signedRegion {a r alpha c : ℝ} (ha : a ≠ 0) (hr : 0 < r)
     (hα : 0 < alpha) (hαc : alpha < c) (hc : c < 1) (ε η : ℤˣ) :
     IntegrableOn (fun x => x ^ (alpha - 1) *
@@ -396,7 +414,8 @@ private theorem integrableOn_signedRegion {a r alpha c : ℝ} (ha : a ≠ 0) (hr
       IntegrableOn (fun x => x ^ (alpha - 1) *
         |((ε : ℤ) : ℝ) * x + a| ^ (-c)) (signedRegion a 1 ε η) := by
     rcases lt_or_gt_of_ne ha with ha' | ha'
-    · have h := integrableOn_signedRegion_gPlus (-a) alpha c (neg_pos.mpr ha') hα hαc hc (-ε) (-η)
+    · have h := integrableOn_signedRegion_translationElement (-a) alpha c (neg_pos.mpr ha')
+        hα hαc hc (-ε) (-η)
       have hE : signedRegion (-a) 1 (-ε) (-η) = signedRegion a 1 ε η := by
         ext x
         simp only [signedRegion, mem_inter_iff, mem_ofPred_eq, Units.val_neg, Int.cast_neg,
@@ -406,7 +425,7 @@ private theorem integrableOn_signedRegion {a r alpha c : ℝ} (ha : a ≠ 0) (hr
         rw [hEq]
       rw [hE] at h
       simpa only [Units.val_neg, Int.cast_neg, neg_mul, ← neg_add, abs_neg] using h
-    · exact integrableOn_signedRegion_gPlus a alpha c ha' hα hαc hc ε η
+    · exact integrableOn_signedRegion_translationElement a alpha c ha' hα hαc hc ε η
   let W (x : ℝ) := x ^ (alpha - 1) * |((ε : ℤ) : ℝ) * x + a| ^ (-c)
   have hImage : (fun x : ℝ => r * x) '' signedRegion a r ε η = signedRegion a 1 ε η := by
     ext x
@@ -438,7 +457,33 @@ private theorem integrableOn_signedRegion {a r alpha c : ℝ} (ha : a ≠ 0) (hr
   have hP : r * r ^ (alpha - 1) ≠ 0 := mul_ne_zero hr.ne' (Real.rpow_pos_of_pos hr _).ne'
   field_simp [hP]
 
-/-- §2.3. **Kernel realization.** -/
+/-- A strictly positive signed argument recovers its original value after taking an absolute
+value and restoring its sign. -/
+private theorem abs_pos_and_sign_mul_abs {η : ℤˣ} {y : ℝ}
+    (h : 0 < ((η : ℤ) : ℝ) * y) : 0 < |y| ∧ ((η : ℤ) : ℝ) * |y| = y := by
+  rcases Int.units_eq_one_or η with rfl | rfl
+  · simp only [Units.val_one, Int.cast_one, one_mul] at h ⊢
+    rw [abs_of_pos h]
+    exact ⟨h, rfl⟩
+  · simp only [Units.val_neg, Units.val_one, Int.cast_neg, Int.cast_one, neg_one_mul] at h ⊢
+    rw [abs_of_neg (neg_pos.mp h), neg_neg]
+    exact ⟨h, rfl⟩
+
+/-- On either sign, the Mellin input has compact support away from the endpoint of the positive
+half-line. -/
+private theorem isCompact_tsupport_inter_Ioi_sign (f : ℝ → ℂ) (η : ℤˣ)
+    (hfc : HasCompactSupport f) (hf0 : (0 : ℝ) ∉ tsupport f) :
+    IsCompact (tsupport (fun x => f (((η : ℤ) : ℝ) * x)) ∩ Ioi 0) := by
+  have hn : ((η : ℤ) : ℝ) ≠ 0 := by
+    rcases Int.units_eq_one_or η with rfl | rfl <;> norm_num
+  let e := Homeomorph.mulLeft₀ (((η : ℤ) : ℝ)) hn
+  have hFe : (fun x => f (((η : ℤ) : ℝ) * x)) = f ∘ e := rfl
+  apply isCompact_tsupport_inter_Ioi (hFe.symm ▸ hfc.comp_homeomorph e)
+  rw [hFe, tsupport_comp_eq_preimage]
+  simpa only [mem_preimage, e, Homeomorph.coe_mulLeft₀, mul_zero] using hf0
+
+/-- The signed Mellin transform of the triangular action is the sum of its two sign-restricted
+Mellin kernels on the vertical line `Re μ = c`. -/
 theorem signedMellin_triangularAction (σ ω : ℂ) (hσ : σ.re = 0) (f : ℝ → ℂ)
     (hf : ContDiff ℝ 2 f) (hfc : HasCompactSupport f) (hf0 : (0 : ℝ) ∉ tsupport f)
     (g : TriangularGroup) (hg : g.a ≠ 0) (ε : ℤˣ) (lam : ℂ) (c : ℝ) (hlam : 0 < lam.re)
@@ -459,25 +504,10 @@ theorem signedMellin_triangularAction (σ ω : ℂ) (hσ : σ.re = 0) (f : ℝ �
   let D : ℂ := ((1 / (2 * π) : ℝ) : ℂ)
   have hSm (η : ℤˣ) : MeasurableSet (S η) := measurableSet_signedRegion ..
   have hX (η : ℤˣ) (x : ℝ) (hx : x ∈ S η) :
-      0 < |X x| ∧ ((η : ℤ) : ℝ) * |X x| = X x := by
-    have h := hx.2
-    change 0 < ((η : ℤ) : ℝ) * X x at h
-    rcases Int.units_eq_one_or η with rfl | rfl
-    · simp only [Units.val_one, Int.cast_one, one_mul] at h ⊢
-      rw [abs_of_pos h]
-      exact ⟨h,rfl⟩
-    · simp only [Units.val_neg, Units.val_one, Int.cast_neg, Int.cast_one, neg_one_mul] at h ⊢
-      rw [abs_of_neg (neg_pos.mp h), neg_neg]
-      exact ⟨h,rfl⟩
+      0 < |X x| ∧ ((η : ℤ) : ℝ) * |X x| = X x := abs_pos_and_sign_mul_abs hx.2
   have hCdiff (η : ℤˣ) : ContDiff ℝ 2 (F η) := hf.comp (by fun_prop)
-  have hFcomp (η : ℤˣ) : IsCompact (tsupport (F η) ∩ Ioi 0) := by
-    have hn : ((η : ℤ) : ℝ) ≠ 0 := by
-      rcases Int.units_eq_one_or η with rfl | rfl <;> norm_num
-    let e := Homeomorph.mulLeft₀ (((η : ℤ) : ℝ)) hn
-    have hFe : F η = f ∘ e := rfl
-    apply isCompact_tsupport_inter_Ioi (hFe.symm ▸ hfc.comp_homeomorph e)
-    rw [hFe, tsupport_comp_eq_preimage]
-    simpa only [mem_preimage, e, Homeomorph.coe_mulLeft₀, mul_zero] using hf0
+  have hFcomp (η : ℤˣ) : IsCompact (tsupport (F η) ∩ Ioi 0) :=
+    isCompact_tsupport_inter_Ioi_sign f η hfc hf0
   have hM (η : ℤˣ) : MellinConvergent (F η) c :=
     mellinConvergent_of_isCompact_support _ _ (hCdiff η).continuous.continuousOn (hFcomp η)
   have hVert (η : ℤˣ) : VerticalIntegrable (mellin (F η)) c :=

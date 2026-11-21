@@ -211,9 +211,9 @@ Prove:
   is `D_{m'm}(b_t) = 𝔓^τ_{m'm}(cosh t)`;
 - **Value at the identity** (`SU11.boostMatrixElement_zero`): `𝔓^τ_{mn}(1) = δ_{mn}` for
   `m − n ∈ ℤ`;
-- **Holomorphy in the degree** (`SU11.differentiable_boostMatrixElement`): `τ ↦ 𝔓^τ_{mn}(cosh t)`
+- **Holomorphy in the degree** (`SU11.differentiable_boostMatrixElement_degree`): `τ ↦ 𝔓^τ_{mn}(cosh t)`
   is entire;
-- **Smoothness in `t`** (`SU11.contDiff_boostMatrixElement`): `t ↦ 𝔓^τ_{mn}(cosh t)` is smooth
+- **Real analyticity in `t`** (`SU11.contDiff_boostMatrixElement_radius`): `t ↦ 𝔓^τ_{mn}(cosh t)` is real analytic
   on `ℝ`;
 - **Parity** (`SU11.boostMatrixElement_neg`): `𝔓^τ_{mn}(cosh(−t)) = (−1)^{m−n} 𝔓^τ_{mn}(cosh t)`
   for `m − n ∈ ℤ`, where the left side is the value at `−t`;
@@ -393,7 +393,7 @@ Prove:
   `Σ_{k∈ℤ} |𝔓^τ_{n,n+k}(cosh t)|² = 1`;
 - **Bound** (`SU11.norm_boostMatrixElement_le_one`): `|𝔓^τ_{mn}(cosh t)| ≤ 1` for `Re τ = −1/2`,
   in particular `|P_{−1/2+iρ}(cosh t)| ≤ 1`;
-- **Complementary series** (`SU11.hasSum_complementary`): for real `−1 < τ < 0`, `ε = 0` and
+- **Complementary series** (`SU11.hasSum_complementarySeries_weighted_norm_sq`): for real `−1 < τ < 0`, `ε = 0` and
   integers `m`, `n`, with `w = complementaryWeight τ`,
   `Σ_{k∈ℤ} w(k)/w(n) · |𝔓^τ_{kn}(cosh t)|² = 1` and `(w(m)/w(n))^{1/2} |𝔓^τ_{mn}(cosh t)| ≤ 1`;
   these are the matrix elements of NoncompactQuantumSymmetry M4's complementary series in the
@@ -757,7 +757,7 @@ Contributors should not attempt it under this roadmap.
 [lean-SFVK](https://github.com/bjbraams/lean-SFVK) (Apache-2.0) is the same author's project on
 special functions and group representations. Its `SFVK/SU11/` modules prove the `SU(1,1)`
 coordinates, the circle model and the matrix elements of SpecialFunctionsGroupModels with the
-names used here. Its modules `SFVK/SU11/Basic/MatrixElementsBasic.lean` (the definitions of this
+names used here. Its modules `SFVK/SU11/Basic/BoostMatrixElements.lean` (the definitions of this
 roadmap) and `SFVK/SU11/MatrixElements.lean`, `SFVK/SU11/Transforms.lean` (statements of the
 targets) are the same author's prior work on this roadmap; they are references, not
 specifications.

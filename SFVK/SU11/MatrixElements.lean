@@ -5,7 +5,7 @@ Authors: Bastiaan J Braams
 -/
 module
 
-public import SFVK.SU11.Basic.MatrixElementsBasic
+public import SFVK.SU11.Basic.BoostMatrixElements
 public import SFVK.SU11.Basic.CircleModel
 import SFVK.SU11.CircleModel
 import SFVK.SU11.Coordinates
@@ -86,7 +86,7 @@ theorem boostMatrixElement_zero (τ : ℂ) (n : ℝ) (k : ℤ) :
   simp [Pi.single_apply]
 
 /-- `𝔓^τ_{mn}(cosh t)` is entire in the degree `τ`. -/
-theorem differentiable_boostMatrixElement (m n t : ℝ) :
+theorem differentiable_boostMatrixElement_degree (m n t : ℝ) :
     Differentiable ℂ fun τ => boostMatrixElement τ m n t := by
   let A (θ : ℝ) := boostBase t (exp ((θ : ℂ) * I))
   let F (τ : ℂ) (θ : ℝ) :=
@@ -113,8 +113,8 @@ theorem differentiable_boostMatrixElement (m n t : ℝ) :
   have H := (differentiableOn_univ.mp h).const_mul (((2 * π : ℝ) : ℂ)⁻¹)
   simpa only [boostMatrixElement_def, F, A, boostBase, ofReal_neg, neg_mul] using H
 
-/-- `𝔓^τ_{mn}(cosh t)` is smooth in `t`. -/
-theorem contDiff_boostMatrixElement (τ : ℂ) (m n : ℝ) :
+/-- `𝔓^τ_{mn}(cosh t)` is real analytic in the radius parameter `t`. -/
+theorem contDiff_boostMatrixElement_radius (τ : ℂ) (m n : ℝ) :
     ContDiff ℝ ⊤ fun t => boostMatrixElement τ m n t := by
   let A (z : ℂ) (θ : ℝ) := cosh (z / 2) + sinh (z / 2) * exp ((θ : ℂ) * I)
   let U : Set ℂ := {z | ‖sinh (z / 2)‖ < (cosh (z / 2)).re}
@@ -122,7 +122,7 @@ theorem contDiff_boostMatrixElement (τ : ℂ) (m n : ℝ) :
     A z θ ^ (τ + n) * A z (-θ) ^ (τ - n) * exp (((m - n : ℝ) : ℂ) * θ * I)
   have hReal (x : ℝ) : (x : ℂ) ∈ U := by
     have hp : 0 < Real.cosh (x / 2) - |Real.sinh (x / 2)| := by
-      rw [← Real.cosh_abs (x / 2), Real.abs_sinh, Real.cosh_sub_sinh]
+      rw [BoostMatrixElements.cosh_sub_abs_sinh]
       exact Real.exp_pos _
     have hcast : (x : ℂ) / 2 = (↑(x / 2) : ℂ) := by push_cast; rfl
     simpa only [U, mem_ofPred_eq, hcast, ← ofReal_sinh, ← ofReal_cosh, ofReal_re,
@@ -179,24 +179,16 @@ theorem hasSum_norm_sq_boostMatrixElement_row (τ : ℂ) (hτ : τ.re = -1 / 2) 
       ‖boostMatrixElement τ (n - (e : ℕ) / 2 + k) (n - (e : ℕ) / 2) t‖ ^ 2) 1 := by
   let U := principalSeries τ e
   let basis := fourierBasis (T := 2 * π)
-  let f := U (boost t) (basis n)
   have hu : U.IsUnitary := (isUnitary_principalSeries_iff τ e).mpr hτ
-  have hnorm : ‖basis.repr f‖ = 1 := by
-    rw [basis.repr.norm_map]
-    dsimp only [f]
-    rw [hu.norm_map, basis.orthonormal.norm_eq_one]
-  have hS : HasSum (fun i => ‖basis.repr f i‖ ^ 2) (‖basis.repr f‖ ^ 2) := by
-    apply_mod_cast lp.hasSum_norm ?_ (basis.repr f)
-    simp
-  rw [hnorm, one_pow] at hS
+  have hS := U.hasSum_norm_sq_matrixElement hu basis n (boost t)
   have hshift := (Equiv.addRight n).hasSum_iff.mpr hS
   refine hshift.congr_fun fun k => ?_
   have heq : (n - (e : ℕ) / 2 + k : ℝ) = ((k + n : ℤ) : ℝ) - (e : ℕ) / 2 := by
     push_cast
     ring
-  rw [heq, ← principalSeries_matrixElement_boost_eq, ContRepresentation.matrixElement_def]
+  rw [heq, ← principalSeries_matrixElement_boost_eq]
   have hadd : Equiv.addRight n k = k + n := rfl
-  simp only [Function.comp_apply, hadd, HilbertBasis.repr_apply_apply, f, U, basis]
+  simp only [Function.comp_apply, hadd, U, basis]
 
 /-- **Columns of the principal series.** For `Re τ = -1/2`, `Σ_k |𝔓^τ_{m,m+k}|² = 1` on the
 weights `m ∈ e/2 + ℤ`. -/
@@ -204,30 +196,13 @@ theorem hasSum_norm_sq_boostMatrixElement_column (τ : ℂ) (hτ : τ.re = -1 / 
     (n : ℤ) (t : ℝ) :
     HasSum (fun k : ℤ =>
       ‖boostMatrixElement τ (n - (e : ℕ) / 2) (n - (e : ℕ) / 2 + k) t‖ ^ 2) 1 := by
-  have hprod : boost t * boost (-t) = 1 := by
-    apply Subtype.ext
-    apply Subtype.ext
-    rw [coe_eq_matrix (boost t * boost (-t)), coe_eq_matrix (1 : SU11)]
-    have hzero : -t / 2 = -(t / 2) := by ring
-    simp only [entryA_mul, entryB_mul, entryA_one, entryB_one, entryA_boost, entryB_boost,
-      hzero, Real.cosh_neg, Real.sinh_neg, ofReal_neg, map_neg, conj_ofReal]
-    have hc : ((Real.cosh (t / 2) : ℂ)) ^ 2 - ((Real.sinh (t / 2) : ℂ)) ^ 2 = 1 := by
-      exact_mod_cast Real.cosh_sq_sub_sinh_sq (t / 2)
-    have ha : ↑(Real.cosh (t / 2)) * ↑(Real.cosh (t / 2)) +
-        (↑(Real.sinh (t / 2)) : ℂ) * -↑(Real.sinh (t / 2)) = 1 := by
-      linear_combination hc
-    have hb : ↑(Real.cosh (t / 2)) * -↑(Real.sinh (t / 2)) +
-        (↑(Real.sinh (t / 2)) : ℂ) * ↑(Real.cosh (t / 2)) = 0 := by
-      ring
-    rw [ha, hb]
-  have hinv : (boost t)⁻¹ = boost (-t) := (eq_inv_of_mul_eq_one_right hprod).symm
   have hu := (isUnitary_principalSeries_iff τ e).mpr hτ
   refine (hasSum_norm_sq_boostMatrixElement_row τ hτ e n (-t)).congr_fun fun k => ?_
   have heq : (n - (e : ℕ) / 2 + k : ℝ) = ((n + k : ℤ) : ℝ) - (e : ℕ) / 2 := by
     push_cast
     ring
   rw [heq, ← principalSeries_matrixElement_boost_eq, ← principalSeries_matrixElement_boost_eq,
-    ← hinv, ContRepresentation.matrixElement_inv _ hu, norm_conj]
+    ← boost_inv, ContRepresentation.matrixElement_inv _ hu, norm_star]
 
 /-- **Bound.** `|𝔓^τ_{m'm}(cosh t)| ≤ 1` for `Re τ = -1/2` and weights in `e/2 + ℤ`. -/
 theorem norm_boostMatrixElement_le_one (τ : ℂ) (hτ : τ.re = -1 / 2) (e : Fin 2) (n' n : ℤ)
@@ -409,7 +384,7 @@ theorem boostMatrixElement_product_kernel (τ : ℂ) (t₁ t₂ : ℝ) (h₁ : 0
     linarith
   have hFc : Continuous (fun φ => F (x φ)) := by
     rw [← continuousOn_univ]
-    apply (contDiff_boostMatrixElement τ 0 0).continuous.continuousOn.comp
+    apply (contDiff_boostMatrixElement_radius τ 0 0).continuous.continuousOn.comp
       (Real.continuousOn_arcosh.comp hxcont.continuousOn (fun φ _ => hx1 φ))
     exact mapsTo_univ _ _
   have hrefl : (∫ φ in π..2 * π, F (x φ)) = ∫ φ in (0 : ℝ)..π, F (x φ) := by
@@ -725,7 +700,7 @@ private theorem boostMatrixElement_complementary_weight (τ : ℝ) (hτ : τ ∈
 
 /-- **Unitarity of the complementary series.** For `-1 < τ < 0`,
 `Σ_k w(k)/w(n) |𝔓^τ_{kn}|² = 1` with `w(n) = Γ(τ - n + 1) / Γ(-τ - n)`. -/
-theorem hasSum_complementary (τ : ℝ) (hτ : τ ∈ Ioo (-1) 0) (n : ℤ) (t : ℝ) :
+theorem hasSum_complementarySeries_weighted_norm_sq (τ : ℝ) (hτ : τ ∈ Ioo (-1) 0) (n : ℤ) (t : ℝ) :
     HasSum (fun k : ℤ => Real.Gamma (τ - k + 1) / Real.Gamma (-τ - k) /
         (Real.Gamma (τ - n + 1) / Real.Gamma (-τ - n)) *
         ‖boostMatrixElement τ k n t‖ ^ 2) 1 := by

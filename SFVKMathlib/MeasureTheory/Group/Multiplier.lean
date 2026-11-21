@@ -88,6 +88,12 @@ theorem multiplierAction_def (α : G → X → ℂ) (g : G) (f : X → ℂ) (x :
 def IsMultiplierCocycle (α : G → X → ℂ) : Prop :=
   (∀ x, α 1 x = 1) ∧ ∀ g h x, α (g * h) x = α g x * α h (g⁻¹ • x)
 
+/-- A multiplier cocycle is normalized at the identity and obeys the product law. -/
+theorem isMultiplierCocycle_def (α : G → X → ℂ) :
+    IsMultiplierCocycle α ↔
+      (∀ x, α 1 x = 1) ∧ ∀ g h x, α (g * h) x = α g x * α h (g⁻¹ • x) :=
+  Iff.rfl
+
 /-- A pointwise multiplier gives a representation on functions exactly when it is a cocycle. -/
 theorem multiplierAction_law_iff (α : G → X → ℂ) :
     ((∀ f x, multiplierAction α 1 f x = f x) ∧

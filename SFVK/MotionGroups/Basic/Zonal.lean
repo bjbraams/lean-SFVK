@@ -41,6 +41,7 @@ namespace SFVK.MotionGroups
 def hankelTransform (ν : ℂ) (φ : ℝ → ℂ) (R : ℝ) : ℂ :=
   ∫ r in Ioi (0 : ℝ), φ r * besselJ ν (R * r) * r
 
+/-- The Hankel transform integrates the radial profile against `J_ν` with radial weight `r dr`. -/
 theorem hankelTransform_def (ν : ℂ) (φ : ℝ → ℂ) (R : ℝ) :
     hankelTransform ν φ R = ∫ r in Ioi (0 : ℝ), φ r * besselJ ν (R * r) * r :=
   rfl
@@ -52,6 +53,7 @@ def besselZonal (n : ℕ) (lam : ℂ) (r : ℝ) : ℂ :=
   Complex.Gamma (n / 2) *
     ∑' k : ℕ, (-(lam ^ 2) * r ^ 2 / 4) ^ k / ((k.factorial : ℂ) * Complex.Gamma (k + n / 2))
 
+/-- The zonal Bessel function is the normalized power series in the squared spectral radius. -/
 theorem besselZonal_def (n : ℕ) (lam : ℂ) (r : ℝ) :
     besselZonal n lam r =
       Complex.Gamma (n / 2) *
@@ -63,6 +65,7 @@ theorem besselZonal_def (n : ℕ) (lam : ℂ) (r : ℝ) :
 @[expose]
 def motionSphericalFunction (n : ℕ) (lam : ℂ) (g : MotionGroup n) : ℂ := besselZonal n lam ‖g.a‖
 
+/-- The spherical function of a Euclidean motion depends on the length of its translation. -/
 theorem motionSphericalFunction_def (n : ℕ) (lam : ℂ) (g : MotionGroup n) :
     motionSphericalFunction n lam g = besselZonal n lam ‖g.a‖ :=
   rfl

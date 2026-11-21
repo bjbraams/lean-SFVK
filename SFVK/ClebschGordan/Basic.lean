@@ -9,3 +9,11 @@ public import SFVK.ClebschGordan.Basic.Coefficients
 public import SFVK.ClebschGordan.Basic.Coupling
 public import SFVK.ClebschGordan.Basic.Polynomials
 public import SFVK.ClebschGordan.Basic.SixJ
+
+/-!
+# Definitions for SU(2) coupling
+
+The natural indices encode doubled spins and integer steps from the lowest weight.
+This module collects the triangle conditions, Clebsch–Gordan coefficients, coupled
+vectors, finite Hahn and Racah sums, and the Wigner 6-j definition.
+-/

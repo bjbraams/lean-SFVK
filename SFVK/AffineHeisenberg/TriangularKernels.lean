@@ -24,7 +24,7 @@ Sources: Vilenkin–Klimyk Vol. 1 §§5.1–5.2, pp. 207–220; Klimyk–Vilenki
 The kernels use lean-DLMF's exponential Mellin, beta, Tricomi and Kummer integrals.
 -/
 
-@[expose] public section
+public section
 
 noncomputable section
 
@@ -80,19 +80,19 @@ private theorem integral_triangular_beta_Ioi (lam μ : ℂ) {t : ℝ} (ht : 0 < 
       ring_nf
 
 /-- §2.4. **Kernels of `g_+(t)`.** -/
-theorem triangularKernel_gPlus (σ ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
+theorem triangularKernel_translationElement (σ ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
     (lam.re < μ.re → 0 < lam.re →
-      triangularKernel σ ω 1 1 lam μ (gPlus t) =
+      triangularKernel σ ω 1 1 lam μ (translationElement t) =
         Gamma (μ - lam) * Gamma lam / (2 * π * Complex.I * Gamma μ) * (t : ℂ) ^ (lam - μ)) ∧
     (0 < lam.re → μ.re < 1 →
-      triangularKernel σ ω (-1) 1 lam μ (gPlus t) =
+      triangularKernel σ ω (-1) 1 lam μ (translationElement t) =
         Gamma lam * Gamma (1 - μ) / (2 * π * Complex.I * Gamma (lam - μ + 1)) *
           (t : ℂ) ^ (lam - μ)) ∧
     (lam.re < μ.re → μ.re < 1 →
-      triangularKernel σ ω (-1) (-1) lam μ (gPlus t) =
+      triangularKernel σ ω (-1) (-1) lam μ (translationElement t) =
         Gamma (1 - μ) * Gamma (μ - lam) / (2 * π * Complex.I * Gamma (1 - lam)) *
           (t : ℂ) ^ (lam - μ)) ∧
-    triangularKernel σ ω 1 (-1) lam μ (gPlus t) = 0 := by
+    triangularKernel σ ω 1 (-1) lam μ (translationElement t) = 0 := by
   have hpos : Ioi (0 : ℝ) ∩ {x : ℝ | 0 < x + t} = Ioi 0 := by
     ext x
     simp only [mem_inter_iff, mem_Ioi, mem_ofPred_eq, and_iff_left_iff_imp]
@@ -124,12 +124,13 @@ theorem triangularKernel_gPlus (σ ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
     rw [abs_of_pos (add_pos (show 0 < x from hx) ht)]
   refine ⟨?_, ?_, ?_, ?_⟩
   · intro hlm hlam
-    simp only [triangularKernel, gPlus, ofReal_zero, mul_zero, zero_mul, add_zero, Real.exp_zero,
+    simp only [triangularKernel, translationElement, ofReal_zero, mul_zero, zero_mul,
+      add_zero, Real.exp_zero,
       Complex.exp_zero, one_mul, Units.val_one, Int.cast_one, mul_one, hpos, hplus]
     rw [integral_triangular_beta_Ioi lam μ ht hlam hlm]
     ring
   · intro hlam hμ
-    simp only [triangularKernel, gPlus, ofReal_zero, mul_zero, add_zero, Real.exp_zero,
+    simp only [triangularKernel, translationElement, ofReal_zero, mul_zero, add_zero, Real.exp_zero,
       Complex.exp_zero, one_mul, Units.val_one, Units.val_neg, Int.cast_one, Int.cast_neg,
       neg_one_mul, zero_mul, mul_one, hfin]
     have hB := betaIntegral_scaled lam (1 - μ) ht
@@ -147,7 +148,7 @@ theorem triangularKernel_gPlus (σ ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
     rw [hInt, hB]
     ring
   · intro hlm hμ
-    simp only [triangularKernel, gPlus, ofReal_zero, mul_zero, add_zero, Real.exp_zero,
+    simp only [triangularKernel, translationElement, ofReal_zero, mul_zero, add_zero, Real.exp_zero,
       Complex.exp_zero, one_mul, Units.val_neg, Units.val_one, Int.cast_neg, Int.cast_one,
       neg_one_mul,
       zero_mul, mul_one, htail]
@@ -166,17 +167,17 @@ theorem triangularKernel_gPlus (σ ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
       show 1 - μ - (1 - lam) = lam - μ by ring,
       show 1 - lam - (1 - μ) = μ - lam by ring]
     ring
-  · simp only [triangularKernel, gPlus, ofReal_zero, mul_zero, add_zero, Real.exp_zero,
+  · simp only [triangularKernel, translationElement, ofReal_zero, mul_zero, add_zero, Real.exp_zero,
       Complex.exp_zero, one_mul, Units.val_neg, Units.val_one, Int.cast_neg, Int.cast_one,
       neg_one_mul, zero_mul, mul_one, hzero, Measure.restrict_empty, integral_zero_measure]
 
 /-- §2.4. **Kernel of `g_-(t)`.** -/
-theorem triangularKernel_gMinus (σ ω lam μ : ℂ) (t : ℝ) (hσt : (σ * t).re < 0)
+theorem triangularKernel_modulationElement (σ ω lam μ : ℂ) (t : ℝ) (hσt : (σ * t).re < 0)
     (hlm : μ.re < lam.re) :
-    triangularKernel σ ω 1 1 lam μ (gMinus t) =
+    triangularKernel σ ω 1 1 lam μ (modulationElement t) =
       Gamma (lam - μ) * (-σ * t) ^ (μ - lam) / (2 * π * Complex.I) ∧
-    triangularKernel σ ω 1 (-1) lam μ (gMinus t) = 0 ∧
-    triangularKernel σ ω (-1) 1 lam μ (gMinus t) = 0 := by
+    triangularKernel σ ω 1 (-1) lam μ (modulationElement t) = 0 ∧
+    triangularKernel σ ω (-1) 1 lam μ (modulationElement t) = 0 := by
   have hpos : 0 < (-σ * t).re := by rw [neg_mul, neg_re]; linarith
   have hRe : 0 < (lam - μ).re := by simpa only [sub_re] using sub_pos.mpr hlm
   have hset : Ioi (0 : ℝ) ∩ {x : ℝ | 0 < -x} = ∅ := by
@@ -187,7 +188,7 @@ theorem triangularKernel_gMinus (σ ω lam μ : ℂ) (t : ℝ) (hσt : (σ * t).
     linarith
   have hset' : Ioi (0 : ℝ) ∩ {x : ℝ | 0 < x} = Ioi 0 := inter_self _
   refine ⟨?_, ?_, ?_⟩
-  · simp only [triangularKernel, gMinus, ofReal_zero, mul_zero, Complex.exp_zero,
+  · simp only [triangularKernel, modulationElement, ofReal_zero, mul_zero, Complex.exp_zero,
       Real.exp_zero, Units.val_one, Int.cast_one, one_mul, add_zero, mul_one]
     rw [hset']
     have hEq : (∫ x in Ioi (0 : ℝ), (x : ℂ) ^ (lam - 1) * cexp (σ * t * x) *
@@ -204,11 +205,11 @@ theorem triangularKernel_gMinus (σ ω lam μ : ℂ) (t : ℝ) (hσt : (σ * t).
       ring
     rw [hEq, Complex.CubicLaplace.mellin_exp_neg_mul hRe hpos,
       neg_sub, one_div, div_eq_mul_inv, mul_comm]
-  · simp only [triangularKernel, gMinus, ofReal_zero, mul_zero, Complex.exp_zero,
+  · simp only [triangularKernel, modulationElement, ofReal_zero, mul_zero, Complex.exp_zero,
       Real.exp_zero, Units.val_neg, Units.val_one, Int.cast_neg, Int.cast_one, one_mul, add_zero,
       neg_one_mul]
     rw [hset, Measure.restrict_empty, integral_zero_measure, mul_zero]
-  · simp only [triangularKernel, gMinus, ofReal_zero, mul_zero, Complex.exp_zero,
+  · simp only [triangularKernel, modulationElement, ofReal_zero, mul_zero, Complex.exp_zero,
       Real.exp_zero, Units.val_neg, Units.val_one, Int.cast_neg, Int.cast_one, one_mul, add_zero,
       neg_one_mul]
     rw [hset, Measure.restrict_empty, integral_zero_measure, mul_zero]
@@ -314,16 +315,16 @@ private theorem integral_scaled_whittakerM (a q : ℂ) {t : ℝ} (ht : 0 < t)
 
 
 /-- §2.5. **Whittaker kernels of `g_1(t)`** (at `σ = -1`). -/
-theorem triangularKernel_gOne (ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
+theorem triangularKernel_equalTranslationModulation (ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
     (0 < lam.re →
-      triangularKernel (-1) ω 1 1 lam μ (gOne t) =
+      triangularKernel (-1) ω 1 1 lam μ (equalTranslationModulation t) =
         Gamma lam * whittakerW ((1 - lam - μ) / 2) ((lam - μ) / 2) ((t : ℂ) ^ 2) /
           (2 * π * Complex.I * t)) ∧
     (0 < lam.re → μ.re < 1 →
-      triangularKernel (-1) ω (-1) 1 lam μ (gOne t) =
+      triangularKernel (-1) ω (-1) 1 lam μ (equalTranslationModulation t) =
         Gamma lam * Gamma (1 - μ) * whittakerM ((1 - lam - μ) / 2) ((lam - μ) / 2) ((t : ℂ) ^ 2) /
           (2 * π * Complex.I * t * Gamma (lam - μ + 1))) ∧
-    triangularKernel (-1) ω 1 (-1) lam μ (gOne t) = 0 := by
+    triangularKernel (-1) ω 1 (-1) lam μ (equalTranslationModulation t) = 0 := by
   have hpos : Ioi (0 : ℝ) ∩ {x : ℝ | 0 < x + t} = Ioi 0 := by
     ext x
     simp only [mem_inter_iff, mem_Ioi, mem_ofPred_eq, and_iff_left_iff_imp]
@@ -340,7 +341,8 @@ theorem triangularKernel_gOne (ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
     linarith
   refine ⟨?_, ?_, ?_⟩
   · intro hl
-    simp only [triangularKernel, gOne, ofReal_zero, mul_zero, zero_add, Real.exp_zero,
+    simp only [triangularKernel, equalTranslationModulation, ofReal_zero, mul_zero,
+      zero_add, Real.exp_zero,
       Units.val_one, Int.cast_one, one_mul, mul_one, neg_one_mul, hpos,
       ofReal_div, ofReal_pow, ofReal_ofNat, ← neg_div]
     have hInt : (∫ x in Ioi (0 : ℝ), (x : ℂ) ^ (lam - 1) * cexp (-(t : ℂ) * x) *
@@ -356,7 +358,8 @@ theorem triangularKernel_gOne (ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
     ring
   · intro hl hm
     have hm' : 0 < (-μ + 1).re := by simp only [add_re, neg_re, one_re]; linarith
-    simp only [triangularKernel, gOne, ofReal_zero, mul_zero, zero_add, Real.exp_zero,
+    simp only [triangularKernel, equalTranslationModulation, ofReal_zero, mul_zero,
+      zero_add, Real.exp_zero,
       Units.val_neg, Units.val_one, Int.cast_neg, Int.cast_one, one_mul, neg_one_mul, hfin,
       ofReal_div, ofReal_pow, ofReal_ofNat, ← neg_div]
     have hInt : (∫ x in Ioo (0 : ℝ) t, (x : ℂ) ^ (lam - 1) * cexp (-(t : ℂ) * -1 * x) *
@@ -373,21 +376,22 @@ theorem triangularKernel_gOne (ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
       show (-μ - lam + 1) / 2 = (1 - lam - μ) / 2 by ring,
       show -μ + 1 = 1 - μ by ring, ← sub_eq_add_neg]
     ring
-  · simp only [triangularKernel, gOne, ofReal_zero, mul_zero, zero_add, Real.exp_zero,
+  · simp only [triangularKernel, equalTranslationModulation, ofReal_zero, mul_zero,
+    zero_add, Real.exp_zero,
       Units.val_one, Units.val_neg, Int.cast_one, Int.cast_neg, one_mul, mul_one, neg_one_mul,
       hzero, Measure.restrict_empty, integral_zero_measure, mul_zero]
 
 /-- §2.5. **Whittaker kernels of `g_2(t)`** (at `σ = -1`). -/
-theorem triangularKernel_gTwo (ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
+theorem triangularKernel_oppositeTranslationModulation (ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
     (μ.re < 1 →
-      triangularKernel (-1) ω 1 1 lam μ (gTwo t) =
+      triangularKernel (-1) ω 1 1 lam μ (oppositeTranslationModulation t) =
         Gamma (1 - μ) * whittakerW ((lam + μ - 1) / 2) ((lam - μ) / 2) ((t : ℂ) ^ 2) /
           (2 * π * Complex.I * t)) ∧
     (0 < lam.re → μ.re < 1 →
-      triangularKernel (-1) ω 1 (-1) lam μ (gTwo t) =
+      triangularKernel (-1) ω 1 (-1) lam μ (oppositeTranslationModulation t) =
         Gamma lam * Gamma (1 - μ) * whittakerM ((lam + μ - 1) / 2) ((lam - μ) / 2) ((t : ℂ) ^ 2) /
           (2 * π * Complex.I * t * Gamma (lam - μ + 1))) ∧
-    triangularKernel (-1) ω (-1) 1 lam μ (gTwo t) = 0 := by
+    triangularKernel (-1) ω (-1) 1 lam μ (oppositeTranslationModulation t) = 0 := by
   have htail : Ioi (0 : ℝ) ∩ {x : ℝ | 0 < x + -t} = Ioi t := by
     ext x
     simp only [mem_inter_iff, mem_Ioi, mem_ofPred_eq]
@@ -410,7 +414,8 @@ theorem triangularKernel_gTwo (ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
   refine ⟨?_, ?_, ?_⟩
   · intro hm
     have hm' : 0 < (1 - μ).re := by simp only [sub_re, one_re]; linarith
-    simp only [triangularKernel, gTwo, ofReal_zero, mul_zero, zero_add, Real.exp_zero,
+    simp only [triangularKernel, oppositeTranslationModulation, ofReal_zero, mul_zero,
+      zero_add, Real.exp_zero,
       Units.val_one, Int.cast_one, one_mul, mul_one, neg_one_mul, htail,
       ofReal_neg, ofReal_div, ofReal_pow, ofReal_ofNat, neg_neg]
     rw [integral_Ioi_translate t]
@@ -434,7 +439,8 @@ theorem triangularKernel_gTwo (ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
   · intro hl hm
     have hm' : 0 < (1 - μ).re := by simp only [sub_re, one_re]; linarith
     have hl' : 0 < (lam - 1 + 1).re := by rwa [sub_add_cancel]
-    simp only [triangularKernel, gTwo, ofReal_zero, mul_zero, zero_add, Real.exp_zero,
+    simp only [triangularKernel, oppositeTranslationModulation, ofReal_zero, mul_zero,
+      zero_add, Real.exp_zero,
       Units.val_one, Units.val_neg, Int.cast_one, Int.cast_neg, one_mul, mul_one, neg_one_mul, hfin,
       ofReal_neg, ofReal_div, ofReal_pow, ofReal_ofNat, neg_neg]
     let F : ℝ → ℂ := fun x =>
@@ -461,7 +467,8 @@ theorem triangularKernel_gTwo (ω lam μ : ℂ) (t : ℝ) (ht : 0 < t) :
       show ((1 - μ) + (lam - 1)) / 2 = (lam - μ) / 2 by ring,
       sub_add_cancel, show 1 - μ + (lam - 1) + 1 = lam - μ + 1 by ring]
     ring
-  · simp only [triangularKernel, gTwo, ofReal_zero, mul_zero, zero_add, Real.exp_zero,
+  · simp only [triangularKernel, oppositeTranslationModulation, ofReal_zero, mul_zero,
+    zero_add, Real.exp_zero,
       Units.val_one, Units.val_neg, Int.cast_one, Int.cast_neg, one_mul, neg_one_mul,
       hzero, Measure.restrict_empty, integral_zero_measure, mul_zero]
 

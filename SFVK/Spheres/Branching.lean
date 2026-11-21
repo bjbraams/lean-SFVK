@@ -40,6 +40,7 @@ namespace BranchingLaplacian
 
 open MvPolynomial
 
+/-- Differentiation in the last variable kills a polynomial using only the earlier variables. -/
 private theorem pderiv_last_rename_castSucc {m : ℕ} (h : MvPolynomial (Fin m) ℝ) :
     pderiv (Fin.last m) (rename Fin.castSucc h) = 0 := by
   induction h using MvPolynomial.induction_on with
@@ -47,11 +48,14 @@ private theorem pderiv_last_rename_castSucc {m : ℕ} (h : MvPolynomial (Fin m) 
   | add p q hp hq => simp [hp, hq]
   | mul_X p i hp => simp [pderiv_X_of_ne (Fin.castSucc_ne_last i), hp]
 
+/-- The Laplacian commutes with adjoining an unused last coordinate. -/
 private theorem laplacian_rename_castSucc {m : ℕ} (h : MvPolynomial (Fin m) ℝ) :
     laplacian (rename Fin.castSucc h) = rename Fin.castSucc (laplacian h) := by
   simp only [laplacian_apply, map_sum, Fin.sum_univ_castSucc,
     pderiv_rename (Fin.castSucc_injective m), pderiv_last_rename_castSucc, map_zero, add_zero]
 
+/-- A last-coordinate power contributes its second derivative when the remaining factor is
+independent of that coordinate. -/
 private theorem laplacian_X_pow_mul {σ : Type*} [Fintype σ] [DecidableEq σ]
     (i : σ) {h : MvPolynomial σ ℝ} (hh : laplacian h = 0) (hi : pderiv i h = 0) (j : ℕ) :
     laplacian (X i ^ j * h) = (j : MvPolynomial σ ℝ) *
@@ -78,6 +82,7 @@ private theorem laplacian_X_pow_mul {σ : Type*} [Fintype σ] [DecidableEq σ]
     rw [ite_eq_right hx, map_zero]
   · simp
 
+/-- The Laplacian product rule for powers of the squared norm and a polynomial. -/
 private theorem laplacian_normSq_pow_mul_general {σ : Type*} [Fintype σ]
     {h : MvPolynomial σ ℝ} {d : ℕ} (hh : h.IsHomogeneous d) (a : ℕ) :
     laplacian (normSq σ ℝ ^ a * h) = normSq σ ℝ ^ a * laplacian h +
@@ -100,6 +105,8 @@ private theorem laplacian_normSq_pow_mul_general {σ : Type*} [Fintype σ]
       rw [pow_succ' (normSq σ ℝ) a]
       ring
 
+/-- The Laplacian of a radial power times a coordinate power acting on a lower-dimensional harmonic.
+-/
 private theorem laplacian_radial_mul_coordinate_pow {σ : Type*} [Fintype σ] [DecidableEq σ]
     (i : σ) {h : MvPolynomial σ ℝ} {k : ℕ} (hh : h.IsHomogeneous k)
     (hl : laplacian h = 0) (hi : pderiv i h = 0) (a j : ℕ) :
@@ -114,6 +121,7 @@ private theorem laplacian_radial_mul_coordinate_pow {σ : Type*} [Fintype σ] [D
   simp only [nsmul_eq_mul, Nat.cast_add, Nat.cast_mul, Nat.cast_ofNat]
   ring
 
+/-- The linear form at the last coordinate vector is the last polynomial variable. -/
 private theorem linearForm_single {n : ℕ} (i : Fin n) :
     linearForm (EuclideanSpace.single i (1 : ℝ)) = X i := by
   classical
@@ -123,6 +131,7 @@ private theorem linearForm_single {n : ℕ} (i : Fin n) :
     simp [EuclideanSpace.single, h]
   · simp
 
+/-- Multiplication by a constant commutes with the polynomial Laplacian. -/
 private theorem laplacian_C_mul {σ : Type*} [Fintype σ] (c : ℝ) (p : MvPolynomial σ ℝ) :
     laplacian (C c * p) = C c * laplacian p := by
   simp only [C_mul', map_smul]
@@ -214,10 +223,13 @@ namespace BranchingCoordinates
 
 open Polynomial
 
+/-- View a multivariate polynomial as a polynomial in the last variable with coefficients in the
+other variables. -/
 private noncomputable def lastVariableEquiv (m : ℕ) :
     MvPolynomial (Fin (m + 1)) ℝ ≃ₐ[ℝ] (MvPolynomial (Fin m) ℝ)[X] :=
   (MvPolynomial.renameEquiv ℝ finSuccEquivLast).trans (MvPolynomial.optionEquivLeft ℝ (Fin m))
 
+/-- An embedded lower-dimensional polynomial is constant in the last-variable presentation. -/
 private theorem lastVariableEquiv_rename (m : ℕ) (h : MvPolynomial (Fin m) ℝ) :
     lastVariableEquiv m (MvPolynomial.rename Fin.castSucc h) = C h := by
   induction h using MvPolynomial.induction_on with
@@ -230,12 +242,14 @@ private theorem lastVariableEquiv_rename (m : ℕ) (h : MvPolynomial (Fin m) ℝ
       simp [lastVariableEquiv, finSuccEquivLast_castSucc]
     rw [hi, map_mul]
 
+/-- The squared norm splits into the square of the last variable and the earlier squared norm. -/
 private theorem lastVariableEquiv_normSq (m : ℕ) :
     lastVariableEquiv m (MvPolynomial.normSq (Fin (m + 1)) ℝ) =
       X ^ 2 + C (MvPolynomial.normSq (Fin m) ℝ) := by
   rw [MvPolynomial.normSq_def, MvPolynomial.normSq_def, map_sum, map_sum, Fin.sum_univ_castSucc]
   simp [lastVariableEquiv, finSuccEquivLast_castSucc, finSuccEquivLast_last, add_comm]
 
+/-- The last-variable form of a branching factor is monic of the prescribed degree. -/
 private theorem isMonicOfDegree_lastVariableEquiv_branchFactor {m : ℕ} (hm : 1 ≤ m) (l k : ℕ) :
     IsMonicOfDegree (lastVariableEquiv m (branchFactor m l k)) (l - k) := by
   let R := MvPolynomial (Fin m) ℝ
@@ -286,6 +300,7 @@ private theorem isMonicOfDegree_lastVariableEquiv_branchFactor {m : ℕ} (hm : 1
     · rw [coeff_zero, coeff_zonalPolynomial_eq_zero_of_not_even
         (by dsimp [n]; omega) (Nat.le_of_lt_succ (Finset.mem_range.mp hj)) hpar, map_zero]
 
+/-- The leading last-variable coefficient of a branch is its lower-dimensional harmonic. -/
 private theorem coeff_lastVariableEquiv_branchHarmonic {m : ℕ} (hm : 1 ≤ m) (l k : ℕ)
     (h : MvPolynomial (Fin m) ℝ) :
     (lastVariableEquiv m (branchHarmonic m l k h)).coeff (l - k) = h := by
@@ -293,6 +308,7 @@ private theorem coeff_lastVariableEquiv_branchHarmonic {m : ℕ} (hm : 1 ≤ m) 
     (isMonicOfDegree_iff _ _).mp (isMonicOfDegree_lastVariableEquiv_branchFactor hm l k) |>.2,
     one_mul]
 
+/-- Coefficients above the last-variable degree of a branch vanish. -/
 private theorem coeff_lastVariableEquiv_branchHarmonic_eq_zero {m : ℕ} (hm : 1 ≤ m) (l k : ℕ)
     (h : MvPolynomial (Fin m) ℝ) {j : ℕ} (hj : l - k < j) :
     (lastVariableEquiv m (branchHarmonic m l k h)).coeff j = 0 := by
@@ -301,6 +317,8 @@ private theorem coeff_lastVariableEquiv_branchHarmonic_eq_zero {m : ℕ} (hm : 1
   rw [(isMonicOfDegree_lastVariableEquiv_branchFactor hm l k).natDegree_eq]
   exact hj
 
+/-- The leading last-variable coefficient recovers the input harmonic, so the branch map is
+injective. -/
 private theorem branchHarmonic_injective {m : ℕ} (hm : 1 ≤ m) (l k : ℕ) :
     Function.Injective (branchHarmonic m l k) := by
   intro h₁ h₂ he

@@ -81,7 +81,7 @@ Theorem 10.5.4 beyond p. 373; VK §6.4.3, §6.4.6, §6.7.5 (cited by Roadmap 2 o
 ## Prior formalization (Part B)
 
 New lean-SFVK files (never edits of existing ones), all building:
-- `SFVK/SU11/Basic/MatrixElementsBasic.lean`: `boostMatrixElement`, `parabolic`, `sinhMeasure`,
+- `SFVK/SU11/Basic/BoostMatrixElements.lean`: `boostMatrixElement`, `parabolic`, `sinhMeasure`,
   `plancherelMeasure`, `mehlerFock`, `mehlerFockOrder` with `_def` lemmas; proved
   `exp_neg_abs_le_re_boostBase` (bases off the branch cut), `entryA_parabolic`,
   `entryB_parabolic`, `parabolic_zero`, `parabolic_add`. No sorry.

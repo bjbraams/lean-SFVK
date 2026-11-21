@@ -41,6 +41,16 @@ def multiplierRepresentation (μ : Measure X) (α : G → X → ℂ) :
       ∀ g f, (U g f : X → ℂ) =ᵐ[μ] multiplierAction α g f then h.choose
   else .ofMonoidHom 1
 
+open scoped Classical in
+/-- The multiplier representation chooses an almost-everywhere realization when one exists and
+takes the trivial representation otherwise. -/
+theorem multiplierRepresentation_def (μ : Measure X) (α : G → X → ℂ) :
+    multiplierRepresentation μ α =
+      if h : ∃ U : ContRepresentation ℂ G (Lp ℂ 2 μ),
+          ∀ g f, (U g f : X → ℂ) =ᵐ[μ] multiplierAction α g f then h.choose
+      else .ofMonoidHom 1 :=
+  rfl
+
 /-- When some representation realizes the multiplier formula, so does
 `multiplierRepresentation`. -/
 theorem multiplierRepresentation_ae_eq {μ : Measure X} {α : G → X → ℂ}
@@ -48,10 +58,8 @@ theorem multiplierRepresentation_ae_eq {μ : Measure X} {α : G → X → ℂ}
       ∀ g f, (U g f : X → ℂ) =ᵐ[μ] multiplierAction α g f) (g : G) (f : Lp ℂ 2 μ) :
     (multiplierRepresentation μ α g f : X → ℂ) =ᵐ[μ] multiplierAction α g f := by
   classical
-  unfold multiplierRepresentation
-  split_ifs with h'
-  · exact h'.choose_spec g f
-  · exact absurd h h'
+  rw [multiplierRepresentation_def, dite_eq_left h]
+  exact h.choose_spec g f
 
 /-- A continuous multiplier cocycle on a compact space with invariant finite measure has an
 `L²` realization with continuous orbit maps. -/

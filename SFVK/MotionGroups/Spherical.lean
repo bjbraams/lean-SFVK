@@ -60,7 +60,7 @@ private theorem besselZonal_eq_regularized (n : ℕ) (lam : ℂ) (r : ℝ) :
 
 /-- Bessel form of the zonal function (Vilenkin–Klimyk Vol. 2 §9.3.2 (8)–(10), p. 48): for `λ`
 in the slit plane and `r > 0`, `Ω_n(λ, r) = Γ(n/2) (2/(λr))^{n/2-1} J_{n/2-1}(λr)`. -/
-theorem besselZonal_eq_besselJ {n : ℕ} (hn : 1 ≤ n) {lam : ℂ} (hlam : lam ∈ slitPlane) {r : ℝ}
+theorem besselZonal_eq_besselJ {n : ℕ} {lam : ℂ} (hlam : lam ∈ slitPlane) {r : ℝ}
     (hr : 0 < r) :
     besselZonal n lam r =
       Complex.Gamma (n / 2) * (2 / (lam * r)) ^ ((n : ℂ) / 2 - 1) *
@@ -215,7 +215,7 @@ theorem besselZonal_eq_integral_sphere {n : ℕ} (hn : 1 ≤ n) (lam : ℂ)
   rw [mul_assoc I lam, mul_pow I, Complex.I_sq]
   ring
 
-/-- The zonal function is smooth in `r`. -/
+/-- The zonal function is real analytic in `r`. -/
 theorem contDiff_besselZonal (n : ℕ) (lam : ℂ) : ContDiff ℝ ⊤ (besselZonal n lam) := by
   have hcomplex : ContDiff ℂ ⊤ (regularizedHGFun (∅ : Multiset ℂ) {(n : ℂ) / 2}) := by
     rw [contDiff_iff_contDiffAt]
@@ -305,6 +305,12 @@ theorem isSphericalFunction_motion_iff {n : ℕ} (hn : 2 ≤ n) (ν : Measure (r
       ∃ lam : ℂ, φ = motionSphericalFunction n lam := by
   sorry
 
+/-- The zonal Bessel function depends only on the absolute value of the radius. -/
+theorem besselZonal_abs (n : ℕ) (lam : ℂ) (r : ℝ) :
+    besselZonal n lam |r| = besselZonal n lam r := by
+  rw [besselZonal_eq_regularized, besselZonal_eq_regularized, mul_pow, mul_pow,
+    show ((|r| : ℝ) : ℂ) ^ 2 = (r : ℂ) ^ 2 by exact_mod_cast sq_abs r]
+
 /-- The parameter is determined up to sign: `φ_λ = φ_μ` exactly when `λ² = μ²`. -/
 theorem motionSphericalFunction_inj {n : ℕ} (hn : 1 ≤ n) (lam μ : ℂ) :
     motionSphericalFunction n lam = motionSphericalFunction n μ ↔ lam ^ 2 = μ ^ 2 := by
@@ -313,10 +319,7 @@ theorem motionSphericalFunction_inj {n : ℕ} (hn : 1 ≤ n) (lam μ : ℂ) :
     let i : Fin n := ⟨0, by omega⟩
     have hnorm (z : ℂ) (r : ℝ) : besselZonal n z ‖EuclideanSpace.single i r‖ =
         besselZonal n z r := by
-      rw [besselZonal_eq_regularized, besselZonal_eq_regularized, EuclideanSpace.single,
-        PiLp.norm_single, Real.norm_eq_abs]
-      have hr : ((|r| : ℝ) : ℂ) ^ 2 = (r : ℂ) ^ 2 := by exact_mod_cast sq_abs r
-      rw [mul_pow, mul_pow, hr]
+      rw [EuclideanSpace.single, PiLp.norm_single, Real.norm_eq_abs, besselZonal_abs]
     have hg : besselZonal n lam = besselZonal n μ := by
       funext r
       have hr := congrFun h (⟨EuclideanSpace.single i r, 1⟩ : MotionGroup n)
@@ -347,49 +350,30 @@ theorem motionSphericalFunction_inj {n : ℕ} (hn : 1 ≤ n) (lam μ : ℂ) :
     simp only [motionSphericalFunction_def, besselZonal_eq_regularized, mul_pow, h]
 
 /-- For real `λ` the zonal function is bounded by `1`. -/
-theorem norm_besselZonal_le_one {n : ℕ} (hn : 1 ≤ n) {lam : ℂ} (hlam : lam.im = 0) (r : ℝ) :
-    ‖besselZonal n lam r‖ ≤ 1 := by
-  have hlam' : lam = (lam.re : ℂ) := by
-    apply Complex.ext <;> simp [hlam]
-  let x := |lam.re * r|
-  have hx : 0 ≤ x := abs_nonneg _
-  have hz : besselZonal n lam r = besselZonal n 1 x := by
-    rw [besselZonal_eq_regularized, besselZonal_eq_regularized, one_mul, hlam']
-    have he : (x : ℂ) ^ 2 = ((lam.re : ℂ) * (r : ℂ)) ^ 2 := by
-      norm_cast
-      exact sq_abs (lam.re * r)
-    rw [he]
-  rw [hz]
-  rcases hx.eq_or_lt with hx | hx
-  · simp [← hx, besselZonal_zero_right hn]
-  have hnpos : 0 < (n : ℝ) / 2 := by exact div_pos (by exact_mod_cast hn) two_pos
-  let ν := (n : ℝ) / 2 - 1
-  have hνbound : -(1 / 2 : ℝ) ≤ ν := by
-    have hn' : (1 : ℝ) ≤ n := by exact_mod_cast hn
-    dsimp [ν]
-    linarith
-  have hΓ : ‖Complex.Gamma (n / 2)‖ = Real.Gamma ((n : ℝ) / 2) := by
-    rw [← Complex.ofReal_natCast, ← Complex.ofReal_ofNat, ← Complex.ofReal_div,
-      Complex.Gamma_ofReal, Complex.norm_real,
-      Real.norm_of_nonneg (Real.Gamma_pos_of_pos hnpos).le]
-  have hν : (ν : ℂ) = (n : ℂ) / 2 - 1 := by simp [ν]
-  have hpow : ‖(2 / (1 * (x : ℂ))) ^ (ν : ℂ)‖ = ((x / 2) ^ ν)⁻¹ := by
-    rw [one_mul, ← Complex.ofReal_ofNat, ← Complex.ofReal_div,
-      ← Complex.ofReal_cpow (by positivity), Complex.norm_real, Real.norm_of_nonneg (by positivity),
-      ← inv_div, Real.inv_rpow (by positivity)]
-  have h := DLMF.Bessel.norm_besselJ_le_exp_abs_im hνbound
-    (z := (x : ℂ)) (Complex.ofReal_ne_zero.mpr hx.ne')
-  rw [Complex.ofReal_im, abs_zero, Real.exp_zero, mul_one, Complex.norm_real,
-    Real.norm_of_nonneg hx.le] at h
-  rw [besselZonal_eq_besselJ hn (by simp) hx, ← hν, norm_mul, norm_mul, hΓ, hpow]
-  simp only [one_mul]
-  calc
-    _ ≤ Real.Gamma ((n : ℝ) / 2) * ((x / 2) ^ ν)⁻¹ *
-          ((x / 2) ^ ν / Real.Gamma (ν + 1)) := by gcongr
-    _ = 1 := by
-      rw [show ν + 1 = (n : ℝ) / 2 by dsimp [ν]; ring]
-      field_simp [ne_of_gt (Real.Gamma_pos_of_pos hnpos), ne_of_gt (Real.rpow_pos_of_pos
-        (div_pos hx two_pos) ν)]
+theorem norm_besselZonal_le_one {n : ℕ} (hn : 1 ≤ n) {lam : ℂ}
+    (hlam : lam.im = 0) (r : ℝ) : ‖besselZonal n lam r‖ ≤ 1 := by
+  let E := EuclideanSpace ℝ (Fin n)
+  let i : Fin n := ⟨0, by omega⟩
+  let a : E := EuclideanSpace.single i r
+  let μ := (volume : Measure E).toSphere
+  have heven : besselZonal n lam ‖a‖ = besselZonal n lam r := by
+    rw [show a = EuclideanSpace.single i r from rfl, EuclideanSpace.single, PiLp.norm_single,
+      Real.norm_eq_abs, besselZonal_abs]
+  rw [← heven, besselZonal_eq_integral_sphere hn]
+  let f (ξ : Metric.sphere (0 : E) 1) : ℂ := Complex.exp (I * lam * (⟪a, (ξ : E)⟫_ℝ : ℝ))
+  let v := (μ univ).toReal
+  change ‖(v⁻¹ : ℝ) * ∫ ξ, f ξ ∂μ‖ ≤ 1
+  have hv : 0 ≤ v := ENNReal.toReal_nonneg
+  have hf (ξ : Metric.sphere (0 : E) 1) : ‖f ξ‖ = 1 := by
+    simp [f, Complex.norm_exp, Complex.mul_re, Complex.mul_im, hlam]
+  have hI : ‖∫ ξ, f ξ ∂μ‖ ≤ v := by
+    refine (norm_integral_le_integral_norm _).trans_eq ?_
+    simp only [hf, integral_const, smul_eq_mul, mul_one, Measure.real_def, v]
+  rw [norm_mul, Complex.norm_real, Real.norm_of_nonneg (inv_nonneg.mpr hv)]
+  refine (mul_le_mul_of_nonneg_left hI (inv_nonneg.mpr hv)).trans ?_
+  by_cases h : v = 0
+  · simp [h]
+  · rw [inv_mul_cancel₀ h]
 
 /-- The zonal matrix element of the circle model is the spherical function at `n = 2`:
 `D_{00}(g) = J₀(R|a|) = Ω₂(R, |a|)`. -/
@@ -526,10 +510,10 @@ theorem bounded_besselZonal_iff {n : ℕ} (hn : 1 ≤ n) (lam : ℂ) :
 
 /-- Plane-wave expansion in `ℝ³` (DLMF 10.60.7 with 14.30.9), with lean-DLMF's spherical Bessel
 function `j_l` and spherical harmonics `Y_{l,m}`: for `κ, r > 0` and the angle `γ` between the
-directions `(θ, φ)` and `(θ', φ')`,
+directions `(θ, φ)` and `(θ', φ')` with polar angles in `[0, π]`,
 `e^{iκr cos γ} = 4π Σ_l i^l j_l(κr) Σ_m Y_{l,m}(θ, φ) conj Y_{l,m}(θ', φ')`. -/
 theorem hasSum_planeWave_sphericalHarmonic {κ r : ℝ} (hκ : 0 < κ) (hr : 0 < r)
-    (θ φ θ' φ' : ℝ) :
+    (θ φ θ' φ' : ℝ) (hθ : θ ∈ Set.Icc 0 π) (hθ' : θ' ∈ Set.Icc 0 π) :
     HasSum (fun l : ℕ => 4 * π * I ^ l * DLMF.Bessel.sphericalJ l (κ * r) *
         ∑ m ∈ Finset.Icc (-(l : ℤ)) l,
           DLMF.Legendre.sphericalHarmonic l m θ φ *
