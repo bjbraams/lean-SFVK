@@ -8,6 +8,7 @@ module
 public import DLMF.Legendre.RelatedFunctions
 public import DLMF.OrthogonalPolynomials.Basic.Definitions
 public import SFVK.RankOne.HarishChandra
+public import SFVK.RankOne.JacobiDensity
 public import SFVK.SU11.Basic.MatrixElementsBasic
 import DLMF.Hypergeometric.ParameterHolomorphy
 import DLMF.Hypergeometric.Basic.GaussSeries
@@ -699,12 +700,6 @@ theorem tendsto_jacobiFunction_mul_exp (α β lam : ℂ) (hα : ∀ k : ℕ, α 
   rw [heq, regularizedGaussHypergeometric_symm a b c (neg_sinh_sq_mem_cutPlane t), hpf,
     ← Jacobi.ofReal_cpow_mul_exp_eq_div_cpow (Real.cosh t) (Real.cosh_pos t) t w]
   ring
-
-/-- **Polynomial growth of the Plancherel density**: for real `α > −1`,
-`|c(λ)|⁻² ≤ C (1 + |λ|)^{2α + 1}` on the real line. -/
-theorem norm_cFunction_inv_sq_le (α β : ℝ) (hα : -1 < α) :
-    ∃ C, ∀ lam : ℝ, ‖cFunction α β lam‖⁻¹ ^ 2 ≤ C * (1 + |lam|) ^ (2 * α + 1) := by
-  sorry
 
 namespace Jacobi
 

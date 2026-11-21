@@ -9,6 +9,7 @@ public import SFVK.AffineHeisenberg.Basic
 public import SFVK.AffineHeisenberg.Groups
 public import SFVK.AffineHeisenberg.Affine
 public import SFVK.AffineHeisenberg.Triangular
+public import SFVK.AffineHeisenberg.TriangularKernels
 public import SFVK.AffineHeisenberg.Heisenberg
 public import SFVK.AffineHeisenberg.Oscillator
 public import SFVK.AffineHeisenberg.Miller

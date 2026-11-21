@@ -6,6 +6,11 @@ Authors: Bastiaan J Braams
 module
 
 import DLMF.Gamma.MellinBarnes
+import DLMF.Gamma.Integrals.ExponentialMellin
+import DLMFMathlib.Analysis.MellinCubicLaplace
+import DLMFMathlib.Analysis.MellinParseval
+import Mathlib.Analysis.Calculus.Deriv.Support
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 public import SFVK.AffineHeisenberg.Basic
 
 /-!
@@ -61,12 +66,102 @@ theorem mellin_affineAction_dilation (lam : ℂ) (a : ℝ) (ha : 0 < a) (f : ℝ
     simp [affineAction]
   rw [this, mellin_comp_mul_left f w ha, smul_eq_mul]
 
+/-- Multiplication by the variable shifts the Mellin parameter by one. -/
+theorem mellin_mul_variable (f : ℝ → ℂ) (w : ℂ) :
+    mellin (fun x => (x : ℂ) * f x) w = mellin f (w + 1) := by
+  simpa only [cpow_one, smul_eq_mul] using mellin_cpow_smul f w 1
+
+/-- Compact support disjoint from zero stays compact on the positive half-line. -/
+theorem isCompact_tsupport_inter_Ioi {f : ℝ → ℂ}
+    (hfc : HasCompactSupport f) (hf0 : (0 : ℝ) ∉ tsupport f) :
+    IsCompact (tsupport f ∩ Ioi 0) := by
+  have he : tsupport f ∩ Ioi 0 = tsupport f ∩ Ici 0 := by
+    ext x
+    constructor
+    · rintro ⟨hx, hp⟩
+      exact ⟨hx, hp.le⟩
+    · rintro ⟨hx, hp⟩
+      have hn : x ≠ 0 := by
+        rintro rfl
+        exact hf0 hx
+      exact ⟨hx, lt_of_le_of_ne hp hn.symm⟩
+  rw [he]
+  exact hfc.inter_right isClosed_Ici
+
+/-- The logarithmic coordinate transports compact positive support to compact support. -/
+theorem hasCompactSupport_mellinLog (f : ℝ → ℂ) (w : ℂ)
+    (hc : IsCompact (tsupport f ∩ Ioi 0)) :
+    HasCompactSupport (fun u : ℝ => Complex.exp (-w * u) * f (Real.exp (-u))) := by
+  have hlog : ContinuousOn (fun x : ℝ => -Real.log x) (tsupport f ∩ Ioi 0) :=
+    Real.continuousOn_log.neg.mono (fun _ hx => hx.2.ne')
+  have hbound : IsCompact ((fun x : ℝ => -Real.log x) '' (tsupport f ∩ Ioi 0)) :=
+    hc.image_of_continuousOn hlog
+  apply hbound.of_isClosed_subset isClosed_closure
+  apply closure_minimal _ hbound.isClosed
+  intro u hu
+  refine ⟨Real.exp (-u), ⟨?_, Real.exp_pos _⟩, by simp⟩
+  refine subset_closure ?_
+  intro hf
+  exact hu (by dsimp only; rw [hf, mul_zero])
+
+/-- The Euler derivative is diagonal in the Mellin transform. -/
+theorem mellin_mul_deriv (f : ℝ → ℂ) (w : ℂ) (hf : ContDiff ℝ 1 f)
+    (hfc : HasCompactSupport f) (hf0 : (0 : ℝ) ∉ tsupport f) :
+    mellin (fun x => (x : ℂ) * deriv f x) w = -w * mellin f w := by
+  let H : ℝ → ℂ := fun u => Complex.exp (-w * u) * f (Real.exp (-u))
+  have hHc : ContDiff ℝ 1 H := by
+    dsimp only [H]
+    have he : ContDiff ℝ 1 (fun u : ℝ => Complex.exp (-w * u)) :=
+      ((contDiff_const (c := -w)).mul
+        (Complex.ofRealCLM.contDiff : ContDiff ℝ 1 (fun x : ℝ => (x : ℂ)))).cexp
+    exact he.mul (hf.comp (by fun_prop))
+  have hHcs : HasCompactSupport H :=
+    hasCompactSupport_mellinLog f w (isCompact_tsupport_inter_Ioi hfc hf0)
+  have hd (u : ℝ) : deriv H u = -w * H u -
+      Complex.exp (-w * u) * ((Real.exp (-u) : ℂ) * deriv f (Real.exp (-u))) := by
+    have hleft : HasDerivAt (fun u : ℝ => Complex.exp (-w * u))
+        (Complex.exp (-w * u) * -w) u := by
+      simpa only [id_eq, mul_one] using
+        ((hasDerivAt_id (u : ℂ)).const_mul (-w)).comp_ofReal.cexp
+    have hright : HasDerivAt (fun u : ℝ => Real.exp (-u)) (-Real.exp (-u)) u := by
+      simpa only [Pi.neg_apply, id_eq, mul_neg, mul_one] using ((hasDerivAt_id u).neg).exp
+    have hdiff := ((hf.differentiable (by norm_num) (Real.exp (-u))).hasDerivAt.scomp u hright)
+    have hderiv : HasDerivAt H
+        ((Complex.exp (-w * u) * -w) * f (Real.exp (-u)) +
+          Complex.exp (-w * u) * (-Real.exp (-u) • deriv f (Real.exp (-u)))) u := by
+      convert hleft.mul hdiff using 1 <;> rfl
+    rw [hderiv.deriv]
+    simp only [H, Complex.real_smul, ofReal_neg]
+    ring
+  have hDi : Integrable (deriv H) :=
+    (hHc.continuous_deriv (by norm_num)).integrable_of_hasCompactSupport hHcs.deriv
+  have hHi : Integrable H := hHc.continuous.integrable_of_hasCompactSupport hHcs
+  have hint : ∫ u, deriv H u = 0 := by
+    rw [← integral_add_compl (s := Ioi (0 : ℝ)) measurableSet_Ioi hDi,
+      compl_Ioi, hHcs.integral_Ioi_deriv_eq hHc, hHcs.integral_Iic_deriv_eq hHc, neg_add_cancel]
+  have hfun (u : ℝ) : Complex.exp (-w * u) *
+        ((Real.exp (-u) : ℂ) * deriv f (Real.exp (-u))) = -w * H u - deriv H u := by
+    rw [hd]
+    ring
+  rw [mellin_eq_integral_exp_mul, mellin_eq_integral_exp_mul]
+  simp_rw [hfun]
+  rw [integral_sub (hHi.const_mul _) hDi, integral_const_mul, hint, sub_zero]
+
+/-- A differentiation without the factor of the variable lowers the Mellin parameter. -/
+theorem mellin_deriv (f : ℝ → ℂ) (w : ℂ) (hf : ContDiff ℝ 1 f)
+    (hfc : HasCompactSupport f) (hf0 : (0 : ℝ) ∉ tsupport f) :
+    mellin (deriv f) w = -(w - 1) * mellin f (w - 1) := by
+  calc
+    mellin (deriv f) w = mellin (deriv f) ((w - 1) + 1) := by rw [sub_add_cancel]
+    _ = _ := by rw [← mellin_mul_variable, mellin_mul_deriv f (w - 1) hf hfc hf0]
+
 /-- §1.1. **Infinitesimal operators.** -/
 theorem mellin_infinitesimal :
     (∀ (f : ℝ → ℂ) (w : ℂ), mellin (fun x => (x : ℂ) * f x) w = mellin f (w + 1)) ∧
     ∀ (f : ℝ → ℂ) (w : ℂ), ContDiff ℝ 1 f → HasCompactSupport f → tsupport f ⊆ Ioi 0 →
       mellin (fun x => (x : ℂ) * deriv f x) w = -w * mellin f w := by
-  sorry
+  refine ⟨mellin_mul_variable, fun f w hf hfc hs => ?_⟩
+  exact mellin_mul_deriv f w hf hfc (fun h => lt_irrefl (0 : ℝ) (hs h))
 
 /-- §1.2. **Gamma kernel.** -/
 theorem mellin_affineAction_eq_integral (lam : ℂ) (a b : ℝ) (ha : 0 < a)
@@ -75,7 +170,60 @@ theorem mellin_affineAction_eq_integral (lam : ℂ) (a b : ℝ) (ha : 0 < a)
     mellin (affineAction lam ⟨a, b, ha⟩ f) w =
       Complex.I * ∫ s : ℝ, affineGammaKernel lam a b w (c + s * Complex.I) *
         mellin f (c + s * Complex.I) := by
-  sorry
+  let q : ℂ := -lam * b / a
+  let E : ℝ → ℂ := fun x => Complex.exp (-(q * x))
+  let F : ℝ → ℂ := fun x => (x : ℂ) ^ (w - 1) * E x
+  have hq : 0 < q.re := by
+    dsimp only [q]
+    rw [div_ofReal_re]
+    exact div_pos hlam ha
+  have hW : 0 < w.re - c := sub_pos.mpr hc
+  have hM : MellinConvergent F (1 - (c : ℂ)) := by
+    change MellinConvergent (fun x => (x : ℂ) ^ (w - 1) • E x) (1 - (c : ℂ))
+    rw [MellinConvergent.cpow_smul]
+    apply Complex.CubicLaplace.mellinConvergent_exp_neg_mul (hq := hq)
+    simpa only [add_re, sub_re, one_re, ofReal_re] using
+      (show 0 < 1 - c + (w.re - 1) by linarith)
+  have h0 : (0 : ℝ) ∉ tsupport f := fun h => lt_irrefl (0 : ℝ) (hfs h)
+  have hMf : MellinConvergent f (c : ℂ) := by
+    apply (mellinConvergent_iff_integrable_exp_mul f c).mpr
+    have he : Continuous (fun u : ℝ => Complex.exp (-(c : ℂ) * u) * f (Real.exp (-u))) :=
+      (by fun_prop : Continuous (fun u : ℝ => Complex.exp (-(c : ℂ) * u))).mul
+        (hf.continuous.comp (by fun_prop))
+    exact he.integrable_of_hasCompactSupport
+      (hasCompactSupport_mellinLog f c (isCompact_tsupport_inter_Ioi hfc h0))
+  have hMellin (s : ℝ) : mellin F (1 - (c + s * I)) =
+      Gamma (w - (c + s * I)) * q ^ ((c + s * I) - w) := by
+    change mellin (fun x => (x : ℂ) ^ (w - 1) • E x) _ = _
+    rw [mellin_cpow_smul,
+      show (1 : ℂ) - (c + s * I) + (w - 1) = w - (c + s * I) by ring,
+      Complex.CubicLaplace.mellin_exp_neg_mul _ hq, neg_sub]
+    simpa only [sub_re, add_re, mul_I_re, ofReal_im, neg_zero, add_zero, ofReal_re] using hW
+  have hg := DLMF.Gamma.integrable_Gamma_mul_cpow_neg hW hq
+  have hshift (s : ℝ) : w - (c + s * I) = ((w.re - c : ℝ) : ℂ) + (w.im - s : ℝ) * I := by
+    apply Complex.ext <;> simp
+  have hVert : Integrable (fun s : ℝ => mellin F (1 - (c + s * I))) := by
+    have ht := (volume.measurePreserving_sub_left w.im).integrable_comp_of_integrable hg
+    refine ht.congr (Filter.Eventually.of_forall fun s => ?_)
+    dsimp only [Function.comp_apply]
+    rw [hMellin, show (c + s * I : ℂ) - w = -(w - (c + s * I)) by ring, hshift]
+  let G : ℝ → ℂ := fun x => E x * f x
+  have hfun : affineAction lam ⟨a, b, ha⟩ f = fun x => G (a * x) := by
+    funext x
+    simp only [affineAction, G, E, q, ofReal_mul]
+    congr 2
+    field_simp [ofReal_ne_zero.mpr ha.ne']
+  have hprod : mellin G w = ∫ x in Ioi (0 : ℝ), F x * f x := by
+    simp only [mellin, F, G, smul_eq_mul, mul_assoc]
+  rw [hfun, mellin_comp_mul_left G w ha, smul_eq_mul, hprod,
+    integral_mul_eq_mellin_parseval hM hMf (Or.inr hVert)]
+  simp_rw [hMellin]
+  rw [← mul_assoc, ← integral_const_mul, ← integral_const_mul]
+  apply integral_congr_ae
+  filter_upwards with s
+  dsimp only [affineGammaKernel, q]
+  have hπ : (π : ℂ) ≠ 0 := ofReal_ne_zero.mpr Real.pi_ne_zero
+  field_simp [Complex.I_ne_zero, hπ]
 
 /-- §1.3. **Addition formula for the Gamma function.** -/
 theorem Gamma_mul_div_add_one_cpow (w : ℂ) (t c : ℝ) (ht : 0 < t) (hc : 0 < c)

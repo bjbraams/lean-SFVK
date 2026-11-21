@@ -5,13 +5,15 @@ Authors: Bastiaan J Braams
 -/
 module
 
-public import SFVK.RankOne.Basic.Hyperbolic
+public import SFVK.RankOne.Horospherical
+public import SFVK.RankOne.LorentzInvariance
 public import SFVKMathlib.MeasureTheory.Group.GelfandPair
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 import Mathlib.Analysis.SpecialFunctions.Arsinh
 import Mathlib.Analysis.SpecialFunctions.Arcosh
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 import Mathlib.Analysis.SpecialFunctions.Sqrt
+import TauCeti.LinearAlgebra.Matrix.OneSubVecMulVec
 import Mathlib.Analysis.Calculus.IteratedDeriv.FaaDiBruno
 import Mathlib.MeasureTheory.Function.JacobianOneDim
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
@@ -21,7 +23,8 @@ import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
 Transitivity of `SO₀(n, 1)` on `ℍⁿ`, invariance of the distance, invariance of the volume and its
 polar and horospherical forms, invariance and radial part of the Laplace–Beltrami operator, plane
-waves and Poisson integrals, and the Gel'fand pair `(SO₀(n, 1), SO(n))`.
+waves and Poisson integrals, and the Gel'fand pair `(SO₀(n, 1), SO(n))`. The transitivity proof
+uses the determinant of a rank-one perturbation of the identity from Tau Ceti.
 
 Sources: Wawrzyńczyk, *Group Representations and Special Functions*, §11.1, (11.1.6), p. 392;
 §11.5, (11.5.1)–(11.5.8), Theorem 11.5.1, pp. 411–412; §18.1, Proposition 18.1.6,
@@ -30,6 +33,7 @@ Special Functions on Symmetric Spaces*, Part I §5.4, (5.4.3), p. 83.
 
 ## Main results
 
+* `SFVK.RankOne.exists_orbitMap_eq`: transitivity of the Lorentz action.
 * `SFVK.RankOne.hyperbolicDist_mulVec`: the distance is invariant.
 * `SFVK.RankOne.lintegral_hyperbolicMeasure_radial`: polar integration of radial functions.
 * `SFVK.RankOne.hyperbolicLaplacian_comp_lorentz`: the Laplacian of a function of a Lorentz
@@ -45,23 +49,194 @@ open scoped Real Matrix ENNReal ContDiff
 
 namespace SFVK.RankOne
 
+namespace LorentzGeometry
+
+/-- Additivity of the Lorentz pairing in its first argument. -/
+private theorem lorentz_add_left {n : ℕ} (x y b : Fin (n + 1) → ℝ) :
+    lorentz (x + y) b = lorentz x b + lorentz y b := by
+  simp only [lorentz_def, Pi.add_apply, add_mul, Finset.sum_add_distrib]
+  ring
+
+/-- Subtraction in the first argument of the Lorentz pairing. -/
+private theorem lorentz_sub_left {n : ℕ} (x y b : Fin (n + 1) → ℝ) :
+    lorentz (x - y) b = lorentz x b - lorentz y b := by
+  simp only [lorentz_def, Pi.sub_apply, sub_mul, Finset.sum_sub_distrib]
+  ring
+
+/-- Linearity under scaling of the first argument of the Lorentz pairing. -/
+private theorem lorentz_smul_left {n : ℕ} (c : ℝ) (x y : Fin (n + 1) → ℝ) :
+    lorentz (c • x) y = c * lorentz x y := by
+  simp only [lorentz_def, Pi.smul_apply, smul_eq_mul, mul_assoc, ← Finset.mul_sum, mul_sub]
+
+/-- Subtraction in the second argument of the Lorentz pairing. -/
+private theorem lorentz_sub_right {n : ℕ} (b x y : Fin (n + 1) → ℝ) :
+    lorentz b (x - y) = lorentz b x - lorentz b y := by
+  rw [lorentz_comm b (x - y), lorentz_sub_left, lorentz_comm x b, lorentz_comm y b]
+
+/-- Linearity under scaling of the second argument of the Lorentz pairing. -/
+private theorem lorentz_smul_right {n : ℕ} (c : ℝ) (x y : Fin (n + 1) → ℝ) :
+    lorentz x (c • y) = c * lorentz x y := by
+  rw [lorentz_comm x (c • y), lorentz_smul_left, lorentz_comm y x]
+
+/-- The Euclidean covector of a Lorentz vector. -/
+private noncomputable def signedCoordinates {n : ℕ} (x : Fin (n + 1) → ℝ) :
+    Fin (n + 1) → ℝ :=
+  Fin.cons (x 0) (fun i => -x i.succ)
+
+/-- The Euclidean pairing with this covector is the Lorentz pairing. -/
+private theorem signedCoordinates_dotProduct {n : ℕ} (x y : Fin (n + 1) → ℝ) :
+    signedCoordinates x ⬝ᵥ y = lorentz x y := by
+  simp only [signedCoordinates, dotProduct, Fin.sum_univ_succ, Fin.cons_zero, Fin.cons_succ,
+    neg_mul, Finset.sum_neg_distrib, lorentz_def, sub_eq_add_neg]
+
+/-- The Lorentz reflection reversing a non-null vector and fixing its orthogonal complement. -/
+private noncomputable def reflection {n : ℕ} (u : Fin (n + 1) → ℝ) :
+    Matrix (Fin (n + 1)) (Fin (n + 1)) ℝ :=
+  1 - Matrix.vecMulVec u ((2 / lorentz u u) • signedCoordinates u)
+
+/-- The rank-one formula for the action of a Lorentz reflection. -/
+private theorem reflection_mulVec {n : ℕ} (u v : Fin (n + 1) → ℝ) :
+    reflection u *ᵥ v = v - ((2 / lorentz u u) * lorentz u v) • u := by
+  rw [reflection, Matrix.sub_mulVec, Matrix.one_mulVec, Matrix.vecMulVec_mulVec,
+    smul_dotProduct, signedCoordinates_dotProduct, smul_eq_mul, op_smul_eq_smul]
+
+/-- The determinant of a reflection along a non-null vector. -/
+private theorem det_reflection {n : ℕ} (u : Fin (n + 1) → ℝ) (hu : lorentz u u ≠ 0) :
+    (reflection u).det = -1 := by
+  rw [reflection, TauCeti.det_one_sub_vecMulVec, smul_dotProduct, signedCoordinates_dotProduct,
+    smul_eq_mul]
+  field_simp
+  ring
+
+/-- A reflection along a non-null vector preserves the Lorentz pairing. -/
+private theorem lorentz_reflection_mulVec {n : ℕ} (u : Fin (n + 1) → ℝ)
+    (hu : lorentz u u ≠ 0) (v w : Fin (n + 1) → ℝ) :
+    lorentz (reflection u *ᵥ v) (reflection u *ᵥ w) = lorentz v w := by
+  simp only [reflection_mulVec, lorentz_sub_left, lorentz_sub_right, lorentz_smul_left,
+    lorentz_smul_right, lorentz_comm v u]
+  field_simp
+  ring
+
+/-- A reflection along a non-null vector is an involution. -/
+private theorem reflection_mulVec_reflection_mulVec {n : ℕ} (u : Fin (n + 1) → ℝ)
+    (hu : lorentz u u ≠ 0) (v : Fin (n + 1) → ℝ) :
+    reflection u *ᵥ (reflection u *ᵥ v) = v := by
+  simp only [reflection_mulVec, lorentz_sub_right, lorentz_smul_right]
+  have hcoeff : 2 / lorentz u u * (lorentz u v - 2 / lorentz u u * lorentz u v * lorentz u u) =
+      -(2 / lorentz u u * lorentz u v) := by
+    field_simp
+    ring
+  rw [hcoeff, neg_smul, sub_neg_eq_add, sub_add_cancel]
+
+/-- The Lorentz pairing of two points of the upper sheet is positive. -/
+private theorem lorentz_pos_of_mem_hyperboloid {n : ℕ} {x y : Fin (n + 1) → ℝ}
+    (hx : x ∈ hyperboloid n) (hy : y ∈ hyperboloid n) :
+    0 < lorentz x y := by
+  have hnorm {z : Fin (n + 1) → ℝ} (hz : z ∈ hyperboloid n) :
+      Real.sqrt (∑ i : Fin n, z i.succ ^ 2) < z 0 := by
+    have h := hz.1
+    rw [lorentz_def] at h
+    exact (Real.sqrt_lt' hz.2).mpr (by simpa only [pow_two] using
+      (show (∑ i : Fin n, z i.succ * z i.succ) < z 0 * z 0 by linarith))
+  have hC := Real.sum_mul_le_sqrt_mul_sqrt Finset.univ (fun i : Fin n => x i.succ)
+    (fun i : Fin n => y i.succ)
+  rw [lorentz_def, sub_pos]
+  apply hC.trans_lt
+  exact mul_lt_mul'' (hnorm hx) (hnorm hy) (Real.sqrt_nonneg _) (Real.sqrt_nonneg _)
+
+/-- A Lorentz unit vector pairing positively with an upper-sheet point lies on that sheet. -/
+private theorem mem_hyperboloid_of_lorentz_pos {n : ℕ} {x y : Fin (n + 1) → ℝ}
+    (hx : x ∈ hyperboloid n) (hy : lorentz y y = 1) (hxy : 0 < lorentz x y) :
+    y ∈ hyperboloid n := by
+  refine ⟨hy, ?_⟩
+  by_contra! h
+  have hne : y 0 ≠ 0 := by
+    intro hy0
+    have hself := hy
+    rw [lorentz_def, hy0, zero_mul, zero_sub] at hself
+    have hn : 0 ≤ ∑ i : Fin n, y i.succ * y i.succ :=
+      Finset.sum_nonneg (fun _ _ => mul_self_nonneg _)
+    linarith
+  have hneg : -y ∈ hyperboloid n := by
+    refine ⟨?_, ?_⟩
+    · simp only [← neg_one_smul ℝ y, lorentz_smul_left, lorentz_smul_right, hy, neg_mul, one_mul,
+        neg_neg]
+    · simp only [Pi.neg_apply, Left.neg_pos_iff]
+      exact lt_of_le_of_ne h hne
+  have hp := lorentz_pos_of_mem_hyperboloid hx hneg
+  rw [← neg_one_smul ℝ y, lorentz_smul_right, neg_one_mul] at hp
+  linarith
+
+end LorentzGeometry
+
+set_option maxHeartbeats 1000000 in
 /-- **Transitivity**: every point of `ℍⁿ` is `g o` for some `g ∈ SO₀(n, 1)`. -/
 theorem exists_orbitMap_eq (n : ℕ) {x : Fin (n + 1) → ℝ} (hx : x ∈ hyperboloid n) :
     ∃ g : lorentzGroup n, orbitMap n g = x := by
-  sorry
+  open LorentzGeometry in
+  let o := basePoint n
+  let u := x + o
+  have ho : o ∈ hyperboloid n := basePoint_mem_hyperboloid n
+  have hoo : lorentz o o = 1 := ho.1
+  have hxo : lorentz o x = x 0 := lorentz_basePoint_left x
+  have hx' : 0 < x 0 := hx.2
+  have huo : lorentz u o = x 0 + 1 := by
+    dsimp only [u]
+    rw [lorentz_add_left, lorentz_comm x o, hxo, hoo]
+  have huu : lorentz u u = 2 * (x 0 + 1) := by
+    dsimp only [u]
+    rw [lorentz_add_left, lorentz_comm x (x + o), lorentz_comm o (x + o),
+      lorentz_add_left, lorentz_add_left, hx.1, lorentz_comm x o, hxo, hoo]
+    ring
+  have ho₀ : lorentz o o ≠ 0 := by rw [hoo]; norm_num
+  have hu₀ : lorentz u u ≠ 0 := by rw [huu]; positivity
+  -- Compose the reflection reversing the base vector with the reflection in their sum.
+  let A := reflection u * reflection o
+  let B := reflection o * reflection u
+  have hA (y z : Fin (n + 1) → ℝ) : lorentz (A *ᵥ y) (A *ᵥ z) = lorentz y z := by
+    simp only [A, ← Matrix.mulVec_mulVec, lorentz_reflection_mulVec u hu₀,
+      lorentz_reflection_mulVec o ho₀]
+  have hAB (z : Fin (n + 1) → ℝ) : A *ᵥ (B *ᵥ z) = z := by
+    simp only [A, B, ← Matrix.mulVec_mulVec,
+      reflection_mulVec_reflection_mulVec o ho₀, reflection_mulVec_reflection_mulVec u hu₀]
+  have hAo : A *ᵥ o = x := by
+    have hRo : reflection o *ᵥ o = -o := by
+      rw [reflection_mulVec, hoo]
+      norm_num
+      module
+    have hRu : reflection u *ᵥ o = -x := by
+      rw [reflection_mulVec, huu, huo]
+      have hc : 2 / (2 * (x 0 + 1)) * (x 0 + 1) = 1 := by field_simp
+      simp only [hc, one_smul, u]
+      abel
+    dsimp only [A]
+    rw [← Matrix.mulVec_mulVec, hRo, Matrix.mulVec_neg, hRu, neg_neg]
+  have hImage : (fun z => A *ᵥ z) '' hyperboloid n = hyperboloid n := by
+    apply Subset.antisymm
+    · rintro _ ⟨z, hz, rfl⟩
+      apply mem_hyperboloid_of_lorentz_pos hx ((hA z z).trans hz.1)
+      rw [← hAo, hA]
+      exact lorentz_pos_of_mem_hyperboloid ho hz
+    · intro z hz
+      refine ⟨B *ᵥ z, ⟨?_, ?_⟩, hAB z⟩
+      · rw [← hA, hAB]
+        exact hz.1
+      · have h : lorentz o (B *ᵥ z) = lorentz x z := by rw [← hA, hAo, hAB]
+        rw [lorentz_basePoint_left] at h
+        rw [h]
+        exact lorentz_pos_of_mem_hyperboloid hx hz
+  have hDet : A.det = 1 := by
+    dsimp only [A]
+    rw [Matrix.det_mul, det_reflection u hu₀, det_reflection o ho₀]
+    norm_num
+  let g : Matrix.SpecialLinearGroup (Fin (n + 1)) ℝ := ⟨A, hDet⟩
+  exact ⟨⟨g, hA, hImage⟩, hAo⟩
 
 /-- **Invariance of the distance**: `d(g x, g y) = d(x, y)`. -/
 theorem hyperbolicDist_mulVec (n : ℕ) (g : lorentzGroup n) (x y : Fin (n + 1) → ℝ) :
     hyperbolicDist ((g : Matrix.SpecialLinearGroup (Fin (n + 1)) ℝ).1 *ᵥ x)
       ((g : Matrix.SpecialLinearGroup (Fin (n + 1)) ℝ).1 *ᵥ y) = hyperbolicDist x y := by
   rw [hyperbolicDist_def, hyperbolicDist_def, lorentz_mulVec]
-
-/-- **Invariance of the volume** under `SO₀(n, 1)`. -/
-theorem map_hyperbolicMeasure (n : ℕ) (g : lorentzGroup n) :
-    (hyperbolicMeasure n).map
-        (fun x => (g : Matrix.SpecialLinearGroup (Fin (n + 1)) ℝ).1 *ᵥ x) =
-      hyperbolicMeasure n := by
-  sorry
 
 /-- The surface measure of the unit sphere has total mass `sphereArea n`. -/
 theorem sphereMeasure_univ (n : ℕ) (hn : 1 ≤ n) :
@@ -115,14 +290,7 @@ theorem lintegral_hyperbolicMeasure_radial (n : ℕ) (hn : 1 ≤ n) (F : ℝ →
     ∫⁻ x, F (Real.arcosh (x 0)) ∂hyperbolicMeasure n =
       ENNReal.ofReal (sphereArea n) *
         ∫⁻ t in Ioi 0, F t * ENNReal.ofReal (Real.sinh t ^ (n - 1)) := by
-  have hchart : Measurable (hyperboloidChart n) := by
-    apply Measurable.of_eval
-    intro i
-    refine Fin.cases ?_ (fun j => ?_) i
-    · simp only [hyperboloidChart_def, Fin.cons_zero]
-      fun_prop
-    · simp only [hyperboloidChart_def, Fin.cons_succ]
-      fun_prop
+  have hchart := (continuous_hyperboloidChart n).measurable
   let f (r : ℝ) := ENNReal.ofReal ((Real.sqrt (1 + r ^ 2))⁻¹) *
     F (Real.arcosh (Real.sqrt (1 + r ^ 2)))
   have harcosh : Measurable Real.arcosh := by unfold Real.arcosh; fun_prop
@@ -216,37 +384,7 @@ theorem integral_hyperbolicMeasure_radial (n : ℕ) (hn : 1 ≤ n) (F : ℝ → 
   rw [ENNReal.toReal_ofReal ((pow_nonneg (Real.sinh_nonneg_iff.mpr ht.le) _ :
     0 ≤ Real.sinh t ^ (n - 1))), Complex.real_smul, mul_comm]
 
-/-- **Horospherical coordinates** on `ℍ^{n+1}`: with
-`x(s, v) = (cosh s + |v|² e^{−s}/2, e^{−s} v, −sinh s − |v|² e^{−s}/2)`,
-`∫ f dm = ∫_ℝ ∫_{ℝⁿ} f(x(s, v)) e^{−ns} dv ds`. -/
-theorem lintegral_hyperbolicMeasure_horospherical (n : ℕ) (f : (Fin (n + 2) → ℝ) → ℝ≥0∞)
-    (hf : Measurable f) :
-    ∫⁻ x, f x ∂hyperbolicMeasure (n + 1) =
-      ∫⁻ s, ∫⁻ v : Fin n → ℝ,
-        f (Fin.cons (Real.cosh s + (∑ i, v i ^ 2) * Real.exp (-s) / 2)
-            (Fin.snoc (fun i => v i * Real.exp (-s))
-              (-Real.sinh s - (∑ i, v i ^ 2) * Real.exp (-s) / 2))) *
-          ENNReal.ofReal (Real.exp (-(n * s))) := by
-  sorry
-
-/-- **Invariance of the Laplacian**: `Δ(f ∘ g) = (Δf) ∘ g` on `ℍⁿ`. -/
-theorem hyperbolicLaplacian_comp (n : ℕ) (f : (Fin (n + 1) → ℝ) → ℂ) (hf : ContDiff ℝ 2 f)
-    (g : lorentzGroup n) {x : Fin (n + 1) → ℝ} (hx : x ∈ hyperboloid n) :
-    hyperbolicLaplacian n
-        (fun y => f ((g : Matrix.SpecialLinearGroup (Fin (n + 1)) ℝ).1 *ᵥ y)) x =
-      hyperbolicLaplacian n f ((g : Matrix.SpecialLinearGroup (Fin (n + 1)) ℝ).1 *ᵥ x) := by
-  sorry
-
 namespace HyperbolicLaplacian
-
-private theorem lorentz_add_left {n : ℕ} (x y b : Fin (n + 1) → ℝ) :
-    lorentz (x + y) b = lorentz x b + lorentz y b := by
-  simp only [lorentz_def, Pi.add_apply, add_mul, Finset.sum_add_distrib]
-  ring
-
-private theorem lorentz_smul_left {n : ℕ} (a : ℝ) (x b : Fin (n + 1) → ℝ) :
-    lorentz (a • x) b = a * lorentz x b := by
-  simp only [lorentz_def, Pi.smul_apply, smul_eq_mul, mul_assoc, ← Finset.mul_sum, mul_sub]
 
 private theorem lorentz_single_zero {n : ℕ} (x : Fin (n + 1) → ℝ) :
     lorentz (Pi.single 0 1) x = x 0 :=
@@ -352,14 +490,14 @@ theorem hyperbolicLaplacian_comp_lorentz (n : ℕ) (F : ℝ → ℂ)
           z s := by
       have hsq : lorentz (x + s • e) (x + s • e) =
           1 + 2 * lorentz e x * s + lorentz e e * s ^ 2 := by
-        rw [HyperbolicLaplacian.lorentz_add_left, lorentz_comm x (x + s • e),
-          HyperbolicLaplacian.lorentz_add_left, HyperbolicLaplacian.lorentz_smul_left,
-          HyperbolicLaplacian.lorentz_smul_left, lorentz_comm e (x + s • e),
-          HyperbolicLaplacian.lorentz_add_left, HyperbolicLaplacian.lorentz_smul_left,
+        rw [LorentzGeometry.lorentz_add_left, lorentz_comm x (x + s • e),
+          LorentzGeometry.lorentz_add_left, LorentzGeometry.lorentz_smul_left,
+          LorentzGeometry.lorentz_smul_left, lorentz_comm e (x + s • e),
+          LorentzGeometry.lorentz_add_left, LorentzGeometry.lorentz_smul_left,
           lorentz_comm x e, hx.1]
         ring
-      rw [hsq, HyperbolicLaplacian.lorentz_smul_left, HyperbolicLaplacian.lorentz_add_left,
-        HyperbolicLaplacian.lorentz_smul_left]
+      rw [hsq, LorentzGeometry.lorentz_smul_left, LorentzGeometry.lorentz_add_left,
+        LorentzGeometry.lorentz_smul_left]
       simp only [z, m, mul_comm]
     obtain ⟨hz0, hzc, hz₁, hz₂⟩ :=
       HyperbolicLaplacian.derivatives_normalizedProjection m (lorentz e b)
@@ -449,9 +587,9 @@ theorem hyperbolicLaplacian_congr {n : ℕ} {f g : (Fin (n + 1) → ℝ) → ℂ
     · calc
         lorentz (z s) (z s) = (Real.sqrt (q s))⁻¹ ^ 2 * q s := by
           dsimp only [z]
-          rw [HyperbolicLaplacian.lorentz_smul_left,
+          rw [LorentzGeometry.lorentz_smul_left,
             lorentz_comm (y s) ((Real.sqrt (q s))⁻¹ • y s),
-            HyperbolicLaplacian.lorentz_smul_left]
+            LorentzGeometry.lorentz_smul_left]
           change (Real.sqrt (q s))⁻¹ * ((Real.sqrt (q s))⁻¹ * q s) = _
           ring
         _ = ((Real.sqrt (q s))⁻¹ * Real.sqrt (q s)) ^ 2 := by

@@ -205,6 +205,16 @@ theorem hyperboloidChart_def (n : ℕ) (y : Fin n → ℝ) :
     hyperboloidChart n y = Fin.cons (Real.sqrt (1 + ∑ i, y i ^ 2)) y :=
   rfl
 
+/-- The spatial chart parametrizing the upper hyperboloid is continuous. -/
+theorem continuous_hyperboloidChart (n : ℕ) : Continuous (hyperboloidChart n) := by
+  apply continuous_pi
+  intro i
+  refine Fin.cases ?_ (fun j => ?_) i
+  · simp only [hyperboloidChart_def, Fin.cons_zero]
+    fun_prop
+  · simp only [hyperboloidChart_def, Fin.cons_succ]
+    fun_prop
+
 theorem hyperboloidChart_mem_hyperboloid (n : ℕ) (y : Fin n → ℝ) :
     hyperboloidChart n y ∈ hyperboloid n := by
   have hs : 0 ≤ 1 + ∑ i, y i ^ 2 := by positivity

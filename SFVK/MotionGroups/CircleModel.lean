@@ -65,6 +65,14 @@ theorem fourier_circle_coe (n : ℤ) (x : ℝ) :
   push_cast
   field_simp [Real.pi_ne_zero]
 
+/-- Fourier characters are the integer powers of the character of index one. -/
+theorem fourier_eq_zpow (k : ℤ) (ψ : 𝕋) :
+    (fourier k ψ : ℂ) = (fourier 1 ψ : ℂ) ^ k := by
+  obtain ⟨t, rfl⟩ := QuotientAddGroup.mk_surjective ψ
+  rw [fourier_circle_coe, fourier_circle_coe, Int.cast_one, one_mul, ← Complex.exp_int_mul]
+  congr 1
+  ring
+
 /-- The inverse of a plane rotation negates its angle. -/
 theorem rotation_neg (α : ℝ) : rotation (-α) = (rotation α)⁻¹ := by
   apply eq_inv_of_mul_eq_one_left

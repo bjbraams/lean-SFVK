@@ -9,6 +9,8 @@ public import SFVK.AffineHeisenberg.Basic
 public import DLMF.OrthogonalPolynomials.Basic.Definitions
 import DLMF.OrthogonalPolynomials.LaguerreContinuation
 import Mathlib.Analysis.Normed.Ring.InfiniteSum
+import Mathlib.Analysis.Analytic.OfScalars
+import Mathlib.Analysis.Analytic.Uniqueness
 
 /-!
 # Miller's group `G(0, 1)` and the Laguerre addition theorem
@@ -176,11 +178,138 @@ theorem millerMatrixElement_eq_laguerre (μ ω : ℂ) (g : MillerGroup) (hc : g.
       (μ ^ (l - j) * g.b ^ (l - j)) / (l - j).factorial := by rw [hpow]
     _ = _ := by ring
 
+/-- The coefficient majorant obtained by replacing both polynomial variables by their norms. -/
+private noncomputable def millerCoefficientMajorant (j l : ℕ) (c b : ℝ) : ℝ :=
+  ∑ s ∈ Finset.range (min j l + 1), (j.choose s : ℝ) * c ^ (j - s) * b ^ (l - s) /
+    (l - s).factorial
+
+/-- The majorant has an exponential generating sum at every nonnegative radius. -/
+private theorem hasSum_millerCoefficientMajorant (j : ℕ) (c b R : ℝ) :
+    HasSum (fun l => millerCoefficientMajorant j l c b * R ^ l)
+      (Real.exp (b * R) * (R + c) ^ j) := by
+  have h := (hasSum_exp_mul_add_pow j (c : ℂ) (b : ℂ) (R : ℂ)).map
+    Complex.reCLM Complex.reCLM.continuous
+  convert h using 1
+  · funext l
+    have he : ((millerCoefficientMajorant j l c b * R ^ l : ℝ) : ℂ) =
+        (∑ s ∈ Finset.range (min j l + 1), (j.choose s : ℂ) * (c : ℂ) ^ (j - s) *
+          (b : ℂ) ^ (l - s) / (l - s).factorial) * (R : ℂ) ^ l := by
+      push_cast [millerCoefficientMajorant]
+      rfl
+    simpa only [ofReal_re, reCLM_apply, Function.comp_apply] using congrArg Complex.re he
+  · have he : ((Real.exp (b * R) * (R + c) ^ j : ℝ) : ℂ) =
+        Complex.exp ((b : ℂ) * R) * ((R : ℂ) + c) ^ j := by push_cast; rfl
+    simpa only [ofReal_re, reCLM_apply] using congrArg Complex.re he
+
+/-- The exponential and finite polynomial factors give a pointwise majorant for each coefficient. -/
+private theorem norm_millerMatrixElement_le_majorant (μ ω : ℂ) (g : MillerGroup) (l j : ℕ) :
+    ‖millerMatrixElement μ ω l j g‖ ≤
+      Real.exp (μ * g.a - ω * g.τ).re * Real.exp (j * g.τ.re) *
+        millerCoefficientMajorant j l ‖g.c‖ ‖μ * g.b‖ := by
+  rw [millerMatrixElement, norm_mul, norm_exp,
+    show μ * g.a + (j - ω) * g.τ = μ * g.a - ω * g.τ + j * g.τ by ring,
+    add_re, mul_re, natCast_re, natCast_im, zero_mul, sub_zero, Real.exp_add]
+  apply mul_le_mul_of_nonneg_left _ (by positivity)
+  refine (norm_sum_le _ _).trans_eq ?_
+  simp only [millerCoefficientMajorant, norm_mul, norm_div, norm_natCast, norm_pow]
+
+/-- The coefficients of the composed double series are absolutely summable at every radius. -/
+private theorem summable_norm_millerMatrixElement_comp (μ ω : ℂ) (g h : MillerGroup) (k : ℕ)
+    (z : ℂ) :
+    Summable (fun p : ℕ × ℕ =>
+      ‖millerMatrixElement μ ω p.1 k h * millerMatrixElement μ ω p.2 p.1 g * z ^ p.2‖) := by
+  let R := ‖z‖
+  let C := Real.exp (μ * g.a - ω * g.τ).re
+  let H (j : ℕ) := ‖millerMatrixElement μ ω j k h‖
+  let M (p : ℕ × ℕ) := (H p.1 * (C * Real.exp (p.1 * g.τ.re))) *
+    (millerCoefficientMajorant p.1 p.2 ‖g.c‖ ‖μ * g.b‖ * R ^ p.2)
+  have hSplit (j : ℕ) : HasSum (fun l => M (j,l))
+      (H j * (C * Real.exp (j * g.τ.re)) *
+        (Real.exp (‖μ * g.b‖ * R) * (R + ‖g.c‖) ^ j)) :=
+    (hasSum_millerCoefficientMajorant j ‖g.c‖ ‖μ * g.b‖ R).mul_left _
+  have hM : Summable M := by
+    rw [summable_prod_of_nonneg]
+    · refine ⟨fun j => (hSplit j).summable, ?_⟩
+      simp_rw [(hSplit _).tsum_eq]
+      let T := Real.exp g.τ.re * (R + ‖g.c‖)
+      have hS := (hasSum_millerAction_monomial μ ω h k (T : ℂ)).summable.norm
+      have ht : 0 ≤ T := by dsimp only [T,R]; positivity
+      have hv : Summable (fun j => H j * T ^ j) := by
+        simpa only [H, norm_mul, norm_pow, norm_real, Real.norm_eq_abs, abs_of_nonneg ht] using hS
+      refine (hv.mul_left (C * Real.exp (‖μ * g.b‖ * R))).congr fun j => ?_
+      dsimp only [T]
+      rw [mul_pow, ← Real.exp_nat_mul]
+      ring
+    · intro p
+      unfold M millerCoefficientMajorant C H R
+      positivity
+  refine Summable.of_nonneg_of_le (fun _ => norm_nonneg _) (fun p => ?_) hM
+  simp only [norm_mul, norm_pow, M, H, R]
+  have hle := norm_millerMatrixElement_le_majorant μ ω g p.2 p.1
+  calc
+    _ ≤ H p.1 * (C * Real.exp (p.1 * g.τ.re) *
+        millerCoefficientMajorant p.1 p.2 ‖g.c‖ ‖μ * g.b‖) * ‖z‖ ^ p.2 :=
+      mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left hle (norm_nonneg _)) (by positivity)
+    _ = _ := by dsimp only [H]; rw [norm_mul μ g.b]; ring
+
+/-- An everywhere convergent scalar power series uniquely determines its coefficients. -/
+private theorem millerCoefficients_unique {a b : ℕ → ℂ} {f : ℂ → ℂ}
+    (ha : ∀ z : ℂ, HasSum (fun n => a n * z ^ n) (f z))
+    (hb : ∀ z : ℂ, HasSum (fun n => b n * z ^ n) (f z)) : a = b := by
+  have series {c : ℕ → ℂ} (hc : ∀ z : ℂ, HasSum (fun n => c n * z ^ n) (f z)) :
+      HasFPowerSeriesAt f (FormalMultilinearSeries.ofScalars ℂ c) 0 := by
+    refine ⟨1, ?_, by norm_num, ?_⟩
+    · refine (FormalMultilinearSeries.ofScalars ℂ c).le_radius_of_summable_norm ?_
+      simpa only [FormalMultilinearSeries.ofScalars_norm, NNReal.coe_one, one_pow, mul_one] using
+        (hc 1).summable.norm
+    · intro z _
+      simpa only [zero_add, FormalMultilinearSeries.ofScalars_apply_eq, smul_eq_mul] using hc z
+  exact FormalMultilinearSeries.ofScalars_series_injective ℂ ℂ
+    ((series ha).eq_formalMultilinearSeries (series hb))
+
+
 /-- §5.1. **Addition theorem.** -/
 theorem hasSum_millerMatrixElement_mul (μ ω : ℂ) (g h : MillerGroup) (l k : ℕ) :
     HasSum (fun j => millerMatrixElement μ ω l j g * millerMatrixElement μ ω j k h)
       (millerMatrixElement μ ω l k (g * h)) := by
-  sorry
+  let A : ℕ → ℕ → ℂ := fun l j =>
+      millerMatrixElement μ ω j k h * millerMatrixElement μ ω l j g
+  let C : ℕ → ℂ := fun l => ∑' j, A l j
+  have hA : ∀ l, Summable (A l) := by
+    intro l
+    have h := (summable_norm_millerMatrixElement_comp μ ω g h k 1).of_norm
+    let pair : ℕ → ℕ × ℕ := fun j => (j,l)
+    have hp : Function.Injective pair := fun _ _ e => congrArg Prod.fst e
+    convert h.comp_injective hp using 1
+    funext j
+    simp only [A, pair, Function.comp_def, one_pow, mul_one]
+  have hC (z : ℂ) :
+      HasSum (fun l => C l * z ^ l) (millerAction μ ω (g * h) (fun z => z ^ k) z) := by
+    let D : ℕ × ℕ → ℂ := fun p => A p.2 p.1 * z ^ p.2
+    have hD : Summable D := (summable_norm_millerMatrixElement_comp μ ω g h k z).of_norm
+    have hRow (j : ℕ) : HasSum (fun l => D (j,l))
+        (millerMatrixElement μ ω j k h * millerAction μ ω g (fun z => z ^ j) z) := by
+      simpa only [D, A, mul_assoc] using
+        (hasSum_millerAction_monomial μ ω g j z).mul_left (millerMatrixElement μ ω j k h)
+    have hValue := hD.hasSum.prod_fiberwise hRow
+    have hComp :
+        HasSum (fun j => millerMatrixElement μ ω j k h * millerAction μ ω g (fun z => z ^ j) z)
+          (millerAction μ ω (g * h) (fun z => z ^ k) z) := by
+      have hs := (hasSum_millerAction_monomial μ ω h k
+        (Complex.exp g.τ * z + Complex.exp g.τ * g.c)).mul_left
+          (Complex.exp (μ * (g.b * z + g.a) - ω * g.τ))
+      rw [millerAction_mul]
+      simpa only [millerAction, mul_left_comm] using hs
+    have hTot : HasSum D (millerAction μ ω (g * h) (fun z => z ^ k) z) :=
+      (hValue.unique hComp) ▸ hD.hasSum
+    have hSwap := (Equiv.prodComm ℕ ℕ).hasSum_iff.mpr hTot
+    have hCol (l : ℕ) : HasSum (fun j => D ((Equiv.prodComm ℕ ℕ) (l,j))) (C l * z ^ l) :=
+      (hA l).hasSum.mul_right _
+    exact hSwap.prod_fiberwise hCol
+  have hcoeff := millerCoefficients_unique hC (hasSum_millerAction_monomial μ ω (g * h) k)
+  have hs := (hA l).hasSum
+  rw [show (∑' j, A l j) = millerMatrixElement μ ω l k (g * h) from congrFun hcoeff l] at hs
+  simpa only [A, mul_comm] using hs
 
 /-- §5.1. **Generating function.** -/
 theorem hasSum_laguerre_generating (m : ℕ) (x z : ℂ) :

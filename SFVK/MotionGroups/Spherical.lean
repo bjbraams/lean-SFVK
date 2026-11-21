@@ -10,9 +10,16 @@ public import DLMF.Legendre.Basic.Harmonics
 public import Mathlib.MeasureTheory.Constructions.HaarToSphere
 public import SFVK.MotionGroups.Basic.Zonal
 public import SFVK.MotionGroups.MatrixElements
+import DLMF.Bessel.Asymptotics.RightHalfPlane
 import DLMF.Bessel.Basic.RegularizedSeries
 import DLMF.Bessel.HankelAndNormalConvergence
 import Mathlib.Analysis.SpecialFunctions.Gamma.Beta
+import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
+import DLMF.Bessel.Basic.RealModified
+import DLMF.Bessel.RegularizedSeries
+import TauCeti.Analysis.Complex.CauchyIntegralPolydisc
+import TauCeti.Probability.Distributions.Uniform.Sphere.OneDimensional
+import TauCeti.Probability.Distributions.VonMisesFisher.Normalizer
 
 /-!
 # The Gel'fand pair `(M(n), SO(n))` and the zonal Bessel functions
@@ -25,12 +32,15 @@ element of the circle model is `φ_R`; and in `ℝ³` the plane wave expands in 
 harmonics. Vilenkin–Klimyk, *Representation of Lie Groups and Special Functions*, Vol. 2,
 §9.3.2 (8)–(10), p. 48, and §9.3.3 (3), pp. 48–49; Dieudonné, *Special Functions and Linear
 Representations of Lie Groups*, §16, (188)–(193), pp. 55–57; DLMF 10.60.7 and 14.30.9.
+The sphere mean follows by analytic continuation of Tau Ceti's von Mises–Fisher normalizer,
+with the two-point sphere handled by its Rademacher projection formula. The boundedness
+criterion uses lean-DLMF's modified Bessel asymptotics on a right-half-plane sector.
 -/
 
 public noncomputable section
 
-open Complex MeasureTheory Set
-open scoped Real InnerProductSpace ComplexConjugate
+open Complex MeasureTheory Set Filter Asymptotics
+open scoped Real InnerProductSpace ComplexConjugate Topology
 
 namespace SFVK.MotionGroups
 
@@ -98,7 +108,112 @@ theorem besselZonal_eq_integral_sphere {n : ℕ} (hn : 1 ≤ n) (lam : ℂ)
         ∫ ξ : Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1,
           Complex.exp (I * lam * (⟪a, (ξ : EuclideanSpace ℝ (Fin n))⟫_ℝ : ℝ))
           ∂(volume : Measure (EuclideanSpace ℝ (Fin n))).toSphere := by
-  sorry
+  let E := EuclideanSpace ℝ (Fin n)
+  let S := Metric.sphere (0 : E) 1
+  let μ := TauCeti.Probability.uniformSphereMeasure E
+  have hnorm (f : S → ℂ) :
+      ∫ x, f x ∂μ =
+        ((volume : Measure E).toSphere univ).toReal⁻¹ *
+          ∫ x, f x ∂(volume : Measure E).toSphere := by
+    dsimp only [μ]
+    rw [TauCeti.Probability.uniformSphereMeasure_def, integral_smul_measure,
+      ENNReal.toReal_inv, Complex.real_smul]
+  change besselZonal n lam ‖a‖ = _
+  rw [← hnorm]
+  have hdim : Module.finrank ℝ E = n := by simp [E]
+  let : Nontrivial E := Module.nontrivial_of_finrank_pos (show 0 < Module.finrank ℝ E by omega)
+  by_cases ha : a = 0
+  · subst a
+    simp [besselZonal_zero_right hn]
+  let F (z : ℂ) := ∫ x : S, Complex.exp (z * (⟪a, (x : E)⟫_ℝ : ℝ)) ∂μ
+  let G (z : ℂ) := Complex.Gamma (n / 2) *
+    regularizedHGFun (∅ : Multiset ℂ) {(n : ℂ) / 2} ((z * (‖a‖ : ℂ)) ^ 2 / 4)
+  have hF : AnalyticOnNhd ℂ F univ := by
+    intro z _
+    let σ (x : S) : ℂ := (⟪a, (x : E)⟫_ℝ : ℝ)
+    have hs : Continuous σ := Complex.continuous_ofReal.comp
+      (continuous_const.inner continuous_subtype_val)
+    have hK : IsCompact (Set.range σ) := isCompact_range hs
+    have hkernel (w : ℂ) (_ : w ∈ Set.range σ) :
+        AnalyticAt ℂ (fun p : ℂ × ℂ => Complex.exp (p.1 * p.2)) (z, w) :=
+      (analyticAt_fst.mul analyticAt_snd).cexp
+    have h := TauCeti.analyticAt_integral_smul (μ := μ) (g := fun _ : S => (1 : ℂ))
+      hK hs (fun x => mem_range_self x) hkernel (integrable_const 1)
+    simpa only [one_smul] using h
+  have hG : AnalyticOnNhd ℂ G univ := by
+    intro z _
+    exact analyticAt_const.mul <|
+      (DLMF.Bessel.analyticAt_regularized0F1 _ _).comp (by fun_prop)
+  have hreal (t : ℝ) (ht : 0 < t) : F (t : ℂ) = G t := by
+    let b : E := t • a
+    have hb : b ≠ 0 := smul_ne_zero ht.ne' ha
+    have hbNorm : ‖b‖ = t * ‖a‖ := by
+      rw [show b = t • a from rfl, norm_smul, Real.norm_eq_abs, abs_of_pos ht]
+    have hFlift : F (t : ℂ) = Complex.ofReal (∫ x : S, Real.exp ⟪b, (x : E)⟫_ℝ ∂μ) := by
+      rw [← integral_complex_ofReal (f := fun x : S => Real.exp ⟪b, (x : E)⟫_ℝ)]
+      apply integral_congr_ae
+      filter_upwards with x
+      simp [b, real_inner_smul_left, Complex.ofReal_exp]
+    by_cases h₁ : n = 1
+    · have hm :=
+        TauCeti.Probability.map_inner_uniformSphereMeasure_eq_map_rademacher_of_finrank_eq_one
+          (hdim.trans h₁) b
+      have hExp : ∫ x : S, Real.exp ⟪b, (x : E)⟫_ℝ ∂μ = Real.cosh ‖b‖ := by
+        rw [← integral_map (f := Real.exp) (by fun_prop) (by fun_prop)]
+        change (∫ y, Real.exp y ∂μ.map (fun x : S => ⟪b, (x : E)⟫_ℝ)) = _
+        rw [hm, integral_map (by fun_prop) (by fun_prop),
+          TauCeti.Probability.integral_rademacherMeasure]
+        simp [Real.cosh_eq, smul_eq_mul]
+        ring
+      rw [hFlift, hExp, hbNorm]
+      dsimp only [G]
+      have hnC : (n : ℂ) = 1 := by exact_mod_cast h₁
+      rw [hnC]
+      have harg : (((t : ℂ) * ‖a‖) ^ 2 / 4) = -((((t : ℂ) * ‖a‖ * I) ^ 2) / 4) := by
+        rw [mul_pow ((t : ℂ) * ‖a‖) I, Complex.I_sq]
+        ring
+      rw [harg, DLMF.Bessel.regularized0F1_half_eq_cos, Complex.cos_mul_I]
+      have hΓ : Complex.Gamma (1 / 2 : ℂ) ≠ 0 := Complex.Gamma_ne_zero_of_re_pos (by norm_num)
+      rw [← mul_div_assoc, mul_comm (Complex.Gamma (1 / 2)), mul_div_cancel_right₀ _ hΓ,
+        Complex.ofReal_cosh, Complex.ofReal_mul]
+    · have h₂ : 2 ≤ Module.finrank ℝ E := by omega
+      have h := TauCeti.Probability.integral_exp_inner_uniformSphereMeasure_eq_besselI h₂ hb
+      let ν : ℝ := (n : ℝ) / 2 - 1
+      let x : ℝ := t * ‖a‖
+      have hx : 0 < x := mul_pos ht (norm_pos_iff.mpr ha)
+      have hnC : (ν : ℂ) + 1 = (n : ℂ) / 2 := by simp [ν]
+      rw [hFlift, h, hdim, hbNorm]
+      change (((Real.Gamma ((n : ℝ) / 2) * ((x / 2) ^ (-ν) * Real.besselI ν x)) : ℝ) : ℂ) =
+        G t
+      rw [Complex.ofReal_mul, Complex.ofReal_mul, ← Complex.Gamma_ofReal,
+        ← DLMF.Bessel.besselI_ofReal ν hx.le, DLMF.Bessel.besselI,
+        Complex.ofReal_cpow (by positivity : 0 ≤ x / 2) (-ν)]
+      push_cast
+      have hbase : (x : ℂ) / 2 ≠ 0 :=
+        div_ne_zero (Complex.ofReal_ne_zero.mpr hx.ne') (by norm_num)
+      have hpow : ((x : ℂ) / 2) ^ (ν : ℂ) ≠ 0 :=
+        Complex.cpow_ne_zero_iff.mpr (Or.inl hbase)
+      rw [Complex.cpow_neg, ← mul_assoc (((x : ℂ) / 2) ^ (ν : ℂ))⁻¹,
+        inv_mul_cancel₀ hpow, one_mul, hnC]
+      dsimp only [G, x]
+      push_cast
+      rfl
+  have hpos : ∀ᶠ t : ℝ in 𝓝[>] (0 : ℝ), 0 < t := self_mem_nhdsWithin
+  have hmap : Filter.Tendsto Complex.ofReal (𝓝[>] (0 : ℝ)) (𝓝[≠] (0 : ℂ)) := by
+    apply tendsto_nhdsWithin_iff.mpr
+    refine ⟨?_, hpos.mono fun t ht => ?_⟩
+    · simpa using (Complex.continuous_ofReal.continuousAt (x := 0)).tendsto.mono_left
+        nhdsWithin_le_nhds
+    · simp [ht.ne']
+  have hf : ∃ᶠ z in 𝓝[≠] (0 : ℂ), F z = G z :=
+    hmap.frequently (hpos.mono hreal).frequently
+  have h := congrFun (AnalyticOnNhd.eq_of_frequently_eq hF hG hf) (I * lam)
+  change besselZonal n lam ‖a‖ = F (I * lam)
+  rw [h, besselZonal_eq_regularized]
+  dsimp only [G]
+  congr 2
+  rw [mul_assoc I lam, mul_pow I, Complex.I_sq]
+  ring
 
 /-- The zonal function is smooth in `r`. -/
 theorem contDiff_besselZonal (n : ℕ) (lam : ℂ) : ContDiff ℝ ⊤ (besselZonal n lam) := by
@@ -231,11 +346,6 @@ theorem motionSphericalFunction_inj {n : ℕ} (hn : 1 ≤ n) (lam μ : ℂ) :
     funext g
     simp only [motionSphericalFunction_def, besselZonal_eq_regularized, mul_pow, h]
 
-/-- Bounded spherical functions: `Ω_n(λ, ·)` is bounded on `[0, ∞)` exactly for real `λ`. -/
-theorem bounded_besselZonal_iff {n : ℕ} (hn : 1 ≤ n) (lam : ℂ) :
-    (∃ C, ∀ r : ℝ, 0 ≤ r → ‖besselZonal n lam r‖ ≤ C) ↔ lam.im = 0 := by
-  sorry
-
 /-- For real `λ` the zonal function is bounded by `1`. -/
 theorem norm_besselZonal_le_one {n : ℕ} (hn : 1 ≤ n) {lam : ℂ} (hlam : lam.im = 0) (r : ℝ) :
     ‖besselZonal n lam r‖ ≤ 1 := by
@@ -293,6 +403,126 @@ theorem matrixElement_circleRep_zero_zero (R : ℂ) (g : MotionGroup 2) :
   norm_num
   congr 1
   ring
+
+/-- Bounded spherical functions: `Ω_n(λ, ·)` is bounded on `[0, ∞)` exactly for real `λ`. -/
+theorem bounded_besselZonal_iff {n : ℕ} (hn : 1 ≤ n) (lam : ℂ) :
+    (∃ C, ∀ r : ℝ, 0 ≤ r → ‖besselZonal n lam r‖ ≤ C) ↔ lam.im = 0 := by
+  constructor
+  swap
+  · intro h
+    exact ⟨1, fun r _ => norm_besselZonal_le_one hn h r⟩
+  rintro ⟨C, hC⟩
+  by_contra him
+  let w : ℂ := if 0 < (I * lam).re then I * lam else -(I * lam)
+  have hw : 0 < w.re := by
+    dsimp only [w]
+    split
+    · assumption
+    · rename_i h
+      simp only [Complex.mul_re, Complex.I_re, zero_mul, Complex.I_im, one_mul, zero_sub] at h
+      have hi : -lam.im < 0 := lt_of_le_of_ne (le_of_not_gt h) (neg_ne_zero.mpr him)
+      simpa [Complex.mul_re] using neg_pos.mpr hi
+  have hw₀ : w ≠ 0 := by intro h; simp [h] at hw
+  have hwn : 0 < ‖w‖ := norm_pos_iff.mpr hw₀
+  have hsq : w ^ 2 = -(lam ^ 2) := by
+    dsimp only [w]
+    split <;> simp only [neg_sq, mul_pow, I_sq, neg_one_mul]
+  let Z (r : ℝ) : ℂ := w * r
+  have hre (r : ℝ) : (Z r).re = w.re * r := by simp [Z, Complex.mul_re]
+  have hpow (r : ℝ) : (Z r) ^ 2 / 4 = -(lam * r) ^ 2 / 4 := by
+    simp only [Z, mul_pow, hsq, neg_mul]
+  have hform (r : ℝ) :
+      besselZonal n lam r = Complex.Gamma (n / 2) *
+        regularizedHGFun (∅ : Multiset ℂ) {(n : ℂ) / 2} ((Z r) ^ 2 / 4) := by
+    rw [hpow, besselZonal_eq_regularized]
+  by_cases h₁ : n = 1
+  · have hcosh (r : ℝ) : besselZonal n lam r = Complex.cosh (Z r) := by
+      have hnC : (n : ℂ) = 1 := by exact_mod_cast h₁
+      have hi : (Z r) ^ 2 / 4 = -((Z r * I) ^ 2 / 4) := by
+        rw [mul_pow (Z r) I, I_sq]
+        ring
+      have hΓ : Complex.Gamma (1 / 2 : ℂ) ≠ 0 :=
+        Complex.Gamma_ne_zero_of_re_pos (by norm_num)
+      rw [hform, hnC, hi, DLMF.Bessel.regularized0F1_half_eq_cos, Complex.cos_mul_I,
+        ← mul_div_assoc, mul_comm (Complex.Gamma (1 / 2)), mul_div_cancel_right₀ _ hΓ]
+    have hl := Real.tendsto_exp_atTop.comp (tendsto_id.const_mul_atTop hw)
+    obtain ⟨r, he, hr⟩ :=
+      ((hl.eventually_gt_atTop (2 * C + 1)).and (eventually_gt_atTop (0 : ℝ))).exists
+    have hneg : ‖Complex.exp (-Z r)‖ ≤ 1 := by
+      rw [Complex.norm_exp, Complex.neg_re, hre, ← Real.exp_zero]
+      exact Real.exp_le_exp.mpr (neg_nonpos.mpr (mul_pos hw hr).le)
+    have hi : Complex.exp (Z r) = 2 * Complex.cosh (Z r) - Complex.exp (-Z r) := by
+      unfold Complex.cosh
+      ring
+    have hle := norm_sub_le (2 * Complex.cosh (Z r)) (Complex.exp (-Z r))
+    rw [← hi, Complex.norm_exp, hre, norm_mul, Complex.norm_ofNat, ← hcosh] at hle
+    change 2 * C + 1 < Real.exp (w.re * r) at he
+    linarith [hC r hr.le]
+  · let ν : ℝ := (n : ℝ) / 2 - 1
+    have hν : -1 / 2 < (ν : ℂ).re := by
+      have hn' : (2 : ℝ) ≤ n := by exact_mod_cast (by omega : 2 ≤ n)
+      rw [Complex.ofReal_re]
+      dsimp only [ν]
+      linarith
+    let δ := w.re / ‖w‖
+    have hδ : 0 < δ := div_pos hw hwn
+    have hZ : Tendsto Z atTop (sectorAtTop δ) := by
+      refine tendsto_inf.mpr ⟨tendsto_comap_iff.mpr ?_, tendsto_principal.mpr ?_⟩
+      · apply (tendsto_id.const_mul_atTop hwn).congr'
+        filter_upwards [eventually_ge_atTop (0 : ℝ)] with r hr
+        simp [Z, abs_of_nonneg hr]
+      · filter_upwards [eventually_ge_atTop (0 : ℝ)] with r hr
+        simp only [hre, Z, norm_mul, Complex.norm_real, Real.norm_eq_abs,
+          abs_of_nonneg hr, δ]
+        field_simp [hwn.ne']
+        exact le_rfl
+    let A (z : ℂ) := Complex.Gamma (n / 2) * (z / 2) ^ (-(ν : ℂ))
+    let B (z : ℂ) := Complex.exp z * (2 * z) ^ (-1 / 2 : ℂ) / (Real.sqrt π : ℂ)
+    have hA (r : ℝ) (hr : 0 < r) : A (Z r) * DLMF.Bessel.besselI ν (Z r) =
+        besselZonal n lam r := by
+      have hz : Z r / 2 ≠ 0 :=
+        div_ne_zero (mul_ne_zero hw₀ (Complex.ofReal_ne_zero.mpr hr.ne')) (by norm_num)
+      rw [hform, DLMF.Bessel.besselI]
+      dsimp only [A]
+      rw [Complex.cpow_neg, mul_assoc (Complex.Gamma _), ← mul_assoc ((Z r / 2) ^ (ν : ℂ))⁻¹,
+        inv_mul_cancel₀ (Complex.cpow_ne_zero_iff.mpr (Or.inl hz)), one_mul]
+      congr 3
+      simp [ν]
+    have hbig := (((IsEquivalent.refl (u := A) (l := sectorAtTop δ)).mul
+      (DLMF.Bessel.besselI_isEquivalent_sector hν hδ)).comp_tendsto hZ).isBigO_symm
+    obtain ⟨K, hK, hbound⟩ := hbig.exists_pos
+    let D := ‖Complex.Gamma ((n : ℂ) / 2)‖ * (‖w‖ / 2) ^ (-ν) *
+      (2 * ‖w‖) ^ (-1 / 2 : ℝ) / Real.sqrt π
+    have hΓ : Complex.Gamma ((n : ℂ) / 2) ≠ 0 := by
+      apply Complex.Gamma_ne_zero_of_re_pos
+      have hn' : (0 : ℝ) < (n : ℝ) := by exact_mod_cast (by omega : 0 < n)
+      simpa [Complex.div_re] using half_pos hn'
+    have hD : 0 < D := by dsimp only [D]; positivity
+    have hnorm (r : ℝ) (hr : 0 < r) :
+        ‖A (Z r) * B (Z r)‖ = D * (Real.exp (w.re * r) / r ^ (ν + 1 / 2)) := by
+      have hz : ‖Z r‖ = ‖w‖ * r := by simp [Z, Complex.norm_real, abs_of_pos hr]
+      have hhalf : (-1 / 2 : ℂ) = ((-1 / 2 : ℝ) : ℂ) := by norm_num
+      simp only [A, B, norm_mul, norm_div, Complex.norm_exp, hre, ← Complex.ofReal_neg,
+        hhalf, Complex.norm_cpow_real, Complex.norm_real, Real.norm_eq_abs,
+        abs_of_nonneg (Real.sqrt_nonneg _), Complex.norm_ofNat, hz]
+      rw [show ‖w‖ * r / 2 = (‖w‖ / 2) * r by ring, ← mul_assoc (2 : ℝ),
+        Real.mul_rpow (by positivity : 0 ≤ ‖w‖ / 2) hr.le,
+        Real.mul_rpow (by positivity : 0 ≤ 2 * ‖w‖) hr.le,
+        Real.rpow_add hr, ← div_div, ← mul_div_assoc]
+      dsimp only [D]
+      have hhalf' := Real.rpow_neg hr.le (1 / 2 : ℝ)
+      rw [← neg_div] at hhalf'
+      rw [Real.rpow_neg hr.le ν, hhalf']
+      ring
+    have hl := (tendsto_exp_mul_div_rpow_atTop (ν + 1 / 2) w.re hw).const_mul_atTop hD
+    have he := hl.eventually_gt_atTop (K * C)
+    have hx : ∃ r : ℝ, 0 < r ∧ ‖A (Z r) * B (Z r)‖ ≤
+        K * ‖A (Z r) * DLMF.Bessel.besselI ν (Z r)‖ ∧
+        K * C < D * (Real.exp (w.re * r) / r ^ (ν + 1 / 2)) :=
+      ((eventually_gt_atTop 0).and (hbound.bound.and he)).exists
+    obtain ⟨r, hr, hb, he⟩ := hx
+    rw [hnorm r hr, hA r hr] at hb
+    exact (not_lt_of_ge (hb.trans (mul_le_mul_of_nonneg_left (hC r hr.le) hK.le))) he
 
 /-- Plane-wave expansion in `ℝ³` (DLMF 10.60.7 with 14.30.9), with lean-DLMF's spherical Bessel
 function `j_l` and spherical harmonics `Y_{l,m}`: for `κ, r > 0` and the angle `γ` between the

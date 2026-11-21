@@ -196,7 +196,24 @@ theorem isSphericalFunction_iff (n : ℕ) (hn : 2 ≤ n) (ν : Measure (rotation
 theorem sphericalFunction_comp_orbitMap_eq_iff (n : ℕ) (hn : 2 ≤ n) (lam μ : ℂ) :
     ((fun g => sphericalFunction n lam (orbitMap n g)) =
       fun g => sphericalFunction n μ (orbitMap n g)) ↔ (μ = lam ∨ μ = -lam) := by
-  sorry
+  constructor
+  · intro h
+    have hEq : EqOn (sphericalFunction n lam) (sphericalFunction n μ) (hyperboloid n) := by
+      intro x hx
+      obtain ⟨g, rfl⟩ := exists_orbitMap_eq n hx
+      exact congrFun h g
+    have hx := basePoint_mem_hyperboloid n
+    have hLap := hyperbolicLaplacian_congr hEq hx
+    rw [hyperbolicLaplacian_sphericalFunction n hn lam hx,
+      hyperbolicLaplacian_sphericalFunction n hn μ hx,
+      sphericalFunction_basePoint n (by omega : 1 ≤ n),
+      sphericalFunction_basePoint n (by omega : 1 ≤ n), mul_one, mul_one] at hLap
+    have hsquare : μ ^ 2 = lam ^ 2 := by linear_combination hLap
+    exact sq_eq_sq_iff_eq_or_eq_neg.mp hsquare
+  · rintro (rfl | rfl)
+    · rfl
+    · funext g
+      exact (jacobiFunction_neg _ _ _ _).symm
 
 end Gelfand
 

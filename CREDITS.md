@@ -44,7 +44,8 @@
   sphere marginal uses Tau Ceti's
   `map_sum_sq_uniformSphereMeasure` for the two real coordinates and Mathlib's complex polar
   coordinates. The branching dimension formula in `SFVK.Spheres.Branching` uses Tau Ceti's
-  Fischer decomposition.
+  Fischer decomposition. Branch harmonicity and spanning use its
+  `MvPolynomial.laplacian_normSq_mul` and `finrank_iSup_eq_sum_finrank_of_iSupIndep`.
 - The motion-group circle model uses Mathlib's continuous-function density in `L²` and its
   Fourier coefficients on the additive circle. The Bessel formulas use lean-DLMF's Jacobi–Anger
   expansion, Graf addition theorem, and regularized hypergeometric series. The Fourier
@@ -52,12 +53,38 @@
   `fourier_comp_linearIsometry`.
 - `SFVK.Spheres.SphereMeasure` uses Tau Ceti's special orthogonal orbit theorem,
   `LinearIsometryEquiv.map_toSphere`, and the symmetric beta density for sphere projections.
-- The affine Mellin formulas use lean-DLMF's beta integral and Mellin–Barnes inversion. The
-  Charlier identities use its terminating series, duality, and Laguerre finite sum.
+- The sphere zonal polynomials use Tau Ceti's harmonic dimension and Euclidean Laplacian formulas.
+  Their product, bound, and orthogonality use lean-DLMF's Gegenbauer formulas and Mathlib's
+  Chebyshev orthogonality.
+- The radial Fourier transform uses Tau Ceti's polar integration and unit sphere area formulas.
+  The angular transform uses Tau Ceti's complex-plane isometry and Mathlib's
+  `Complex.integral_comp_polarCoord_symm`. The zonal Bessel sphere mean uses Tau Ceti's
+  von Mises–Fisher normalizer, holomorphy of parameter
+  integrals, and the Rademacher law for the two-point sphere. The zonal Bessel boundedness
+  criterion uses lean-DLMF's `besselI_isEquivalent_sector`, and the Laguerre eigenfunction
+  proof uses its `integral_laguerreExtended_hankel`.
+- The hyperbola model uses Mathlib's continuous measure-preserving composition on `L²`, Tau Ceti's
+  dominated convergence on `L²` and Fourier integrability for smooth compactly supported functions,
+  and lean-DLMF's Bessel kernel integrability. The Bessel circle mean and matrix addition in
+  `SFVK.MotionGroups.Miller` use Mathlib's `fourierCoeff_eq_of_hasSum`. The radial Bessel product
+  uses its `integral_Icc_deriv_smul_of_deriv_nonpos`.
+- The affine Mellin formulas use lean-DLMF's beta integral, Mellin–Barnes inversion,
+  `integral_mul_eq_mellin_parseval`, and the vertical integrability of the Gamma kernel.
+  The Charlier identities use its terminating series, duality, Laguerre finite sum, and
+  discrete orthogonality. The signed Mellin kernel uses Tau Ceti's Mellin inversion and vertical
+  decay, and its evaluations use lean-DLMF's Tricomi, Kummer and exponential Mellin integrals.
+- The Schrödinger matrix elements use lean-DLMF's Hermite translation, product and Laplace
+  transform formulas. The matrix addition theorem uses Mathlib's Hilbert-basis expansion.
+  Matrix-element orthogonality uses Tau Ceti's Hermite Schwartz functions and Mathlib's
+  Schwartz-space Plancherel identity.
 - The `SU(1,1)` matrix-element proofs use lean-DLMF's Laplace formula for Legendre functions,
   binomial series, Gauss argument continuation, and compact-parameter holomorphy.
 - `SFVK.RankOne.Jacobi` and `HarishChandra` use lean-DLMF's Gauss differential equation,
   transformations, boundary limits, and parameter holomorphy. The Jacobi transform uses
   DLMFMathlib's theorem for differentiating a locally dominated parameter integral.
   Hyperbolic polar integration and Laplacians use Mathlib's Haar-to-sphere and second-order
-  chain-rule APIs.
+  chain-rule APIs. Horospherical integration uses its monotone change of variables and
+  Haar measure scaling. Lorentz invariance uses Mathlib's
+  `Measure.map_linearMap_addHaar_eq_smul_addHaar` and `iteratedDeriv_vcomp_two`.
+  The Jacobi density bound uses Mathlib's Gamma duplication formula,
+  lean-DLMF's vertical Stirling limit and Tau Ceti's derivative of reciprocal Gamma at its zeros.
