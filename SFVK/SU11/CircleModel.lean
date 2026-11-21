@@ -30,15 +30,6 @@ namespace SFVK.SU11
 local notation "𝕋" => AddCircle (2 * π)
 local instance : Fact (0 < 2 * π) := ⟨Real.two_pi_pos⟩
 
-/-- On the circle of period `2π`, the Fourier character has angular frequency `n`. -/
-private theorem fourier_coe_two_pi (n : ℤ) (x : ℝ) :
-    fourier n (x : 𝕋) = Complex.exp ((n : ℂ) * x * Complex.I) := by
-  rw [fourier_coe_apply]
-  congr 1
-  push_cast
-  have hp : (π : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr Real.pi_ne_zero
-  field_simp
-
 /-- Integrating in angular coordinates is the normalized circle average. -/
 private theorem circleAverage_eq_integral_haar (f : ℂ → ℂ) :
     Real.circleAverage f 0 1 = ∫ θ, f (fourier 1 θ) ∂(haarAddCircle (T := 2 * π)) := by
@@ -247,9 +238,9 @@ private noncomputable def circleActMeasurableEquiv (g : SU11) : 𝕋 ≃ᵐ 𝕋
     (continuous_circleAct.comp (continuous_const.prodMk continuous_id)).measurable
 
 /-- The right circle action preserves Haar-null sets under pullback. -/
-private theorem quasiMeasurePreserving_circleAct (g : SU11) :
+theorem quasiMeasurePreserving_circleAct (g : SU11) :
     QuasiMeasurePreserving (circleAct g) (haarAddCircle (T := 2 * π)) haarAddCircle := by
-  refine ⟨(circleActMeasurableEquiv g).measurable, ?_⟩
+  refine ⟨(circleActMeasurableEquiv g).measurable.aemeasurable, ?_⟩
   rw [map_circleAct_haar_withDensity]
   exact withDensity_absolutelyContinuous _ _
 
@@ -507,8 +498,8 @@ private theorem principalMultiplier_density_iff (τ : ℂ) (e : Fin 2) :
   have hreal (g : SU11) (θ : 𝕋) :
       (‖principalMultiplier τ e g θ‖ₑ ^ 2 = ENNReal.ofReal (circleJacobian g θ)) ↔
         ‖principalMultiplier τ e g θ‖ ^ 2 = circleJacobian g θ := by
-    rw [← ENNReal.toReal_eq_toReal_iff' (ENNReal.pow_ne_top enorm_ne_top) ENNReal.ofReal_ne_top,
-      ENNReal.toReal_pow, toReal_enorm, ENNReal.toReal_ofReal (circleJacobian_pos g θ).le]
+    rw [← ENNReal.toReal_eq_toReal_iff' (ENNReal.pow_ne_top eNorm_ne_top) ENNReal.ofReal_ne_top,
+      ENNReal.toReal_pow, toReal_eNorm, ENNReal.toReal_ofReal (circleJacobian_pos g θ).le]
   have hj (g : SU11) (θ : 𝕋) :
       circleJacobian g θ = ‖circleDenominator g (fourier 1 θ)‖ ^ (-(2 : ℝ)) := by
     rw [circleJacobian, Real.rpow_neg (norm_nonneg _)]
@@ -661,11 +652,6 @@ theorem inner_principalSeries (τ : ℂ) (e : Fin 2) (g : SU11)
       apply integral_congr_ae
       filter_upwards [principalSeries_ae_eq (-conj τ - 1) e g⁻¹ h] with θ hθ
       rw [hθ]
-
-/-- A translation multiplies a Fourier character by its value at the translation. -/
-private theorem fourier_add_angle (n : ℤ) (x y : 𝕋) :
-    fourier n (x + y) = fourier n x * fourier n y := by
-  simp only [fourier_apply, zsmul_add, toCircle_add, Circle.coe_mul]
 
 /-- The first Fourier character determines the point of the circle. -/
 private theorem fourier_one_injective : Function.Injective (⇑(@fourier (2 * π) 1)) := by

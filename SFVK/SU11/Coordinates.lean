@@ -32,23 +32,6 @@ namespace SFVK.SU11
 
 open HaarShell
 
-/-- The first entry has phase given by the half-sum of the Euler angles. -/
-private theorem entryA_euler (α t γ : ℝ) :
-    entryA (euler α t γ) = (Real.cosh (t / 2) : ℂ) * (Circle.exp ((α + γ) / 2) : ℂ) := by
-  rw [euler_def, entryA_mul, entryA_mul, add_div, Circle.exp_add, Circle.coe_mul]
-  simp only [entryA_rotation, entryA_boost, entryB_rotation, map_zero, mul_zero, add_zero,
-    zero_mul, Circle.coe_exp]
-  ring
-
-/-- The second entry has phase given by the half-difference of the Euler angles. -/
-private theorem entryB_euler (α t γ : ℝ) :
-    entryB (euler α t γ) = (Real.sinh (t / 2) : ℂ) * (Circle.exp ((α - γ) / 2) : ℂ) := by
-  rw [euler_def, entryB_mul, entryB_mul, sub_div, sub_eq_add_neg, Circle.exp_add, Circle.coe_mul,
-    Circle.exp_neg, Circle.coe_inv_eq_conj]
-  simp only [entryA_rotation, entryB_rotation, entryB_boost, mul_zero, zero_mul,
-    add_zero, zero_add, Circle.coe_exp]
-  ring
-
 /-- The top row determines an element of the group. -/
 private theorem eq_of_entries_eq {g h : SU11} (ha : entryA g = entryA h)
     (hb : entryB g = entryB h) : g = h := by

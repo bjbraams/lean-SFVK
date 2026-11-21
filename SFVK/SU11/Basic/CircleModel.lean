@@ -122,6 +122,20 @@ theorem circleMobius_mul (g h : SU11) {z : ℂ} (hz : ‖z‖ = 1) :
     mul_div_mul_left _ _ (circleDenominator_ne_zero g hz)]
   rfl
 
+/-- On the circle of period `2π`, the Fourier character has angular frequency `n`. -/
+theorem fourier_coe_two_pi (n : ℤ) (x : ℝ) :
+    fourier n (x : 𝕋) = Complex.exp ((n : ℂ) * x * Complex.I) := by
+  rw [fourier_coe_apply]
+  congr 1
+  push_cast
+  have hp : (π : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr Real.pi_ne_zero
+  field_simp
+
+/-- A translation multiplies a Fourier character by its value at the translation. -/
+theorem fourier_add_angle (n : ℤ) (x y : 𝕋) :
+    fourier n (x + y) = fourier n x * fourier n y := by
+  simp only [fourier_apply, zsmul_add, toCircle_add, Circle.coe_mul]
+
 /-- The point of the unit circle at an angle has norm one. -/
 theorem norm_fourier_one (θ : 𝕋) : ‖fourier 1 θ‖ = 1 := by
   rw [fourier_one]

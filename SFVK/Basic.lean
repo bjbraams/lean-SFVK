@@ -5,8 +5,13 @@ Authors: Bastiaan J Braams
 -/
 module -- shake: keep-all
 
+public import SFVK.AffineHeisenberg.Basic
+public import SFVK.ClebschGordan.Basic
+public import SFVK.MotionGroups.Basic
+public import SFVK.RankOne.Basic
 public import SFVK.SU11.Basic
 public import SFVK.SU2.Basic
+public import SFVK.Spheres.Basic
 
 /-!
 # Special functions and group representations: foundational layer

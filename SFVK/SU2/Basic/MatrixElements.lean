@@ -82,7 +82,7 @@ private theorem fromVector_apply (v : Fin 2 → ℂ) :
 
 /-- The product of the linear polynomials attached to the tensor factors. -/
 private def multilinear (d : ℕ) :
-    MultilinearMap ℂ (fun _ : Fin d => Fin 2 → ℂ) ℂ[X] :=
+    MultilinearMap (RingHom.id ℂ) (fun _ : Fin d => Fin 2 → ℂ) ℂ[X] :=
   (MultilinearMap.mkPiAlgebra ℂ (Fin d) ℂ[X]).compLinearMap fun _ => fromVector
 
 /-- The product map multiplies the linear polynomials of the input vectors. -/

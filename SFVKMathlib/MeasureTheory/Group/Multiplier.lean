@@ -171,9 +171,9 @@ theorem exists_isUnitary_multiplierAction_iff [MeasurableSpace X] [MeasurableCon
   classical
   let weight (g : G) (x : X) := ‖α g x‖ₑ ^ 2
   let translate (g : G) : X ≃ᵐ X := MeasurableEquiv.smul g
-  have hm (g : G) : Measurable (weight g) := (hαm g).enorm.pow_const 2
+  have hm (g : G) : Measurable (weight g) := (hαm g).eNorm.pow_const 2
   have hq (g : G) : QuasiMeasurePreserving (translate g) μ μ :=
-    ⟨(translate g).measurable, by
+    ⟨(translate g).measurable.aemeasurable, by
       have heq : μ.map (translate g) = μ.withDensity (ρ g) := hρ g
       rw [heq]
       exact withDensity_absolutelyContinuous _ _⟩
@@ -181,13 +181,13 @@ theorem exists_isUnitary_multiplierAction_iff [MeasurableSpace X] [MeasurableCon
       (∫⁻ x, ‖f x‖ₑ ^ 2 ∂μ) = eLpNorm f 2 μ ^ 2 := by
     rw [eLpNorm_eq_eLpNorm' (by norm_num) (by simp) hf]
     simpa only [ENNReal.toReal_ofNat, ENNReal.rpow_two] using
-      (lintegral_rpow_enorm_eq_rpow_eLpNorm' (μ := μ) (f := f) (q := 2) (by norm_num))
+      (lintegral_rpow_eNorm_eq_rpow_eLpNorm' (μ := μ) (f := f) (q := 2) (by norm_num))
   have hchange (g : G) (f : X → ℂ) :
       (∫⁻ x, ‖multiplierAction α g f x‖ₑ ^ 2 ∂μ) =
         ∫⁻ x, ‖f x‖ₑ ^ 2 ∂(μ.withDensity (weight g)).map (translate g).symm := by
     rw [lintegral_map_equiv, lintegral_withDensity_eq_lintegral_mul_non_measurable μ (hm g)
       (Filter.Eventually.of_forall fun x => ENNReal.pow_lt_top (by simp))]
-    simp only [weight, multiplierAction_def, enorm_mul, mul_pow, Pi.mul_apply]
+    simp only [weight, multiplierAction_def, eNorm_mul, mul_pow, Pi.mul_apply]
     rfl
   have hmeas (g : G) (f : Lp ℂ 2 μ) :
       AEStronglyMeasurable (multiplierAction α g f) μ :=
@@ -198,8 +198,8 @@ theorem exists_isUnitary_multiplierAction_iff [MeasurableSpace X] [MeasurableCon
     have hnorm_eq (f : Lp ℂ 2 μ) :
         (∫⁻ x, ‖multiplierAction α g f x‖ₑ ^ 2 ∂μ) = ∫⁻ x, ‖f x‖ₑ ^ 2 ∂μ := by
       rw [hnorm _ (hmeas g f), ← eLpNorm_congr_ae (hformula g f),
-        hnorm _ (Lp.aestronglyMeasurable f), ← Lp.enorm_def, ← Lp.enorm_def,
-        enorm_eq_iff_norm_eq.mpr (hU.norm_map g f)]
+        hnorm _ (Lp.aestronglyMeasurable f), ← Lp.eNorm_def, ← Lp.eNorm_def,
+        eNorm_eq_iff_norm_eq.mpr (hU.norm_map g f)]
     have hsets (s : Set X) (hs : MeasurableSet s) (hfin : μ s ≠ ∞) :
         ((μ.withDensity (weight g)).map (translate g).symm) s = μ s := by
       let f := indicatorConstLp 2 hs hfin (1 : ℂ)
@@ -240,19 +240,19 @@ theorem exists_isUnitary_multiplierAction_iff [MeasurableSpace X] [MeasurableCon
         eLpNorm (multiplierAction α g f) 2 μ ^ 2 = ‖f‖ₑ ^ 2 := by
       rw [← hnorm _ (hmeas g f), hchange, withDensity_congr_ae (h g), ← hρ g]
       change (∫⁻ x, ‖f x‖ₑ ^ 2 ∂(μ.map (translate g)).map (translate g).symm) = _
-      rw [MeasurableEquiv.map_symm_map, hnorm _ (Lp.aestronglyMeasurable f), Lp.enorm_def]
+      rw [MeasurableEquiv.map_symm_map, hnorm _ (Lp.aestronglyMeasurable f), Lp.eNorm_def]
     have hMem (g : G) (f : Lp ℂ 2 μ) : MemLp (multiplierAction α g f) 2 μ := by
       apply memLp_iff.mpr
       apply lt_top_iff_ne_top.mpr
       intro heq
       have hfin := ENNReal.pow_ne_top (n := 2) (Lp.eLpNorm_ne_top f)
-      rw [← Lp.enorm_def, ← hnorm_eq, heq] at hfin
+      rw [← Lp.eNorm_def, ← hnorm_eq, heq] at hfin
       simp at hfin
     have hnorm_toLp (g : G) (f : Lp ℂ 2 μ) :
         ‖(hMem g f).toLp (multiplierAction α g f)‖ = ‖f‖ := by
       have hsq := congrArg ENNReal.toReal (hnorm_eq g f)
       rw [ENNReal.toReal_pow, ENNReal.toReal_pow, ← Lp.norm_toLp _ (hMem g f),
-        toReal_enorm] at hsq
+        toReal_eNorm] at hsq
       nlinarith [norm_nonneg ((hMem g f).toLp (multiplierAction α g f)), norm_nonneg f]
     obtain ⟨U, hU⟩ := exists_multiplierRepresentation hα hq hMem fun g =>
       ⟨1, fun f => by rw [hnorm_toLp, one_mul]⟩

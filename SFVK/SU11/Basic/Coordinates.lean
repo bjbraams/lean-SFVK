@@ -6,6 +6,7 @@ Authors: Bastiaan J Braams
 module
 
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+public import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 public import Mathlib.MeasureTheory.Measure.Haar.Basic
 public import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 public import Mathlib.MeasureTheory.Measure.WithDensity
@@ -172,6 +173,23 @@ def euler (α t γ : ℝ) : SU11 := rotation α * boost t * rotation γ
 /-- The rotation–boost–rotation factorization. -/
 theorem euler_def (α t γ : ℝ) :
     euler α t γ = rotation α * boost t * rotation γ := (rfl)
+
+/-- The first entry has phase given by the half-sum of the Euler angles. -/
+theorem entryA_euler (α t γ : ℝ) :
+    entryA (euler α t γ) = (Real.cosh (t / 2) : ℂ) * (Circle.exp ((α + γ) / 2) : ℂ) := by
+  rw [euler_def, entryA_mul, entryA_mul, add_div, Circle.exp_add, Circle.coe_mul]
+  simp only [entryA_rotation, entryA_boost, entryB_rotation, map_zero, mul_zero, add_zero,
+    zero_mul, Circle.coe_exp]
+  ring
+
+/-- The second entry has phase given by the half-difference of the Euler angles. -/
+theorem entryB_euler (α t γ : ℝ) :
+    entryB (euler α t γ) = (Real.sinh (t / 2) : ℂ) * (Circle.exp ((α - γ) / 2) : ℂ) := by
+  rw [euler_def, entryB_mul, entryB_mul, sub_div, sub_eq_add_neg, Circle.exp_add, Circle.coe_mul,
+    Circle.exp_neg, Circle.coe_inv_eq_conj]
+  simp only [entryA_rotation, entryB_rotation, entryB_boost, mul_zero, zero_mul,
+    add_zero, zero_add, Circle.coe_exp]
+  ring
 
 /-- The Euler box with strictly positive boost parameter. -/
 @[expose]
